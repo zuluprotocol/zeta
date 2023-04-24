@@ -1,0 +1,2815 @@
+syntax = "proto3";
+
+package datanode.api.v2;
+
+import "zeta/vega.proto";
+import "zeta/governance.proto";
+import "zeta/markets.proto";
+import "zeta/assets.proto";
+import "zeta/oracle.proto";
+import "zeta/events/v1/events.proto";
+import "zeta/commands/v1/validator_commands.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+option go_package = "code.zetaprotocol.io/vega/protos/data-node/api/v2";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Zeta data node APIs";
+    version: "v0.69.0-dev";
+  }
+  schemes: [HTTP, HTTPS]
+  host: "lb.testnet.zeta.xyz/datanode/rest"
+};
+
+service TradingDataService {
+    // Accounts list
+    //
+    // Returns a list of accounts matching the supplied filter, including their current balances.
+    // If a given account has never had a balance, it will be absent from the list.
+    rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse);
+
+    // Accounts subscription
+    //
+    // Subscribe to a stream of accounts
+    rpc ObserveAccounts(ObserveAccountsRequest) returns (stream ObserveAccountsResponse);
+
+    // Data node info
+    //
+    // Retrieves information about the data node.
+    // Response contains a semver formatted version of the data node and the commit hash, from which the data node was built
+    rpc Info(InfoRequest) returns (InfoResponse);
+
+    // Order
+    //
+    // Gets the current version of an order, or optionally provide a version ID to retrieve a given version if order was amended.
+    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
+
+    // Orders list
+    //
+    // Get a list of orders that match the given filters
+    rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+
+    // Order history list
+    //
+    // List all versions of an order in the order history
+    rpc ListOrderVersions(ListOrderVersionsRequest) returns (ListOrderVersionsResponse);
+
+    // Orders subscription
+    //
+    // Subscribe to a stream of orders
+    rpc ObserveOrders(ObserveOrdersRequest) returns (stream ObserveOrdersResponse);
+
+    // Positions (deprecated)
+    //
+    // Get a list of positions by party (public key) using cursor based pagination
+    // Deprecated: use ListAllPositions instead
+    rpc ListPositions(ListPositionsRequest) returns (ListPositionsResponse) {
+        option deprecated = true;
+    };
+
+    // Positions list
+    //
+    // Get a list of positions by party (public key) using cursor based pagination
+    rpc ListAllPositions(ListAllPositionsRequest) returns (ListAllPositionsResponse);
+
+    // Positions subscription
+    //
+    // Subscribe to a stream of positions
+    rpc ObservePositions(ObservePositionsRequest) returns (stream ObservePositionsResponse);
+
+    // Ledger entries list
+    //
+    // List ledger entries by asset, market, party, account type and transfer type within the given date range.
+    // This query requests and sums the number of ledger entries from a given subset of accounts, specified via the 'filter' argument.
+    // It returns a time series (implemented as a list of AggregateLedgerEntry structs), with a row for every time
+    // the summed ledger entries of the set of specified accounts changes.
+    // Listed entries should be limited to a single party from each side only. If zero or more than one party is provided
+    // for each of the sides - sending and receiving accounts, the query returns an error.
+    //
+    // Entries can be queried by:
+    //   - listing ledger entries with filtering on the sending account (market ID, asset ID, account type)
+    //   - listing ledger entries with filtering on the receiving account (market ID, asset ID, account type)
+    //   - listing ledger entries with filtering on the sending AND receiving account
+    //   - listing ledger entries with filtering on the transfer type (on top of above filters or as a standalone option)
+    rpc ListLedgerEntries(ListLedgerEntriesRequest) returns (ListLedgerEntriesResponse) {}
+
+    // Ledger entries export
+
+    // Export ledger entries records ledger entries to a csv file.
+    // May or may not contain a date range - if no date range is provided, list all records for all times.
+    //
+    // Ledger entries can be exported by:
+    //   - export ledger entries for a single party for a given asset within a given time range
+    //   - export ledger entries for a single party for a given asset for all times
+    rpc ExportLedgerEntries(ExportLedgerEntriesRequest) returns (ExportLedgerEntriesResponse) {}
+
+    //  Balances
+    //
+    // `ListBalanceChanges` queries the change in account balances over a period of time.
+    //
+    // An account is defined as a set of (asset_id, type, party_id, market_id).
+    // - Every account has an associated asset and type.
+    // - Certain account types (for example, the global reward pool) do not have an associated party.
+    //   These are denoted by the special party identifier 'network'
+    // - Certain account types do not have an associated market (for example general party accounts).
+    //   These are denoted by the special market identifier '' (the empty string)
+    //
+    // `ListBalanceChangesRequest` will return a list of
+    // `(zeta_time, asset_id, account_type, party_id, market_id, balance)`
+    // With a row for each block at which a given account's balance changes.
+    rpc ListBalanceChanges(ListBalanceChangesRequest) returns (ListBalanceChangesResponse) {}
+
+    // Market Data
+    //
+    // Get the latest market data for a given market
+    rpc GetLatestMarketData(GetLatestMarketDataRequest) returns (GetLatestMarketDataResponse);
+
+    // Market Data list
+    //
+    // Lists the latest market data for every market
+    rpc ListLatestMarketData(ListLatestMarketDataRequest) returns (ListLatestMarketDataResponse);
+
+    // Market Depth
+    //
+    // Get the latest market depth for a given market
+    rpc GetLatestMarketDepth(GetLatestMarketDepthRequest) returns (GetLatestMarketDepthResponse);
+
+    // Market depth subscription
+    //
+    // Subscribe to a stream of the latest market depth for a given market
+    rpc ObserveMarketsDepth(ObserveMarketsDepthRequest) returns (stream ObserveMarketsDepthResponse);
+
+    // Market depth updates subscription
+    //
+    // Subscribe to a stream of updates on market depth for a given market
+    rpc ObserveMarketsDepthUpdates(ObserveMarketsDepthUpdatesRequest) returns (stream ObserveMarketsDepthUpdatesResponse);
+
+    // Market data subscription
+    //
+    // Subscribe to a stream of data about a given market
+    rpc ObserveMarketsData(ObserveMarketsDataRequest) returns (stream ObserveMarketsDataResponse);
+
+    // Market data history
+    //
+    // Get market data history for a market ID between given dates using a cursor based pagination model
+    rpc GetMarketDataHistoryByID(GetMarketDataHistoryByIDRequest) returns (GetMarketDataHistoryByIDResponse);
+
+    // Transfers list
+    //
+    // List Transfers to/from/either a public key using a cursor based pagination model
+    rpc ListTransfers(ListTransfersRequest) returns (ListTransfersResponse);
+
+    // Network Limits
+    //
+    // Get the current network limits (is bootstrapping finished, are proposals enabled etc..)
+    rpc GetNetworkLimits(GetNetworkLimitsRequest) returns (GetNetworkLimitsResponse);
+
+    // Candle data
+    //
+    // Get candle data for a given candle ID. You can get a candle ID from the list candle intervals query
+    rpc ListCandleData(ListCandleDataRequest) returns (ListCandleDataResponse);
+
+    // Candle updates
+    //
+    // Subscribe to a stream of candle updates
+    rpc ObserveCandleData(ObserveCandleDataRequest) returns (stream ObserveCandleDataResponse);
+
+    // Candle intervals list
+    //
+    // Get all available intervals for a given market along with the corresponding candle ID
+    rpc ListCandleIntervals(ListCandleIntervalsRequest) returns (ListCandleIntervalsResponse);
+
+    // Votes list
+    //
+    // Get votes for a party ID using a cursor based pagination model
+    rpc ListVotes(ListVotesRequest) returns (ListVotesResponse);
+
+    // Votes subscription
+    //
+    // Subscribe to a stream of votes
+    rpc ObserveVotes(ObserveVotesRequest) returns (stream ObserveVotesResponse);
+
+    // ERC-20 list add signer bundle
+    //
+    // List the signature bundle to add a particular validator to the signer list of the multisig contract
+    rpc ListERC20MultiSigSignerAddedBundles(ListERC20MultiSigSignerAddedBundlesRequest) returns (ListERC20MultiSigSignerAddedBundlesResponse);
+
+    // ERC-20 remove signer bundle
+    //
+    // List the signatures bundle to remove a particular validator from signer list of the multisig contract
+    rpc ListERC20MultiSigSignerRemovedBundles(ListERC20MultiSigSignerRemovedBundlesRequest) returns (ListERC20MultiSigSignerRemovedBundlesResponse);
+
+    // ERC-20 list asset bundle
+    //
+    // Get the signatures bundle to allowlist an ERC20 token in the collateral bridge
+    rpc GetERC20ListAssetBundle(GetERC20ListAssetBundleRequest) returns (GetERC20ListAssetBundleResponse);
+
+    // ERC-20 set asset limit bundle
+    //
+    // Get the signature bundle to update the token limits (maxLifetimeDeposit and withdrawThreshold) for a given ERC20 token (already allowlisted) in the collateral bridge
+    rpc GetERC20SetAssetLimitsBundle(GetERC20SetAssetLimitsBundleRequest) returns (GetERC20SetAssetLimitsBundleResponse);
+
+    // ERC-20 withdrawal bundle
+    //
+    // Get the signature bundle to finalize a withdrawal on ethereum
+    rpc GetERC20WithdrawalApproval(GetERC20WithdrawalApprovalRequest) returns (GetERC20WithdrawalApprovalResponse);
+
+    // Trade (latest)
+    //
+    // Get latest trade
+    rpc GetLastTrade(GetLastTradeRequest) returns (GetLastTradeResponse);
+
+    // Trades list
+    //
+    // Get a list of all trades, optionally filtered by party/market/order using a cursor based pagination model
+    rpc ListTrades(ListTradesRequest) returns (ListTradesResponse);
+
+    // Trades subscription
+    //
+    // Subscribe to a stream of trades, optionally filtered by party/market
+    rpc ObserveTrades(ObserveTradesRequest) returns (stream ObserveTradesResponse);
+
+    // Oracle Spec
+    //
+    // Get an oracle spec by ID. Use the oracle spec list to query for oracle spec IDs
+    rpc GetOracleSpec(GetOracleSpecRequest) returns (GetOracleSpecResponse);
+
+    // Oracle Spec list
+    //
+    // List specs for an oracle
+    rpc ListOracleSpecs(ListOracleSpecsRequest) returns (ListOracleSpecsResponse);
+
+    // Oracle data list
+    //
+    // Get all oracle data
+    rpc ListOracleData(ListOracleDataRequest) returns (ListOracleDataResponse);
+
+    // Market
+    //
+    // Get information about a specific market using its ID. Use the market lists query to get a market's ID
+    rpc GetMarket(GetMarketRequest) returns (GetMarketResponse);
+
+    // Markets list
+    //
+    // Get markets using a cursor based pagination
+    rpc ListMarkets(ListMarketsRequest) returns (ListMarketsResponse);
+
+    // Party
+    //
+    // Get a single party
+    rpc GetParty(GetPartyRequest) returns (GetPartyResponse);
+
+    // Parties
+    //
+    // Get parties using a cursor based pagination model
+    rpc ListParties(ListPartiesRequest) returns (ListPartiesResponse);
+
+    // Margin Levels list
+    //
+    // Get margin levels using a cursor based pagination model
+    rpc ListMarginLevels(ListMarginLevelsRequest) returns (ListMarginLevelsResponse);
+
+    // Margin levels subscription
+    //
+    // Subscribe to a stream of margin levels
+    rpc ObserveMarginLevels(ObserveMarginLevelsRequest) returns (stream ObserveMarginLevelsResponse);
+
+    // Rewards list
+    //
+    // Get rewards
+    rpc ListRewards(ListRewardsRequest) returns (ListRewardsResponse);
+
+    // Reward summaries list
+    //
+    // Get reward summaries
+    rpc ListRewardSummaries(ListRewardSummariesRequest) returns (ListRewardSummariesResponse);
+
+    // Reward summaries by epoch
+    //
+    // List reward summaries by epoch
+    rpc ListEpochRewardSummaries(ListEpochRewardSummariesRequest) returns (ListEpochRewardSummariesResponse);
+
+    // Rewards subscription
+    //
+    // Subscribe to a stream of rewards
+    rpc ObserveRewards(ObserveRewardsRequest) returns (stream ObserveRewardsResponse);
+
+    // Deposit
+    //
+    // Get a deposit by its identifier
+    rpc GetDeposit(GetDepositRequest) returns (GetDepositResponse);
+
+    // Deposits list
+    //
+    // Get a list of deposits for a given party
+    rpc ListDeposits(ListDepositsRequest) returns (ListDepositsResponse);
+
+    // Withdrawal
+    //
+    // Get a withdrawal by its ID. Use the withdrawls list query to get withdrawal IDs
+    rpc GetWithdrawal(GetWithdrawalRequest) returns (GetWithdrawalResponse);
+
+    // Withdrawals list
+    //
+    // Get a list of withdrawals for a given party
+    rpc ListWithdrawals(ListWithdrawalsRequest) returns (ListWithdrawalsResponse);
+
+    // Asset
+    //
+    // Get a single asset using its ID. Use the assets list query to get an asset's ID
+    rpc GetAsset(GetAssetRequest) returns (GetAssetResponse);
+
+    // Assets list
+    //
+    // Get a list of assets using cursor based pagination
+    rpc ListAssets(ListAssetsRequest) returns (ListAssetsResponse);
+
+    // Liquidity Provisions list
+    //
+    // Get a list of liquidity provisions for a given market using a cursor based pagination
+    rpc ListLiquidityProvisions(ListLiquidityProvisionsRequest) returns (ListLiquidityProvisionsResponse);
+
+    // Liquidity provision subscription
+    //
+    // Get a liquidity provision subscription for a given market and party
+    rpc ObserveLiquidityProvisions(ObserveLiquidityProvisionsRequest) returns (stream ObserveLiquidityProvisionsResponse);
+
+    // Governance
+    //
+    // Get a single proposal's details
+    rpc GetGovernanceData(GetGovernanceDataRequest) returns (GetGovernanceDataResponse);
+
+    // Governance list
+    //
+    // List proposals using a cursor based pagination model
+    rpc ListGovernanceData(ListGovernanceDataRequest) returns (ListGovernanceDataResponse);
+
+    // Governance proposals subscription
+    //
+    // Subscribe to a stream of governance proposals
+    rpc ObserveGovernance(ObserveGovernanceRequest) returns (stream ObserveGovernanceResponse);
+
+    // Delegation list
+    //
+    // List the token delegations on the network
+    rpc ListDelegations(ListDelegationsRequest) returns (ListDelegationsResponse);
+
+    // Delegation events subscription
+    //
+    // Subscribe to delegation events
+    rpc ObserveDelegations(ObserveDelegationsRequest) returns (stream ObserveDelegationsResponse);
+
+    // Network data
+    //
+    // Get data regarding the nodes of the network
+    rpc GetNetworkData(GetNetworkDataRequest) returns (GetNetworkDataResponse);
+
+    // Node
+    //
+    // Get information about a given node
+    rpc GetNode(GetNodeRequest) returns (GetNodeResponse);
+
+    // Nodes list
+    //
+    // List information about the nodes on the network
+    rpc ListNodes(ListNodesRequest) returns (ListNodesResponse);
+
+    // Node signatures list
+    //
+    // List an aggregate of signatures from all the nodes of the network
+    rpc ListNodeSignatures(ListNodeSignaturesRequest) returns (ListNodeSignaturesResponse);
+
+    // Epoch
+    //
+    // Get data for a specific epoch, if ID is omitted, it retrieves the current epoch
+    rpc GetEpoch(GetEpochRequest) returns (GetEpochResponse);
+
+    // Estimate fee
+    //
+    // Estimate the fee that would incur for submitting this order
+    rpc EstimateFee(EstimateFeeRequest) returns (EstimateFeeResponse);
+
+    // Estimate margin
+    //
+    // Estimate the margin that would be required for submitting this order
+    rpc EstimateMargin(EstimateMarginRequest) returns (EstimateMarginResponse);
+
+    // Network Parameters list
+    //
+    // Get the network parameters
+    rpc ListNetworkParameters(ListNetworkParametersRequest) returns (ListNetworkParametersResponse);
+
+    // Network Parameter
+    //
+    // Get a single network parameter
+    rpc GetNetworkParameter(GetNetworkParameterRequest) returns (GetNetworkParameterResponse);
+
+    // Checkpoints list
+    //
+    // List information about checkpoint generated by the network
+    rpc ListCheckpoints(ListCheckpointsRequest) returns (ListCheckpointsResponse);
+
+    // Stake
+    //
+    // Retrieve staking informations for a given party
+    rpc GetStake(GetStakeRequest) returns (GetStakeResponse);
+
+    // Risk factors
+    //
+    // Get risk factor data for a given market
+    rpc GetRiskFactors(GetRiskFactorsRequest) returns (GetRiskFactorsResponse);
+
+    // Event bus subscription
+    //
+    // Subscribe to a stream of events from the core
+    rpc ObserveEventBus(stream ObserveEventBusRequest) returns (stream ObserveEventBusResponse);
+
+    // Transfer Responses
+    //
+    // Subscribe to a stream of transfer responses
+    rpc ObserveLedgerMovements(ObserveLedgerMovementsRequest) returns (stream ObserveLedgerMovementsResponse);
+
+    // Key Rotations list
+    //
+    // List all key rotation applied for a given party
+    rpc ListKeyRotations(ListKeyRotationsRequest) returns (ListKeyRotationsResponse);
+
+    // Ethereum Key Rotations
+    //
+    // List all ethereum key rotation applied for a given party
+    rpc ListEthereumKeyRotations(ListEthereumKeyRotationsRequest) returns (ListEthereumKeyRotationsResponse);
+
+    // Zeta Time
+    //
+    // Get the current time of the network, displayed as a Unix timestamp in nano seconds
+    rpc GetZetaTime(GetVegaTimeRequest) returns (GetVegaTimeResponse);
+
+    // Protocol upgrade status
+    //
+    // Get status of a protocol upgrade
+    rpc GetProtocolUpgradeStatus(GetProtocolUpgradeStatusRequest) returns (GetProtocolUpgradeStatusResponse);
+
+    // Protocol upgrade proposals list
+    //
+    // List protocol upgrade proposals, optionally filtering on status or approver.
+    rpc ListProtocolUpgradeProposals(ListProtocolUpgradeProposalsRequest) returns (ListProtocolUpgradeProposalsResponse);
+
+    // Snapshots list
+    //
+    // List core snapshots taken
+    rpc ListCoreSnapshots(ListCoreSnapshotsRequest) returns (ListCoreSnapshotsResponse);
+
+    // Network History
+    //
+    // Network history allows the data node to reach out to peer nodes and fetch the most recent history, as well as
+    // older history if desired, such that it can quickly get itself up to the latest block height of the network and start
+    // to consume events for the latest block from the Zeta core.
+    // See https://github.com/zetaprotocol/vega/tree/develop/datanode/networkhistory/README.md for a full description of network history
+
+    // Network history most recent segment
+    //
+    // Get the network's most recently history segment
+    rpc GetMostRecentNetworkHistorySegment(GetMostRecentNetworkHistorySegmentRequest) returns (GetMostRecentNetworkHistorySegmentResponse);
+
+    // Network history all segments list
+    //
+    // List all history segments stored by the data node you're connected to
+    rpc ListAllNetworkHistorySegments(ListAllNetworkHistorySegmentsRequest) returns (ListAllNetworkHistorySegmentsResponse);
+
+    // Network history peer addresses list
+    //
+    // List the addresses of all active network history peers
+    rpc GetActiveNetworkHistoryPeerAddresses(GetActiveNetworkHistoryPeerAddressesRequest) returns (GetActiveNetworkHistoryPeerAddressesResponse);
+
+    // Network history status
+    //
+    // Retrieves information about the current state of network history
+    // Response contains the network history status
+    rpc NetworkHistoryStatus(NetworkHistoryStatusRequest) returns (NetworkHistoryStatusResponse);
+
+    // Network history bootstrap peers
+    //
+    // Retrieves the bootstrap peers for data nodes.
+    // Response contains the bootstrap peers
+    rpc NetworkHistoryBootstrapPeers(NetworkHistoryBootstrapPeersRequest) returns (NetworkHistoryBootstrapPeersResponse);
+
+    // Ping
+    //
+    // Ping the data node
+    rpc Ping(PingRequest) returns (PingResponse);
+
+}
+
+// -- Pagination --
+
+// Pagination controls
+message OffsetPagination {
+    // Skip the number of records specified, default is 0
+    uint64 skip = 1;
+    // Limit the number of returned records to the value specified, default is 50
+    uint64 limit = 2;
+    // Descending reverses the order of the records returned,
+    // default is true, if false the results will be returned in ascending order
+    bool descending = 3;
+}
+
+// Cursor information for cursor based pagination requests
+message Pagination {
+    optional int32 first = 1;
+    optional string after = 2;
+    optional int32 last = 3;
+    optional string before = 4;
+    // Newest records first, older records last, default is true
+    optional bool newest_first = 5;
+}
+
+// Page information for cursor based pagination
+message PageInfo {
+    // Indicator if there is a next page
+    bool has_next_page = 1;
+    // Indicator if there is a previous page
+    bool has_previous_page = 2;
+    // Start cursor
+    string start_cursor = 3;
+    // End cursor
+    string end_cursor = 4;
+}
+
+// -- Accounts --
+
+// Represents the current balance of an account for an asset on Zeta, for a particular owner or party
+message AccountBalance {
+    // Unique account identifier (used internally by Zeta)
+    // string id = 1;
+    // The party that owns the account.
+    // Special values include `network` - represents the Zeta network and is
+    // most commonly seen during liquidation of a distressed trading position
+    string owner = 2;
+    // Asset balance represented as an integer, for example `123456` is a correctly
+    // formatted price of `1.23456` assuming market configured to 5 decimal places.
+    // Balances cannot be negative
+    string balance = 3;
+    // Asset identifier for the account
+    string asset = 4;
+    // Market identifier for the account, this field will be empty if the asset is in a general account
+    string market_id = 5;
+    // The account type of this account
+    zeta.AccountType type = 6;
+}
+
+// Request that is sent when listing accounts
+message ListAccountsRequest {
+    // AccountFilter contains all filter conditions and values that can be applied to the listing
+    AccountFilter filter = 1;
+    // Optional pagination control
+    optional Pagination pagination = 2;
+}
+
+// Response that is received from listing accounts query
+message ListAccountsResponse {
+    // Page with accounts data for 0 or more accounts
+    AccountsConnection accounts = 1;
+}
+
+// Represents the list of accounts with the corresponding page information
+message AccountsConnection {
+    // The list of accounts and their cursors
+    repeated AccountEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Represents the account with corresponding cursor for it
+message AccountEdge {
+    // The account balance data
+    AccountBalance node = 1;
+    // A cursor which can be used to fetch further pages with reference to this account
+    string cursor = 2;
+}
+
+// Request that is sent when getting a subscription to a stream of accounts
+message ObserveAccountsRequest {
+    // Market identifier
+    string market_id = 1;
+    // Party identifier
+    string party_id = 2;
+    // Asset identifier
+    string asset = 3;
+    // Account type to subscribe to, required field
+    zeta.AccountType type = 4;
+}
+
+// The response that is received when subscribing to a stream of accounts
+message ObserveAccountsResponse {
+    oneof response {
+        // An 'initial image' snapshot containing current account balances
+        AccountSnapshotPage snapshot = 1;
+        // A list of account updates in the last block
+        AccountUpdates updates = 2;
+    }
+}
+
+// An 'initial image' snapshot containing current account balances - may be sent over several response messages
+message AccountSnapshotPage{
+    // List of account balances
+    repeated AccountBalance accounts = 1;
+    // Indicator if the current page is the last one or not
+    bool last_page = 2;
+}
+
+// A list of account updates in the last block
+message AccountUpdates{
+    // List of account balances
+    repeated AccountBalance accounts = 1;
+}
+
+// -- Data node info --
+
+// Request that is sent when querying node info
+message InfoRequest {}
+
+// Response that is received from the node info query
+message InfoResponse {
+    // A semver formatted version of the data node
+    string version = 1;
+    // The commit hash from which the data node was built
+    string commit_hash = 2;
+}
+
+// -- Orders --
+
+// A request that is sent when executing the query for getting a single order
+message GetOrderRequest {
+  // Order identifier
+  string order_id = 1;
+
+  // Optional version of the order
+  optional int32 version = 2;
+}
+
+// The response received from the query for getting a single order
+message GetOrderResponse {
+    // The order, if one was found
+    zeta.Order order = 1;
+}
+
+// Order filter that contains all filtering conditions and values that are applied to the orders listing
+message OrderFilter {
+    // The list of order statuses the orders can be filtered by
+    repeated zeta.Order.Status statuses = 1;
+    // The list of order types the orders can be filtered by
+    repeated zeta.Order.Type types = 2;
+    // The list of timings the orders can be filtered by
+    repeated zeta.Order.TimeInForce time_in_forces = 3;
+    // Indicator if liquidity provision orders should be included or not in the list
+    bool exclude_liquidity = 4;
+}
+
+// A request that is sent when executing a query for a list of orders
+message ListOrdersRequest {
+    // Party identifier
+    optional string party_id = 1;
+    // Market identifier
+    optional string market_id = 2;
+    // Reference
+    optional string reference = 3;
+    // Optional pagination control
+    optional Pagination pagination = 4;
+    // Indicator for listing only live orders, if set to true
+    optional bool live_only = 5;
+    // The date range of the orders being listed
+    optional DateRange date_range = 6;
+    // The order filter contains all filtering conditions and values that are applied to the orders listing
+    optional OrderFilter filter = 7;
+}
+
+// A response that is received from the query to list orders
+message ListOrdersResponse {
+    // Paged orders data with 0 or more orders
+    OrderConnection orders = 1;
+}
+
+// A request that is sent when listing possible order versions
+message ListOrderVersionsRequest {
+    // Order identifier as string
+    string order_id = 1;
+
+    // Optional pagination control
+    optional Pagination pagination = 4;
+}
+
+// A response that is received when listing possible order versions
+message ListOrderVersionsResponse {
+    // Paged orders data with 0 or more order versions
+    OrderConnection orders = 1;
+}
+
+// Request to subscribe to a stream of orders
+message ObserveOrdersRequest {
+    // The fields for market identifier and party identifier are optional filters:
+    // If omitted all orders, for all parties on all markets will be returned on the stream
+    // If a market identifier is provided, the orders from that market will be returned on the stream
+    // If a party identifier is provided, the orders from that party will be returned on the stream
+    // Both filters can be combined
+
+    // Market identifier
+    optional string market_id = 1;
+    // Party identifier
+    optional string party_id = 2;
+    // Exclude liquidity
+    optional bool exclude_liquidity = 3;
+}
+
+// The response that is received from an orders subscription
+message ObserveOrdersResponse {
+    oneof response {
+        // An 'initial image' snapshot containing current live orders
+        OrderSnapshotPage snapshot = 1;
+        // A list of order updates in the last block
+        OrderUpdates updates = 2;
+    }
+}
+
+// 'Initial image' of live orders, may be sent over multiple response messages
+message OrderSnapshotPage{
+    // List of order data parts
+    repeated zeta.Order orders = 1;
+    // Indicator if the last page is reached or not
+    bool last_page = 2;
+}
+
+// List of order updates in the last block
+message OrderUpdates{
+    // List of orders data
+    repeated zeta.Order orders = 1;
+}
+
+// -- Positions --
+
+// Request used to list all positions for a party
+// Optionally, if a market identifier is set, the results will be filtered for that market only
+message ListPositionsRequest {
+    option deprecated = true;
+    // Party identifier, required field
+    string party_id = 1;
+    // Market identifier
+    string market_id = 2;
+    // Optional pagination control
+    optional Pagination pagination = 3;
+}
+
+// Response for a list of positions for a party
+message ListPositionsResponse {
+    option deprecated = true;
+    // A list of 0 or more positions
+    PositionConnection positions = 1;
+}
+
+// Filter to apply to the ListAllPositionsRequest
+message PositionsFilter {
+    // List of party IDs to filter on
+    repeated string party_ids = 1;
+    // List of market IDs to filter on
+    repeated string market_ids = 2;
+}
+
+// Request to list positions, given the position filter is supplied.
+message ListAllPositionsRequest {
+    // Filter to apply to the positions
+    PositionsFilter filter = 1;
+    // Optional pagination control
+    optional Pagination pagination = 2;
+}
+
+// Response to query for listing of positions, given the filter is supplied
+message ListAllPositionsResponse {
+    // A list of 0 or more positions
+    PositionConnection positions = 1;
+}
+
+// Represents the position data with corresponding cursor for it
+message PositionEdge {
+    // Represents position data for a party on the specified market on Zeta
+    zeta.Position node = 1;
+    // A cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of positions with the corresponding page information
+message PositionConnection {
+    // List of positions data
+    repeated PositionEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request that is used to subscribe to a stream of positions
+message ObservePositionsRequest {
+    // Optional party ID
+    optional string party_id = 1;
+    // Optional market ID
+    optional string market_id = 2;
+}
+
+// A response that is received from a positions subscription request
+message ObservePositionsResponse {
+    oneof response {
+        // An 'initial image' snapshot containing current positions
+        PositionSnapshotPage snapshot = 1;
+        // A list of position updates in the last block
+        PositionUpdates updates = 2;
+    }
+}
+
+// 'Initial image' of current positions, may be sent over multiple response messages
+message PositionSnapshotPage{
+    // List of positions data
+    repeated zeta.Position positions = 1;
+    // Indicator if last page is reached or not
+    bool last_page = 2;
+}
+
+// A list of position updates in the last block
+message PositionUpdates{
+    // List of positions data
+    repeated zeta.Position positions = 1;
+}
+
+// Ledger entry filter sets filters on returned set of ledger entries.
+// Ledger entry data can be filtered by asset ID, market ID, party ID for sending and receiving account, as well as by transfer type.
+message LedgerEntryFilter {
+    // close_on_account_filters determines whether an entry must have accounts matching both the account_from_filter
+    // and the account_to_filter. If set to 'true', entries must have matches in both filters.
+    // If set to `false`, entries matching only the account_from_filter or the account_to_filter will also be included.
+    bool close_on_account_filters = 1;
+    // `AccountFilter` object used to set values for filtering sender accounts
+    AccountFilter from_account_filter = 2;
+    // `AccountFilter` object used to set values for filtering receiver accounts
+    AccountFilter to_account_filter = 3;
+    // A list of transfer types that is used for filtering sender and receiver accounts
+    repeated zeta.TransferType transfer_types = 5;
+}
+
+// A list of fields for a ledger entry
+enum LedgerEntryField {
+    LEDGER_ENTRY_FIELD_UNSPECIFIED = 0;
+    LEDGER_ENTRY_FIELD_ACCOUNT_FROM_ID = 1;
+    LEDGER_ENTRY_FIELD_ACCOUNT_TO_ID = 2;
+    LEDGER_ENTRY_FIELD_TRANSFER_TYPE = 3;
+}
+
+// Represents an aggregated view of ledger entry data, sender and receiver accounts,
+// details and balances for both sides after the transfer has been made
+message AggregatedLedgerEntry {
+    // Removed ID field as it is not used, there is no ID for an aggregated ledger entry
+    reserved 1;
+    // Timestamp to of block the result is referring to, in nanoseconds since the epoch
+    int64 timestamp = 2;
+    // The amount of ledger entries for the set of requested accounts at the time above
+    string quantity = 3;
+    // The transfer type
+    zeta.TransferType transfer_type = 4;
+    // The asset ID
+    optional string asset_id = 5;
+    // The type of account sent from
+    zeta.AccountType from_account_type = 6;
+    // The type of account received to
+    zeta.AccountType to_account_type = 7;
+    // The sender's party ID
+    optional string from_account_party_id = 8;
+    // The receiver's party ID
+    optional string to_account_party_id = 9;
+    // The sender market ID
+    optional string from_account_market_id = 10;
+    // The receiver market ID
+    optional string to_account_market_id = 11;
+    // Sender account balance after the transfer
+    string from_account_balance = 12;
+    // Receiver account balance after the transfer
+    string to_account_balance = 13;
+}
+
+// -- LedgerEntries --
+
+// A request that is sent when listing ledger entries
+message ListLedgerEntriesRequest {
+    // 'LedgerEntryFilter' that contains all values and conditions according to which
+    // the listing of ledger entries is filtered
+    LedgerEntryFilter filter = 1;
+    // Optional pagination control
+    optional Pagination pagination = 2;
+    // Date range for which to list ledger entries
+    optional DateRange date_range = 3;
+}
+
+// A request that is sent when exporting ledger entries to csv
+message ExportLedgerEntriesRequest {
+    // Party ID to export ledger entries for
+    string party_id = 1;
+    // Asset ID to export ledger entries for
+    string asset_id = 2;
+    // Optional pagination control
+    optional Pagination pagination = 3;
+    // Date range to export ledger entries for
+    optional DateRange date_range = 4;
+}
+
+// A response that is received when listing ledger entries
+message ListLedgerEntriesResponse {
+    // Represents the list of aggregated ledger entries data with the corresponding page information
+    AggregatedLedgerEntriesConnection ledger_entries = 1;
+}
+
+// A response that is received when exporting ledger entries
+message ExportLedgerEntriesResponse {
+    // Exported ledger entries data as byte stream
+    bytes data = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Represents the aggregated ledger entry data with corresponding cursor for it
+message AggregatedLedgerEntriesEdge {
+    // 'AggregatedLedgerEntry' data
+    AggregatedLedgerEntry node = 1;
+    // A cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of aggregated ledger entries data with the corresponding page information
+message AggregatedLedgerEntriesConnection {
+    // List of 'AggregatedLedgerEntry' data
+    repeated AggregatedLedgerEntriesEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// A request that is received when querying balances changes
+message ListBalanceChangesRequest{
+    // Limit the accounts considered according to the filter supplied
+    AccountFilter filter = 1;
+    // Pagination controls
+    optional Pagination pagination = 5;
+    // Date range over which to query
+    optional DateRange date_range = 6;
+}
+
+// A response that is received when querying balances changes
+message ListBalanceChangesResponse {
+    // The list of aggregated balances with the corresponding page information
+    AggregatedBalanceConnection balances = 1;
+}
+
+
+// -- Balances --
+
+// A request that is used when querying balance history
+message GetBalanceHistoryRequest {
+    // AccountFilter contains values that can be set in order to limit balance history data to them
+    AccountFilter filter = 1;
+    // By default the net balances of all the accounts specified by the filter are returned.
+    // If a list of fields is given in group_by, split out those balances by the supplied criteria.
+    repeated AccountField group_by = 2;
+    optional Pagination pagination = 3;
+    optional DateRange date_range = 4;
+}
+
+// A response that is received when querying for balance history
+message GetBalanceHistoryResponse {
+    // The list of aggregated balances with the corresponding page information
+    AggregatedBalanceConnection balances = 1;
+}
+
+// Represents the AggregatedBalanceEdge data with corresponding cursor for it
+message AggregatedBalanceEdge {
+    // AggregatedBalance data
+    AggregatedBalance node = 1;
+     // A cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of aggregated balance objects with the corresponding page information
+message AggregatedBalanceConnection {
+    // List of aggregated balance data chunks
+    repeated AggregatedBalanceEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// The filter that is used to filter account data by asset ID, party ID, market ID and account type
+message AccountFilter{
+    // Restrict accounts to those holding balances in this asset ID
+    string asset_id = 1;
+    // Restrict accounts to those owned by the parties in this list (pass an empty list for no filter)
+    repeated string party_ids = 2;
+    // Restrict accounts to those connected to the markets in this list (pass an empty list for no filter)
+    repeated string market_ids = 3;
+    // Restrict accounts to those connected to any of the types in this list (pass an empty list for no filter)
+    repeated zeta.AccountType account_types = 4;
+}
+
+// A list of the properties of an account, used for grouping
+enum AccountField {
+    ACCOUNT_FIELD_UNSPECIFIED = 0;
+    ACCOUNT_FIELD_ID = 1;
+    ACCOUNT_FIELD_PARTY_ID = 2;
+    ACCOUNT_FIELD_ASSET_ID = 3;
+    ACCOUNT_FIELD_MARKET_ID = 4;
+    ACCOUNT_FIELD_TYPE = 5;
+}
+
+// AggregatedBalance data contains the balance of the set of requested accounts combined with corresponding
+// party ID, market ID and account type details
+message AggregatedBalance {
+    // Timestamp to of block the balance is referring to, in nanoseconds since the epoch
+    int64 timestamp = 1;
+    // The balance of the set of requested accounts at the time above
+    string balance = 2;
+    // If grouping by party, the party ID
+    optional string party_id = 4;
+    // If grouping by asset, the asset ID
+    optional string asset_id = 5;
+    // If grouping by market, the market ID
+    optional string market_id = 6;
+    // If grouping by account type, the account type
+    optional zeta.AccountType account_type = 7;
+}
+
+// -- Market Data --
+
+// Request that is sent to get market depth subscription
+message ObserveMarketsDepthRequest {
+    // List of market IDs to be obtained in the subscription
+    repeated string market_ids = 1;
+}
+
+// Response that is received for MarketDepth subscription
+message ObserveMarketsDepthResponse {
+    // List of market depth data
+    repeated zeta.MarketDepth market_depth = 1;
+}
+
+// Request that is sent for market depth update subscription
+message ObserveMarketsDepthUpdatesRequest {
+    // List of market IDs to be obtained in the subscription
+    repeated string market_ids = 1;
+}
+
+// Response that is received for market depth update subscription
+message ObserveMarketsDepthUpdatesResponse {
+    // List of market depth update data
+    repeated zeta.MarketDepthUpdate update = 1;
+}
+
+// Request that is sent for market data subscription
+message ObserveMarketsDataRequest {
+    // List of market IDs to be obtained in the subscription
+    repeated string market_ids = 1;
+}
+
+// Response that is received for market data subscription
+message ObserveMarketsDataResponse {
+    // List of market data
+    repeated zeta.MarketData market_data = 1;
+}
+
+// Request that is sent when requesting latest market depth data
+message GetLatestMarketDepthRequest {
+    // Market identifier, required field
+    string market_id = 1;
+
+    // An optional field to indicate the maximum market depth
+    optional uint64 max_depth = 2;
+}
+
+// Response that is received when latest market depth data is queried
+message GetLatestMarketDepthResponse {
+    // Market identifier
+    string market_id = 1;
+    // Zero or more price levels for the buy side of the market depth data
+    repeated zeta.PriceLevel buy = 2;
+    // Zero or more price levels for the sell side of the market depth data
+    repeated zeta.PriceLevel sell = 3;
+    // Last trade recorded on Zeta at the time of retrieving the `MarketDepthResponse`
+    zeta.Trade last_trade = 4;
+    // Sequence number incremented after each update
+    uint64 sequence_number = 5;
+}
+
+// Request that is sent when listing the latest market data for every market
+message ListLatestMarketDataRequest {
+}
+
+// Response that is received when listing the latest market data for every market
+message ListLatestMarketDataResponse {
+    repeated zeta.MarketData markets_data = 1;
+}
+
+// Request that is sent when listing the latest market data for a given market
+message GetLatestMarketDataRequest {
+    // Market identifier, required field
+    string market_id = 1;
+}
+
+// Response that is received when listing the latest market data for a given market
+message GetLatestMarketDataResponse {
+    // Market identifier, required field
+    zeta.MarketData market_data = 1;
+}
+
+// Request that is sent for getting Market Data History
+message GetMarketDataHistoryByIDRequest {
+    // Market identifier, required field
+    string market_id = 1;
+    // Optional Unix time in nanoseconds
+    optional int64 start_timestamp = 2;
+    // Optional Unix time in nanoseconds
+    optional int64 end_timestamp = 3;
+    // Optional pagination control
+    optional Pagination pagination = 4;
+    // Optional offset pagination control in order to support existing version of the Market Data History query
+    // that is available in the GraphQL API. That function has been deprecated, but until it's removed we have
+    // added this to support pagination queries that use an offset.
+    optional OffsetPagination offset_pagination = 5 [deprecated = true];
+}
+
+// Response that is received when querying Market Data History
+message GetMarketDataHistoryByIDResponse {
+    // The list of market data history with the corresponding page information
+    MarketDataConnection market_data = 1;
+}
+
+// Represents the market data with corresponding cursor for it
+message MarketDataEdge {
+    // 'MarketData'
+    zeta.MarketData node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of market data objects with the corresponding page information
+message MarketDataConnection {
+    // List of market data chunks
+    repeated MarketDataEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request that is used to subscribe to a stream of data for all markets
+// Optionally, the list can be additionally filtered by market
+message MarketsDataSubscribeRequest {
+    // Market identifier
+    string market_id = 1;
+}
+
+// Response that is used when subscribing to a stream of data for all markets
+message MarketsDataSubscribeResponse {
+    // List of market data chunks for each market
+    repeated zeta.MarketData market_data = 1;
+}
+
+// -- Transfers --
+
+// The direction of a transfer
+enum TransferDirection {
+    TRANSFER_DIRECTION_UNSPECIFIED = 0;
+    TRANSFER_DIRECTION_TRANSFER_FROM = 1;
+    TRANSFER_DIRECTION_TRANSFER_TO = 2;
+    TRANSFER_DIRECTION_TRANSFER_TO_OR_FROM = 3;
+}
+
+// Request that is sent to list transfers
+message ListTransfersRequest {
+    // Public key for which to request transfers
+    optional string pubkey = 1;
+    // Transfer directions (sender, receiver) to include in the response data
+    TransferDirection direction = 2;
+    // Optional pagination control
+    optional Pagination pagination = 3;
+}
+
+// Response that is received when listing  transfers
+message ListTransfersResponse {
+    TransferConnection transfers = 1;
+}
+
+// Represents the transfers data with a corresponding cursor for it
+message TransferEdge {
+    // Transfer data
+    zeta.events.v1.Transfer node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of transfers data objects with the corresponding page information
+message TransferConnection {
+    // List of transfers data chunks
+    repeated TransferEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Network Limits --
+
+// Request that is used to query current network limits
+message GetNetworkLimitsRequest {}
+
+// Response received when querying the current network limits
+message GetNetworkLimitsResponse {
+    // List of received network limits
+    zeta.NetworkLimits limits = 1;
+}
+
+// -- Candles --
+
+// Request that is used to fetch a list of supported intervals for the given market along with the corresponding candle ID
+message ListCandleIntervalsRequest {
+    // The unique identifier for the market
+    string market_id = 1;
+}
+
+// Maps an interval for a given market to its corresponding candle ID
+message IntervalToCandleId {
+    // The interval for the candle
+    string interval = 1;
+
+    // The unique id of the candle
+    string candle_id=2;
+}
+
+// A list of mapped pairs `interval` -> `candle ID` for a given market
+message ListCandleIntervalsResponse {
+    // List of the mappings
+    repeated IntervalToCandleId interval_to_candle_id = 1;
+}
+
+// Represents the high, low, open, and closing prices for an interval of trading,
+// referred to commonly as a candlestick or candle
+message Candle {
+    // Timestamp for the point in time when the candle was initially created/opened, in nanoseconds since the epoch
+    int64 start = 1;
+    // Timestamp for the point in time when the candle was last updated, in nanoseconds since the epoch
+    int64 last_update = 2;
+    // Highest price for trading during the candle interval
+    string high = 3;
+    // Lowest price for trading during the candle interval
+    string low = 4;
+    // Open trade price
+    string open = 5;
+    // Closing trade price
+    string close = 6;
+    // Total trading volume during the candle interval
+    uint64 volume = 7;
+}
+
+// Request that is used to subscribe to a stream of candles
+message ObserveCandleDataRequest {
+    // The unique identifier for the candle
+    string candle_id = 1;
+}
+
+// Response that is received when subscribing to a stream of candles
+message ObserveCandleDataResponse {
+    // Candle data
+    Candle candle = 1;
+}
+
+// Request that is used when listing candles for a market at an interval
+message ListCandleDataRequest {
+    // Candle ID, required field.
+    string candle_id = 1;
+
+    // Timestamp to retrieve candles since, in nanoseconds since the epoch, required field
+    int64 from_timestamp = 2;
+
+    // Timestamp to retrieve candles since, in nanoseconds since the epoch, required field
+    int64 to_timestamp = 3;
+
+    // Time interval for the candles, required field specified as a valid postgres interval
+    zeta.Interval interval = 4;
+
+    // pagination controls
+    optional Pagination pagination = 5;
+}
+
+// Response for list of candles for a market at an interval
+message ListCandleDataResponse {
+    // A list of 0 or more candles
+    CandleDataConnection candles = 1;
+}
+
+// Represents the candle data with the corresponding cursor for it
+message CandleEdge {
+    // List of candle data chunks
+    Candle node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of candles with the page information of the listing
+message CandleDataConnection {
+    // List of candle data
+    repeated CandleEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Votes --
+
+// Request that is used to list governance votes
+message ListVotesRequest {
+  // Party for which the votes are requested
+  optional string party_id = 1;
+  // A proposal ID to list votes for
+  optional string proposal_id = 2;
+
+  // Optional pagination control
+  optional Pagination pagination = 3;
+}
+
+// Response that is received when listing Votes
+message ListVotesResponse {
+    // Votes data received
+    VoteConnection votes = 1;
+}
+
+// Votes data with the corresponding cursor for it
+message VoteEdge {
+    // Vote data
+    zeta.Vote node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of Vote data chunks with the corresponding list page information
+message VoteConnection {
+    // List of Vote data
+    repeated VoteEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request that is sent to subscribe to votes
+message ObserveVotesRequest {
+    // Party ID for which the votes are requested
+    optional string party_id = 1;
+    // Option proposal ID for which the votes are requested
+    optional string proposal_id = 2;
+}
+
+// Response that is received from votes subscription
+message ObserveVotesResponse {
+    // Vote data
+    zeta.Vote vote = 1;
+}
+
+// Request for adding a signature bundle to the signer list of a multisig contract for a particular validator
+message ListERC20MultiSigSignerAddedBundlesRequest {
+
+    // The node ID of the validator for which a signature bundle is required
+    string node_id = 1;
+
+    // The ethereum address of the validator which will submit the bundle
+    string submitter = 2;
+
+    // The epoch which generated the bundle i.e the epoch in which the node was promoted to tendermint validator
+    string epoch_seq = 3;
+
+    // Pagination controls
+    Pagination pagination = 4;
+}
+
+// Response from adding a signature bundle to the signer list of a multisig contract for a particular validator
+message ListERC20MultiSigSignerAddedBundlesResponse {
+    // List of bundles for that validator, it may have been added multiple times if removed in between
+    ERC20MultiSigSignerAddedConnection bundles = 1;
+}
+
+// Represents the signature data that is to be added with the corresponding cursor for it
+message ERC20MultiSigSignerAddedEdge {
+    // Signature data to be added
+    zeta.events.v1.ERC20MultiSigSignerAdded node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the signature bundle data that is to be added the corresponding cursor for it
+message ERC20MultiSigSignerAddedBundleEdge {
+    // Signature bundle data to be added
+    ERC20MultiSigSignerAddedBundle node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of signature data chunks to be added with the corresponding list page information
+message ERC20MultiSigSignerAddedConnection {
+    // List of signature bundle data parts
+    repeated ERC20MultiSigSignerAddedBundleEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Signature bundle data to be added
+message ERC20MultiSigSignerAddedBundle {
+
+    // The ethereum address of the signer to be removed
+    string new_signer = 1;
+
+    // The ethereum address of the submitter
+    string submitter = 2;
+
+    // The nonce used in the signing operation
+    string nonce = 4;
+
+    // unixnano timestamp for when the validator was added
+    int64 timestamp = 5;
+
+    // The bundle of signatures from current validators to sign in the new signer
+    string signatures = 6;
+
+    // The epoch in which the validator was added
+    string epoch_seq = 3;
+
+}
+
+// Request for removing a signature bundle from the signer list of the multisig contract for a particular validator
+message ListERC20MultiSigSignerRemovedBundlesRequest {
+    // The node ID of the validator of which a signature bundle is required
+    string node_id = 1;
+
+    // The ethereum address of the validator which will submit the bundle
+    string submitter = 2;
+
+    // The epoch which generated the bundle i.e the epoch in which the node was demoted from a tendermint validator
+    string epoch_seq = 3;
+
+    // Pagination controls
+    Pagination pagination = 4;
+}
+
+// Response when removing a signature bundle from the signer list of the multisig contract for a particular validator
+message ListERC20MultiSigSignerRemovedBundlesResponse {
+    // List of signer bundle data parts for that validator
+    ERC20MultiSigSignerRemovedConnection bundles = 1;
+}
+
+// Represents the signature data to be removed with the corresponding cursor for it
+message ERC20MultiSigSignerRemovedEdge {
+    // Signature data to be removed
+    zeta.events.v1.ERC20MultiSigSignerRemoved node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the signature bundle data to be removed, with the corresponding cursor for it
+message ERC20MultiSigSignerRemovedBundleEdge {
+    // Signature bundle data to be added
+    ERC20MultiSigSignerRemovedBundle node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Represents the list of signature data chunks to be removed, with the corresponding list page information
+message ERC20MultiSigSignerRemovedConnection {
+    // List of signature bundle data parts
+    repeated ERC20MultiSigSignerRemovedBundleEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Signature bundle data to be removed
+message ERC20MultiSigSignerRemovedBundle {
+
+    // The ethereum address of the signer to be removed
+    string old_signer = 1;
+
+    // The ethereum address of the submitter
+    string submitter = 2;
+
+    // The nonce used in the signing operation
+    string nonce = 4;
+
+    // unixnano timestamp for when the validator was added
+    int64 timestamp = 5;
+
+    // The bundle of signatures from current validators to sign in the new signer
+    string signatures = 6;
+
+    // The epoch in which the validator was removed
+    string epoch_seq = 7;
+
+}
+
+// Request for listing the signature bundle to an ERC-20 token in the collateral bridge
+message GetERC20ListAssetBundleRequest {
+  // The ID of the asset requested
+  string asset_id = 1;
+}
+
+// Response from listing the signature bundle to an ERC-20 token in the collateral bridge
+message GetERC20ListAssetBundleResponse {
+  // The address of the asset on ethereum
+  string asset_source = 1;
+  // The ID of the zeta asset
+  string zeta_asset_id = 2;
+  // The nonce, which is actually the internal reference for the proposal
+  string nonce = 3;
+   // The signatures bundle as hex encoded data, forward by 0x
+  // e.g: 0x + sig1 + sig2 + ... + sixN
+  string signatures = 4;
+}
+
+// Request for the signature bundle to update the token limits (maxLifetimeDeposit and withdrawThreshold) for a given ERC20 token (already allowlisted) in the collateral bridge
+message GetERC20SetAssetLimitsBundleRequest {
+  // The ID of the proposal to update an asset
+  string proposal_id = 1;
+}
+
+// Response for the signature bundle to update the token limits (maxLifetimeDeposit and withdrawThreshold) for a given ERC20 token (already allowlisted) in the collateral bridge
+message GetERC20SetAssetLimitsBundleResponse {
+  // The address of the asset on ethereum
+  string asset_source = 1;
+  // The ID of the zeta asset
+  string zeta_asset_id = 2;
+  // The nonce, which is actually the internal reference for the proposal
+  string nonce = 3;
+  // The lifetime limit deposit for this asset
+  string lifetime_limit = 4;
+  // The threshold withdraw for this asset
+  string threshold = 5;
+  // The signatures bundle as hex encoded data, forward by 0x
+  // e.g: 0x + sig1 + sig2 + ... + sixN
+  string signatures = 6;
+}
+
+// The request to get all information required to bundle the call to finalise the withdrawal on the erc20 bridge
+message GetERC20WithdrawalApprovalRequest {
+    // The ID of the withdrawal
+    string withdrawal_id = 1;
+}
+
+// The response with all information required to bundle the call to finalise the withdrawal on the erc20 bridge
+// function withdraw_asset(address asset_source, uint256 asset_id, uint256 amount, uint256 expiry, uint256 nonce, bytes memory signatures)
+message GetERC20WithdrawalApprovalResponse {
+  reserved 3;
+  // The address of asset on ethereum
+  string asset_source = 1;
+  // The amount to be withdrawn
+  string amount = 2;
+  // The nonce, which is actually the internal reference for the withdrawal
+  string nonce = 4;
+  // The signatures bundle as hex encoded data, forward by 0x
+  // e.g: 0x + sig1 + sig2 + ... + sixN
+  string signatures = 5;
+  // The ethereum address to withdraw the funds to, 0x prefixed
+  string target_address = 6;
+  // The creation timestamps
+  int64 creation = 7;
+}
+
+// -- Trades --
+
+// Request for the latest trade that occurred on Zeta for a given market
+message GetLastTradeRequest {
+    // Market ID, required field
+    string market_id = 1;
+}
+
+// Response for the latest trade that occurred on Zeta for a given market
+message GetLastTradeResponse {
+    // A trade, if one is found
+    zeta.Trade trade = 1;
+}
+
+// Request to list trades
+message ListTradesRequest {
+    // Market ID for which to list trades for, if provided
+    optional string market_id = 1;
+    // Order ID for which to list trades for, if provided
+    optional string order_id = 2;
+    // Party ID for which to list trades for, if provided
+    optional string party_id = 3;
+    // Pagination control
+    optional Pagination pagination = 4;
+    // Date range for the listing, if provided
+    optional DateRange date_range = 5;
+}
+
+// Response from listing trades
+message ListTradesResponse {
+    // Listed trades
+    TradeConnection trades = 1;
+}
+
+// List of trades with the corresponding list page information
+message TradeConnection {
+    // List of trades data
+    repeated TradeEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// List of trades
+message TradeEdge {
+    // Trade data
+    zeta.Trade node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Request to subscribe to a stream of trades
+message ObserveTradesRequest {
+    // The fields for market ID and party ID are optional filters:
+    // If omitted all trades, for all parties on all markets will be returned on the stream
+    // If market identifier is given, trades from that market will be returned on the stream
+    // If party identifier is given, trades from that party will be returned on the stream
+    // Both filters can be combined
+
+    // Market ID
+    optional string market_id = 1;
+    // Party ID
+    optional string party_id = 2;
+}
+
+// A stream of trades
+message ObserveTradesResponse {
+    // A list of 0 or more trades
+    repeated zeta.Trade trades = 1;
+}
+
+// -- Oracles --
+
+// The request to get a specific oracle spec by its ID
+message GetOracleSpecRequest {
+    // The ID to get the oracle spec for
+    string oracle_spec_id = 1;
+}
+
+// The response for a oracle spec
+message GetOracleSpecResponse {
+    // The external data spec matching the ID.
+    zeta.OracleSpec oracle_spec = 1 ;
+}
+
+// The request to get all active oracle specs
+message ListOracleSpecsRequest {
+    // Pagination controls
+    optional Pagination pagination = 2;
+}
+
+// The response to get all active oracle specs
+message ListOracleSpecsResponse {
+    // The list of active oracle specs
+    OracleSpecsConnection oracle_specs = 1;
+}
+
+// The request to get all seen oracle data
+message ListOracleDataRequest {
+    optional string oracle_spec_id = 1;
+    // Pagination controls
+    optional Pagination pagination = 2;
+}
+
+// The response to get all seen oracle data
+message ListOracleDataResponse {
+    // The list of seen oracle data
+    OracleDataConnection oracle_data = 1;
+}
+
+// Oracle specs with cursor
+message OracleSpecEdge {
+    // List of oracle spec data
+    zeta.OracleSpec node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Oracle specs with corresponding list page information
+message OracleSpecsConnection {
+    // Oracle specs
+    repeated OracleSpecEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Oracle data with corresponding cursor
+message OracleDataEdge {
+    // Oracle data
+    zeta.OracleData node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Oracle data with page info
+message OracleDataConnection {
+    // List of oracle data parts
+    repeated OracleDataEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Markets --
+
+// Request for getting a market by ID
+message GetMarketRequest {
+    // The market ID
+    string market_id = 1;
+}
+
+// Response from getting a market by ID
+message GetMarketResponse {
+    // The market
+    zeta.Market market = 1;
+}
+
+// Request for listing markets
+message ListMarketsRequest {
+    // Pagination control
+    optional Pagination pagination = 2;
+    // Whether or not to include settled markets in the response; default to true if not specified.
+    optional bool include_settled = 3;
+}
+
+// Response from listing markets
+message ListMarketsResponse {
+    // List of markets data
+    MarketConnection markets = 1;
+}
+
+// Market data with corresponding cursor
+message MarketEdge {
+    // Market data
+    zeta.Market node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Market data list with corresponding list page information
+message MarketConnection {
+    // List of markets data
+    repeated MarketEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Parties --
+
+// Request to get party by ID
+message GetPartyRequest {
+    // The party ID
+    string party_id = 1;
+}
+
+// Response from getting party by ID
+message GetPartyResponse {
+    // The party data
+    zeta.Party party = 1;
+}
+
+// Request to list parties by ID
+message ListPartiesRequest {
+    // Party ID
+    string party_id = 1;
+    // Pagination control
+    Pagination pagination = 2;
+}
+
+// Response from listing parties
+message ListPartiesResponse {
+    // Parties data
+    PartyConnection parties = 1;
+}
+
+// Party data with corresponding cursors
+message PartyEdge {
+    // Party data
+    zeta.Party node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of parties data with page info
+message PartyConnection {
+    // List of parties data
+    repeated PartyEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Order data with corresponding cursor
+message OrderEdge {
+    // Order data
+    zeta.Order node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Request for listing margin levels
+message ListMarginLevelsRequest {
+    // Party ID for which to list the margin levels
+    string party_id = 1;
+    // Market ID for which to list the margin levels
+    string market_id = 2;
+    // Pagination control
+    Pagination pagination = 3;
+}
+
+// Response from listing margin levels
+message ListMarginLevelsResponse {
+    // Margin levels data
+    MarginConnection margin_levels = 1;
+}
+
+// Request to subscribe to a stream of MarginLevels data matching the given party identifier
+// Optionally, the list can be additionally filtered by market
+message ObserveMarginLevelsRequest {
+    // Party identifier, required field
+    string party_id = 1;
+    // Market identifier
+    optional string market_id = 2;
+}
+
+// Response from subscribing to margin levels data
+message ObserveMarginLevelsResponse {
+    zeta.MarginLevels margin_levels = 1;
+}
+
+// List of orders data with corresponding page information
+message OrderConnection {
+    // Orders data list
+    repeated OrderEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Margin data with corresponding cursors
+message MarginEdge {
+    // Margin levels data
+    zeta.MarginLevels node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of margins data with corresponding page information
+message MarginConnection {
+    // List of margins
+    repeated MarginEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// A request to get reward details for a party
+message ListRewardsRequest {
+    // Party ID for which to get the list of rewards
+    string party_id = 1;
+    // Asset ID for which to get the list of rewards, if provided
+    optional string asset_id = 2;
+    // Pagination control
+    optional Pagination pagination = 3;
+    // Epoch from which to list the rewards, if provided
+    optional uint64 from_epoch = 4;
+    // Epoch up-to-which to list the rewards, if provided
+    optional uint64 to_epoch = 5;
+}
+
+// The response for listing reward details for a single party
+message ListRewardsResponse {
+    // Rewards data
+    RewardsConnection rewards = 1;
+}
+
+// Rewards data with corresponding cursor
+message RewardEdge {
+    // Rewards data
+    zeta.Reward node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged rewards data with corresponding page information
+message RewardsConnection {
+    // List of rewards data parts
+    repeated RewardEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// A request to get reward details for a party
+message ListRewardSummariesRequest {
+    // Party ID for which to list rewards, if provided
+    optional string party_id = 1;
+    // Asset ID for which to list rewards, if provided
+    optional string asset_id = 2;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 3;
+}
+
+// The response from listing reward details in for a single party
+message ListRewardSummariesResponse {
+    // Rewards details data
+    repeated zeta.RewardSummary summaries = 1;
+}
+
+// A filter to restrict the results returned by the ListEpochRewardSummaries
+message RewardSummaryFilter {
+    // Restrict the results to those connected to the assets in this list (pass an empty list for no filter)
+    repeated string asset_ids = 1;
+    // Restrict the results to those connected to the markets in this list (pass an empty list for no filter)
+    repeated string market_ids = 2;
+    // Optional range of epochs to filter on
+    optional uint64 from_epoch = 3;
+    // Epoch to which to filter rewards summaries
+    optional uint64 to_epoch = 4;
+}
+
+// A request to get summary of reward per epoch for a given range of epochs
+message ListEpochRewardSummariesRequest {
+    // Limit the results considered according to the filter supplied
+    RewardSummaryFilter filter = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 4;
+}
+
+// The return message with reward details in for a single party
+message ListEpochRewardSummariesResponse {
+    EpochRewardSummaryConnection summaries = 1;
+}
+
+// Paged rewards summary data for epoch with corresponding page information
+message EpochRewardSummaryConnection {
+    // Rewards summary data parts for epochs
+    repeated EpochRewardSummaryEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Rewards summary data for epoch with corresponding cursors
+message EpochRewardSummaryEdge {
+    // Rewards summary data for epoch
+    zeta.EpochRewardSummary node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Request sent for subscribing to rewards
+message ObserveRewardsRequest {
+    // Asset ID to get rewards data for, if provided
+    optional string asset_id = 1;
+    // Party ID to get rewards data for, if provided
+    optional string party_id = 2;
+}
+
+// Response that is received from subscribing to rewards data
+message ObserveRewardsResponse {
+    // Rewards data received
+    zeta.Reward reward = 1;
+}
+
+// -- Deposits --
+
+// A request to get data about a specific deposit by ID
+message GetDepositRequest {
+    // The deposit ID, which can be obtained using the List Deposits query
+    string id = 1;
+}
+
+// A response that is received from getting deposit data
+message GetDepositResponse {
+    // The deposit matching the ID from the request
+    zeta.Deposit deposit = 1 ;
+}
+
+// A request to list all deposits for a given party
+message ListDepositsRequest {
+    // The ID of the party whose deposits are to be retrieved
+    string party_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+    // Date range of the requested data, if provided
+    optional DateRange date_range = 3;
+}
+
+// Response from listing deposits
+message ListDepositsResponse {
+    // Deposits data
+    DepositsConnection deposits = 1;
+}
+
+// Deposits data with corresponding cursor
+message DepositEdge {
+    // Deposit data
+    zeta.Deposit node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged deposits data received with the corresponding page information
+message DepositsConnection {
+    // Deposits data parts
+    repeated DepositEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Withdrawals --
+
+// A request to get a specific withdrawal by identifier
+message GetWithdrawalRequest {
+    // The ID of the withdrawal to get
+    string id = 1;
+}
+
+// A response for a withdrawal request
+message GetWithdrawalResponse {
+    // The withdrawal matching the identifier from the request
+    zeta.Withdrawal withdrawal = 1;
+}
+
+// List all withdrawals for a given party
+message ListWithdrawalsRequest {
+    // The party ID whose withdrawals we want to retrieve
+    string party_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+     // Date range of the requested data, if provided
+    optional DateRange date_range = 3;
+}
+
+// Response from listing withdrawals data
+message ListWithdrawalsResponse {
+    // List of withdrawals data parts
+    WithdrawalsConnection withdrawals = 1;
+}
+
+// Withdrawals data with corresponding cursor
+message WithdrawalEdge {
+    // Withdrawals data
+    zeta.Withdrawal node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of withdrawals data with corresponding page information
+message WithdrawalsConnection {
+    // List of withdrawals data parts
+    repeated WithdrawalEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Assets --
+
+// Request for obtaining asset
+message GetAssetRequest {
+    // Asset ID to get data for
+    string asset_id = 1;
+}
+
+// Response from getting an asset
+message GetAssetResponse {
+    // Asset information that is returned
+    zeta.Asset asset = 1;
+}
+
+// Request for listing assets data
+message ListAssetsRequest {
+    // Optional asset ID to list data for
+    optional string asset_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response from listing assets
+message ListAssetsResponse {
+    // Assets data with page information
+    AssetsConnection assets = 1;
+}
+
+// Assets data with corresponding cursor data
+message AssetEdge {
+    // The asset data returned
+    zeta.Asset node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged list of asset data with corresponding page information
+message AssetsConnection {
+    // List of assets data chunks
+    repeated AssetEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Liquidity Provisions --
+
+// Request for listing liquidity provisions
+message ListLiquidityProvisionsRequest {
+    // The target market for the liquidity provision orders
+    optional string market_id = 1;
+    // The party which submitted the liquidity provision orders
+    optional string party_id = 2;
+    // The reference of the liquidity provision
+    optional string reference = 3;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 4;
+}
+
+// Response from listing liquidity provisions
+message ListLiquidityProvisionsResponse {
+    // List liquidity provisions data with corresponding page information
+    LiquidityProvisionsConnection liquidity_provisions = 1;
+}
+
+// Paged liquidity provision data with corresponding cursor
+message LiquidityProvisionsEdge {
+    // Liquidity provision data
+    zeta.LiquidityProvision node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of liquidity provisions data chunks with corresponding page information
+message LiquidityProvisionsConnection {
+    repeated LiquidityProvisionsEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request sent to subscribe to liquidity provisions
+message ObserveLiquidityProvisionsRequest {
+    // The target market to observe for liquidity provision orders
+    optional string market_id = 1;
+    // The target party to observe for submitted liquidity provision orders
+    optional string party_id = 2;
+}
+
+// Response from liquidity provisions subscription
+message ObserveLiquidityProvisionsResponse {
+    repeated zeta.LiquidityProvision liquidity_provisions = 1;
+}
+
+// -- Governance Data --
+
+// Request to get governance data
+message GetGovernanceDataRequest {
+    // Proposal ID to get governance data for, if provided
+    optional string proposal_id = 1;
+    // Reference to get proposal data for, if provided
+    optional string reference = 2;
+}
+
+// Response from getting governance data
+message GetGovernanceDataResponse {
+    // Governance data content
+    zeta.GovernanceData data = 1;
+}
+
+// Request to list governance data
+message ListGovernanceDataRequest {
+    // Filter for the type(s) of governance proposals to view
+    enum Type {
+        TYPE_UNSPECIFIED = 0;
+        // List all proposals
+        TYPE_ALL = 1;
+        // List new market proposals
+        TYPE_NEW_MARKET = 2;
+        // List update market proposals
+        TYPE_UPDATE_MARKET = 3;
+        // List change Zeta network parameter proposals
+        TYPE_NETWORK_PARAMETERS = 4;
+        // New asset proposals
+        TYPE_NEW_ASSET = 5;
+        // Proposals for creating a new free form proposal
+        TYPE_NEW_FREE_FORM = 6;
+        // Update asset proposals
+        TYPE_UPDATE_ASSET = 7;
+    }
+    // Proposal state to list governance data for, if provided
+    optional zeta.Proposal.State proposal_state = 1;
+    // Proposal type to list governance data for, if provided
+    optional Type proposal_type = 2;
+    // Proposer party ID to list governance data for, if provided
+    optional string proposer_party_id = 3;
+    // Proposal reference to list governance data for, if provided
+    optional string proposal_reference = 4;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 5;
+}
+
+// Response from listing governance data
+message ListGovernanceDataResponse {
+    // Paged governance data with corresponding page information
+    GovernanceDataConnection connection = 1;
+}
+
+// Governance data with corresponding cursor
+message GovernanceDataEdge {
+    // Governance data content
+    zeta.GovernanceData node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged list of governance data with corresponding page information
+message GovernanceDataConnection {
+    // List of governance data parts with corresponding cursors
+    repeated GovernanceDataEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request for governance subscription
+message ObserveGovernanceRequest {
+    // Party ID to get the governance subscription for, if provided
+    optional string party_id = 1;
+}
+
+// Response from governance subscription
+message ObserveGovernanceResponse {
+    // Governance data
+    zeta.GovernanceData data = 1;
+}
+
+// Request for listing delegations
+message ListDelegationsRequest {
+    // Party ID to list delegations for, if provided
+    optional string party_id = 1;
+    // Node ID to list delegations for, if provided
+    optional string node_id = 2;
+    // Epoch ID to list delegations for, if provided
+    optional string epoch_id = 3;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 4;
+}
+
+// Response from listing delegations
+message ListDelegationsResponse {
+    // Delegations data with corresponding page information
+    DelegationsConnection delegations = 1;
+}
+
+// Delegation data with corresponding cursors
+message DelegationEdge {
+    // Delegation data
+    zeta.Delegation node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of delegations data with corresponding page information
+message DelegationsConnection {
+    // List of delegations data
+    repeated DelegationEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request to subscribe to all event related to delegations, with the given filters
+message ObserveDelegationsRequest {
+    // Party ID to get delegations for, if provided
+    optional string party_id = 1;
+    // Node ID to get delegations for, if provided
+    optional string node_id = 2;
+}
+
+// Response with all events related to delegations, with the given filters
+message ObserveDelegationsResponse {
+    // Delegation data
+    zeta.Delegation delegation = 1;
+}
+
+// -- Nodes --
+
+// Request to get network data
+message GetNetworkDataRequest {}
+
+// Response from getting network data
+message GetNetworkDataResponse {
+    // Node data
+    zeta.NodeData node_data = 1;
+}
+
+// Request to get node data
+message GetNodeRequest {
+    // Node ID to get data for
+    string id = 1;
+}
+
+// Response from getting node
+message GetNodeResponse {
+    // Node data
+    zeta.Node node = 1;
+}
+
+// Request to list nodes
+message ListNodesRequest {
+    // Epoch number to list nodes for, if provided
+    optional uint64 epoch_seq = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response from listing nodes
+message ListNodesResponse {
+    // Node data with corresponding page information
+    NodesConnection nodes = 1;
+}
+
+// Node data with corresponding cursor
+message NodeEdge {
+    // Node data
+    zeta.Node node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged list of nodes data with corresponding page information
+message NodesConnection {
+    // List of nodes data
+    repeated NodeEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request to specify the identifier of the resource to retrieve aggregated signatures for
+message ListNodeSignaturesRequest {
+    // Resource ID, required field
+    string id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response to specify the identifier of the resource to retrieve aggregated signatures for
+message ListNodeSignaturesResponse {
+    // List of nodes signatures with corresponding page information
+    NodeSignaturesConnection signatures = 1;
+}
+
+// Nodes signature edge with corresponding cursor
+message NodeSignatureEdge {
+    // Node signature data
+    zeta.commands.v1.NodeSignature node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of nodes signatures with corresponding page info
+message NodeSignaturesConnection {
+    // A list of 0 or more signatures
+    repeated NodeSignatureEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Epochs --
+
+// Request to fetch epoch data
+message GetEpochRequest {
+    // Epoch ID to get, if provided
+   optional uint64 id = 1;
+}
+
+// Response from getting epoch
+message GetEpochResponse {
+    zeta.Epoch epoch = 1;
+}
+
+// -- Estimates --
+
+// Request to fetch the estimated fee if an order were to trade immediately
+message EstimateFeeRequest {
+    // MarketID (used to specify the fee factors)
+  string market_id = 1;
+  // Price (the price at which the order could trade)
+  string price = 2;
+    // Size (the size at which the order could eventually trade)
+  uint64 size = 3;
+}
+
+// Response that is received from EstimateFeeRequest, contains the estimated fees for a given order
+message EstimateFeeResponse {
+    // Summary of the estimated fees for this order if it were to trade now
+    zeta.Fee fee = 2;
+}
+
+// Request to fetch the estimated MarginLevels if an order were to trade immediately
+message EstimateMarginRequest {
+    // Market ID for the order
+    string market_id = 1;
+    // Party ID of the order
+    string party_id = 2;
+    // Order side - indicator for Seller or Buyer side
+    zeta.Side side = 3;
+    // Type of the order
+    zeta.Order.Type type = 4;
+    // Size of order
+    uint64 size = 5;
+    // Price of the asset
+    string price = 6;
+}
+
+// Response to an estimate margin request, containing the estimated margin levels for a given order
+message EstimateMarginResponse {
+    // Summary of the estimated margins for this order if it were to trade now
+    zeta.MarginLevels margin_levels = 2;
+}
+
+// A message requesting for the list of all network parameters
+message ListNetworkParametersRequest {
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 1;
+}
+
+// A response containing all of the zeta network parameters
+message ListNetworkParametersResponse {
+    // List of network parameters with corresponding page info
+    NetworkParameterConnection network_parameters = 1;
+}
+
+// A message requesting a single network parameter
+message GetNetworkParameterRequest {
+  // The key identifying the network parameter
+  string key = 1;
+}
+
+// Response that is received when getting a network parameter
+message GetNetworkParameterResponse {
+  // The network parameter key and value
+  zeta.NetworkParameter network_parameter = 1;
+}
+
+// Network parameter with corresponding cursor
+message NetworkParameterEdge {
+    // Network parameter data
+    zeta.NetworkParameter node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of network parameters with corresponding page information
+message NetworkParameterConnection {
+    // List of network parameters data
+    repeated NetworkParameterEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Checkpoints --
+
+// The actual data regarding a checkpoint
+message Checkpoint {
+    // Hash of the checkpoint
+    string hash = 1;
+    // Block hash at which the checkpoint is made
+    string block_hash = 2;
+    // Block number at which the checkpoint is made
+    uint64 at_block = 3;
+}
+
+// Request to get all checkpoints. Currently no fields, probably will be expanded to allow filtering data
+message ListCheckpointsRequest {
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 1;
+}
+
+// Response message containing all checkpoints requested
+message ListCheckpointsResponse {
+    // List of checkpoints data with corresponding page information
+    CheckpointsConnection checkpoints = 1;
+}
+
+// Checkpoint data with corresponding cursor
+message CheckpointEdge {
+    // Checkpoint data
+    Checkpoint node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// List of checkpoints data with corresponding page information
+message CheckpointsConnection {
+    repeated CheckpointEdge edges= 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request to get stake
+message GetStakeRequest {
+    // Party ID for which the stake information is requested
+    string party_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response that is received from requesting stake information
+message GetStakeResponse {
+    // Current stake available info
+    string current_stake_available = 1;
+    // Paged list of stake data with corresponding page information
+    StakesConnection stake_linkings = 2;
+}
+
+// Stake linking data with corresponding cursor
+message StakeLinkingEdge {
+    // A stake linking represent the intent from a party to deposit
+    zeta.events.v1.StakeLinking node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Paged list of stake data with corresponding page info
+message StakesConnection {
+    // List of stake data
+    repeated StakeLinkingEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Request to get risk factor
+message GetRiskFactorsRequest {
+    // Market ID to get the risk factor for
+    string market_id = 1;
+}
+
+// Response that is received from getting a risk factor
+message GetRiskFactorsResponse {
+    // A risk factor emitted by the risk model for a given market
+    zeta.RiskFactor risk_factor = 1;
+}
+
+// -- EventBus --
+
+// Request to subscribe to a stream of one or more event types from the Zeta event bus
+message ObserveEventBusRequest {
+    // One or more types of event, required field
+    repeated zeta.events.v1.BusEventType type = 1;
+    // Market ID, optional field
+    string market_id = 2;
+    // Party ID, optional field
+    string party_id = 3;
+    // Batch size, optional field -
+    // If not specified, any events received will be sent immediately. If the client is not ready
+    // for the next data-set, data may be dropped a number of times, and eventually the stream is closed.
+    // if specified, the first batch will be sent when ready. To receive the next set of events, the client
+    // must write an `ObserveEventBatch` message on the stream to flush the buffer.
+    // If no message is received in 5 seconds, the stream is closed.
+    // Default: 0, send any and all events when they are available.
+    int64 batch_size = 4;
+}
+
+// Response to a subscribed stream of events from the Zeta event bus
+message ObserveEventBusResponse {
+    // List of events
+    repeated zeta.events.v1.BusEvent events = 1;
+}
+
+// -- Transfer Responses --
+
+// Request to subscribe to ledger movements
+message ObserveLedgerMovementsRequest {}
+
+// Response from ledger movements subscription
+message ObserveLedgerMovementsResponse {
+    // Ledger movements data with list of ledger entries and and post-transfer balances
+    zeta.LedgerMovement ledger_movement = 1;
+}
+
+// -- Key rotations --
+
+// Request to list all key rotations
+message ListKeyRotationsRequest {
+    // Node ID to get the key rotations for, if provided
+    optional string node_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response that is received from requesting key rotations
+message ListKeyRotationsResponse {
+    // Key rotations data with corresponding page information
+    KeyRotationConnection rotations = 1;
+}
+
+// Key rotation data with corresponding cursor
+message KeyRotationEdge {
+    // Node's key rotation data
+    zeta.events.v1.KeyRotation node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Key rotations data with corresponding page information
+message KeyRotationConnection {
+    // Key rotation data with corresponding cursor
+    repeated KeyRotationEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// -- Ethereum key rotations --
+
+// Request to list ethereum key rotations for nodes, optionally filtered by node
+message ListEthereumKeyRotationsRequest {
+    // Node ID to get the rotation for, if provided
+    optional string node_id = 1;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 2;
+}
+
+// Response message containing all checkpoints requested
+message ListEthereumKeyRotationsResponse {
+    // List of Ethereum key rotations data with corresponding page information
+    EthereumKeyRotationsConnection key_rotations = 1;
+}
+
+// List of Ethereum key rotations data with corresponding page information
+message EthereumKeyRotationsConnection {
+    // List of Ethereum key rotations data with corresponding cursors
+    repeated EthereumKeyRotationEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Ethereum key rotation data with corresponding cursor
+message EthereumKeyRotationEdge {
+    // Key rotation data for the node
+    zeta.events.v1.EthereumKeyRotation node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// -- Zeta Time --
+
+// Request to get the current time of the Zeta network
+message GetZetaTimeRequest {}
+
+// Response for the current consensus coordinated time on the Zeta network, referred to as "VegaTime"
+message GetZetaTimeResponse {
+    // Timestamp representation of current ZetaTime as represented in
+    // Nanoseconds since the epoch, for example `1580473859111222333` corresponds to `2020-01-31T12:30:59.111222333Z`
+    int64 timestamp = 1;
+}
+
+// A date range for queries that can return historical data
+// If only the start_timestamp is provided, results from the given start up to the most current timestamp should be returned.
+// If only the end_timestamp is provided, results up to the given end should be returned (exclusive).
+// If both the start_timestamp and end_timestamp are provided, results from within the date range should be returned (exclusive).
+message DateRange {
+    // Optional start timestamp in nanoseconds past the epoch
+    optional int64 start_timestamp = 1;
+    // Optional end timestamp in nanoseconds past the epoch
+    optional int64 end_timestamp = 2;
+}
+
+// Request to get protocol upgrade status
+message GetProtocolUpgradeStatusRequest {}
+
+// Response from getting protocol upgrade status
+message GetProtocolUpgradeStatusResponse {
+    // Indicator if the upgrade is ready or not
+    bool ready = 1;
+}
+
+// Request type for ListProtocolUpgradeProposals; fetches a paginated list of protocol upgrade proposals
+message ListProtocolUpgradeProposalsRequest {
+    // Protocol upgrade proposal status to filter results from listing proposals, if provided
+    optional zeta.events.v1.ProtocolUpgradeProposalStatus status = 1;
+    // Option to filter listed proposals on being approved or not, if provided
+    optional string approved_by = 2;
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 3;
+}
+
+// Response type from a ListProtocolUpgradeProposals RPC call; a paginated list of protocol upgrade proposals
+message ListProtocolUpgradeProposalsResponse {
+    // A page of protocol upgrade proposals, with page information
+    ProtocolUpgradeProposalConnection protocol_upgrade_proposals = 1;
+}
+
+// A page of protocol upgrade proposals, with page information
+message ProtocolUpgradeProposalConnection {
+    // Protocol upgrade proposals page data
+    repeated ProtocolUpgradeProposalEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// A protocol upgrade proposal data with a corresponding cursor
+message ProtocolUpgradeProposalEdge {
+    // Protocol upgrade proposal data
+    zeta.events.v1.ProtocolUpgradeEvent node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// Request type for ListCoreSnapshots; fetches a paginated list of the core snapshots.
+message ListCoreSnapshotsRequest {
+    // Optional pagination information to limit the data that is returned
+    optional Pagination pagination = 1;
+}
+
+// Response from a ListCoreSnapshots RPC call; a paginated list of the core snapshots.
+message ListCoreSnapshotsResponse {
+    // A page of core snapshot data, with page information
+    CoreSnapshotConnection core_snapshots = 1;
+}
+
+// A page of core snapshot data, with page information
+message CoreSnapshotConnection {
+    repeated CoreSnapshotEdge edges = 1;
+    // Page information that is used for fetching further pages
+    PageInfo page_info = 2;
+}
+
+// Core snapshot data with a corresponding cursor
+message CoreSnapshotEdge {
+    // Core snapshot data
+    zeta.events.v1.CoreSnapshotData node = 1;
+    // Cursor that can be used to fetch further pages
+    string cursor = 2;
+}
+
+// -- Network History --
+// Network History allows the data-node to reach out to peer nodes to fetch the most recent history, as well as
+// older history if desired, such that it can quickly get itself up to the latest block height of the network and start
+// to consume events for the latest block from the Zeta core.
+// See https://github.com/zetaprotocol/vega/tree/develop/datanode/networkhistory/README.md for a full description of Network History
+
+// Describes a network history segment
+message HistorySegment {
+    // Starting height of the history segment
+    int64 from_height = 1;
+    // Ending height of the history segment
+    int64 to_height = 2;
+    // ID of the history segment
+    string history_segment_id = 3;
+    // ID of the previous history segment
+    string previous_history_segment_id = 4;
+}
+
+// Request to get the most recent history segment
+message GetMostRecentNetworkHistorySegmentRequest {
+}
+
+// Response from getting most recent history segment
+message GetMostRecentNetworkHistorySegmentResponse {
+    // HistorySegment data
+    HistorySegment segment = 1;
+    // Key seed for the swarm section
+    string swarm_key_seed  = 2;
+}
+
+// Request to list all the nodes history segments
+message ListAllNetworkHistorySegmentsRequest {
+}
+
+// Response with a list of all the nodes history segments
+message ListAllNetworkHistorySegmentsResponse {
+    // List of history segments data
+    repeated HistorySegment segments = 1;
+}
+
+// Request to get the addresses of active network history peers
+message GetActiveNetworkHistoryPeerAddressesRequest {
+}
+
+// Response containing the addresses of active network history peers
+message GetActiveNetworkHistoryPeerAddressesResponse {
+    // List of IP addresses for the active peers
+    repeated string ip_addresses = 1;
+}
+
+// Request to get the status of network history
+message NetworkHistoryStatusRequest {}
+
+// Response containing the status of network history
+message NetworkHistoryStatusResponse {
+    // The IPFS address of the data node you're connecting to
+    string ipfs_address = 1;
+    // The swarm key
+    string swarm_key = 2;
+    // The swarm key seed
+    string swarm_key_seed = 3;
+    // The connected peers
+    repeated string connected_peers = 5;
+}
+
+// Request to get the nodes network history bootstrap peers
+message NetworkHistoryBootstrapPeersRequest {}
+
+// Response containing the nodes network history bootstrap peers
+message NetworkHistoryBootstrapPeersResponse {
+    // The bootstrap peers
+    repeated string bootstrap_peers = 1;
+}
+
+
+// Request to ping the data node
+message PingRequest {
+}
+
+// Ping response from the data node
+message PingResponse {
+}

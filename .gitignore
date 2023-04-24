@@ -1,0 +1,48 @@
+# Zeta specific entries
+
+# Exclude platforms and tools related files
+.DS_Store
+.envrc
+.idea/
+.vscode/**/*
+!.vscode/launch.json
+
+# Exclude binaries
+build/
+bin/
+*.exe
+
+#zeta
+cmd/zetawallet/vegawallet*
+cmd/zetabenchmark/vegabenchmark*
+cmd/examples/nullchain/nullchain*
+cmd/data-node/__debug_bin
+data-node-amd64
+zeta-amd64
+zetawallet-amd64
+#cmd/*/*-dbg
+
+# Exclude files related to tests
+integration.test
+.testCoverage.html
+.testCoverage.txt
+*.tmp
+tmp/
+
+# Exclude files related to proto
+proto/*-re
+proto/**.orig
+*.pb.go-re
+gomock_reflect_*
+protos/generated/
+protos/swagger/
+
+# Exclude other random
+data/
+!protos/sources/zeta/data/
+!protos/zeta/data/
+*.iws
+.mypy_cache
+*.log
+*.patch
+.metals

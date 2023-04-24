@@ -1,0 +1,322 @@
+---
+name: Release zeta, data-node, vegawallet and visor binaries
+
+"on":
+  push:
+    branches:
+      - develop
+    tags:
+      - "v*"
+
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish as a GitHub release'
+        required: false
+        type: boolean
+        default: false
+      tag:
+        description: 'Git Tag to build and publish'
+        required: false
+        type: string
+        default: ''
+      apps:
+        description: 'Applications to build and publish'
+        required: false
+        type: choice
+        options:
+          - [zeta, data-node, vegawallet, visor]
+          - [zeta]
+          - [data-node]
+          - [zetawallet]
+          - [visor]
+          - [zetatools]
+      archs:
+        description: 'Architecture to build and publish'
+        required: false
+        type: choice
+        options:
+          - [amd64, arm64]
+          - [amd64]
+          - [arm64]
+      os:
+        description: 'OS to build and publish'
+        required: false
+        type: choice
+        options:
+          - [linux, macos, windows]
+          - [linux]
+          - [macos]
+          - [windows]
+      disableTests:
+        description: 'Skip running tests'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  #
+  # Linux
+  #
+  release-linux:
+    if: ${{ contains(fromJson(inputs.os || '["linux"]'), 'linux') }}
+    name: Release ${{ matrix.app }} on Linux ${{ matrix.arch }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ${{ fromJson(inputs.archs || '["amd64", "arm64"]') }}
+        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "vegawallet", "visor"]') }}
+    env:
+      GOOS: linux
+      GOARCH: ${{ matrix.arch }}
+      CGO_ENABLED: 0
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+        id: go
+
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.tag }}
+
+      - name: Sanity check
+        run: |
+          git rev-parse --verify HEAD
+          git status
+
+      # - name: Get dependencies
+      #   run: go get -v -t -d ./...
+
+      # - name: Run tests
+      #   if: ${{ env.GOARCH == 'amd64' && inputs.disableTests != true }}
+      #   run: go test -v ./...
+
+      - name: Build binary
+        run: go build -o build/${{ matrix.app }} ./cmd/${{ matrix.app }}
+
+      - name: Check version
+        if: ${{ env.GOARCH == 'amd64' }}
+        working-directory: build
+        run: ./${{ matrix.app }} version || ./${{ matrix.app }} software version
+
+      - name: Bundle binary in archive
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          directory: build
+          filename: ${{ matrix.app }}-${{ env.GOOS }}-${{ env.GOARCH }}.zip
+
+      - name: Release
+        if: ${{ inputs.publish || startsWith(github.ref, 'refs/tags/') }}
+        uses: softprops/action-gh-release@cd28b0f5ee8571b76cfdaa62a30d51d752317477
+        with:
+          files: build/*.zip
+          name: ${{ inputs.tag || github.ref_name }}
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  #
+  # macOS
+  #
+  release-macos:
+    if: ${{ contains(fromJson(inputs.os || '["macos"]'), 'macos') }}
+    name: Release ${{ matrix.app }} on MacOS ${{ matrix.arch }}
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ${{ fromJson(inputs.archs || '["amd64", "arm64"]') }}
+        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "vegawallet", "visor"]') }}
+    env:
+      GOOS: darwin
+      GOARCH: ${{ matrix.arch }}
+      CGO_ENABLED: 0
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+
+        with:
+          go-version: 1.19
+        id: go
+
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.tag }}
+
+      - name: Sanity check
+        run: |
+          git rev-parse --verify HEAD
+          git status
+
+      # - name: Get dependencies
+      #   run: go get -v -t -d ./...
+
+      # - name: Run tests
+      #   if: ${{ env.GOARCH == 'amd64' && inputs.disableTests != true }}
+      #   run: go test -v ./...
+
+      - name: Build binary
+        run: go build -o build/${{ matrix.app }} ./cmd/${{ matrix.app }}
+
+      - name: Import DeveloperID Certificate
+        # we sign zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        uses: apple-actions/import-codesign-certs@v1
+        with:
+          keychain: zeta
+          create-keychain: true
+          p12-file-base64: ${{ secrets.MACOS_CERTIFICATE }}
+          p12-password: ${{ secrets.MACOS_CERTIFICATE_PASS }}
+
+      - name: Sign binary
+        # we sign zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        working-directory: build
+        # --timestamp
+        #     During signing, requests that a timestamp authority server be contacted to authenticate the time of
+        #     signing.
+        # --deep
+        #     When signing a bundle, specifies that nested code content such as helpers, frameworks, and plug-ins,
+        #     should be recursively signed in turn.
+        # --options runtime
+        #     On macOS versions >= 10.14.0, opts signed processes into a hardened runtime environment which includes
+        #     runtime code signing enforcement, library validation, hard, kill, and debugging restrictions.
+        run: codesign --verbose --sign "${{ secrets.MACOS_CERTIFICATE_IDENTITY_ID }}" --timestamp --options runtime --deep --force ${{ matrix.app }}
+
+      - name: Verify signature
+        # we sign zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        working-directory: build
+        run: codesign --verbose --verify --strict --deep ${{ matrix.app }}
+
+      - name: Check version
+        if: ${{ env.GOARCH == 'amd64' }}
+        working-directory: build
+        run: ./${{ matrix.app }} version || ./${{ matrix.app }} software version
+
+      - name: Bundle binary in archive
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          directory: build
+          filename: ${{ matrix.app }}-${{ env.GOOS }}-${{ env.GOARCH }}.zip
+
+      - name: Store notarization credentials
+        # we do notarization to zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        run: |
+          xcrun notarytool store-credentials zeta \
+            --apple-id "${{ secrets.MACOS_NOTARIZATION_APPLE_ID }}" \
+            --team-id "${{ secrets.MACOS_NOTARIZATION_TEAM_ID }}" \
+            --password "${{ secrets.MACOS_NOTARIZATION_PASS }}"
+
+      - name: Notarize app
+        # we do notarization to zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        working-directory: build
+        run: |
+          xcrun notarytool submit ${{ matrix.app }}-${{ env.GOOS }}-${{ env.GOARCH }}.zip \
+            --keychain-profile zeta \
+            --output-format json \
+            --timeout "90m" \
+            --wait
+
+      - name: Release
+        if: ${{ inputs.publish || startsWith(github.ref, 'refs/tags/') }}
+        uses: softprops/action-gh-release@cd28b0f5ee8571b76cfdaa62a30d51d752317477
+        with:
+          files: build/*.zip
+          name: ${{ inputs.tag || github.ref_name }}
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  #
+  # Windows
+  #
+  release-windows:
+    if: ${{ contains(fromJson(inputs.os || '["windows"]'), 'windows') }}
+    name: Release ${{ matrix.app }} on Windows ${{ matrix.arch }}
+    runs-on: windows-2019
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ${{ fromJson(inputs.archs || '["amd64", "arm64"]') }}
+        app: ${{ fromJson(inputs.apps || '["zetawallet"]') }}
+        exclude:
+          - app: zeta
+          - app: data-node
+          - app: visor
+          - app: zetatools
+    env:
+      GOOS: windows
+      GOARCH: ${{ matrix.arch }}
+      CGO_ENABLED: 0
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+        id: go
+
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.tag }}
+
+      - name: Sanity check
+        run: |
+          git rev-parse --verify HEAD
+          git status
+
+      # - name: Get dependencies
+      #   run: go get -v -t -d ./...
+
+      # - name: Run tests
+      #   if: ${{ env.GOARCH == 'amd64' && inputs.disableTests != true }}
+      #   run: go test -v ./...
+
+      - name: Build binary
+        run: go build -o build/${{ matrix.app }}.exe ./cmd/${{ matrix.app }}
+
+      - name: "Sign binary"
+        # we do notarization to zetawallet only
+        if: ${{ matrix.app == 'zetawallet' }}
+        uses: Dana-Prajea/code-sign-action@98c79121b376beab8d6a9484f445089db4461bca
+        with:
+          certificate: ${{ secrets.WINDOWS_CERTIFICATE }}
+          password: ${{ secrets.WINDOWS_CERTIFICATE_PASS }}
+          certificatesha1: ${{ secrets.WINDOWS_CERTIFICATE_HASH }}
+          folder: "build"
+          timestampUrl: "http://timestamp.sectigo.com"
+
+      - name: Check version
+        if: ${{ env.GOARCH == 'amd64' }}
+        working-directory: build
+        run: .\${{ matrix.app }}.exe version || .\${{ matrix.app }}.exe software version
+
+      - name: Bundle binary in archive
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          directory: build
+          filename: ${{ matrix.app }}-${{ env.GOOS }}-${{ env.GOARCH }}.zip
+
+      - name: Release
+        if: ${{ inputs.publish || startsWith(github.ref, 'refs/tags/') }}
+        uses: softprops/action-gh-release@cd28b0f5ee8571b76cfdaa62a30d51d752317477
+        with:
+          files: build/*.zip
+          name: ${{ inputs.tag || github.ref_name }}
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

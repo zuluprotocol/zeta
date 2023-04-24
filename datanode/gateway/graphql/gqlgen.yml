@@ -1,0 +1,508 @@
+---
+schema: schema.graphql
+exec:
+  filename: generated.go
+model:
+  filename: models.go
+
+skip_validation: true
+
+models:
+  String:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.Uint32
+  ValidatorStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ValidatorStatus
+  LiquidityProvisionStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.LiquidityProvisionStatus
+  ProposalType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ProposalType
+  Interval:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.Interval
+  Side:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.Side
+  TradeType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.TradeType
+  OrderType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.OrderType
+  MarketState:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.MarketState
+  MarketTradingMode:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.MarketTradingMode
+  ProposalRejectionReason:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ProposalRejectionReason
+  OrderRejectionReason:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.OrderRejectionReason
+  PeggedReference:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.PeggedReference
+  OrderTimeInForce:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.OrderTimeInForce
+  OrderStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.OrderStatus
+  DepositStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.DepositStatus
+  WithdrawalStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.WithdrawalStatus
+  StakeLinkingType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.StakeLinkingType
+  StakeLinkingStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.StakeLinkingStatus
+  TransferStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.TransferStatus
+  TransferType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.TransferType
+  DispatchMetric:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.DispatchMetric
+  NodeStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.NodeStatus
+  AssetStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.AssetStatus
+  NodeSignatureKind:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.NodeSignatureKind
+  OracleSpecStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.OracleSpecStatus
+  PropertyKeyType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.PropertyKeyType
+  ConditionOperator:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ConditionOperator
+  ProposalState:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ProposalState
+  VoteValue:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.VoteValue
+  AuctionTrigger:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.AuctionTrigger
+  Order:
+    model: code.zetaprotocol.io/vega/protos/vega.Order
+  OrderUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.Order
+  PaginatedOrder:
+    model: code.zetaprotocol.io/vega/protos/vega.Order
+  TradeUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.Trade
+  Trade:
+    model: code.zetaprotocol.io/vega/protos/vega.Trade
+  PriceLevel:
+    model: code.zetaprotocol.io/vega/protos/vega.PriceLevel
+  MarketDepth:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketDepth
+  ObservableMarketDepth:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketDepth
+  MarketDepthUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketDepthUpdate
+  ObservableMarketDepthUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketDepthUpdate
+  Candle:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.Candle
+  Position:
+    model: code.zetaprotocol.io/vega/protos/vega.Position
+  PositionUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.Position
+  AccountEvent:
+    model: code.zetaprotocol.io/vega/protos/vega.Account
+  AccountBalance:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AccountBalance
+  AccountDetails:
+    model: code.zetaprotocol.io/vega/protos/vega.AccountDetails
+  AccountUpdate:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AccountBalance
+  MarketData:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketData
+  ObservableMarketData:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketData
+  MarginLevels:
+    model: code.zetaprotocol.io/vega/protos/vega.MarginLevels
+  MarginLevelsUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.MarginLevels
+  NodeSignature:
+    model: code.zetaprotocol.io/vega/protos/vega/commands/v1.NodeSignature
+  ProposalEvent:
+    model: code.zetaprotocol.io/vega/protos/vega.Proposal
+  RiskFactor:
+    model: code.zetaprotocol.io/vega/protos/vega.RiskFactor
+  NetworkParameter:
+    model: code.zetaprotocol.io/vega/protos/vega.NetworkParameter
+  LiquidityOrder:
+    model: code.zetaprotocol.io/vega/protos/vega.LiquidityOrder
+  LiquidityProvision:
+    model: code.zetaprotocol.io/vega/protos/vega.LiquidityProvision
+  LiquidityProvisionUpdate:
+    model: code.zetaprotocol.io/vega/protos/vega.LiquidityProvision
+  LiquidityOrderReference:
+    model: code.zetaprotocol.io/vega/protos/vega.LiquidityOrderReference
+  Future:
+    model: code.zetaprotocol.io/vega/protos/vega.Future
+  TradableInstrument:
+    model: code.zetaprotocol.io/vega/protos/vega.TradableInstrument
+  SimpleRiskModel:
+    model: code.zetaprotocol.io/vega/protos/vega.SimpleRiskModel
+  SimpleRiskModelParams:
+    model: code.zetaprotocol.io/vega/protos/vega.SimpleModelParams
+  LogNormalRiskModel:
+    model: code.zetaprotocol.io/vega/protos/vega.LogNormalRiskModel
+  LogNormalModelParams:
+    model: code.zetaprotocol.io/vega/protos/vega.LogNormalModelParams
+  Instrument:
+    model: code.zetaprotocol.io/vega/protos/vega.Instrument
+  InstrumentMetadata:
+    model: code.zetaprotocol.io/vega/protos/vega.InstrumentMetadata
+  Market:
+    model: code.zetaprotocol.io/vega/protos/vega.Market
+    fields:
+      orders:
+        resolver: true
+      trades:
+        resolver: true
+      depth:
+        resolver: true
+      data:
+        resolver: true
+      candles:
+        resolver: true
+      accounts:
+        resolver: true
+      accountsConnection:
+        resolver: true
+      orderByReference:
+        resolver: true
+      liquidityProvisions:
+        resolver: true
+  Party:
+    model: code.zetaprotocol.io/vega/protos/vega.Party
+    fields:
+      orders:
+        resolver: true
+      trades:
+        resolver: true
+      tradesPaged:
+        resolver: true
+      positions:
+        resolver: true
+      accounts:
+        resolver: true
+      accountsConnection:
+        resolver: true
+      margins:
+        resolver: true
+      delegations:
+        resolver: true
+  Proposal:
+    model: code.zetaprotocol.io/vega/protos/vega.GovernanceData
+    fields:
+      votes:
+        resolver: true
+  ProposalRationale:
+    model: code.zetaprotocol.io/vega/protos/vega.ProposalRationale
+  ProposalTerms:
+    model: code.zetaprotocol.io/vega/protos/vega.ProposalTerms
+  NewMarket:
+    model: code.zetaprotocol.io/vega/protos/vega.NewMarket
+  NewAsset:
+    model: code.zetaprotocol.io/vega/protos/vega.NewAsset
+  UpdateAsset:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateAsset
+  NewFreeform:
+    model: code.zetaprotocol.io/vega/protos/vega.NewFreeform
+  UpdateMarket:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateMarket
+  UpdateNetworkParameter:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateNetworkParameter
+  InstrumentConfiguration:
+    model: code.zetaprotocol.io/vega/protos/vega.InstrumentConfiguration
+  FutureProduct:
+    model: code.zetaprotocol.io/vega/protos/vega.FutureProduct
+  Asset:
+    model: code.zetaprotocol.io/vega/protos/vega.Asset
+    fields:
+      infrastructureFeeAccount:
+        resolver: true
+  Deposit:
+    model: code.zetaprotocol.io/vega/protos/vega.Deposit
+  Withdrawal:
+    model: code.zetaprotocol.io/vega/protos/vega.Withdrawal
+    fields:
+      txHash:
+        resolver: true
+  PeggedOrder:
+    model: code.zetaprotocol.io/vega/protos/vega.PeggedOrder
+  DataSourceSpecToFutureBinding:
+    model: code.zetaprotocol.io/vega/protos/vega.DataSourceSpecToFutureBinding
+  DataSourceSpecConfiguration:
+    model: code.zetaprotocol.io/vega/protos/vega.DataSourceSpecConfiguration
+  OracleSpec:
+    model: code.zetaprotocol.io/vega/protos/vega.OracleSpec
+  Filter:
+    model: code.zetaprotocol.io/vega/protos/vega/data/v1.Filter
+  PropertyKey:
+    model: code.zetaprotocol.io/vega/protos/vega/data/v1.PropertyKey
+  Condition:
+    model: code.zetaprotocol.io/vega/protos/vega/data/v1.Condition
+  OracleData:
+    model: code.zetaprotocol.io/vega/protos/vega.OracleData
+    fields:
+      broadcastAt:
+        resolver: true
+  Property:
+    model: code.zetaprotocol.io/vega/protos/vega/data/v1.Property
+  AuctionEvent:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.AuctionEvent
+  FeeFactors:
+    model: code.zetaprotocol.io/vega/protos/vega.FeeFactors
+  Fees:
+    model: code.zetaprotocol.io/vega/protos/vega.Fees
+  ScalingFactors:
+    model: code.zetaprotocol.io/vega/protos/vega.ScalingFactors
+  MarginCalculator:
+    model: code.zetaprotocol.io/vega/protos/vega.MarginCalculator
+  Vote:
+    model: code.zetaprotocol.io/vega/protos/vega.Vote
+  VoteConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.VoteConnection
+  VoteEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.VoteEdge
+  MarketTimestamps:
+    model: code.zetaprotocol.io/vega/protos/vega.MarketTimestamps
+  NodeData:
+    model: code.zetaprotocol.io/vega/protos/vega.NodeData
+  EpochData:
+    model: code.zetaprotocol.io/vega/protos/vega.EpochData
+  Delegation:
+    model: code.zetaprotocol.io/vega/protos/vega.Delegation
+  Node:
+    model: code.zetaprotocol.io/vega/protos/vega.Node
+  Epoch:
+    model: code.zetaprotocol.io/vega/protos/vega.Epoch
+  EpochTimestamps:
+    model: code.zetaprotocol.io/vega/protos/vega.EpochTimestamps
+  Reward:
+    model: code.zetaprotocol.io/vega/protos/vega.Reward
+  RewardSummary:
+    model: code.zetaprotocol.io/vega/protos/vega.RewardSummary
+  StakeLinking:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.StakeLinking
+  PartyStake:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.GetStakeResponse
+  KeyRotation:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.KeyRotation
+  EthereumKeyRotationsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.EthereumKeyRotationsConnection
+  EthereumKeyRotationEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.EthereumKeyRotationEdge
+  EthereumKeyRotation:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.EthereumKeyRotation
+  Transfer:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.Transfer
+  OneOffTransfer:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.OneOffTransfer
+  RecurringTransfer:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.RecurringTransfer
+  Statistics:
+    model: code.zetaprotocol.io/vega/protos/vega/api/v1.Statistics
+  AccountType:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.AccountType
+  AccountFilter:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AccountFilter
+  AggregatedBalance:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedBalance
+  LedgerEntryField:
+    model: code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.LedgerEntryField
+  LedgerEntryFilter:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.LedgerEntryFilter
+  AggregatedLedgerEntry:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedLedgerEntry
+  AggregatedLedgerEntriesEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedLedgerEntriesEdge
+  AggregatedLedgerEntriesConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedLedgerEntriesConnection
+  Timestamp:
+    model: code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.Timestamp
+  NetworkLimits:
+    model: code.zetaprotocol.io/vega/protos/vega.NetworkLimits
+  RankingScore:
+    model: code.zetaprotocol.io/vega/protos/vega.RankingScore
+  RewardScore:
+    model: code.zetaprotocol.io/vega/protos/vega.RewardScore
+  UpdateMarketConfiguration:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateMarketConfiguration
+  UpdateMarketSimpleRiskModel:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateMarketConfiguration_Simple
+  UpdateMarketLogNormalRiskModel:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateMarketConfiguration_LogNormal
+  UpdateFutureProduct:
+    model: code.zetaprotocol.io/vega/protos/vega.UpdateFutureProduct
+  TradeConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.TradeConnection
+  TradeEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.TradeEdge
+  PageInfo:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PageInfo
+  MarketConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarketConnection
+  MarketEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarketEdge
+  PositionConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PositionConnection
+  PositionEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PositionEdge
+  PartyConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PartyConnection
+  PartyEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PartyEdge
+  Pagination:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.Pagination
+  OrderEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OrderEdge
+  OrderConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OrderConnection
+  MarginEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarginEdge
+  MarginConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarginConnection
+  MarketDataEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarketDataEdge
+  MarketDataConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.MarketDataConnection
+  RewardEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.RewardEdge
+  RewardsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.RewardsConnection
+  CandleEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.CandleEdge
+  CandleDataConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.CandleDataConnection
+  DepositEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.DepositEdge
+  DepositsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.DepositsConnection
+  WithdrawalEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.WithdrawalEdge
+  WithdrawalsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.WithdrawalsConnection
+  AssetEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AssetEdge
+  AssetsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AssetsConnection
+  OracleSpecEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OracleSpecEdge
+  OracleSpecsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OracleSpecsConnection
+  OracleDataEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OracleDataEdge
+  OracleDataConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OracleDataConnection
+  LiquidityProvisionsEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.LiquidityProvisionsEdge
+  LiquidityProvisionsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.LiquidityProvisionsConnection
+  TransferEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.TransferEdge
+  TransferConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.TransferConnection
+  ProposalEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.GovernanceDataEdge
+  ProposalsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.GovernanceDataConnection
+  DelegationEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.DelegationEdge
+  DelegationsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.DelegationsConnection
+  NodeEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NodeEdge
+  NodesConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NodesConnection
+  NetworkParameterEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NetworkParameterEdge
+  NetworkParametersConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NetworkParameterConnection
+  NodeSignatureEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NodeSignatureEdge
+  NodeSignaturesConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.NodeSignaturesConnection
+  KeyRotationEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.KeyRotationEdge
+  KeyRotationConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.KeyRotationConnection
+  StakeLinkingEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.StakeLinkingEdge
+  StakesConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.StakesConnection
+  AccountEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AccountEdge
+  AccountsConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AccountsConnection
+  DateRange:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.DateRange
+  AggregatedBalanceEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedBalanceEdge
+  AggregatedBalanceConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.AggregatedBalanceConnection
+  TransactionResult:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.TransactionResult
+  HistorySegment:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.HistorySegment
+  ProtocolUpgradeProposalConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.ProtocolUpgradeProposalConnection
+  ProtocolUpgradeProposalEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.ProtocolUpgradeProposalEdge
+  ProtocolUpgradeProposal:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.ProtocolUpgradeEvent
+  ProtocolUpgradeProposalStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.ProtocolUpgradeProposalStatus
+  OrderFilter:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.OrderFilter
+  CoreSnapshotConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.CoreSnapshotConnection
+  CoreSnapshotEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.CoreSnapshotEdge
+  CoreSnapshotData:
+    model: code.zetaprotocol.io/vega/protos/vega/events/v1.CoreSnapshotData
+  RewardSummaryFilter:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.RewardSummaryFilter
+  EpochRewardSummaryConnection:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.EpochRewardSummaryConnection
+  EpochRewardSummaryEdge:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.EpochRewardSummaryEdge
+  EpochRewardSummary:
+    model: code.zetaprotocol.io/vega/protos/vega.EpochRewardSummary
+  PositionsFilter:
+    model: code.zetaprotocol.io/vega/protos/data-node/api/v2.PositionsFilter
+  PositionStatus:
+    model:
+      - code.zetaprotocol.io/vega/datanode/gateway/graphql/marshallers.PositionStatus
