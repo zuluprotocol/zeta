@@ -19,10 +19,10 @@ import (
 	"math"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/ptr"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -226,7 +226,7 @@ func (oc OrderCursor) String() string {
 
 func (o Order) Cursor() *Cursor {
 	cursor := OrderCursor{
-		ZetaTime: o.VegaTime,
+		ZetaTime: o.ZetaTime,
 		SeqNum:   o.SeqNum,
 	}
 

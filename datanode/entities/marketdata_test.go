@@ -16,9 +16,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/libs/num"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/libs/num"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 )

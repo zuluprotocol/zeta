@@ -16,10 +16,10 @@ import (
 	"context"
 	"errors"
 
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	zeta "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type myMarketResolver ZetaResolverRoot

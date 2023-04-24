@@ -5,11 +5,11 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/commands"
-	"code.zetaprotocol.io/vega/core/idgeneration"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type BMIProcessor struct {

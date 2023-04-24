@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 	"github.com/mitchellh/mapstructure"
 )
 

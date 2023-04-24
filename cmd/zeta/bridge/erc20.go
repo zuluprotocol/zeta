@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/bridges"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/bridges"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/paths"
 	"github.com/jessevdk/go-flags"
 )
 
@@ -143,7 +143,7 @@ func (opts *ERC20WithdrawAssetCmd) Execute(_ []string) error {
 
 type ERC20ListAssetCmd struct {
 	TokenAddress      string `long:"token-address" required:"true" description:"The Ethereum address of the new token"`
-	ZetaAssetID       string `long:"zeta-asset-id" required:"true" description:"The vega ID for this new token"`
+	ZetaAssetID       string `long:"zeta-asset-id" required:"true" description:"The zeta ID for this new token"`
 	BridgeAddress     string `long:"bridge-address" required:"true" description:"The address of the zeta bridge this transaction will be submitted to"`
 	Nonce             string `long:"nonce" required:"true" description:"A nonce for this signature"`
 	LifetimeLimit     string `long:"lifetime-limit" required:"true" description:"The lifetime deposit limit for the asset"`

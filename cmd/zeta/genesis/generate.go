@@ -17,13 +17,13 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/genesis"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	vgtm "code.zetaprotocol.io/vega/core/tendermint"
-	"code.zetaprotocol.io/vega/core/validators"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/genesis"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	vgtm "zuluprotocol/zeta/zeta/core/tendermint"
+	"zuluprotocol/zeta/zeta/core/validators"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	tmtypes "github.com/tendermint/tendermint/types"
@@ -53,7 +53,7 @@ func (opts *generateCmd) Execute(_ []string) error {
 		return err
 	}
 
-	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, vegaPaths, pass)
+	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, zetaPaths, pass)
 	if err != nil {
 		return err
 	}
@@ -111,7 +111,7 @@ type zetaPubKey struct {
 	value string
 }
 
-func loadNodeWalletPubKey(config nodewallets.Config, zetaPaths paths.Paths, registryPass string) (vegaKey *vegaPubKey, ethAddr, walletID string, err error) {
+func loadNodeWalletPubKey(config nodewallets.Config, zetaPaths paths.Paths, registryPass string) (zetaKey *zetaPubKey, ethAddr, walletID string, err error) {
 	nw, err := nodewallets.GetNodeWallets(config, zetaPaths, registryPass)
 	if err != nil {
 		return nil, "", "", fmt.Errorf("couldn't get node wallets: %w", err)
@@ -121,7 +121,7 @@ func loadNodeWalletPubKey(config nodewallets.Config, zetaPaths paths.Paths, regi
 		return nil, "", "", err
 	}
 
-	zetaPubKey := &vegaPubKey{
+	zetaPubKey := &zetaPubKey{
 		index: nw.Zeta.Index(),
 		value: nw.Zeta.PubKey().Hex(),
 	}

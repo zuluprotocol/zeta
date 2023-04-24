@@ -15,13 +15,13 @@ package supplied_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/integration/stubs"
-	"code.zetaprotocol.io/vega/core/liquidity/supplied"
-	"code.zetaprotocol.io/vega/core/liquidity/supplied/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/liquidity/supplied"
+	"zuluprotocol/zeta/zeta/core/liquidity/supplied/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"

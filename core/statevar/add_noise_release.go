@@ -15,8 +15,8 @@
 
 package statevar
 
-import zetapb "code.vegaprotocol.io/vega/protos/vega"
+import zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 
-func (sv *StateVariable) AddNoise(kvb []*zetapb.KeyValueBundle) []*vegapb.KeyValueBundle {
+func (sv *StateVariable) AddNoise(kvb []*zetapb.KeyValueBundle) []*zetapb.KeyValueBundle {
 	return kvb
 }

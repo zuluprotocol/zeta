@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -54,12 +54,12 @@ func (ps *ProtocolUpgradeProposals) Add(ctx context.Context, p entities.Protocol
 			zeta_time,
 			tx_hash)
 		 VALUES ($1,  $2,  $3,  $4,  $5,  $6)
-		 ON CONFLICT (zeta_time, upgrade_block_height, vega_release_tag) DO UPDATE SET
+		 ON CONFLICT (zeta_time, upgrade_block_height, zeta_release_tag) DO UPDATE SET
 			approvers = EXCLUDED.approvers,
 			status = EXCLUDED.status,
 			tx_hash = EXCLUDED.tx_hash;
 		`,
-		p.UpgradeBlockHeight, p.ZetaReleaseTag, p.Approvers, p.Status, p.VegaTime, p.TxHash)
+		p.UpgradeBlockHeight, p.ZetaReleaseTag, p.Approvers, p.Status, p.ZetaTime, p.TxHash)
 	return err
 }
 

@@ -6,9 +6,9 @@ import (
 	"sort"
 	"sync"
 
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 )
 
 // Manager holds the opened connections between the third-party

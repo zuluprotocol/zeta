@@ -19,8 +19,8 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgx/v4"
 )

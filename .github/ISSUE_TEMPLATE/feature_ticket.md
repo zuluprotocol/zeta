@@ -33,7 +33,7 @@ Detailed scenarios (1-3!) that can be executed as feature tests to verify that t
 GIVEN (setup/context) 
 WHEN (action) 
 THEN (assertion) For example...
-See [here](https://github.com/zetaprotocol/vega/tree/develop/integration/) for more format information and examples.
+See [here](https://github.com/zetaprotocol/zeta/tree/develop/integration/) for more format information and examples.
 
 # Additional Details (optional)
 Any additional information that provides context or gives information that will help us develop the feature. 
@@ -42,7 +42,7 @@ Any additional information that provides context or gives information that will 
 Code snippets from the spec for reference
 
 # Definition of Done
->ℹ️ Not every issue will need every item checked, however, every item on this list should be properly considered and actioned to meet the [DoD](https://github.com/zetaprotocol/vega/blob/develop/DEFINITION_OF_DONE.md).
+>ℹ️ Not every issue will need every item checked, however, every item on this list should be properly considered and actioned to meet the [DoD](https://github.com/zetaprotocol/zeta/blob/develop/DEFINITION_OF_DONE.md).
 
 **Before Merging**
 - [ ] Create relevant for [system-test](https://github.com/zetaprotocol/system-tests/issues) tickets with feature labels
@@ -53,7 +53,7 @@ Code snippets from the spec for reference
 - [ ] All acceptance criteria confirmed to be met, or, reasons why not discussed with the engineering leadership team
 - [ ] All Unit, Integration and BVT tests are passing
 - [ ] Implementation is peer reviewed (coding standards, meeting acceptance criteria, code/design quality)
-- [ ] Create [front end](https://github.com/zetaprotocol/token-frontend/issues) or [console](https://github.com/vegaprotocol/console/issues) tickets with feature labels (should be done when starting the work if dependencies known i.e. API changes)
+- [ ] Create [front end](https://github.com/zetaprotocol/token-frontend/issues) or [console](https://github.com/zetaprotocol/console/issues) tickets with feature labels (should be done when starting the work if dependencies known i.e. API changes)
 
 **After Merging**
 - [ ] Move development ticket to `Done` if there is **NO** requirement for new system-tests

@@ -15,9 +15,9 @@ package positions
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // MarketPosition represents the position of a party inside a market.

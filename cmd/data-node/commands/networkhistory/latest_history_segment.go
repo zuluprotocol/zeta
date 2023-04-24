@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"os"
 
-	coreConfig "code.zetaprotocol.io/vega/core/config"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	coreConfig "zuluprotocol/zeta/zeta/core/config"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var errNoHistorySegmentFound = fmt.Errorf("no history segments found")

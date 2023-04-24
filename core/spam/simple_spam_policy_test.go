@@ -19,13 +19,13 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/spam"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/spam"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 	"github.com/stretchr/testify/require"
 )
 

@@ -19,22 +19,22 @@ import (
 	"fmt"
 	"os"
 
-	"code.zetaprotocol.io/vega/datanode/admin"
+	"zuluprotocol/zeta/zeta/datanode/admin"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
 
-	"code.zetaprotocol.io/vega/datanode/api"
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/libs/pprof"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/datanode/api"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/libs/pprof"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 // Config ties together all other application configuration types.

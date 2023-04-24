@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -34,7 +34,7 @@ type MarginLevels struct {
 	ZetaTime               time.Time
 }
 
-func MarginLevelsFromProto(ctx context.Context, margin *zeta.MarginLevels, accountSource AccountSource, txHash TxHash, vegaTime time.Time) (MarginLevels, error) {
+func MarginLevelsFromProto(ctx context.Context, margin *zeta.MarginLevels, accountSource AccountSource, txHash TxHash, zetaTime time.Time) (MarginLevels, error) {
 	var (
 		maintenanceMargin, searchLevel, initialMargin, collateralReleaseLevel decimal.Decimal
 		err                                                                   error
@@ -73,7 +73,7 @@ func MarginLevelsFromProto(ctx context.Context, margin *zeta.MarginLevels, accou
 	}, nil
 }
 
-func GetAccountFromMarginLevel(ctx context.Context, margin *zeta.MarginLevels, accountSource AccountSource, txHash TxHash, vegaTime time.Time) (Account, error) {
+func GetAccountFromMarginLevel(ctx context.Context, margin *zeta.MarginLevels, accountSource AccountSource, txHash TxHash, zetaTime time.Time) (Account, error) {
 	marginAccount := Account{
 		ID:       "",
 		PartyID:  PartyID(margin.PartyId),
@@ -108,7 +108,7 @@ func (ml *MarginLevels) ToProto(ctx context.Context, accountSource AccountSource
 
 func (ml MarginLevels) Cursor() *Cursor {
 	cursor := MarginCursor{
-		ZetaTime:  ml.VegaTime,
+		ZetaTime:  ml.ZetaTime,
 		AccountID: ml.AccountID,
 	}
 	return NewCursor(cursor.String())

@@ -15,8 +15,8 @@ package gql
 import (
 	"context"
 
-	protoTypes "code.zetaprotocol.io/vega/protos/vega"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type myFutureResolver ZetaResolverRoot

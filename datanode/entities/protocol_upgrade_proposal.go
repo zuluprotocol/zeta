@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type ProtocolUpgradeProposal struct {
@@ -33,7 +33,7 @@ type ProtocolUpgradeProposal struct {
 func ProtocolUpgradeProposalFromProto(p *eventspb.ProtocolUpgradeEvent, txHash TxHash, zetaTime time.Time) ProtocolUpgradeProposal {
 	proposal := ProtocolUpgradeProposal{
 		UpgradeBlockHeight: p.UpgradeBlockHeight,
-		ZetaReleaseTag:     p.VegaReleaseTag,
+		ZetaReleaseTag:     p.ZetaReleaseTag,
 		Approvers:          p.Approvers,
 		Status:             ProtocolUpgradeProposalStatus(p.Status),
 		TxHash:             txHash,
@@ -45,7 +45,7 @@ func ProtocolUpgradeProposalFromProto(p *eventspb.ProtocolUpgradeEvent, txHash T
 func (p *ProtocolUpgradeProposal) ToProto() *eventspb.ProtocolUpgradeEvent {
 	return &eventspb.ProtocolUpgradeEvent{
 		UpgradeBlockHeight: p.UpgradeBlockHeight,
-		ZetaReleaseTag:     p.VegaReleaseTag,
+		ZetaReleaseTag:     p.ZetaReleaseTag,
 		Approvers:          p.Approvers,
 		Status:             eventspb.ProtocolUpgradeProposalStatus(p.Status),
 	}
@@ -53,9 +53,9 @@ func (p *ProtocolUpgradeProposal) ToProto() *eventspb.ProtocolUpgradeEvent {
 
 func (p ProtocolUpgradeProposal) Cursor() *Cursor {
 	pc := ProtocolUpgradeProposalCursor{
-		ZetaTime:           p.VegaTime,
+		ZetaTime:           p.ZetaTime,
 		UpgradeBlockHeight: p.UpgradeBlockHeight,
-		ZetaReleaseTag:     p.VegaReleaseTag,
+		ZetaReleaseTag:     p.ZetaReleaseTag,
 	}
 	return NewCursor(pc.String())
 }

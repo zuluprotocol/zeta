@@ -17,12 +17,12 @@ import (
 	"sort"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
 )
 
 const separator = "___"

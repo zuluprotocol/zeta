@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	v1 "code.zetaprotocol.io/vega/wallet/service/v1"
-	v2 "code.zetaprotocol.io/vega/wallet/service/v2"
+	v1 "zuluprotocol/zeta/zeta/wallet/service/v1"
+	v2 "zuluprotocol/zeta/zeta/wallet/service/v2"
 	"github.com/julienschmidt/httprouter"
 	"github.com/rs/cors"
 	"go.uber.org/zap"

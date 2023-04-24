@@ -19,12 +19,12 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/pkg/errors"
 )
@@ -76,7 +76,7 @@ type Broker interface {
 
 // TimeService provide the time of the zeta node.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks code.zetaprotocol.io/vega/core/collateral TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/collateral TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }
@@ -251,7 +251,7 @@ func (e *Engine) EnableAsset(ctx context.Context, asset types.Asset) error {
 		// the withdrawal/deposits in banking. For snapshotting we we need to restore it and so instead of trying to make
 		// something thats already complicated more complex. we're just going to include it in the apphash which then gets
 		// included in the snapshot.
-		// see https://github.com/zetaprotocol/vega/pull/2745 for more information
+		// see https://github.com/zetaprotocol/zeta/pull/2745 for more information
 		e.addAccountToHashableSlice(externalAcc)
 		e.broker.Send(events.NewAccountEvent(ctx, *externalAcc))
 	}

@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	vgterm "code.zetaprotocol.io/vega/libs/term"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgterm "zuluprotocol/zeta/zeta/libs/term"
 	"golang.org/x/term"
 )
 

@@ -22,7 +22,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"code.zetaprotocol.io/vega/visor/utils"
+	"zuluprotocol/zeta/zeta/visor/utils"
 	"github.com/google/go-github/v50/github"
 	"golang.org/x/sync/errgroup"
 )

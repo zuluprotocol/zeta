@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/wallet/preferences"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/wallet/preferences"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 )
 
 const WalletConnectionSuccessfullyEstablished = "The connection to the wallet has been successfully established."

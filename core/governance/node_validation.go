@@ -19,9 +19,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 var (

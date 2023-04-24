@@ -3,7 +3,7 @@ package admin
 import (
 	"net/http"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 type ReadyForUpgradeArgs struct{}

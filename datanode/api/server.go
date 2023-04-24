@@ -20,20 +20,20 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/ratelimit"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/ratelimit"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/contextutil"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/logging"
-	protoapi "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/contextutil"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/logging"
+	protoapi "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"github.com/fullstorydev/grpcui/standalone"
 	"golang.org/x/sync/errgroup"
@@ -45,21 +45,21 @@ import (
 
 // EventService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks code.zetaprotocol.io/vega/datanode/api EventService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api EventService
 type EventService interface {
 	ObserveEvents(ctx context.Context, retries int, eTypes []events.Type, batchSize int, filters ...subscribers.EventFilter) (<-chan []*eventspb.BusEvent, chan<- int)
 }
 
 // BlockService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/block_service_mock.go -package mocks code.zetaprotocol.io/vega/datanode/api BlockService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/block_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api BlockService
 type BlockService interface {
 	GetLastBlock(ctx context.Context) (entities.Block, error)
 }
 
 // NetworkHistoryService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks code.zetaprotocol.io/vega/datanode/api NetworkHistoryService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api NetworkHistoryService
 type NetworkHistoryService interface {
 	GetHighestBlockHeightHistorySegment() (networkhistory.Segment, error)
 	ListAllHistorySegments() ([]networkhistory.Segment, error)
@@ -318,7 +318,7 @@ func headersInterceptor(
 			metadata.Pairs("X-Block-Height", strconv.FormatInt(height, 10)),
 			metadata.Pairs("X-Block-Timestamp", strconv.FormatInt(timestamp, 10)),
 			// TODO: remove warning once deprecated header is gone.
-			metadata.Pairs("Warning", "199 - \"The header 'X-Zeta-Connection' is deprecated and now defaults to 'CONNECTED'. It will be removed in a future version. See https://github.com/zetaprotocol/vega/issues/7385#issuecomment-1398719810\""),
+			metadata.Pairs("Warning", "199 - \"The header 'X-Zeta-Connection' is deprecated and now defaults to 'CONNECTED'. It will be removed in a future version. See https://github.com/zetaprotocol/zeta/issues/7385#issuecomment-1398719810\""),
 		} {
 			if errH := grpc.SetHeader(ctx, h); errH != nil {
 				log.Error("failed to set header", logging.Error(errH))

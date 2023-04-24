@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"os"
 
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/gorilla/mux"
 	"github.com/gorilla/rpc"
 	"github.com/gorilla/rpc/json"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type Server struct {

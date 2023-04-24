@@ -15,7 +15,7 @@ package query
 import (
 	"fmt"
 
-	apipb "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 
 	"github.com/golang/protobuf/jsonpb"
 )

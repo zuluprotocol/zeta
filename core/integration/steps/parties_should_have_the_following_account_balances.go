@@ -17,7 +17,7 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
 )
 
 func PartiesShouldHaveTheFollowingAccountBalances(

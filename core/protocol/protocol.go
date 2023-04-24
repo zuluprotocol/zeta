@@ -15,26 +15,26 @@ package protocol
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/core/spam"
+	"zuluprotocol/zeta/zeta/core/spam"
 
 	"github.com/blang/semver"
 
-	"code.zetaprotocol.io/vega/core/api"
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/core/broker"
-	ethclient "code.zetaprotocol.io/vega/core/client/eth"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/evtforward"
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/processor"
-	"code.zetaprotocol.io/vega/core/protocolupgrade"
-	"code.zetaprotocol.io/vega/core/stats"
-	"code.zetaprotocol.io/vega/core/vegatime"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/api"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/core/broker"
+	ethclient "zuluprotocol/zeta/zeta/core/client/eth"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/evtforward"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/processor"
+	"zuluprotocol/zeta/zeta/core/protocolupgrade"
+	"zuluprotocol/zeta/zeta/core/stats"
+	"zuluprotocol/zeta/zeta/core/zetatime"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var Version = semver.MustParse("0.1.0")

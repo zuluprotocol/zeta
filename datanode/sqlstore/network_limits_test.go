@@ -16,8 +16,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -32,7 +32,7 @@ func TestNetworkLimits(t *testing.T) {
 	nls := sqlstore.NewNetworkLimits(connectionSource)
 
 	nl := entities.NetworkLimits{
-		ZetaTime:                 block.VegaTime,
+		ZetaTime:                 block.ZetaTime,
 		CanProposeMarket:         true,
 		CanProposeAsset:          false,
 		ProposeMarketEnabled:     false,
@@ -46,7 +46,7 @@ func TestNetworkLimits(t *testing.T) {
 	require.NoError(t, err)
 
 	nl2 := nl
-	nl2.ZetaTime = block2.VegaTime
+	nl2.ZetaTime = block2.ZetaTime
 	err = nls.Add(ctx, nl2)
 	require.NoError(t, err)
 

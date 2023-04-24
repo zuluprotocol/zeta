@@ -18,7 +18,7 @@ import (
 	"net"
 	"net/http"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/fullstorydev/grpcui/standalone"
 	"google.golang.org/grpc"
 )

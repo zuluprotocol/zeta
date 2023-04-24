@@ -84,7 +84,7 @@ Scenario: transfer to self succeeds
 Scenario: transfer from non existing account fails
     Given the parties submit the following one off transfers:
     | id | from   |   from_account_type    |   to   |   to_account_type    | asset | amount | delivery_time         |                            error                                         |
-    | 1  | a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4 |  ACCOUNT_TYPE_GENERAL  | f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c | ACCOUNT_TYPE_GENERAL | ZETA  |  10000 | 2021-08-26T00:00:01Z  | could not pay the fee for transfer: account does not exist: !a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4VEGA4 |
+    | 1  | a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4 |  ACCOUNT_TYPE_GENERAL  | f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c | ACCOUNT_TYPE_GENERAL | ZETA  |  10000 | 2021-08-26T00:00:01Z  | could not pay the fee for transfer: account does not exist: !a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4ZETA4 |
 
 
 Scenario: payout time in the past - should be executed immediately

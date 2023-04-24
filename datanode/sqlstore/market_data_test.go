@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -93,7 +93,7 @@ func shouldInsertAValidMarketDataRecord(t *testing.T) {
 		MarketState:       "STATE_ACTIVE",
 		AuctionTrigger:    "AUCTION_TRIGGER_LIQUIDITY",
 		ExtensionTrigger:  "AUCTION_TRIGGER_UNSPECIFIED",
-		ZetaTime:          block.VegaTime,
+		ZetaTime:          block.ZetaTime,
 	})
 	require.NoError(t, err)
 
@@ -896,7 +896,7 @@ func setupMarketData(t *testing.T, ctx context.Context) (*sqlstore.MarketData, e
 		if _, alreadyAdded := addedBlocksAt[marketData.ZetaTime.UnixNano()]; !alreadyAdded {
 			// Postgres only stores timestamps in microsecond resolution
 			block := entities.Block{
-				ZetaTime: marketData.VegaTime,
+				ZetaTime: marketData.ZetaTime,
 				Height:   2,
 				Hash:     hash,
 			}

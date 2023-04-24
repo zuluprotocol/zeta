@@ -4,8 +4,8 @@ import (
 	"errors"
 	"math/big"
 
-	"code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 var (
@@ -76,7 +76,7 @@ func checkTransfer(cmd *commandspb.Transfer) (e Errors) {
 	} else {
 		switch k := cmd.Kind.(type) {
 		case *commandspb.Transfer_OneOff:
-			if cmd.ToAccountType != zeta.AccountType_ACCOUNT_TYPE_GLOBAL_REWARD && cmd.ToAccountType != vega.AccountType_ACCOUNT_TYPE_GENERAL && cmd.ToAccountType != vega.AccountType_ACCOUNT_TYPE_UNSPECIFIED {
+			if cmd.ToAccountType != zeta.AccountType_ACCOUNT_TYPE_GLOBAL_REWARD && cmd.ToAccountType != zeta.AccountType_ACCOUNT_TYPE_GENERAL && cmd.ToAccountType != zeta.AccountType_ACCOUNT_TYPE_UNSPECIFIED {
 				errs.AddForProperty("transfer.to_account_type", errors.New("account type is not valid for one off transfer"))
 			}
 			if k.OneOff.GetDeliverOn() < 0 {
@@ -123,16 +123,16 @@ func checkTransfer(cmd *commandspb.Transfer) (e Errors) {
 					errs.AddForProperty("transfer.kind.dispatch_strategy.asset_for_metric", ErrShouldBeAValidZetaID)
 				}
 				// check that that the metric makes sense for the account type
-				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_LP_RECEIVED_FEES && k.Recurring.DispatchStrategy.Metric != vega.DispatchMetric_DISPATCH_METRIC_LP_FEES_RECEIVED {
+				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_LP_RECEIVED_FEES && k.Recurring.DispatchStrategy.Metric != zeta.DispatchMetric_DISPATCH_METRIC_LP_FEES_RECEIVED {
 					errs.AddForProperty("transfer.kind.dispatch_strategy.dispatch_metric", ErrIsNotValid)
 				}
-				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MAKER_RECEIVED_FEES && k.Recurring.DispatchStrategy.Metric != vega.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED {
+				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MAKER_RECEIVED_FEES && k.Recurring.DispatchStrategy.Metric != zeta.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED {
 					errs.AddForProperty("transfer.kind.dispatch_strategy.dispatch_metric", ErrIsNotValid)
 				}
-				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MAKER_PAID_FEES && k.Recurring.DispatchStrategy.Metric != vega.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_PAID {
+				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MAKER_PAID_FEES && k.Recurring.DispatchStrategy.Metric != zeta.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_PAID {
 					errs.AddForProperty("transfer.kind.dispatch_strategy.dispatch_metric", ErrIsNotValid)
 				}
-				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MARKET_PROPOSERS && k.Recurring.DispatchStrategy.Metric != vega.DispatchMetric_DISPATCH_METRIC_MARKET_VALUE {
+				if cmd.ToAccountType == zeta.AccountType_ACCOUNT_TYPE_REWARD_MARKET_PROPOSERS && k.Recurring.DispatchStrategy.Metric != zeta.DispatchMetric_DISPATCH_METRIC_MARKET_VALUE {
 					errs.AddForProperty("transfer.kind.dispatch_strategy.dispatch_metric", ErrIsNotValid)
 				}
 			}

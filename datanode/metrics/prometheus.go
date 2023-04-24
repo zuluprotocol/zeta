@@ -19,9 +19,9 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/protos"
+	"zuluprotocol/zeta/zeta/protos"
 
-	"code.zetaprotocol.io/vega/core/events"
+	"zuluprotocol/zeta/zeta/core/events"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

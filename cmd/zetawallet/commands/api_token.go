@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/cli"
-	"code.zetaprotocol.io/vega/paths"
-	tokenStoreV1 "code.zetaprotocol.io/vega/wallet/service/v2/connections/store/v1"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/zeta/paths"
+	tokenStoreV1 "zuluprotocol/zeta/zeta/wallet/service/v2/connections/store/v1"
 	"github.com/spf13/cobra"
 )
 

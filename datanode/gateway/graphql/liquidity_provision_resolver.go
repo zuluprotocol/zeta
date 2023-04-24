@@ -4,7 +4,7 @@ import (
 	"context"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 //type LiquidityProvisionUpdateResolver interface {

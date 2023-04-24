@@ -37,10 +37,10 @@ To be able to clone/push/pull from github in a seamless way, it is worth setting
 You also now need to tell git to prefer SSH over HTTPS when accessing all `zetaprotocol` repositories by doing the following:
 
 ```bash
-git config --global url."git@github.com:zetaprotocol".insteadOf "https://github.com/vegaprotocol"
+git config --global url."git@github.com:zetaprotocol".insteadOf "https://github.com/zetaprotocol"
 ```
 
-This is necessary since some of the repos that `zeta` depends on in `vegaprotocol` are private repositories. The git setting ensure that `go get` now knows to use `ssh` too.
+This is necessary since some of the repos that `zeta` depends on in `zetaprotocol` are private repositories. The git setting ensure that `go get` now knows to use `ssh` too.
 
 
 ## MacOS Requirements
@@ -83,7 +83,7 @@ $ brew install findutils
 Go makes building easy:
 
 ```bash
-git clone git@github.com:zetaprotocol/vega.git
+git clone git@github.com:zetaprotocol/zeta.git
 cd zeta
 
 go install ./...
@@ -104,6 +104,6 @@ There is also a `Makefile` which contain the above commands and also some other 
 
 ## Running A Zeta Node Locally
 
-With zeta built it is technically possible to run the node locally, but it is a bit cumbersome. The steps are here if you are feeling brave: https://github.com/vegaprotocol/networks
+With zeta built it is technically possible to run the node locally, but it is a bit cumbersome. The steps are here if you are feeling brave: https://github.com/zetaprotocol/networks
 
-An alternative is to use `ZetaCapsule` (VC) which will allow you to configure and run a Vega network locally. For more information and  detailed information to get started see the [VC repo](https://github.com/zetaprotocol/vegacapsule)
+An alternative is to use `ZetaCapsule` (VC) which will allow you to configure and run a Zeta network locally. For more information and  detailed information to get started see the [VC repo](https://github.com/zetaprotocol/zetacapsule)

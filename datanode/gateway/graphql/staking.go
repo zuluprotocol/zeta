@@ -17,10 +17,10 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/ptr"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	vgproto "code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type stakeLinkingResolver ZetaResolverRoot

@@ -16,7 +16,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 type Stringer interface {

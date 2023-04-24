@@ -19,9 +19,9 @@ import (
 	"math"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -68,7 +68,7 @@ func (mc *MarketCursor) Parse(cursorString string) error {
 	return json.Unmarshal([]byte(cursorString), mc)
 }
 
-func NewMarketFromProto(market *zeta.Market, txHash TxHash, vegaTime time.Time) (*Market, error) {
+func NewMarketFromProto(market *zeta.Market, txHash TxHash, zetaTime time.Time) (*Market, error) {
 	var err error
 	var liquidityMonitoringParameters LiquidityMonitoringParameters
 	var marketTimestamps MarketTimestamps
@@ -154,7 +154,7 @@ func (m Market) ToProto() *zeta.Market {
 
 func (m Market) Cursor() *Cursor {
 	mc := MarketCursor{
-		ZetaTime: m.VegaTime,
+		ZetaTime: m.ZetaTime,
 		ID:       m.ID,
 	}
 	return NewCursor(mc.String())

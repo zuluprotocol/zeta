@@ -15,8 +15,8 @@ package execution
 import (
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func NewEquitySharesFromSnapshot(state *types.EquityShare) *EquityShares {

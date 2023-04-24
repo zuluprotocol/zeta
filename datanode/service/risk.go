@@ -15,9 +15,9 @@ package service
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/utils"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/utils"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type MarginLevelsStore interface {

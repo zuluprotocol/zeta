@@ -24,7 +24,7 @@ Name of the upgrade.
 </dd>
 
 <dt>
-	<code>zeta</code>  <strong><a href="#vegaconfig">ZetaConfig</a></strong>  - required
+	<code>zeta</code>  <strong><a href="#zetaconfig">ZetaConfig</a></strong>  - required
 </dt>
 
 <dd>

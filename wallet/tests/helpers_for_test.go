@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
 )
 
 const testRecoveryPhrase = "swing ceiling chaos green put insane ripple desk match tip melt usual shrug turkey renew icon parade veteran lens govern path rough page render"

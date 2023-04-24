@@ -18,11 +18,11 @@ import (
 	"sort"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type EpochEngine interface {

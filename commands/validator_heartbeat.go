@@ -3,7 +3,7 @@ package commands
 import (
 	"encoding/hex"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 func CheckValidatorHeartbeat(cmd *commandspb.ValidatorHeartbeat) error {
@@ -35,7 +35,7 @@ func checkValidatorHeartbeat(cmd *commandspb.ValidatorHeartbeat) Errors {
 		}
 	}
 
-	if cmd.ZetaSignature == nil || len(cmd.VegaSignature.Value) == 0 {
+	if cmd.ZetaSignature == nil || len(cmd.ZetaSignature.Value) == 0 {
 		errs.AddForProperty("validator_heartbeat.zeta_signature.value", ErrIsRequired)
 	} else {
 		_, err := hex.DecodeString(cmd.ZetaSignature.Value)

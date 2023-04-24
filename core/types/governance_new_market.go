@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 	"net/http/httputil"
 	"testing"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func headerNotPresent(t *testing.T, x *httptest.ResponseRecorder, key string) {

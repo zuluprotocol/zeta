@@ -15,7 +15,7 @@ package events
 import (
 	"context"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // StateVar is an event for tracking consensus in floating point state variables.

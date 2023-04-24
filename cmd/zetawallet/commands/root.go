@@ -5,8 +5,8 @@ import (
 	"io"
 	"os"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/cli"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
 	"github.com/spf13/cobra"
 )
 

@@ -42,7 +42,7 @@ var (
 
 // StakingMetaData contains all meta data concerning the Staking contract.
 var StakingMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"zeta_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"vega_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Removed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"vega_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Transferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"staking_token\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"vega_public_key\",\"type\":\"bytes32\"}],\"name\":\"stake_balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"total_staked\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"zeta_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"zeta_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Removed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"zeta_public_key\",\"type\":\"bytes32\"}],\"name\":\"Stake_Transferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"staking_token\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"zeta_public_key\",\"type\":\"bytes32\"}],\"name\":\"stake_balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"total_staked\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // StakingABI is the input ABI used to generate the binding from.
@@ -363,8 +363,8 @@ func (_Staking *StakingFilterer) FilterStakeDeposited(opts *bind.FilterOpts, use
 	}
 
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.FilterLogs(opts, "Stake_Deposited", userRule, zeta_public_keyRule)
@@ -384,8 +384,8 @@ func (_Staking *StakingFilterer) WatchStakeDeposited(opts *bind.WatchOpts, sink 
 	}
 
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.WatchLogs(opts, "Stake_Deposited", userRule, zeta_public_keyRule)
@@ -517,8 +517,8 @@ func (_Staking *StakingFilterer) FilterStakeRemoved(opts *bind.FilterOpts, user 
 	}
 
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.FilterLogs(opts, "Stake_Removed", userRule, zeta_public_keyRule)
@@ -538,8 +538,8 @@ func (_Staking *StakingFilterer) WatchStakeRemoved(opts *bind.WatchOpts, sink ch
 	}
 
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.WatchLogs(opts, "Stake_Removed", userRule, zeta_public_keyRule)
@@ -676,8 +676,8 @@ func (_Staking *StakingFilterer) FilterStakeTransferred(opts *bind.FilterOpts, f
 		toRule = append(toRule, toItem)
 	}
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.FilterLogs(opts, "Stake_Transferred", fromRule, toRule, zeta_public_keyRule)
@@ -701,8 +701,8 @@ func (_Staking *StakingFilterer) WatchStakeTransferred(opts *bind.WatchOpts, sin
 		toRule = append(toRule, toItem)
 	}
 	var zeta_public_keyRule []interface{}
-	for _, zeta_public_keyItem := range vega_public_key {
-		zeta_public_keyRule = append(vega_public_keyRule, vega_public_keyItem)
+	for _, zeta_public_keyItem := range zeta_public_key {
+		zeta_public_keyRule = append(zeta_public_keyRule, zeta_public_keyItem)
 	}
 
 	logs, sub, err := _Staking.contract.WatchLogs(opts, "Stake_Transferred", fromRule, toRule, zeta_public_keyRule)

@@ -17,8 +17,8 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/integration/helpers"
-	"code.zetaprotocol.io/vega/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/integration/helpers"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
 )
 
 type EpochService interface {

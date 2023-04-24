@@ -20,11 +20,11 @@ import (
 	"sort"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/clef"
-	"code.zetaprotocol.io/vega/core/txn"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/zeta/core/txn"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
@@ -78,7 +78,7 @@ func (t *Topology) ProcessValidatorHeartbeat(ctx context.Context, vh *commandspb
 		validator.heartbeatTracker.recordHeartbeatResult(false)
 		return err
 	}
-	if err := verifyZetaSig([]byte(hash), zetas, vegaPubKey); err != nil {
+	if err := verifyZetaSig([]byte(hash), zetas, zetaPubKey); err != nil {
 		validator.heartbeatTracker.recordHeartbeatResult(false)
 		return err
 	}

@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -39,7 +39,7 @@ func addTestLedgerEntry(t *testing.T, ledger *sqlstore.Ledger,
 		FromAccountID:      fromAccount.ID,
 		ToAccountID:        toAccount.ID,
 		Quantity:           decimal.NewFromInt(quantity),
-		ZetaTime:           block.VegaTime,
+		ZetaTime:           block.ZetaTime,
 		TransferTime:       block.ZetaTime.Add(-time.Second),
 		Type:               transferType,
 		FromAccountBalance: decimal.NewFromInt(fromAccountBalance),
@@ -301,7 +301,7 @@ func TestLedger(t *testing.T) {
 			assert.Nil(t, entries)
 
 			filter.FromAccountFilter.PartyIDs = []entities.PartyID{}
-			filter.FromAccountFilter.AccountTypes = []zeta.AccountType{vega.AccountType_ACCOUNT_TYPE_GENERAL}
+			filter.FromAccountFilter.AccountTypes = []zeta.AccountType{zeta.AccountType_ACCOUNT_TYPE_GENERAL}
 
 			entries, _, err = ledgerStore.Query(ctx,
 				filter,
@@ -360,7 +360,7 @@ func TestLedger(t *testing.T) {
 				assert.Equal(t, *e.ToAccountMarketID, markets[4].ID)
 			}
 
-			filter.ToAccountFilter.AccountTypes = []zeta.AccountType{vega.AccountType_ACCOUNT_TYPE_GENERAL, vega.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
+			filter.ToAccountFilter.AccountTypes = []zeta.AccountType{zeta.AccountType_ACCOUNT_TYPE_GENERAL, zeta.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
 
 			entries, _, err = ledgerStore.Query(ctx,
 				filter,
@@ -432,7 +432,7 @@ func TestLedger(t *testing.T) {
 					}
 				}
 
-				filter.ToAccountFilter.AccountTypes = []zeta.AccountType{vega.AccountType_ACCOUNT_TYPE_GENERAL, vega.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
+				filter.ToAccountFilter.AccountTypes = []zeta.AccountType{zeta.AccountType_ACCOUNT_TYPE_GENERAL, zeta.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
 				entries, _, err = ledgerStore.Query(ctx,
 					filter,
 					entities.DateRange{Start: &tStart, End: &tEnd},
@@ -529,7 +529,7 @@ func TestLedger(t *testing.T) {
 
 				filter.FromAccountFilter = entities.AccountFilter{AssetID: asset3.ID}
 				filter.FromAccountFilter.PartyIDs = []entities.PartyID{parties[7].ID}
-				filter.ToAccountFilter.AccountTypes = []zeta.AccountType{vega.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
+				filter.ToAccountFilter.AccountTypes = []zeta.AccountType{zeta.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY}
 				entries, _, err = ledgerStore.Query(ctx,
 					filter,
 					entities.DateRange{Start: &tStart, End: &tEnd},
@@ -631,7 +631,7 @@ func TestLedger(t *testing.T) {
 
 			filter.ToAccountFilter = entities.AccountFilter{
 				AssetID:      asset3.ID,
-				AccountTypes: []zeta.AccountType{vega.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY},
+				AccountTypes: []zeta.AccountType{zeta.AccountType_ACCOUNT_TYPE_FEES_LIQUIDITY},
 			}
 
 			entries, _, err = ledgerStore.Query(ctx,

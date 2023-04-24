@@ -16,9 +16,9 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 )
 
 type loader interface {

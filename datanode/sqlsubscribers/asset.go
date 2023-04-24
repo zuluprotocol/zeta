@@ -20,9 +20,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 )
@@ -64,7 +64,7 @@ func (a *Asset) consume(ctx context.Context, ae AssetEvent) error {
 	return nil
 }
 
-func (a *Asset) addAsset(ctx context.Context, va zeta.Asset, txHash string, vegaTime time.Time) error {
+func (a *Asset) addAsset(ctx context.Context, va zeta.Asset, txHash string, zetaTime time.Time) error {
 	quantum, err := decimal.NewFromString(va.Details.Quantum)
 	if err != nil {
 		return errors.Errorf("bad quantum '%v'", va.Details.Quantum)

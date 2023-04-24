@@ -6,12 +6,12 @@ import (
 	"io"
 	"strconv"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"github.com/99designs/gqlgen/graphql"
 )

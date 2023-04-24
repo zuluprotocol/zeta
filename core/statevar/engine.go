@@ -20,13 +20,13 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"
@@ -39,7 +39,7 @@ var (
 	chars               = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks code.zetaprotocol.io/vega/core/statevar Commander
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks zuluprotocol/zeta/zeta/core/statevar Commander
 type Commander interface {
 	Command(ctx context.Context, cmd txn.Command, payload proto.Message, f func(string, error), bo *backoff.ExponentialBackOff)
 }
@@ -51,7 +51,7 @@ type Broker interface {
 
 // Topology the topology service.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/topology_mock.go -package mocks code.zetaprotocol.io/vega/core/statevar Topology
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/topology_mock.go -package mocks zuluprotocol/zeta/zeta/core/statevar Topology
 type Topology interface {
 	IsValidatorZetaPubKey(node string) bool
 	AllNodeIDs() []string

@@ -18,12 +18,12 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/protos/vega"
-	checkpointpb "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	checkpointpb "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 )
 
 type Snapshot struct {
@@ -3533,7 +3533,7 @@ func PayloadStakeVerifierRemovedFromProto(svd *snapshot.Payload_StakeVerifierRem
 			LogIndex:        pr.LogIndex,
 			BlockNumber:     pr.BlockNumber,
 			ID:              pr.Id,
-			ZetaPubKey:      pr.VegaPublicKey,
+			ZetaPubKey:      pr.ZetaPublicKey,
 			BlockTime:       pr.BlockTime,
 			Amount:          num.UintZero(),
 		}
@@ -3556,7 +3556,7 @@ func (p *PayloadStakeVerifierRemoved) IntoProto() *snapshot.Payload_StakeVerifie
 		pending = append(pending,
 			&snapshot.StakeVerifierPending{
 				EthereumAddress: crypto.EthereumChecksumAddress(p.EthereumAddress),
-				ZetaPublicKey:   p.VegaPubKey,
+				ZetaPublicKey:   p.ZetaPubKey,
 				Amount:          p.Amount.String(),
 				BlockTime:       p.BlockTime,
 				BlockNumber:     p.BlockNumber,
@@ -3597,7 +3597,7 @@ func PayloadStakeVerifierDepositedFromProto(svd *snapshot.Payload_StakeVerifierD
 			LogIndex:        pd.LogIndex,
 			BlockNumber:     pd.BlockNumber,
 			ID:              pd.Id,
-			ZetaPubKey:      pd.VegaPublicKey,
+			ZetaPubKey:      pd.ZetaPublicKey,
 			BlockTime:       pd.BlockTime,
 			Amount:          num.UintZero(),
 		}
@@ -3620,7 +3620,7 @@ func (p *PayloadStakeVerifierDeposited) IntoProto() *snapshot.Payload_StakeVerif
 		pending = append(pending,
 			&snapshot.StakeVerifierPending{
 				EthereumAddress: crypto.EthereumChecksumAddress(p.EthereumAddress),
-				ZetaPublicKey:   p.VegaPubKey,
+				ZetaPublicKey:   p.ZetaPubKey,
 				Amount:          p.Amount.String(),
 				BlockTime:       p.BlockTime,
 				BlockNumber:     p.BlockNumber,

@@ -18,10 +18,10 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type WithdrawExt struct {
@@ -316,7 +316,7 @@ func NewBuiltinAssetDepositFromProto(p *zetapb.BuiltinAssetDeposit) (*BuiltinAss
 		}
 	}
 	return &BuiltinAssetDeposit{
-		ZetaAssetID: p.VegaAssetId,
+		ZetaAssetID: p.ZetaAssetId,
 		PartyID:     p.PartyId,
 		Amount:      amount,
 	}, nil
@@ -324,7 +324,7 @@ func NewBuiltinAssetDepositFromProto(p *zetapb.BuiltinAssetDeposit) (*BuiltinAss
 
 func (b BuiltinAssetDeposit) IntoProto() *zetapb.BuiltinAssetDeposit {
 	return &zetapb.BuiltinAssetDeposit{
-		ZetaAssetId: b.VegaAssetID,
+		ZetaAssetId: b.ZetaAssetID,
 		PartyId:     b.PartyID,
 		Amount:      num.UintToString(b.Amount),
 	}
@@ -362,7 +362,7 @@ func NewBuiltinAssetWithdrawalFromProto(p *zetapb.BuiltinAssetWithdrawal) (*Buil
 		}
 	}
 	return &BuiltinAssetWithdrawal{
-		ZetaAssetID: p.VegaAssetId,
+		ZetaAssetID: p.ZetaAssetId,
 		PartyID:     p.PartyId,
 		Amount:      amount,
 	}, nil
@@ -370,7 +370,7 @@ func NewBuiltinAssetWithdrawalFromProto(p *zetapb.BuiltinAssetWithdrawal) (*Buil
 
 func (b BuiltinAssetWithdrawal) IntoProto() *zetapb.BuiltinAssetWithdrawal {
 	return &zetapb.BuiltinAssetWithdrawal{
-		ZetaAssetId: b.VegaAssetID,
+		ZetaAssetId: b.ZetaAssetID,
 		PartyId:     b.PartyID,
 		Amount:      num.UintToString(b.Amount),
 	}
@@ -662,13 +662,13 @@ type ERC20AssetDelist struct {
 
 func NewERC20AssetDelistFromProto(p *zetapb.ERC20AssetDelist) *ERC20AssetDelist {
 	return &ERC20AssetDelist{
-		ZetaAssetID: p.VegaAssetId,
+		ZetaAssetID: p.ZetaAssetId,
 	}
 }
 
 func (e ERC20AssetDelist) IntoProto() *zetapb.ERC20AssetDelist {
 	return &zetapb.ERC20AssetDelist{
-		ZetaAssetId: e.VegaAssetID,
+		ZetaAssetId: e.ZetaAssetID,
 	}
 }
 
@@ -714,14 +714,14 @@ type ERC20AssetList struct {
 
 func NewERC20AssetListFromProto(p *zetapb.ERC20AssetList) *ERC20AssetList {
 	return &ERC20AssetList{
-		ZetaAssetID: p.VegaAssetId,
+		ZetaAssetID: p.ZetaAssetId,
 		AssetSource: p.AssetSource,
 	}
 }
 
 func (e ERC20AssetList) IntoProto() *zetapb.ERC20AssetList {
 	return &zetapb.ERC20AssetList{
-		ZetaAssetId: e.VegaAssetID,
+		ZetaAssetId: e.ZetaAssetID,
 	}
 }
 
@@ -776,7 +776,7 @@ type ERC20Withdrawal struct {
 
 func NewERC20WithdrawalFromProto(p *zetapb.ERC20Withdrawal) *ERC20Withdrawal {
 	return &ERC20Withdrawal{
-		ZetaAssetID:           p.VegaAssetId,
+		ZetaAssetID:           p.ZetaAssetId,
 		TargetEthereumAddress: p.TargetEthereumAddress,
 		ReferenceNonce:        p.ReferenceNonce,
 	}
@@ -784,7 +784,7 @@ func NewERC20WithdrawalFromProto(p *zetapb.ERC20Withdrawal) *ERC20Withdrawal {
 
 func (e ERC20Withdrawal) IntoProto() *zetapb.ERC20Withdrawal {
 	return &zetapb.ERC20Withdrawal{
-		ZetaAssetId:           e.VegaAssetID,
+		ZetaAssetId:           e.ZetaAssetID,
 		TargetEthereumAddress: e.TargetEthereumAddress,
 		ReferenceNonce:        e.ReferenceNonce,
 	}
@@ -850,7 +850,7 @@ type ERC20Deposit struct {
 
 func NewERC20DepositFromProto(p *zetapb.ERC20Deposit) (*ERC20Deposit, error) {
 	e := ERC20Deposit{
-		ZetaAssetID:           p.VegaAssetId,
+		ZetaAssetID:           p.ZetaAssetId,
 		SourceEthereumAddress: p.SourceEthereumAddress,
 		TargetPartyID:         p.TargetPartyId,
 	}
@@ -866,7 +866,7 @@ func NewERC20DepositFromProto(p *zetapb.ERC20Deposit) (*ERC20Deposit, error) {
 
 func (e ERC20Deposit) IntoProto() *zetapb.ERC20Deposit {
 	return &zetapb.ERC20Deposit{
-		ZetaAssetId:           e.VegaAssetID,
+		ZetaAssetId:           e.ZetaAssetID,
 		SourceEthereumAddress: e.SourceEthereumAddress,
 		TargetPartyId:         e.TargetPartyID,
 		Amount:                num.UintToString(e.Amount),
@@ -927,7 +927,7 @@ func NewERC20AssetLimitsUpdatedFromProto(p *zetapb.ERC20AssetLimitsUpdated) *ERC
 	lifetimeLimits, _ := num.UintFromString(p.LifetimeLimits, 10)
 	withdrawThreshold, _ := num.UintFromString(p.WithdrawThreshold, 10)
 	return &ERC20AssetLimitsUpdated{
-		ZetaAssetID:           p.VegaAssetId,
+		ZetaAssetID:           p.ZetaAssetId,
 		SourceEthereumAddress: p.SourceEthereumAddress,
 		LifetimeLimits:        lifetimeLimits,
 		WithdrawThreshold:     withdrawThreshold,
@@ -936,7 +936,7 @@ func NewERC20AssetLimitsUpdatedFromProto(p *zetapb.ERC20AssetLimitsUpdated) *ERC
 
 func (e ERC20AssetLimitsUpdated) IntoProto() *zetapb.ERC20AssetLimitsUpdated {
 	return &zetapb.ERC20AssetLimitsUpdated{
-		ZetaAssetId:           e.VegaAssetID,
+		ZetaAssetId:           e.ZetaAssetID,
 		SourceEthereumAddress: e.SourceEthereumAddress,
 		LifetimeLimits:        num.UintToString(e.LifetimeLimits),
 		WithdrawThreshold:     num.UintToString(e.WithdrawThreshold),

@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/wallet/api"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/wallet/api"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

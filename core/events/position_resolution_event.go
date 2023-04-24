@@ -16,8 +16,8 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/libs/num"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type PosRes struct {

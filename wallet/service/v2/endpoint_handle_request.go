@@ -8,11 +8,11 @@ import (
 	"net/http"
 	"strings"
 
-	vfmt "code.zetaprotocol.io/vega/libs/fmt"
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/wallet/api"
+	vfmt "zuluprotocol/zeta/zeta/libs/fmt"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/wallet/api"
 	"github.com/julienschmidt/httprouter"
 	"go.uber.org/zap"
 )

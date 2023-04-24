@@ -19,13 +19,13 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/positions"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/positions"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

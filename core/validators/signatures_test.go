@@ -19,11 +19,11 @@ import (
 	"testing"
 	"time"
 
-	bmocks "code.zetaprotocol.io/vega/core/broker/mocks"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/core/validators/mocks"
-	"code.zetaprotocol.io/vega/logging"
+	bmocks "zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/core/validators/mocks"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/golang/mock/gomock"

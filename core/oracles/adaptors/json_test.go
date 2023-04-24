@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/oracles/adaptors"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/oracles/adaptors"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

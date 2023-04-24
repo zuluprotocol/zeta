@@ -17,7 +17,7 @@ import (
 	"errors"
 	"sync"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 )
 
 type ChainStore interface {

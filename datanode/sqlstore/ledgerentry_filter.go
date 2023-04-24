@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 var (

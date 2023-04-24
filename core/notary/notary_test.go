@@ -17,12 +17,12 @@ import (
 	"testing"
 	"time"
 
-	bmocks "code.zetaprotocol.io/vega/core/broker/mocks"
-	"code.zetaprotocol.io/vega/core/notary"
-	"code.zetaprotocol.io/vega/core/notary/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	bmocks "zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/notary"
+	"zuluprotocol/zeta/zeta/core/notary/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

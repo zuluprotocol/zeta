@@ -17,11 +17,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/monitor"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/core/monitor"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

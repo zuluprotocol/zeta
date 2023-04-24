@@ -15,10 +15,10 @@ package service
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/utils"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/utils"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type ledgerStore interface {

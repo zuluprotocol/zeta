@@ -20,7 +20,7 @@ import (
 	"sync"
 	"time"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"go.nanomsg.org/mangos/v3"
 	mangosErr "go.nanomsg.org/mangos/v3/errors"
@@ -30,10 +30,10 @@ import (
 	_ "go.nanomsg.org/mangos/v3/transport/tcp"    // Does some nanomsg magic presumably
 	"golang.org/x/sync/errgroup"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // SocketClient stream events sent to this broker over a socket to a remote broker.

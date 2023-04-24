@@ -15,7 +15,7 @@ package types
 import (
 	"fmt"
 
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type NetworkParameter struct {

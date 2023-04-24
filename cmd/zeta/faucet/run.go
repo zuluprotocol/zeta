@@ -19,10 +19,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/faucet"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/faucet"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 )

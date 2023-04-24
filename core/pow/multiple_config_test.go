@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/pow/mocks"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/pow/mocks"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

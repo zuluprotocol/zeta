@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -47,7 +47,7 @@ func getByIDShouldReturnTheRequestedMarketIfItExists(t *testing.T) {
 	market := entities.Market{
 		ID:       "deadbeef",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateActive,
 	}
 	err := md.Upsert(ctx, &market)
@@ -57,7 +57,7 @@ func getByIDShouldReturnTheRequestedMarketIfItExists(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, market.ID, marketFromDB.ID)
 	assert.Equal(t, market.TxHash, marketFromDB.TxHash)
-	assert.Equal(t, market.ZetaTime, marketFromDB.VegaTime)
+	assert.Equal(t, market.ZetaTime, marketFromDB.ZetaTime)
 	assert.Equal(t, market.State, marketFromDB.State)
 }
 
@@ -71,7 +71,7 @@ func getByIDShouldReturnErrorIfTheMarketDoesNotExist(t *testing.T) {
 	market := entities.Market{
 		ID:       "deadbeef",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateActive,
 	}
 	err := md.Upsert(ctx, &market)
@@ -91,7 +91,7 @@ func getAllShouldNotIncludeRejectedMarkets(t *testing.T) {
 	market := entities.Market{
 		ID:       "deadbeef",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateActive,
 	}
 	err := md.Upsert(ctx, &market)
@@ -100,7 +100,7 @@ func getAllShouldNotIncludeRejectedMarkets(t *testing.T) {
 	rejected := entities.Market{
 		ID:       "DEADBAAD",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateRejected,
 	}
 	err = md.Upsert(ctx, &rejected)
@@ -111,7 +111,7 @@ func getAllShouldNotIncludeRejectedMarkets(t *testing.T) {
 	assert.Len(t, markets, 1)
 	assert.Equal(t, market.ID, markets[0].ID)
 	assert.Equal(t, market.TxHash, markets[0].TxHash)
-	assert.Equal(t, market.ZetaTime, markets[0].VegaTime)
+	assert.Equal(t, market.ZetaTime, markets[0].ZetaTime)
 	assert.Equal(t, market.State, markets[0].State)
 }
 
@@ -125,7 +125,7 @@ func getAllPagedShouldNotIncludeRejectedMarkets(t *testing.T) {
 	market := entities.Market{
 		ID:       "deadbeef",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateActive,
 	}
 	err := md.Upsert(ctx, &market)
@@ -134,7 +134,7 @@ func getAllPagedShouldNotIncludeRejectedMarkets(t *testing.T) {
 	rejected := entities.Market{
 		ID:       "DEADBAAD",
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		State:    entities.MarketStateRejected,
 	}
 	err = md.Upsert(ctx, &rejected)
@@ -145,7 +145,7 @@ func getAllPagedShouldNotIncludeRejectedMarkets(t *testing.T) {
 	assert.Len(t, markets, 1)
 	assert.Equal(t, market.ID, markets[0].ID)
 	assert.Equal(t, market.TxHash, markets[0].TxHash)
-	assert.Equal(t, market.ZetaTime, markets[0].VegaTime)
+	assert.Equal(t, market.ZetaTime, markets[0].ZetaTime)
 	assert.Equal(t, market.State, markets[0].State)
 	assert.Equal(t, entities.PageInfo{
 		HasNextPage:     false,
@@ -437,7 +437,7 @@ func populateTestMarkets(ctx context.Context, t *testing.T, bs *sqlstore.Blocks,
 
 	for _, market := range markets {
 		block := addTestBlock(t, ctx, bs)
-		market.ZetaTime = block.VegaTime
+		market.ZetaTime = block.ZetaTime
 		blockTimes[market.ID.String()] = block.ZetaTime
 		err := md.Upsert(ctx, &market)
 		require.NoError(t, err)

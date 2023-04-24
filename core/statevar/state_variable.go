@@ -20,13 +20,13 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 // ConsensusState trakcs the state transitions of a state variable.

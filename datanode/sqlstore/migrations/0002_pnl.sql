@@ -61,7 +61,7 @@ BEGIN
                                                    loss=EXCLUDED.loss,
                                                    adjustment=EXCLUDED.adjustment,
                                                    tx_hash=EXCLUDED.tx_hash,
-                                                   zeta_time=EXCLUDED.vega_time,
+                                                   zeta_time=EXCLUDED.zeta_time,
                                                    pending_open_volume=EXCLUDED.pending_open_volume,
                                                    pending_realised_pnl=EXCLUDED.pending_realised_pnl,
                                                    pending_unrealised_pnl=EXCLUDED.pending_unrealised_pnl,
@@ -92,7 +92,7 @@ BEGIN
                                                    loss=EXCLUDED.loss,
                                                    adjustment=EXCLUDED.adjustment,
                                                    tx_hash=EXCLUDED.tx_hash,
-                                                   zeta_time=EXCLUDED.vega_time;
+                                                   zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
 END;
 $$;

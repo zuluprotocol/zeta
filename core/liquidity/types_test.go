@@ -15,8 +15,8 @@ package liquidity_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/liquidity"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/liquidity"
+	"zuluprotocol/zeta/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

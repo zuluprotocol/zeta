@@ -26,9 +26,9 @@ CREATE OR REPLACE FUNCTION update_last_block()
     LANGUAGE PLPGSQL AS
 $$
 BEGIN
-    Insert into last_block (zeta_time, height, hash) VALUES(NEW.vega_time, NEW.height, NEW.hash) on conflict(onerow_check) do update
+    Insert into last_block (zeta_time, height, hash) VALUES(NEW.zeta_time, NEW.height, NEW.hash) on conflict(onerow_check) do update
     set
-        zeta_time=EXCLUDED.vega_time,
+        zeta_time=EXCLUDED.zeta_time,
         height=EXCLUDED.height,
         hash=EXCLUDED.hash;
     RETURN NULL;
@@ -116,11 +116,11 @@ CREATE OR REPLACE FUNCTION update_current_balances()
    LANGUAGE PLPGSQL AS
 $$
     BEGIN
-    INSERT INTO current_balances(account_id, tx_hash, zeta_time, balance) VALUES(NEW.account_id, NEW.tx_hash, NEW.vega_time, NEW.balance)
+    INSERT INTO current_balances(account_id, tx_hash, zeta_time, balance) VALUES(NEW.account_id, NEW.tx_hash, NEW.zeta_time, NEW.balance)
       ON CONFLICT(account_id) DO UPDATE SET
          balance=EXCLUDED.balance,
          tx_hash=EXCLUDED.tx_hash,
-         zeta_time=EXCLUDED.vega_time;
+         zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
     END;
 $$;
@@ -133,7 +133,7 @@ CREATE MATERIALIZED VIEW conflated_balances
 SELECT account_id, time_bucket('1 hour', zeta_time) AS bucket,
        last(balance, zeta_time) AS balance,
        last(tx_hash, zeta_time) AS tx_hash,
-       last(zeta_time, vega_time) AS vega_time
+       last(zeta_time, zeta_time) AS zeta_time
 FROM balances
 GROUP BY account_id, bucket WITH NO DATA;
 
@@ -157,7 +157,7 @@ SELECT
     conflated_balances.zeta_time,
     conflated_balances.balance
 FROM conflated_balances
-WHERE conflated_balances.zeta_time < (SELECT coalesce(min(balances.vega_time), 'infinity') FROM balances));
+WHERE conflated_balances.zeta_time < (SELECT coalesce(min(balances.zeta_time), 'infinity') FROM balances));
 
 create table ledger
 (
@@ -532,7 +532,7 @@ select md.market, md.tx_hash, md.zeta_time, seq_num, mark_price, best_bid_price,
 from market_data md
 join cte_market_data_latest mx
 on md.market = mx.market
-and md.zeta_time = mx.vega_time
+and md.zeta_time = mx.zeta_time
 ;
 
 CREATE TYPE node_status as enum('NODE_STATUS_UNSPECIFIED', 'NODE_STATUS_VALIDATOR', 'NODE_STATUS_NON_VALIDATOR');
@@ -665,7 +665,7 @@ BEGIN
     ON CONFLICT(party_id, node_id, epoch_id) DO UPDATE SET
                                                            amount=EXCLUDED.amount,
                                                            tx_hash=EXCLUDED.tx_hash,
-                                                           zeta_time=EXCLUDED.vega_time,
+                                                           zeta_time=EXCLUDED.zeta_time,
                                                            seq_num=EXCLUDED.seq_num;
     RETURN NULL;
 END;
@@ -739,7 +739,7 @@ BEGIN
                                                            market_timestamps=EXCLUDED.market_timestamps,
                                                            position_decimal_places=EXCLUDED.position_decimal_places,
                                                            lp_price_range=EXCLUDED.lp_price_range,
-                                                           zeta_time=EXCLUDED.vega_time;
+                                                           zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
 END;
 $$;
@@ -913,7 +913,7 @@ INSERT INTO current_margin_levels(account_id,
                                    initial_margin=EXCLUDED.initial_margin,
                                    collateral_release_level=EXCLUDED.collateral_release_level,
                                    tx_hash=EXCLUDED.tx_hash,
-                                   zeta_time=EXCLUDED.vega_time;
+                                   zeta_time=EXCLUDED.zeta_time;
 RETURN NULL;
 END;
 $$;
@@ -932,7 +932,7 @@ SELECT account_id, time_bucket('1 minute', zeta_time) AS bucket,
        last(collateral_release_level, zeta_time) AS collateral_release_level,
        last(timestamp, zeta_time) AS timestamp,
        last(tx_hash, zeta_time) AS tx_hash,
-       last(zeta_time, vega_time) AS vega_time
+       last(zeta_time, zeta_time) AS zeta_time
 FROM margin_levels
 GROUP BY account_id, bucket WITH NO DATA;
 
@@ -962,7 +962,7 @@ SELECT conflated_margin_levels.account_id,
        conflated_margin_levels.tx_hash,
        conflated_margin_levels.zeta_time
 FROM conflated_margin_levels
-WHERE conflated_margin_levels.zeta_time < (SELECT coalesce(min(margin_levels.vega_time), 'infinity') FROM margin_levels));
+WHERE conflated_margin_levels.zeta_time < (SELECT coalesce(min(margin_levels.zeta_time), 'infinity') FROM margin_levels));
 
 create table if not exists risk_factors (
     market_id bytea not null,
@@ -1003,7 +1003,7 @@ $$
 BEGIN
     INSERT INTO network_parameters_current(key, value, tx_hash, zeta_time)
     VALUES(NEW.key, NEW.value, NEW.tx_hash, NEW.zeta_time)
-    ON CONFLICT(key) DO UPDATE SET value=EXCLUDED.value, tx_hash=EXCLUDED.tx_hash, zeta_time=EXCLUDED.vega_time;
+    ON CONFLICT(key) DO UPDATE SET value=EXCLUDED.value, tx_hash=EXCLUDED.tx_hash, zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
 END;
 $$;
@@ -1053,7 +1053,7 @@ SELECT market_id, party_id, time_bucket('1 hour', zeta_time) AS bucket,
  last(loss, zeta_time) AS loss,
  last(adjustment, zeta_time) AS adjustment,
  last(tx_hash, zeta_time) AS tx_hash,
- last(zeta_time, vega_time) AS vega_time
+ last(zeta_time, zeta_time) AS zeta_time
 FROM positions
 GROUP BY market_id, party_id, bucket WITH NO DATA;
 
@@ -1091,7 +1091,7 @@ SELECT
     conflated_positions.tx_hash,
     conflated_positions.zeta_time
 FROM conflated_positions
-WHERE conflated_positions.zeta_time < (SELECT coalesce(min(positions.vega_time), 'infinity') FROM positions));
+WHERE conflated_positions.zeta_time < (SELECT coalesce(min(positions.zeta_time), 'infinity') FROM positions));
 
 drop view if exists positions_current;
 
@@ -1131,7 +1131,7 @@ BEGIN
                                                    loss=EXCLUDED.loss,
                                                    adjustment=EXCLUDED.adjustment,
                                                    tx_hash=EXCLUDED.tx_hash,
-                                                   zeta_time=EXCLUDED.vega_time;
+                                                   zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
 END;
 $$;
@@ -1192,7 +1192,7 @@ BEGIN
                                                    signers=EXCLUDED.signers,
                                                    broadcast_at=EXCLUDED.broadcast_at,
                                                    tx_hash=EXCLUDED.tx_hash,
-                                                   zeta_time=EXCLUDED.vega_time,
+                                                   zeta_time=EXCLUDED.zeta_time,
                                                    seq_num=EXCLUDED.seq_num;
     RETURN NULL;
 END;
@@ -1295,7 +1295,7 @@ INSERT INTO current_liquidity_provisions(id,
    status=EXCLUDED.status,
    reference=EXCLUDED.reference,
    tx_hash=EXCLUDED.tx_hash,
-   zeta_time=EXCLUDED.vega_time;
+   zeta_time=EXCLUDED.zeta_time;
 RETURN NULL;
 END;
 $$;
@@ -1450,7 +1450,7 @@ BEGIN
     log_index=EXCLUDED.log_index,
     ethereum_address=EXCLUDED.ethereum_address,
     tx_hash=EXCLUDED.tx_hash,
-    zeta_time=EXCLUDED.vega_time;
+    zeta_time=EXCLUDED.zeta_time;
     RETURN NULL;
 END;
 $$;
@@ -1484,13 +1484,13 @@ CREATE TABLE IF NOT EXISTS protocol_upgrade_proposals(
     status protocol_upgrade_proposal_status NOT NULL,
     tx_hash bytea not null,
     zeta_time TIMESTAMP WITH TIME ZONE NOT NULL,
-    PRIMARY KEY(zeta_time, upgrade_block_height, vega_release_tag)
+    PRIMARY KEY(zeta_time, upgrade_block_height, zeta_release_tag)
 );
 
 CREATE VIEW protocol_upgrade_proposals_current AS (
     SELECT DISTINCT ON (upgrade_block_height, zeta_release_tag) *
       FROM protocol_upgrade_proposals
-  ORDER BY upgrade_block_height, zeta_release_tag, vega_time DESC);
+  ORDER BY upgrade_block_height, zeta_release_tag, zeta_time DESC);
 
 CREATE TABLE IF NOT EXISTS core_snapshots(
     block_height BIGINT NOT NULL,

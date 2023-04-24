@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"code.zetaprotocol.io/vega/commands"
+	"zuluprotocol/zeta/zeta/commands"
 	"github.com/stretchr/testify/assert"
 )
 

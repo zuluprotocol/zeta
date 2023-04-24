@@ -15,9 +15,9 @@ package api
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/config/encoding"
-	libhttp "code.zetaprotocol.io/vega/libs/http"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/libs/config/encoding"
+	libhttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // namedLogger is the identifier for package and should ideally match the package name

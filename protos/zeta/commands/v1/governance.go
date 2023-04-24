@@ -1,6 +1,6 @@
 package v1
 
-import types "code.zetaprotocol.io/vega/protos/vega"
+import types "zuluprotocol/zeta/zeta/protos/zeta"
 
 func ProposalSubmissionFromProposal(p *types.Proposal) *ProposalSubmission {
 	return &ProposalSubmission{

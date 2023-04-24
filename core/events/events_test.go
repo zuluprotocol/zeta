@@ -16,14 +16,14 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/events"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/num"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/num"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 func TestEventCtxIsSet(t *testing.T) {

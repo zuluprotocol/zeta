@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/proto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

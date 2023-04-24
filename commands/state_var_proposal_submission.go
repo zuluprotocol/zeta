@@ -3,7 +3,7 @@ package commands
 import (
 	"strconv"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 func CheckStateVariableProposal(cmd *commandspb.StateVariableProposal) error {

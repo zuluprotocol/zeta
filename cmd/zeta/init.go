@@ -19,12 +19,12 @@ import (
 	"os"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/config/encoding"
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/config/encoding"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	tmcfg "github.com/tendermint/tendermint/config"

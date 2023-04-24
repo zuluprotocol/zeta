@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"time"
 
-	config "code.zetaprotocol.io/vega/core/examples/nullchain/config"
+	config "zuluprotocol/zeta/zeta/core/examples/nullchain/config"
 )
 
 var ErrTimeForward = errors.New("time forward failed")

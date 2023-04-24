@@ -18,8 +18,8 @@ import (
 	"encoding/hex"
 	"strings"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/tendermint/tendermint/crypto/sr25519"
 )

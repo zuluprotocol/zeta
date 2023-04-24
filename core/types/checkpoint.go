@@ -16,11 +16,11 @@ import (
 	"bytes"
 	"errors"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var (

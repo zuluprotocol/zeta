@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/didip/tollbooth/v7"
 	"github.com/didip/tollbooth/v7/limiter"
 	"go.uber.org/zap"

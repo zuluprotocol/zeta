@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	vgencoding "code.zetaprotocol.io/vega/libs/encoding"
+	vgencoding "zuluprotocol/zeta/zeta/libs/encoding"
 	"go.uber.org/zap"
 )
 

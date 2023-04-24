@@ -16,12 +16,12 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/genesis"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	vgtm "code.zetaprotocol.io/vega/core/tendermint"
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/genesis"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	vgtm "zuluprotocol/zeta/zeta/core/tendermint"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 )
@@ -50,7 +50,7 @@ func (opts *updateCmd) Execute(_ []string) error {
 		return err
 	}
 
-	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, vegaPaths, pass)
+	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, zetaPaths, pass)
 	if err != nil {
 		return err
 	}

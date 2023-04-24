@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"code.zetaprotocol.io/vega/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/api"
 )
 
 var ErrRequestAlreadyBeingProcessed = errors.New("a request is already being processed")

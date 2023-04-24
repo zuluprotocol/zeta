@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -477,7 +477,7 @@ func getTestAccounts(t *testing.T, ctx context.Context, accounts *sqlstore.Accou
 		Quantum:       decimal.NewFromInt(1),
 		Source:        "TS",
 		ERC20Contract: "ET",
-		ZetaTime:      block.VegaTime,
+		ZetaTime:      block.ZetaTime,
 	}
 
 	err := assets.Add(ctx, testAsset)
@@ -489,7 +489,7 @@ func getTestAccounts(t *testing.T, ctx context.Context, accounts *sqlstore.Accou
 		PartyID:  entities.PartyID(helpers.GenerateID()),
 		AssetID:  testAssetID,
 		Type:     zeta.AccountType_ACCOUNT_TYPE_GLOBAL_REWARD,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 	err = accounts.Obtain(ctx, &accountFrom)
 	if err != nil {
@@ -501,7 +501,7 @@ func getTestAccounts(t *testing.T, ctx context.Context, accounts *sqlstore.Accou
 		AssetID: testAssetID,
 
 		Type:     zeta.AccountType_ACCOUNT_TYPE_GENERAL,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 	err = accounts.Obtain(ctx, &accountTo)
 	if err != nil {
@@ -529,11 +529,11 @@ func testTransferPaginationNoPagination(t *testing.T) {
 	assert.False(t, pageInfo.HasPreviousPage)
 	assert.False(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[0].VegaTime,
+		ZetaTime: testTransfers[0].ZetaTime,
 		ID:       testTransfers[0].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[9].VegaTime,
+		ZetaTime: testTransfers[9].ZetaTime,
 		ID:       testTransfers[9].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -557,11 +557,11 @@ func testTransferPaginationFirst(t *testing.T) {
 	assert.False(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[0].VegaTime,
+		ZetaTime: testTransfers[0].ZetaTime,
 		ID:       testTransfers[0].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[2].VegaTime,
+		ZetaTime: testTransfers[2].ZetaTime,
 		ID:       testTransfers[2].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -585,11 +585,11 @@ func testTransferPaginationLast(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.False(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[7].VegaTime,
+		ZetaTime: testTransfers[7].ZetaTime,
 		ID:       testTransfers[7].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[9].VegaTime,
+		ZetaTime: testTransfers[9].ZetaTime,
 		ID:       testTransfers[9].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -614,11 +614,11 @@ func testTransferPaginationFirstAfter(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[3].VegaTime,
+		ZetaTime: testTransfers[3].ZetaTime,
 		ID:       testTransfers[3].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[5].VegaTime,
+		ZetaTime: testTransfers[5].ZetaTime,
 		ID:       testTransfers[5].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -633,7 +633,7 @@ func testTransferPaginationLastBefore(t *testing.T) {
 
 	last := int32(3)
 	before := entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[7].VegaTime,
+		ZetaTime: testTransfers[7].ZetaTime,
 		ID:       testTransfers[7].ID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, false)
@@ -646,11 +646,11 @@ func testTransferPaginationLastBefore(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[4].VegaTime,
+		ZetaTime: testTransfers[4].ZetaTime,
 		ID:       testTransfers[4].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.TransferCursor{
-		ZetaTime: testTransfers[6].VegaTime,
+		ZetaTime: testTransfers[6].ZetaTime,
 		ID:       testTransfers[6].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -664,7 +664,7 @@ func addTransfers(ctx context.Context, t *testing.T, bs *sqlstore.Blocks, transf
 
 	transfers := make([]entities.Transfer, 0, 10)
 	for i := 0; i < 10; i++ {
-		zetaTime = vegaTime.Add(time.Second)
+		zetaTime = zetaTime.Add(time.Second)
 		addTestBlockForTime(t, ctx, bs, zetaTime)
 
 		amount, _ := decimal.NewFromString("10")

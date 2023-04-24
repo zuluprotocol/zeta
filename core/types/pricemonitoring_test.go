@@ -15,8 +15,8 @@ package types_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/types"
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/types"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/stretchr/testify/require"
 )
 

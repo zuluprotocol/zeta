@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

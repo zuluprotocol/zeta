@@ -17,10 +17,10 @@ import (
 	"errors"
 	"runtime/debug"
 
-	"code.zetaprotocol.io/vega/cmd/vega/node"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/cmd/zeta/node"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	"github.com/pbnjay/memory"
@@ -112,7 +112,7 @@ func Start(ctx context.Context, parser *flags.Parser) error {
 	startCmd = StartCmd{
 		Config: config.NewDefaultConfig(),
 	}
-	cmd, err := parser.AddCommand("start", "Start a zeta instance", "Runs a vega node", &startCmd)
+	cmd, err := parser.AddCommand("start", "Start a zeta instance", "Runs a zeta node", &startCmd)
 	if err != nil {
 		return err
 	}
@@ -130,7 +130,7 @@ func Node(ctx context.Context, parser *flags.Parser) error {
 	startCmd = StartCmd{
 		Config: config.NewDefaultConfig(),
 	}
-	cmd, err := parser.AddCommand("node", "deprecated, see zeta start instead", "deprecated, use vega start instead", &startCmd)
+	cmd, err := parser.AddCommand("node", "deprecated, see zeta start instead", "deprecated, use zeta start instead", &startCmd)
 	if err != nil {
 		return err
 	}

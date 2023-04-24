@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/collateral"
-	"code.zetaprotocol.io/vega/libs/num"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/collateral"
+	"zuluprotocol/zeta/zeta/libs/num"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 // ReconcileAccountChanges takes account balances before the step, modifies them based on supplied transfer, deposits, withdrawals as well as insurance pool balance changes intitiated by test code (not regular flow), and then compares them to account balances after the step.

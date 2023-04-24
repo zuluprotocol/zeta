@@ -17,8 +17,8 @@ import (
 	"errors"
 	"fmt"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/paths"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var (
@@ -34,7 +34,7 @@ const (
 type Registry struct {
 	Tendermint *RegisteredTendermintPubkey `json:"tendermint,omitempty"`
 	Ethereum   *RegisteredEthereumWallet   `json:"ethereum,omitempty"`
-	Zeta       *RegisteredVegaWallet       `json:"zeta,omitempty"`
+	Zeta       *RegisteredZetaWallet       `json:"zeta,omitempty"`
 }
 
 type ethereumWalletType string

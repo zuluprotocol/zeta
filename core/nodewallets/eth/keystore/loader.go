@@ -18,8 +18,8 @@ import (
 	"os"
 	"path/filepath"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/paths"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/paths"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 )
 

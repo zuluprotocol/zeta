@@ -2,22 +2,22 @@
 
 ## Supported Versions
 
-Please see [Releases](https://github.com/zetaprotocol/vega/releases). We recommend mainnet node operators use only the [most recently released version](https://github.com/vegaprotocol/vega/releases/latest).
+Please see [Releases](https://github.com/zetaprotocol/zeta/releases). We recommend mainnet node operators use only the [most recently released version](https://github.com/zetaprotocol/zeta/releases/latest).
 
 ## Audit reports
 
 | Scope | Date | Report Link |
 | ------- | ------- | ----------- |
 | `MultisigControl` | 20220513 | [pdf](https://github.com/zetaprotocol/MultisigControl/blob/develop/audit/2022-05-23_MultiSigControl_Decentralised_Limits_v2-0.pdf.pdf) |
-| `Zeta_Token_V2` | 20210823 | [pdf](https://github.com/zetaprotocol/Vega_Token_V2/tree/main/audit/2021-08-23_ERC20_Vesting.pdf)
+| `Zeta_Token_V2` | 20210823 | [pdf](https://github.com/zetaprotocol/Zeta_Token_V2/tree/main/audit/2021-08-23_ERC20_Vesting.pdf)
 
 ## Reporting a Vulnerability
 
 **Please DO NOT file a public ticket** mentioning the vulnerability. This is especially important for vulnerabilities that may result in loss or freezing of assets and those that may cause degradation or outages of the network.
 
-To find out how to disclose a vulnerability in Zeta visit the [bug bounties](https://zeta.xyz/bug-bounties) page or email security@vegaprotocol.io. 
+To find out how to disclose a vulnerability in Zeta visit the [bug bounties](https://zeta.xyz/bug-bounties) page or email security@zetaprotocol.io. 
 
-Please read the [disclosure page](https://github.com/zetaprotocol/vega/security/advisories?state=published) for more information about publicly disclosed security vulnerabilities.
+Please read the [disclosure page](https://github.com/zetaprotocol/zeta/security/advisories?state=published) for more information about publicly disclosed security vulnerabilities.
 
 The following key may be used to communicate sensitive information to the project team.
 

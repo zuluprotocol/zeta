@@ -20,24 +20,24 @@ import (
 	"os/signal"
 	"syscall"
 
-	"code.zetaprotocol.io/vega/core/admin"
-	"code.zetaprotocol.io/vega/core/api"
-	"code.zetaprotocol.io/vega/core/api/rest"
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/core/blockchain/abci"
-	"code.zetaprotocol.io/vega/core/blockchain/nullchain"
-	ethclient "code.zetaprotocol.io/vega/core/client/eth"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/coreapi"
-	"code.zetaprotocol.io/vega/core/metrics"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/protocol"
-	"code.zetaprotocol.io/vega/core/stats"
-	"code.zetaprotocol.io/vega/libs/pprof"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	apipb "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	"code.zetaprotocol.io/vega/version"
+	"zuluprotocol/zeta/zeta/core/admin"
+	"zuluprotocol/zeta/zeta/core/api"
+	"zuluprotocol/zeta/zeta/core/api/rest"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/zeta/core/blockchain/nullchain"
+	ethclient "zuluprotocol/zeta/zeta/core/client/eth"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/coreapi"
+	"zuluprotocol/zeta/zeta/core/metrics"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/protocol"
+	"zuluprotocol/zeta/zeta/core/stats"
+	"zuluprotocol/zeta/zeta/libs/pprof"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	"zuluprotocol/zeta/zeta/version"
 
 	"github.com/tendermint/tendermint/abci/types"
 	tmtypes "github.com/tendermint/tendermint/types"
@@ -97,7 +97,7 @@ func (n *Command) Run(
 	n.nodeWalletPassphrase = nodeWalletPassphrase
 
 	n.conf = confWatcher.Get()
-	n.zetaPaths = vegaPaths
+	n.zetaPaths = zetaPaths
 
 	if err := n.setupCommon(); err != nil {
 		return err

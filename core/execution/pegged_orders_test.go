@@ -16,12 +16,12 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/execution"
-	"code.zetaprotocol.io/vega/core/execution/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/execution"
+	"zuluprotocol/zeta/zeta/core/execution/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

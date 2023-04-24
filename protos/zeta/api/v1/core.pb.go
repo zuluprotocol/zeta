@@ -7,9 +7,9 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	v11 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v11 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -900,7 +900,7 @@ func (*GetZetaTimeRequest) Descriptor() ([]byte, []int) {
 	return file_zeta_api_v1_core_proto_rawDescGZIP(), []int{10}
 }
 
-// Response for the current consensus coordinated time on the Zeta network, referred to as "VegaTime"
+// Response for the current consensus coordinated time on the Zeta network, referred to as "ZetaTime"
 type GetZetaTimeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1184,10 +1184,10 @@ type Statistics struct {
 	// Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
 	CurrentTime string `protobuf:"bytes,5,opt,name=current_time,json=currentTime,proto3" json:"current_time,omitempty"`
 	// Current Zeta date and time formatted in ISO-8601 datetime format with nanosecond precision
-	ZetaTime string `protobuf:"bytes,6,opt,name=zeta_time,json=vegaTime,proto3" json:"vega_time,omitempty"`
+	ZetaTime string `protobuf:"bytes,6,opt,name=zeta_time,json=zetaTime,proto3" json:"zeta_time,omitempty"`
 	// Status of the connection to the Zeta blockchain
 	// - See [`ChainStatus`](#zeta.ChainStatus)
-	Status zeta.ChainStatus `protobuf:"varint,7,opt,name=status,proto3,enum=vega.ChainStatus" json:"status,omitempty"`
+	Status zeta.ChainStatus `protobuf:"varint,7,opt,name=status,proto3,enum=zeta.ChainStatus" json:"status,omitempty"`
 	// Transactions per block
 	TxPerBlock uint64 `protobuf:"varint,8,opt,name=tx_per_block,json=txPerBlock,proto3" json:"tx_per_block,omitempty"`
 	// Average transaction size in bytes
@@ -2748,12 +2748,12 @@ var file_zeta_api_v1_core_proto_rawDesc = []byte{
 
 var (
 	file_zeta_api_v1_core_proto_rawDescOnce sync.Once
-	file_zeta_api_v1_core_proto_rawDescData = file_vega_api_v1_core_proto_rawDesc
+	file_zeta_api_v1_core_proto_rawDescData = file_zeta_api_v1_core_proto_rawDesc
 )
 
 func file_zeta_api_v1_core_proto_rawDescGZIP() []byte {
 	file_zeta_api_v1_core_proto_rawDescOnce.Do(func() {
-		file_zeta_api_v1_core_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_api_v1_core_proto_rawDescData)
+		file_zeta_api_v1_core_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_api_v1_core_proto_rawDescData)
 	})
 	return file_zeta_api_v1_core_proto_rawDescData
 }
@@ -2773,8 +2773,8 @@ var file_zeta_api_v1_core_proto_goTypes = []interface{}{
 	(*SubmitRawTransactionResponse)(nil),  // 9: zeta.api.v1.SubmitRawTransactionResponse
 	(*CheckRawTransactionRequest)(nil),    // 10: zeta.api.v1.CheckRawTransactionRequest
 	(*CheckRawTransactionResponse)(nil),   // 11: zeta.api.v1.CheckRawTransactionResponse
-	(*GetZetaTimeRequest)(nil),            // 12: zeta.api.v1.GetVegaTimeRequest
-	(*GetZetaTimeResponse)(nil),           // 13: zeta.api.v1.GetVegaTimeResponse
+	(*GetZetaTimeRequest)(nil),            // 12: zeta.api.v1.GetZetaTimeRequest
+	(*GetZetaTimeResponse)(nil),           // 13: zeta.api.v1.GetZetaTimeResponse
 	(*ObserveEventBusRequest)(nil),        // 14: zeta.api.v1.ObserveEventBusRequest
 	(*ObserveEventBusResponse)(nil),       // 15: zeta.api.v1.ObserveEventBusResponse
 	(*StatisticsRequest)(nil),             // 16: zeta.api.v1.StatisticsRequest
@@ -2793,47 +2793,47 @@ var file_zeta_api_v1_core_proto_goTypes = []interface{}{
 	(*v1.Transaction)(nil),                // 29: zeta.commands.v1.Transaction
 	(v11.BusEventType)(0),                 // 30: zeta.events.v1.BusEventType
 	(*v11.BusEvent)(nil),                  // 31: zeta.events.v1.BusEvent
-	(zeta.ChainStatus)(0),                 // 32: vega.ChainStatus
+	(zeta.ChainStatus)(0),                 // 32: zeta.ChainStatus
 }
 var file_zeta_api_v1_core_proto_depIdxs = []int32{
-	29, // 0: zeta.api.v1.SubmitTransactionRequest.tx:type_name -> vega.commands.v1.Transaction
-	0,  // 1: zeta.api.v1.SubmitTransactionRequest.type:type_name -> vega.api.v1.SubmitTransactionRequest.Type
-	29, // 2: zeta.api.v1.CheckTransactionRequest.tx:type_name -> vega.commands.v1.Transaction
-	1,  // 3: zeta.api.v1.SubmitRawTransactionRequest.type:type_name -> vega.api.v1.SubmitRawTransactionRequest.Type
-	30, // 4: zeta.api.v1.ObserveEventBusRequest.type:type_name -> vega.events.v1.BusEventType
-	31, // 5: zeta.api.v1.ObserveEventBusResponse.events:type_name -> vega.events.v1.BusEvent
-	18, // 6: zeta.api.v1.StatisticsResponse.statistics:type_name -> vega.api.v1.Statistics
-	32, // 7: zeta.api.v1.Statistics.status:type_name -> vega.ChainStatus
-	24, // 8: zeta.api.v1.VoteSpamStatistics.statistics:type_name -> vega.api.v1.VoteSpamStatistic
-	25, // 9: zeta.api.v1.PoWStatistic.block_states:type_name -> vega.api.v1.PoWBlockState
-	22, // 10: zeta.api.v1.SpamStatistics.proposals:type_name -> vega.api.v1.SpamStatistic
-	22, // 11: zeta.api.v1.SpamStatistics.delegations:type_name -> vega.api.v1.SpamStatistic
-	22, // 12: zeta.api.v1.SpamStatistics.transfers:type_name -> vega.api.v1.SpamStatistic
-	22, // 13: zeta.api.v1.SpamStatistics.node_announcements:type_name -> vega.api.v1.SpamStatistic
-	23, // 14: zeta.api.v1.SpamStatistics.votes:type_name -> vega.api.v1.VoteSpamStatistics
-	26, // 15: zeta.api.v1.SpamStatistics.pow:type_name -> vega.api.v1.PoWStatistic
-	22, // 16: zeta.api.v1.SpamStatistics.issue_signatures:type_name -> vega.api.v1.SpamStatistic
-	27, // 17: zeta.api.v1.GetSpamStatisticsResponse.statistics:type_name -> vega.api.v1.SpamStatistics
-	4,  // 18: zeta.api.v1.CoreService.SubmitTransaction:input_type -> vega.api.v1.SubmitTransactionRequest
-	2,  // 19: zeta.api.v1.CoreService.PropagateChainEvent:input_type -> vega.api.v1.PropagateChainEventRequest
-	16, // 20: zeta.api.v1.CoreService.Statistics:input_type -> vega.api.v1.StatisticsRequest
-	19, // 21: zeta.api.v1.CoreService.LastBlockHeight:input_type -> vega.api.v1.LastBlockHeightRequest
-	12, // 22: zeta.api.v1.CoreService.GetZetaTime:input_type -> vega.api.v1.GetVegaTimeRequest
-	14, // 23: zeta.api.v1.CoreService.ObserveEventBus:input_type -> vega.api.v1.ObserveEventBusRequest
-	8,  // 24: zeta.api.v1.CoreService.SubmitRawTransaction:input_type -> vega.api.v1.SubmitRawTransactionRequest
-	6,  // 25: zeta.api.v1.CoreService.CheckTransaction:input_type -> vega.api.v1.CheckTransactionRequest
-	10, // 26: zeta.api.v1.CoreService.CheckRawTransaction:input_type -> vega.api.v1.CheckRawTransactionRequest
-	21, // 27: zeta.api.v1.CoreService.GetSpamStatistics:input_type -> vega.api.v1.GetSpamStatisticsRequest
-	5,  // 28: zeta.api.v1.CoreService.SubmitTransaction:output_type -> vega.api.v1.SubmitTransactionResponse
-	3,  // 29: zeta.api.v1.CoreService.PropagateChainEvent:output_type -> vega.api.v1.PropagateChainEventResponse
-	17, // 30: zeta.api.v1.CoreService.Statistics:output_type -> vega.api.v1.StatisticsResponse
-	20, // 31: zeta.api.v1.CoreService.LastBlockHeight:output_type -> vega.api.v1.LastBlockHeightResponse
-	13, // 32: zeta.api.v1.CoreService.GetZetaTime:output_type -> vega.api.v1.GetVegaTimeResponse
-	15, // 33: zeta.api.v1.CoreService.ObserveEventBus:output_type -> vega.api.v1.ObserveEventBusResponse
-	9,  // 34: zeta.api.v1.CoreService.SubmitRawTransaction:output_type -> vega.api.v1.SubmitRawTransactionResponse
-	7,  // 35: zeta.api.v1.CoreService.CheckTransaction:output_type -> vega.api.v1.CheckTransactionResponse
-	11, // 36: zeta.api.v1.CoreService.CheckRawTransaction:output_type -> vega.api.v1.CheckRawTransactionResponse
-	28, // 37: zeta.api.v1.CoreService.GetSpamStatistics:output_type -> vega.api.v1.GetSpamStatisticsResponse
+	29, // 0: zeta.api.v1.SubmitTransactionRequest.tx:type_name -> zeta.commands.v1.Transaction
+	0,  // 1: zeta.api.v1.SubmitTransactionRequest.type:type_name -> zeta.api.v1.SubmitTransactionRequest.Type
+	29, // 2: zeta.api.v1.CheckTransactionRequest.tx:type_name -> zeta.commands.v1.Transaction
+	1,  // 3: zeta.api.v1.SubmitRawTransactionRequest.type:type_name -> zeta.api.v1.SubmitRawTransactionRequest.Type
+	30, // 4: zeta.api.v1.ObserveEventBusRequest.type:type_name -> zeta.events.v1.BusEventType
+	31, // 5: zeta.api.v1.ObserveEventBusResponse.events:type_name -> zeta.events.v1.BusEvent
+	18, // 6: zeta.api.v1.StatisticsResponse.statistics:type_name -> zeta.api.v1.Statistics
+	32, // 7: zeta.api.v1.Statistics.status:type_name -> zeta.ChainStatus
+	24, // 8: zeta.api.v1.VoteSpamStatistics.statistics:type_name -> zeta.api.v1.VoteSpamStatistic
+	25, // 9: zeta.api.v1.PoWStatistic.block_states:type_name -> zeta.api.v1.PoWBlockState
+	22, // 10: zeta.api.v1.SpamStatistics.proposals:type_name -> zeta.api.v1.SpamStatistic
+	22, // 11: zeta.api.v1.SpamStatistics.delegations:type_name -> zeta.api.v1.SpamStatistic
+	22, // 12: zeta.api.v1.SpamStatistics.transfers:type_name -> zeta.api.v1.SpamStatistic
+	22, // 13: zeta.api.v1.SpamStatistics.node_announcements:type_name -> zeta.api.v1.SpamStatistic
+	23, // 14: zeta.api.v1.SpamStatistics.votes:type_name -> zeta.api.v1.VoteSpamStatistics
+	26, // 15: zeta.api.v1.SpamStatistics.pow:type_name -> zeta.api.v1.PoWStatistic
+	22, // 16: zeta.api.v1.SpamStatistics.issue_signatures:type_name -> zeta.api.v1.SpamStatistic
+	27, // 17: zeta.api.v1.GetSpamStatisticsResponse.statistics:type_name -> zeta.api.v1.SpamStatistics
+	4,  // 18: zeta.api.v1.CoreService.SubmitTransaction:input_type -> zeta.api.v1.SubmitTransactionRequest
+	2,  // 19: zeta.api.v1.CoreService.PropagateChainEvent:input_type -> zeta.api.v1.PropagateChainEventRequest
+	16, // 20: zeta.api.v1.CoreService.Statistics:input_type -> zeta.api.v1.StatisticsRequest
+	19, // 21: zeta.api.v1.CoreService.LastBlockHeight:input_type -> zeta.api.v1.LastBlockHeightRequest
+	12, // 22: zeta.api.v1.CoreService.GetZetaTime:input_type -> zeta.api.v1.GetZetaTimeRequest
+	14, // 23: zeta.api.v1.CoreService.ObserveEventBus:input_type -> zeta.api.v1.ObserveEventBusRequest
+	8,  // 24: zeta.api.v1.CoreService.SubmitRawTransaction:input_type -> zeta.api.v1.SubmitRawTransactionRequest
+	6,  // 25: zeta.api.v1.CoreService.CheckTransaction:input_type -> zeta.api.v1.CheckTransactionRequest
+	10, // 26: zeta.api.v1.CoreService.CheckRawTransaction:input_type -> zeta.api.v1.CheckRawTransactionRequest
+	21, // 27: zeta.api.v1.CoreService.GetSpamStatistics:input_type -> zeta.api.v1.GetSpamStatisticsRequest
+	5,  // 28: zeta.api.v1.CoreService.SubmitTransaction:output_type -> zeta.api.v1.SubmitTransactionResponse
+	3,  // 29: zeta.api.v1.CoreService.PropagateChainEvent:output_type -> zeta.api.v1.PropagateChainEventResponse
+	17, // 30: zeta.api.v1.CoreService.Statistics:output_type -> zeta.api.v1.StatisticsResponse
+	20, // 31: zeta.api.v1.CoreService.LastBlockHeight:output_type -> zeta.api.v1.LastBlockHeightResponse
+	13, // 32: zeta.api.v1.CoreService.GetZetaTime:output_type -> zeta.api.v1.GetZetaTimeResponse
+	15, // 33: zeta.api.v1.CoreService.ObserveEventBus:output_type -> zeta.api.v1.ObserveEventBusResponse
+	9,  // 34: zeta.api.v1.CoreService.SubmitRawTransaction:output_type -> zeta.api.v1.SubmitRawTransactionResponse
+	7,  // 35: zeta.api.v1.CoreService.CheckTransaction:output_type -> zeta.api.v1.CheckTransactionResponse
+	11, // 36: zeta.api.v1.CoreService.CheckRawTransaction:output_type -> zeta.api.v1.CheckRawTransactionResponse
+	28, // 37: zeta.api.v1.CoreService.GetSpamStatistics:output_type -> zeta.api.v1.GetSpamStatisticsResponse
 	28, // [28:38] is the sub-list for method output_type
 	18, // [18:28] is the sub-list for method input_type
 	18, // [18:18] is the sub-list for extension type_name

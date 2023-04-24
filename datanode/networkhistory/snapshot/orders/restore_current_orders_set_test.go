@@ -11,10 +11,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/utils/databasetest"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/utils/databasetest"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/require"
@@ -113,7 +113,7 @@ func TestRestoreCurrentOrdersSet(t *testing.T) {
 	connectionSource.Connection.QueryRow(ctx, "select current")
 
 	rows, err := connectionSource.Connection.Query(context.Background(),
-		"select id, zeta_time, version, seq_num, current from orders order by id, vega_time, seq_num")
+		"select id, zeta_time, version, seq_num, current from orders order by id, zeta_time, seq_num")
 
 	require.NoError(t, err)
 

@@ -18,10 +18,10 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
 )
 
 func TestStakeLinking_Push(t *testing.T) {

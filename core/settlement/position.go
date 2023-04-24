@@ -13,9 +13,9 @@
 package settlement
 
 import (
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/pkg/errors"
 )

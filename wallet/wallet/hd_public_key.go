@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 type HDPublicKey struct {

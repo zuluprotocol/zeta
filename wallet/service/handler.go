@@ -3,10 +3,10 @@ package service
 import (
 	"fmt"
 
-	v1 "code.zetaprotocol.io/vega/wallet/service/v1"
+	v1 "zuluprotocol/zeta/zeta/wallet/service/v1"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks code.zetaprotocol.io/vega/wallet/service Store
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks zuluprotocol/zeta/zeta/wallet/service Store
 type Store interface {
 	GetRsaKeys() (*v1.RSAKeys, error)
 	RSAKeysExists() (bool, error)

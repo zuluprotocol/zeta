@@ -19,15 +19,15 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 	"golang.org/x/exp/maps"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/core/risk Orderbook,AuctionState,TimeService,StateVarEngine,Model
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/risk Orderbook,AuctionState,TimeService,StateVarEngine,Model
 
 var (
 	ErrInsufficientFundsForInitialMargin = errors.New("insufficient funds for initial margin")

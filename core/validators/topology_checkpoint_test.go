@@ -19,10 +19,10 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/libs/proto"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	abcitypes "github.com/tendermint/tendermint/abci/types"
@@ -127,8 +127,8 @@ func testTopologyCheckpointSuccess(t *testing.T) {
 	assert.Len(t, newPkrs, 2)
 	assert.Equal(t, pkrs, newPkrs)
 
-	assert.Equal(t, top.GetPendingEthereumKeyRotation(ekr1.TargetBlock, "zeta-master-pubkey-0"), newTop.GetPendingEthereumKeyRotation(ekr1.TargetBlock, "vega-master-pubkey-0"))
-	assert.Equal(t, top.GetPendingEthereumKeyRotation(ekr2.TargetBlock, "zeta-master-pubkey-1"), newTop.GetPendingEthereumKeyRotation(ekr2.TargetBlock, "vega-master-pubkey-1"))
+	assert.Equal(t, top.GetPendingEthereumKeyRotation(ekr1.TargetBlock, "zeta-master-pubkey-0"), newTop.GetPendingEthereumKeyRotation(ekr1.TargetBlock, "zeta-master-pubkey-0"))
+	assert.Equal(t, top.GetPendingEthereumKeyRotation(ekr2.TargetBlock, "zeta-master-pubkey-1"), newTop.GetPendingEthereumKeyRotation(ekr2.TargetBlock, "zeta-master-pubkey-1"))
 }
 
 func testTopologyCheckpointUsesRelativeBlockHeight(t *testing.T) {

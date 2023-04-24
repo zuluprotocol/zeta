@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 )
@@ -91,7 +91,7 @@ func (t Trade) ToProtoEdge(_ ...any) (*v2.TradeEdge, error) {
 	}, nil
 }
 
-func TradeFromProto(t *zeta.Trade, txHash TxHash, vegaTime time.Time, sequenceNumber uint64) (*Trade, error) {
+func TradeFromProto(t *zeta.Trade, txHash TxHash, zetaTime time.Time, sequenceNumber uint64) (*Trade, error) {
 	syntheticTime := zetaTime.Add(time.Duration(sequenceNumber) * time.Microsecond)
 
 	price, err := decimal.NewFromString(t.Price)

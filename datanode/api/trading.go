@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 
 	"github.com/pkg/errors"
 )
@@ -26,7 +26,7 @@ const defaultRequestTimeout = time.Second * 5
 
 // CoreServiceClient ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/core_service_client_mock.go -package mocks code.zetaprotocol.io/vega/datanode/api CoreServiceClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/core_service_client_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api CoreServiceClient
 type CoreServiceClient interface {
 	protoapi.CoreServiceClient
 }
@@ -75,7 +75,7 @@ func (t *coreProxyService) LastBlockHeight(ctx context.Context, req *protoapi.La
 	return t.coreServiceClient.LastBlockHeight(ctx, req)
 }
 
-func (t *coreProxyService) GetZetaTime(ctx context.Context, req *protoapi.GetVegaTimeRequest) (*protoapi.GetVegaTimeResponse, error) {
+func (t *coreProxyService) GetZetaTime(ctx context.Context, req *protoapi.GetZetaTimeRequest) (*protoapi.GetZetaTimeResponse, error) {
 	ctx, cancel := context.WithTimeout(ctx, defaultRequestTimeout)
 	defer cancel()
 

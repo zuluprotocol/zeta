@@ -21,14 +21,14 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/validators"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/validators"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/pkg/errors"
 )
@@ -47,7 +47,7 @@ var (
 	ErrErc20AddressAlreadyInUse                  = errors.New("erc20 address already in use")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/core/governance Markets,StakingAccounts,Assets,TimeService,Witness,NetParams
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/governance Markets,StakingAccounts,Assets,TimeService,Witness,NetParams
 
 // Broker - event bus.
 type Broker interface {

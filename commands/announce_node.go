@@ -1,7 +1,7 @@
 package commands
 
 import (
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 func CheckAnnounceNode(cmd *commandspb.AnnounceNode) error {
@@ -17,7 +17,7 @@ func checkAnnounceNode(cmd *commandspb.AnnounceNode) Errors {
 
 	if len(cmd.ZetaPubKey) == 0 {
 		errs.AddForProperty("announce_node.zeta_pub_key", ErrIsRequired)
-	} else if !IsZetaPubkey(cmd.VegaPubKey) {
+	} else if !IsZetaPubkey(cmd.ZetaPubKey) {
 		errs.AddForProperty("announce_node.zeta_pub_key", ErrShouldBeAValidZetaPubkey)
 	}
 

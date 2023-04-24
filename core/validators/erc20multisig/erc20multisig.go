@@ -16,10 +16,10 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/broker"
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/broker"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func NewERC20MultisigTopology(

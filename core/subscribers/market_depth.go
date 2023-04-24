@@ -19,11 +19,11 @@ import (
 	"sort"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	ptypes "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	ptypes "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type OE interface {

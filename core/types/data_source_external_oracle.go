@@ -3,8 +3,8 @@ package types
 import (
 	"fmt"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 // DataSourceSpecConfiguration is used only by Oracles without a type wrapper at the moment.

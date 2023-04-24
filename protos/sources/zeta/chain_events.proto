@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package zeta;
-option go_package = "code.zetaprotocol.io/vega/protos/vega";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta";
 
 // A deposit for a Zeta built-in asset
 message BuiltinAssetDeposit {

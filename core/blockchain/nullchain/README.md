@@ -4,7 +4,7 @@ The Null-Blockchain is considered an alternative chain-provider for core that ac
 
 ## Using the Null-blockchain
 
-Providing the following options when running `zeta node`, or by setting them in `config.toml` will start vega with a null-blockchain:
+Providing the following options when running `zeta node`, or by setting them in `config.toml` will start zeta with a null-blockchain:
 
 ```
 --blockchain.chain-provider=nullchain

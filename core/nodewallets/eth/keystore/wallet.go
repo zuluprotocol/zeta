@@ -18,9 +18,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 )

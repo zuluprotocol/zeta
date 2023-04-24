@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	vgtest "code.zetaprotocol.io/vega/libs/test"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgtest "zuluprotocol/zeta/zeta/libs/test"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

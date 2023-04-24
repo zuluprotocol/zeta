@@ -7,10 +7,10 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v11 "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	v1 "code.zetaprotocol.io/vega/protos/vega/data/v1"
-	v12 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v11 "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	v12 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -3949,14 +3949,14 @@ type AuctionState struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mode               zeta.Market_TradingMode `protobuf:"varint,1,opt,name=mode,proto3,enum=vega.Market_TradingMode" json:"mode,omitempty"`
-	DefaultMode        zeta.Market_TradingMode `protobuf:"varint,2,opt,name=default_mode,json=defaultMode,proto3,enum=vega.Market_TradingMode" json:"default_mode,omitempty"`
-	Trigger            zeta.AuctionTrigger     `protobuf:"varint,3,opt,name=trigger,proto3,enum=vega.AuctionTrigger" json:"trigger,omitempty"`
+	Mode               zeta.Market_TradingMode `protobuf:"varint,1,opt,name=mode,proto3,enum=zeta.Market_TradingMode" json:"mode,omitempty"`
+	DefaultMode        zeta.Market_TradingMode `protobuf:"varint,2,opt,name=default_mode,json=defaultMode,proto3,enum=zeta.Market_TradingMode" json:"default_mode,omitempty"`
+	Trigger            zeta.AuctionTrigger     `protobuf:"varint,3,opt,name=trigger,proto3,enum=zeta.AuctionTrigger" json:"trigger,omitempty"`
 	Begin              int64                   `protobuf:"varint,4,opt,name=begin,proto3" json:"begin,omitempty"`
 	End                *zeta.AuctionDuration   `protobuf:"bytes,5,opt,name=end,proto3" json:"end,omitempty"`
 	Start              bool                    `protobuf:"varint,6,opt,name=start,proto3" json:"start,omitempty"`
 	Stop               bool                    `protobuf:"varint,7,opt,name=stop,proto3" json:"stop,omitempty"`
-	Extension          zeta.AuctionTrigger     `protobuf:"varint,8,opt,name=extension,proto3,enum=vega.AuctionTrigger" json:"extension,omitempty"`
+	Extension          zeta.AuctionTrigger     `protobuf:"varint,8,opt,name=extension,proto3,enum=zeta.AuctionTrigger" json:"extension,omitempty"`
 	ExtensionEventSent bool                    `protobuf:"varint,9,opt,name=extension_event_sent,json=extensionEventSent,proto3" json:"extension_event_sent,omitempty"`
 }
 
@@ -6085,7 +6085,7 @@ type StakeVerifierPending struct {
 	unknownFields protoimpl.UnknownFields
 
 	EthereumAddress string `protobuf:"bytes,1,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
-	ZetaPublicKey   string `protobuf:"bytes,2,opt,name=zeta_public_key,json=vegaPublicKey,proto3" json:"vega_public_key,omitempty"`
+	ZetaPublicKey   string `protobuf:"bytes,2,opt,name=zeta_public_key,json=zetaPublicKey,proto3" json:"zeta_public_key,omitempty"`
 	Amount          string `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
 	BlockTime       int64  `protobuf:"varint,4,opt,name=block_time,json=blockTime,proto3" json:"block_time,omitempty"`
 	BlockNumber     uint64 `protobuf:"varint,5,opt,name=block_number,json=blockNumber,proto3" json:"block_number,omitempty"`
@@ -8387,7 +8387,7 @@ type AcceptedProtocolUpgradeProposal struct {
 	// The block height at which to perform the upgrade
 	UpgradeBlockHeight uint64 `protobuf:"varint,1,opt,name=upgrade_block_height,json=upgradeBlockHeight,proto3" json:"upgrade_block_height,omitempty"`
 	// the release tag for the zeta binary
-	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=vegaReleaseTag,proto3" json:"vega_release_tag,omitempty"`
+	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=zetaReleaseTag,proto3" json:"zeta_release_tag,omitempty"`
 }
 
 func (x *AcceptedProtocolUpgradeProposal) Reset() {
@@ -9905,12 +9905,12 @@ var file_zeta_snapshot_v1_snapshot_proto_rawDesc = []byte{
 
 var (
 	file_zeta_snapshot_v1_snapshot_proto_rawDescOnce sync.Once
-	file_zeta_snapshot_v1_snapshot_proto_rawDescData = file_vega_snapshot_v1_snapshot_proto_rawDesc
+	file_zeta_snapshot_v1_snapshot_proto_rawDescData = file_zeta_snapshot_v1_snapshot_proto_rawDesc
 )
 
 func file_zeta_snapshot_v1_snapshot_proto_rawDescGZIP() []byte {
 	file_zeta_snapshot_v1_snapshot_proto_rawDescOnce.Do(func() {
-		file_zeta_snapshot_v1_snapshot_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_snapshot_v1_snapshot_proto_rawDescData)
+		file_zeta_snapshot_v1_snapshot_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_snapshot_v1_snapshot_proto_rawDescData)
 	})
 	return file_zeta_snapshot_v1_snapshot_proto_rawDescData
 }
@@ -10037,209 +10037,209 @@ var file_zeta_snapshot_v1_snapshot_proto_goTypes = []interface{}{
 	(*ProtocolUpgradeProposals)(nil),             // 116: zeta.snapshot.v1.ProtocolUpgradeProposals
 	(*AcceptedProtocolUpgradeProposal)(nil),      // 117: zeta.snapshot.v1.AcceptedProtocolUpgradeProposal
 	(*v1.Signer)(nil),                            // 118: zeta.data.v1.Signer
-	(*zeta.Account)(nil),                         // 119: vega.Account
-	(*zeta.Asset)(nil),                           // 120: vega.Asset
-	(*zeta.Withdrawal)(nil),                      // 121: vega.Withdrawal
-	(*zeta.Deposit)(nil),                         // 122: vega.Deposit
-	(*zeta.BuiltinAssetDeposit)(nil),             // 123: vega.BuiltinAssetDeposit
-	(*zeta.ERC20Deposit)(nil),                    // 124: vega.ERC20Deposit
-	(*zeta.ERC20AssetList)(nil),                  // 125: vega.ERC20AssetList
-	(*zeta.ERC20AssetLimitsUpdated)(nil),         // 126: vega.ERC20AssetLimitsUpdated
+	(*zeta.Account)(nil),                         // 119: zeta.Account
+	(*zeta.Asset)(nil),                           // 120: zeta.Asset
+	(*zeta.Withdrawal)(nil),                      // 121: zeta.Withdrawal
+	(*zeta.Deposit)(nil),                         // 122: zeta.Deposit
+	(*zeta.BuiltinAssetDeposit)(nil),             // 123: zeta.BuiltinAssetDeposit
+	(*zeta.ERC20Deposit)(nil),                    // 124: zeta.ERC20Deposit
+	(*zeta.ERC20AssetList)(nil),                  // 125: zeta.ERC20AssetList
+	(*zeta.ERC20AssetLimitsUpdated)(nil),         // 126: zeta.ERC20AssetLimitsUpdated
 	(*v11.RecurringTransfers)(nil),               // 127: zeta.checkpoint.v1.RecurringTransfers
 	(*v11.ScheduledTransferAtTime)(nil),          // 128: zeta.checkpoint.v1.ScheduledTransferAtTime
 	(*v11.BridgeState)(nil),                      // 129: zeta.checkpoint.v1.BridgeState
-	(*zeta.Delegation)(nil),                      // 130: vega.Delegation
-	(*zeta.Proposal)(nil),                        // 131: vega.Proposal
-	(*zeta.Vote)(nil),                            // 132: vega.Vote
+	(*zeta.Delegation)(nil),                      // 130: zeta.Delegation
+	(*zeta.Proposal)(nil),                        // 131: zeta.Proposal
+	(*zeta.Vote)(nil),                            // 132: zeta.Vote
 	(*v12.StakeLinking)(nil),                     // 133: zeta.events.v1.StakeLinking
-	(*zeta.Order)(nil),                           // 134: vega.Order
-	(*zeta.NetworkParameter)(nil),                // 135: vega.NetworkParameter
-	(*zeta.PriceMonitoringTrigger)(nil),          // 136: vega.PriceMonitoringTrigger
-	(zeta.Market_TradingMode)(0),                 // 137: vega.Market.TradingMode
-	(zeta.AuctionTrigger)(0),                     // 138: vega.AuctionTrigger
-	(*zeta.AuctionDuration)(nil),                 // 139: vega.AuctionDuration
-	(*zeta.Market)(nil),                          // 140: vega.Market
+	(*zeta.Order)(nil),                           // 134: zeta.Order
+	(*zeta.NetworkParameter)(nil),                // 135: zeta.NetworkParameter
+	(*zeta.PriceMonitoringTrigger)(nil),          // 136: zeta.PriceMonitoringTrigger
+	(zeta.Market_TradingMode)(0),                 // 137: zeta.Market.TradingMode
+	(zeta.AuctionTrigger)(0),                     // 138: zeta.AuctionTrigger
+	(*zeta.AuctionDuration)(nil),                 // 139: zeta.AuctionDuration
+	(*zeta.Market)(nil),                          // 140: zeta.Market
 	(*v12.ValidatorUpdate)(nil),                  // 141: zeta.events.v1.ValidatorUpdate
-	(*zeta.RankingScore)(nil),                    // 142: vega.RankingScore
-	(*zeta.LiquidityProvision)(nil),              // 143: vega.LiquidityProvision
-	(*zeta.KeyValueBundle)(nil),                  // 144: vega.KeyValueBundle
+	(*zeta.RankingScore)(nil),                    // 142: zeta.RankingScore
+	(*zeta.LiquidityProvision)(nil),              // 143: zeta.LiquidityProvision
+	(*zeta.KeyValueBundle)(nil),                  // 144: zeta.KeyValueBundle
 	(*v11.MarketActivityTracker)(nil),            // 145: zeta.checkpoint.v1.MarketActivityTracker
 	(*v12.ERC20MultiSigSignerEvent)(nil),         // 146: zeta.events.v1.ERC20MultiSigSignerEvent
 	(*v12.ERC20MultiSigThresholdSetEvent)(nil),   // 147: zeta.events.v1.ERC20MultiSigThresholdSetEvent
 	(*v12.ProtocolUpgradeEvent)(nil),             // 148: zeta.events.v1.ProtocolUpgradeEvent
 }
 var file_zeta_snapshot_v1_snapshot_proto_depIdxs = []int32{
-	0,   // 0: zeta.snapshot.v1.Snapshot.format:type_name -> vega.snapshot.v1.Format
-	2,   // 1: zeta.snapshot.v1.Metadata.node_hashes:type_name -> vega.snapshot.v1.NodeHash
-	5,   // 2: zeta.snapshot.v1.Chunk.data:type_name -> vega.snapshot.v1.Payload
-	18,  // 3: zeta.snapshot.v1.Payload.active_assets:type_name -> vega.snapshot.v1.ActiveAssets
-	19,  // 4: zeta.snapshot.v1.Payload.pending_assets:type_name -> vega.snapshot.v1.PendingAssets
-	25,  // 5: zeta.snapshot.v1.Payload.banking_withdrawals:type_name -> vega.snapshot.v1.BankingWithdrawals
-	26,  // 6: zeta.snapshot.v1.Payload.banking_deposits:type_name -> vega.snapshot.v1.BankingDeposits
-	27,  // 7: zeta.snapshot.v1.Payload.banking_seen:type_name -> vega.snapshot.v1.BankingSeen
-	28,  // 8: zeta.snapshot.v1.Payload.banking_asset_actions:type_name -> vega.snapshot.v1.BankingAssetActions
-	32,  // 9: zeta.snapshot.v1.Payload.checkpoint:type_name -> vega.snapshot.v1.Checkpoint
-	16,  // 10: zeta.snapshot.v1.Payload.collateral_accounts:type_name -> vega.snapshot.v1.CollateralAccounts
-	17,  // 11: zeta.snapshot.v1.Payload.collateral_assets:type_name -> vega.snapshot.v1.CollateralAssets
-	34,  // 12: zeta.snapshot.v1.Payload.delegation_active:type_name -> vega.snapshot.v1.DelegationActive
-	35,  // 13: zeta.snapshot.v1.Payload.delegation_pending:type_name -> vega.snapshot.v1.DelegationPending
-	36,  // 14: zeta.snapshot.v1.Payload.delegation_auto:type_name -> vega.snapshot.v1.DelegationAuto
-	39,  // 15: zeta.snapshot.v1.Payload.governance_active:type_name -> vega.snapshot.v1.GovernanceActive
-	38,  // 16: zeta.snapshot.v1.Payload.governance_enacted:type_name -> vega.snapshot.v1.GovernanceEnacted
-	42,  // 17: zeta.snapshot.v1.Payload.staking_accounts:type_name -> vega.snapshot.v1.StakingAccounts
-	43,  // 18: zeta.snapshot.v1.Payload.matching_book:type_name -> vega.snapshot.v1.MatchingBook
-	44,  // 19: zeta.snapshot.v1.Payload.network_parameters:type_name -> vega.snapshot.v1.NetParams
-	60,  // 20: zeta.snapshot.v1.Payload.execution_markets:type_name -> vega.snapshot.v1.ExecutionMarkets
-	62,  // 21: zeta.snapshot.v1.Payload.market_positions:type_name -> vega.snapshot.v1.MarketPositions
-	66,  // 22: zeta.snapshot.v1.Payload.app_state:type_name -> vega.snapshot.v1.AppState
-	67,  // 23: zeta.snapshot.v1.Payload.epoch:type_name -> vega.snapshot.v1.EpochState
-	68,  // 24: zeta.snapshot.v1.Payload.rewards_pending_payouts:type_name -> vega.snapshot.v1.RewardsPendingPayouts
-	40,  // 25: zeta.snapshot.v1.Payload.governance_node:type_name -> vega.snapshot.v1.GovernanceNode
-	72,  // 26: zeta.snapshot.v1.Payload.limit_state:type_name -> vega.snapshot.v1.LimitState
-	73,  // 27: zeta.snapshot.v1.Payload.vote_spam_policy:type_name -> vega.snapshot.v1.VoteSpamPolicy
-	78,  // 28: zeta.snapshot.v1.Payload.simple_spam_policy:type_name -> vega.snapshot.v1.SimpleSpamPolicy
-	80,  // 29: zeta.snapshot.v1.Payload.notary:type_name -> vega.snapshot.v1.Notary
-	15,  // 30: zeta.snapshot.v1.Payload.event_forwarder:type_name -> vega.snapshot.v1.EventForwarder
-	81,  // 31: zeta.snapshot.v1.Payload.stake_verifier_deposited:type_name -> vega.snapshot.v1.StakeVerifierDeposited
-	82,  // 32: zeta.snapshot.v1.Payload.stake_verifier_removed:type_name -> vega.snapshot.v1.StakeVerifierRemoved
-	13,  // 33: zeta.snapshot.v1.Payload.witness:type_name -> vega.snapshot.v1.Witness
-	33,  // 34: zeta.snapshot.v1.Payload.delegation_last_reconciliation_time:type_name -> vega.snapshot.v1.DelegationLastReconciliationTime
-	86,  // 35: zeta.snapshot.v1.Payload.topology:type_name -> vega.snapshot.v1.Topology
-	10,  // 36: zeta.snapshot.v1.Payload.oracle_data:type_name -> vega.snapshot.v1.OracleDataBatch
-	93,  // 37: zeta.snapshot.v1.Payload.liquidity_parameters:type_name -> vega.snapshot.v1.LiquidityParameters
-	94,  // 38: zeta.snapshot.v1.Payload.liquidity_pending_provisions:type_name -> vega.snapshot.v1.LiquidityPendingProvisions
-	95,  // 39: zeta.snapshot.v1.Payload.liquidity_parties_liquidity_orders:type_name -> vega.snapshot.v1.LiquidityPartiesLiquidityOrders
-	97,  // 40: zeta.snapshot.v1.Payload.liquidity_parties_orders:type_name -> vega.snapshot.v1.LiquidityPartiesOrders
-	98,  // 41: zeta.snapshot.v1.Payload.liquidity_provisions:type_name -> vega.snapshot.v1.LiquidityProvisions
-	9,   // 42: zeta.snapshot.v1.Payload.liquidity_supplied:type_name -> vega.snapshot.v1.LiquiditySupplied
-	7,   // 43: zeta.snapshot.v1.Payload.liquidity_target:type_name -> vega.snapshot.v1.LiquidityTarget
-	101, // 44: zeta.snapshot.v1.Payload.floating_point_consensus:type_name -> vega.snapshot.v1.FloatingPointConsensus
-	105, // 45: zeta.snapshot.v1.Payload.market_tracker:type_name -> vega.snapshot.v1.MarketTracker
-	29,  // 46: zeta.snapshot.v1.Payload.banking_recurring_transfers:type_name -> vega.snapshot.v1.BankingRecurringTransfers
-	30,  // 47: zeta.snapshot.v1.Payload.banking_scheduled_transfers:type_name -> vega.snapshot.v1.BankingScheduledTransfers
-	107, // 48: zeta.snapshot.v1.Payload.erc20_multisig_topology_verified:type_name -> vega.snapshot.v1.ERC20MultiSigTopologyVerified
-	108, // 49: zeta.snapshot.v1.Payload.erc20_multisig_topology_pending:type_name -> vega.snapshot.v1.ERC20MultiSigTopologyPending
-	109, // 50: zeta.snapshot.v1.Payload.proof_of_work:type_name -> vega.snapshot.v1.ProofOfWork
-	20,  // 51: zeta.snapshot.v1.Payload.pending_asset_updates:type_name -> vega.snapshot.v1.PendingAssetUpdates
-	116, // 52: zeta.snapshot.v1.Payload.protocol_upgrade_proposals:type_name -> vega.snapshot.v1.ProtocolUpgradeProposals
-	31,  // 53: zeta.snapshot.v1.Payload.banking_bridge_state:type_name -> vega.snapshot.v1.BankingBridgeState
-	63,  // 54: zeta.snapshot.v1.Payload.settlement_state:type_name -> vega.snapshot.v1.SettlementState
-	99,  // 55: zeta.snapshot.v1.Payload.liquidity_scores:type_name -> vega.snapshot.v1.LiquidityScores
-	6,   // 56: zeta.snapshot.v1.LiquidityTarget.previous_open_interests:type_name -> vega.snapshot.v1.TimestampedOpenInterest
-	6,   // 57: zeta.snapshot.v1.LiquidityTarget.max_open_interests:type_name -> vega.snapshot.v1.TimestampedOpenInterest
-	8,   // 58: zeta.snapshot.v1.LiquiditySupplied.bid_cache:type_name -> vega.snapshot.v1.LiquidityPriceProbabilityPair
-	8,   // 59: zeta.snapshot.v1.LiquiditySupplied.ask_cache:type_name -> vega.snapshot.v1.LiquidityPriceProbabilityPair
-	11,  // 60: zeta.snapshot.v1.OracleDataBatch.oracle_data:type_name -> vega.snapshot.v1.OracleData
-	118, // 61: zeta.snapshot.v1.OracleData.signers:type_name -> vega.data.v1.Signer
-	12,  // 62: zeta.snapshot.v1.OracleData.data:type_name -> vega.snapshot.v1.OracleDataPair
-	14,  // 63: zeta.snapshot.v1.Witness.resources:type_name -> vega.snapshot.v1.Resource
-	119, // 64: zeta.snapshot.v1.CollateralAccounts.accounts:type_name -> vega.Account
-	120, // 65: zeta.snapshot.v1.CollateralAssets.assets:type_name -> vega.Asset
-	120, // 66: zeta.snapshot.v1.ActiveAssets.assets:type_name -> vega.Asset
-	120, // 67: zeta.snapshot.v1.PendingAssets.assets:type_name -> vega.Asset
-	120, // 68: zeta.snapshot.v1.PendingAssetUpdates.assets:type_name -> vega.Asset
-	121, // 69: zeta.snapshot.v1.Withdrawal.withdrawal:type_name -> vega.Withdrawal
-	122, // 70: zeta.snapshot.v1.Deposit.deposit:type_name -> vega.Deposit
-	123, // 71: zeta.snapshot.v1.AssetAction.builtin_deposit:type_name -> vega.BuiltinAssetDeposit
-	124, // 72: zeta.snapshot.v1.AssetAction.erc20_deposit:type_name -> vega.ERC20Deposit
-	125, // 73: zeta.snapshot.v1.AssetAction.asset_list:type_name -> vega.ERC20AssetList
-	126, // 74: zeta.snapshot.v1.AssetAction.erc20_asset_limits_updated:type_name -> vega.ERC20AssetLimitsUpdated
-	21,  // 75: zeta.snapshot.v1.BankingWithdrawals.withdrawals:type_name -> vega.snapshot.v1.Withdrawal
-	22,  // 76: zeta.snapshot.v1.BankingDeposits.deposit:type_name -> vega.snapshot.v1.Deposit
-	24,  // 77: zeta.snapshot.v1.BankingAssetActions.asset_action:type_name -> vega.snapshot.v1.AssetAction
-	127, // 78: zeta.snapshot.v1.BankingRecurringTransfers.recurring_transfers:type_name -> vega.checkpoint.v1.RecurringTransfers
-	128, // 79: zeta.snapshot.v1.BankingScheduledTransfers.transfers_at_time:type_name -> vega.checkpoint.v1.ScheduledTransferAtTime
-	129, // 80: zeta.snapshot.v1.BankingBridgeState.bridge_state:type_name -> vega.checkpoint.v1.BridgeState
-	130, // 81: zeta.snapshot.v1.DelegationActive.delegations:type_name -> vega.Delegation
-	130, // 82: zeta.snapshot.v1.DelegationPending.delegations:type_name -> vega.Delegation
-	130, // 83: zeta.snapshot.v1.DelegationPending.undelegation:type_name -> vega.Delegation
-	131, // 84: zeta.snapshot.v1.ProposalData.proposal:type_name -> vega.Proposal
-	132, // 85: zeta.snapshot.v1.ProposalData.yes:type_name -> vega.Vote
-	132, // 86: zeta.snapshot.v1.ProposalData.no:type_name -> vega.Vote
-	132, // 87: zeta.snapshot.v1.ProposalData.invalid:type_name -> vega.Vote
-	37,  // 88: zeta.snapshot.v1.GovernanceEnacted.proposals:type_name -> vega.snapshot.v1.ProposalData
-	37,  // 89: zeta.snapshot.v1.GovernanceActive.proposals:type_name -> vega.snapshot.v1.ProposalData
-	131, // 90: zeta.snapshot.v1.GovernanceNode.proposals:type_name -> vega.Proposal
-	133, // 91: zeta.snapshot.v1.StakingAccount.events:type_name -> vega.events.v1.StakeLinking
-	41,  // 92: zeta.snapshot.v1.StakingAccounts.accounts:type_name -> vega.snapshot.v1.StakingAccount
-	134, // 93: zeta.snapshot.v1.MatchingBook.buy:type_name -> vega.Order
-	134, // 94: zeta.snapshot.v1.MatchingBook.sell:type_name -> vega.Order
-	135, // 95: zeta.snapshot.v1.NetParams.params:type_name -> vega.NetworkParameter
-	136, // 96: zeta.snapshot.v1.PriceBound.trigger:type_name -> vega.PriceMonitoringTrigger
-	49,  // 97: zeta.snapshot.v1.PriceRangeCache.bound:type_name -> vega.snapshot.v1.PriceBound
-	48,  // 98: zeta.snapshot.v1.PriceRangeCache.range:type_name -> vega.snapshot.v1.PriceRange
-	45,  // 99: zeta.snapshot.v1.PriceMonitor.fp_horizons:type_name -> vega.snapshot.v1.DecimalMap
-	49,  // 100: zeta.snapshot.v1.PriceMonitor.bounds:type_name -> vega.snapshot.v1.PriceBound
-	50,  // 101: zeta.snapshot.v1.PriceMonitor.price_range_cache:type_name -> vega.snapshot.v1.PriceRangeCache
-	45,  // 102: zeta.snapshot.v1.PriceMonitor.ref_price_cache:type_name -> vega.snapshot.v1.DecimalMap
-	51,  // 103: zeta.snapshot.v1.PriceMonitor.prices_now:type_name -> vega.snapshot.v1.CurrentPrice
-	52,  // 104: zeta.snapshot.v1.PriceMonitor.prices_past:type_name -> vega.snapshot.v1.PastPrice
-	137, // 105: zeta.snapshot.v1.AuctionState.mode:type_name -> vega.Market.TradingMode
-	137, // 106: zeta.snapshot.v1.AuctionState.default_mode:type_name -> vega.Market.TradingMode
-	138, // 107: zeta.snapshot.v1.AuctionState.trigger:type_name -> vega.AuctionTrigger
-	139, // 108: zeta.snapshot.v1.AuctionState.end:type_name -> vega.AuctionDuration
-	138, // 109: zeta.snapshot.v1.AuctionState.extension:type_name -> vega.AuctionTrigger
-	55,  // 110: zeta.snapshot.v1.EquityShare.lps:type_name -> vega.snapshot.v1.EquityShareLP
-	140, // 111: zeta.snapshot.v1.Market.market:type_name -> vega.Market
-	53,  // 112: zeta.snapshot.v1.Market.price_monitor:type_name -> vega.snapshot.v1.PriceMonitor
-	54,  // 113: zeta.snapshot.v1.Market.auction_state:type_name -> vega.snapshot.v1.AuctionState
-	59,  // 114: zeta.snapshot.v1.Market.pegged_orders:type_name -> vega.snapshot.v1.PeggedOrders
-	134, // 115: zeta.snapshot.v1.Market.expiring_orders:type_name -> vega.Order
-	56,  // 116: zeta.snapshot.v1.Market.equity_share:type_name -> vega.snapshot.v1.EquityShare
-	57,  // 117: zeta.snapshot.v1.Market.fee_splitter:type_name -> vega.snapshot.v1.FeeSplitter
-	134, // 118: zeta.snapshot.v1.PeggedOrders.parked_orders:type_name -> vega.Order
-	58,  // 119: zeta.snapshot.v1.ExecutionMarkets.markets:type_name -> vega.snapshot.v1.Market
-	61,  // 120: zeta.snapshot.v1.MarketPositions.positions:type_name -> vega.snapshot.v1.Position
-	64,  // 121: zeta.snapshot.v1.SettlementState.last_settled_positions:type_name -> vega.snapshot.v1.LastSettledPosition
-	65,  // 122: zeta.snapshot.v1.SettlementState.trades:type_name -> vega.snapshot.v1.SettlementTrade
-	69,  // 123: zeta.snapshot.v1.RewardsPendingPayouts.scheduled_rewards_payout:type_name -> vega.snapshot.v1.ScheduledRewardsPayout
-	70,  // 124: zeta.snapshot.v1.ScheduledRewardsPayout.rewards_payout:type_name -> vega.snapshot.v1.RewardsPayout
-	71,  // 125: zeta.snapshot.v1.RewardsPayout.reward_party_amount:type_name -> vega.snapshot.v1.RewardsPartyAmount
-	74,  // 126: zeta.snapshot.v1.VoteSpamPolicy.party_to_vote:type_name -> vega.snapshot.v1.PartyProposalVoteCount
-	110, // 127: zeta.snapshot.v1.VoteSpamPolicy.banned_parties:type_name -> vega.snapshot.v1.BannedParty
-	75,  // 128: zeta.snapshot.v1.VoteSpamPolicy.token_balance:type_name -> vega.snapshot.v1.PartyTokenBalance
-	76,  // 129: zeta.snapshot.v1.VoteSpamPolicy.recent_blocks_reject_stats:type_name -> vega.snapshot.v1.BlockRejectStats
-	77,  // 130: zeta.snapshot.v1.SimpleSpamPolicy.party_to_count:type_name -> vega.snapshot.v1.SpamPartyTransactionCount
-	110, // 131: zeta.snapshot.v1.SimpleSpamPolicy.banned_parties:type_name -> vega.snapshot.v1.BannedParty
-	75,  // 132: zeta.snapshot.v1.SimpleSpamPolicy.token_balance:type_name -> vega.snapshot.v1.PartyTokenBalance
-	79,  // 133: zeta.snapshot.v1.Notary.notary_sigs:type_name -> vega.snapshot.v1.NotarySigs
-	83,  // 134: zeta.snapshot.v1.StakeVerifierDeposited.pending_deposited:type_name -> vega.snapshot.v1.StakeVerifierPending
-	83,  // 135: zeta.snapshot.v1.StakeVerifierRemoved.pending_removed:type_name -> vega.snapshot.v1.StakeVerifierPending
-	89,  // 136: zeta.snapshot.v1.Topology.validator_data:type_name -> vega.snapshot.v1.ValidatorState
-	84,  // 137: zeta.snapshot.v1.Topology.pending_pub_key_rotations:type_name -> vega.snapshot.v1.PendingKeyRotation
-	92,  // 138: zeta.snapshot.v1.Topology.validator_performance:type_name -> vega.snapshot.v1.ValidatorPerformance
-	85,  // 139: zeta.snapshot.v1.Topology.pending_ethereum_key_rotations:type_name -> vega.snapshot.v1.PendingEthereumKeyRotation
-	87,  // 140: zeta.snapshot.v1.Topology.signatures:type_name -> vega.snapshot.v1.ToplogySignatures
-	85,  // 141: zeta.snapshot.v1.Topology.unsolved_ethereum_key_rotations:type_name -> vega.snapshot.v1.PendingEthereumKeyRotation
-	88,  // 142: zeta.snapshot.v1.ToplogySignatures.pending_signatures:type_name -> vega.snapshot.v1.PendingERC20MultisigControlSignature
-	141, // 143: zeta.snapshot.v1.ValidatorState.validator_update:type_name -> vega.events.v1.ValidatorUpdate
-	90,  // 144: zeta.snapshot.v1.ValidatorState.heartbeat_tracker:type_name -> vega.snapshot.v1.HeartbeatTracker
-	142, // 145: zeta.snapshot.v1.ValidatorState.ranking_score:type_name -> vega.RankingScore
-	91,  // 146: zeta.snapshot.v1.ValidatorPerformance.validator_perf_stats:type_name -> vega.snapshot.v1.PerformanceStats
-	96,  // 147: zeta.snapshot.v1.LiquidityPartiesLiquidityOrders.party_orders:type_name -> vega.snapshot.v1.PartyOrders
-	134, // 148: zeta.snapshot.v1.PartyOrders.orders:type_name -> vega.Order
-	96,  // 149: zeta.snapshot.v1.LiquidityPartiesOrders.party_orders:type_name -> vega.snapshot.v1.PartyOrders
-	143, // 150: zeta.snapshot.v1.LiquidityProvisions.liquidity_provisions:type_name -> vega.LiquidityProvision
-	100, // 151: zeta.snapshot.v1.LiquidityScores.scores:type_name -> vega.snapshot.v1.LiquidityScore
-	104, // 152: zeta.snapshot.v1.FloatingPointConsensus.next_time_trigger:type_name -> vega.snapshot.v1.NextTimeTrigger
-	102, // 153: zeta.snapshot.v1.FloatingPointConsensus.state_variables:type_name -> vega.snapshot.v1.StateVarInternalState
-	103, // 154: zeta.snapshot.v1.StateVarInternalState.validators_results:type_name -> vega.snapshot.v1.FloatingPointValidatorResult
-	144, // 155: zeta.snapshot.v1.FloatingPointValidatorResult.bundle:type_name -> vega.KeyValueBundle
-	145, // 156: zeta.snapshot.v1.MarketTracker.market_activity:type_name -> vega.checkpoint.v1.MarketActivityTracker
-	146, // 157: zeta.snapshot.v1.SignerEventsPerAddress.events:type_name -> vega.events.v1.ERC20MultiSigSignerEvent
-	106, // 158: zeta.snapshot.v1.ERC20MultiSigTopologyVerified.events_per_address:type_name -> vega.snapshot.v1.SignerEventsPerAddress
-	147, // 159: zeta.snapshot.v1.ERC20MultiSigTopologyVerified.threshold:type_name -> vega.events.v1.ERC20MultiSigThresholdSetEvent
-	146, // 160: zeta.snapshot.v1.ERC20MultiSigTopologyPending.pending_signers:type_name -> vega.events.v1.ERC20MultiSigSignerEvent
-	147, // 161: zeta.snapshot.v1.ERC20MultiSigTopologyPending.pending_threshold_set:type_name -> vega.events.v1.ERC20MultiSigThresholdSetEvent
-	115, // 162: zeta.snapshot.v1.ProofOfWork.tx_at_height:type_name -> vega.snapshot.v1.TransactionsAtHeight
-	115, // 163: zeta.snapshot.v1.ProofOfWork.tid_at_height:type_name -> vega.snapshot.v1.TransactionsAtHeight
-	110, // 164: zeta.snapshot.v1.ProofOfWork.banned:type_name -> vega.snapshot.v1.BannedParty
-	111, // 165: zeta.snapshot.v1.ProofOfWork.pow_params:type_name -> vega.snapshot.v1.ProofOfWorkParams
-	112, // 166: zeta.snapshot.v1.ProofOfWork.pow_state:type_name -> vega.snapshot.v1.ProofOfWorkState
-	113, // 167: zeta.snapshot.v1.ProofOfWorkState.pow_state:type_name -> vega.snapshot.v1.ProofOfWorkBlockState
-	114, // 168: zeta.snapshot.v1.ProofOfWorkBlockState.party_state:type_name -> vega.snapshot.v1.ProofOfWorkPartyStateForBlock
-	148, // 169: zeta.snapshot.v1.ProtocolUpgradeProposals.active_proposals:type_name -> vega.events.v1.ProtocolUpgradeEvent
-	117, // 170: zeta.snapshot.v1.ProtocolUpgradeProposals.accepted_proposal:type_name -> vega.snapshot.v1.AcceptedProtocolUpgradeProposal
+	0,   // 0: zeta.snapshot.v1.Snapshot.format:type_name -> zeta.snapshot.v1.Format
+	2,   // 1: zeta.snapshot.v1.Metadata.node_hashes:type_name -> zeta.snapshot.v1.NodeHash
+	5,   // 2: zeta.snapshot.v1.Chunk.data:type_name -> zeta.snapshot.v1.Payload
+	18,  // 3: zeta.snapshot.v1.Payload.active_assets:type_name -> zeta.snapshot.v1.ActiveAssets
+	19,  // 4: zeta.snapshot.v1.Payload.pending_assets:type_name -> zeta.snapshot.v1.PendingAssets
+	25,  // 5: zeta.snapshot.v1.Payload.banking_withdrawals:type_name -> zeta.snapshot.v1.BankingWithdrawals
+	26,  // 6: zeta.snapshot.v1.Payload.banking_deposits:type_name -> zeta.snapshot.v1.BankingDeposits
+	27,  // 7: zeta.snapshot.v1.Payload.banking_seen:type_name -> zeta.snapshot.v1.BankingSeen
+	28,  // 8: zeta.snapshot.v1.Payload.banking_asset_actions:type_name -> zeta.snapshot.v1.BankingAssetActions
+	32,  // 9: zeta.snapshot.v1.Payload.checkpoint:type_name -> zeta.snapshot.v1.Checkpoint
+	16,  // 10: zeta.snapshot.v1.Payload.collateral_accounts:type_name -> zeta.snapshot.v1.CollateralAccounts
+	17,  // 11: zeta.snapshot.v1.Payload.collateral_assets:type_name -> zeta.snapshot.v1.CollateralAssets
+	34,  // 12: zeta.snapshot.v1.Payload.delegation_active:type_name -> zeta.snapshot.v1.DelegationActive
+	35,  // 13: zeta.snapshot.v1.Payload.delegation_pending:type_name -> zeta.snapshot.v1.DelegationPending
+	36,  // 14: zeta.snapshot.v1.Payload.delegation_auto:type_name -> zeta.snapshot.v1.DelegationAuto
+	39,  // 15: zeta.snapshot.v1.Payload.governance_active:type_name -> zeta.snapshot.v1.GovernanceActive
+	38,  // 16: zeta.snapshot.v1.Payload.governance_enacted:type_name -> zeta.snapshot.v1.GovernanceEnacted
+	42,  // 17: zeta.snapshot.v1.Payload.staking_accounts:type_name -> zeta.snapshot.v1.StakingAccounts
+	43,  // 18: zeta.snapshot.v1.Payload.matching_book:type_name -> zeta.snapshot.v1.MatchingBook
+	44,  // 19: zeta.snapshot.v1.Payload.network_parameters:type_name -> zeta.snapshot.v1.NetParams
+	60,  // 20: zeta.snapshot.v1.Payload.execution_markets:type_name -> zeta.snapshot.v1.ExecutionMarkets
+	62,  // 21: zeta.snapshot.v1.Payload.market_positions:type_name -> zeta.snapshot.v1.MarketPositions
+	66,  // 22: zeta.snapshot.v1.Payload.app_state:type_name -> zeta.snapshot.v1.AppState
+	67,  // 23: zeta.snapshot.v1.Payload.epoch:type_name -> zeta.snapshot.v1.EpochState
+	68,  // 24: zeta.snapshot.v1.Payload.rewards_pending_payouts:type_name -> zeta.snapshot.v1.RewardsPendingPayouts
+	40,  // 25: zeta.snapshot.v1.Payload.governance_node:type_name -> zeta.snapshot.v1.GovernanceNode
+	72,  // 26: zeta.snapshot.v1.Payload.limit_state:type_name -> zeta.snapshot.v1.LimitState
+	73,  // 27: zeta.snapshot.v1.Payload.vote_spam_policy:type_name -> zeta.snapshot.v1.VoteSpamPolicy
+	78,  // 28: zeta.snapshot.v1.Payload.simple_spam_policy:type_name -> zeta.snapshot.v1.SimpleSpamPolicy
+	80,  // 29: zeta.snapshot.v1.Payload.notary:type_name -> zeta.snapshot.v1.Notary
+	15,  // 30: zeta.snapshot.v1.Payload.event_forwarder:type_name -> zeta.snapshot.v1.EventForwarder
+	81,  // 31: zeta.snapshot.v1.Payload.stake_verifier_deposited:type_name -> zeta.snapshot.v1.StakeVerifierDeposited
+	82,  // 32: zeta.snapshot.v1.Payload.stake_verifier_removed:type_name -> zeta.snapshot.v1.StakeVerifierRemoved
+	13,  // 33: zeta.snapshot.v1.Payload.witness:type_name -> zeta.snapshot.v1.Witness
+	33,  // 34: zeta.snapshot.v1.Payload.delegation_last_reconciliation_time:type_name -> zeta.snapshot.v1.DelegationLastReconciliationTime
+	86,  // 35: zeta.snapshot.v1.Payload.topology:type_name -> zeta.snapshot.v1.Topology
+	10,  // 36: zeta.snapshot.v1.Payload.oracle_data:type_name -> zeta.snapshot.v1.OracleDataBatch
+	93,  // 37: zeta.snapshot.v1.Payload.liquidity_parameters:type_name -> zeta.snapshot.v1.LiquidityParameters
+	94,  // 38: zeta.snapshot.v1.Payload.liquidity_pending_provisions:type_name -> zeta.snapshot.v1.LiquidityPendingProvisions
+	95,  // 39: zeta.snapshot.v1.Payload.liquidity_parties_liquidity_orders:type_name -> zeta.snapshot.v1.LiquidityPartiesLiquidityOrders
+	97,  // 40: zeta.snapshot.v1.Payload.liquidity_parties_orders:type_name -> zeta.snapshot.v1.LiquidityPartiesOrders
+	98,  // 41: zeta.snapshot.v1.Payload.liquidity_provisions:type_name -> zeta.snapshot.v1.LiquidityProvisions
+	9,   // 42: zeta.snapshot.v1.Payload.liquidity_supplied:type_name -> zeta.snapshot.v1.LiquiditySupplied
+	7,   // 43: zeta.snapshot.v1.Payload.liquidity_target:type_name -> zeta.snapshot.v1.LiquidityTarget
+	101, // 44: zeta.snapshot.v1.Payload.floating_point_consensus:type_name -> zeta.snapshot.v1.FloatingPointConsensus
+	105, // 45: zeta.snapshot.v1.Payload.market_tracker:type_name -> zeta.snapshot.v1.MarketTracker
+	29,  // 46: zeta.snapshot.v1.Payload.banking_recurring_transfers:type_name -> zeta.snapshot.v1.BankingRecurringTransfers
+	30,  // 47: zeta.snapshot.v1.Payload.banking_scheduled_transfers:type_name -> zeta.snapshot.v1.BankingScheduledTransfers
+	107, // 48: zeta.snapshot.v1.Payload.erc20_multisig_topology_verified:type_name -> zeta.snapshot.v1.ERC20MultiSigTopologyVerified
+	108, // 49: zeta.snapshot.v1.Payload.erc20_multisig_topology_pending:type_name -> zeta.snapshot.v1.ERC20MultiSigTopologyPending
+	109, // 50: zeta.snapshot.v1.Payload.proof_of_work:type_name -> zeta.snapshot.v1.ProofOfWork
+	20,  // 51: zeta.snapshot.v1.Payload.pending_asset_updates:type_name -> zeta.snapshot.v1.PendingAssetUpdates
+	116, // 52: zeta.snapshot.v1.Payload.protocol_upgrade_proposals:type_name -> zeta.snapshot.v1.ProtocolUpgradeProposals
+	31,  // 53: zeta.snapshot.v1.Payload.banking_bridge_state:type_name -> zeta.snapshot.v1.BankingBridgeState
+	63,  // 54: zeta.snapshot.v1.Payload.settlement_state:type_name -> zeta.snapshot.v1.SettlementState
+	99,  // 55: zeta.snapshot.v1.Payload.liquidity_scores:type_name -> zeta.snapshot.v1.LiquidityScores
+	6,   // 56: zeta.snapshot.v1.LiquidityTarget.previous_open_interests:type_name -> zeta.snapshot.v1.TimestampedOpenInterest
+	6,   // 57: zeta.snapshot.v1.LiquidityTarget.max_open_interests:type_name -> zeta.snapshot.v1.TimestampedOpenInterest
+	8,   // 58: zeta.snapshot.v1.LiquiditySupplied.bid_cache:type_name -> zeta.snapshot.v1.LiquidityPriceProbabilityPair
+	8,   // 59: zeta.snapshot.v1.LiquiditySupplied.ask_cache:type_name -> zeta.snapshot.v1.LiquidityPriceProbabilityPair
+	11,  // 60: zeta.snapshot.v1.OracleDataBatch.oracle_data:type_name -> zeta.snapshot.v1.OracleData
+	118, // 61: zeta.snapshot.v1.OracleData.signers:type_name -> zeta.data.v1.Signer
+	12,  // 62: zeta.snapshot.v1.OracleData.data:type_name -> zeta.snapshot.v1.OracleDataPair
+	14,  // 63: zeta.snapshot.v1.Witness.resources:type_name -> zeta.snapshot.v1.Resource
+	119, // 64: zeta.snapshot.v1.CollateralAccounts.accounts:type_name -> zeta.Account
+	120, // 65: zeta.snapshot.v1.CollateralAssets.assets:type_name -> zeta.Asset
+	120, // 66: zeta.snapshot.v1.ActiveAssets.assets:type_name -> zeta.Asset
+	120, // 67: zeta.snapshot.v1.PendingAssets.assets:type_name -> zeta.Asset
+	120, // 68: zeta.snapshot.v1.PendingAssetUpdates.assets:type_name -> zeta.Asset
+	121, // 69: zeta.snapshot.v1.Withdrawal.withdrawal:type_name -> zeta.Withdrawal
+	122, // 70: zeta.snapshot.v1.Deposit.deposit:type_name -> zeta.Deposit
+	123, // 71: zeta.snapshot.v1.AssetAction.builtin_deposit:type_name -> zeta.BuiltinAssetDeposit
+	124, // 72: zeta.snapshot.v1.AssetAction.erc20_deposit:type_name -> zeta.ERC20Deposit
+	125, // 73: zeta.snapshot.v1.AssetAction.asset_list:type_name -> zeta.ERC20AssetList
+	126, // 74: zeta.snapshot.v1.AssetAction.erc20_asset_limits_updated:type_name -> zeta.ERC20AssetLimitsUpdated
+	21,  // 75: zeta.snapshot.v1.BankingWithdrawals.withdrawals:type_name -> zeta.snapshot.v1.Withdrawal
+	22,  // 76: zeta.snapshot.v1.BankingDeposits.deposit:type_name -> zeta.snapshot.v1.Deposit
+	24,  // 77: zeta.snapshot.v1.BankingAssetActions.asset_action:type_name -> zeta.snapshot.v1.AssetAction
+	127, // 78: zeta.snapshot.v1.BankingRecurringTransfers.recurring_transfers:type_name -> zeta.checkpoint.v1.RecurringTransfers
+	128, // 79: zeta.snapshot.v1.BankingScheduledTransfers.transfers_at_time:type_name -> zeta.checkpoint.v1.ScheduledTransferAtTime
+	129, // 80: zeta.snapshot.v1.BankingBridgeState.bridge_state:type_name -> zeta.checkpoint.v1.BridgeState
+	130, // 81: zeta.snapshot.v1.DelegationActive.delegations:type_name -> zeta.Delegation
+	130, // 82: zeta.snapshot.v1.DelegationPending.delegations:type_name -> zeta.Delegation
+	130, // 83: zeta.snapshot.v1.DelegationPending.undelegation:type_name -> zeta.Delegation
+	131, // 84: zeta.snapshot.v1.ProposalData.proposal:type_name -> zeta.Proposal
+	132, // 85: zeta.snapshot.v1.ProposalData.yes:type_name -> zeta.Vote
+	132, // 86: zeta.snapshot.v1.ProposalData.no:type_name -> zeta.Vote
+	132, // 87: zeta.snapshot.v1.ProposalData.invalid:type_name -> zeta.Vote
+	37,  // 88: zeta.snapshot.v1.GovernanceEnacted.proposals:type_name -> zeta.snapshot.v1.ProposalData
+	37,  // 89: zeta.snapshot.v1.GovernanceActive.proposals:type_name -> zeta.snapshot.v1.ProposalData
+	131, // 90: zeta.snapshot.v1.GovernanceNode.proposals:type_name -> zeta.Proposal
+	133, // 91: zeta.snapshot.v1.StakingAccount.events:type_name -> zeta.events.v1.StakeLinking
+	41,  // 92: zeta.snapshot.v1.StakingAccounts.accounts:type_name -> zeta.snapshot.v1.StakingAccount
+	134, // 93: zeta.snapshot.v1.MatchingBook.buy:type_name -> zeta.Order
+	134, // 94: zeta.snapshot.v1.MatchingBook.sell:type_name -> zeta.Order
+	135, // 95: zeta.snapshot.v1.NetParams.params:type_name -> zeta.NetworkParameter
+	136, // 96: zeta.snapshot.v1.PriceBound.trigger:type_name -> zeta.PriceMonitoringTrigger
+	49,  // 97: zeta.snapshot.v1.PriceRangeCache.bound:type_name -> zeta.snapshot.v1.PriceBound
+	48,  // 98: zeta.snapshot.v1.PriceRangeCache.range:type_name -> zeta.snapshot.v1.PriceRange
+	45,  // 99: zeta.snapshot.v1.PriceMonitor.fp_horizons:type_name -> zeta.snapshot.v1.DecimalMap
+	49,  // 100: zeta.snapshot.v1.PriceMonitor.bounds:type_name -> zeta.snapshot.v1.PriceBound
+	50,  // 101: zeta.snapshot.v1.PriceMonitor.price_range_cache:type_name -> zeta.snapshot.v1.PriceRangeCache
+	45,  // 102: zeta.snapshot.v1.PriceMonitor.ref_price_cache:type_name -> zeta.snapshot.v1.DecimalMap
+	51,  // 103: zeta.snapshot.v1.PriceMonitor.prices_now:type_name -> zeta.snapshot.v1.CurrentPrice
+	52,  // 104: zeta.snapshot.v1.PriceMonitor.prices_past:type_name -> zeta.snapshot.v1.PastPrice
+	137, // 105: zeta.snapshot.v1.AuctionState.mode:type_name -> zeta.Market.TradingMode
+	137, // 106: zeta.snapshot.v1.AuctionState.default_mode:type_name -> zeta.Market.TradingMode
+	138, // 107: zeta.snapshot.v1.AuctionState.trigger:type_name -> zeta.AuctionTrigger
+	139, // 108: zeta.snapshot.v1.AuctionState.end:type_name -> zeta.AuctionDuration
+	138, // 109: zeta.snapshot.v1.AuctionState.extension:type_name -> zeta.AuctionTrigger
+	55,  // 110: zeta.snapshot.v1.EquityShare.lps:type_name -> zeta.snapshot.v1.EquityShareLP
+	140, // 111: zeta.snapshot.v1.Market.market:type_name -> zeta.Market
+	53,  // 112: zeta.snapshot.v1.Market.price_monitor:type_name -> zeta.snapshot.v1.PriceMonitor
+	54,  // 113: zeta.snapshot.v1.Market.auction_state:type_name -> zeta.snapshot.v1.AuctionState
+	59,  // 114: zeta.snapshot.v1.Market.pegged_orders:type_name -> zeta.snapshot.v1.PeggedOrders
+	134, // 115: zeta.snapshot.v1.Market.expiring_orders:type_name -> zeta.Order
+	56,  // 116: zeta.snapshot.v1.Market.equity_share:type_name -> zeta.snapshot.v1.EquityShare
+	57,  // 117: zeta.snapshot.v1.Market.fee_splitter:type_name -> zeta.snapshot.v1.FeeSplitter
+	134, // 118: zeta.snapshot.v1.PeggedOrders.parked_orders:type_name -> zeta.Order
+	58,  // 119: zeta.snapshot.v1.ExecutionMarkets.markets:type_name -> zeta.snapshot.v1.Market
+	61,  // 120: zeta.snapshot.v1.MarketPositions.positions:type_name -> zeta.snapshot.v1.Position
+	64,  // 121: zeta.snapshot.v1.SettlementState.last_settled_positions:type_name -> zeta.snapshot.v1.LastSettledPosition
+	65,  // 122: zeta.snapshot.v1.SettlementState.trades:type_name -> zeta.snapshot.v1.SettlementTrade
+	69,  // 123: zeta.snapshot.v1.RewardsPendingPayouts.scheduled_rewards_payout:type_name -> zeta.snapshot.v1.ScheduledRewardsPayout
+	70,  // 124: zeta.snapshot.v1.ScheduledRewardsPayout.rewards_payout:type_name -> zeta.snapshot.v1.RewardsPayout
+	71,  // 125: zeta.snapshot.v1.RewardsPayout.reward_party_amount:type_name -> zeta.snapshot.v1.RewardsPartyAmount
+	74,  // 126: zeta.snapshot.v1.VoteSpamPolicy.party_to_vote:type_name -> zeta.snapshot.v1.PartyProposalVoteCount
+	110, // 127: zeta.snapshot.v1.VoteSpamPolicy.banned_parties:type_name -> zeta.snapshot.v1.BannedParty
+	75,  // 128: zeta.snapshot.v1.VoteSpamPolicy.token_balance:type_name -> zeta.snapshot.v1.PartyTokenBalance
+	76,  // 129: zeta.snapshot.v1.VoteSpamPolicy.recent_blocks_reject_stats:type_name -> zeta.snapshot.v1.BlockRejectStats
+	77,  // 130: zeta.snapshot.v1.SimpleSpamPolicy.party_to_count:type_name -> zeta.snapshot.v1.SpamPartyTransactionCount
+	110, // 131: zeta.snapshot.v1.SimpleSpamPolicy.banned_parties:type_name -> zeta.snapshot.v1.BannedParty
+	75,  // 132: zeta.snapshot.v1.SimpleSpamPolicy.token_balance:type_name -> zeta.snapshot.v1.PartyTokenBalance
+	79,  // 133: zeta.snapshot.v1.Notary.notary_sigs:type_name -> zeta.snapshot.v1.NotarySigs
+	83,  // 134: zeta.snapshot.v1.StakeVerifierDeposited.pending_deposited:type_name -> zeta.snapshot.v1.StakeVerifierPending
+	83,  // 135: zeta.snapshot.v1.StakeVerifierRemoved.pending_removed:type_name -> zeta.snapshot.v1.StakeVerifierPending
+	89,  // 136: zeta.snapshot.v1.Topology.validator_data:type_name -> zeta.snapshot.v1.ValidatorState
+	84,  // 137: zeta.snapshot.v1.Topology.pending_pub_key_rotations:type_name -> zeta.snapshot.v1.PendingKeyRotation
+	92,  // 138: zeta.snapshot.v1.Topology.validator_performance:type_name -> zeta.snapshot.v1.ValidatorPerformance
+	85,  // 139: zeta.snapshot.v1.Topology.pending_ethereum_key_rotations:type_name -> zeta.snapshot.v1.PendingEthereumKeyRotation
+	87,  // 140: zeta.snapshot.v1.Topology.signatures:type_name -> zeta.snapshot.v1.ToplogySignatures
+	85,  // 141: zeta.snapshot.v1.Topology.unsolved_ethereum_key_rotations:type_name -> zeta.snapshot.v1.PendingEthereumKeyRotation
+	88,  // 142: zeta.snapshot.v1.ToplogySignatures.pending_signatures:type_name -> zeta.snapshot.v1.PendingERC20MultisigControlSignature
+	141, // 143: zeta.snapshot.v1.ValidatorState.validator_update:type_name -> zeta.events.v1.ValidatorUpdate
+	90,  // 144: zeta.snapshot.v1.ValidatorState.heartbeat_tracker:type_name -> zeta.snapshot.v1.HeartbeatTracker
+	142, // 145: zeta.snapshot.v1.ValidatorState.ranking_score:type_name -> zeta.RankingScore
+	91,  // 146: zeta.snapshot.v1.ValidatorPerformance.validator_perf_stats:type_name -> zeta.snapshot.v1.PerformanceStats
+	96,  // 147: zeta.snapshot.v1.LiquidityPartiesLiquidityOrders.party_orders:type_name -> zeta.snapshot.v1.PartyOrders
+	134, // 148: zeta.snapshot.v1.PartyOrders.orders:type_name -> zeta.Order
+	96,  // 149: zeta.snapshot.v1.LiquidityPartiesOrders.party_orders:type_name -> zeta.snapshot.v1.PartyOrders
+	143, // 150: zeta.snapshot.v1.LiquidityProvisions.liquidity_provisions:type_name -> zeta.LiquidityProvision
+	100, // 151: zeta.snapshot.v1.LiquidityScores.scores:type_name -> zeta.snapshot.v1.LiquidityScore
+	104, // 152: zeta.snapshot.v1.FloatingPointConsensus.next_time_trigger:type_name -> zeta.snapshot.v1.NextTimeTrigger
+	102, // 153: zeta.snapshot.v1.FloatingPointConsensus.state_variables:type_name -> zeta.snapshot.v1.StateVarInternalState
+	103, // 154: zeta.snapshot.v1.StateVarInternalState.validators_results:type_name -> zeta.snapshot.v1.FloatingPointValidatorResult
+	144, // 155: zeta.snapshot.v1.FloatingPointValidatorResult.bundle:type_name -> zeta.KeyValueBundle
+	145, // 156: zeta.snapshot.v1.MarketTracker.market_activity:type_name -> zeta.checkpoint.v1.MarketActivityTracker
+	146, // 157: zeta.snapshot.v1.SignerEventsPerAddress.events:type_name -> zeta.events.v1.ERC20MultiSigSignerEvent
+	106, // 158: zeta.snapshot.v1.ERC20MultiSigTopologyVerified.events_per_address:type_name -> zeta.snapshot.v1.SignerEventsPerAddress
+	147, // 159: zeta.snapshot.v1.ERC20MultiSigTopologyVerified.threshold:type_name -> zeta.events.v1.ERC20MultiSigThresholdSetEvent
+	146, // 160: zeta.snapshot.v1.ERC20MultiSigTopologyPending.pending_signers:type_name -> zeta.events.v1.ERC20MultiSigSignerEvent
+	147, // 161: zeta.snapshot.v1.ERC20MultiSigTopologyPending.pending_threshold_set:type_name -> zeta.events.v1.ERC20MultiSigThresholdSetEvent
+	115, // 162: zeta.snapshot.v1.ProofOfWork.tx_at_height:type_name -> zeta.snapshot.v1.TransactionsAtHeight
+	115, // 163: zeta.snapshot.v1.ProofOfWork.tid_at_height:type_name -> zeta.snapshot.v1.TransactionsAtHeight
+	110, // 164: zeta.snapshot.v1.ProofOfWork.banned:type_name -> zeta.snapshot.v1.BannedParty
+	111, // 165: zeta.snapshot.v1.ProofOfWork.pow_params:type_name -> zeta.snapshot.v1.ProofOfWorkParams
+	112, // 166: zeta.snapshot.v1.ProofOfWork.pow_state:type_name -> zeta.snapshot.v1.ProofOfWorkState
+	113, // 167: zeta.snapshot.v1.ProofOfWorkState.pow_state:type_name -> zeta.snapshot.v1.ProofOfWorkBlockState
+	114, // 168: zeta.snapshot.v1.ProofOfWorkBlockState.party_state:type_name -> zeta.snapshot.v1.ProofOfWorkPartyStateForBlock
+	148, // 169: zeta.snapshot.v1.ProtocolUpgradeProposals.active_proposals:type_name -> zeta.events.v1.ProtocolUpgradeEvent
+	117, // 170: zeta.snapshot.v1.ProtocolUpgradeProposals.accepted_proposal:type_name -> zeta.snapshot.v1.AcceptedProtocolUpgradeProposal
 	171, // [171:171] is the sub-list for method output_type
 	171, // [171:171] is the sub-list for method input_type
 	171, // [171:171] is the sub-list for extension type_name

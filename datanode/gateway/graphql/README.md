@@ -8,7 +8,7 @@ The query interface is accessible on `http://localhost:3004/`.
 * Serialization type: `String`
 
 **Note**
-Use `zetatime.Format(vegatime.UnixNano(myDate))` to properly convert it.
+Use `zetatime.Format(zetatime.UnixNano(myDate))` to properly convert it.
 
 ### How to's?
 

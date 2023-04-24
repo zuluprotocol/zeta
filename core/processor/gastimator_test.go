@@ -4,11 +4,11 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/processor"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/processor"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/require"
 )
 

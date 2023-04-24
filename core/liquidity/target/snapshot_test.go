@@ -19,12 +19,12 @@ import (
 	"testing"
 	"time"
 
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
-	"code.zetaprotocol.io/vega/core/liquidity/target"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/core/liquidity/target"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	"github.com/stretchr/testify/assert"
 )
 

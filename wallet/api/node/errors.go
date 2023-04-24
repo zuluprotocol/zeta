@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	typespb "code.zetaprotocol.io/vega/protos/vega"
+	typespb "zuluprotocol/zeta/zeta/protos/zeta"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

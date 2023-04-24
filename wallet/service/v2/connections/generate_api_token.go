@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/api"
 )
 
 type GenerateAPITokenParams struct {

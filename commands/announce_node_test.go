@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"code.zetaprotocol.io/vega/commands"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/assert"
 )
 

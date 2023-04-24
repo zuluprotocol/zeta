@@ -18,21 +18,21 @@ import (
 	"path/filepath"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
 	"github.com/cenkalti/backoff"
 	"google.golang.org/grpc"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/libs/pprof"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/libs/pprof"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 )
 
 func (l *NodeCommand) persistentPre([]string) (err error) {
@@ -200,7 +200,7 @@ func (l *NodeCommand) initialiseDatabase(preLog *logging.Logger) error {
 	}
 	defer pool.Close()
 
-	hasZetaSchema, err := sqlstore.HasVegaSchema(l.ctx, pool)
+	hasZetaSchema, err := sqlstore.HasZetaSchema(l.ctx, pool)
 	if err != nil {
 		return fmt.Errorf("failed to check if database has schema: %w", err)
 	}
@@ -303,7 +303,7 @@ func (l *NodeCommand) preRun([]string) (err error) {
 		return err
 	}
 
-	l.zetaCoreServiceClient = vegaprotoapi.NewCoreServiceClient(conn)
+	l.zetaCoreServiceClient = zetaprotoapi.NewCoreServiceClient(conn)
 	return nil
 }
 

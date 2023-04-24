@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -87,7 +87,7 @@ func (v Vote) ToProtoEdge(_ ...any) (*v2.VoteEdge, error) {
 func (v Vote) Cursor() *Cursor {
 	pc := VoteCursor{
 		PartyID:  v.PartyID,
-		ZetaTime: v.VegaTime,
+		ZetaTime: v.ZetaTime,
 	}
 
 	return NewCursor(pc.String())

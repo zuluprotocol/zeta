@@ -13,10 +13,10 @@
 package collateral
 
 import (
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 type marginUpdate struct {

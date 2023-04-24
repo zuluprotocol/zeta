@@ -16,10 +16,10 @@ import (
 	"errors"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/examples/nullchain/config"
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/examples/nullchain/config"
+	"zuluprotocol/zeta/zeta/core/types"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 var ErrMarketCreationFailed = errors.New("market creation failed")

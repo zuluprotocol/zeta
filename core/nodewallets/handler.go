@@ -17,18 +17,18 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/core/nodewallets/vega"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/core/nodewallets/zeta"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var (
 	ErrEthereumWalletAlreadyExists   = errors.New("the Ethereum node wallet already exists")
-	ErrZetaWalletAlreadyExists       = errors.New("the Vega node wallet already exists")
+	ErrZetaWalletAlreadyExists       = errors.New("the Zeta node wallet already exists")
 	ErrTendermintPubkeyAlreadyExists = errors.New("the Tendermint pubkey already exists")
 )
 
-func GetZetaWallet(zetaPaths paths.Paths, registryPassphrase string) (*vega.Wallet, error) {
+func GetZetaWallet(zetaPaths paths.Paths, registryPassphrase string) (*zeta.Wallet, error) {
 	registryLoader, err := registry.NewLoader(zetaPaths, registryPassphrase)
 	if err != nil {
 		return nil, fmt.Errorf("couldn't initialise node wallet registry: %v", err)
@@ -43,12 +43,12 @@ func GetZetaWallet(zetaPaths paths.Paths, registryPassphrase string) (*vega.Wall
 		return nil, ErrZetaWalletIsMissing
 	}
 
-	walletLoader, err := zeta.InitialiseWalletLoader(vegaPaths)
+	walletLoader, err := zeta.InitialiseWalletLoader(zetaPaths)
 	if err != nil {
 		return nil, fmt.Errorf("couldn't initialise Zeta node wallet loader: %w", err)
 	}
 
-	wallet, err := walletLoader.Load(registry.Zeta.Name, registry.Vega.Passphrase)
+	wallet, err := walletLoader.Load(registry.Zeta.Name, registry.Zeta.Passphrase)
 	if err != nil {
 		return nil, fmt.Errorf("couldn't load Ethereum node wallet: %w", err)
 	}
@@ -79,12 +79,12 @@ func GetNodeWallets(config Config, zetaPaths paths.Paths, registryPassphrase str
 	}
 
 	if reg.Zeta != nil {
-		zetaWalletLoader, err := vega.InitialiseWalletLoader(vegaPaths)
+		zetaWalletLoader, err := zeta.InitialiseWalletLoader(zetaPaths)
 		if err != nil {
 			return nil, fmt.Errorf("couldn't initialise Zeta node wallet loader: %w", err)
 		}
 
-		nodeWallets.Zeta, err = zetaWalletLoader.Load(reg.Vega.Name, reg.Vega.Passphrase)
+		nodeWallets.Zeta, err = zetaWalletLoader.Load(reg.Zeta.Name, reg.Zeta.Passphrase)
 		if err != nil {
 			return nil, fmt.Errorf("couldn't load Zeta node wallet: %w", err)
 		}
@@ -114,7 +114,7 @@ func GenerateZetaWallet(zetaPaths paths.Paths, registryPassphrase, walletPassphr
 		return nil, ErrZetaWalletAlreadyExists
 	}
 
-	zetaWalletLoader, err := vega.InitialiseWalletLoader(vegaPaths)
+	zetaWalletLoader, err := zeta.InitialiseWalletLoader(zetaPaths)
 	if err != nil {
 		return nil, fmt.Errorf("couldn't initialise Zeta node wallet loader: %w", err)
 	}
@@ -124,7 +124,7 @@ func GenerateZetaWallet(zetaPaths paths.Paths, registryPassphrase, walletPassphr
 		return nil, fmt.Errorf("couldn't generate Zeta node wallet: %w", err)
 	}
 
-	reg.Zeta = &registry.RegisteredVegaWallet{
+	reg.Zeta = &registry.RegisteredZetaWallet{
 		Name:       w.Name(),
 		Passphrase: walletPassphrase,
 	}
@@ -156,7 +156,7 @@ func ImportZetaWallet(zetaPaths paths.Paths, registryPassphrase, walletPassphras
 		return nil, ErrZetaWalletAlreadyExists
 	}
 
-	zetaWalletLoader, err := vega.InitialiseWalletLoader(vegaPaths)
+	zetaWalletLoader, err := zeta.InitialiseWalletLoader(zetaPaths)
 	if err != nil {
 		return nil, fmt.Errorf("couldn't initialise Zeta node wallet loader: %w", err)
 	}
@@ -166,7 +166,7 @@ func ImportZetaWallet(zetaPaths paths.Paths, registryPassphrase, walletPassphras
 		return nil, fmt.Errorf("couldn't import Zeta node wallet: %w", err)
 	}
 
-	reg.Zeta = &registry.RegisteredVegaWallet{
+	reg.Zeta = &registry.RegisteredZetaWallet{
 		Name:       w.Name(),
 		Passphrase: walletPassphrase,
 	}

@@ -16,10 +16,10 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func (e *Engine) OnTransferFeeFactorUpdate(ctx context.Context, f num.Decimal) error {

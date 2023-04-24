@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package zeta.data.v1;
 
-option go_package = "code.zetaprotocol.io/vega/protos/vega/data/v1";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta/data/v1";
 
 message ETHAddress {
   string address = 1;

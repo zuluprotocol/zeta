@@ -1,5 +1,5 @@
 ---
-name: Release zeta, data-node, vegawallet and visor binaries
+name: Release zeta, data-node, zetawallet and visor binaries
 
 "on":
   push:
@@ -25,7 +25,7 @@ name: Release zeta, data-node, vegawallet and visor binaries
         required: false
         type: choice
         options:
-          - [zeta, data-node, vegawallet, visor]
+          - [zeta, data-node, zetawallet, visor]
           - [zeta]
           - [data-node]
           - [zetawallet]
@@ -66,7 +66,7 @@ jobs:
       fail-fast: false
       matrix:
         arch: ${{ fromJson(inputs.archs || '["amd64", "arm64"]') }}
-        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "vegawallet", "visor"]') }}
+        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "zetawallet", "visor"]') }}
     env:
       GOOS: linux
       GOARCH: ${{ matrix.arch }}
@@ -132,7 +132,7 @@ jobs:
       fail-fast: false
       matrix:
         arch: ${{ fromJson(inputs.archs || '["amd64", "arm64"]') }}
-        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "vegawallet", "visor"]') }}
+        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "zetawallet", "visor"]') }}
     env:
       GOOS: darwin
       GOARCH: ${{ matrix.arch }}

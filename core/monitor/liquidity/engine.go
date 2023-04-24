@@ -17,11 +17,11 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/auction_state_mock.go -package mocks code.zetaprotocol.io/vega/core/monitor/liquidity AuctionState
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/auction_state_mock.go -package mocks zuluprotocol/zeta/zeta/core/monitor/liquidity AuctionState
 type AuctionState interface {
 	IsOpeningAuction() bool
 	IsLiquidityAuction() bool
@@ -35,7 +35,7 @@ type AuctionState interface {
 
 // TargetStakeCalculator interface
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/target_stake_calculator_mock.go -package mocks code.zetaprotocol.io/vega/core/monitor/liquidity TargetStakeCalculator
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/target_stake_calculator_mock.go -package mocks zuluprotocol/zeta/zeta/core/monitor/liquidity TargetStakeCalculator
 type TargetStakeCalculator interface {
 	GetTheoreticalTargetStake(rf types.RiskFactor, now time.Time, markPrice *num.Uint, trades []*types.Trade) *num.Uint
 }

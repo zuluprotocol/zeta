@@ -13,8 +13,8 @@
 package events
 
 import (
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 // MarketPosition is an event with a change to a position.

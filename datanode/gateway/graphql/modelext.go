@@ -16,8 +16,8 @@ import (
 	"errors"
 	"strconv"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 var (

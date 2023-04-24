@@ -16,7 +16,7 @@ import (
 	"errors"
 	"fmt"
 
-	wcrypto "code.zetaprotocol.io/vega/wallet/crypto"
+	wcrypto "zuluprotocol/zeta/zeta/wallet/crypto"
 
 	"github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"

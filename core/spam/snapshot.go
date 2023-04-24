@@ -15,8 +15,8 @@ package spam
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func (e *Engine) Namespace() types.SnapshotNamespace {

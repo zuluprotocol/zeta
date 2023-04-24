@@ -17,18 +17,18 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/validators"
+	"zuluprotocol/zeta/zeta/core/validators"
 
 	"github.com/golang/mock/gomock"
 	abcitypes "github.com/tendermint/tendermint/abci/types"
 	types1 "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"code.zetaprotocol.io/vega/core/types"
-	zetactx "code.vegaprotocol.io/vega/libs/context"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	zetactx "code.zetaprotocol.io/zeta/libs/context"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -153,7 +153,7 @@ func TestTopologySnapshot(t *testing.T) {
 	require.Nil(t, err)
 	require.True(t, bytes.Equal(s3, s4))
 	assert.ElementsMatch(t, top.AllNodeIDs(), snapTop.AllNodeIDs())
-	assert.ElementsMatch(t, top.AllZetaPubKeys(), snapTop.AllVegaPubKeys())
+	assert.ElementsMatch(t, top.AllZetaPubKeys(), snapTop.AllZetaPubKeys())
 	assert.Equal(t, top.IsValidator(), snapTop.IsValidator())
 	assert.Equal(t, top.GetPendingKeyRotation(kr1.TargetBlock, nr1.Id), snapTop.GetPendingKeyRotation(kr1.TargetBlock, nr1.Id))
 	assert.Equal(t, top.GetPendingKeyRotation(kr2.TargetBlock, nr2.Id), snapTop.GetPendingKeyRotation(kr2.TargetBlock, nr2.Id))

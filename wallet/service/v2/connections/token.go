@@ -3,7 +3,7 @@ package connections
 import (
 	"time"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
 )
 
 type Token string

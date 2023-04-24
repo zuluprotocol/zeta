@@ -13,7 +13,7 @@
 package monitor
 
 import (
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 func NewAuctionStateFromSnapshot(mkt *types.Market, as *types.AuctionState) *AuctionState {

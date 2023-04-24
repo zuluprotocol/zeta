@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	vgproto "code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type StakeLinkingType = eventspb.StakeLinking_Type
@@ -183,7 +183,7 @@ func StakeDepositedFromProto(
 		BlockNumber:     blockNumber,
 		LogIndex:        logIndex,
 		TxID:            txID,
-		ZetaPubKey:      s.VegaPublicKey,
+		ZetaPubKey:      s.ZetaPublicKey,
 		EthereumAddress: crypto.EthereumChecksumAddress(s.EthereumAddress),
 		Amount:          amount,
 		BlockTime:       s.BlockTime,
@@ -249,7 +249,7 @@ func StakeRemovedFromProto(
 		BlockNumber:     blockNumber,
 		LogIndex:        logIndex,
 		TxID:            txID,
-		ZetaPubKey:      s.VegaPublicKey,
+		ZetaPubKey:      s.ZetaPublicKey,
 		EthereumAddress: crypto.EthereumChecksumAddress(s.EthereumAddress),
 		Amount:          amount,
 		BlockTime:       s.BlockTime,

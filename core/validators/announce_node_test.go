@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/validators"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	vgtesting "code.zetaprotocol.io/vega/libs/testing"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/validators"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgtesting "zuluprotocol/zeta/zeta/libs/testing"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/require"
 )
@@ -49,8 +49,8 @@ func createSignedAnnounceCommand(t *testing.T) *commandspb.AnnounceNode {
 	nodeWallets := createTestNodeWallets(t)
 	cmd := commandspb.AnnounceNode{
 		Id:              nodeWallets.Zeta.ID().Hex(),
-		ZetaPubKey:      nodeWallets.Vega.PubKey().Hex(),
-		ZetaPubKeyIndex: nodeWallets.Vega.Index(),
+		ZetaPubKey:      nodeWallets.Zeta.PubKey().Hex(),
+		ZetaPubKeyIndex: nodeWallets.Zeta.Index(),
 		ChainPubKey:     "some tm key",
 		EthereumAddress: nodeWallets.Ethereum.PubKey().Hex(),
 		FromEpoch:       1,
@@ -63,7 +63,7 @@ func createSignedAnnounceCommand(t *testing.T) *commandspb.AnnounceNode {
 	require.NoError(t, err)
 
 	// verify that the expected signature for zeta key is there
-	messageToSign := cmd.Id + cmd.ZetaPubKey + fmt.Sprintf("%d", cmd.VegaPubKeyIndex) + cmd.ChainPubKey + cmd.EthereumAddress + fmt.Sprintf("%d", cmd.FromEpoch) + cmd.InfoUrl + cmd.Name + cmd.AvatarUrl + cmd.Country
+	messageToSign := cmd.Id + cmd.ZetaPubKey + fmt.Sprintf("%d", cmd.ZetaPubKeyIndex) + cmd.ChainPubKey + cmd.EthereumAddress + fmt.Sprintf("%d", cmd.FromEpoch) + cmd.InfoUrl + cmd.Name + cmd.AvatarUrl + cmd.Country
 	sig, err := nodeWallets.Zeta.Sign([]byte(messageToSign))
 	sigHex := hex.EncodeToString(sig)
 	require.NoError(t, err)

@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // Duration is a wrapper over an actual duration so we can represent

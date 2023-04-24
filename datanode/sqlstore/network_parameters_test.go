@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -29,7 +29,7 @@ func addNetParam(t *testing.T, ctx context.Context, ns *sqlstore.NetworkParamete
 	p := entities.NetworkParameter{
 		Key:      key,
 		Value:    value,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 	ns.Add(ctx, p)
 	return p

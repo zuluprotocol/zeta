@@ -17,10 +17,10 @@ import (
 	"strconv"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/integration/stubs"
-	"code.zetaprotocol.io/vega/logging"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/logging"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type ErroneousRow interface {

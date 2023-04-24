@@ -1,6 +1,6 @@
 package types
 
-import proto "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+import proto "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 type NodeVoteType = proto.NodeVote_Type
 

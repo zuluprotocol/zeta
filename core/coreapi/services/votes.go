@@ -17,9 +17,9 @@ import (
 	"errors"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/subscribers"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/subscribers"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 var ErrMissingProposalOrPartyFilter = errors.New("missing proposal or party filter")

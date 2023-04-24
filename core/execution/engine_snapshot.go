@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 var marketsKey = (&types.PayloadExecutionMarkets{}).Key()

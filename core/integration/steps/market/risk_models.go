@@ -18,8 +18,8 @@ import (
 
 	"github.com/jinzhu/copier"
 
-	"code.zetaprotocol.io/vega/core/integration/steps/market/defaults"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/integration/steps/market/defaults"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 var (

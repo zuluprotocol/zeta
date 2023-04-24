@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"time"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type MarketTick struct {

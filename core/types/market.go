@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type LiquidityProviderFeeShares []*LiquidityProviderFeeShare

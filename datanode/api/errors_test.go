@@ -15,7 +15,7 @@ package api_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/api"
+	"zuluprotocol/zeta/zeta/datanode/api"
 )
 
 func TestErrorMapUniqueCodes(t *testing.T) {

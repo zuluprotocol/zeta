@@ -8,9 +8,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/logging"
 
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/assert"

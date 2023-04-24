@@ -18,13 +18,13 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // CandleStore ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/candle_store_mock.go -package mocks code.zetaprotocol.io/vega/datanode/candlesv2 CandleStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/candle_store_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/candlesv2 CandleStore
 type CandleStore interface {
 	GetCandleDataForTimeSpan(ctx context.Context, candleID string, from *time.Time, to *time.Time,
 		p entities.CursorPagination) ([]entities.Candle, entities.PageInfo, error)

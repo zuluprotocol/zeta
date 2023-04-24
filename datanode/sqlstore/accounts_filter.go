@@ -15,7 +15,7 @@ package sqlstore
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 )
 
 // Return an SQL query string and corresponding bind arguments to return rows

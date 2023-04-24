@@ -15,10 +15,10 @@ package api
 import (
 	"github.com/inhies/go-bytesize"
 
-	"code.zetaprotocol.io/vega/blockexplorer/api/grpc"
-	"code.zetaprotocol.io/vega/libs/config/encoding"
-	libhttp "code.zetaprotocol.io/vega/libs/http"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/blockexplorer/api/grpc"
+	"zuluprotocol/zeta/zeta/libs/config/encoding"
+	libhttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 var (

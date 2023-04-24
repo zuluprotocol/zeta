@@ -7,7 +7,7 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -190,7 +190,7 @@ type ValidatorHeartbeat struct {
 	// Signature from the validator made using the ethereum wallet
 	EthereumSignature *Signature `protobuf:"bytes,2,opt,name=ethereum_signature,json=ethereumSignature,proto3" json:"ethereum_signature,omitempty"`
 	// Signature from the validator made using the zeta wallet
-	ZetaSignature *Signature `protobuf:"bytes,3,opt,name=zeta_signature,json=vegaSignature,proto3" json:"vega_signature,omitempty"`
+	ZetaSignature *Signature `protobuf:"bytes,3,opt,name=zeta_signature,json=zetaSignature,proto3" json:"zeta_signature,omitempty"`
 }
 
 func (x *ValidatorHeartbeat) Reset() {
@@ -253,7 +253,7 @@ type AnnounceNode struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Zeta public key, required field
-	ZetaPubKey string `protobuf:"bytes,1,opt,name=zeta_pub_key,json=vegaPubKey,proto3" json:"vega_pub_key,omitempty"`
+	ZetaPubKey string `protobuf:"bytes,1,opt,name=zeta_pub_key,json=zetaPubKey,proto3" json:"zeta_pub_key,omitempty"`
 	// Ethereum public key, required field
 	EthereumAddress string `protobuf:"bytes,2,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
 	// Public key for the blockchain, required field
@@ -269,14 +269,14 @@ type AnnounceNode struct {
 	// AvatarURL of the validator
 	AvatarUrl string `protobuf:"bytes,8,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
 	// Zeta public key derivation index
-	ZetaPubKeyIndex uint32 `protobuf:"varint,9,opt,name=zeta_pub_key_index,json=vegaPubKeyIndex,proto3" json:"vega_pub_key_index,omitempty"`
+	ZetaPubKeyIndex uint32 `protobuf:"varint,9,opt,name=zeta_pub_key_index,json=zetaPubKeyIndex,proto3" json:"zeta_pub_key_index,omitempty"`
 	// The epoch from which the validator is expected
 	// to be ready to validate blocks
 	FromEpoch uint64 `protobuf:"varint,10,opt,name=from_epoch,json=fromEpoch,proto3" json:"from_epoch,omitempty"`
 	// Signature from the validator made using the ethereum wallet
 	EthereumSignature *Signature `protobuf:"bytes,11,opt,name=ethereum_signature,json=ethereumSignature,proto3" json:"ethereum_signature,omitempty"`
 	// Signature from the validator made using the Zeta wallet
-	ZetaSignature *Signature `protobuf:"bytes,12,opt,name=zeta_signature,json=vegaSignature,proto3" json:"vega_signature,omitempty"`
+	ZetaSignature *Signature `protobuf:"bytes,12,opt,name=zeta_signature,json=zetaSignature,proto3" json:"zeta_signature,omitempty"`
 	// Ethereum public key to use as a submitter to allow automatic signature generation
 	SubmitterAddress string `protobuf:"bytes,13,opt,name=submitter_address,json=submitterAddress,proto3" json:"submitter_address,omitempty"`
 }
@@ -883,7 +883,7 @@ type ProtocolUpgradeProposal struct {
 	// The block height at which to perform the upgrade
 	UpgradeBlockHeight uint64 `protobuf:"varint,1,opt,name=upgrade_block_height,json=upgradeBlockHeight,proto3" json:"upgrade_block_height,omitempty"`
 	// the release tag for the Zeta binary
-	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=vegaReleaseTag,proto3" json:"vega_release_tag,omitempty"`
+	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=zetaReleaseTag,proto3" json:"zeta_release_tag,omitempty"`
 }
 
 func (x *ProtocolUpgradeProposal) Reset() {
@@ -1108,12 +1108,12 @@ var file_zeta_commands_v1_validator_commands_proto_rawDesc = []byte{
 
 var (
 	file_zeta_commands_v1_validator_commands_proto_rawDescOnce sync.Once
-	file_zeta_commands_v1_validator_commands_proto_rawDescData = file_vega_commands_v1_validator_commands_proto_rawDesc
+	file_zeta_commands_v1_validator_commands_proto_rawDescData = file_zeta_commands_v1_validator_commands_proto_rawDesc
 )
 
 func file_zeta_commands_v1_validator_commands_proto_rawDescGZIP() []byte {
 	file_zeta_commands_v1_validator_commands_proto_rawDescOnce.Do(func() {
-		file_zeta_commands_v1_validator_commands_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_commands_v1_validator_commands_proto_rawDescData)
+		file_zeta_commands_v1_validator_commands_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_commands_v1_validator_commands_proto_rawDescData)
 	})
 	return file_zeta_commands_v1_validator_commands_proto_rawDescData
 }
@@ -1133,25 +1133,25 @@ var file_zeta_commands_v1_validator_commands_proto_goTypes = []interface{}{
 	(*StateVariableProposal)(nil),       // 9: zeta.commands.v1.StateVariableProposal
 	(*ProtocolUpgradeProposal)(nil),     // 10: zeta.commands.v1.ProtocolUpgradeProposal
 	(*Signature)(nil),                   // 11: zeta.commands.v1.Signature
-	(*zeta.BuiltinAssetEvent)(nil),      // 12: vega.BuiltinAssetEvent
-	(*zeta.ERC20Event)(nil),             // 13: vega.ERC20Event
-	(*zeta.StakingEvent)(nil),           // 14: vega.StakingEvent
-	(*zeta.ERC20MultiSigEvent)(nil),     // 15: vega.ERC20MultiSigEvent
-	(*zeta.StateValueProposal)(nil),     // 16: vega.StateValueProposal
+	(*zeta.BuiltinAssetEvent)(nil),      // 12: zeta.BuiltinAssetEvent
+	(*zeta.ERC20Event)(nil),             // 13: zeta.ERC20Event
+	(*zeta.StakingEvent)(nil),           // 14: zeta.StakingEvent
+	(*zeta.ERC20MultiSigEvent)(nil),     // 15: zeta.ERC20MultiSigEvent
+	(*zeta.StateValueProposal)(nil),     // 16: zeta.StateValueProposal
 }
 var file_zeta_commands_v1_validator_commands_proto_depIdxs = []int32{
-	11, // 0: zeta.commands.v1.ValidatorHeartbeat.ethereum_signature:type_name -> vega.commands.v1.Signature
-	11, // 1: zeta.commands.v1.ValidatorHeartbeat.vega_signature:type_name -> vega.commands.v1.Signature
-	11, // 2: zeta.commands.v1.AnnounceNode.ethereum_signature:type_name -> vega.commands.v1.Signature
-	11, // 3: zeta.commands.v1.AnnounceNode.vega_signature:type_name -> vega.commands.v1.Signature
-	1,  // 4: zeta.commands.v1.NodeVote.type:type_name -> vega.commands.v1.NodeVote.Type
-	0,  // 5: zeta.commands.v1.NodeSignature.kind:type_name -> vega.commands.v1.NodeSignatureKind
-	12, // 6: zeta.commands.v1.ChainEvent.builtin:type_name -> vega.BuiltinAssetEvent
-	13, // 7: zeta.commands.v1.ChainEvent.erc20:type_name -> vega.ERC20Event
-	14, // 8: zeta.commands.v1.ChainEvent.staking_event:type_name -> vega.StakingEvent
-	15, // 9: zeta.commands.v1.ChainEvent.erc20_multisig:type_name -> vega.ERC20MultiSigEvent
-	11, // 10: zeta.commands.v1.EthereumKeyRotateSubmission.ethereum_signature:type_name -> vega.commands.v1.Signature
-	16, // 11: zeta.commands.v1.StateVariableProposal.proposal:type_name -> vega.StateValueProposal
+	11, // 0: zeta.commands.v1.ValidatorHeartbeat.ethereum_signature:type_name -> zeta.commands.v1.Signature
+	11, // 1: zeta.commands.v1.ValidatorHeartbeat.zeta_signature:type_name -> zeta.commands.v1.Signature
+	11, // 2: zeta.commands.v1.AnnounceNode.ethereum_signature:type_name -> zeta.commands.v1.Signature
+	11, // 3: zeta.commands.v1.AnnounceNode.zeta_signature:type_name -> zeta.commands.v1.Signature
+	1,  // 4: zeta.commands.v1.NodeVote.type:type_name -> zeta.commands.v1.NodeVote.Type
+	0,  // 5: zeta.commands.v1.NodeSignature.kind:type_name -> zeta.commands.v1.NodeSignatureKind
+	12, // 6: zeta.commands.v1.ChainEvent.builtin:type_name -> zeta.BuiltinAssetEvent
+	13, // 7: zeta.commands.v1.ChainEvent.erc20:type_name -> zeta.ERC20Event
+	14, // 8: zeta.commands.v1.ChainEvent.staking_event:type_name -> zeta.StakingEvent
+	15, // 9: zeta.commands.v1.ChainEvent.erc20_multisig:type_name -> zeta.ERC20MultiSigEvent
+	11, // 10: zeta.commands.v1.EthereumKeyRotateSubmission.ethereum_signature:type_name -> zeta.commands.v1.Signature
+	16, // 11: zeta.commands.v1.StateVariableProposal.proposal:type_name -> zeta.StateValueProposal
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type
 	12, // [12:12] is the sub-list for extension type_name

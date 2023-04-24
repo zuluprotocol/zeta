@@ -17,10 +17,10 @@ package gateway
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/datanode/ratelimit"
-	libhttp "code.zetaprotocol.io/vega/libs/http"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/ratelimit"
+	libhttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // ServerConfig represent the configuration of a server in zeta.

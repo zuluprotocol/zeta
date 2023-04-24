@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
 )
 
 func RewardAccountBalanceForAssetShouldMatch(

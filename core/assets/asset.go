@@ -15,10 +15,10 @@ package assets
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/assets/builtin"
-	"code.zetaprotocol.io/vega/core/assets/common"
-	"code.zetaprotocol.io/vega/core/assets/erc20"
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/assets/builtin"
+	"zuluprotocol/zeta/zeta/core/assets/common"
+	"zuluprotocol/zeta/zeta/core/assets/erc20"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 var ErrUpdatingAssetWithDifferentTypeOfAsset = errors.New("updating asset with different type of asset")

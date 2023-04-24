@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	bmocks "code.zetaprotocol.io/vega/core/broker/mocks"
-	"code.zetaprotocol.io/vega/core/limits"
-	"code.zetaprotocol.io/vega/core/limits/mocks"
-	"code.zetaprotocol.io/vega/logging"
+	bmocks "zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/limits"
+	"zuluprotocol/zeta/zeta/core/limits/mocks"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

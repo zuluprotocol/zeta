@@ -445,12 +445,12 @@ var file_zeta_data_v1_data_proto_rawDesc = []byte{
 
 var (
 	file_zeta_data_v1_data_proto_rawDescOnce sync.Once
-	file_zeta_data_v1_data_proto_rawDescData = file_vega_data_v1_data_proto_rawDesc
+	file_zeta_data_v1_data_proto_rawDescData = file_zeta_data_v1_data_proto_rawDesc
 )
 
 func file_zeta_data_v1_data_proto_rawDescGZIP() []byte {
 	file_zeta_data_v1_data_proto_rawDescOnce.Do(func() {
-		file_zeta_data_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_data_v1_data_proto_rawDescData)
+		file_zeta_data_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_data_v1_data_proto_rawDescData)
 	})
 	return file_zeta_data_v1_data_proto_rawDescData
 }
@@ -465,11 +465,11 @@ var file_zeta_data_v1_data_proto_goTypes = []interface{}{
 	(*ExternalData)(nil), // 5: zeta.data.v1.ExternalData
 }
 var file_zeta_data_v1_data_proto_depIdxs = []int32{
-	1, // 0: zeta.data.v1.Signer.pub_key:type_name -> vega.data.v1.PubKey
-	0, // 1: zeta.data.v1.Signer.eth_address:type_name -> vega.data.v1.ETHAddress
-	2, // 2: zeta.data.v1.Data.signers:type_name -> vega.data.v1.Signer
-	3, // 3: zeta.data.v1.Data.data:type_name -> vega.data.v1.Property
-	4, // 4: zeta.data.v1.ExternalData.data:type_name -> vega.data.v1.Data
+	1, // 0: zeta.data.v1.Signer.pub_key:type_name -> zeta.data.v1.PubKey
+	0, // 1: zeta.data.v1.Signer.eth_address:type_name -> zeta.data.v1.ETHAddress
+	2, // 2: zeta.data.v1.Data.signers:type_name -> zeta.data.v1.Signer
+	3, // 3: zeta.data.v1.Data.data:type_name -> zeta.data.v1.Property
+	4, // 4: zeta.data.v1.ExternalData.data:type_name -> zeta.data.v1.Data
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

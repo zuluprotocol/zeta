@@ -19,9 +19,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

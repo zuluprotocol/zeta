@@ -108,12 +108,12 @@ var file_zeta_commands_v1_signature_proto_rawDesc = []byte{
 
 var (
 	file_zeta_commands_v1_signature_proto_rawDescOnce sync.Once
-	file_zeta_commands_v1_signature_proto_rawDescData = file_vega_commands_v1_signature_proto_rawDesc
+	file_zeta_commands_v1_signature_proto_rawDescData = file_zeta_commands_v1_signature_proto_rawDesc
 )
 
 func file_zeta_commands_v1_signature_proto_rawDescGZIP() []byte {
 	file_zeta_commands_v1_signature_proto_rawDescOnce.Do(func() {
-		file_zeta_commands_v1_signature_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_commands_v1_signature_proto_rawDescData)
+		file_zeta_commands_v1_signature_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_commands_v1_signature_proto_rawDescData)
 	})
 	return file_zeta_commands_v1_signature_proto_rawDescData
 }

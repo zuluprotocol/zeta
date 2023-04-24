@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/jackc/pgtype"
 	"github.com/shopspring/decimal"
 	"google.golang.org/protobuf/encoding/protojson"
@@ -61,7 +61,7 @@ type LiquidityProvision struct {
 	ZetaTime         time.Time
 }
 
-func LiquidityProvisionFromProto(lpProto *zeta.LiquidityProvision, txHash TxHash, vegaTime time.Time) (LiquidityProvision, error) {
+func LiquidityProvisionFromProto(lpProto *zeta.LiquidityProvision, txHash TxHash, zetaTime time.Time) (LiquidityProvision, error) {
 	lpID := LiquidityProvisionID(lpProto.Id)
 	partyID := PartyID(lpProto.PartyId)
 	marketID := MarketID(lpProto.MarketId)
@@ -157,7 +157,7 @@ func (lp LiquidityProvision) ToRow() []interface{} {
 
 func (lp LiquidityProvision) Cursor() *Cursor {
 	lc := LiquidityProvisionCursor{
-		ZetaTime: lp.VegaTime,
+		ZetaTime: lp.ZetaTime,
 		ID:       lp.ID,
 	}
 	return NewCursor(lc.String())

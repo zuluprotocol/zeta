@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 )
 
 // RestoreCurrentOrdersSet updates the current order set. As order history is loaded from history segments, after order
@@ -20,9 +20,9 @@ func RestoreCurrentOrdersSet(ctx context.Context, conn sqlstore.Connection) erro
 	}
 
 	// This query will identify the latest order version for every order and set its current flag to true
-	updateCurrentOrders := `with current_orders as (select r.id, max(r.zeta_time) as vega_time from orders r group by id),
-		current_seq_num as (select o.zeta_time, max(o.seq_num) as seq_num from orders o join current_orders co on o.id = co.id and o.vega_time = co.vega_time group by co.id, o.vega_time)
-		update orders set current = true from current_seq_num where orders.zeta_time = current_seq_num.vega_time and orders.seq_num =  current_seq_num.seq_num`
+	updateCurrentOrders := `with current_orders as (select r.id, max(r.zeta_time) as zeta_time from orders r group by id),
+		current_seq_num as (select o.zeta_time, max(o.seq_num) as seq_num from orders o join current_orders co on o.id = co.id and o.zeta_time = co.zeta_time group by co.id, o.zeta_time)
+		update orders set current = true from current_seq_num where orders.zeta_time = current_seq_num.zeta_time and orders.seq_num =  current_seq_num.seq_num`
 
 	_, err = conn.Exec(ctx, updateCurrentOrders)
 	if err != nil {

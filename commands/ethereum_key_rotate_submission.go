@@ -1,6 +1,6 @@
 package commands
 
-import commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+import commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 func CheckEthereumKeyRotateSubmission(cmd *commandspb.EthereumKeyRotateSubmission) error {
 	return checkEthereumKeyRotateSubmission(cmd).ErrorOrNil()

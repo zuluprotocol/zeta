@@ -5,9 +5,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	api "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	"code.zetaprotocol.io/vega/wallet/network"
+	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/zeta/wallet/network"
 
 	"github.com/cenkalti/backoff/v4"
 	"go.uber.org/zap"

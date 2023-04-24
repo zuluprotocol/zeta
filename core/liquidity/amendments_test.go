@@ -17,18 +17,18 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/idgeneration"
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/core/liquidity"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	proto "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/liquidity"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 const (

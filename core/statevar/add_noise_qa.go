@@ -18,14 +18,14 @@ package statevar
 import (
 	"math/rand"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 // AddNoise is a function used in qa build to add noise to the state variables within their tolerance to instrument consensus seeking.
-func (sv *StateVariable) AddNoise(kvb []*zetapb.KeyValueBundle) []*vegapb.KeyValueBundle {
+func (sv *StateVariable) AddNoise(kvb []*zetapb.KeyValueBundle) []*zetapb.KeyValueBundle {
 	for _, kvt := range kvb {
 		tol, _ := num.DecimalFromString(kvt.Tolerance)
 		switch v := kvt.Value.Value.(type) {

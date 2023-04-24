@@ -16,9 +16,9 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -98,7 +98,7 @@ order by id, zeta_time desc`, getOracleSpecsQuery())
 				},
 				Status:   spec.Status,
 				TxHash:   spec.TxHash,
-				ZetaTime: spec.VegaTime,
+				ZetaTime: spec.ZetaTime,
 			},
 		},
 	}, err
@@ -127,7 +127,7 @@ func (os *OracleSpec) GetSpecs(ctx context.Context, pagination entities.OffsetPa
 			},
 			Status:   specRaw.Status,
 			TxHash:   specRaw.TxHash,
-			ZetaTime: specRaw.VegaTime,
+			ZetaTime: specRaw.ZetaTime,
 		}
 
 		specs = append(specs, newSpec)
@@ -197,7 +197,7 @@ func (os *OracleSpec) getSpecsWithPageInfo(ctx context.Context, pagination entit
 						},
 						Status:   dataSpecs[i].Status,
 						TxHash:   dataSpecs[i].TxHash,
-						ZetaTime: dataSpecs[i].VegaTime,
+						ZetaTime: dataSpecs[i].ZetaTime,
 					},
 				},
 			}

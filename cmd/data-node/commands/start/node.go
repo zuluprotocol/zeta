@@ -21,24 +21,24 @@ import (
 	"os/signal"
 	"syscall"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/datanode/admin"
+	"zuluprotocol/zeta/zeta/datanode/admin"
 
 	embeddedpostgres "github.com/fergusstrange/embedded-postgres"
 	"golang.org/x/sync/errgroup"
 
-	"code.zetaprotocol.io/vega/datanode/api"
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/datanode/gateway/server"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/libs/pprof"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/datanode/api"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/gateway/server"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/libs/pprof"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 // NodeCommand use to implement 'node' command.
@@ -74,7 +74,7 @@ func (l *NodeCommand) Run(cfgwatchr *config.Watcher, zetaPaths paths.Paths, args
 	l.configWatcher = cfgwatchr
 
 	l.conf = cfgwatchr.Get()
-	l.zetaPaths = vegaPaths
+	l.zetaPaths = zetaPaths
 
 	stages := []func([]string) error{
 		l.persistentPre,

@@ -19,9 +19,9 @@ import (
 	"github.com/pkg/errors"
 	"github.com/shopspring/decimal"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type AccountEvent interface {
@@ -85,7 +85,7 @@ func (as *Account) consume(ctx context.Context, evt AccountEvent) error {
 	return nil
 }
 
-func (as *Account) obtainAccountWithProto(ctx context.Context, va *zeta.Account, txHash string, vegaTime time.Time) (entities.Account, error) {
+func (as *Account) obtainAccountWithProto(ctx context.Context, va *zeta.Account, txHash string, zetaTime time.Time) (entities.Account, error) {
 	a, err := entities.AccountFromProto(va, entities.TxHash(txHash))
 	if err != nil {
 		return entities.Account{}, errors.Wrap(err, "obtaining account for balance")

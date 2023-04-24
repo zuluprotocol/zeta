@@ -18,9 +18,9 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/types"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
 )
 
 func OraclesBroadcastDataSignedWithKeys(

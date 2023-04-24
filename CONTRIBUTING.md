@@ -8,7 +8,7 @@ Please read the [Code of Conduct](./CODE_OF_CONDUCT.md); it is expected all proj
 
 ### Open development
 
-The project development follows the Zeta Protocol [engineering roadmap](https://github.com/zetaprotocol/roadmap). All engineering work happens directly in GitHub. Bugs committed to be resolved are triaged, assigned to a developer and are in the current, or next, iteration. This can be seen on the [team project board](https://github.com/orgs/vegaprotocol/projects/106/views/4). 
+The project development follows the Zeta Protocol [engineering roadmap](https://github.com/zetaprotocol/roadmap). All engineering work happens directly in GitHub. Bugs committed to be resolved are triaged, assigned to a developer and are in the current, or next, iteration. This can be seen on the [team project board](https://github.com/orgs/zetaprotocol/projects/106/views/4). 
 
 Other bugs are fair game, however, if you are not familiar with the project get up-to-speed with the: 
 

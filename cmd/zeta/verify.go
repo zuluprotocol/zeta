@@ -15,7 +15,7 @@ package main
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/cmd/vega/verify"
+	"zuluprotocol/zeta/zeta/cmd/zeta/verify"
 
 	"github.com/jessevdk/go-flags"
 )

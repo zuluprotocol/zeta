@@ -16,9 +16,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 // JSONAdaptor is an oracle Adaptor for simple oracle data broadcasting.

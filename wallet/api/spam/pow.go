@@ -1,11 +1,11 @@
 package spam
 
 import (
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/api/node/types"
-	nodetypes "code.zetaprotocol.io/vega/wallet/api/node/types"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/api/node/types"
+	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
 )
 
 type txCounter struct {

@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"os"
 
-	coreConfig "code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
+	coreConfig "zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
 
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 )
 
 type latestHistorySegmentFromPeers struct {

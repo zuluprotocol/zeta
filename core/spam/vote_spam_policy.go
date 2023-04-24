@@ -20,14 +20,14 @@ import (
 	"sync"
 	"time"
 
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 
-	"code.zetaprotocol.io/vega/core/blockchain/abci"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type blockRejectInfo struct {

@@ -15,9 +15,9 @@ package main
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/visor"
-	"code.zetaprotocol.io/vega/visor/client"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/visor"
+	"zuluprotocol/zeta/zeta/visor/client"
 	"github.com/spf13/cobra"
 )
 

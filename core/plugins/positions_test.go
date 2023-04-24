@@ -19,9 +19,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/plugins"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/plugins"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

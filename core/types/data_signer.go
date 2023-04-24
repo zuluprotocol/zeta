@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 // PubKey.

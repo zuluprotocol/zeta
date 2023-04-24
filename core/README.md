@@ -16,7 +16,7 @@ A decentralised trading platform that allows pseudo-anonymous trading of derivat
 - For **new developers**, see [Getting Started](../GETTING_STARTED.md).
 - For **updates**, see the [Change log](../CHANGELOG.md) for major updates.
 - For **architecture**, please read the [documentation](./docs#zeta-core-architecture) to learn about the design for the system and its architecture.
-- Please [open an issue](https://github.com/zetaprotocol/vega/issues/new) if anything is missing or unclear in this documentation.
+- Please [open an issue](https://github.com/zetaprotocol/zeta/issues/new) if anything is missing or unclear in this documentation.
 
 <details>
   <summary><strong>Table of Contents</strong> (click to expand)</summary>

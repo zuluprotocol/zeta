@@ -15,7 +15,7 @@ package steps
 import (
 	"strconv"
 
-	"code.zetaprotocol.io/vega/core/integration/steps/market"
+	"zuluprotocol/zeta/zeta/core/integration/steps/market"
 )
 
 func OracleSpecSettlementDataDecimals(config *market.Config, name string, settlementDP string) error {

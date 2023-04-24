@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // Transfer ...

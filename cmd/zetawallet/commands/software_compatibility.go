@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"io"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/cli"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/printer"
-	"code.zetaprotocol.io/vega/paths"
-	netv1 "code.zetaprotocol.io/vega/wallet/network/store/v1"
-	wversion "code.zetaprotocol.io/vega/wallet/version"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/zeta/paths"
+	netv1 "zuluprotocol/zeta/zeta/wallet/network/store/v1"
+	wversion "zuluprotocol/zeta/zeta/wallet/version"
 	"github.com/spf13/cobra"
 )
 
@@ -30,7 +30,7 @@ change when the network is officially defined as stable.
 The best option is to:
 
 1. Download the version of the wallet software matching the version running on the network at:
-   https://github.com/zetaprotocol/vega/releases
+   https://github.com/zetaprotocol/zeta/releases
    Example: If the network is running 0.57.1, download the wallet software with the version 0.57.1.
 
 2. Then, switch to the wallet software matching the network version.
@@ -121,7 +121,7 @@ func PrintCheckSoftwareIncompatibilityResponse(w io.Writer, resp *wversion.Check
 		str.BlueArrow().InfoText("What can I do then?").NextLine()
 		str.Text("The best option is to:").NextLine()
 		str.Text("1. Download the version of the wallet software matching the version running on the network at:").NextLine()
-		str.Text("   ").Underline("https://github.com/zetaprotocol/vega/releases").NextLine()
+		str.Text("   ").Underline("https://github.com/zetaprotocol/zeta/releases").NextLine()
 		str.Text("   Example: If the network is running 0.57.1, download the wallet software with the version 0.57.1.").NextLine()
 		str.Text("2. Then, switch to the wallet software matching the network version.").NextSection()
 

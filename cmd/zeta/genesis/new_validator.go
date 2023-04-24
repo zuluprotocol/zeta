@@ -17,12 +17,12 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	vgtm "code.zetaprotocol.io/vega/core/tendermint"
-	"code.zetaprotocol.io/vega/core/validators"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	vgtm "zuluprotocol/zeta/zeta/core/tendermint"
+	"zuluprotocol/zeta/zeta/core/validators"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	tmjson "github.com/tendermint/tendermint/libs/json"
@@ -62,7 +62,7 @@ func (opts *newValidatorCmd) Execute(_ []string) error {
 		return err
 	}
 
-	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, vegaPaths, pass)
+	zetaKey, ethAddress, walletID, err := loadNodeWalletPubKey(opts.Config, zetaPaths, pass)
 	if err != nil {
 		return err
 	}

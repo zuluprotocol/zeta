@@ -16,9 +16,9 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -76,7 +76,7 @@ func parseScannedDataToOracleData(scanned []entities.Data) []entities.OracleData
 						MatchedSpecIds: s.MatchedSpecIds,
 						BroadcastAt:    s.BroadcastAt,
 						TxHash:         s.TxHash,
-						ZetaTime:       s.VegaTime,
+						ZetaTime:       s.ZetaTime,
 						SeqNum:         s.SeqNum,
 					},
 				},

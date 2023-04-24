@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/pkg/errors"
 )
 

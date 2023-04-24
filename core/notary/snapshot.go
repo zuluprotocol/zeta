@@ -18,11 +18,11 @@ import (
 	"sort"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var (

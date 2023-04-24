@@ -12,7 +12,7 @@
 
 package blockchain
 
-import "code.zetaprotocol.io/vega/logging"
+import "zuluprotocol/zeta/zeta/logging"
 
 type ChainServerImpl interface {
 	ReloadConf(cfg Config)

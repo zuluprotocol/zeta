@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 )
@@ -29,7 +29,7 @@ type RiskFactor struct {
 	ZetaTime time.Time
 }
 
-func RiskFactorFromProto(factor *zeta.RiskFactor, txHash TxHash, vegaTime time.Time) (*RiskFactor, error) {
+func RiskFactorFromProto(factor *zeta.RiskFactor, txHash TxHash, zetaTime time.Time) (*RiskFactor, error) {
 	var short, long decimal.Decimal
 	var err error
 

@@ -18,9 +18,9 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/plugins"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/plugins"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func PartiesHaveTheFollowingProfitAndLoss(

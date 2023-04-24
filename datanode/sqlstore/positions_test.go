@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/shopspring/decimal"
@@ -39,7 +39,7 @@ func addTestPosition(t *testing.T,
 	pos := entities.NewEmptyPosition(market.ID, party.ID)
 	pos.OpenVolume = volume
 	pos.PendingOpenVolume = volume
-	pos.ZetaTime = block.VegaTime
+	pos.ZetaTime = block.ZetaTime
 	pos.RealisedPnl = decimal.New(0, 0)
 	pos.PendingRealisedPnl = decimal.New(0, 0)
 	pos.UnrealisedPnl = decimal.New(0, 0)
@@ -145,7 +145,7 @@ func setupPositionPaginationData(t *testing.T, ctx context.Context, bs *sqlstore
 		market := entities.Market{ID: entities.MarketID(fmt.Sprintf("deadbeef%02d", i))}
 		for j := 0; j < 10; j++ {
 			block := addTestBlockForTime(t, ctx, bs, blockTime)
-			party := entities.Party{ID: entities.PartyID(fmt.Sprintf("deadbeef%02d", j)), ZetaTime: &block.VegaTime}
+			party := entities.Party{ID: entities.PartyID(fmt.Sprintf("deadbeef%02d", j)), ZetaTime: &block.ZetaTime}
 			err := pts.Add(ctx, party)
 			require.NoError(t, err)
 			position := addTestPosition(t, ctx, ps, market, party, int64(i), block)

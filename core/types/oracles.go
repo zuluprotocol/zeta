@@ -13,8 +13,8 @@
 package types
 
 import (
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 type OracleSpecConfiguration struct {

@@ -3,7 +3,7 @@ package api
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
 	"github.com/mitchellh/mapstructure"
 )
 

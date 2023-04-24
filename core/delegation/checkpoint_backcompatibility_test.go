@@ -19,10 +19,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	"github.com/golang/mock/gomock"
 )
 

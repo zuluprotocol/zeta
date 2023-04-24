@@ -20,13 +20,13 @@ import (
 	"strings"
 	"time"
 
-	bridge "code.zetaprotocol.io/vega/core/contracts/erc20_bridge_logic_restricted"
-	multisig "code.zetaprotocol.io/vega/core/contracts/multisig_control"
-	"code.zetaprotocol.io/vega/core/staking"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	vgproto "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	bridge "zuluprotocol/zeta/zeta/core/contracts/erc20_bridge_logic_restricted"
+	multisig "zuluprotocol/zeta/zeta/core/contracts/multisig_control"
+	"zuluprotocol/zeta/zeta/core/staking"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	eth "github.com/ethereum/go-ethereum"
@@ -55,7 +55,7 @@ const (
 
 // Assets ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_mock.go -package mocks code.zetaprotocol.io/vega/core/evtforward/ethereum Assets
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward/ethereum Assets
 type Assets interface {
 	GetZetaIDFromEthereumAddress(string) string
 }
@@ -419,7 +419,7 @@ func (f *LogFilterer) toERC20Withdraw(event *bridge.Erc20BridgeLogicRestrictedAs
 				Block: event.Raw.BlockNumber,
 				Action: &vgproto.ERC20Event_Withdrawal{
 					Withdrawal: &vgproto.ERC20Withdrawal{
-						ZetaAssetId:           f.assets.GetVegaIDFromEthereumAddress(event.AssetSource.Hex()),
+						ZetaAssetId:           f.assets.GetZetaIDFromEthereumAddress(event.AssetSource.Hex()),
 						TargetEthereumAddress: event.UserAddress.Hex(),
 						ReferenceNonce:        event.Nonce.String(),
 					},
@@ -449,7 +449,7 @@ func (f *LogFilterer) toERC20Deposit(event *bridge.Erc20BridgeLogicRestrictedAss
 				Block: event.Raw.BlockNumber,
 				Action: &vgproto.ERC20Event_Deposit{
 					Deposit: &vgproto.ERC20Deposit{
-						ZetaAssetId:           f.assets.GetVegaIDFromEthereumAddress(event.AssetSource.Hex()),
+						ZetaAssetId:           f.assets.GetZetaIDFromEthereumAddress(event.AssetSource.Hex()),
 						SourceEthereumAddress: event.UserAddress.Hex(),
 						TargetPartyId:         hex.EncodeToString(event.ZetaPublicKey[:]),
 						Amount:                event.Amount.String(),
@@ -478,7 +478,7 @@ func toERC20AssetList(event *bridge.Erc20BridgeLogicRestrictedAssetListed) *comm
 				Block: event.Raw.BlockNumber,
 				Action: &vgproto.ERC20Event_AssetList{
 					AssetList: &vgproto.ERC20AssetList{
-						ZetaAssetId: hex.EncodeToString(event.VegaAssetId[:]),
+						ZetaAssetId: hex.EncodeToString(event.ZetaAssetId[:]),
 						AssetSource: event.AssetSource.Hex(),
 					},
 				},
@@ -531,7 +531,7 @@ func (f *LogFilterer) toERC20AssetLimitsUpdated(event *bridge.Erc20BridgeLogicRe
 				Block: event.Raw.BlockNumber,
 				Action: &vgproto.ERC20Event_AssetLimitsUpdated{
 					AssetLimitsUpdated: &vgproto.ERC20AssetLimitsUpdated{
-						ZetaAssetId:           f.assets.GetVegaIDFromEthereumAddress(event.AssetSource.Hex()),
+						ZetaAssetId:           f.assets.GetZetaIDFromEthereumAddress(event.AssetSource.Hex()),
 						SourceEthereumAddress: event.AssetSource.Hex(),
 						LifetimeLimits:        event.LifetimeLimit.String(),
 						WithdrawThreshold:     event.WithdrawThreshold.String(),
@@ -641,7 +641,7 @@ func toStakeDeposited(event *staking.StakingStakeDeposited, blockTime uint64) *c
 				Action: &vgproto.StakingEvent_StakeDeposited{
 					StakeDeposited: &vgproto.StakeDeposited{
 						EthereumAddress: event.User.Hex(),
-						ZetaPublicKey:   hex.EncodeToString(event.VegaPublicKey[:]),
+						ZetaPublicKey:   hex.EncodeToString(event.ZetaPublicKey[:]),
 						Amount:          event.Amount.String(),
 						BlockTime:       int64(blockTime),
 					},
@@ -672,7 +672,7 @@ func toStakeRemoved(event *staking.StakingStakeRemoved, blockTime uint64) *comma
 				Action: &vgproto.StakingEvent_StakeRemoved{
 					StakeRemoved: &vgproto.StakeRemoved{
 						EthereumAddress: event.User.Hex(),
-						ZetaPublicKey:   hex.EncodeToString(event.VegaPublicKey[:]),
+						ZetaPublicKey:   hex.EncodeToString(event.ZetaPublicKey[:]),
 						Amount:          event.Amount.String(),
 						BlockTime:       int64(blockTime),
 					},

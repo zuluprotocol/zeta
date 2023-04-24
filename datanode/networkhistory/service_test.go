@@ -17,25 +17,25 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/service"
-	eventsv1 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	eventsv1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"github.com/jackc/pgx/v4/stdlib"
 	"github.com/pressly/goose/v3"
 
-	"code.zetaprotocol.io/vega/cmd/data-node/commands/start"
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	config2 "code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/utils/databasetest"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/cmd/data-node/commands/start"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	config2 "zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/utils/databasetest"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	uuid "github.com/satori/go.uuid"
@@ -1312,7 +1312,7 @@ func getSnapshotIntervalToHistoryTableDeltaSummary(ctx context.Context,
 		fromHeight := expectedHistorySegmentsFromHeights[i]
 		toHeight := expectedHistorySegmentsToHeights[i]
 
-		whereClause := fmt.Sprintf("Where zeta_time >= (SELECT vega_time from blocks where height = %d) and  vega_time <= (SELECT vega_time from blocks where height = %d)",
+		whereClause := fmt.Sprintf("Where zeta_time >= (SELECT zeta_time from blocks where height = %d) and  zeta_time <= (SELECT zeta_time from blocks where height = %d)",
 			fromHeight, toHeight)
 
 		intervalHistoryTableSummary := map[string]tableDataSummary{}

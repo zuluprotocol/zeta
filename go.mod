@@ -1,9 +1,9 @@
-module code.zetaprotocol.io/vega
+module github.com/zuluprotocol/zeta
 
 go 1.19
 
 require (
-	code.zetaprotocol.io/quant v0.2.5
+	zuluprotocol/zeta/quant v0.2.5
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/cosmos/iavl v0.19.4
@@ -81,7 +81,7 @@ require (
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20220101234140-673ab2c3ae75
 	github.com/tyler-smith/go-bip39 v1.1.0
 	github.com/urfave/cli/v2 v2.10.2
-	github.com/vegaprotocol/go-slip10 v0.1.0
+	github.com/zetaprotocol/go-slip10 v0.1.0
 	github.com/vektah/gqlparser/v2 v2.5.1
 	github.com/wk8/go-ordered-map/v2 v2.0.0
 	golang.org/x/sync v0.1.0
@@ -392,8 +392,8 @@ require (
 )
 
 replace (
-	github.com/fergusstrange/embedded-postgres => github.com/vegaprotocol/embedded-postgres v1.13.1-0.20221123183204-2e7a2feee5bb
-	github.com/shopspring/decimal => github.com/vegaprotocol/decimal v1.3.1-uint256
+	github.com/fergusstrange/embedded-postgres => github.com/zetaprotocol/embedded-postgres v1.13.1-0.20221123183204-2e7a2feee5bb
+	github.com/shopspring/decimal => github.com/zetaprotocol/decimal v1.3.1-uint256
 )
 
 replace github.com/tendermint/tendermint => github.com/informalsystems/tendermint v0.34.25

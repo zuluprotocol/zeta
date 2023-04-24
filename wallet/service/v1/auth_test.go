@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/wallet/service/v1"
-	"code.zetaprotocol.io/vega/wallet/service/v1/mocks"
+	"zuluprotocol/zeta/zeta/wallet/service/v1"
+	"zuluprotocol/zeta/zeta/wallet/service/v1/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap"

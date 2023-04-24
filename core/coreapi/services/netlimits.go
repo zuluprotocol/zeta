@@ -16,9 +16,9 @@ import (
 	"context"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/subscribers"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/subscribers"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type netLimitsEvent interface {

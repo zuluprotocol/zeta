@@ -3,7 +3,7 @@ package banking
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 func (e *Engine) BridgeStopped(

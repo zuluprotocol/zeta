@@ -15,9 +15,9 @@ package sqlstore
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -45,7 +45,7 @@ func (s *CoreSnapshotData) Add(ctx context.Context, csd entities.CoreSnapshotDat
 			zeta_time,
 			tx_hash)
 		 VALUES ($1,  $2,  $3,  $4, $5)`,
-		csd.BlockHeight, csd.BlockHash, csd.ZetaCoreVersion, csd.VegaTime, csd.TxHash)
+		csd.BlockHeight, csd.BlockHash, csd.ZetaCoreVersion, csd.ZetaTime, csd.TxHash)
 	return err
 }
 

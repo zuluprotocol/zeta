@@ -3,12 +3,12 @@ package spam_test
 import (
 	"testing"
 
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/ptr"
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	nodetypes "code.zetaprotocol.io/vega/wallet/api/node/types"
-	"code.zetaprotocol.io/vega/wallet/api/spam"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
+	"zuluprotocol/zeta/zeta/wallet/api/spam"
 	"github.com/stretchr/testify/require"
 )
 

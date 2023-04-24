@@ -19,12 +19,12 @@ import (
 	"net/http"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	libhttp "code.zetaprotocol.io/vega/libs/http"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	protoapiv2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	libhttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	protoapiv2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/rs/cors"
@@ -55,7 +55,7 @@ func NewProxyServer(log *logging.Logger, config gateway.Config, zetaPaths paths.
 		log:       log,
 		Config:    config,
 		srv:       nil,
-		zetaPaths: vegaPaths,
+		zetaPaths: zetaPaths,
 	}
 }
 

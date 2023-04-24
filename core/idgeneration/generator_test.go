@@ -15,7 +15,7 @@ package idgeneration_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
 	"github.com/stretchr/testify/assert"
 )
 

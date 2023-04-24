@@ -17,16 +17,16 @@ import (
 	"fmt"
 	"net"
 
-	"code.zetaprotocol.io/vega/blockexplorer/api"
-	"code.zetaprotocol.io/vega/blockexplorer/store"
+	"zuluprotocol/zeta/zeta/blockexplorer/api"
+	"zuluprotocol/zeta/zeta/blockexplorer/store"
 	"golang.org/x/sync/errgroup"
 	"google.golang.org/grpc"
 
-	ourGrpc "code.zetaprotocol.io/vega/blockexplorer/api/grpc"
-	"code.zetaprotocol.io/vega/blockexplorer/config"
-	"code.zetaprotocol.io/vega/libs/net/pipe"
-	"code.zetaprotocol.io/vega/logging"
-	pb "code.zetaprotocol.io/vega/protos/blockexplorer"
+	ourGrpc "zuluprotocol/zeta/zeta/blockexplorer/api/grpc"
+	"zuluprotocol/zeta/zeta/blockexplorer/config"
+	"zuluprotocol/zeta/zeta/libs/net/pipe"
+	"zuluprotocol/zeta/zeta/logging"
+	pb "zuluprotocol/zeta/zeta/protos/blockexplorer"
 )
 
 type gatewayService interface {

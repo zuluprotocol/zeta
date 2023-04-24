@@ -15,7 +15,7 @@ package zetatime
 import (
 	"time"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 var now func() time.Time
@@ -27,7 +27,7 @@ func init() {
 // SetNowFunc exists for testing purpose
 // e.g: set the zetatime.Now function to return a specific time
 //
-//	zetatime.SetNowFunc(func() time.T { vegatime.Unix(123423, 0) })
+//	zetatime.SetNowFunc(func() time.T { zetatime.Unix(123423, 0) })
 //
 // reset the zetatime.Now function
 //

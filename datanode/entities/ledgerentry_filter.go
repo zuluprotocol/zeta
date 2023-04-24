@@ -1,8 +1,8 @@
 package entities
 
 import (
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 // CloseOnLimitOperation is the type that is used for opening and closing the set of output items under some operation.

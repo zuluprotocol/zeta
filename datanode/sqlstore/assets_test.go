@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -45,7 +45,7 @@ func addTestAsset(t *testing.T, ctx context.Context, as *sqlstore.Assets, block 
 		Decimals:          5,
 		Quantum:           quantum,
 		ERC20Contract:     "0xdeadbeef",
-		ZetaTime:          block.VegaTime,
+		ZetaTime:          block.ZetaTime,
 		LifetimeLimit:     decimal.New(42, 0),
 		WithdrawThreshold: decimal.New(81, 0),
 		Status:            entities.AssetStatusEnabled,
@@ -128,7 +128,7 @@ func TestAsset(t *testing.T) {
 	assert.Equal(t, asset.Decimals, fetchedAsset.Decimals)
 	assert.Equal(t, asset.Quantum, fetchedAsset.Quantum)
 	assert.Equal(t, asset.ERC20Contract, fetchedAsset.ERC20Contract)
-	assert.Equal(t, asset.ZetaTime, fetchedAsset.VegaTime)
+	assert.Equal(t, asset.ZetaTime, fetchedAsset.ZetaTime)
 	assert.True(t, asset.LifetimeLimit.Equal(fetchedAsset.LifetimeLimit))
 	assert.True(t, asset.WithdrawThreshold.Equal(fetchedAsset.WithdrawThreshold))
 

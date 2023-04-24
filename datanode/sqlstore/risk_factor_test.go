@@ -16,9 +16,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -51,7 +51,7 @@ func testUpdateMarketRiskFactors(t *testing.T) {
 		Short:    decimal.NewFromInt(100),
 		Long:     decimal.NewFromInt(200),
 		TxHash:   generateTxHash(),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 	rfStore.Upsert(ctx, &rf)
 
@@ -68,7 +68,7 @@ func testUpdateMarketRiskFactors(t *testing.T) {
 		Short:    decimal.NewFromInt(101),
 		Long:     decimal.NewFromInt(202),
 		TxHash:   generateTxHash(),
-		ZetaTime: block2.VegaTime,
+		ZetaTime: block2.ZetaTime,
 	}
 	rfStore.Upsert(ctx, &rf2)
 

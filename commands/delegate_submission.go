@@ -3,7 +3,7 @@ package commands
 import (
 	"math/big"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 func CheckDelegateSubmission(cmd *commandspb.DelegateSubmission) error {

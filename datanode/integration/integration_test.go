@@ -29,16 +29,16 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 
-	"code.zetaprotocol.io/vega/cmd/data-node/commands/start"
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/datanode/utils"
-	"code.zetaprotocol.io/vega/datanode/utils/databasetest"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/cmd/data-node/commands/start"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/utils"
+	"zuluprotocol/zeta/zeta/datanode/utils/databasetest"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/machinebox/graphql"
 	"github.com/stretchr/testify/assert"
@@ -232,7 +232,7 @@ func newTestConfig(postgresRuntimePath string) (*config.Config, error) {
 }
 
 func runTestNode(cfg *config.Config, zetaHome string, stopper chan struct{}) error {
-	zetaPaths := paths.New(vegaHome)
+	zetaPaths := paths.New(zetaHome)
 
 	loader, err := config.InitialiseLoader(zetaPaths)
 	if err != nil {

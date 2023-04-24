@@ -4,18 +4,18 @@ import (
 	"context"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	"code.zetaprotocol.io/vega/wallet/api/node"
-	nodetypes "code.zetaprotocol.io/vega/wallet/api/node/types"
-	"code.zetaprotocol.io/vega/wallet/network"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/zeta/wallet/api/node"
+	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
+	"zuluprotocol/zeta/zeta/wallet/network"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 	"go.uber.org/zap"
 )
 
 // Generates mocks
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/wallet/api WalletStore,NetworkStore,Interactor,ConnectionsManager,SpamHandler
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/api WalletStore,NetworkStore,Interactor,ConnectionsManager,SpamHandler
 
 type NodeSelectorBuilder func(hosts []string, retries uint64) (node.Selector, error)
 

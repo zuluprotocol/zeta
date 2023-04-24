@@ -2,7 +2,7 @@ package paths
 
 import "path/filepath"
 
-// ZetaHome is the name of the Vega folder for every type of file structure.
+// ZetaHome is the name of the Zeta folder for every type of file structure.
 var ZetaHome = "zeta"
 
 // File structure for cache

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/commands"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/core/types"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/shopspring/decimal"
 )
 
@@ -139,7 +139,7 @@ func (balance *AggregatedBalance) ToProto() *v2.AggregatedBalance {
 
 func (balance AggregatedBalance) Cursor() *Cursor {
 	return NewCursor(AggregatedBalanceCursor{
-		ZetaTime:  balance.VegaTime,
+		ZetaTime:  balance.ZetaTime,
 		AccountID: balance.AccountID,
 		PartyID:   balance.PartyID,
 		AssetID:   balance.AssetID,

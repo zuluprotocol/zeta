@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/commands"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 )
 

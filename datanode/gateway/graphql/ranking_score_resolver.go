@@ -16,7 +16,7 @@ import (
 	"context"
 	"strconv"
 
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type (

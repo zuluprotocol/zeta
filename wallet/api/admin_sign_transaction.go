@@ -8,15 +8,15 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/commands"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/commands"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 	"github.com/golang/protobuf/proto"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	wcommands "code.zetaprotocol.io/vega/wallet/commands"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	wcommands "zuluprotocol/zeta/zeta/wallet/commands"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/mitchellh/mapstructure"
 )

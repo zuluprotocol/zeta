@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -110,7 +110,7 @@ func (m *ERC20MultiSigSignerEvent) GetAddedEvents(ctx context.Context, validator
 			SignerChange: e.SignerChange,
 			Submitter:    e.Submitter,
 			Nonce:        e.Nonce,
-			ZetaTime:     e.VegaTime,
+			ZetaTime:     e.ZetaTime,
 			TxHash:       e.TxHash,
 			EpochID:      e.EpochID,
 			Event:        e.Event,
@@ -166,7 +166,7 @@ func (m *ERC20MultiSigSignerEvent) GetRemovedEvents(ctx context.Context, validat
 			Submitter:    e.Submitter,
 			Nonce:        e.Nonce,
 			TxHash:       e.TxHash,
-			ZetaTime:     e.VegaTime,
+			ZetaTime:     e.ZetaTime,
 			EpochID:      e.EpochID,
 			Event:        e.Event,
 		}

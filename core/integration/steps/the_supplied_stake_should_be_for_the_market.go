@@ -15,7 +15,7 @@ package steps
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 func TheSuppliedStakeShouldBeForTheMarket(engine Execution, marketID string, wantSuppliedStake string) error {

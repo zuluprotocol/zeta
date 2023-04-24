@@ -17,13 +17,13 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	bmocks "code.zetaprotocol.io/vega/core/broker/mocks"
-	"code.zetaprotocol.io/vega/core/collateral"
-	"code.zetaprotocol.io/vega/core/rewards/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	bmocks "zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/collateral"
+	"zuluprotocol/zeta/zeta/core/rewards/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

@@ -18,13 +18,13 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -301,7 +301,7 @@ func createOracleSpecPaginationTestData(t *testing.T, ctx context.Context, bs *s
 						},
 					},
 					Status:   entities.OracleSpecActive,
-					ZetaTime: block.VegaTime,
+					ZetaTime: block.ZetaTime,
 				},
 			},
 		}

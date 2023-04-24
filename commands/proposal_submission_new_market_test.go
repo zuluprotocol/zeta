@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/commands"
-	"code.zetaprotocol.io/vega/core/types"
-	protoTypes "code.zetaprotocol.io/vega/protos/vega"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	"zuluprotocol/zeta/zeta/core/types"
+	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -1386,7 +1386,7 @@ func testNewFutureMarketChangeSubmissionWithoutPubKeysFails(t *testing.T) {
 						Instrument: &protoTypes.InstrumentConfiguration{
 							Product: &protoTypes.InstrumentConfiguration_Future{
 								Future: &protoTypes.FutureProduct{
-									DataSourceSpecForSettlementData: zetapb.NewDataSourceDefinition(vegapb.DataSourceDefinitionTypeExt),
+									DataSourceSpecForSettlementData: zetapb.NewDataSourceDefinition(zetapb.DataSourceDefinitionTypeExt),
 								},
 							},
 						},

@@ -5,12 +5,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	vgtest "code.zetaprotocol.io/vega/libs/test"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/network"
-	v1 "code.zetaprotocol.io/vega/wallet/network/store/v1"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgtest "zuluprotocol/zeta/zeta/libs/test"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/network"
+	v1 "zuluprotocol/zeta/zeta/wallet/network/store/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

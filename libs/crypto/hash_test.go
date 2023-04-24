@@ -3,7 +3,7 @@ package crypto_test
 import (
 	"testing"
 
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
 	"github.com/stretchr/testify/assert"
 )

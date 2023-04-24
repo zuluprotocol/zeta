@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -612,12 +612,12 @@ var file_zeta_wallet_v1_wallet_proto_rawDesc = []byte{
 
 var (
 	file_zeta_wallet_v1_wallet_proto_rawDescOnce sync.Once
-	file_zeta_wallet_v1_wallet_proto_rawDescData = file_vega_wallet_v1_wallet_proto_rawDesc
+	file_zeta_wallet_v1_wallet_proto_rawDescData = file_zeta_wallet_v1_wallet_proto_rawDesc
 )
 
 func file_zeta_wallet_v1_wallet_proto_rawDescGZIP() []byte {
 	file_zeta_wallet_v1_wallet_proto_rawDescOnce.Do(func() {
-		file_zeta_wallet_v1_wallet_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_wallet_v1_wallet_proto_rawDescData)
+		file_zeta_wallet_v1_wallet_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_wallet_v1_wallet_proto_rawDescData)
 	})
 	return file_zeta_wallet_v1_wallet_proto_rawDescData
 }
@@ -652,31 +652,31 @@ var file_zeta_wallet_v1_wallet_proto_goTypes = []interface{}{
 	(*v1.OracleDataSubmission)(nil),           // 25: zeta.commands.v1.OracleDataSubmission
 }
 var file_zeta_wallet_v1_wallet_proto_depIdxs = []int32{
-	1,  // 0: zeta.wallet.v1.SubmitTransactionRequest.order_submission:type_name -> vega.commands.v1.OrderSubmission
-	2,  // 1: zeta.wallet.v1.SubmitTransactionRequest.order_cancellation:type_name -> vega.commands.v1.OrderCancellation
-	3,  // 2: zeta.wallet.v1.SubmitTransactionRequest.order_amendment:type_name -> vega.commands.v1.OrderAmendment
-	4,  // 3: zeta.wallet.v1.SubmitTransactionRequest.withdraw_submission:type_name -> vega.commands.v1.WithdrawSubmission
-	5,  // 4: zeta.wallet.v1.SubmitTransactionRequest.proposal_submission:type_name -> vega.commands.v1.ProposalSubmission
-	6,  // 5: zeta.wallet.v1.SubmitTransactionRequest.vote_submission:type_name -> vega.commands.v1.VoteSubmission
-	7,  // 6: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_submission:type_name -> vega.commands.v1.LiquidityProvisionSubmission
-	8,  // 7: zeta.wallet.v1.SubmitTransactionRequest.delegate_submission:type_name -> vega.commands.v1.DelegateSubmission
-	9,  // 8: zeta.wallet.v1.SubmitTransactionRequest.undelegate_submission:type_name -> vega.commands.v1.UndelegateSubmission
-	10, // 9: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_cancellation:type_name -> vega.commands.v1.LiquidityProvisionCancellation
-	11, // 10: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_amendment:type_name -> vega.commands.v1.LiquidityProvisionAmendment
-	12, // 11: zeta.wallet.v1.SubmitTransactionRequest.transfer:type_name -> vega.commands.v1.Transfer
-	13, // 12: zeta.wallet.v1.SubmitTransactionRequest.cancel_transfer:type_name -> vega.commands.v1.CancelTransfer
-	14, // 13: zeta.wallet.v1.SubmitTransactionRequest.announce_node:type_name -> vega.commands.v1.AnnounceNode
-	15, // 14: zeta.wallet.v1.SubmitTransactionRequest.batch_market_instructions:type_name -> vega.commands.v1.BatchMarketInstructions
-	16, // 15: zeta.wallet.v1.SubmitTransactionRequest.node_vote:type_name -> vega.commands.v1.NodeVote
-	17, // 16: zeta.wallet.v1.SubmitTransactionRequest.node_signature:type_name -> vega.commands.v1.NodeSignature
-	18, // 17: zeta.wallet.v1.SubmitTransactionRequest.chain_event:type_name -> vega.commands.v1.ChainEvent
-	19, // 18: zeta.wallet.v1.SubmitTransactionRequest.key_rotate_submission:type_name -> vega.commands.v1.KeyRotateSubmission
-	20, // 19: zeta.wallet.v1.SubmitTransactionRequest.state_variable_proposal:type_name -> vega.commands.v1.StateVariableProposal
-	21, // 20: zeta.wallet.v1.SubmitTransactionRequest.validator_heartbeat:type_name -> vega.commands.v1.ValidatorHeartbeat
-	22, // 21: zeta.wallet.v1.SubmitTransactionRequest.ethereum_key_rotate_submission:type_name -> vega.commands.v1.EthereumKeyRotateSubmission
-	23, // 22: zeta.wallet.v1.SubmitTransactionRequest.protocol_upgrade_proposal:type_name -> vega.commands.v1.ProtocolUpgradeProposal
-	24, // 23: zeta.wallet.v1.SubmitTransactionRequest.issue_signatures:type_name -> vega.commands.v1.IssueSignatures
-	25, // 24: zeta.wallet.v1.SubmitTransactionRequest.oracle_data_submission:type_name -> vega.commands.v1.OracleDataSubmission
+	1,  // 0: zeta.wallet.v1.SubmitTransactionRequest.order_submission:type_name -> zeta.commands.v1.OrderSubmission
+	2,  // 1: zeta.wallet.v1.SubmitTransactionRequest.order_cancellation:type_name -> zeta.commands.v1.OrderCancellation
+	3,  // 2: zeta.wallet.v1.SubmitTransactionRequest.order_amendment:type_name -> zeta.commands.v1.OrderAmendment
+	4,  // 3: zeta.wallet.v1.SubmitTransactionRequest.withdraw_submission:type_name -> zeta.commands.v1.WithdrawSubmission
+	5,  // 4: zeta.wallet.v1.SubmitTransactionRequest.proposal_submission:type_name -> zeta.commands.v1.ProposalSubmission
+	6,  // 5: zeta.wallet.v1.SubmitTransactionRequest.vote_submission:type_name -> zeta.commands.v1.VoteSubmission
+	7,  // 6: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_submission:type_name -> zeta.commands.v1.LiquidityProvisionSubmission
+	8,  // 7: zeta.wallet.v1.SubmitTransactionRequest.delegate_submission:type_name -> zeta.commands.v1.DelegateSubmission
+	9,  // 8: zeta.wallet.v1.SubmitTransactionRequest.undelegate_submission:type_name -> zeta.commands.v1.UndelegateSubmission
+	10, // 9: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_cancellation:type_name -> zeta.commands.v1.LiquidityProvisionCancellation
+	11, // 10: zeta.wallet.v1.SubmitTransactionRequest.liquidity_provision_amendment:type_name -> zeta.commands.v1.LiquidityProvisionAmendment
+	12, // 11: zeta.wallet.v1.SubmitTransactionRequest.transfer:type_name -> zeta.commands.v1.Transfer
+	13, // 12: zeta.wallet.v1.SubmitTransactionRequest.cancel_transfer:type_name -> zeta.commands.v1.CancelTransfer
+	14, // 13: zeta.wallet.v1.SubmitTransactionRequest.announce_node:type_name -> zeta.commands.v1.AnnounceNode
+	15, // 14: zeta.wallet.v1.SubmitTransactionRequest.batch_market_instructions:type_name -> zeta.commands.v1.BatchMarketInstructions
+	16, // 15: zeta.wallet.v1.SubmitTransactionRequest.node_vote:type_name -> zeta.commands.v1.NodeVote
+	17, // 16: zeta.wallet.v1.SubmitTransactionRequest.node_signature:type_name -> zeta.commands.v1.NodeSignature
+	18, // 17: zeta.wallet.v1.SubmitTransactionRequest.chain_event:type_name -> zeta.commands.v1.ChainEvent
+	19, // 18: zeta.wallet.v1.SubmitTransactionRequest.key_rotate_submission:type_name -> zeta.commands.v1.KeyRotateSubmission
+	20, // 19: zeta.wallet.v1.SubmitTransactionRequest.state_variable_proposal:type_name -> zeta.commands.v1.StateVariableProposal
+	21, // 20: zeta.wallet.v1.SubmitTransactionRequest.validator_heartbeat:type_name -> zeta.commands.v1.ValidatorHeartbeat
+	22, // 21: zeta.wallet.v1.SubmitTransactionRequest.ethereum_key_rotate_submission:type_name -> zeta.commands.v1.EthereumKeyRotateSubmission
+	23, // 22: zeta.wallet.v1.SubmitTransactionRequest.protocol_upgrade_proposal:type_name -> zeta.commands.v1.ProtocolUpgradeProposal
+	24, // 23: zeta.wallet.v1.SubmitTransactionRequest.issue_signatures:type_name -> zeta.commands.v1.IssueSignatures
+	25, // 24: zeta.wallet.v1.SubmitTransactionRequest.oracle_data_submission:type_name -> zeta.commands.v1.OracleDataSubmission
 	25, // [25:25] is the sub-list for method output_type
 	25, // [25:25] is the sub-list for method input_type
 	25, // [25:25] is the sub-list for extension type_name

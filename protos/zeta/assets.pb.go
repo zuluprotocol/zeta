@@ -597,12 +597,12 @@ var file_zeta_assets_proto_rawDesc = []byte{
 
 var (
 	file_zeta_assets_proto_rawDescOnce sync.Once
-	file_zeta_assets_proto_rawDescData = file_vega_assets_proto_rawDesc
+	file_zeta_assets_proto_rawDescData = file_zeta_assets_proto_rawDesc
 )
 
 func file_zeta_assets_proto_rawDescGZIP() []byte {
 	file_zeta_assets_proto_rawDescOnce.Do(func() {
-		file_zeta_assets_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_assets_proto_rawDescData)
+		file_zeta_assets_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_assets_proto_rawDescData)
 	})
 	return file_zeta_assets_proto_rawDescData
 }
@@ -619,11 +619,11 @@ var file_zeta_assets_proto_goTypes = []interface{}{
 	(*ERC20Update)(nil),        // 6: zeta.ERC20Update
 }
 var file_zeta_assets_proto_depIdxs = []int32{
-	2, // 0: zeta.Asset.details:type_name -> vega.AssetDetails
-	0, // 1: zeta.Asset.status:type_name -> vega.Asset.Status
-	3, // 2: zeta.AssetDetails.builtin_asset:type_name -> vega.BuiltinAsset
-	4, // 3: zeta.AssetDetails.erc20:type_name -> vega.ERC20
-	6, // 4: zeta.AssetDetailsUpdate.erc20:type_name -> vega.ERC20Update
+	2, // 0: zeta.Asset.details:type_name -> zeta.AssetDetails
+	0, // 1: zeta.Asset.status:type_name -> zeta.Asset.Status
+	3, // 2: zeta.AssetDetails.builtin_asset:type_name -> zeta.BuiltinAsset
+	4, // 3: zeta.AssetDetails.erc20:type_name -> zeta.ERC20
+	6, // 4: zeta.AssetDetailsUpdate.erc20:type_name -> zeta.ERC20Update
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name

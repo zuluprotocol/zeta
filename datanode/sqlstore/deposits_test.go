@@ -20,11 +20,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -324,7 +324,7 @@ func addDeposits(ctx context.Context, t *testing.T, bs *sqlstore.Blocks, ds *sql
 		deposits = append(deposits, *deposit)
 		require.NoError(t, err)
 
-		zetaTime = vegaTime.Add(time.Second)
+		zetaTime = zetaTime.Add(time.Second)
 		amount += 100
 	}
 

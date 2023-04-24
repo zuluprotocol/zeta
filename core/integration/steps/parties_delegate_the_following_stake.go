@@ -15,10 +15,10 @@ package steps
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/delegation"
+	"zuluprotocol/zeta/zeta/core/delegation"
 )
 
 func PartiesDelegateTheFollowingStake(

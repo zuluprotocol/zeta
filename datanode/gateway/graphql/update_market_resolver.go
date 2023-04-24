@@ -15,11 +15,11 @@ package gql
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type updateMarketResolver ZetaResolverRoot
 
-func (r *updateMarketResolver) UpdateMarketConfiguration(ctx context.Context, obj *zeta.UpdateMarket) (*vega.UpdateMarketConfiguration, error) {
+func (r *updateMarketResolver) UpdateMarketConfiguration(ctx context.Context, obj *zeta.UpdateMarket) (*zeta.UpdateMarketConfiguration, error) {
 	return obj.Changes, nil
 }

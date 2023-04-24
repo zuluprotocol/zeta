@@ -32,7 +32,7 @@ func Examples(s string) string {
 
 	// If the wallet cmd is embedded inside zeta, we display the software as
 	// a sub-command in the examples.
-	if software == "zeta" || strings.HasSuffix(software, "/vega") {
+	if software == "zeta" || strings.HasSuffix(software, "/zeta") {
 		software = fmt.Sprintf("%s wallet", software)
 	}
 

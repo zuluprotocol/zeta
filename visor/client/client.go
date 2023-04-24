@@ -3,9 +3,9 @@ package client
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/admin"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/admin"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type AdminClient interface {

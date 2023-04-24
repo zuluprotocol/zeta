@@ -4,8 +4,8 @@ import (
 	"context"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 // LiquidityProvision resolver
@@ -21,13 +21,13 @@ func (r *myLiquidityProvisionResolver) Party(_ context.Context, obj *types.Liqui
 }
 
 func (r *myLiquidityProvisionResolver) CreatedAt(ctx context.Context, obj *types.LiquidityProvision) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(obj.CreatedAt)), nil
+	return zetatime.Format(zetatime.UnixNano(obj.CreatedAt)), nil
 }
 
 func (r *myLiquidityProvisionResolver) UpdatedAt(ctx context.Context, obj *types.LiquidityProvision) (*string, error) {
 	var updatedAt *string
 	if obj.UpdatedAt > 0 {
-		t := zetatime.Format(vegatime.UnixNano(obj.UpdatedAt))
+		t := zetatime.Format(zetatime.UnixNano(obj.UpdatedAt))
 		updatedAt = &t
 	}
 	return updatedAt, nil

@@ -40,7 +40,7 @@ If applicable, add logs and/or screenshots to help explain your problem.
 Add any other context about the problem here including; system version numbers, components affected.
 
 # Definition of Done
->ℹ️ Not every issue will need every item checked, however, every item on this list should be properly considered and actioned to meet the [DoD](https://github.com/zetaprotocol/vega/blob/develop/DEFINITION_OF_DONE.md).
+>ℹ️ Not every issue will need every item checked, however, every item on this list should be properly considered and actioned to meet the [DoD](https://github.com/zetaprotocol/zeta/blob/develop/DEFINITION_OF_DONE.md).
 
 **Before Merging**
 - [ ] Code refactored to meet SOLID and other code design principles
@@ -50,7 +50,7 @@ Add any other context about the problem here including; system version numbers, 
 - [ ] All bug recreation steps can be followed without presenting the original error/bug
 - [ ] All Unit, Integration and BVT tests are passing
 - [ ] Implementation is peer reviewed (coding standards, meeting acceptance criteria, code/design quality)
-- [ ] Create [front end](https://github.com/zetaprotocol/token-frontend/issues) or [console](https://github.com/vegaprotocol/console/issues) tickets with feature labels (should be done when starting the work if dependencies known i.e. API changes)
+- [ ] Create [front end](https://github.com/zetaprotocol/token-frontend/issues) or [console](https://github.com/zetaprotocol/console/issues) tickets with feature labels (should be done when starting the work if dependencies known i.e. API changes)
 
 **After Merging**
 - [ ] Move development ticket to `Done` if there is **NO** requirement for new [system-tests](https://github.com/zetaprotocol/system-tests/issues)

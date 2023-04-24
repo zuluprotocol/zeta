@@ -20,8 +20,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 )
 
 func addTestEpoch(t *testing.T, ctx context.Context, es *sqlstore.Epochs,
@@ -37,7 +37,7 @@ func addTestEpoch(t *testing.T, ctx context.Context, es *sqlstore.Epochs,
 		StartTime:  startTime,
 		ExpireTime: expireTime,
 		EndTime:    endTime,
-		ZetaTime:   block.VegaTime,
+		ZetaTime:   block.ZetaTime,
 	}
 	if endTime == nil {
 		r.FirstBlock = &block.Height

@@ -19,12 +19,12 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers/mocks"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func TestMarginLevels_Push(t *testing.T) {

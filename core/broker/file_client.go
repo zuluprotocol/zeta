@@ -21,8 +21,8 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type FileClient struct {

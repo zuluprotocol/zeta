@@ -21,8 +21,8 @@ import (
 	"go.uber.org/zap"
 	logObserver "go.uber.org/zap/zaptest/observer"
 
-	"code.zetaprotocol.io/vega/datanode/utils"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/utils"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func newRecordedLogger() (*logging.Logger, *logObserver.ObservedLogs) {

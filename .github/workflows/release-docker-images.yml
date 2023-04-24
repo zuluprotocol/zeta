@@ -1,6 +1,6 @@
 ---
 
-name: Release zeta, data-node and vegawallet docker images
+name: Release zeta, data-node and zetawallet docker images
 
 "on":
   push:
@@ -26,7 +26,7 @@ name: Release zeta, data-node and vegawallet docker images
         required: false
         type: choice
         options:
-          - [zeta, data-node, vegawallet]
+          - [zeta, data-node, zetawallet]
           - [zeta]
           - [data-node]
           - [zetawallet]
@@ -46,7 +46,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "vegawallet"]') }}
+        app: ${{ fromJson(inputs.apps || '["zeta", "data-node", "zetawallet"]') }}
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -106,7 +106,7 @@ jobs:
 
       - name: Sanity check docker image
         run: |
-          docker run --rm zetaprotocol/${{ matrix.app }}:local version || docker run --rm vegaprotocol/${{ matrix.app }}:local software version
+          docker run --rm zetaprotocol/${{ matrix.app }}:local version || docker run --rm zetaprotocol/${{ matrix.app }}:local software version
 
       - name: Build and push to Docker registries
         id: docker_build
@@ -117,8 +117,8 @@ jobs:
           file: ./docker/${{ matrix.app }}.dockerfile
           platforms: ${{ inputs.archs || 'linux/amd64, linux/arm64' }}
           tags: |
-            ghcr.io/zetaprotocol/vega/${{ matrix.app }}:latest
-            ghcr.io/zetaprotocol/vega/${{ matrix.app }}:${{ steps.tags.outputs.version }}
+            ghcr.io/zetaprotocol/zeta/${{ matrix.app }}:latest
+            ghcr.io/zetaprotocol/zeta/${{ matrix.app }}:${{ steps.tags.outputs.version }}
             zetaprotocol/${{ matrix.app }}:latest
             zetaprotocol/${{ matrix.app }}:${{ steps.tags.outputs.version }}
 

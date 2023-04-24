@@ -17,11 +17,11 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 var (
@@ -112,7 +112,7 @@ func (e *Engine) ensureNoRecurringTransferDuplicates(
 
 func (e *Engine) getMarketScores(ds *zetapb.DispatchStrategy, payoutAsset, funder string) []*types.MarketContributionScore {
 	switch ds.Metric {
-	case zetapb.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_PAID, vegapb.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED, vegapb.DispatchMetric_DISPATCH_METRIC_LP_FEES_RECEIVED:
+	case zetapb.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_PAID, zetapb.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED, zetapb.DispatchMetric_DISPATCH_METRIC_LP_FEES_RECEIVED:
 		return e.marketActivityTracker.GetMarketScores(ds.AssetForMetric, ds.Markets, ds.Metric)
 
 	case zetapb.DispatchMetric_DISPATCH_METRIC_MARKET_VALUE:

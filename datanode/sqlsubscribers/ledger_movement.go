@@ -18,9 +18,9 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/pkg/errors"
 	"github.com/shopspring/decimal"
@@ -81,7 +81,7 @@ func (t *TransferResponse) consume(ctx context.Context, e TransferResponseEvent)
 	return nil
 }
 
-func (t *TransferResponse) addLedgerEntry(ctx context.Context, vle *zeta.LedgerEntry, txHash string, vegaTime time.Time) error {
+func (t *TransferResponse) addLedgerEntry(ctx context.Context, vle *zeta.LedgerEntry, txHash string, zetaTime time.Time) error {
 	fromAcc, err := t.obtainAccountWithAccountDetails(ctx, vle.FromAccount, txHash, zetaTime)
 	if err != nil {
 		return errors.Wrap(err, "obtaining 'from' account")
@@ -127,7 +127,7 @@ func (t *TransferResponse) addLedgerEntry(ctx context.Context, vle *zeta.LedgerE
 }
 
 // Parse the zeta account ID; if that account already exists in the db, fetch it; else create it.
-func (t *TransferResponse) obtainAccountWithAccountDetails(ctx context.Context, ad *zeta.AccountDetails, txHash string, vegaTime time.Time) (entities.Account, error) {
+func (t *TransferResponse) obtainAccountWithAccountDetails(ctx context.Context, ad *zeta.AccountDetails, txHash string, zetaTime time.Time) (entities.Account, error) {
 	a, err := entities.AccountProtoFromDetails(ad, entities.TxHash(txHash))
 	if err != nil {
 		return entities.Account{}, errors.Wrapf(err, "parsing account id: %s", ad.String())

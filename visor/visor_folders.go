@@ -18,10 +18,10 @@ import (
 	"os"
 	"path"
 
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/visor/config"
-	"code.zetaprotocol.io/vega/visor/github"
-	"code.zetaprotocol.io/vega/visor/utils"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/visor/config"
+	"zuluprotocol/zeta/zeta/visor/github"
+	"zuluprotocol/zeta/zeta/visor/utils"
 )
 
 var zetaDataNodeStartCmdArgs = []string{"datanode", "start"}
@@ -74,7 +74,7 @@ func (v *Visor) installUpgradeFolder(ctx context.Context, folder, releaseTag str
 	}
 
 	runConf.Name = releaseTag
-	runConf.Zeta.Binary.Path = conf.Assets.Vega.GetBinaryPath()
+	runConf.Zeta.Binary.Path = conf.Assets.Zeta.GetBinaryPath()
 
 	if runConf.DataNode != nil {
 		runConf.DataNode.Binary.Path = conf.Assets.DataNode.GetBinaryPath()

@@ -9,7 +9,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 	"go.uber.org/zap"
 )
 

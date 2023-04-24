@@ -15,9 +15,9 @@ package supplied
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/risk/models"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/risk/models"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 	"github.com/stretchr/testify/require"
 )
 

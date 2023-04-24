@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"testing"
 
-	cmd "code.zetaprotocol.io/vega/cmd/vegawallet/commands"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/wallet/api"
+	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/wallet/api"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

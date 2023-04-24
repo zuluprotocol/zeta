@@ -16,7 +16,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	ethcmn "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"

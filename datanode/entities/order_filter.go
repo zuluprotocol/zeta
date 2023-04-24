@@ -1,6 +1,6 @@
 package entities
 
-import "code.zetaprotocol.io/vega/protos/vega"
+import "zuluprotocol/zeta/zeta/protos/zeta"
 
 type OrderFilter struct {
 	Statuses         []zeta.Order_Status

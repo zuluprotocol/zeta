@@ -5,15 +5,15 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/require"
 )
 
 func addSnapshot(t *testing.T, ctx context.Context, ss *sqlstore.CoreSnapshotData, bs *sqlstore.Blocks, entity entities.CoreSnapshotData) {
 	t.Helper()
 	block := addTestBlock(t, ctx, bs)
-	entity.ZetaTime = block.VegaTime
+	entity.ZetaTime = block.ZetaTime
 	entity.BlockHash = hex.EncodeToString(block.Hash)
 	entity.TxHash = generateTxHash()
 	require.NoError(t, ss.Add(ctx, entity))

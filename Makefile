@@ -45,7 +45,7 @@ mocks_check: ## mocks: Check committed files match just-generated files
 
 .PHONY: build
 build: ## install the binaries in cmd/{progname}/
-	go build -o cmd/zeta ./cmd/vega
+	go build -o cmd/zeta ./cmd/zeta
 
 
 .PHONY: gen-contracts-code
@@ -80,7 +80,7 @@ spellcheck: ## Run markdown spellcheck container
 .PHONY: clean
 clean: SHELL:=/bin/bash
 clean: ## Remove previous build
-	rm cmd/zeta/vega
+	rm cmd/zeta/zeta
 	rm -rf ./**/*-re
 
 .PHONY: proto

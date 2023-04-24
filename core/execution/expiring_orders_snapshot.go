@@ -13,7 +13,7 @@
 package execution
 
 import (
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 
 	"github.com/google/btree"
 )

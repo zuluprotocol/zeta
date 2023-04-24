@@ -18,10 +18,10 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/clef"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	signatures "code.zetaprotocol.io/vega/libs/crypto/signature"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	signatures "zuluprotocol/zeta/zeta/libs/crypto/signature"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/ethereum/go-ethereum/crypto"
 )
@@ -74,7 +74,7 @@ func VerifyAnnounceNode(an *commandspb.AnnounceNode) error {
 	if err != nil {
 		return err
 	}
-	if err := signatures.VerifyZetaSignature(buf, zetas, vegaPubKey); err != nil {
+	if err := signatures.VerifyZetaSignature(buf, zetas, zetaPubKey); err != nil {
 		return err
 	}
 
@@ -102,7 +102,7 @@ func SignAnnounceNode(
 		return err
 	}
 
-	zetaSignature, err := vegaSigner.Sign(buf)
+	zetaSignature, err := zetaSigner.Sign(buf)
 	if err != nil {
 		return err
 	}
@@ -129,11 +129,11 @@ func SignAnnounceNode(
 }
 
 func makeAnnounceNodeSignableMessage(an *commandspb.AnnounceNode) ([]byte, error) {
-	if len(an.Id) <= 0 || len(an.ZetaPubKey) <= 0 || an.VegaPubKeyIndex == 0 || len(an.ChainPubKey) <= 0 || len(an.EthereumAddress) <= 0 || an.FromEpoch == 0 || len(an.InfoUrl) <= 0 || len(an.Name) <= 0 || len(an.AvatarUrl) <= 0 || len(an.Country) <= 0 {
+	if len(an.Id) <= 0 || len(an.ZetaPubKey) <= 0 || an.ZetaPubKeyIndex == 0 || len(an.ChainPubKey) <= 0 || len(an.EthereumAddress) <= 0 || an.FromEpoch == 0 || len(an.InfoUrl) <= 0 || len(an.Name) <= 0 || len(an.AvatarUrl) <= 0 || len(an.Country) <= 0 {
 		return nil, ErrMissingRequiredAnnounceNodeFields
 	}
 
-	msg := an.Id + an.ZetaPubKey + fmt.Sprintf("%d", an.VegaPubKeyIndex) + an.ChainPubKey + an.EthereumAddress + fmt.Sprintf("%d", an.FromEpoch) + an.InfoUrl + an.Name + an.AvatarUrl + an.Country
+	msg := an.Id + an.ZetaPubKey + fmt.Sprintf("%d", an.ZetaPubKeyIndex) + an.ChainPubKey + an.EthereumAddress + fmt.Sprintf("%d", an.FromEpoch) + an.InfoUrl + an.Name + an.AvatarUrl + an.Country
 
 	return []byte(msg), nil
 }

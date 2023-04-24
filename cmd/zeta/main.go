@@ -19,12 +19,12 @@ import (
 
 	"github.com/jessevdk/go-flags"
 
-	"code.zetaprotocol.io/vega/cmd/vega/faucet"
-	"code.zetaprotocol.io/vega/cmd/vega/genesis"
-	"code.zetaprotocol.io/vega/cmd/vega/nodewallet"
-	"code.zetaprotocol.io/vega/cmd/vega/paths"
-	tools "code.zetaprotocol.io/vega/cmd/vegatools"
-	"code.zetaprotocol.io/vega/core/config"
+	"zuluprotocol/zeta/zeta/cmd/zeta/faucet"
+	"zuluprotocol/zeta/zeta/cmd/zeta/genesis"
+	"zuluprotocol/zeta/zeta/cmd/zeta/nodewallet"
+	"zuluprotocol/zeta/zeta/cmd/zeta/paths"
+	tools "zuluprotocol/zeta/zeta/cmd/zetatools"
+	"zuluprotocol/zeta/zeta/core/config"
 )
 
 // Subcommand is the signature of a sub command that can be registered.

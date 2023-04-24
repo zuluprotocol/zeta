@@ -7,16 +7,16 @@ import (
 	"path/filepath"
 	"time"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"go.uber.org/zap"
 
 	"github.com/jackc/pgtype"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/fsutil"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/fsutil"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot/orders"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot/orders"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgx/v4"

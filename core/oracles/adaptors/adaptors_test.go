@@ -19,11 +19,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/oracles/adaptors"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/oracles/adaptors"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

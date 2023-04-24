@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 var (

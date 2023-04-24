@@ -23,15 +23,15 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/datanode/ratelimit"
-	libhttp "code.zetaprotocol.io/vega/libs/http"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/ratelimit"
+	libhttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/playground"
@@ -90,7 +90,7 @@ func New(
 	return &GraphServer{
 		log:                 log,
 		Config:              config,
-		zetaPaths:           vegaPaths,
+		zetaPaths:           zetaPaths,
 		coreProxyClient:     tradingClient,
 		tradingDataClientV2: tradingDataClientV2,
 		rl: gateway.NewSubscriptionRateLimiter(

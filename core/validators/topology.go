@@ -24,15 +24,15 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	proto "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	v1 "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
 	abcitypes "github.com/tendermint/tendermint/abci/types"
 )
@@ -99,7 +99,7 @@ func (v ValidatorData) IsValid() bool {
 	return true
 }
 
-// HashZetaPubKey returns hash VegaPubKey encoded as hex string.
+// HashZetaPubKey returns hash ZetaPubKey encoded as hex string.
 func (v ValidatorData) HashZetaPubKey() (string, error) {
 	decoded, err := hex.DecodeString(v.ZetaPubKey)
 	if err != nil {
@@ -365,7 +365,7 @@ func (t *Topology) IsValidatorNodeID(nodeID string) bool {
 	return ok
 }
 
-// IsValidatorZetaPubKey returns true if the given key is a Vega validator public key.
+// IsValidatorZetaPubKey returns true if the given key is a Zeta validator public key.
 func (t *Topology) IsValidatorZetaPubKey(pubkey string) (ok bool) {
 	defer func() {
 		if t.log.GetLevel() <= logging.DebugLevel {
@@ -418,7 +418,7 @@ func (t *Topology) GetVotingPower(pubkey string) int64 {
 	return int64(0)
 }
 
-// IsValidatorZetaPubKey returns true if the given key is a Vega validator public key and the validators is of status Tendermint.
+// IsValidatorZetaPubKey returns true if the given key is a Zeta validator public key and the validators is of status Tendermint.
 func (t *Topology) IsTendermintValidator(pubkey string) (ok bool) {
 	t.mu.RLock()
 	defer t.mu.RUnlock()
@@ -482,8 +482,8 @@ func (t *Topology) AddNewNode(ctx context.Context, nr *commandspb.AnnounceNode, 
 
 	data := ValidatorData{
 		ID:               nr.Id,
-		ZetaPubKey:       nr.VegaPubKey,
-		ZetaPubKeyIndex:  nr.VegaPubKeyIndex,
+		ZetaPubKey:       nr.ZetaPubKey,
+		ZetaPubKeyIndex:  nr.ZetaPubKeyIndex,
 		EthereumAddress:  nr.EthereumAddress,
 		TmPubKey:         nr.ChainPubKey,
 		InfoURL:          nr.InfoUrl,
@@ -579,8 +579,8 @@ func (t *Topology) LoadValidatorsOnGenesis(ctx context.Context, rawstate []byte)
 
 		nr := &commandspb.AnnounceNode{
 			Id:              data.ID,
-			ZetaPubKey:      data.VegaPubKey,
-			ZetaPubKeyIndex: data.VegaPubKeyIndex,
+			ZetaPubKey:      data.ZetaPubKey,
+			ZetaPubKeyIndex: data.ZetaPubKeyIndex,
 			EthereumAddress: data.EthereumAddress,
 			ChainPubKey:     tm,
 			InfoUrl:         data.InfoURL,
@@ -614,7 +614,7 @@ func (t *Topology) checkValidatorDataWithSelfWallets(data ValidatorData) {
 	// if any of these are wrong, the nodewallet didn't import
 	// the keys set in the genesis block
 	hasError := t.wallets.GetZeta().ID().Hex() != data.ID ||
-		t.wallets.GetZeta().PubKey().Hex() != data.VegaPubKey ||
+		t.wallets.GetZeta().PubKey().Hex() != data.ZetaPubKey ||
 		strings.TrimLeft(t.wallets.GetEthereumAddress(), "0x") != strings.TrimLeft(data.EthereumAddress, "0x")
 
 	if hasError {

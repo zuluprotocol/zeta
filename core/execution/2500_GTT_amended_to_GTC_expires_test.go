@@ -17,11 +17,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/events"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

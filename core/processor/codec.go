@@ -13,7 +13,7 @@
 package processor
 
 import (
-	"code.zetaprotocol.io/vega/core/blockchain/abci"
+	"zuluprotocol/zeta/zeta/core/blockchain/abci"
 )
 
 type TxCodec struct{}

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/api"
 )
 
 type ParallelInteractor struct {

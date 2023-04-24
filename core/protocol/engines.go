@@ -13,9 +13,9 @@
 package protocol
 
 import (
-	"code.zetaprotocol.io/vega/core/evtforward"
-	evtfwdeth "code.zetaprotocol.io/vega/core/evtforward/ethereum"
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/evtforward"
+	evtfwdeth "zuluprotocol/zeta/zeta/core/evtforward/ethereum"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 type EventForwarderEngine interface {

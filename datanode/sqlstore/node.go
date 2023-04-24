@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -57,7 +57,7 @@ func (store *Node) UpsertNode(ctx context.Context, node *entities.Node) error {
 			($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
 		ON CONFLICT (id) DO UPDATE
 		SET
-			zeta_pub_key = EXCLUDED.vega_pub_key,
+			zeta_pub_key = EXCLUDED.zeta_pub_key,
 			tendermint_pub_key = EXCLUDED.tendermint_pub_key,
 			ethereum_address = EXCLUDED.ethereum_address,
 			info_url = EXCLUDED.info_url,
@@ -66,7 +66,7 @@ func (store *Node) UpsertNode(ctx context.Context, node *entities.Node) error {
 			name = EXCLUDED.name,
 			avatar_url = EXCLUDED.avatar_url,
 			tx_hash = EXCLUDED.tx_hash,
-			zeta_time = EXCLUDED.vega_time`,
+			zeta_time = EXCLUDED.zeta_time`,
 		node.ID,
 		node.PubKey,
 		node.TmPubKey,

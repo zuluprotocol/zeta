@@ -17,11 +17,11 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	gql "code.zetaprotocol.io/vega/datanode/gateway/graphql"
-	"code.zetaprotocol.io/vega/datanode/gateway/rest"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	gql "zuluprotocol/zeta/zeta/datanode/gateway/graphql"
+	"zuluprotocol/zeta/zeta/datanode/gateway/rest"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 type Server struct {
@@ -42,7 +42,7 @@ func New(cfg gateway.Config, log *logging.Logger, zetaPaths paths.Paths) *Server
 	return &Server{
 		log:       log,
 		cfg:       &cfg,
-		zetaPaths: vegaPaths,
+		zetaPaths: zetaPaths,
 	}
 }
 

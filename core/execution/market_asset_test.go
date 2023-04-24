@@ -13,9 +13,9 @@
 package execution_test
 
 import (
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/assets/common"
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/assets/common"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 type isAssetStub struct {

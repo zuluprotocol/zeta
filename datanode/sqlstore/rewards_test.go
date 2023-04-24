@@ -26,9 +26,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func addTestReward(t *testing.T,
@@ -54,7 +54,7 @@ func addTestReward(t *testing.T,
 		Amount:         amount,
 		PercentOfTotal: 0.2,
 		Timestamp:      timestamp.Truncate(time.Microsecond),
-		ZetaTime:       block.VegaTime,
+		ZetaTime:       block.ZetaTime,
 		SeqNum:         seqNum,
 	}
 	err := rs.Add(ctx, r)
@@ -436,10 +436,10 @@ func populateTestRewards(ctx context.Context, t *testing.T, bs *sqlstore.Blocks,
 	}
 
 	b := addTestBlock(t, ctx, bs)
-	err := ps.Add(ctx, entities.Party{ID: partyID, ZetaTime: &b.VegaTime})
+	err := ps.Add(ctx, entities.Party{ID: partyID, ZetaTime: &b.ZetaTime})
 	require.NoError(t, err)
 
-	err = as.Add(ctx, entities.Asset{ID: assetID, ZetaTime: b.VegaTime})
+	err = as.Add(ctx, entities.Asset{ID: assetID, ZetaTime: b.ZetaTime})
 	require.NoError(t, err)
 
 	for _, reward := range rewards {

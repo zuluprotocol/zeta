@@ -18,10 +18,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"code.zetaprotocol.io/vega/cmd/vega/verify"
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/genesis"
-	"code.zetaprotocol.io/vega/core/validators"
+	"zuluprotocol/zeta/zeta/cmd/zeta/verify"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/genesis"
+	"zuluprotocol/zeta/zeta/core/validators"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

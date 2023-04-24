@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -32,7 +32,7 @@ func addTestNode(t *testing.T, ctx context.Context, ps *sqlstore.Node, block ent
 		PubKey:          entities.ZetaPublicKey(helpers.GenerateID()),
 		TmPubKey:        entities.TendermintPublicKey(generateTendermintPublicKey()),
 		EthereumAddress: entities.EthereumAddress(generateEthereumAddress()),
-		ZetaTime:        block.VegaTime,
+		ZetaTime:        block.ZetaTime,
 		Status:          entities.NodeStatusNonValidator,
 	}
 
@@ -79,7 +79,7 @@ func TestUpdateNodePubKey(t *testing.T) {
 		NodeID:    node1.ID,
 		OldPubKey: node1.PubKey,
 		NewPubKey: entities.ZetaPublicKey(helpers.GenerateID()),
-		ZetaTime:  block.VegaTime,
+		ZetaTime:  block.ZetaTime,
 	}
 
 	ns.UpdatePublicKey(ctx, &kr)
@@ -108,7 +108,7 @@ func TestGetNodes(t *testing.T) {
 			PreviousStatus:   entities.ValidatorNodeStatusErsatz,
 			Status:           entities.ValidatorNodeStatusTendermint,
 			EpochSeq:         3,
-			ZetaTime:         block.VegaTime,
+			ZetaTime:         block.ZetaTime,
 		})
 
 	// get all nodes
@@ -200,7 +200,7 @@ func TestGetNodeData(t *testing.T) {
 			PreviousStatus:   entities.ValidatorNodeStatusPending,
 			Status:           entities.ValidatorNodeStatusErsatz,
 			EpochSeq:         2,
-			ZetaTime:         block.VegaTime,
+			ZetaTime:         block.ZetaTime,
 		})
 	addRankingScore(t, ctx, ns, node1,
 		entities.RankingScore{
@@ -209,7 +209,7 @@ func TestGetNodeData(t *testing.T) {
 			PreviousStatus:   entities.ValidatorNodeStatusErsatz,
 			Status:           entities.ValidatorNodeStatusTendermint,
 			EpochSeq:         3,
-			ZetaTime:         block.VegaTime,
+			ZetaTime:         block.ZetaTime,
 		})
 	addRankingScore(t, ctx, ns, node1,
 		entities.RankingScore{
@@ -218,7 +218,7 @@ func TestGetNodeData(t *testing.T) {
 			PreviousStatus:   entities.ValidatorNodeStatusTendermint,
 			Status:           entities.ValidatorNodeStatusPending,
 			EpochSeq:         4,
-			ZetaTime:         block.VegaTime,
+			ZetaTime:         block.ZetaTime,
 		})
 
 	// node 2 is always a happy tendermint node
@@ -229,7 +229,7 @@ func TestGetNodeData(t *testing.T) {
 			PreviousStatus:   entities.ValidatorNodeStatusTendermint,
 			Status:           entities.ValidatorNodeStatusTendermint,
 			EpochSeq:         uint64(i),
-			ZetaTime:         block.VegaTime,
+			ZetaTime:         block.ZetaTime,
 		})
 	}
 

@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"strings"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	proto "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/libs/num"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type LiquidityProvisionStatus = proto.LiquidityProvision_Status
@@ -173,10 +173,10 @@ type LiquidityProvision struct {
 	// Unique party identifier for the creator of the provision
 	Party string
 	// Timestamp for when the order was created at, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	CreatedAt int64
 	// Timestamp for when the order was updated at, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	UpdatedAt int64
 	// Market identifier for the order, required field
 	MarketID string

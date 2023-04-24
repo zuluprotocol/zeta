@@ -24,7 +24,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
@@ -35,8 +35,8 @@ import (
 	"github.com/pressly/goose/v3"
 	"github.com/shopspring/decimal"
 
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var ErrBadID = errors.New("bad id (must be hex string)")
@@ -283,7 +283,7 @@ type DatanodeBlockSpan struct {
 }
 
 func GetDatanodeBlockSpan(ctx context.Context, connPool *pgxpool.Pool) (DatanodeBlockSpan, error) {
-	hasZetaSchema, err := HasVegaSchema(ctx, connPool)
+	hasZetaSchema, err := HasZetaSchema(ctx, connPool)
 	if err != nil {
 		return DatanodeBlockSpan{}, fmt.Errorf("failed to get check is database if empty:%w", err)
 	}

@@ -15,9 +15,9 @@ package nodewallet
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/admin"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/admin"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
 
 	"github.com/fatih/color"
 	"github.com/jessevdk/go-flags"
@@ -63,7 +63,7 @@ func NodeWallet(ctx context.Context, parser *flags.Parser) error {
 		short = "Manages the node wallet"
 		long  = `The nodewallet is a wallet owned by the zeta node, it contains all
 	the information to login to other wallets from external blockchain that
-	zeta will need to run properly (e.g and ethereum wallet, which allow vega
+	zeta will need to run properly (e.g and ethereum wallet, which allow zeta
 	to sign transaction to be verified on the ethereum blockchain) available
 	wallet: eth, zeta`
 	)

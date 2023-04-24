@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/paths"
 	"golang.org/x/crypto/acme/autocert"
 )
 

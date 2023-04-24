@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/shopspring/decimal"
@@ -39,7 +39,7 @@ func addTestDelegation(t *testing.T, ctx context.Context, ds *sqlstore.Delegatio
 		NodeID:   node.ID,
 		EpochID:  epochID,
 		Amount:   decimal.NewFromInt(100),
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		SeqNum:   seqNum,
 	}
 	err := ds.Add(ctx, r)

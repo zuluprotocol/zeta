@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/shopspring/decimal"
 	"google.golang.org/protobuf/encoding/protojson"
 )
@@ -119,7 +119,7 @@ type NodeData struct {
 func NodeFromValidatorUpdateEvent(evt eventspb.ValidatorUpdate, txHash TxHash, zetaTime time.Time) (Node, ValidatorUpdateAux, error) {
 	return Node{
 			ID:              NodeID(evt.NodeId),
-			PubKey:          ZetaPublicKey(evt.VegaPubKey),
+			PubKey:          ZetaPublicKey(evt.ZetaPubKey),
 			TmPubKey:        TendermintPublicKey(evt.TmPubKey),
 			EthereumAddress: EthereumAddress(evt.EthereumAddress),
 			InfoURL:         evt.InfoUrl,
@@ -143,7 +143,7 @@ func NodeFromValidatorUpdateEvent(evt eventspb.ValidatorUpdate, txHash TxHash, z
 		}, ValidatorUpdateAux{
 			Added:           evt.Added,
 			EpochSeq:        evt.EpochSeq,
-			ZetaPubKeyIndex: evt.VegaPubKeyIndex,
+			ZetaPubKeyIndex: evt.ZetaPubKeyIndex,
 			TxHash:          txHash,
 		}, nil
 }
@@ -269,7 +269,7 @@ func (rs *RewardScore) ToProto() *zeta.RewardScore {
 	}
 }
 
-func NodeFromProto(node *zeta.Node, txHash TxHash, vegaTime time.Time) (Node, error) {
+func NodeFromProto(node *zeta.Node, txHash TxHash, zetaTime time.Time) (Node, error) {
 	stakedByOperator, err := decimal.NewFromString(node.StakedByOperator)
 	if err != nil {
 		return Node{}, err

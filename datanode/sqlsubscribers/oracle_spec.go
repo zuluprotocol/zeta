@@ -17,9 +17,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type OracleSpecEvent interface {

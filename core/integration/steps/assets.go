@@ -13,7 +13,7 @@
 package steps
 
 import (
-	"code.zetaprotocol.io/vega/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
 
 	"github.com/cucumber/godog"
 )

@@ -6,11 +6,11 @@ import (
 	"io"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	zeta "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 	"google.golang.org/grpc"
 )
 
@@ -49,7 +49,7 @@ func (r *myMarketDataResolver) AuctionStart(_ context.Context, m *types.MarketDa
 	if m.AuctionStart <= 0 {
 		return nil, nil
 	}
-	s := zetatime.Format(vegatime.UnixNano(m.AuctionStart))
+	s := zetatime.Format(zetatime.UnixNano(m.AuctionStart))
 	return &s, nil
 }
 
@@ -57,7 +57,7 @@ func (r *myMarketDataResolver) AuctionEnd(_ context.Context, m *types.MarketData
 	if m.AuctionEnd <= 0 {
 		return nil, nil
 	}
-	s := zetatime.Format(vegatime.UnixNano(m.AuctionEnd))
+	s := zetatime.Format(zetatime.UnixNano(m.AuctionEnd))
 	return &s, nil
 }
 
@@ -118,7 +118,7 @@ func (r *myMarketDataResolver) MarkPrice(_ context.Context, m *types.MarketData)
 }
 
 func (r *myMarketDataResolver) Timestamp(_ context.Context, m *types.MarketData) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(m.Timestamp)), nil
+	return zetatime.Format(zetatime.UnixNano(m.Timestamp)), nil
 }
 
 func (r *myMarketDataResolver) Commitments(ctx context.Context, m *types.MarketData) (*MarketDataCommitments, error) {
@@ -192,7 +192,7 @@ func (r *myMarketDataResolver) LiquidityProviderFeeShare(_ context.Context, m *t
 }
 
 func (r *myMarketDataResolver) NextMarkToMarket(_ context.Context, m *types.MarketData) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(m.NextMarkToMarket)), nil
+	return zetatime.Format(zetatime.UnixNano(m.NextMarkToMarket)), nil
 }
 
 type myObservableMarketDataResolver myMarketDataResolver

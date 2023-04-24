@@ -362,7 +362,7 @@ type TradingDataServiceClient interface {
 	// Zeta Time
 	//
 	// Get the current time of the network, displayed as a Unix timestamp in nano seconds
-	GetZetaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error)
+	GetZetaTime(ctx context.Context, in *GetZetaTimeRequest, opts ...grpc.CallOption) (*GetZetaTimeResponse, error)
 	// Protocol upgrade status
 	//
 	// Get status of a protocol upgrade
@@ -1472,7 +1472,7 @@ func (c *tradingDataServiceClient) ListEthereumKeyRotations(ctx context.Context,
 	return out, nil
 }
 
-func (c *tradingDataServiceClient) GetZetaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error) {
+func (c *tradingDataServiceClient) GetZetaTime(ctx context.Context, in *GetZetaTimeRequest, opts ...grpc.CallOption) (*GetZetaTimeResponse, error) {
 	out := new(GetZetaTimeResponse)
 	err := c.cc.Invoke(ctx, "/datanode.api.v2.TradingDataService/GetZetaTime", in, out, opts...)
 	if err != nil {
@@ -1906,7 +1906,7 @@ type TradingDataServiceServer interface {
 	// Zeta Time
 	//
 	// Get the current time of the network, displayed as a Unix timestamp in nano seconds
-	GetZetaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error)
+	GetZetaTime(context.Context, *GetZetaTimeRequest) (*GetZetaTimeResponse, error)
 	// Protocol upgrade status
 	//
 	// Get status of a protocol upgrade
@@ -2183,7 +2183,7 @@ func (UnimplementedTradingDataServiceServer) ListKeyRotations(context.Context, *
 func (UnimplementedTradingDataServiceServer) ListEthereumKeyRotations(context.Context, *ListEthereumKeyRotationsRequest) (*ListEthereumKeyRotationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListEthereumKeyRotations not implemented")
 }
-func (UnimplementedTradingDataServiceServer) GetZetaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error) {
+func (UnimplementedTradingDataServiceServer) GetZetaTime(context.Context, *GetZetaTimeRequest) (*GetZetaTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetZetaTime not implemented")
 }
 func (UnimplementedTradingDataServiceServer) GetProtocolUpgradeStatus(context.Context, *GetProtocolUpgradeStatusRequest) (*GetProtocolUpgradeStatusResponse, error) {
@@ -3678,7 +3678,7 @@ func _TradingDataService_GetZetaTime_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/datanode.api.v2.TradingDataService/GetZetaTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingDataServiceServer).GetZetaTime(ctx, req.(*GetVegaTimeRequest))
+		return srv.(TradingDataServiceServer).GetZetaTime(ctx, req.(*GetZetaTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

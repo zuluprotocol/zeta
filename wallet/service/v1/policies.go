@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	v1 "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
 )
 
 type ConsentConfirmation struct {

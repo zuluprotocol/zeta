@@ -3,9 +3,9 @@ package commands_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/commands"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/proto"

@@ -16,14 +16,14 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/events"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/stretchr/testify/assert"
 )
 
 const (
 	nodeID             = "zeta-master-public-key"
-	zetaPublicKey      = "vega-public-key"
+	zetaPublicKey      = "zeta-public-key"
 	zetaPublicKeyIndex = 1
 	ethAddress         = "eth-address"
 	tmPublicKey        = "tm-public-key"
@@ -38,35 +38,35 @@ const (
 func TestValidatorUpdate(t *testing.T) {
 	t.Run("returns public key", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		assert.Equal(t, zetaPublicKey, vu.ZetaPublicKey())
 	})
 
 	t.Run("returns Tendermint public key", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		assert.Equal(t, tmPublicKey, vu.TendermintPublicKey())
 	})
 
 	t.Run("returns info url", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		assert.Equal(t, infoURL, vu.InfoURL())
 	})
 
 	t.Run("returns country", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		assert.Equal(t, country, vu.Country())
 	})
 
 	t.Run("returns validator update event proto", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		expected := eventspb.ValidatorUpdate{
 			NodeId:          nodeID,
@@ -88,7 +88,7 @@ func TestValidatorUpdate(t *testing.T) {
 
 	t.Run("returns stream message with validator update", func(t *testing.T) {
 		ctx := context.Background()
-		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, vegaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
+		vu := events.NewValidatorUpdateEvent(ctx, nodeID, zetaPublicKey, zetaPublicKeyIndex, ethAddress, tmPublicKey, infoURL, country, name, avatarURL, fromEpoch, true, epochSeq)
 
 		vuProto := eventspb.ValidatorUpdate{
 			NodeId:          nodeID,

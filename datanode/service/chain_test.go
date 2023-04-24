@@ -20,9 +20,9 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/datanode/service/mocks"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/datanode/service/mocks"
 )
 
 func TestChainService(t *testing.T) {

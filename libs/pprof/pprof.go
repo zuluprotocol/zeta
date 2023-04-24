@@ -26,9 +26,9 @@ import (
 	"runtime"
 	"runtime/pprof"
 
-	"code.zetaprotocol.io/vega/libs/config/encoding"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/libs/config/encoding"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/felixge/fgprof"
 )
 

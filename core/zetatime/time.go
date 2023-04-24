@@ -15,7 +15,7 @@ package zetatime
 import (
 	"time"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 // Unix create a new time from sec and nsec in UTC timezone.

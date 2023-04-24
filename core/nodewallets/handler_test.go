@@ -18,10 +18,10 @@ package nodewallets_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	vgtesting "code.zetaprotocol.io/vega/libs/testing"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgtesting "zuluprotocol/zeta/zeta/libs/testing"
+	"zuluprotocol/zeta/zeta/paths"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -31,20 +31,20 @@ func TestHandler(t *testing.T) {
 	t.Run("Getting node wallets with wrong registry passphrase fails", testHandlerGettingNodeWalletsWithWrongRegistryPassphraseFails)
 	t.Run("Getting Ethereum wallet succeeds", testHandlerGettingEthereumWalletSucceeds)
 	t.Run("Getting Ethereum wallet succeeds", testHandlerGettingEthereumWalletWithWrongRegistryPassphraseFails)
-	t.Run("Getting Zeta wallet succeeds", testHandlerGettingVegaWalletSucceeds)
-	t.Run("Getting Zeta wallet succeeds", testHandlerGettingVegaWalletWithWrongRegistryPassphraseFails)
+	t.Run("Getting Zeta wallet succeeds", testHandlerGettingZetaWalletSucceeds)
+	t.Run("Getting Zeta wallet succeeds", testHandlerGettingZetaWalletWithWrongRegistryPassphraseFails)
 	t.Run("Generating Ethereum wallet succeeds", testHandlerGeneratingEthereumWalletSucceeds)
 	t.Run("Generating an already existing Ethereum wallet fails", testHandlerGeneratingAlreadyExistingEthereumWalletFails)
 	t.Run("Generating Ethereum wallet with overwrite succeeds", testHandlerGeneratingEthereumWalletWithOverwriteSucceeds)
-	t.Run("Generating Zeta wallet succeeds", testHandlerGeneratingVegaWalletSucceeds)
-	t.Run("Generating an already existing Zeta wallet fails", testHandlerGeneratingAlreadyExistingVegaWalletFails)
-	t.Run("Generating Zeta wallet with overwrite succeeds", testHandlerGeneratingVegaWalletWithOverwriteSucceeds)
+	t.Run("Generating Zeta wallet succeeds", testHandlerGeneratingZetaWalletSucceeds)
+	t.Run("Generating an already existing Zeta wallet fails", testHandlerGeneratingAlreadyExistingZetaWalletFails)
+	t.Run("Generating Zeta wallet with overwrite succeeds", testHandlerGeneratingZetaWalletWithOverwriteSucceeds)
 	t.Run("Importing Ethereum wallet succeeds", testHandlerImportingEthereumWalletSucceeds)
 	t.Run("Importing an already existing Ethereum wallet fails", testHandlerImportingAlreadyExistingEthereumWalletFails)
 	t.Run("Importing Ethereum wallet with overwrite succeeds", testHandlerImportingEthereumWalletWithOverwriteSucceeds)
-	t.Run("Importing Zeta wallet succeeds", testHandlerImportingVegaWalletSucceeds)
-	t.Run("Importing an already existing Zeta wallet fails", testHandlerImportingAlreadyExistingVegaWalletFails)
-	t.Run("Importing Zeta wallet with overwrite succeeds", testHandlerImportingVegaWalletWithOverwriteSucceeds)
+	t.Run("Importing Zeta wallet succeeds", testHandlerImportingZetaWalletSucceeds)
+	t.Run("Importing an already existing Zeta wallet fails", testHandlerImportingAlreadyExistingZetaWalletFails)
+	t.Run("Importing Zeta wallet with overwrite succeeds", testHandlerImportingZetaWalletWithOverwriteSucceeds)
 }
 
 func testHandlerGettingNodeWalletsSucceeds(t *testing.T) {
@@ -310,7 +310,7 @@ func testHandlerGeneratingZetaWalletWithOverwriteSucceeds(t *testing.T) {
 
 func testHandlerImportingEthereumWalletSucceeds(t *testing.T) {
 	// given
-	genZetaPaths, genCleanupFn := vgtesting.NewVegaPaths()
+	genZetaPaths, genCleanupFn := vgtesting.NewZetaPaths()
 	defer genCleanupFn()
 	registryPass := vgrand.RandomStr(10)
 	walletPass := vgrand.RandomStr(10)
@@ -322,7 +322,7 @@ func testHandlerImportingEthereumWalletSucceeds(t *testing.T) {
 	require.NoError(t, err)
 
 	// given
-	importZetaPaths, importCleanupFn := vgtesting.NewVegaPaths()
+	importZetaPaths, importCleanupFn := vgtesting.NewZetaPaths()
 	defer importCleanupFn()
 
 	// when
@@ -383,23 +383,23 @@ func testHandlerImportingEthereumWalletWithOverwriteSucceeds(t *testing.T) {
 
 func testHandlerImportingZetaWalletSucceeds(t *testing.T) {
 	// given
-	genZetaPaths, genCleanupFn := vgtesting.NewVegaPaths()
+	genZetaPaths, genCleanupFn := vgtesting.NewZetaPaths()
 	defer genCleanupFn()
 	registryPass := vgrand.RandomStr(10)
 	walletPass := vgrand.RandomStr(10)
 
 	// when
-	genData, err := nodewallets.GenerateZetaWallet(genVegaPaths, registryPass, walletPass, false)
+	genData, err := nodewallets.GenerateZetaWallet(genZetaPaths, registryPass, walletPass, false)
 
 	// then
 	require.NoError(t, err)
 
 	// given
-	importZetaPaths, importCleanupFn := vgtesting.NewVegaPaths()
+	importZetaPaths, importCleanupFn := vgtesting.NewZetaPaths()
 	defer importCleanupFn()
 
 	// when
-	importData, err := nodewallets.ImportZetaWallet(importVegaPaths, registryPass, walletPass, genData["walletFilePath"], false)
+	importData, err := nodewallets.ImportZetaWallet(importZetaPaths, registryPass, walletPass, genData["walletFilePath"], false)
 
 	// then
 	require.NoError(t, err)

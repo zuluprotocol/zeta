@@ -3,12 +3,12 @@ syntax = "proto3";
 package zeta.api.v1;
 
 
-import "zeta/vega.proto";
+import "zeta/zeta.proto";
 import "zeta/events/v1/events.proto";
 import "zeta/commands/v1/transaction.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "code.zetaprotocol.io/vega/protos/vega/api/v1";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta/api/v1";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {
@@ -44,7 +44,7 @@ service CoreService {
   // Zeta time
   //
   // Get current Zeta time
-  rpc GetZetaTime(GetVegaTimeRequest) returns (GetVegaTimeResponse);
+  rpc GetZetaTime(GetZetaTimeRequest) returns (GetZetaTimeResponse);
 
   // Events subscription
   //
@@ -211,7 +211,7 @@ message CheckRawTransactionResponse {
 // Request for the current time of the zeta network
 message GetZetaTimeRequest {}
 
-// Response for the current consensus coordinated time on the Zeta network, referred to as "VegaTime"
+// Response for the current consensus coordinated time on the Zeta network, referred to as "ZetaTime"
 message GetZetaTimeResponse {
   // Timestamp representation of current ZetaTime as represented in
   // Nanoseconds since the epoch, for example `1580473859111222333` corresponds to `2020-01-31T12:30:59.111222333Z`

@@ -16,15 +16,15 @@ import (
 
 	"github.com/libp2p/go-libp2p-core/peer"
 
-	"code.zetaprotocol.io/vega/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
 
 	"github.com/ipfs/kubo/repo"
 
 	"github.com/ipfs/kubo/core/corerepo"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/fsutil"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/fsutil"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/ipfs/kubo/core/node/libp2p"
 	"github.com/ipfs/kubo/repo/fsrepo"
 

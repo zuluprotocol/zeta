@@ -19,10 +19,10 @@ import (
 	"sort"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
 )
 
 var ErrUnsupportedTransferKind = errors.New("unsupported transfer kind")

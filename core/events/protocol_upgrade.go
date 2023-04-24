@@ -15,7 +15,7 @@ package events
 import (
 	"context"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type ProtocolUpgradeProposalEvent struct {
@@ -38,7 +38,7 @@ func NewProtocolUpgradeProposalEvent(ctx context.Context, upgradeBlockHeight uin
 
 func (pup ProtocolUpgradeProposalEvent) Proto() eventspb.ProtocolUpgradeEvent {
 	return eventspb.ProtocolUpgradeEvent{
-		ZetaReleaseTag:     pup.VegaReleaseTag,
+		ZetaReleaseTag:     pup.ZetaReleaseTag,
 		UpgradeBlockHeight: pup.UpgradeBlockHeight,
 		Approvers:          pup.AcceptedBy,
 		Status:             pup.ProposalStatus,
@@ -68,7 +68,7 @@ func ProtocolUpgradeProposalEventFromStream(ctx context.Context, be *eventspb.Bu
 	return &ProtocolUpgradeProposalEvent{
 		Base:               newBaseFromBusEvent(ctx, ProtocolUpgradeEvent, be),
 		UpgradeBlockHeight: event.UpgradeBlockHeight,
-		ZetaReleaseTag:     event.VegaReleaseTag,
+		ZetaReleaseTag:     event.ZetaReleaseTag,
 		AcceptedBy:         event.Approvers,
 		ProposalStatus:     event.Status,
 	}

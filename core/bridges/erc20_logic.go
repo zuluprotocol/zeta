@@ -18,7 +18,7 @@ import (
 	"math/big"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	ethcmn "github.com/ethereum/go-ethereum/common"
@@ -90,9 +90,9 @@ func (e ERC20Logic) ListAsset(
 	})
 
 	tokenAddressEth := ethcmn.HexToAddress(tokenAddress)
-	zetaAssetIDBytes, _ := hex.DecodeString(vegaAssetID)
+	zetaAssetIDBytes, _ := hex.DecodeString(zetaAssetID)
 	var zetaAssetIDArray [32]byte
-	copy(zetaAssetIDArray[:], vegaAssetIDBytes[:32])
+	copy(zetaAssetIDArray[:], zetaAssetIDBytes[:32])
 	buf, err := args.Pack([]interface{}{
 		tokenAddressEth,
 		zetaAssetIDArray,

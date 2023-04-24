@@ -16,6 +16,6 @@ package core
 // this is just here so this package contains
 // actual go code (not only test files) and can
 // and lsp go does not fail with:
-// go build code.zetaprotocol.io/vega/core/integration: no non-test
+// go build zuluprotocol/zeta/zeta/core/integration: no non-test
 // Go files in .../zeta/integration.
 func Noop() {}

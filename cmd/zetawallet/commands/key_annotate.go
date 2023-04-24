@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"io"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/cli"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/printer"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 
 	"github.com/spf13/cobra"
 )

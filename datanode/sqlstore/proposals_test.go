@@ -23,11 +23,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 func addTestProposal(
@@ -49,7 +49,7 @@ func addTestProposal(
 		Reference:               reference,
 		Terms:                   terms,
 		State:                   state,
-		ZetaTime:                block.VegaTime,
+		ZetaTime:                block.ZetaTime,
 		ProposalTime:            block.ZetaTime,
 		Rationale:               rationale,
 		RequiredMajority:        num.MustDecimalFromString("0.5"),
@@ -68,13 +68,13 @@ func proposalLessThan(x, y entities.Proposal) bool {
 func assertProposalsMatch(t *testing.T, expected, actual []entities.Proposal) {
 	t.Helper()
 	sortProposals := cmpopts.SortSlices(proposalLessThan)
-	ignoreProtoState := cmpopts.IgnoreUnexported(zeta.ProposalTerms{}, vega.ProposalRationale{}, vega.NewMarket{}, vega.NewAsset{})
+	ignoreProtoState := cmpopts.IgnoreUnexported(zeta.ProposalTerms{}, zeta.ProposalRationale{}, zeta.NewMarket{}, zeta.NewAsset{})
 	assert.Empty(t, cmp.Diff(actual, expected, sortProposals, ignoreProtoState))
 }
 
 func assertProposalMatch(t *testing.T, expected, actual entities.Proposal) {
 	t.Helper()
-	ignoreProtoState := cmpopts.IgnoreUnexported(zeta.ProposalTerms{}, vega.ProposalRationale{}, vega.NewMarket{}, vega.NewAsset{})
+	ignoreProtoState := cmpopts.IgnoreUnexported(zeta.ProposalTerms{}, zeta.ProposalRationale{}, zeta.NewMarket{}, zeta.NewAsset{})
 	assert.Empty(t, cmp.Diff(actual, expected, ignoreProtoState))
 }
 
@@ -90,8 +90,8 @@ func TestProposals(t *testing.T) {
 	party2 := addTestParty(t, ctx, partyStore, block1)
 	rationale1 := entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl1.com", Description: "desc"}}
 	rationale2 := entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl2.com", Description: "desc"}}
-	terms1 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &vega.ProposalTerms_NewMarket{NewMarket: &vega.NewMarket{}}}}
-	terms2 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &vega.ProposalTerms_NewAsset{NewAsset: &vega.NewAsset{}}}}
+	terms1 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewMarket{NewMarket: &zeta.NewMarket{}}}}
+	terms2 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewAsset{NewAsset: &zeta.NewAsset{}}}}
 	id1 := helpers.GenerateID()
 	id2 := helpers.GenerateID()
 
@@ -925,8 +925,8 @@ func createPaginationTestProposals(t *testing.T, ctx context.Context, pps *sqlst
 		ref2 := fmt.Sprintf("cafed00d%02d", i+10)
 		rationale1 := entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: fmt.Sprintf("https://rationale1-%02d.com", i), Description: "desc"}}
 		rationale2 := entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: fmt.Sprintf("https://rationale1-%02d.com", i+10), Description: "desc"}}
-		terms1 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &vega.ProposalTerms_NewMarket{NewMarket: &vega.NewMarket{}}}}
-		terms2 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &vega.ProposalTerms_NewAsset{NewAsset: &vega.NewAsset{}}}}
+		terms1 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewMarket{NewMarket: &zeta.NewMarket{}}}}
+		terms2 := entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewAsset{NewAsset: &zeta.NewAsset{}}}}
 
 		proposals[i] = addTestProposal(t, ctx, pps, id1, parties[0], ref1, block, states[i], rationale1, terms1)
 		proposals[i+10] = addTestProposal(t, ctx, pps, id2, parties[1], ref2, block2, states[i], rationale2, terms2)

@@ -16,8 +16,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
@@ -111,7 +111,7 @@ func TestTradeFromProto(t *testing.T) {
 	}
 
 	assert.Equal(t, testZetaTime.Add(5*time.Microsecond), trade.SyntheticTime)
-	assert.Equal(t, testZetaTime, trade.VegaTime)
+	assert.Equal(t, testZetaTime, trade.ZetaTime)
 	assert.Equal(t, uint64(5), trade.SeqNum)
 
 	assert.Equal(t, tradeEventProto.Id, trade.ID.String())

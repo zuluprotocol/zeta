@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/network"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/network"
 
 	"github.com/mitchellh/mapstructure"
 )

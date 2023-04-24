@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/libs/num"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/libs/num"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -425,7 +425,7 @@ func addStakeLinking(t *testing.T, ctx context.Context, ls *sqlstore.StakeLinkin
 		ForeignTxHash:      helpers.GenerateID(),
 		LogIndex:           logIndex,
 		EthereumAddress:    "0xfe179560b9d0cc44c5fea54c2167c1cee7ccfcabf294752a4f43fb64ddffda85",
-		ZetaTime:           block.VegaTime,
+		ZetaTime:           block.ZetaTime,
 	}
 
 	ls.Upsert(ctx, &l)

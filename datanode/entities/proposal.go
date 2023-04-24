@@ -19,10 +19,10 @@ import (
 
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/ptr"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type ProposalType v2.ListGovernanceDataRequest_Type
@@ -121,7 +121,7 @@ func (p *Proposal) ToProto() *zeta.Proposal {
 func (p Proposal) Cursor() *Cursor {
 	pc := ProposalCursor{
 		State:    p.State,
-		ZetaTime: p.VegaTime,
+		ZetaTime: p.ZetaTime,
 		ID:       p.ID,
 	}
 	return NewCursor(pc.String())

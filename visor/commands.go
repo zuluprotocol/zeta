@@ -3,7 +3,7 @@ package visor
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/visor/utils"
+	"zuluprotocol/zeta/zeta/visor/utils"
 )
 
 const (

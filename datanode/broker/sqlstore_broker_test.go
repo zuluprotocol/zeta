@@ -19,15 +19,15 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/service"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/logging"
-	eventsv1 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/logging"
+	eventsv1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 
@@ -556,7 +556,7 @@ func newTestSQLBrokerSubscriber(eventType events.Type) *testSQLBrokerSubscriber 
 }
 
 func (t *testSQLBrokerSubscriber) SetZetaTime(zetaTime time.Time) {
-	t.zetaTimeCh <- vegaTime
+	t.zetaTimeCh <- zetaTime
 }
 
 func (t *testSQLBrokerSubscriber) Flush(ctx context.Context) error {
@@ -605,7 +605,7 @@ func (s *blockEventSource) NextEndBlockEvent() *events.EndBlock {
 		Height: uint64(s.blockHeight),
 	})
 
-	s.zetaTime = s.vegaTime.Add(1 * time.Second)
+	s.zetaTime = s.zetaTime.Add(1 * time.Second)
 	s.blockHeight++
 
 	return event

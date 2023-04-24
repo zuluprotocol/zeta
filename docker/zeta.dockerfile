@@ -3,7 +3,7 @@ RUN apk add --no-cache git
 ENV CGO_ENABLED=0
 WORKDIR /src
 ADD . .
-RUN go build -o /build/zeta ./cmd/vega
+RUN go build -o /build/zeta ./cmd/zeta
 
 FROM alpine:3.16
 ENTRYPOINT ["zeta"]

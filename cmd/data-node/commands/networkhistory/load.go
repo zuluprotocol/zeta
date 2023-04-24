@@ -7,20 +7,20 @@ import (
 	"strconv"
 	"time"
 
-	vgterm "code.zetaprotocol.io/vega/libs/term"
+	vgterm "zuluprotocol/zeta/zeta/libs/term"
 
 	"go.uber.org/zap"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 
-	"code.zetaprotocol.io/vega/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/config"
 )
 
 type loadCmd struct {

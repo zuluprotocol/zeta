@@ -4,9 +4,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	wcrypto "code.zetaprotocol.io/vega/wallet/crypto"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	wcrypto "zuluprotocol/zeta/zeta/wallet/crypto"
 
 	"github.com/golang/protobuf/proto"
 )

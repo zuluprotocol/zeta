@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package zeta.commands.v1;
-option go_package = "code.zetaprotocol.io/vega/protos/vega/commands/v1";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta/commands/v1";
 
 import "zeta/commands/v1/commands.proto";
 import "zeta/commands/v1/validator_commands.proto";

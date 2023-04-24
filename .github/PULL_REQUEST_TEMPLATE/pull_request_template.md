@@ -2,7 +2,7 @@ Please remember to create a new branch on github.com/zetaprotocol/system-tests i
 
 Closes #num 
 
-Closes zetaprotocol/vega-repo#num 
+Closes zetaprotocol/zeta-repo#num 
 
 ### Connected Changes
 

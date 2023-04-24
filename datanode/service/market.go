@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 )
 
 var nilPagination = entities.OffsetPagination{}

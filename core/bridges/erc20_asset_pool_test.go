@@ -15,8 +15,8 @@ package bridges_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/bridges"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/bridges"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/stretchr/testify/assert"
 )

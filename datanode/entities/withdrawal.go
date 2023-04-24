@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"google.golang.org/protobuf/encoding/protojson"
 )
@@ -42,7 +42,7 @@ type Withdrawal struct {
 	ZetaTime           time.Time
 }
 
-func WithdrawalFromProto(withdrawal *zeta.Withdrawal, txHash TxHash, vegaTime time.Time) (*Withdrawal, error) {
+func WithdrawalFromProto(withdrawal *zeta.Withdrawal, txHash TxHash, zetaTime time.Time) (*Withdrawal, error) {
 	var err error
 	var amount decimal.Decimal
 
@@ -83,7 +83,7 @@ func (w Withdrawal) ToProto() *zeta.Withdrawal {
 
 func (w Withdrawal) Cursor() *Cursor {
 	wc := WithdrawalCursor{
-		ZetaTime: w.VegaTime,
+		ZetaTime: w.ZetaTime,
 		ID:       w.ID,
 	}
 	return NewCursor(wc.String())

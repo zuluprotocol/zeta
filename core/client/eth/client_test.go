@@ -23,9 +23,9 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/core/client/eth"
-	"code.zetaprotocol.io/vega/core/client/eth/mocks"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/client/eth"
+	"zuluprotocol/zeta/zeta/core/client/eth/mocks"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 func TestNullChain(t *testing.T) {

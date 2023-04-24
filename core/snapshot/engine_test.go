@@ -17,13 +17,13 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/snapshot"
-	"code.zetaprotocol.io/vega/core/snapshot/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	tmocks "code.zetaprotocol.io/vega/core/types/mocks"
-	zetactx "code.vegaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/snapshot"
+	"zuluprotocol/zeta/zeta/core/snapshot/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	tmocks "zuluprotocol/zeta/zeta/core/types/mocks"
+	zetactx "code.zetaprotocol.io/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/cosmos/iavl"
 	"github.com/golang/mock/gomock"
@@ -54,7 +54,7 @@ func getTestEngine(t *testing.T) *tstEngine {
 	if err := eng.ClearAndInitialise(); err != nil {
 		t.Fatalf("couldn't clear and initialise snapshot engine for tests: %v", err)
 	}
-	ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, 1), "0xDEADBEEF")
+	ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, 1), "0xDEADBEEF")
 	return &tstEngine{
 		ctx:    ctx,
 		cfunc:  cfunc,
@@ -521,7 +521,7 @@ func TestUpdateInterval(t *testing.T) {
 	}
 	e.time.EXPECT().GetTimeNow().Times(1).Return(time.Now())
 	ctx := zetactx.WithChainID(context.Background(), "chain-id")
-	ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, 10), "0xDEADBEEF")
+	ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, 10), "0xDEADBEEF")
 	b, error := e.Snapshot(ctx)
 	require.NotNil(t, b)
 	require.NoError(t, error)
@@ -536,7 +536,7 @@ func TestUpdateInterval(t *testing.T) {
 	}
 	e.time.EXPECT().GetTimeNow().Times(1).Return(time.Now())
 	ctx = zetactx.WithChainID(context.Background(), "chain-id")
-	ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, 15), "0xDEADBEEF")
+	ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, 15), "0xDEADBEEF")
 	b, error = e.Snapshot(ctx)
 	require.NotNil(t, b)
 	require.NoError(t, error)
@@ -555,7 +555,7 @@ func TestUpdateInterval(t *testing.T) {
 	}
 	e.time.EXPECT().GetTimeNow().Times(1).Return(time.Now())
 	ctx = zetactx.WithChainID(context.Background(), "chain-id")
-	ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, 30), "0xDEADBEEF")
+	ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, 30), "0xDEADBEEF")
 	b, error = e.Snapshot(ctx)
 	require.NotNil(t, b)
 	require.NoError(t, error)
@@ -564,7 +564,7 @@ func TestUpdateInterval(t *testing.T) {
 	require.NoError(t, e.OnSnapshotIntervalUpdate(context.Background(), 1))
 	for i := 0; i < 5; i++ {
 		ctx = zetactx.WithChainID(context.Background(), "chain-id")
-		ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, 31+int64(i)), "0xDEADBEEF")
+		ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, 31+int64(i)), "0xDEADBEEF")
 		e.time.EXPECT().GetTimeNow().Times(1).Return(time.Now())
 		b, error := e.Snapshot(ctx)
 		require.NotNil(t, b)

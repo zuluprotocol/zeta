@@ -17,12 +17,12 @@ import (
 	"errors"
 	"sync"
 
-	lb "code.zetaprotocol.io/vega/libs/broker"
+	lb "zuluprotocol/zeta/zeta/libs/broker"
 
-	"code.zetaprotocol.io/vega/core/broker"
-	"code.zetaprotocol.io/vega/core/coreapi/services"
-	"code.zetaprotocol.io/vega/logging"
-	apipb "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/core/broker"
+	"zuluprotocol/zeta/zeta/core/coreapi/services"
+	"zuluprotocol/zeta/zeta/logging"
+	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 )
 
 var ErrServiceDisabled = errors.New("service disabled")

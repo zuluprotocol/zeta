@@ -18,7 +18,7 @@ package main
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/config"
+	"zuluprotocol/zeta/zeta/core/config"
 	"github.com/jessevdk/go-flags"
 )
 

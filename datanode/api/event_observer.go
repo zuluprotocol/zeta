@@ -16,15 +16,15 @@ import (
 	"context"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
 	"google.golang.org/grpc/codes"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/logging"
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/logging"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type eventBusServer interface {

@@ -16,7 +16,7 @@ import (
 	"context"
 	"os"
 
-	cmd "code.zetaprotocol.io/vega/cmd/vegawallet/commands"
+	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
 	"github.com/jessevdk/go-flags"
 )
 

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/api/mocks"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/api/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

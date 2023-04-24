@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 var (
@@ -99,7 +99,7 @@ func (t *Topology) AddKeyRotate(ctx context.Context, nodeID string, currentBlock
 		return ErrNewZetaPubKeyIndexMustBeGreaterThenCurrentPubKeyIndex
 	}
 
-	hashedZetaPubKey, err := node.data.HashVegaPubKey()
+	hashedZetaPubKey, err := node.data.HashZetaPubKey()
 	if err != nil {
 		return err
 	}

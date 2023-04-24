@@ -16,11 +16,11 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/eth"
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/clef"
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/keystore"
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/keystore"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/paths"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rpc"
 )

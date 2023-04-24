@@ -7,9 +7,9 @@
 package v2
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v11 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	v1 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v11 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -507,7 +507,7 @@ type AccountBalance struct {
 	// Market identifier for the account, this field will be empty if the asset is in a general account
 	MarketId string `protobuf:"bytes,5,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
 	// The account type of this account
-	Type zeta.AccountType `protobuf:"varint,6,opt,name=type,proto3,enum=vega.AccountType" json:"type,omitempty"`
+	Type zeta.AccountType `protobuf:"varint,6,opt,name=type,proto3,enum=zeta.AccountType" json:"type,omitempty"`
 }
 
 func (x *AccountBalance) Reset() {
@@ -813,7 +813,7 @@ type ObserveAccountsRequest struct {
 	// Asset identifier
 	Asset string `protobuf:"bytes,3,opt,name=asset,proto3" json:"asset,omitempty"`
 	// Account type to subscribe to, required field
-	Type zeta.AccountType `protobuf:"varint,4,opt,name=type,proto3,enum=vega.AccountType" json:"type,omitempty"`
+	Type zeta.AccountType `protobuf:"varint,4,opt,name=type,proto3,enum=zeta.AccountType" json:"type,omitempty"`
 }
 
 func (x *ObserveAccountsRequest) Reset() {
@@ -1278,11 +1278,11 @@ type OrderFilter struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The list of order statuses the orders can be filtered by
-	Statuses []zeta.Order_Status `protobuf:"varint,1,rep,packed,name=statuses,proto3,enum=vega.Order_Status" json:"statuses,omitempty"`
+	Statuses []zeta.Order_Status `protobuf:"varint,1,rep,packed,name=statuses,proto3,enum=zeta.Order_Status" json:"statuses,omitempty"`
 	// The list of order types the orders can be filtered by
-	Types []zeta.Order_Type `protobuf:"varint,2,rep,packed,name=types,proto3,enum=vega.Order_Type" json:"types,omitempty"`
+	Types []zeta.Order_Type `protobuf:"varint,2,rep,packed,name=types,proto3,enum=zeta.Order_Type" json:"types,omitempty"`
 	// The list of timings the orders can be filtered by
-	TimeInForces []zeta.Order_TimeInForce `protobuf:"varint,3,rep,packed,name=time_in_forces,json=timeInForces,proto3,enum=vega.Order_TimeInForce" json:"time_in_forces,omitempty"`
+	TimeInForces []zeta.Order_TimeInForce `protobuf:"varint,3,rep,packed,name=time_in_forces,json=timeInForces,proto3,enum=zeta.Order_TimeInForce" json:"time_in_forces,omitempty"`
 	// Indicator if liquidity provision orders should be included or not in the list
 	ExcludeLiquidity bool `protobuf:"varint,4,opt,name=exclude_liquidity,json=excludeLiquidity,proto3" json:"exclude_liquidity,omitempty"`
 }
@@ -2531,7 +2531,7 @@ type LedgerEntryFilter struct {
 	// `AccountFilter` object used to set values for filtering receiver accounts
 	ToAccountFilter *AccountFilter `protobuf:"bytes,3,opt,name=to_account_filter,json=toAccountFilter,proto3" json:"to_account_filter,omitempty"`
 	// A list of transfer types that is used for filtering sender and receiver accounts
-	TransferTypes []zeta.TransferType `protobuf:"varint,5,rep,packed,name=transfer_types,json=transferTypes,proto3,enum=vega.TransferType" json:"transfer_types,omitempty"`
+	TransferTypes []zeta.TransferType `protobuf:"varint,5,rep,packed,name=transfer_types,json=transferTypes,proto3,enum=zeta.TransferType" json:"transfer_types,omitempty"`
 }
 
 func (x *LedgerEntryFilter) Reset() {
@@ -2606,13 +2606,13 @@ type AggregatedLedgerEntry struct {
 	// The amount of ledger entries for the set of requested accounts at the time above
 	Quantity string `protobuf:"bytes,3,opt,name=quantity,proto3" json:"quantity,omitempty"`
 	// The transfer type
-	TransferType zeta.TransferType `protobuf:"varint,4,opt,name=transfer_type,json=transferType,proto3,enum=vega.TransferType" json:"transfer_type,omitempty"`
+	TransferType zeta.TransferType `protobuf:"varint,4,opt,name=transfer_type,json=transferType,proto3,enum=zeta.TransferType" json:"transfer_type,omitempty"`
 	// The asset ID
 	AssetId *string `protobuf:"bytes,5,opt,name=asset_id,json=assetId,proto3,oneof" json:"asset_id,omitempty"`
 	// The type of account sent from
-	FromAccountType zeta.AccountType `protobuf:"varint,6,opt,name=from_account_type,json=fromAccountType,proto3,enum=vega.AccountType" json:"from_account_type,omitempty"`
+	FromAccountType zeta.AccountType `protobuf:"varint,6,opt,name=from_account_type,json=fromAccountType,proto3,enum=zeta.AccountType" json:"from_account_type,omitempty"`
 	// The type of account received to
-	ToAccountType zeta.AccountType `protobuf:"varint,7,opt,name=to_account_type,json=toAccountType,proto3,enum=vega.AccountType" json:"to_account_type,omitempty"`
+	ToAccountType zeta.AccountType `protobuf:"varint,7,opt,name=to_account_type,json=toAccountType,proto3,enum=zeta.AccountType" json:"to_account_type,omitempty"`
 	// The sender's party ID
 	FromAccountPartyId *string `protobuf:"bytes,8,opt,name=from_account_party_id,json=fromAccountPartyId,proto3,oneof" json:"from_account_party_id,omitempty"`
 	// The receiver's party ID
@@ -3479,7 +3479,7 @@ type AccountFilter struct {
 	// Restrict accounts to those connected to the markets in this list (pass an empty list for no filter)
 	MarketIds []string `protobuf:"bytes,3,rep,name=market_ids,json=marketIds,proto3" json:"market_ids,omitempty"`
 	// Restrict accounts to those connected to any of the types in this list (pass an empty list for no filter)
-	AccountTypes []zeta.AccountType `protobuf:"varint,4,rep,packed,name=account_types,json=accountTypes,proto3,enum=vega.AccountType" json:"account_types,omitempty"`
+	AccountTypes []zeta.AccountType `protobuf:"varint,4,rep,packed,name=account_types,json=accountTypes,proto3,enum=zeta.AccountType" json:"account_types,omitempty"`
 }
 
 func (x *AccountFilter) Reset() {
@@ -3560,7 +3560,7 @@ type AggregatedBalance struct {
 	// If grouping by market, the market ID
 	MarketId *string `protobuf:"bytes,6,opt,name=market_id,json=marketId,proto3,oneof" json:"market_id,omitempty"`
 	// If grouping by account type, the account type
-	AccountType *zeta.AccountType `protobuf:"varint,7,opt,name=account_type,json=accountType,proto3,enum=vega.AccountType,oneof" json:"account_type,omitempty"`
+	AccountType *zeta.AccountType `protobuf:"varint,7,opt,name=account_type,json=accountType,proto3,enum=zeta.AccountType,oneof" json:"account_type,omitempty"`
 }
 
 func (x *AggregatedBalance) Reset() {
@@ -5303,7 +5303,7 @@ type ListCandleDataRequest struct {
 	// Timestamp to retrieve candles since, in nanoseconds since the epoch, required field
 	ToTimestamp int64 `protobuf:"varint,3,opt,name=to_timestamp,json=toTimestamp,proto3" json:"to_timestamp,omitempty"`
 	// Time interval for the candles, required field specified as a valid postgres interval
-	Interval zeta.Interval `protobuf:"varint,4,opt,name=interval,proto3,enum=vega.Interval" json:"interval,omitempty"`
+	Interval zeta.Interval `protobuf:"varint,4,opt,name=interval,proto3,enum=zeta.Interval" json:"interval,omitempty"`
 	// pagination controls
 	Pagination *Pagination `protobuf:"bytes,5,opt,name=pagination,proto3,oneof" json:"pagination,omitempty"`
 }
@@ -6723,7 +6723,7 @@ type GetERC20ListAssetBundleResponse struct {
 	// The address of the asset on ethereum
 	AssetSource string `protobuf:"bytes,1,opt,name=asset_source,json=assetSource,proto3" json:"asset_source,omitempty"`
 	// The ID of the zeta asset
-	ZetaAssetId string `protobuf:"bytes,2,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,2,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The nonce, which is actually the internal reference for the proposal
 	Nonce string `protobuf:"bytes,3,opt,name=nonce,proto3" json:"nonce,omitempty"`
 	// The signatures bundle as hex encoded data, forward by 0x
@@ -6849,7 +6849,7 @@ type GetERC20SetAssetLimitsBundleResponse struct {
 	// The address of the asset on ethereum
 	AssetSource string `protobuf:"bytes,1,opt,name=asset_source,json=assetSource,proto3" json:"asset_source,omitempty"`
 	// The ID of the zeta asset
-	ZetaAssetId string `protobuf:"bytes,2,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,2,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The nonce, which is actually the internal reference for the proposal
 	Nonce string `protobuf:"bytes,3,opt,name=nonce,proto3" json:"nonce,omitempty"`
 	// The lifetime limit deposit for this asset
@@ -11378,7 +11378,7 @@ type ListGovernanceDataRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Proposal state to list governance data for, if provided
-	ProposalState *zeta.Proposal_State `protobuf:"varint,1,opt,name=proposal_state,json=proposalState,proto3,enum=vega.Proposal_State,oneof" json:"proposal_state,omitempty"`
+	ProposalState *zeta.Proposal_State `protobuf:"varint,1,opt,name=proposal_state,json=proposalState,proto3,enum=zeta.Proposal_State,oneof" json:"proposal_state,omitempty"`
 	// Proposal type to list governance data for, if provided
 	ProposalType *ListGovernanceDataRequest_Type `protobuf:"varint,2,opt,name=proposal_type,json=proposalType,proto3,enum=datanode.api.v2.ListGovernanceDataRequest_Type,oneof" json:"proposal_type,omitempty"`
 	// Proposer party ID to list governance data for, if provided
@@ -12923,9 +12923,9 @@ type EstimateMarginRequest struct {
 	// Party ID of the order
 	PartyId string `protobuf:"bytes,2,opt,name=party_id,json=partyId,proto3" json:"party_id,omitempty"`
 	// Order side - indicator for Seller or Buyer side
-	Side zeta.Side `protobuf:"varint,3,opt,name=side,proto3,enum=vega.Side" json:"side,omitempty"`
+	Side zeta.Side `protobuf:"varint,3,opt,name=side,proto3,enum=zeta.Side" json:"side,omitempty"`
 	// Type of the order
-	Type zeta.Order_Type `protobuf:"varint,4,opt,name=type,proto3,enum=vega.Order_Type" json:"type,omitempty"`
+	Type zeta.Order_Type `protobuf:"varint,4,opt,name=type,proto3,enum=zeta.Order_Type" json:"type,omitempty"`
 	// Size of order
 	Size uint64 `protobuf:"varint,5,opt,name=size,proto3" json:"size,omitempty"`
 	// Price of the asset
@@ -14681,7 +14681,7 @@ func (*GetZetaTimeRequest) Descriptor() ([]byte, []int) {
 	return file_data_node_api_v2_trading_data_proto_rawDescGZIP(), []int{246}
 }
 
-// Response for the current consensus coordinated time on the Zeta network, referred to as "VegaTime"
+// Response for the current consensus coordinated time on the Zeta network, referred to as "ZetaTime"
 type GetZetaTimeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -18911,8 +18911,8 @@ var file_data_node_api_v2_trading_data_proto_goTypes = []interface{}{
 	(*ListEthereumKeyRotationsResponse)(nil),              // 247: datanode.api.v2.ListEthereumKeyRotationsResponse
 	(*EthereumKeyRotationsConnection)(nil),                // 248: datanode.api.v2.EthereumKeyRotationsConnection
 	(*EthereumKeyRotationEdge)(nil),                       // 249: datanode.api.v2.EthereumKeyRotationEdge
-	(*GetZetaTimeRequest)(nil),                            // 250: datanode.api.v2.GetVegaTimeRequest
-	(*GetZetaTimeResponse)(nil),                           // 251: datanode.api.v2.GetVegaTimeResponse
+	(*GetZetaTimeRequest)(nil),                            // 250: datanode.api.v2.GetZetaTimeRequest
+	(*GetZetaTimeResponse)(nil),                           // 251: datanode.api.v2.GetZetaTimeResponse
 	(*DateRange)(nil),                                     // 252: datanode.api.v2.DateRange
 	(*GetProtocolUpgradeStatusRequest)(nil),               // 253: datanode.api.v2.GetProtocolUpgradeStatusRequest
 	(*GetProtocolUpgradeStatusResponse)(nil),              // 254: datanode.api.v2.GetProtocolUpgradeStatusResponse
@@ -18937,51 +18937,51 @@ var file_data_node_api_v2_trading_data_proto_goTypes = []interface{}{
 	(*NetworkHistoryBootstrapPeersResponse)(nil),          // 273: datanode.api.v2.NetworkHistoryBootstrapPeersResponse
 	(*PingRequest)(nil),                                   // 274: datanode.api.v2.PingRequest
 	(*PingResponse)(nil),                                  // 275: datanode.api.v2.PingResponse
-	(zeta.AccountType)(0),                                 // 276: vega.AccountType
-	(*zeta.Order)(nil),                                    // 277: vega.Order
-	(zeta.Order_Status)(0),                                // 278: vega.Order.Status
-	(zeta.Order_Type)(0),                                  // 279: vega.Order.Type
-	(zeta.Order_TimeInForce)(0),                           // 280: vega.Order.TimeInForce
-	(*zeta.Position)(nil),                                 // 281: vega.Position
-	(zeta.TransferType)(0),                                // 282: vega.TransferType
-	(*zeta.MarketDepth)(nil),                              // 283: vega.MarketDepth
-	(*zeta.MarketDepthUpdate)(nil),                        // 284: vega.MarketDepthUpdate
-	(*zeta.MarketData)(nil),                               // 285: vega.MarketData
-	(*zeta.PriceLevel)(nil),                               // 286: vega.PriceLevel
-	(*zeta.Trade)(nil),                                    // 287: vega.Trade
+	(zeta.AccountType)(0),                                 // 276: zeta.AccountType
+	(*zeta.Order)(nil),                                    // 277: zeta.Order
+	(zeta.Order_Status)(0),                                // 278: zeta.Order.Status
+	(zeta.Order_Type)(0),                                  // 279: zeta.Order.Type
+	(zeta.Order_TimeInForce)(0),                           // 280: zeta.Order.TimeInForce
+	(*zeta.Position)(nil),                                 // 281: zeta.Position
+	(zeta.TransferType)(0),                                // 282: zeta.TransferType
+	(*zeta.MarketDepth)(nil),                              // 283: zeta.MarketDepth
+	(*zeta.MarketDepthUpdate)(nil),                        // 284: zeta.MarketDepthUpdate
+	(*zeta.MarketData)(nil),                               // 285: zeta.MarketData
+	(*zeta.PriceLevel)(nil),                               // 286: zeta.PriceLevel
+	(*zeta.Trade)(nil),                                    // 287: zeta.Trade
 	(*v1.Transfer)(nil),                                   // 288: zeta.events.v1.Transfer
-	(*zeta.NetworkLimits)(nil),                            // 289: vega.NetworkLimits
-	(zeta.Interval)(0),                                    // 290: vega.Interval
-	(*zeta.Vote)(nil),                                     // 291: vega.Vote
+	(*zeta.NetworkLimits)(nil),                            // 289: zeta.NetworkLimits
+	(zeta.Interval)(0),                                    // 290: zeta.Interval
+	(*zeta.Vote)(nil),                                     // 291: zeta.Vote
 	(*v1.ERC20MultiSigSignerAdded)(nil),                   // 292: zeta.events.v1.ERC20MultiSigSignerAdded
 	(*v1.ERC20MultiSigSignerRemoved)(nil),                 // 293: zeta.events.v1.ERC20MultiSigSignerRemoved
-	(*zeta.OracleSpec)(nil),                               // 294: vega.OracleSpec
-	(*zeta.OracleData)(nil),                               // 295: vega.OracleData
-	(*zeta.Market)(nil),                                   // 296: vega.Market
-	(*zeta.Party)(nil),                                    // 297: vega.Party
-	(*zeta.MarginLevels)(nil),                             // 298: vega.MarginLevels
-	(*zeta.Reward)(nil),                                   // 299: vega.Reward
-	(*zeta.RewardSummary)(nil),                            // 300: vega.RewardSummary
-	(*zeta.EpochRewardSummary)(nil),                       // 301: vega.EpochRewardSummary
-	(*zeta.Deposit)(nil),                                  // 302: vega.Deposit
-	(*zeta.Withdrawal)(nil),                               // 303: vega.Withdrawal
-	(*zeta.Asset)(nil),                                    // 304: vega.Asset
-	(*zeta.LiquidityProvision)(nil),                       // 305: vega.LiquidityProvision
-	(*zeta.GovernanceData)(nil),                           // 306: vega.GovernanceData
-	(zeta.Proposal_State)(0),                              // 307: vega.Proposal.State
-	(*zeta.Delegation)(nil),                               // 308: vega.Delegation
-	(*zeta.NodeData)(nil),                                 // 309: vega.NodeData
-	(*zeta.Node)(nil),                                     // 310: vega.Node
+	(*zeta.OracleSpec)(nil),                               // 294: zeta.OracleSpec
+	(*zeta.OracleData)(nil),                               // 295: zeta.OracleData
+	(*zeta.Market)(nil),                                   // 296: zeta.Market
+	(*zeta.Party)(nil),                                    // 297: zeta.Party
+	(*zeta.MarginLevels)(nil),                             // 298: zeta.MarginLevels
+	(*zeta.Reward)(nil),                                   // 299: zeta.Reward
+	(*zeta.RewardSummary)(nil),                            // 300: zeta.RewardSummary
+	(*zeta.EpochRewardSummary)(nil),                       // 301: zeta.EpochRewardSummary
+	(*zeta.Deposit)(nil),                                  // 302: zeta.Deposit
+	(*zeta.Withdrawal)(nil),                               // 303: zeta.Withdrawal
+	(*zeta.Asset)(nil),                                    // 304: zeta.Asset
+	(*zeta.LiquidityProvision)(nil),                       // 305: zeta.LiquidityProvision
+	(*zeta.GovernanceData)(nil),                           // 306: zeta.GovernanceData
+	(zeta.Proposal_State)(0),                              // 307: zeta.Proposal.State
+	(*zeta.Delegation)(nil),                               // 308: zeta.Delegation
+	(*zeta.NodeData)(nil),                                 // 309: zeta.NodeData
+	(*zeta.Node)(nil),                                     // 310: zeta.Node
 	(*v11.NodeSignature)(nil),                             // 311: zeta.commands.v1.NodeSignature
-	(*zeta.Epoch)(nil),                                    // 312: vega.Epoch
-	(*zeta.Fee)(nil),                                      // 313: vega.Fee
-	(zeta.Side)(0),                                        // 314: vega.Side
-	(*zeta.NetworkParameter)(nil),                         // 315: vega.NetworkParameter
+	(*zeta.Epoch)(nil),                                    // 312: zeta.Epoch
+	(*zeta.Fee)(nil),                                      // 313: zeta.Fee
+	(zeta.Side)(0),                                        // 314: zeta.Side
+	(*zeta.NetworkParameter)(nil),                         // 315: zeta.NetworkParameter
 	(*v1.StakeLinking)(nil),                               // 316: zeta.events.v1.StakeLinking
-	(*zeta.RiskFactor)(nil),                               // 317: vega.RiskFactor
+	(*zeta.RiskFactor)(nil),                               // 317: zeta.RiskFactor
 	(v1.BusEventType)(0),                                  // 318: zeta.events.v1.BusEventType
 	(*v1.BusEvent)(nil),                                   // 319: zeta.events.v1.BusEvent
-	(*zeta.LedgerMovement)(nil),                           // 320: vega.LedgerMovement
+	(*zeta.LedgerMovement)(nil),                           // 320: zeta.LedgerMovement
 	(*v1.KeyRotation)(nil),                                // 321: zeta.events.v1.KeyRotation
 	(*v1.EthereumKeyRotation)(nil),                        // 322: zeta.events.v1.EthereumKeyRotation
 	(v1.ProtocolUpgradeProposalStatus)(0),                 // 323: zeta.events.v1.ProtocolUpgradeProposalStatus
@@ -19337,7 +19337,7 @@ var file_data_node_api_v2_trading_data_proto_depIdxs = []int32{
 	240, // 345: datanode.api.v2.TradingDataService.ObserveLedgerMovements:input_type -> datanode.api.v2.ObserveLedgerMovementsRequest
 	242, // 346: datanode.api.v2.TradingDataService.ListKeyRotations:input_type -> datanode.api.v2.ListKeyRotationsRequest
 	246, // 347: datanode.api.v2.TradingDataService.ListEthereumKeyRotations:input_type -> datanode.api.v2.ListEthereumKeyRotationsRequest
-	250, // 348: datanode.api.v2.TradingDataService.GetZetaTime:input_type -> datanode.api.v2.GetVegaTimeRequest
+	250, // 348: datanode.api.v2.TradingDataService.GetZetaTime:input_type -> datanode.api.v2.GetZetaTimeRequest
 	253, // 349: datanode.api.v2.TradingDataService.GetProtocolUpgradeStatus:input_type -> datanode.api.v2.GetProtocolUpgradeStatusRequest
 	255, // 350: datanode.api.v2.TradingDataService.ListProtocolUpgradeProposals:input_type -> datanode.api.v2.ListProtocolUpgradeProposalsRequest
 	259, // 351: datanode.api.v2.TradingDataService.ListCoreSnapshots:input_type -> datanode.api.v2.ListCoreSnapshotsRequest
@@ -19424,7 +19424,7 @@ var file_data_node_api_v2_trading_data_proto_depIdxs = []int32{
 	241, // 432: datanode.api.v2.TradingDataService.ObserveLedgerMovements:output_type -> datanode.api.v2.ObserveLedgerMovementsResponse
 	243, // 433: datanode.api.v2.TradingDataService.ListKeyRotations:output_type -> datanode.api.v2.ListKeyRotationsResponse
 	247, // 434: datanode.api.v2.TradingDataService.ListEthereumKeyRotations:output_type -> datanode.api.v2.ListEthereumKeyRotationsResponse
-	251, // 435: datanode.api.v2.TradingDataService.GetZetaTime:output_type -> datanode.api.v2.GetVegaTimeResponse
+	251, // 435: datanode.api.v2.TradingDataService.GetZetaTime:output_type -> datanode.api.v2.GetZetaTimeResponse
 	254, // 436: datanode.api.v2.TradingDataService.GetProtocolUpgradeStatus:output_type -> datanode.api.v2.GetProtocolUpgradeStatusResponse
 	256, // 437: datanode.api.v2.TradingDataService.ListProtocolUpgradeProposals:output_type -> datanode.api.v2.ListProtocolUpgradeProposalsResponse
 	260, // 438: datanode.api.v2.TradingDataService.ListCoreSnapshots:output_type -> datanode.api.v2.ListCoreSnapshotsResponse

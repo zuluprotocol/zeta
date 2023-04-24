@@ -19,10 +19,10 @@ import (
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 
-	"code.zetaprotocol.io/vega/core/examples/nullchain/config"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	api "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/core/examples/nullchain/config"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 )
 
 type Connection struct {

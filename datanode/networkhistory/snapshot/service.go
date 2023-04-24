@@ -9,8 +9,8 @@ import (
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot/mutex"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot/mutex"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type Service struct {

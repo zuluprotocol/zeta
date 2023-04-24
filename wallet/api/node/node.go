@@ -3,13 +3,13 @@ package node
 import (
 	"context"
 
-	apipb "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	nodetypes "code.zetaprotocol.io/vega/wallet/api/node/types"
+	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
 )
 
 // Generates mocks
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/nodes_mocks.go -package mocks code.zetaprotocol.io/vega/wallet/api/node Node,Selector
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/nodes_mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/api/node Node,Selector
 
 // Node is the component used to get network information and send transactions.
 type Node interface {

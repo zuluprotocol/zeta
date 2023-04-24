@@ -16,14 +16,14 @@ import (
 	"context"
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/events"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	pbevents "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	pbevents "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 type Checkpoint struct {

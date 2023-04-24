@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 // Broker interface. Do not need to mock (use package broker/mock).
@@ -34,7 +34,7 @@ type Broker interface {
 
 // TimeService interface.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks code.zetaprotocol.io/vega/core/oracles TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/oracles TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

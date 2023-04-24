@@ -16,8 +16,8 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/blockexplorer/config"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/blockexplorer/config"
+	"zuluprotocol/zeta/zeta/paths"
 	"github.com/jessevdk/go-flags"
 )
 

@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	vgjob "code.zetaprotocol.io/vega/libs/job"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/api"
-	"code.zetaprotocol.io/vega/wallet/service/v2/connections"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgjob "zuluprotocol/zeta/zeta/libs/job"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
 	"github.com/fsnotify/fsnotify"
 )
 

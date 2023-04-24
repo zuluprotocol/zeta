@@ -17,13 +17,13 @@ import (
 	"errors"
 	"sort"
 
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var (

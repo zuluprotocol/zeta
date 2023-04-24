@@ -13,14 +13,14 @@
 package execution
 
 import (
-	"code.zetaprotocol.io/vega/core/fee"
-	"code.zetaprotocol.io/vega/core/liquidity"
-	"code.zetaprotocol.io/vega/core/matching"
-	"code.zetaprotocol.io/vega/core/positions"
-	"code.zetaprotocol.io/vega/core/risk"
-	"code.zetaprotocol.io/vega/core/settlement"
-	"code.zetaprotocol.io/vega/libs/config/encoding"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/fee"
+	"zuluprotocol/zeta/zeta/core/liquidity"
+	"zuluprotocol/zeta/zeta/core/matching"
+	"zuluprotocol/zeta/zeta/core/positions"
+	"zuluprotocol/zeta/zeta/core/risk"
+	"zuluprotocol/zeta/zeta/core/settlement"
+	"zuluprotocol/zeta/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 const (

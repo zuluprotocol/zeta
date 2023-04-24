@@ -20,10 +20,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type SQLBrokerSubscriber interface {
@@ -197,7 +197,7 @@ func (b *SQLStoreBroker) processBlock(ctx context.Context, dbContext context.Con
 	}()
 
 	for _, subscriber := range b.subscribers {
-		subscriber.SetZetaTime(block.VegaTime)
+		subscriber.SetZetaTime(block.ZetaTime)
 	}
 
 	// Don't use our parent context as a parent of the database operation; if we get cancelled
@@ -309,7 +309,7 @@ func (b *SQLStoreBroker) flushAllSubscribers(blockCtx context.Context) error {
 func (b *SQLStoreBroker) addBlock(ctx context.Context, block *entities.Block) error {
 	// At startup we get time updates that have the same time to microsecond precision which causes
 	// a primary key restraint failure, this code is to handle this scenario
-	if b.lastBlock == nil || !block.ZetaTime.Equal(b.lastBlock.VegaTime) {
+	if b.lastBlock == nil || !block.ZetaTime.Equal(b.lastBlock.ZetaTime) {
 		b.lastBlock = block
 		err := b.blockStore.Add(ctx, *block)
 		if err != nil {

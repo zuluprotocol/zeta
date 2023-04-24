@@ -18,7 +18,7 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/netparams"
+	"zuluprotocol/zeta/zeta/core/netparams"
 )
 
 var unwatched = map[string]struct{}{

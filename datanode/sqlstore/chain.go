@@ -15,8 +15,8 @@ package sqlstore
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgconn"
 )

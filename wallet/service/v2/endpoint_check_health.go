@@ -3,8 +3,8 @@ package v2
 import (
 	"net/http"
 
-	vfmt "code.zetaprotocol.io/vega/libs/fmt"
-	"code.zetaprotocol.io/vega/logging"
+	vfmt "zuluprotocol/zeta/zeta/libs/fmt"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/julienschmidt/httprouter"
 )
 

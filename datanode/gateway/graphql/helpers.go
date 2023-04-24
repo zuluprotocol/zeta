@@ -17,7 +17,7 @@ import (
 	"math"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
 )
 
 func safeStringUint64(input string) (uint64, error) {
@@ -30,11 +30,11 @@ func safeStringUint64(input string) (uint64, error) {
 }
 
 func secondsTSToDatetime(timestampInSeconds int64) string {
-	return zetatime.Format(vegatime.Unix(timestampInSeconds, 0))
+	return zetatime.Format(zetatime.Unix(timestampInSeconds, 0))
 }
 
 func nanoTSToDatetime(timestampInNanoSeconds int64) string {
-	return zetatime.Format(vegatime.UnixNano(timestampInNanoSeconds))
+	return zetatime.Format(zetatime.UnixNano(timestampInNanoSeconds))
 }
 
 func convertVersion(version *int) (int32, error) {

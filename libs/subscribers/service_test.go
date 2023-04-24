@@ -4,12 +4,12 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/subscribers/mocks"
+	"zuluprotocol/zeta/zeta/libs/subscribers/mocks"
 
-	"code.zetaprotocol.io/vega/core/events"
-	dtypes "code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	dtypes "zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

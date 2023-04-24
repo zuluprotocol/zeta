@@ -20,16 +20,16 @@ import (
 	"fmt"
 	"testing"
 
-	bmocks "code.zetaprotocol.io/vega/core/broker/mocks"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/core/validators/mocks"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	vgtesting "code.zetaprotocol.io/vega/libs/testing"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	bmocks "zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/core/validators/mocks"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	vgtesting "zuluprotocol/zeta/zeta/libs/testing"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
@@ -176,7 +176,7 @@ func getTestTopologyWithSelfValidatorData(
 	t.Helper()
 
 	ctrl := gomock.NewController(t)
-	pubKey := crypto.NewPublicKey(self.ZetaPubKey, []byte(self.VegaPubKey))
+	pubKey := crypto.NewPublicKey(self.ZetaPubKey, []byte(self.ZetaPubKey))
 	id := crypto.NewPublicKey(self.ID, []byte(self.ZetaPubKey))
 
 	wallet := mocks.NewMockWallet(ctrl)
@@ -424,7 +424,7 @@ func testGetByKey(t *testing.T) {
 
 	expectedData := &validators.ValidatorData{
 		ID:              "zeta-master-pubkey",
-		ZetaPubKey:      nr.VegaPubKey,
+		ZetaPubKey:      nr.ZetaPubKey,
 		EthereumAddress: "eth-address",
 		TmPubKey:        nr.ChainPubKey,
 		InfoURL:         nr.InfoUrl,
@@ -511,7 +511,7 @@ func testAddKeyRotateSuccess(t *testing.T) {
 	top.timeService.EXPECT().GetTimeNow().AnyTimes()
 
 	id := "zeta-master-pubkey"
-	zetaPubKey := "vega-key"
+	zetaPubKey := "zeta-key"
 	newZetaPubKey := fmt.Sprintf("new-%s", zetaPubKey)
 
 	nr := commandspb.AnnounceNode{
@@ -556,7 +556,7 @@ func testAddKeyRotateSuccessFailsWhenTargetBlockHeightIsLessThenCurrentBlockHeig
 	top.timeService.EXPECT().GetTimeNow().AnyTimes()
 
 	id := "zeta-master-pubkey"
-	zetaPubKey := "vega-key"
+	zetaPubKey := "zeta-key"
 	newZetaPubKey := fmt.Sprintf("new-%s", zetaPubKey)
 
 	nr := commandspb.AnnounceNode{
@@ -579,7 +579,7 @@ func testAddKeyRotateSuccessFailsWhenNewKeyIndexIsLessThenCurrentKeyIndex(t *tes
 	top.timeService.EXPECT().GetTimeNow().AnyTimes()
 
 	id := "zeta-master-pubkey"
-	zetaPubKey := "vega-key"
+	zetaPubKey := "zeta-key"
 	newZetaPubKey := fmt.Sprintf("new-%s", zetaPubKey)
 
 	nr := commandspb.AnnounceNode{
@@ -604,7 +604,7 @@ func testAddKeyRotateSuccessFailsWhenKeyRotationForNodeAlreadyExists(t *testing.
 	top.timeService.EXPECT().GetTimeNow().AnyTimes()
 
 	id := "zeta-master-pubkey"
-	zetaPubKey := "vega-key"
+	zetaPubKey := "zeta-key"
 	newZetaPubKey := fmt.Sprintf("new-%s", zetaPubKey)
 
 	nr := commandspb.AnnounceNode{
@@ -633,7 +633,7 @@ func testAddKeyRotateSuccessFailsWhenCurrentPubKeyHashDoesNotMatch(t *testing.T)
 	top.timeService.EXPECT().GetTimeNow().AnyTimes()
 
 	id := "zeta-master-pubkey"
-	zetaPubKey := "vega-key"
+	zetaPubKey := "zeta-key"
 	newZetaPubKey := fmt.Sprintf("new-%s", zetaPubKey)
 
 	nr := commandspb.AnnounceNode{
@@ -687,13 +687,13 @@ func testBeginBlockSuccess(t *testing.T) {
 	}
 
 	// add key rotations
-	err := top.AddKeyRotate(ctx, "zeta-master-pubkey-1", 10, newKeyRotationSubmission("vega-key-1", "new-vega-key-1", 1, 11))
+	err := top.AddKeyRotate(ctx, "zeta-master-pubkey-1", 10, newKeyRotationSubmission("zeta-key-1", "new-zeta-key-1", 1, 11))
 	assert.NoError(t, err)
-	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-2", 10, newKeyRotationSubmission("vega-key-2", "new-vega-key-2", 1, 11))
+	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-2", 10, newKeyRotationSubmission("zeta-key-2", "new-zeta-key-2", 1, 11))
 	assert.NoError(t, err)
-	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-3", 10, newKeyRotationSubmission("vega-key-3", "new-vega-key-3", 1, 13))
+	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-3", 10, newKeyRotationSubmission("zeta-key-3", "new-zeta-key-3", 1, 13))
 	assert.NoError(t, err)
-	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-4", 10, newKeyRotationSubmission("vega-key-4", "new-vega-key-4", 1, 13))
+	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-4", 10, newKeyRotationSubmission("zeta-key-4", "new-zeta-key-4", 1, 13))
 	assert.NoError(t, err)
 
 	// when
@@ -760,9 +760,9 @@ func testBeginBlockNotifyKeyChange(t *testing.T) {
 	}
 
 	// add key rotations
-	err := top.AddKeyRotate(ctx, "zeta-master-pubkey-1", 10, newKeyRotationSubmission("vega-key-1", "new-vega-key-1", 1, 11))
+	err := top.AddKeyRotate(ctx, "zeta-master-pubkey-1", 10, newKeyRotationSubmission("zeta-key-1", "new-zeta-key-1", 1, 11))
 	assert.NoError(t, err)
-	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-2", 10, newKeyRotationSubmission("vega-key-2", "new-vega-key-2", 1, 11))
+	err = top.AddKeyRotate(ctx, "zeta-master-pubkey-2", 10, newKeyRotationSubmission("zeta-key-2", "new-zeta-key-2", 1, 11))
 	assert.NoError(t, err)
 
 	// register callbacks

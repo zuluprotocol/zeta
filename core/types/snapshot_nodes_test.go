@@ -16,12 +16,12 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/snapshot"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/snapshot"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/cosmos/iavl"
 	"github.com/shopspring/decimal"

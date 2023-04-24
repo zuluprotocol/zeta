@@ -13,8 +13,8 @@
 package steps
 
 import (
-	"code.zetaprotocol.io/vega/core/integration/stubs"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func DebugAllEvents(broker *stubs.BrokerStub, log *logging.Logger) {

@@ -16,11 +16,11 @@ import (
 	"context"
 	"runtime/debug"
 
-	"code.zetaprotocol.io/vega/cmd/data-node/commands/start"
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/version"
+	"zuluprotocol/zeta/zeta/cmd/data-node/commands/start"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/version"
 
 	"github.com/jessevdk/go-flags"
 	"github.com/pbnjay/memory"
@@ -100,7 +100,7 @@ func Start(_ context.Context, parser *flags.Parser) error {
 	startCmd = StartCmd{
 		Config: config.NewDefaultConfig(),
 	}
-	cmd, err := parser.AddCommand("start", "Start a zeta data node", "Start a vega data node as defined by the config files", &startCmd)
+	cmd, err := parser.AddCommand("start", "Start a zeta data node", "Start a zeta data node as defined by the config files", &startCmd)
 	if err != nil {
 		return err
 	}

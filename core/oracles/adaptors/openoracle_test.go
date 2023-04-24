@@ -17,11 +17,11 @@ import (
 	"encoding/json"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/openoracle"
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/oracles/adaptors"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/openoracle"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/oracles/adaptors"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

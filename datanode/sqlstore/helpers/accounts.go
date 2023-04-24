@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/require"
 )
 
@@ -24,7 +24,7 @@ func AddTestAccount(t *testing.T,
 		AssetID:  asset.ID,
 		MarketID: entities.MarketID(GenerateID()),
 		Type:     accountType,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 
 	err := accountStore.Add(ctx, &account)
@@ -47,7 +47,7 @@ func AddTestAccountWithMarketAndType(t *testing.T,
 		AssetID:  asset.ID,
 		MarketID: market,
 		Type:     accountType,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 	}
 
 	err := accountStore.Add(ctx, &account)

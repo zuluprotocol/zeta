@@ -5,13 +5,13 @@ import (
 	"io"
 	"os"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/cli"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/printer"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/service"
-	svcstore "code.zetaprotocol.io/vega/wallet/service/store/v1"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/service"
+	svcstore "zuluprotocol/zeta/zeta/wallet/service/store/v1"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 
 	"github.com/spf13/cobra"
 )

@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/logging"
 	"google.golang.org/grpc/codes"
 )
 

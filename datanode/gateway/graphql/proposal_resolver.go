@@ -16,9 +16,9 @@ import (
 	"context"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	zeta "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type proposalResolver ZetaResolverRoot

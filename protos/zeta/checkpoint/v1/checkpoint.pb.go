@@ -7,8 +7,8 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1124,7 +1124,7 @@ type ScheduledTransfer struct {
 	unknownFields protoimpl.UnknownFields
 
 	Transfer       *zeta.Transfer   `protobuf:"bytes,1,opt,name=transfer,proto3" json:"transfer,omitempty"`
-	AccountType    zeta.AccountType `protobuf:"varint,2,opt,name=account_type,json=accountType,proto3,enum=vega.AccountType" json:"account_type,omitempty"`
+	AccountType    zeta.AccountType `protobuf:"varint,2,opt,name=account_type,json=accountType,proto3,enum=zeta.AccountType" json:"account_type,omitempty"`
 	Reference      string           `protobuf:"bytes,3,opt,name=reference,proto3" json:"reference,omitempty"`
 	OneoffTransfer *v1.Transfer     `protobuf:"bytes,4,opt,name=oneoff_transfer,json=oneoffTransfer,proto3" json:"oneoff_transfer,omitempty"`
 }
@@ -2189,12 +2189,12 @@ var file_zeta_checkpoint_v1_checkpoint_proto_rawDesc = []byte{
 
 var (
 	file_zeta_checkpoint_v1_checkpoint_proto_rawDescOnce sync.Once
-	file_zeta_checkpoint_v1_checkpoint_proto_rawDescData = file_vega_checkpoint_v1_checkpoint_proto_rawDesc
+	file_zeta_checkpoint_v1_checkpoint_proto_rawDescData = file_zeta_checkpoint_v1_checkpoint_proto_rawDesc
 )
 
 func file_zeta_checkpoint_v1_checkpoint_proto_rawDescGZIP() []byte {
 	file_zeta_checkpoint_v1_checkpoint_proto_rawDescOnce.Do(func() {
-		file_zeta_checkpoint_v1_checkpoint_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_checkpoint_v1_checkpoint_proto_rawDescData)
+		file_zeta_checkpoint_v1_checkpoint_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_checkpoint_v1_checkpoint_proto_rawDescData)
 	})
 	return file_zeta_checkpoint_v1_checkpoint_proto_rawDescData
 }
@@ -2230,50 +2230,50 @@ var file_zeta_checkpoint_v1_checkpoint_proto_goTypes = []interface{}{
 	(*MarketTracker)(nil),                     // 26: zeta.checkpoint.v1.MarketTracker
 	(*MarketActivityTracker)(nil),             // 27: zeta.checkpoint.v1.MarketActivityTracker
 	(*PartyFees)(nil),                         // 28: zeta.checkpoint.v1.PartyFees
-	(*zeta.AssetDetails)(nil),                 // 29: vega.AssetDetails
-	(*zeta.NetworkParameter)(nil),             // 30: vega.NetworkParameter
-	(*zeta.Proposal)(nil),                     // 31: vega.Proposal
-	(*zeta.Transfer)(nil),                     // 32: vega.Transfer
-	(zeta.AccountType)(0),                     // 33: vega.AccountType
+	(*zeta.AssetDetails)(nil),                 // 29: zeta.AssetDetails
+	(*zeta.NetworkParameter)(nil),             // 30: zeta.NetworkParameter
+	(*zeta.Proposal)(nil),                     // 31: zeta.Proposal
+	(*zeta.Transfer)(nil),                     // 32: zeta.Transfer
+	(zeta.AccountType)(0),                     // 33: zeta.AccountType
 	(*v1.Transfer)(nil),                       // 34: zeta.events.v1.Transfer
 	(*v1.ValidatorUpdate)(nil),                // 35: zeta.events.v1.ValidatorUpdate
-	(*zeta.RankingScore)(nil),                 // 36: vega.RankingScore
+	(*zeta.RankingScore)(nil),                 // 36: zeta.RankingScore
 	(*v1.StakeLinking)(nil),                   // 37: zeta.events.v1.StakeLinking
 	(*v1.ERC20MultiSigSignerEvent)(nil),       // 38: zeta.events.v1.ERC20MultiSigSignerEvent
 	(*v1.ERC20MultiSigThresholdSetEvent)(nil), // 39: zeta.events.v1.ERC20MultiSigThresholdSetEvent
 }
 var file_zeta_checkpoint_v1_checkpoint_proto_depIdxs = []int32{
-	29, // 0: zeta.checkpoint.v1.AssetEntry.asset_details:type_name -> vega.AssetDetails
-	2,  // 1: zeta.checkpoint.v1.Assets.assets:type_name -> vega.checkpoint.v1.AssetEntry
-	2,  // 2: zeta.checkpoint.v1.Assets.pending_listing_assets:type_name -> vega.checkpoint.v1.AssetEntry
-	4,  // 3: zeta.checkpoint.v1.Collateral.balances:type_name -> vega.checkpoint.v1.AssetBalance
-	30, // 4: zeta.checkpoint.v1.NetParams.params:type_name -> vega.NetworkParameter
-	31, // 5: zeta.checkpoint.v1.Proposals.proposals:type_name -> vega.Proposal
-	8,  // 6: zeta.checkpoint.v1.Delegate.active:type_name -> vega.checkpoint.v1.DelegateEntry
-	8,  // 7: zeta.checkpoint.v1.Delegate.pending:type_name -> vega.checkpoint.v1.DelegateEntry
-	12, // 8: zeta.checkpoint.v1.Rewards.rewards:type_name -> vega.checkpoint.v1.RewardPayout
-	13, // 9: zeta.checkpoint.v1.RewardPayout.rewards_payout:type_name -> vega.checkpoint.v1.PendingRewardPayout
-	14, // 10: zeta.checkpoint.v1.PendingRewardPayout.party_amount:type_name -> vega.checkpoint.v1.PartyAmount
-	32, // 11: zeta.checkpoint.v1.ScheduledTransfer.transfer:type_name -> vega.Transfer
-	33, // 12: zeta.checkpoint.v1.ScheduledTransfer.account_type:type_name -> vega.AccountType
-	34, // 13: zeta.checkpoint.v1.ScheduledTransfer.oneoff_transfer:type_name -> vega.events.v1.Transfer
-	17, // 14: zeta.checkpoint.v1.ScheduledTransferAtTime.transfers:type_name -> vega.checkpoint.v1.ScheduledTransfer
-	34, // 15: zeta.checkpoint.v1.RecurringTransfers.recurring_transfers:type_name -> vega.events.v1.Transfer
-	18, // 16: zeta.checkpoint.v1.Banking.transfers_at_time:type_name -> vega.checkpoint.v1.ScheduledTransferAtTime
-	19, // 17: zeta.checkpoint.v1.Banking.recurring_transfers:type_name -> vega.checkpoint.v1.RecurringTransfers
-	21, // 18: zeta.checkpoint.v1.Banking.bridge_state:type_name -> vega.checkpoint.v1.BridgeState
-	23, // 19: zeta.checkpoint.v1.Validators.validator_state:type_name -> vega.checkpoint.v1.ValidatorState
-	15, // 20: zeta.checkpoint.v1.Validators.pending_key_rotations:type_name -> vega.checkpoint.v1.PendingKeyRotation
-	16, // 21: zeta.checkpoint.v1.Validators.pending_ethereum_key_rotations:type_name -> vega.checkpoint.v1.PendingEthereumKeyRotation
-	35, // 22: zeta.checkpoint.v1.ValidatorState.validator_update:type_name -> vega.events.v1.ValidatorUpdate
-	36, // 23: zeta.checkpoint.v1.ValidatorState.ranking_score:type_name -> vega.RankingScore
-	37, // 24: zeta.checkpoint.v1.Staking.accepted:type_name -> vega.events.v1.StakeLinking
-	38, // 25: zeta.checkpoint.v1.MultisigControl.signers:type_name -> vega.events.v1.ERC20MultiSigSignerEvent
-	39, // 26: zeta.checkpoint.v1.MultisigControl.threshold_set:type_name -> vega.events.v1.ERC20MultiSigThresholdSetEvent
-	27, // 27: zeta.checkpoint.v1.MarketTracker.market_activity:type_name -> vega.checkpoint.v1.MarketActivityTracker
-	28, // 28: zeta.checkpoint.v1.MarketActivityTracker.maker_fees_received:type_name -> vega.checkpoint.v1.PartyFees
-	28, // 29: zeta.checkpoint.v1.MarketActivityTracker.maker_fees_paid:type_name -> vega.checkpoint.v1.PartyFees
-	28, // 30: zeta.checkpoint.v1.MarketActivityTracker.lp_fees:type_name -> vega.checkpoint.v1.PartyFees
+	29, // 0: zeta.checkpoint.v1.AssetEntry.asset_details:type_name -> zeta.AssetDetails
+	2,  // 1: zeta.checkpoint.v1.Assets.assets:type_name -> zeta.checkpoint.v1.AssetEntry
+	2,  // 2: zeta.checkpoint.v1.Assets.pending_listing_assets:type_name -> zeta.checkpoint.v1.AssetEntry
+	4,  // 3: zeta.checkpoint.v1.Collateral.balances:type_name -> zeta.checkpoint.v1.AssetBalance
+	30, // 4: zeta.checkpoint.v1.NetParams.params:type_name -> zeta.NetworkParameter
+	31, // 5: zeta.checkpoint.v1.Proposals.proposals:type_name -> zeta.Proposal
+	8,  // 6: zeta.checkpoint.v1.Delegate.active:type_name -> zeta.checkpoint.v1.DelegateEntry
+	8,  // 7: zeta.checkpoint.v1.Delegate.pending:type_name -> zeta.checkpoint.v1.DelegateEntry
+	12, // 8: zeta.checkpoint.v1.Rewards.rewards:type_name -> zeta.checkpoint.v1.RewardPayout
+	13, // 9: zeta.checkpoint.v1.RewardPayout.rewards_payout:type_name -> zeta.checkpoint.v1.PendingRewardPayout
+	14, // 10: zeta.checkpoint.v1.PendingRewardPayout.party_amount:type_name -> zeta.checkpoint.v1.PartyAmount
+	32, // 11: zeta.checkpoint.v1.ScheduledTransfer.transfer:type_name -> zeta.Transfer
+	33, // 12: zeta.checkpoint.v1.ScheduledTransfer.account_type:type_name -> zeta.AccountType
+	34, // 13: zeta.checkpoint.v1.ScheduledTransfer.oneoff_transfer:type_name -> zeta.events.v1.Transfer
+	17, // 14: zeta.checkpoint.v1.ScheduledTransferAtTime.transfers:type_name -> zeta.checkpoint.v1.ScheduledTransfer
+	34, // 15: zeta.checkpoint.v1.RecurringTransfers.recurring_transfers:type_name -> zeta.events.v1.Transfer
+	18, // 16: zeta.checkpoint.v1.Banking.transfers_at_time:type_name -> zeta.checkpoint.v1.ScheduledTransferAtTime
+	19, // 17: zeta.checkpoint.v1.Banking.recurring_transfers:type_name -> zeta.checkpoint.v1.RecurringTransfers
+	21, // 18: zeta.checkpoint.v1.Banking.bridge_state:type_name -> zeta.checkpoint.v1.BridgeState
+	23, // 19: zeta.checkpoint.v1.Validators.validator_state:type_name -> zeta.checkpoint.v1.ValidatorState
+	15, // 20: zeta.checkpoint.v1.Validators.pending_key_rotations:type_name -> zeta.checkpoint.v1.PendingKeyRotation
+	16, // 21: zeta.checkpoint.v1.Validators.pending_ethereum_key_rotations:type_name -> zeta.checkpoint.v1.PendingEthereumKeyRotation
+	35, // 22: zeta.checkpoint.v1.ValidatorState.validator_update:type_name -> zeta.events.v1.ValidatorUpdate
+	36, // 23: zeta.checkpoint.v1.ValidatorState.ranking_score:type_name -> zeta.RankingScore
+	37, // 24: zeta.checkpoint.v1.Staking.accepted:type_name -> zeta.events.v1.StakeLinking
+	38, // 25: zeta.checkpoint.v1.MultisigControl.signers:type_name -> zeta.events.v1.ERC20MultiSigSignerEvent
+	39, // 26: zeta.checkpoint.v1.MultisigControl.threshold_set:type_name -> zeta.events.v1.ERC20MultiSigThresholdSetEvent
+	27, // 27: zeta.checkpoint.v1.MarketTracker.market_activity:type_name -> zeta.checkpoint.v1.MarketActivityTracker
+	28, // 28: zeta.checkpoint.v1.MarketActivityTracker.maker_fees_received:type_name -> zeta.checkpoint.v1.PartyFees
+	28, // 29: zeta.checkpoint.v1.MarketActivityTracker.maker_fees_paid:type_name -> zeta.checkpoint.v1.PartyFees
+	28, // 30: zeta.checkpoint.v1.MarketActivityTracker.lp_fees:type_name -> zeta.checkpoint.v1.PartyFees
 	31, // [31:31] is the sub-list for method output_type
 	31, // [31:31] is the sub-list for method input_type
 	31, // [31:31] is the sub-list for extension type_name

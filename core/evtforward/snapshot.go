@@ -15,10 +15,10 @@ package evtforward
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 	"github.com/emirpasic/gods/sets/treeset"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var (

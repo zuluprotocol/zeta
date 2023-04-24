@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

@@ -15,7 +15,7 @@ package processor
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 const (

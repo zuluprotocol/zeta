@@ -3,7 +3,7 @@ package cmd_test
 import (
 	"testing"
 
-	cmd "code.zetaprotocol.io/vega/cmd/vegawallet/commands"
+	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
 	"github.com/stretchr/testify/require"
 )
 

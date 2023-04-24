@@ -19,7 +19,7 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/config/encoding"
+	"zuluprotocol/zeta/zeta/libs/config/encoding"
 )
 
 type RateLimitConfig struct {

@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/shopspring/decimal"
 )
 
@@ -51,7 +51,7 @@ func (d *Delegation) ToProto() *zeta.Delegation {
 
 func (d Delegation) Cursor() *Cursor {
 	dc := DelegationCursor{
-		ZetaTime: d.VegaTime,
+		ZetaTime: d.ZetaTime,
 		PartyID:  d.PartyID,
 		NodeID:   d.NodeID,
 		EpochID:  d.EpochID,

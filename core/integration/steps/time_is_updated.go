@@ -15,7 +15,7 @@ package steps
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/integration/stubs"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
 )
 
 func TimeIsUpdatedTo(exec Execution, timeService *stubs.TimeStub, newTime string) {

@@ -7,14 +7,14 @@ import (
 	"io"
 	"os"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/printer"
-	vgterm "code.zetaprotocol.io/vega/libs/term"
-	vgzap "code.zetaprotocol.io/vega/libs/zap"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/api"
-	netstore "code.zetaprotocol.io/vega/wallet/network/store/v1"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
+	vgterm "zuluprotocol/zeta/zeta/libs/term"
+	vgzap "zuluprotocol/zeta/zeta/libs/zap"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	netstore "zuluprotocol/zeta/zeta/wallet/network/store/v1"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )
@@ -96,7 +96,7 @@ func autoCompleteWallet(cmd *cobra.Command, zetaHome string, property string) {
 
 func autoCompleteNetwork(cmd *cobra.Command, zetaHome string) {
 	err := cmd.RegisterFlagCompletionFunc("network", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		zetaPaths := paths.New(vegaHome)
+		zetaPaths := paths.New(zetaHome)
 
 		netStore, err := netstore.InitialiseStore(zetaPaths)
 		if err != nil {

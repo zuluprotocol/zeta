@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type ExternalDataSourceSpec struct {
@@ -34,7 +34,7 @@ func (s *ExternalDataSourceSpec) ToProto() *zetapb.ExternalDataSourceSpec {
 	}
 }
 
-func ExternalDataSourceSpecFromProto(spec *zetapb.ExternalDataSourceSpec, txHash TxHash, vegaTime time.Time) (*ExternalDataSourceSpec, error) {
+func ExternalDataSourceSpecFromProto(spec *zetapb.ExternalDataSourceSpec, txHash TxHash, zetaTime time.Time) (*ExternalDataSourceSpec, error) {
 	if spec.Spec != nil {
 		ds, err := DataSourceSpecFromProto(spec.Spec, txHash, zetaTime)
 		if err != nil {
@@ -87,7 +87,7 @@ type DataSourceSpecRaw struct {
 	ZetaTime  time.Time
 }
 
-func DataSourceSpecFromProto(spec *zetapb.DataSourceSpec, txHash TxHash, vegaTime time.Time) (*DataSourceSpec, error) {
+func DataSourceSpecFromProto(spec *zetapb.DataSourceSpec, txHash TxHash, zetaTime time.Time) (*DataSourceSpec, error) {
 	if spec != nil {
 		id := SpecID(spec.Id)
 

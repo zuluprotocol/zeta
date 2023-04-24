@@ -7,7 +7,7 @@ It consumes stream of events from core Zeta via socket using [Broker](./broker.m
 
 The following diagram shows how the various components of this implementation interact with each other at a high level.
 
-![Zeta core protocol architecture](diagrams/design-architecture-2023-01-26.svg "Vega core protocol architecture")
+![Zeta core protocol architecture](diagrams/design-architecture-2023-01-26.svg "Zeta core protocol architecture")
 
 ## Modelling the domain
 

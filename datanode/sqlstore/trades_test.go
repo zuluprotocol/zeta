@@ -17,12 +17,12 @@ import (
 	"testing"
 	"time"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -458,7 +458,7 @@ func populateTestTrades(ctx context.Context, t *testing.T, bs *sqlstore.Blocks, 
 		trade := td
 		block := addTestBlock(t, ctx, bs)
 		trade.SyntheticTime = block.ZetaTime
-		trade.ZetaTime = block.VegaTime
+		trade.ZetaTime = block.ZetaTime
 		blockTimes[trade.ID.String()] = block.ZetaTime
 		err := ts.Add(&trade)
 		require.NoError(t, err)

@@ -15,7 +15,7 @@ package encoding_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
 
 	"github.com/dgraph-io/badger/v2/options"
 	"github.com/stretchr/testify/assert"

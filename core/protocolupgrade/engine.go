@@ -19,12 +19,12 @@ import (
 	"sort"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	"github.com/blang/semver"
 	"github.com/cenkalti/backoff"
@@ -154,7 +154,7 @@ func (e *Engine) UpgradeProposal(ctx context.Context, pk string, upgradeBlockHei
 	e.log.Debug("Adding protocol upgrade proposal",
 		logging.String("validatorPubKey", pk),
 		logging.Uint64("upgradeBlockHeight", upgradeBlockHeight),
-		logging.String("zetaReleaseTag", vegaReleaseTag),
+		logging.String("zetaReleaseTag", zetaReleaseTag),
 		logging.String("currentVersion", e.currentVersion),
 	)
 
@@ -171,7 +171,7 @@ func (e *Engine) UpgradeProposal(ctx context.Context, pk string, upgradeBlockHei
 		if _, ok := e.activeProposals[ID]; !ok {
 			e.activeProposals[ID] = &protocolUpgradeProposal{
 				blockHeight:    upgradeBlockHeight,
-				zetaReleaseTag: vegaReleaseTag,
+				zetaReleaseTag: zetaReleaseTag,
 				accepted:       map[string]struct{}{},
 			}
 		}
@@ -183,7 +183,7 @@ func (e *Engine) UpgradeProposal(ctx context.Context, pk string, upgradeBlockHei
 		e.log.Debug("Successfully added protocol upgrade proposal",
 			logging.String("validatorPubKey", pk),
 			logging.Uint64("upgradeBlockHeight", upgradeBlockHeight),
-			logging.String("zetaReleaseTag", vegaReleaseTag),
+			logging.String("zetaReleaseTag", zetaReleaseTag),
 		)
 	}
 
@@ -207,7 +207,7 @@ func (e *Engine) UpgradeProposal(ctx context.Context, pk string, upgradeBlockHei
 			e.log.Debug("Removed validator vote from previous proposal",
 				logging.String("validatorPubKey", pk),
 				logging.Uint64("upgradeBlockHeight", activeProposal.blockHeight),
-				logging.String("zetaReleaseTag", activeProposal.vegaReleaseTag),
+				logging.String("zetaReleaseTag", activeProposal.zetaReleaseTag),
 			)
 		}
 		if len(activeProposal.accepted) == 0 {
@@ -217,7 +217,7 @@ func (e *Engine) UpgradeProposal(ctx context.Context, pk string, upgradeBlockHei
 			e.log.Debug("Removed previous upgrade proposal",
 				logging.String("validatorPubKey", pk),
 				logging.Uint64("upgradeBlockHeight", activeProposal.blockHeight),
-				logging.String("zetaReleaseTag", activeProposal.vegaReleaseTag),
+				logging.String("zetaReleaseTag", activeProposal.zetaReleaseTag),
 			)
 		}
 	}
@@ -288,7 +288,7 @@ func (e *Engine) BeginBlock(ctx context.Context, blockHeight uint64) {
 			if blockHeight >= pup.blockHeight {
 				delete(e.activeProposals, ID)
 				delete(e.events, ID)
-				e.log.Info("protocol upgrade rejected", logging.String("zeta-release-tag", pup.vegaReleaseTag), logging.Uint64("upgrade-block-height", pup.blockHeight))
+				e.log.Info("protocol upgrade rejected", logging.String("zeta-release-tag", pup.zetaReleaseTag), logging.Uint64("upgrade-block-height", pup.blockHeight))
 				e.broker.Send(events.NewProtocolUpgradeProposalEvent(ctx, pup.blockHeight, pup.zetaReleaseTag, pup.approvers(), eventspb.ProtocolUpgradeProposalStatus_PROTOCOL_UPGRADE_PROPOSAL_STATUS_REJECTED))
 			}
 		}
@@ -316,7 +316,7 @@ func (e *Engine) Cleanup(ctx context.Context) {
 		status := eventspb.ProtocolUpgradeProposalStatus_PROTOCOL_UPGRADE_PROPOSAL_STATUS_APPROVED
 
 		if !e.isAccepted(pup) {
-			e.log.Info("protocol upgrade rejected", logging.String("zeta-release-tag", pup.vegaReleaseTag), logging.Uint64("upgrade-block-height", pup.blockHeight))
+			e.log.Info("protocol upgrade rejected", logging.String("zeta-release-tag", pup.zetaReleaseTag), logging.Uint64("upgrade-block-height", pup.blockHeight))
 			status = eventspb.ProtocolUpgradeProposalStatus_PROTOCOL_UPGRADE_PROPOSAL_STATUS_REJECTED
 		}
 

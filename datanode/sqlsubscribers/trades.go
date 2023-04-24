@@ -18,9 +18,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type TradeEvent interface {

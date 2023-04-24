@@ -14,13 +14,13 @@ import (
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/fsutil"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/snapshot"
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/fsutil"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type Segment interface {

@@ -15,8 +15,8 @@ package assets
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var (

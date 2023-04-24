@@ -12,7 +12,7 @@
 
 package market
 
-import "code.zetaprotocol.io/vega/core/integration/steps/market/defaults"
+import "zuluprotocol/zeta/zeta/core/integration/steps/market/defaults"
 
 type Config struct {
 	RiskModels          *riskModels

@@ -22,14 +22,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	gql "code.zetaprotocol.io/vega/datanode/gateway/graphql"
-	"code.zetaprotocol.io/vega/datanode/gateway/graphql/mocks"
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	protoTypes "code.zetaprotocol.io/vega/protos/vega"
-	datav1 "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	gql "zuluprotocol/zeta/zeta/datanode/gateway/graphql"
+	"zuluprotocol/zeta/zeta/datanode/gateway/graphql/mocks"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	datav1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 func TestNewResolverRoot_ConstructAndResolve(t *testing.T) {

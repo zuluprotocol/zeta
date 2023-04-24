@@ -15,7 +15,7 @@ package types
 import (
 	"fmt"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type ProposalTermsUpdateNetworkParameter struct {

@@ -15,8 +15,8 @@ package governance
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 var (

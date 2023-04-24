@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"os"
 
-	"code.zetaprotocol.io/vega/core/genesis"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
+	"zuluprotocol/zeta/zeta/core/genesis"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
 	tmconfig "github.com/tendermint/tendermint/config"
 	tmcrypto "github.com/tendermint/tendermint/crypto"
 	tmjson "github.com/tendermint/tendermint/libs/json"

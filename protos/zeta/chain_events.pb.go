@@ -27,7 +27,7 @@ type BuiltinAssetDeposit struct {
 	unknownFields protoimpl.UnknownFields
 
 	// A Zeta network internal asset identifier
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// A Zeta party identifier (pub-key)
 	PartyId string `protobuf:"bytes,2,opt,name=party_id,json=partyId,proto3" json:"party_id,omitempty"`
 	// The amount to be deposited
@@ -95,7 +95,7 @@ type BuiltinAssetWithdrawal struct {
 	unknownFields protoimpl.UnknownFields
 
 	// A Zeta network internal asset identifier
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// A Zeta network party identifier (pub-key)
 	PartyId string `protobuf:"bytes,2,opt,name=party_id,json=partyId,proto3" json:"party_id,omitempty"`
 	// The amount to be withdrawn
@@ -247,7 +247,7 @@ type ERC20AssetList struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The Zeta network internal identifier of the asset
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The ethereum address of the asset
 	AssetSource string `protobuf:"bytes,2,opt,name=asset_source,json=assetSource,proto3" json:"asset_source,omitempty"`
 }
@@ -305,7 +305,7 @@ type ERC20AssetDelist struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The Zeta network internal identifier of the asset
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 }
 
 func (x *ERC20AssetDelist) Reset() {
@@ -353,7 +353,7 @@ type ERC20AssetLimitsUpdated struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The Zeta network internal identifier of the asset
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The Ethereum wallet that initiated the deposit
 	SourceEthereumAddress string `protobuf:"bytes,2,opt,name=source_ethereum_address,json=sourceEthereumAddress,proto3" json:"source_ethereum_address,omitempty"`
 	// The updated lifetime limits
@@ -429,7 +429,7 @@ type ERC20Deposit struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The zeta network internal identifier of the asset
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The Ethereum wallet that initiated the deposit
 	SourceEthereumAddress string `protobuf:"bytes,2,opt,name=source_ethereum_address,json=sourceEthereumAddress,proto3" json:"source_ethereum_address,omitempty"`
 	// The Zeta party identifier (pub-key) which is the target of the deposit
@@ -505,7 +505,7 @@ type ERC20Withdrawal struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The Zeta network internal identifier of the asset
-	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=vegaAssetId,proto3" json:"vega_asset_id,omitempty"`
+	ZetaAssetId string `protobuf:"bytes,1,opt,name=zeta_asset_id,json=zetaAssetId,proto3" json:"zeta_asset_id,omitempty"`
 	// The target Ethereum wallet address
 	TargetEthereumAddress string `protobuf:"bytes,2,opt,name=target_ethereum_address,json=targetEthereumAddress,proto3" json:"target_ethereum_address,omitempty"`
 	// The reference nonce used for the transaction
@@ -1191,7 +1191,7 @@ type StakeDeposited struct {
 	// Ethereum Address of the user depositing stake (hex encode with 0x prefix)
 	EthereumAddress string `protobuf:"bytes,1,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
 	// The public of the party receiving the stake deposit (hex encode)
-	ZetaPublicKey string `protobuf:"bytes,2,opt,name=zeta_public_key,json=vegaPublicKey,proto3" json:"vega_public_key,omitempty"`
+	ZetaPublicKey string `protobuf:"bytes,2,opt,name=zeta_public_key,json=zetaPublicKey,proto3" json:"zeta_public_key,omitempty"`
 	// The amount deposited (base 10)
 	// This field is an unsigned integer passed as a string and needs to be scaled using the asset's decimal places.
 	Amount string `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
@@ -1269,7 +1269,7 @@ type StakeRemoved struct {
 	// Ethereum address of the user removing stake (hex encode with 0x prefix)
 	EthereumAddress string `protobuf:"bytes,1,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
 	// The public key of the party from which to remove stake (hex encode)
-	ZetaPublicKey string `protobuf:"bytes,2,opt,name=zeta_public_key,json=vegaPublicKey,proto3" json:"vega_public_key,omitempty"`
+	ZetaPublicKey string `protobuf:"bytes,2,opt,name=zeta_public_key,json=zetaPublicKey,proto3" json:"zeta_public_key,omitempty"`
 	// The amount removed (base 10)
 	// This field is an unsigned integer passed as a string and needs to be scaled using the asset decimal places for the staking token.
 	Amount string `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
@@ -1583,12 +1583,12 @@ var file_zeta_chain_events_proto_rawDesc = []byte{
 
 var (
 	file_zeta_chain_events_proto_rawDescOnce sync.Once
-	file_zeta_chain_events_proto_rawDescData = file_vega_chain_events_proto_rawDesc
+	file_zeta_chain_events_proto_rawDescData = file_zeta_chain_events_proto_rawDesc
 )
 
 func file_zeta_chain_events_proto_rawDescGZIP() []byte {
 	file_zeta_chain_events_proto_rawDescOnce.Do(func() {
-		file_zeta_chain_events_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_chain_events_proto_rawDescData)
+		file_zeta_chain_events_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_chain_events_proto_rawDescData)
 	})
 	return file_zeta_chain_events_proto_rawDescData
 }
@@ -1614,19 +1614,19 @@ var file_zeta_chain_events_proto_goTypes = []interface{}{
 	(*StakeTotalSupply)(nil),        // 16: zeta.StakeTotalSupply
 }
 var file_zeta_chain_events_proto_depIdxs = []int32{
-	0,  // 0: zeta.BuiltinAssetEvent.deposit:type_name -> vega.BuiltinAssetDeposit
-	1,  // 1: zeta.BuiltinAssetEvent.withdrawal:type_name -> vega.BuiltinAssetWithdrawal
-	3,  // 2: zeta.ERC20Event.asset_list:type_name -> vega.ERC20AssetList
-	4,  // 3: zeta.ERC20Event.asset_delist:type_name -> vega.ERC20AssetDelist
-	6,  // 4: zeta.ERC20Event.deposit:type_name -> vega.ERC20Deposit
-	7,  // 5: zeta.ERC20Event.withdrawal:type_name -> vega.ERC20Withdrawal
-	5,  // 6: zeta.ERC20Event.asset_limits_updated:type_name -> vega.ERC20AssetLimitsUpdated
-	9,  // 7: zeta.ERC20MultiSigEvent.signer_added:type_name -> vega.ERC20SignerAdded
-	10, // 8: zeta.ERC20MultiSigEvent.signer_removed:type_name -> vega.ERC20SignerRemoved
-	11, // 9: zeta.ERC20MultiSigEvent.threshold_set:type_name -> vega.ERC20ThresholdSet
-	14, // 10: zeta.StakingEvent.stake_deposited:type_name -> vega.StakeDeposited
-	15, // 11: zeta.StakingEvent.stake_removed:type_name -> vega.StakeRemoved
-	16, // 12: zeta.StakingEvent.total_supply:type_name -> vega.StakeTotalSupply
+	0,  // 0: zeta.BuiltinAssetEvent.deposit:type_name -> zeta.BuiltinAssetDeposit
+	1,  // 1: zeta.BuiltinAssetEvent.withdrawal:type_name -> zeta.BuiltinAssetWithdrawal
+	3,  // 2: zeta.ERC20Event.asset_list:type_name -> zeta.ERC20AssetList
+	4,  // 3: zeta.ERC20Event.asset_delist:type_name -> zeta.ERC20AssetDelist
+	6,  // 4: zeta.ERC20Event.deposit:type_name -> zeta.ERC20Deposit
+	7,  // 5: zeta.ERC20Event.withdrawal:type_name -> zeta.ERC20Withdrawal
+	5,  // 6: zeta.ERC20Event.asset_limits_updated:type_name -> zeta.ERC20AssetLimitsUpdated
+	9,  // 7: zeta.ERC20MultiSigEvent.signer_added:type_name -> zeta.ERC20SignerAdded
+	10, // 8: zeta.ERC20MultiSigEvent.signer_removed:type_name -> zeta.ERC20SignerRemoved
+	11, // 9: zeta.ERC20MultiSigEvent.threshold_set:type_name -> zeta.ERC20ThresholdSet
+	14, // 10: zeta.StakingEvent.stake_deposited:type_name -> zeta.StakeDeposited
+	15, // 11: zeta.StakingEvent.stake_removed:type_name -> zeta.StakeRemoved
+	16, // 12: zeta.StakingEvent.total_supply:type_name -> zeta.StakeTotalSupply
 	13, // [13:13] is the sub-list for method output_type
 	13, // [13:13] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name

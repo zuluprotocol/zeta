@@ -19,17 +19,17 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/stretchr/testify/require"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 )
 
 const (

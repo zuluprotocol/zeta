@@ -20,18 +20,18 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/core/blockchain/abci"
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/validators"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	api "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/validators"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"google.golang.org/grpc"
 
 	"github.com/jessevdk/go-flags"
@@ -89,8 +89,8 @@ func (opts *AnnounceNodeCmd) Execute(_ []string) error {
 
 	cmd := commandspb.AnnounceNode{
 		Id:               nodeWallets.Zeta.ID().Hex(),
-		ZetaPubKey:       nodeWallets.Vega.PubKey().Hex(),
-		ZetaPubKeyIndex:  nodeWallets.Vega.Index(),
+		ZetaPubKey:       nodeWallets.Zeta.PubKey().Hex(),
+		ZetaPubKeyIndex:  nodeWallets.Zeta.Index(),
 		ChainPubKey:      nodeWallets.Tendermint.Pubkey,
 		EthereumAddress:  vgcrypto.EthereumChecksumAddress(nodeWallets.Ethereum.PubKey().Hex()),
 		FromEpoch:        opts.FromEpoch,
@@ -160,7 +160,7 @@ func (opts *AnnounceNodeCmd) Execute(_ []string) error {
 		}{
 			TxHash:            txHash,
 			EthereumSignature: cmd.EthereumSignature.Value,
-			ZetaSignature:     cmd.VegaSignature.Value,
+			ZetaSignature:     cmd.ZetaSignature.Value,
 		})
 	}
 
@@ -184,7 +184,7 @@ func getNodeWalletCommander(log *logging.Logger, registryPass string, zetaPaths 
 		return nil, nil, nil, err
 	}
 
-	zetaWallet, err := nodewallets.GetZetaWallet(vegaPaths, registryPass)
+	zetaWallet, err := nodewallets.GetZetaWallet(zetaPaths, registryPass)
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("couldn't get Zeta node wallet: %w", err)
 	}

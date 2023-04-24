@@ -22,11 +22,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 func addTestOrder(t *testing.T, os *sqlstore.Orders, id entities.OrderID, block entities.Block, party entities.Party, market entities.Market, reference string,
@@ -53,7 +53,7 @@ func addTestOrder(t *testing.T, os *sqlstore.Orders, id entities.OrderID, block 
 		CreatedAt:       time.Now().Truncate(time.Microsecond),
 		UpdatedAt:       time.Now().Add(5 * time.Second).Truncate(time.Microsecond),
 		ExpiresAt:       time.Now().Add(10 * time.Second).Truncate(time.Microsecond),
-		ZetaTime:        block.VegaTime,
+		ZetaTime:        block.ZetaTime,
 		SeqNum:          seqNum,
 	}
 
@@ -138,7 +138,7 @@ func TestOrders(t *testing.T) {
 		if i%4 == 2 {
 			updatedOrder := orders[i]
 			updatedOrder.Remaining = 25
-			updatedOrder.ZetaTime = block2.VegaTime
+			updatedOrder.ZetaTime = block2.ZetaTime
 			err = os.Add(updatedOrder)
 			require.NoError(t, err)
 			numOrdersUpdatedInDifferentBlock++
@@ -149,7 +149,7 @@ func TestOrders(t *testing.T) {
 		if i%4 == 3 {
 			updatedOrder := orders[i]
 			updatedOrder.Remaining = 10
-			updatedOrder.ZetaTime = block2.VegaTime
+			updatedOrder.ZetaTime = block2.ZetaTime
 			updatedOrder.Version++
 			err = os.Add(updatedOrder)
 			require.NoError(t, err)
@@ -838,7 +838,7 @@ func generateTestOrdersForCursorPagination(t *testing.T, ctx context.Context, st
 
 		seqNum := uint64(i)
 		orderCursor := entities.OrderCursor{
-			ZetaTime: order.block.VegaTime,
+			ZetaTime: order.block.ZetaTime,
 			SeqNum:   seqNum,
 		}
 		cursors[i] = entities.NewCursor(orderCursor.String())
@@ -2125,7 +2125,7 @@ func testOrdersFilterByMarketAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
@@ -2163,7 +2163,7 @@ func testOrdersFilterByPartyAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
@@ -2203,7 +2203,7 @@ func testOrdersFilterByReferenceAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
@@ -2239,7 +2239,7 @@ func testOrdersFilterByMarketAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2278,7 +2278,7 @@ func testOrdersFilterByPartyAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2317,7 +2317,7 @@ func testOrdersFilterByReferenceAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2353,7 +2353,7 @@ func testOrdersFilterByMarketAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2391,7 +2391,7 @@ func testOrdersFilterByPartyAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2431,7 +2431,7 @@ func testOrdersFilterByReferenceAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2464,8 +2464,8 @@ func testOrdersFilterByMarketStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2501,8 +2501,8 @@ func testOrdersFilterByPartyStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2539,8 +2539,8 @@ func testOrdersFilterByReferenceStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: false,
 	}
@@ -2573,9 +2573,9 @@ func testOrdersFilterByMarketStatesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2610,9 +2610,9 @@ func testOrdersFilterByPartyStatesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2649,9 +2649,9 @@ func testOrdersFilterByReferenceStatesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2683,9 +2683,9 @@ func testOrdersFilterByMarketStatesTypesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2719,9 +2719,9 @@ func testOrdersFilterByPartyStatesTypesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2756,9 +2756,9 @@ func testOrdersFilterByReferenceStatesTypesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: false,
 	}
 
@@ -2811,7 +2811,7 @@ func testOrdersFilterExcludeLiquidityByMarketAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
@@ -2847,7 +2847,7 @@ func testOrdersFilterExcludeLiquidityByPartyAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
@@ -2885,7 +2885,7 @@ func testOrdersFilterExcludeLiquidityByReferenceAndStates(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
@@ -2917,7 +2917,7 @@ func testOrdersFilterExcludeLiquidityByMarketAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -2953,7 +2953,7 @@ func testOrdersFilterExcludeLiquidityByPartyAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -2990,7 +2990,7 @@ func testOrdersFilterExcludeLiquidityByReferenceAndTypes(t *testing.T) {
 
 	filter := entities.OrderFilter{
 		Statuses:         nil,
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -3025,7 +3025,7 @@ func testOrdersFilterExcludeLiquidityByMarketAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3061,7 +3061,7 @@ func testOrdersFilterExcludeLiquidityByPartyAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3099,7 +3099,7 @@ func testOrdersFilterExcludeLiquidityByReferenceAndTimeInForce(t *testing.T) {
 	filter := entities.OrderFilter{
 		Statuses:         nil,
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3131,8 +3131,8 @@ func testOrdersFilterExcludeLiquidityByMarketStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -3166,8 +3166,8 @@ func testOrdersFilterExcludeLiquidityByPartyStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -3202,8 +3202,8 @@ func testOrdersFilterExcludeLiquidityByReferenceStatesAndTypes(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
 		TimeInForces:     nil,
 		ExcludeLiquidity: true,
 	}
@@ -3235,9 +3235,9 @@ func testOrdersFilterExcludeLiquidityByMarketStatesAndTimeInForce(t *testing.T) 
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3270,9 +3270,9 @@ func testOrdersFilterExcludeLiquidityByPartyStatesAndTimeInForce(t *testing.T) {
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3307,9 +3307,9 @@ func testOrdersFilterExcludeLiquidityByReferenceStatesAndTimeInForce(t *testing.
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
 		Types:            nil,
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3338,9 +3338,9 @@ func testOrdersFilterExcludeLiquidityByMarketStatesTypesAndTimeInForce(t *testin
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3372,9 +3372,9 @@ func testOrdersFilterExcludeLiquidityByPartyStatesTypesAndTimeInForce(t *testing
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 
@@ -3407,9 +3407,9 @@ func testOrdersFilterExcludeLiquidityByReferenceStatesTypesAndTimeInForce(t *tes
 	testData := generateTestOrdersForCursorPagination(t, ctx, stores)
 
 	filter := entities.OrderFilter{
-		Statuses:         []zeta.Order_Status{vega.Order_STATUS_ACTIVE, vega.Order_STATUS_PARTIALLY_FILLED},
-		Types:            []zeta.Order_Type{vega.Order_TYPE_LIMIT},
-		TimeInForces:     []zeta.Order_TimeInForce{vega.Order_TIME_IN_FORCE_GTC},
+		Statuses:         []zeta.Order_Status{zeta.Order_STATUS_ACTIVE, zeta.Order_STATUS_PARTIALLY_FILLED},
+		Types:            []zeta.Order_Type{zeta.Order_TYPE_LIMIT},
+		TimeInForces:     []zeta.Order_TimeInForce{zeta.Order_TIME_IN_FORCE_GTC},
 		ExcludeLiquidity: true,
 	}
 

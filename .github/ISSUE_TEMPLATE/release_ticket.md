@@ -12,11 +12,11 @@ assignees: '@gordsport'
 
 | Repo | Version | Released/Tagged | Release notes |
 |:--------------:|:--------:|:--------:|:--------:|
-| Protos | [x.y.z](https://github.com/zetaprotocol/protos/releases/tag/) | Tagged | [changelog](https://github.com/vegaprotocol/protos/blob/develop/CHANGELOG.md) |
-| Datanode | [x.y.z](https://github.com/zetaprotocol/data-node/releases/tag/) | Tagged | [changelog](https://github.com/vegaprotocol/data-node/blob/develop/CHANGELOG.md) |
-| Zetawallet| [x.y.z](https://github.com/zetaprotocol/vegawallet/releases/tag/) | Released | [changelog](https://github.com/vegaprotocol/vegawallet/blob/develop/CHANGELOG.md) |
-| Zeta | [x.y.z](https://github.com/zetaprotocol/vega/releases/tag/) | Tagged | [changelog](https://github.com/vegaprotocol/vega/blob/develop/CHANGELOG.md) |
-| EEF | [x.y.z](https://github.com/zetaprotocol/ethereum-event-forwarder/releases/tag/) | Tagged |  [changelog](https://github.com/vegaprotocol/ethereum-event-forwarder/blob/ether/CHANGELOG.md) |
+| Protos | [x.y.z](https://github.com/zetaprotocol/protos/releases/tag/) | Tagged | [changelog](https://github.com/zetaprotocol/protos/blob/develop/CHANGELOG.md) |
+| Datanode | [x.y.z](https://github.com/zetaprotocol/data-node/releases/tag/) | Tagged | [changelog](https://github.com/zetaprotocol/data-node/blob/develop/CHANGELOG.md) |
+| Zetawallet| [x.y.z](https://github.com/zetaprotocol/zetawallet/releases/tag/) | Released | [changelog](https://github.com/zetaprotocol/zetawallet/blob/develop/CHANGELOG.md) |
+| Zeta | [x.y.z](https://github.com/zetaprotocol/zeta/releases/tag/) | Tagged | [changelog](https://github.com/zetaprotocol/zeta/blob/develop/CHANGELOG.md) |
+| EEF | [x.y.z](https://github.com/zetaprotocol/ethereum-event-forwarder/releases/tag/) | Tagged |  [changelog](https://github.com/zetaprotocol/ethereum-event-forwarder/blob/ether/CHANGELOG.md) |
 
 ### Smart Contract:
 

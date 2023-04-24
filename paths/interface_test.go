@@ -3,8 +3,8 @@ package paths_test
 import (
 	"testing"
 
-	vgtest "code.zetaprotocol.io/vega/libs/test"
-	"code.zetaprotocol.io/vega/paths"
+	vgtest "zuluprotocol/zeta/zeta/libs/test"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -17,8 +17,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/version"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/version"
 )
 
 const (

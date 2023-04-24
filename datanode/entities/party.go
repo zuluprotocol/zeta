@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/core/types"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 )
 
 type _Party struct{}

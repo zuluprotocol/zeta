@@ -15,10 +15,10 @@ package risk
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/risk/models"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/risk/models"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 var (

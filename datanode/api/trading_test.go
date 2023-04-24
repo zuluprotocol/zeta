@@ -19,20 +19,20 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/datanode/api"
-	"code.zetaprotocol.io/vega/datanode/api/mocks"
-	"code.zetaprotocol.io/vega/datanode/broker"
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/config"
-	vgtesting "code.zetaprotocol.io/vega/datanode/libs/testing"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/datanode/api"
+	"zuluprotocol/zeta/zeta/datanode/api/mocks"
+	"zuluprotocol/zeta/zeta/datanode/broker"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	vgtesting "zuluprotocol/zeta/zeta/datanode/libs/testing"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
@@ -244,7 +244,7 @@ func TestSubmitTransaction(t *testing.T) {
 
 		expectedRes := &zetaprotoapi.SubmitTransactionResponse{Success: true}
 
-		zetaReq := &vegaprotoapi.SubmitTransactionRequest{
+		zetaReq := &zetaprotoapi.SubmitTransactionRequest{
 			Type: zetaprotoapi.SubmitTransactionRequest_TYPE_UNSPECIFIED,
 			Tx: &commandspb.Transaction{
 				InputData: []byte("input data"),
@@ -290,7 +290,7 @@ func TestSubmitTransaction(t *testing.T) {
 			},
 		}
 
-		zetaReq := &vegaprotoapi.SubmitTransactionRequest{
+		zetaReq := &zetaprotoapi.SubmitTransactionRequest{
 			Type: zetaprotoapi.SubmitTransactionRequest_TYPE_COMMIT,
 			Tx: &commandspb.Transaction{
 				InputData: []byte("input data"),
@@ -346,7 +346,7 @@ func TestSubmitRawTransaction(t *testing.T) {
 
 		expectedRes := &zetaprotoapi.SubmitRawTransactionResponse{Success: true}
 
-		zetaReq := &vegaprotoapi.SubmitRawTransactionRequest{
+		zetaReq := &zetaprotoapi.SubmitRawTransactionRequest{
 			Type: zetaprotoapi.SubmitRawTransactionRequest_TYPE_UNSPECIFIED,
 			Tx:   bs,
 		}
@@ -389,7 +389,7 @@ func TestSubmitRawTransaction(t *testing.T) {
 			Tx:   bs,
 		}
 
-		zetaReq := &vegaprotoapi.SubmitRawTransactionRequest{
+		zetaReq := &zetaprotoapi.SubmitRawTransactionRequest{
 			Type: zetaprotoapi.SubmitRawTransactionRequest_TYPE_COMMIT,
 			Tx:   bs,
 		}
@@ -422,7 +422,7 @@ func TestLastBlockHeight(t *testing.T) {
 		req := &zetaprotoapi.LastBlockHeightRequest{}
 		expectedRes := &zetaprotoapi.LastBlockHeightResponse{Height: 20}
 
-		zetaReq := &vegaprotoapi.LastBlockHeightRequest{}
+		zetaReq := &zetaprotoapi.LastBlockHeightRequest{}
 
 		mockTradingServiceClient.EXPECT().
 			LastBlockHeight(gomock.Any(), vgtesting.ProtosEq(zetaReq)).
@@ -444,7 +444,7 @@ func TestLastBlockHeight(t *testing.T) {
 		defer tidy()
 
 		req := &zetaprotoapi.LastBlockHeightRequest{}
-		zetaReq := &vegaprotoapi.LastBlockHeightRequest{}
+		zetaReq := &zetaprotoapi.LastBlockHeightRequest{}
 
 		mockTradingServiceClient.EXPECT().
 			LastBlockHeight(gomock.Any(), vgtesting.ProtosEq(zetaReq)).

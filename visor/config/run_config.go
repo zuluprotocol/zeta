@@ -15,7 +15,7 @@ package config
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 /*
@@ -144,7 +144,7 @@ type RunConfig struct {
 	*/
 	Name string `toml:"name"`
 	// description: Configuration of a Zeta node.
-	Zeta VegaConfig `toml:"zeta"`
+	Zeta ZetaConfig `toml:"zeta"`
 	// description: Configuration of a data node.
 	DataNode *DataNodeConfig `toml:"data_node"`
 }
@@ -152,7 +152,7 @@ type RunConfig struct {
 func ExampleRunConfig(name string, withDataNode bool) *RunConfig {
 	c := &RunConfig{
 		Name: name,
-		Zeta: VegaConfig{
+		Zeta: ZetaConfig{
 			Binary: BinaryConfig{
 				Path: "zeta",
 				Args: []string{"arg1", "arg2", "..."},

@@ -3,10 +3,10 @@ package cmd_test
 import (
 	"testing"
 
-	cmd "code.zetaprotocol.io/vega/cmd/vegawallet/commands"
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/flags"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/wallet/service/v2/connections"
+	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

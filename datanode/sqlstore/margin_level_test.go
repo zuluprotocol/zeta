@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -86,7 +86,7 @@ func setupMarginLevelTests(t *testing.T, ctx context.Context) (*testBlockSource,
 		Quantum:       decimal.NewFromInt(1),
 		Source:        "TS",
 		ERC20Contract: "ET",
-		ZetaTime:      block.VegaTime,
+		ZetaTime:      block.ZetaTime,
 	}
 
 	err := assets.Add(ctx, testAsset)
@@ -252,11 +252,11 @@ func testGetMarginLevelsByPartyID(t *testing.T) {
 	// We have to truncate the time because Postgres only supports time to microsecond granularity.
 	want1 := marginLevel3
 	want1.Timestamp = want1.Timestamp.Truncate(time.Microsecond)
-	want1.ZetaTime = want1.VegaTime.Truncate(time.Microsecond)
+	want1.ZetaTime = want1.ZetaTime.Truncate(time.Microsecond)
 
 	want2 := marginLevel4
 	want2.Timestamp = want2.Timestamp.Truncate(time.Microsecond)
-	want2.ZetaTime = want2.VegaTime.Truncate(time.Microsecond)
+	want2.ZetaTime = want2.ZetaTime.Truncate(time.Microsecond)
 
 	want := []entities.MarginLevels{want1, want2}
 
@@ -337,11 +337,11 @@ func testGetMarginLevelsByMarketID(t *testing.T) {
 	// We have to truncate the time because Postgres only supports time to microsecond granularity.
 	want1 := marginLevel3
 	want1.Timestamp = want1.Timestamp.Truncate(time.Microsecond)
-	want1.ZetaTime = want1.VegaTime.Truncate(time.Microsecond)
+	want1.ZetaTime = want1.ZetaTime.Truncate(time.Microsecond)
 
 	want2 := marginLevel4
 	want2.Timestamp = want2.Timestamp.Truncate(time.Microsecond)
-	want2.ZetaTime = want2.VegaTime.Truncate(time.Microsecond)
+	want2.ZetaTime = want2.ZetaTime.Truncate(time.Microsecond)
 
 	want := []entities.MarginLevels{want1, want2}
 
@@ -422,7 +422,7 @@ func testGetMarginLevelsByID(t *testing.T) {
 	// We have to truncate the time because Postgres only supports time to microsecond granularity.
 	want1 := marginLevel3
 	want1.Timestamp = want1.Timestamp.Truncate(time.Microsecond)
-	want1.ZetaTime = want1.VegaTime.Truncate(time.Microsecond)
+	want1.ZetaTime = want1.ZetaTime.Truncate(time.Microsecond)
 
 	want := []entities.MarginLevels{want1}
 
@@ -575,11 +575,11 @@ func testGetMarginLevelsByIDPaginationWithPartyNoCursor(t *testing.T) {
 	assert.False(t, pageInfo.HasNextPage)
 	assert.False(t, pageInfo.HasPreviousPage)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[0].VegaTime,
+		ZetaTime:  blocks[0].ZetaTime,
 		AccountID: marginLevels[0].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[14].VegaTime,
+		ZetaTime:  blocks[14].ZetaTime,
 		AccountID: marginLevels[14].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -611,11 +611,11 @@ func testGetMarginLevelsByIDPaginationWithPartyNoCursorNewestFirst(t *testing.T)
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[14].VegaTime,
+		ZetaTime:  blocks[14].ZetaTime,
 		AccountID: marginLevels[14].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[0].VegaTime,
+		ZetaTime:  blocks[0].ZetaTime,
 		AccountID: marginLevels[0].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -647,11 +647,11 @@ func testGetMarginLevelsByIDPaginationWithMarketNoCursor(t *testing.T) {
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[2].VegaTime,
+		ZetaTime:  blocks[2].ZetaTime,
 		AccountID: marginLevels[2].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[13].VegaTime,
+		ZetaTime:  blocks[13].ZetaTime,
 		AccountID: marginLevels[13].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -683,11 +683,11 @@ func testGetMarginLevelsByIDPaginationWithMarketNoCursorNewestFirst(t *testing.T
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[13].VegaTime,
+		ZetaTime:  blocks[13].ZetaTime,
 		AccountID: marginLevels[13].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[2].VegaTime,
+		ZetaTime:  blocks[2].ZetaTime,
 		AccountID: marginLevels[2].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -717,11 +717,11 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstNoAfterCursor(t *testing.T) 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[0].VegaTime,
+		ZetaTime:  blocks[0].ZetaTime,
 		AccountID: marginLevels[0].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[4].VegaTime,
+		ZetaTime:  blocks[4].ZetaTime,
 		AccountID: marginLevels[4].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -751,11 +751,11 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstNoAfterCursorNewestFirst(t *
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[14].VegaTime,
+		ZetaTime:  blocks[14].ZetaTime,
 		AccountID: marginLevels[14].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[7].VegaTime,
+		ZetaTime:  blocks[7].ZetaTime,
 		AccountID: marginLevels[7].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -785,11 +785,11 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstNoAfterCursor(t *testing.T)
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[2].VegaTime,
+		ZetaTime:  blocks[2].ZetaTime,
 		AccountID: marginLevels[2].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[6].VegaTime,
+		ZetaTime:  blocks[6].ZetaTime,
 		AccountID: marginLevels[6].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -819,11 +819,11 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstNoAfterCursorNewestFirst(t 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[13].VegaTime,
+		ZetaTime:  blocks[13].ZetaTime,
 		AccountID: marginLevels[13].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[8].VegaTime,
+		ZetaTime:  blocks[8].ZetaTime,
 		AccountID: marginLevels[8].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -853,11 +853,11 @@ func testGetMarginLevelsByIDPaginationWithPartyLastNoBeforeCursor(t *testing.T) 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[7].VegaTime,
+		ZetaTime:  blocks[7].ZetaTime,
 		AccountID: marginLevels[7].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[14].VegaTime,
+		ZetaTime:  blocks[14].ZetaTime,
 		AccountID: marginLevels[14].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -887,11 +887,11 @@ func testGetMarginLevelsByIDPaginationWithPartyLastNoBeforeCursorNewestFirst(t *
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[4].VegaTime,
+		ZetaTime:  blocks[4].ZetaTime,
 		AccountID: marginLevels[4].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[0].VegaTime,
+		ZetaTime:  blocks[0].ZetaTime,
 		AccountID: marginLevels[0].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -921,11 +921,11 @@ func testGetMarginLevelsByIDPaginationWithMarketLastNoBeforeCursor(t *testing.T)
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[8].VegaTime,
+		ZetaTime:  blocks[8].ZetaTime,
 		AccountID: marginLevels[8].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[13].VegaTime,
+		ZetaTime:  blocks[13].ZetaTime,
 		AccountID: marginLevels[13].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -955,11 +955,11 @@ func testGetMarginLevelsByIDPaginationWithMarketLastNoBeforeCursorNewestFirst(t 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[6].VegaTime,
+		ZetaTime:  blocks[6].ZetaTime,
 		AccountID: marginLevels[6].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[2].VegaTime,
+		ZetaTime:  blocks[2].ZetaTime,
 		AccountID: marginLevels[2].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -978,7 +978,7 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstAndAfterCursor(t *testing.T)
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	first := int32(3)
 	after := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[1].VegaTime,
+		ZetaTime:  blocks[1].ZetaTime,
 		AccountID: marginLevels[1].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, false)
@@ -993,11 +993,11 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstAndAfterCursor(t *testing.T)
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[4].VegaTime,
+		ZetaTime:  blocks[4].ZetaTime,
 		AccountID: marginLevels[4].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[10].VegaTime,
+		ZetaTime:  blocks[10].ZetaTime,
 		AccountID: marginLevels[10].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1016,7 +1016,7 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstAndAfterCursorNewestFirst(t 
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	first := int32(3)
 	after := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[10].VegaTime,
+		ZetaTime:  blocks[10].ZetaTime,
 		AccountID: marginLevels[10].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, true)
@@ -1031,11 +1031,11 @@ func testGetMarginLevelsByIDPaginationWithPartyFirstAndAfterCursorNewestFirst(t 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[7].VegaTime,
+		ZetaTime:  blocks[7].ZetaTime,
 		AccountID: marginLevels[7].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[1].VegaTime,
+		ZetaTime:  blocks[1].ZetaTime,
 		AccountID: marginLevels[1].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1054,7 +1054,7 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstAndAfterCursor(t *testing.T
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	first := int32(3)
 	after := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[5].VegaTime,
+		ZetaTime:  blocks[5].ZetaTime,
 		AccountID: marginLevels[5].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, false)
@@ -1069,11 +1069,11 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstAndAfterCursor(t *testing.T
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[6].VegaTime,
+		ZetaTime:  blocks[6].ZetaTime,
 		AccountID: marginLevels[6].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[11].VegaTime,
+		ZetaTime:  blocks[11].ZetaTime,
 		AccountID: marginLevels[11].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1092,7 +1092,7 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstAndAfterCursorNewestFirst(t
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	first := int32(3)
 	after := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[11].VegaTime,
+		ZetaTime:  blocks[11].ZetaTime,
 		AccountID: marginLevels[11].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, true)
@@ -1107,11 +1107,11 @@ func testGetMarginLevelsByIDPaginationWithMarketFirstAndAfterCursorNewestFirst(t
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[8].VegaTime,
+		ZetaTime:  blocks[8].ZetaTime,
 		AccountID: marginLevels[8].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[5].VegaTime,
+		ZetaTime:  blocks[5].ZetaTime,
 		AccountID: marginLevels[5].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1130,7 +1130,7 @@ func testGetMarginLevelsByIDPaginationWithPartyLastAndBeforeCursor(t *testing.T)
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	last := int32(3)
 	before := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[10].VegaTime,
+		ZetaTime:  blocks[10].ZetaTime,
 		AccountID: marginLevels[10].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, false)
@@ -1145,11 +1145,11 @@ func testGetMarginLevelsByIDPaginationWithPartyLastAndBeforeCursor(t *testing.T)
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[1].VegaTime,
+		ZetaTime:  blocks[1].ZetaTime,
 		AccountID: marginLevels[1].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[7].VegaTime,
+		ZetaTime:  blocks[7].ZetaTime,
 		AccountID: marginLevels[7].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1168,7 +1168,7 @@ func testGetMarginLevelsByIDPaginationWithPartyLastAndBeforeCursorNewestFirst(t 
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	last := int32(3)
 	before := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[1].VegaTime,
+		ZetaTime:  blocks[1].ZetaTime,
 		AccountID: marginLevels[1].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, true)
@@ -1183,11 +1183,11 @@ func testGetMarginLevelsByIDPaginationWithPartyLastAndBeforeCursorNewestFirst(t 
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[10].VegaTime,
+		ZetaTime:  blocks[10].ZetaTime,
 		AccountID: marginLevels[10].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[4].VegaTime,
+		ZetaTime:  blocks[4].ZetaTime,
 		AccountID: marginLevels[4].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1206,7 +1206,7 @@ func testGetMarginLevelsByIDPaginationWithMarketLastAndBeforeCursor(t *testing.T
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	last := int32(3)
 	before := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[11].VegaTime,
+		ZetaTime:  blocks[11].ZetaTime,
 		AccountID: marginLevels[11].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, false)
@@ -1221,11 +1221,11 @@ func testGetMarginLevelsByIDPaginationWithMarketLastAndBeforeCursor(t *testing.T
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[5].VegaTime,
+		ZetaTime:  blocks[5].ZetaTime,
 		AccountID: marginLevels[5].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[8].VegaTime,
+		ZetaTime:  blocks[8].ZetaTime,
 		AccountID: marginLevels[8].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{
@@ -1244,7 +1244,7 @@ func testGetMarginLevelsByIDPaginationWithMarketLastAndBeforeCursorNewestFirst(t
 	mls, blocks, marginLevels := populateMarginLevelPaginationTestData(t, ctx)
 	last := int32(3)
 	before := entities.NewCursor(entities.MarginCursor{
-		ZetaTime:  blocks[5].VegaTime,
+		ZetaTime:  blocks[5].ZetaTime,
 		AccountID: marginLevels[5].AccountID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, true)
@@ -1259,11 +1259,11 @@ func testGetMarginLevelsByIDPaginationWithMarketLastAndBeforeCursorNewestFirst(t
 	}
 	assert.Equal(t, wantMarginLevels, got)
 	wantStartCursor := entities.MarginCursor{
-		ZetaTime:  blocks[11].VegaTime,
+		ZetaTime:  blocks[11].ZetaTime,
 		AccountID: marginLevels[11].AccountID,
 	}
 	wantEndCursor := entities.MarginCursor{
-		ZetaTime:  blocks[6].VegaTime,
+		ZetaTime:  blocks[6].ZetaTime,
 		AccountID: marginLevels[6].AccountID,
 	}
 	assert.Equal(t, entities.PageInfo{

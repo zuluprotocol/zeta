@@ -15,7 +15,7 @@ package broker
 import (
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
+	"zuluprotocol/zeta/zeta/core/events"
 )
 
 type gen struct {

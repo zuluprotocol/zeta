@@ -16,13 +16,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"code.zetaprotocol.io/vega/core/nodewallets"
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/clef"
-	"code.zetaprotocol.io/vega/core/nodewallets/eth/keystore"
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth/keystore"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 type wallet interface {
@@ -75,7 +75,7 @@ func NewNodeWallet(
 		nodeWallets:          nodeWallets,
 		registryLoader:       registryLoader,
 		nodeWalletPassphrase: nodeWalletPassphrase,
-		zetaPaths:            vegaPaths,
+		zetaPaths:            zetaPaths,
 	}, nil
 }
 
@@ -91,7 +91,7 @@ func (nw *NodeWallet) Reload(_ *http.Request, args *NodeWalletArgs, reply *NodeW
 			return fmt.Errorf("couldn't load node wallet registry: %v", err)
 		}
 
-		if err := nw.nodeWallets.Zeta.Reload(*reg.Vega); err != nil {
+		if err := nw.nodeWallets.Zeta.Reload(*reg.Zeta); err != nil {
 			nw.log.Error("Reloading node wallet failed", logging.Error(err))
 			return fmt.Errorf("failed to reload Zeta wallet: %w", err)
 		}

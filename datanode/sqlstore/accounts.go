@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgx/v4"
 )
@@ -108,7 +108,7 @@ func (as *Accounts) Obtain(ctx context.Context, a *entities.Account) error {
 	accountID := deterministicIDFromAccount(a)
 	if account, ok := as.getAccountFromCache(accountID); ok {
 		a.ID = account.ID
-		a.ZetaTime = account.VegaTime
+		a.ZetaTime = account.ZetaTime
 		a.TxHash = account.TxHash
 		return nil
 	}
@@ -120,7 +120,7 @@ func (as *Accounts) Obtain(ctx context.Context, a *entities.Account) error {
 	// added to the cache, so we need to check here and return the cached account if that's the case.
 	if account, ok := as.idToAccount[accountID]; ok {
 		a.ID = account.ID
-		a.ZetaTime = account.VegaTime
+		a.ZetaTime = account.ZetaTime
 		a.TxHash = account.TxHash
 		return nil
 	}

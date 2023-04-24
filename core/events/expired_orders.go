@@ -15,7 +15,7 @@ package events
 import (
 	"context"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // ExpiredOrders contains the market and parties that needed to have their orders closed in order

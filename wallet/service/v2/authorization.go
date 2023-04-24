@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strings"
 
-	"code.zetaprotocol.io/vega/wallet/service/v2/connections"
+	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
 )
 
 // VWTPrefix is the scheme that prefixes the token in the Authorization HTTP header

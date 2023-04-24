@@ -17,8 +17,8 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/vegatime"
-	zeta "code.vegaprotocol.io/vega/protos/vega/api/v1"
+	"zuluprotocol/zeta/zeta/core/zetatime"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 )
 
 type statisticsResolver ZetaResolverRoot

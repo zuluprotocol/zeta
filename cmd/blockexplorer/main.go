@@ -16,7 +16,7 @@ import (
 	"context"
 	"os"
 
-	"code.zetaprotocol.io/vega/cmd/blockexplorer/commands"
+	"zuluprotocol/zeta/zeta/cmd/blockexplorer/commands"
 )
 
 func main() {

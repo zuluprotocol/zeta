@@ -5,7 +5,7 @@
 # with ZETA_HOME set to your custom zeta home when starting the database.
 
 if [ -n "$ZETA_HOME" ]; then
-        ZETA_STATE=${VEGA_HOME}/state
+        ZETA_STATE=${ZETA_HOME}/state
 else
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
                 ZETA_STATE=~/.local/state/zeta

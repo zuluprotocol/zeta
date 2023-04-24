@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/jackc/pgtype"
 	"github.com/shopspring/decimal"
 )

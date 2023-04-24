@@ -16,9 +16,9 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/config"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/version"
+	"zuluprotocol/zeta/zeta/core/config"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/version"
 
 	"github.com/jessevdk/go-flags"
 )

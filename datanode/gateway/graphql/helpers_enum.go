@@ -15,7 +15,7 @@ package gql
 import (
 	"fmt"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 func convertDataNodeIntervalToProto(interval string) (types.Interval, error) {

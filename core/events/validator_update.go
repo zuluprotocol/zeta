@@ -15,7 +15,7 @@ package events
 import (
 	"context"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // ValidatorUpdate ...
@@ -53,8 +53,8 @@ func NewValidatorUpdateEvent(
 	return &ValidatorUpdate{
 		Base:            newBase(ctx, ValidatorUpdateEvent),
 		nodeID:          nodeID,
-		zetaPubKey:      vegaPubKey,
-		zetaPubKeyIndex: vegaPubKeyIndex,
+		zetaPubKey:      zetaPubKey,
+		zetaPubKeyIndex: zetaPubKeyIndex,
 		ethAddress:      ethAddress,
 		tmPubKey:        tmPubKey,
 		infoURL:         infoURL,

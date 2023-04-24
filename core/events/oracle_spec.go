@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type OracleSpec struct {

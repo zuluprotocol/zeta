@@ -17,9 +17,9 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/integration/stubs"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 func TheFollowingTransfersShouldHappen(

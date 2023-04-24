@@ -15,7 +15,7 @@ package verify
 import (
 	"time"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type AssetCmd struct{}

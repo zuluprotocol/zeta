@@ -3,8 +3,8 @@ package wallets
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/paths"
-	wstorev1 "code.zetaprotocol.io/vega/wallet/wallet/store/v1"
+	"zuluprotocol/zeta/zeta/paths"
+	wstorev1 "zuluprotocol/zeta/zeta/wallet/wallet/store/v1"
 )
 
 // InitialiseStore builds a wallet Store specifically for users wallets.

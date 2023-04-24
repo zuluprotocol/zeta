@@ -400,12 +400,12 @@ var file_zeta_data_v1_spec_proto_rawDesc = []byte{
 
 var (
 	file_zeta_data_v1_spec_proto_rawDescOnce sync.Once
-	file_zeta_data_v1_spec_proto_rawDescData = file_vega_data_v1_spec_proto_rawDesc
+	file_zeta_data_v1_spec_proto_rawDescData = file_zeta_data_v1_spec_proto_rawDesc
 )
 
 func file_zeta_data_v1_spec_proto_rawDescGZIP() []byte {
 	file_zeta_data_v1_spec_proto_rawDescOnce.Do(func() {
-		file_zeta_data_v1_spec_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_data_v1_spec_proto_rawDescData)
+		file_zeta_data_v1_spec_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_data_v1_spec_proto_rawDescData)
 	})
 	return file_zeta_data_v1_spec_proto_rawDescData
 }
@@ -420,10 +420,10 @@ var file_zeta_data_v1_spec_proto_goTypes = []interface{}{
 	(*Condition)(nil),       // 4: zeta.data.v1.Condition
 }
 var file_zeta_data_v1_spec_proto_depIdxs = []int32{
-	3, // 0: zeta.data.v1.Filter.key:type_name -> vega.data.v1.PropertyKey
-	4, // 1: zeta.data.v1.Filter.conditions:type_name -> vega.data.v1.Condition
-	0, // 2: zeta.data.v1.PropertyKey.type:type_name -> vega.data.v1.PropertyKey.Type
-	1, // 3: zeta.data.v1.Condition.operator:type_name -> vega.data.v1.Condition.Operator
+	3, // 0: zeta.data.v1.Filter.key:type_name -> zeta.data.v1.PropertyKey
+	4, // 1: zeta.data.v1.Filter.conditions:type_name -> zeta.data.v1.Condition
+	0, // 2: zeta.data.v1.PropertyKey.type:type_name -> zeta.data.v1.PropertyKey.Type
+	1, // 3: zeta.data.v1.Condition.operator:type_name -> zeta.data.v1.Condition.Operator
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name

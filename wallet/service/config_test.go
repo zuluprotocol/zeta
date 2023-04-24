@@ -3,8 +3,8 @@ package service_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/encoding"
-	"code.zetaprotocol.io/vega/wallet/service"
+	"zuluprotocol/zeta/zeta/libs/encoding"
+	"zuluprotocol/zeta/zeta/wallet/service"
 	"github.com/stretchr/testify/assert"
 )
 

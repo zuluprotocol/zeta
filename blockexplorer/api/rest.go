@@ -16,9 +16,9 @@ import (
 	"context"
 	"net/http"
 
-	datanodeRest "code.zetaprotocol.io/vega/datanode/gateway/rest"
-	"code.zetaprotocol.io/vega/logging"
-	protoapi "code.zetaprotocol.io/vega/protos/blockexplorer"
+	datanodeRest "zuluprotocol/zeta/zeta/datanode/gateway/rest"
+	"zuluprotocol/zeta/zeta/logging"
+	protoapi "zuluprotocol/zeta/zeta/protos/blockexplorer"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"

@@ -13,8 +13,8 @@
 package models
 
 import (
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 // Simple represents a dummy risk model with fixed risk params.

@@ -20,28 +20,28 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/fee"
-	"code.zetaprotocol.io/vega/core/idgeneration"
-	"code.zetaprotocol.io/vega/core/liquidity"
-	liquiditytarget "code.zetaprotocol.io/vega/core/liquidity/target"
-	"code.zetaprotocol.io/vega/core/markets"
-	"code.zetaprotocol.io/vega/core/matching"
-	"code.zetaprotocol.io/vega/core/metrics"
-	"code.zetaprotocol.io/vega/core/monitor"
-	lmon "code.zetaprotocol.io/vega/core/monitor/liquidity"
-	"code.zetaprotocol.io/vega/core/monitor/price"
-	"code.zetaprotocol.io/vega/core/positions"
-	"code.zetaprotocol.io/vega/core/products"
-	"code.zetaprotocol.io/vega/core/risk"
-	"code.zetaprotocol.io/vega/core/settlement"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/fee"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/liquidity"
+	liquiditytarget "zuluprotocol/zeta/zeta/core/liquidity/target"
+	"zuluprotocol/zeta/zeta/core/markets"
+	"zuluprotocol/zeta/zeta/core/matching"
+	"zuluprotocol/zeta/zeta/core/metrics"
+	"zuluprotocol/zeta/zeta/core/monitor"
+	lmon "zuluprotocol/zeta/zeta/core/monitor/liquidity"
+	"zuluprotocol/zeta/zeta/core/monitor/price"
+	"zuluprotocol/zeta/zeta/core/positions"
+	"zuluprotocol/zeta/zeta/core/products"
+	"zuluprotocol/zeta/zeta/core/risk"
+	"zuluprotocol/zeta/zeta/core/settlement"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // InitialOrderVersion is set on `Version` field for every new order submission read from the network.
@@ -3178,7 +3178,7 @@ func (m *Market) commandLiquidityAuction(ctx context.Context) {
 		}
 		m.pMonitor.CheckPrice(ctx, m.as, trades, true)
 		// TODO: Need to also get indicative trades and check how they'd impact target stake,
-		// see  https://github.com/zetaprotocol/vega/issues/3047
+		// see  https://github.com/zetaprotocol/zeta/issues/3047
 		// If price monitoring doesn't trigger auction than leave it
 		if evt := m.as.AuctionExtended(ctx, m.timeService.GetTimeNow()); evt != nil {
 			m.broker.Send(evt)

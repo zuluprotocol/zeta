@@ -23,7 +23,7 @@ import (
 	"path"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/faucet"
+	"zuluprotocol/zeta/zeta/core/faucet"
 )
 
 const (

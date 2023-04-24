@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -39,7 +39,7 @@ type Deposit struct {
 	ZetaTime          time.Time
 }
 
-func DepositFromProto(deposit *zeta.Deposit, txHash TxHash, vegaTime time.Time) (*Deposit, error) {
+func DepositFromProto(deposit *zeta.Deposit, txHash TxHash, zetaTime time.Time) (*Deposit, error) {
 	var err error
 	var amount decimal.Decimal
 
@@ -76,7 +76,7 @@ func (d Deposit) ToProto() *zeta.Deposit {
 
 func (d Deposit) Cursor() *Cursor {
 	cursor := DepositCursor{
-		ZetaTime: d.VegaTime,
+		ZetaTime: d.ZetaTime,
 		ID:       d.ID,
 	}
 	return NewCursor(cursor.String())

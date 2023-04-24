@@ -787,7 +787,7 @@ Feature: Staking & Delegation
 
   Scenario: Parties get the smallest reward amount of 1 when the reward pot is smallest (0061-REWP-additional-tests)
     Description:  Validators get the smallest reward amount of 1 and delegator earns nothing
-    # Explanation - 1 zeta is actually 1000000000000000000 so when reward account = 27 then that’s a very very very small fraction of a vega. Hence noone gets anything because the calculation is made in integers so anything that ends up being less than one is 0
+    # Explanation - 1 zeta is actually 1000000000000000000 so when reward account = 27 then that’s a very very very small fraction of a zeta. Hence noone gets anything because the calculation is made in integers so anything that ends up being less than one is 0
 
     Given the parties deposit on asset's general account the following amount:
       | party                                                            | asset | amount |

@@ -15,8 +15,8 @@ package gql
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type myWithdrawalResolver ZetaResolverRoot
@@ -42,13 +42,13 @@ func (r *myWithdrawalResolver) TxHash(ctx context.Context, obj *types.Withdrawal
 }
 
 func (r *myWithdrawalResolver) CreatedTimestamp(ctx context.Context, obj *types.Withdrawal) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(obj.CreatedTimestamp)), nil
+	return zetatime.Format(zetatime.UnixNano(obj.CreatedTimestamp)), nil
 }
 
 func (r *myWithdrawalResolver) WithdrawnTimestamp(ctx context.Context, obj *types.Withdrawal) (*string, error) {
 	var s *string
 	if obj.WithdrawnTimestamp > 0 {
-		ts := zetatime.Format(vegatime.UnixNano(obj.WithdrawnTimestamp))
+		ts := zetatime.Format(zetatime.UnixNano(obj.WithdrawnTimestamp))
 		s = &ts
 	}
 	return s, nil

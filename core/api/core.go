@@ -21,20 +21,20 @@ import (
 	"sync/atomic"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/evtforward"
-	"code.zetaprotocol.io/vega/core/metrics"
-	"code.zetaprotocol.io/vega/core/stats"
-	"code.zetaprotocol.io/vega/core/vegatime"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	ptypes "code.zetaprotocol.io/vega/protos/vega"
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
-	"code.zetaprotocol.io/vega/wallet/crypto"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/evtforward"
+	"zuluprotocol/zeta/zeta/core/metrics"
+	"zuluprotocol/zeta/zeta/core/stats"
+	"zuluprotocol/zeta/zeta/core/zetatime"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	ptypes "zuluprotocol/zeta/zeta/protos/zeta"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/zeta/wallet/crypto"
 
 	"github.com/pkg/errors"
 	"github.com/tendermint/tendermint/libs/bytes"
@@ -132,7 +132,7 @@ func (s *coreService) LastBlockHeight(
 
 // GetZetaTime returns the latest blockchain header timestamp, in UnixNano format.
 // Example: "1568025900111222333" corresponds to 2019-09-09T10:45:00.111222333Z.
-func (s *coreService) GetZetaTime(ctx context.Context, _ *protoapi.GetVegaTimeRequest) (*protoapi.GetVegaTimeResponse, error) {
+func (s *coreService) GetZetaTime(ctx context.Context, _ *protoapi.GetZetaTimeRequest) (*protoapi.GetZetaTimeResponse, error) {
 	defer metrics.StartAPIRequestAndTimeGRPC("GetZetaTime")()
 	s.svcMu.RLock()
 	defer s.svcMu.RUnlock()
@@ -285,7 +285,7 @@ func verifySignature(
 
 // Statistics provides various blockchain and Zeta statistics, including:
 // Blockchain height, backlog length, current time, orders and trades per block, tendermint version
-// Zeta counts for parties, markets, order actions (amend, cancel, submit), Vega version.
+// Zeta counts for parties, markets, order actions (amend, cancel, submit), Zeta version.
 func (s *coreService) Statistics(ctx context.Context, _ *protoapi.StatisticsRequest) (*protoapi.StatisticsResponse, error) {
 	defer metrics.StartAPIRequestAndTimeGRPC("Statistics")()
 	// Call tendermint and related services to get information for statistics

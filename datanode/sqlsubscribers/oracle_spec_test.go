@@ -18,10 +18,10 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers"
-	"code.zetaprotocol.io/vega/datanode/sqlsubscribers/mocks"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 func TestOracleSpec_Push(t *testing.T) {

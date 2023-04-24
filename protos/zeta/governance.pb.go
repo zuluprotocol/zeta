@@ -2344,12 +2344,12 @@ var file_zeta_governance_proto_rawDesc = []byte{
 
 var (
 	file_zeta_governance_proto_rawDescOnce sync.Once
-	file_zeta_governance_proto_rawDescData = file_vega_governance_proto_rawDesc
+	file_zeta_governance_proto_rawDescData = file_zeta_governance_proto_rawDesc
 )
 
 func file_zeta_governance_proto_rawDescGZIP() []byte {
 	file_zeta_governance_proto_rawDescOnce.Do(func() {
-		file_zeta_governance_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_governance_proto_rawDescData)
+		file_zeta_governance_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_governance_proto_rawDescData)
 	})
 	return file_zeta_governance_proto_rawDescData
 }
@@ -2390,47 +2390,47 @@ var file_zeta_governance_proto_goTypes = []interface{}{
 	(*AssetDetailsUpdate)(nil),            // 30: zeta.AssetDetailsUpdate
 }
 var file_zeta_governance_proto_depIdxs = []int32{
-	22, // 0: zeta.FutureProduct.data_source_spec_for_settlement_data:type_name -> vega.DataSourceDefinition
-	22, // 1: zeta.FutureProduct.data_source_spec_for_trading_termination:type_name -> vega.DataSourceDefinition
-	23, // 2: zeta.FutureProduct.data_source_spec_binding:type_name -> vega.DataSourceSpecToFutureBinding
-	3,  // 3: zeta.InstrumentConfiguration.future:type_name -> vega.FutureProduct
-	4,  // 4: zeta.NewMarketConfiguration.instrument:type_name -> vega.InstrumentConfiguration
-	24, // 5: zeta.NewMarketConfiguration.price_monitoring_parameters:type_name -> vega.PriceMonitoringParameters
-	25, // 6: zeta.NewMarketConfiguration.liquidity_monitoring_parameters:type_name -> vega.LiquidityMonitoringParameters
-	26, // 7: zeta.NewMarketConfiguration.simple:type_name -> vega.SimpleModelParams
-	27, // 8: zeta.NewMarketConfiguration.log_normal:type_name -> vega.LogNormalRiskModel
-	5,  // 9: zeta.NewMarket.changes:type_name -> vega.NewMarketConfiguration
-	8,  // 10: zeta.UpdateMarket.changes:type_name -> vega.UpdateMarketConfiguration
-	9,  // 11: zeta.UpdateMarketConfiguration.instrument:type_name -> vega.UpdateInstrumentConfiguration
-	24, // 12: zeta.UpdateMarketConfiguration.price_monitoring_parameters:type_name -> vega.PriceMonitoringParameters
-	25, // 13: zeta.UpdateMarketConfiguration.liquidity_monitoring_parameters:type_name -> vega.LiquidityMonitoringParameters
-	26, // 14: zeta.UpdateMarketConfiguration.simple:type_name -> vega.SimpleModelParams
-	27, // 15: zeta.UpdateMarketConfiguration.log_normal:type_name -> vega.LogNormalRiskModel
-	10, // 16: zeta.UpdateInstrumentConfiguration.future:type_name -> vega.UpdateFutureProduct
-	22, // 17: zeta.UpdateFutureProduct.data_source_spec_for_settlement_data:type_name -> vega.DataSourceDefinition
-	22, // 18: zeta.UpdateFutureProduct.data_source_spec_for_trading_termination:type_name -> vega.DataSourceDefinition
-	23, // 19: zeta.UpdateFutureProduct.data_source_spec_binding:type_name -> vega.DataSourceSpecToFutureBinding
-	28, // 20: zeta.UpdateNetworkParameter.changes:type_name -> vega.NetworkParameter
-	29, // 21: zeta.NewAsset.changes:type_name -> vega.AssetDetails
-	30, // 22: zeta.UpdateAsset.changes:type_name -> vega.AssetDetailsUpdate
-	7,  // 23: zeta.ProposalTerms.update_market:type_name -> vega.UpdateMarket
-	6,  // 24: zeta.ProposalTerms.new_market:type_name -> vega.NewMarket
-	11, // 25: zeta.ProposalTerms.update_network_parameter:type_name -> vega.UpdateNetworkParameter
-	12, // 26: zeta.ProposalTerms.new_asset:type_name -> vega.NewAsset
-	14, // 27: zeta.ProposalTerms.new_freeform:type_name -> vega.NewFreeform
-	13, // 28: zeta.ProposalTerms.update_asset:type_name -> vega.UpdateAsset
-	18, // 29: zeta.GovernanceData.proposal:type_name -> vega.Proposal
-	19, // 30: zeta.GovernanceData.yes:type_name -> vega.Vote
-	19, // 31: zeta.GovernanceData.no:type_name -> vega.Vote
-	20, // 32: zeta.GovernanceData.yes_party:type_name -> vega.GovernanceData.YesPartyEntry
-	21, // 33: zeta.GovernanceData.no_party:type_name -> vega.GovernanceData.NoPartyEntry
-	1,  // 34: zeta.Proposal.state:type_name -> vega.Proposal.State
-	15, // 35: zeta.Proposal.terms:type_name -> vega.ProposalTerms
-	0,  // 36: zeta.Proposal.reason:type_name -> vega.ProposalError
-	16, // 37: zeta.Proposal.rationale:type_name -> vega.ProposalRationale
-	2,  // 38: zeta.Vote.value:type_name -> vega.Vote.Value
-	19, // 39: zeta.GovernanceData.YesPartyEntry.value:type_name -> vega.Vote
-	19, // 40: zeta.GovernanceData.NoPartyEntry.value:type_name -> vega.Vote
+	22, // 0: zeta.FutureProduct.data_source_spec_for_settlement_data:type_name -> zeta.DataSourceDefinition
+	22, // 1: zeta.FutureProduct.data_source_spec_for_trading_termination:type_name -> zeta.DataSourceDefinition
+	23, // 2: zeta.FutureProduct.data_source_spec_binding:type_name -> zeta.DataSourceSpecToFutureBinding
+	3,  // 3: zeta.InstrumentConfiguration.future:type_name -> zeta.FutureProduct
+	4,  // 4: zeta.NewMarketConfiguration.instrument:type_name -> zeta.InstrumentConfiguration
+	24, // 5: zeta.NewMarketConfiguration.price_monitoring_parameters:type_name -> zeta.PriceMonitoringParameters
+	25, // 6: zeta.NewMarketConfiguration.liquidity_monitoring_parameters:type_name -> zeta.LiquidityMonitoringParameters
+	26, // 7: zeta.NewMarketConfiguration.simple:type_name -> zeta.SimpleModelParams
+	27, // 8: zeta.NewMarketConfiguration.log_normal:type_name -> zeta.LogNormalRiskModel
+	5,  // 9: zeta.NewMarket.changes:type_name -> zeta.NewMarketConfiguration
+	8,  // 10: zeta.UpdateMarket.changes:type_name -> zeta.UpdateMarketConfiguration
+	9,  // 11: zeta.UpdateMarketConfiguration.instrument:type_name -> zeta.UpdateInstrumentConfiguration
+	24, // 12: zeta.UpdateMarketConfiguration.price_monitoring_parameters:type_name -> zeta.PriceMonitoringParameters
+	25, // 13: zeta.UpdateMarketConfiguration.liquidity_monitoring_parameters:type_name -> zeta.LiquidityMonitoringParameters
+	26, // 14: zeta.UpdateMarketConfiguration.simple:type_name -> zeta.SimpleModelParams
+	27, // 15: zeta.UpdateMarketConfiguration.log_normal:type_name -> zeta.LogNormalRiskModel
+	10, // 16: zeta.UpdateInstrumentConfiguration.future:type_name -> zeta.UpdateFutureProduct
+	22, // 17: zeta.UpdateFutureProduct.data_source_spec_for_settlement_data:type_name -> zeta.DataSourceDefinition
+	22, // 18: zeta.UpdateFutureProduct.data_source_spec_for_trading_termination:type_name -> zeta.DataSourceDefinition
+	23, // 19: zeta.UpdateFutureProduct.data_source_spec_binding:type_name -> zeta.DataSourceSpecToFutureBinding
+	28, // 20: zeta.UpdateNetworkParameter.changes:type_name -> zeta.NetworkParameter
+	29, // 21: zeta.NewAsset.changes:type_name -> zeta.AssetDetails
+	30, // 22: zeta.UpdateAsset.changes:type_name -> zeta.AssetDetailsUpdate
+	7,  // 23: zeta.ProposalTerms.update_market:type_name -> zeta.UpdateMarket
+	6,  // 24: zeta.ProposalTerms.new_market:type_name -> zeta.NewMarket
+	11, // 25: zeta.ProposalTerms.update_network_parameter:type_name -> zeta.UpdateNetworkParameter
+	12, // 26: zeta.ProposalTerms.new_asset:type_name -> zeta.NewAsset
+	14, // 27: zeta.ProposalTerms.new_freeform:type_name -> zeta.NewFreeform
+	13, // 28: zeta.ProposalTerms.update_asset:type_name -> zeta.UpdateAsset
+	18, // 29: zeta.GovernanceData.proposal:type_name -> zeta.Proposal
+	19, // 30: zeta.GovernanceData.yes:type_name -> zeta.Vote
+	19, // 31: zeta.GovernanceData.no:type_name -> zeta.Vote
+	20, // 32: zeta.GovernanceData.yes_party:type_name -> zeta.GovernanceData.YesPartyEntry
+	21, // 33: zeta.GovernanceData.no_party:type_name -> zeta.GovernanceData.NoPartyEntry
+	1,  // 34: zeta.Proposal.state:type_name -> zeta.Proposal.State
+	15, // 35: zeta.Proposal.terms:type_name -> zeta.ProposalTerms
+	0,  // 36: zeta.Proposal.reason:type_name -> zeta.ProposalError
+	16, // 37: zeta.Proposal.rationale:type_name -> zeta.ProposalRationale
+	2,  // 38: zeta.Vote.value:type_name -> zeta.Vote.Value
+	19, // 39: zeta.GovernanceData.YesPartyEntry.value:type_name -> zeta.Vote
+	19, // 40: zeta.GovernanceData.NoPartyEntry.value:type_name -> zeta.Vote
 	41, // [41:41] is the sub-list for method output_type
 	41, // [41:41] is the sub-list for method input_type
 	41, // [41:41] is the sub-list for extension type_name
@@ -2444,7 +2444,7 @@ func file_zeta_governance_proto_init() {
 		return
 	}
 	file_zeta_markets_proto_init()
-	file_zeta_vega_proto_init()
+	file_zeta_zeta_proto_init()
 	file_zeta_assets_proto_init()
 	file_zeta_data_source_proto_init()
 	if !protoimpl.UnsafeEnabled {

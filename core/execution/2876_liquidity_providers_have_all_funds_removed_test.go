@@ -17,11 +17,11 @@ import (
 	"testing"
 	"time"
 
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -17,10 +17,10 @@ import (
 	"errors"
 	"strings"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	vgproto "code.zetaprotocol.io/vega/protos/vega"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 var (
@@ -168,7 +168,7 @@ func (app *App) processChainEventERC20(
 
 	switch act := evt.Action.(type) {
 	case *types.ERC20EventAssetList:
-		act.AssetList.ZetaAssetID = strings.TrimPrefix(act.AssetList.VegaAssetID, "0x")
+		act.AssetList.ZetaAssetID = strings.TrimPrefix(act.AssetList.ZetaAssetID, "0x")
 		if err := app.checkZetaAssetID(act.AssetList, "ERC20.AssetList"); err != nil {
 			return err
 		}
@@ -184,19 +184,19 @@ func (app *App) processChainEventERC20(
 	case *types.ERC20EventAssetDelist:
 		return errors.New("ERC20.AssetDelist not implemented")
 	case *types.ERC20EventDeposit:
-		act.Deposit.ZetaAssetID = strings.TrimPrefix(act.Deposit.VegaAssetID, "0x")
+		act.Deposit.ZetaAssetID = strings.TrimPrefix(act.Deposit.ZetaAssetID, "0x")
 		if err := app.checkZetaAssetID(act.Deposit, "ERC20.AssetDeposit"); err != nil {
 			return err
 		}
 		return app.banking.DepositERC20(ctx, act.Deposit, id, evt.Block, evt.Index, txID)
 	case *types.ERC20EventWithdrawal:
-		act.Withdrawal.ZetaAssetID = strings.TrimPrefix(act.Withdrawal.VegaAssetID, "0x")
+		act.Withdrawal.ZetaAssetID = strings.TrimPrefix(act.Withdrawal.ZetaAssetID, "0x")
 		if err := app.checkZetaAssetID(act.Withdrawal, "ERC20.AssetWithdrawal"); err != nil {
 			return err
 		}
 		return app.banking.ERC20WithdrawalEvent(ctx, act.Withdrawal, evt.Block, evt.Index, txID)
 	case *types.ERC20EventAssetLimitsUpdated:
-		act.AssetLimitsUpdated.ZetaAssetID = strings.TrimPrefix(act.AssetLimitsUpdated.VegaAssetID, "0x")
+		act.AssetLimitsUpdated.ZetaAssetID = strings.TrimPrefix(act.AssetLimitsUpdated.ZetaAssetID, "0x")
 		if err := app.checkZetaAssetID(act.AssetLimitsUpdated, "ERC20.AssetLimitsUpdated"); err != nil {
 			return err
 		}
@@ -216,7 +216,7 @@ type HasZetaAssetID interface {
 	GetZetaAssetID() string
 }
 
-func (app *App) checkZetaAssetID(a HasVegaAssetID, action string) error {
+func (app *App) checkZetaAssetID(a HasZetaAssetID, action string) error {
 	id := a.GetZetaAssetID()
 	if _, err := app.assets.Get(id); err != nil {
 		app.log.Error("invalid zeta asset ID",

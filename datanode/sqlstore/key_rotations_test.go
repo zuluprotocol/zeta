@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -506,7 +506,7 @@ func setKeyRotationStoreTest(t *testing.T, ctx context.Context) (*sqlstore.KeyRo
 				OldPubKey:   entities.ZetaPublicKey(fmt.Sprintf("cafed00d%02d", j+1)),
 				NewPubKey:   entities.ZetaPublicKey(fmt.Sprintf("cafed00d%02d", j+2)),
 				BlockHeight: uint64((i * 10) + j + 1),
-				ZetaTime:    block.VegaTime,
+				ZetaTime:    block.ZetaTime,
 			}
 			if err := ks.Upsert(ctx, &kr); err != nil {
 				t.Fatalf("creating key rotation test data: %v", err)

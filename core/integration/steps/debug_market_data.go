@@ -15,7 +15,7 @@ package steps
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 func DebugMarketData(

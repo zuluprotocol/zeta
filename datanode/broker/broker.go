@@ -18,12 +18,12 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/broker"
+	"zuluprotocol/zeta/zeta/libs/broker"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 // TestInterface interface (horribly named) is declared here to provide a drop-in replacement for broker mocks used throughout
@@ -62,7 +62,7 @@ type OrderEventWithZetaTime struct {
 	zetaTime time.Time
 }
 
-func (oe *OrderEventWithZetaTime) VegaTime() time.Time {
+func (oe *OrderEventWithZetaTime) ZetaTime() time.Time {
 	return oe.zetaTime
 }
 

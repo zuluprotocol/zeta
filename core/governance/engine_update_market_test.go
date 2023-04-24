@@ -17,11 +17,11 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/governance"
-	"code.zetaprotocol.io/vega/core/netparams"
-	"code.zetaprotocol.io/vega/core/types"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/governance"
+	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -15,9 +15,9 @@ package events
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
-	proto "code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type Deposit struct {

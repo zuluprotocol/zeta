@@ -3,13 +3,13 @@ package rewards
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/stretchr/testify/require"
 )
 
-// TestMainnet is reproducing the issue https://github.com/zetaprotocol/vega/issues/7253 by setting up the validator delegations data to what it was at the end of epoch 417.
+// TestMainnet is reproducing the issue https://github.com/zetaprotocol/zeta/issues/7253 by setting up the validator delegations data to what it was at the end of epoch 417.
 // The issue that caused this overflow is related to one party (2fd6dfb33917e0438746a3d0f70175a6ba528f497649cbcd8e0d1c8607182e2d) having very small fraction of the delegation
 // on the node - when the normalised weights are summed, with rounding errors it gets to more than 1 - with precision error of 4e-16. The delegator weight to adjust is chosen
 // at random with the rng seeded at block time 7656707 - this leads to choosing this party for adjustment to correct the precision error - however as the error is 4e-16 and

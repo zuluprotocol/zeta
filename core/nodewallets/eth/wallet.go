@@ -13,8 +13,8 @@
 package eth
 
 import (
-	"code.zetaprotocol.io/vega/core/nodewallets/registry"
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 type wallet interface {

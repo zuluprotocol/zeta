@@ -15,10 +15,10 @@ package adaptors
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/oracles/validation"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/oracles/validation"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 // ErrUnknownOracleSource is used when the input data is originated from an

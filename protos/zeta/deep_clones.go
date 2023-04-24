@@ -1,6 +1,6 @@
 package zeta
 
-import "code.zetaprotocol.io/vega/libs/ptr"
+import "zuluprotocol/zeta/zeta/libs/ptr"
 
 func (b BuiltinAsset) DeepClone() *BuiltinAsset {
 	return &b

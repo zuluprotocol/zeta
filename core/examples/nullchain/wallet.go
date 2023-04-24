@@ -16,11 +16,11 @@ import (
 	"context"
 	"errors"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	api "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	storev1 "code.zetaprotocol.io/vega/wallet/wallet/store/v1"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	storev1 "zuluprotocol/zeta/zeta/wallet/wallet/store/v1"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 )
 
 var ErrFailedSubmission = errors.New("failed to submit transaction")

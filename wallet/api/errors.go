@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/wallet/api/node/types"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/wallet/api/node/types"
 )
 
 const (
@@ -140,7 +140,7 @@ var (
 	ErrPublicKeyDoesNotExist                              = errors.New("the public key does not exist")
 	ErrPublicKeyIsNotAllowedToBeUsed                      = errors.New("the public key is not allowed to be used")
 	ErrPublicKeyIsRequired                                = errors.New("the public key is required")
-	ErrRawTransactionIsNotValidZetaTransaction            = errors.New("the raw transaction is not a valid Vega transaction")
+	ErrRawTransactionIsNotValidZetaTransaction            = errors.New("the raw transaction is not a valid Zeta transaction")
 	ErrRecoveryPhraseIsRequired                           = errors.New("the recovery phrase is required")
 	ErrRequestInterrupted                                 = errors.New("the request has been interrupted")
 	ErrSendingModeCannotBeTypeUnspecified                 = errors.New(`the sending mode can't be "TYPE_UNSPECIFIED"`)

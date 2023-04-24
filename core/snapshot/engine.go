@@ -25,15 +25,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/metrics"
-	"code.zetaprotocol.io/vega/core/types"
-	zetactx "code.vegaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	snappb "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/metrics"
+	"zuluprotocol/zeta/zeta/core/types"
+	zetactx "code.zetaprotocol.io/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	snappb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/cosmos/iavl"
 	"github.com/syndtr/goleveldb/leveldb/filter"
@@ -72,13 +72,13 @@ type StateProviderT interface {
 	LoadState(ctx context.Context, pl *types.Payload) ([]types.StateProvider, error)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_mock.go -package mocks code.zetaprotocol.io/vega/core/snapshot TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_mock.go -package mocks zuluprotocol/zeta/zeta/core/snapshot TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 	SetTimeNow(context.Context, time.Time)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/stats_mock.go -package mocks code.zetaprotocol.io/vega/core/snapshot StatsService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/stats_mock.go -package mocks zuluprotocol/zeta/zeta/core/snapshot StatsService
 type StatsService interface {
 	SetHeight(uint64)
 }
@@ -588,7 +588,7 @@ func (e *Engine) applySnap(ctx context.Context) error {
 	e.wrap = ordered[types.AppSnapshot][0].GetAppState()
 	e.app = e.wrap.AppState
 	// set the context with the height + block + chainid
-	ctx = zetactx.WithTraceID(vegactx.WithBlockHeight(ctx, int64(e.app.Height)), e.app.Block)
+	ctx = zetactx.WithTraceID(zetactx.WithBlockHeight(ctx, int64(e.app.Height)), e.app.Block)
 	ctx = zetactx.WithChainID(ctx, e.app.ChainID)
 
 	// we're done restoring, now save the snapshot locally, so we can provide it moving forwards

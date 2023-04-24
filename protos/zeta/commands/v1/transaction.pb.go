@@ -924,12 +924,12 @@ var file_zeta_commands_v1_transaction_proto_rawDesc = []byte{
 
 var (
 	file_zeta_commands_v1_transaction_proto_rawDescOnce sync.Once
-	file_zeta_commands_v1_transaction_proto_rawDescData = file_vega_commands_v1_transaction_proto_rawDesc
+	file_zeta_commands_v1_transaction_proto_rawDescData = file_zeta_commands_v1_transaction_proto_rawDesc
 )
 
 func file_zeta_commands_v1_transaction_proto_rawDescGZIP() []byte {
 	file_zeta_commands_v1_transaction_proto_rawDescOnce.Do(func() {
-		file_zeta_commands_v1_transaction_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_commands_v1_transaction_proto_rawDescData)
+		file_zeta_commands_v1_transaction_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_commands_v1_transaction_proto_rawDescData)
 	})
 	return file_zeta_commands_v1_transaction_proto_rawDescData
 }
@@ -969,34 +969,34 @@ var file_zeta_commands_v1_transaction_proto_goTypes = []interface{}{
 	(*Signature)(nil),                      // 29: zeta.commands.v1.Signature
 }
 var file_zeta_commands_v1_transaction_proto_depIdxs = []int32{
-	4,  // 0: zeta.commands.v1.InputData.order_submission:type_name -> vega.commands.v1.OrderSubmission
-	5,  // 1: zeta.commands.v1.InputData.order_cancellation:type_name -> vega.commands.v1.OrderCancellation
-	6,  // 2: zeta.commands.v1.InputData.order_amendment:type_name -> vega.commands.v1.OrderAmendment
-	7,  // 3: zeta.commands.v1.InputData.withdraw_submission:type_name -> vega.commands.v1.WithdrawSubmission
-	8,  // 4: zeta.commands.v1.InputData.proposal_submission:type_name -> vega.commands.v1.ProposalSubmission
-	9,  // 5: zeta.commands.v1.InputData.vote_submission:type_name -> vega.commands.v1.VoteSubmission
-	10, // 6: zeta.commands.v1.InputData.liquidity_provision_submission:type_name -> vega.commands.v1.LiquidityProvisionSubmission
-	11, // 7: zeta.commands.v1.InputData.delegate_submission:type_name -> vega.commands.v1.DelegateSubmission
-	12, // 8: zeta.commands.v1.InputData.undelegate_submission:type_name -> vega.commands.v1.UndelegateSubmission
-	13, // 9: zeta.commands.v1.InputData.liquidity_provision_cancellation:type_name -> vega.commands.v1.LiquidityProvisionCancellation
-	14, // 10: zeta.commands.v1.InputData.liquidity_provision_amendment:type_name -> vega.commands.v1.LiquidityProvisionAmendment
-	15, // 11: zeta.commands.v1.InputData.transfer:type_name -> vega.commands.v1.Transfer
-	16, // 12: zeta.commands.v1.InputData.cancel_transfer:type_name -> vega.commands.v1.CancelTransfer
-	17, // 13: zeta.commands.v1.InputData.announce_node:type_name -> vega.commands.v1.AnnounceNode
-	18, // 14: zeta.commands.v1.InputData.batch_market_instructions:type_name -> vega.commands.v1.BatchMarketInstructions
-	19, // 15: zeta.commands.v1.InputData.node_vote:type_name -> vega.commands.v1.NodeVote
-	20, // 16: zeta.commands.v1.InputData.node_signature:type_name -> vega.commands.v1.NodeSignature
-	21, // 17: zeta.commands.v1.InputData.chain_event:type_name -> vega.commands.v1.ChainEvent
-	22, // 18: zeta.commands.v1.InputData.key_rotate_submission:type_name -> vega.commands.v1.KeyRotateSubmission
-	23, // 19: zeta.commands.v1.InputData.state_variable_proposal:type_name -> vega.commands.v1.StateVariableProposal
-	24, // 20: zeta.commands.v1.InputData.validator_heartbeat:type_name -> vega.commands.v1.ValidatorHeartbeat
-	25, // 21: zeta.commands.v1.InputData.ethereum_key_rotate_submission:type_name -> vega.commands.v1.EthereumKeyRotateSubmission
-	26, // 22: zeta.commands.v1.InputData.protocol_upgrade_proposal:type_name -> vega.commands.v1.ProtocolUpgradeProposal
-	27, // 23: zeta.commands.v1.InputData.issue_signatures:type_name -> vega.commands.v1.IssueSignatures
-	28, // 24: zeta.commands.v1.InputData.oracle_data_submission:type_name -> vega.commands.v1.OracleDataSubmission
-	29, // 25: zeta.commands.v1.Transaction.signature:type_name -> vega.commands.v1.Signature
-	0,  // 26: zeta.commands.v1.Transaction.version:type_name -> vega.commands.v1.TxVersion
-	3,  // 27: zeta.commands.v1.Transaction.pow:type_name -> vega.commands.v1.ProofOfWork
+	4,  // 0: zeta.commands.v1.InputData.order_submission:type_name -> zeta.commands.v1.OrderSubmission
+	5,  // 1: zeta.commands.v1.InputData.order_cancellation:type_name -> zeta.commands.v1.OrderCancellation
+	6,  // 2: zeta.commands.v1.InputData.order_amendment:type_name -> zeta.commands.v1.OrderAmendment
+	7,  // 3: zeta.commands.v1.InputData.withdraw_submission:type_name -> zeta.commands.v1.WithdrawSubmission
+	8,  // 4: zeta.commands.v1.InputData.proposal_submission:type_name -> zeta.commands.v1.ProposalSubmission
+	9,  // 5: zeta.commands.v1.InputData.vote_submission:type_name -> zeta.commands.v1.VoteSubmission
+	10, // 6: zeta.commands.v1.InputData.liquidity_provision_submission:type_name -> zeta.commands.v1.LiquidityProvisionSubmission
+	11, // 7: zeta.commands.v1.InputData.delegate_submission:type_name -> zeta.commands.v1.DelegateSubmission
+	12, // 8: zeta.commands.v1.InputData.undelegate_submission:type_name -> zeta.commands.v1.UndelegateSubmission
+	13, // 9: zeta.commands.v1.InputData.liquidity_provision_cancellation:type_name -> zeta.commands.v1.LiquidityProvisionCancellation
+	14, // 10: zeta.commands.v1.InputData.liquidity_provision_amendment:type_name -> zeta.commands.v1.LiquidityProvisionAmendment
+	15, // 11: zeta.commands.v1.InputData.transfer:type_name -> zeta.commands.v1.Transfer
+	16, // 12: zeta.commands.v1.InputData.cancel_transfer:type_name -> zeta.commands.v1.CancelTransfer
+	17, // 13: zeta.commands.v1.InputData.announce_node:type_name -> zeta.commands.v1.AnnounceNode
+	18, // 14: zeta.commands.v1.InputData.batch_market_instructions:type_name -> zeta.commands.v1.BatchMarketInstructions
+	19, // 15: zeta.commands.v1.InputData.node_vote:type_name -> zeta.commands.v1.NodeVote
+	20, // 16: zeta.commands.v1.InputData.node_signature:type_name -> zeta.commands.v1.NodeSignature
+	21, // 17: zeta.commands.v1.InputData.chain_event:type_name -> zeta.commands.v1.ChainEvent
+	22, // 18: zeta.commands.v1.InputData.key_rotate_submission:type_name -> zeta.commands.v1.KeyRotateSubmission
+	23, // 19: zeta.commands.v1.InputData.state_variable_proposal:type_name -> zeta.commands.v1.StateVariableProposal
+	24, // 20: zeta.commands.v1.InputData.validator_heartbeat:type_name -> zeta.commands.v1.ValidatorHeartbeat
+	25, // 21: zeta.commands.v1.InputData.ethereum_key_rotate_submission:type_name -> zeta.commands.v1.EthereumKeyRotateSubmission
+	26, // 22: zeta.commands.v1.InputData.protocol_upgrade_proposal:type_name -> zeta.commands.v1.ProtocolUpgradeProposal
+	27, // 23: zeta.commands.v1.InputData.issue_signatures:type_name -> zeta.commands.v1.IssueSignatures
+	28, // 24: zeta.commands.v1.InputData.oracle_data_submission:type_name -> zeta.commands.v1.OracleDataSubmission
+	29, // 25: zeta.commands.v1.Transaction.signature:type_name -> zeta.commands.v1.Signature
+	0,  // 26: zeta.commands.v1.Transaction.version:type_name -> zeta.commands.v1.TxVersion
+	3,  // 27: zeta.commands.v1.Transaction.pow:type_name -> zeta.commands.v1.ProofOfWork
 	28, // [28:28] is the sub-list for method output_type
 	28, // [28:28] is the sub-list for method input_type
 	28, // [28:28] is the sub-list for extension type_name

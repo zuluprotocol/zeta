@@ -15,12 +15,12 @@ package nodewallets
 import (
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/nodewallets/eth"
-	"code.zetaprotocol.io/vega/core/nodewallets/vega"
+	"zuluprotocol/zeta/zeta/core/nodewallets/eth"
+	"zuluprotocol/zeta/zeta/core/nodewallets/zeta"
 )
 
 var (
-	ErrZetaWalletIsMissing       = errors.New("the Vega node wallet is missing")
+	ErrZetaWalletIsMissing       = errors.New("the Zeta node wallet is missing")
 	ErrEthereumWalletIsMissing   = errors.New("the Ethereum node wallet is missing")
 	ErrTendermintPubkeyIsMissing = errors.New("the Tendermint pubkey is missing")
 )

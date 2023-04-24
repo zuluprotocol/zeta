@@ -17,11 +17,11 @@ import (
 	"sort"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/proto"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 func (e *Engine) Name() types.CheckpointName {

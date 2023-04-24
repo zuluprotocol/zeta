@@ -16,11 +16,11 @@ import (
 	"context"
 	"sort"
 
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 func (mat *MarketActivityTracker) Name() types.CheckpointName {

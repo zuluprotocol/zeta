@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -32,7 +32,7 @@ func addCheckpoint(t *testing.T, ctx context.Context, ns *sqlstore.Checkpoints, 
 		Hash:        hash,
 		BlockHash:   blockHash,
 		BlockHeight: blockHeight,
-		ZetaTime:    block.VegaTime,
+		ZetaTime:    block.ZetaTime,
 		SeqNum:      seqNum,
 	}
 	ns.Add(ctx, c)

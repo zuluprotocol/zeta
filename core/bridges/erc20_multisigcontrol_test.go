@@ -17,8 +17,8 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/bridges"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/bridges"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"

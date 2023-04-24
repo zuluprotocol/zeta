@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

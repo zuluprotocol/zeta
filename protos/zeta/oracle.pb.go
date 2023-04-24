@@ -7,7 +7,7 @@
 package zeta
 
 import (
-	v1 "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -144,12 +144,12 @@ var file_zeta_oracle_proto_rawDesc = []byte{
 
 var (
 	file_zeta_oracle_proto_rawDescOnce sync.Once
-	file_zeta_oracle_proto_rawDescData = file_vega_oracle_proto_rawDesc
+	file_zeta_oracle_proto_rawDescData = file_zeta_oracle_proto_rawDesc
 )
 
 func file_zeta_oracle_proto_rawDescGZIP() []byte {
 	file_zeta_oracle_proto_rawDescOnce.Do(func() {
-		file_zeta_oracle_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_oracle_proto_rawDescData)
+		file_zeta_oracle_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_oracle_proto_rawDescData)
 	})
 	return file_zeta_oracle_proto_rawDescData
 }
@@ -162,8 +162,8 @@ var file_zeta_oracle_proto_goTypes = []interface{}{
 	(*v1.ExternalData)(nil),        // 3: zeta.data.v1.ExternalData
 }
 var file_zeta_oracle_proto_depIdxs = []int32{
-	2, // 0: zeta.OracleSpec.external_data_source_spec:type_name -> vega.ExternalDataSourceSpec
-	3, // 1: zeta.OracleData.external_data:type_name -> vega.data.v1.ExternalData
+	2, // 0: zeta.OracleSpec.external_data_source_spec:type_name -> zeta.ExternalDataSourceSpec
+	3, // 1: zeta.OracleData.external_data:type_name -> zeta.data.v1.ExternalData
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

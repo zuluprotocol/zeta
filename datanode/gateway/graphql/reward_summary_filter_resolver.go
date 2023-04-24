@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/ptr"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 )
 
 type rewardSummaryFilterResolver ZetaResolverRoot

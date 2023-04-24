@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/types"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -91,7 +91,7 @@ func (ledgerEntries *AggregatedLedgerEntry) ToProto() *v2.AggregatedLedgerEntry 
 
 func (ledgerEntries AggregatedLedgerEntry) Cursor() *Cursor {
 	return NewCursor(AggregatedLedgerEntriesCursor{
-		ZetaTime: ledgerEntries.VegaTime,
+		ZetaTime: ledgerEntries.ZetaTime,
 	}.String())
 }
 

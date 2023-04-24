@@ -18,8 +18,8 @@ import (
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type RetentionPeriod string

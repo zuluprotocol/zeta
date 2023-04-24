@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 )
@@ -34,7 +34,7 @@ type Candle struct {
 	Volume             uint64
 }
 
-func (c *Candle) ToV1CandleProto(interval zeta.Interval) (*vega.Candle, error) {
+func (c *Candle) ToV1CandleProto(interval zeta.Interval) (*zeta.Candle, error) {
 	return &zeta.Candle{
 		Timestamp: c.PeriodStart.UnixNano(),
 		Datetime:  c.LastUpdateInPeriod.Format(time.RFC3339Nano),

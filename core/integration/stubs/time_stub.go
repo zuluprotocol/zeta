@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 type TimeStub struct {

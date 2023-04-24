@@ -7,7 +7,7 @@
 package zeta
 
 import (
-	v1 "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -620,12 +620,12 @@ var file_zeta_data_source_proto_rawDesc = []byte{
 
 var (
 	file_zeta_data_source_proto_rawDescOnce sync.Once
-	file_zeta_data_source_proto_rawDescData = file_vega_data_source_proto_rawDesc
+	file_zeta_data_source_proto_rawDescData = file_zeta_data_source_proto_rawDesc
 )
 
 func file_zeta_data_source_proto_rawDescGZIP() []byte {
 	file_zeta_data_source_proto_rawDescOnce.Do(func() {
-		file_zeta_data_source_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_data_source_proto_rawDescData)
+		file_zeta_data_source_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_data_source_proto_rawDescData)
 	})
 	return file_zeta_data_source_proto_rawDescData
 }
@@ -646,16 +646,16 @@ var file_zeta_data_source_proto_goTypes = []interface{}{
 	(*v1.Filter)(nil),                       // 10: zeta.data.v1.Filter
 }
 var file_zeta_data_source_proto_depIdxs = []int32{
-	3,  // 0: zeta.DataSourceDefinition.internal:type_name -> vega.DataSourceDefinitionInternal
-	4,  // 1: zeta.DataSourceDefinition.external:type_name -> vega.DataSourceDefinitionExternal
-	8,  // 2: zeta.DataSourceSpecConfigurationTime.conditions:type_name -> vega.data.v1.Condition
-	2,  // 3: zeta.DataSourceDefinitionInternal.time:type_name -> vega.DataSourceSpecConfigurationTime
-	5,  // 4: zeta.DataSourceDefinitionExternal.oracle:type_name -> vega.DataSourceSpecConfiguration
-	9,  // 5: zeta.DataSourceSpecConfiguration.signers:type_name -> vega.data.v1.Signer
-	10, // 6: zeta.DataSourceSpecConfiguration.filters:type_name -> vega.data.v1.Filter
-	1,  // 7: zeta.DataSourceSpec.data:type_name -> vega.DataSourceDefinition
-	0,  // 8: zeta.DataSourceSpec.status:type_name -> vega.DataSourceSpec.Status
-	6,  // 9: zeta.ExternalDataSourceSpec.spec:type_name -> vega.DataSourceSpec
+	3,  // 0: zeta.DataSourceDefinition.internal:type_name -> zeta.DataSourceDefinitionInternal
+	4,  // 1: zeta.DataSourceDefinition.external:type_name -> zeta.DataSourceDefinitionExternal
+	8,  // 2: zeta.DataSourceSpecConfigurationTime.conditions:type_name -> zeta.data.v1.Condition
+	2,  // 3: zeta.DataSourceDefinitionInternal.time:type_name -> zeta.DataSourceSpecConfigurationTime
+	5,  // 4: zeta.DataSourceDefinitionExternal.oracle:type_name -> zeta.DataSourceSpecConfiguration
+	9,  // 5: zeta.DataSourceSpecConfiguration.signers:type_name -> zeta.data.v1.Signer
+	10, // 6: zeta.DataSourceSpecConfiguration.filters:type_name -> zeta.data.v1.Filter
+	1,  // 7: zeta.DataSourceSpec.data:type_name -> zeta.DataSourceDefinition
+	0,  // 8: zeta.DataSourceSpec.status:type_name -> zeta.DataSourceSpec.Status
+	6,  // 9: zeta.ExternalDataSourceSpec.spec:type_name -> zeta.DataSourceSpec
 	10, // [10:10] is the sub-list for method output_type
 	10, // [10:10] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name

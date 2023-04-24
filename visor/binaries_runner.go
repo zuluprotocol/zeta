@@ -24,10 +24,10 @@ import (
 	"syscall"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/visor/config"
-	"code.zetaprotocol.io/vega/visor/utils"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/visor/config"
+	"zuluprotocol/zeta/zeta/visor/utils"
 
 	"golang.org/x/sync/errgroup"
 )

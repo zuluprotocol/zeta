@@ -13,7 +13,7 @@
 package service
 
 import (
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
 )
 
 type (

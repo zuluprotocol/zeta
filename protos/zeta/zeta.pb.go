@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        (unknown)
-// source: zeta/vega.proto
+// source: zeta/zeta.proto
 
 package zeta
 
@@ -57,11 +57,11 @@ func (x Side) String() string {
 }
 
 func (Side) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[0].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[0].Descriptor()
 }
 
 func (Side) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[0]
+	return &file_zeta_zeta_proto_enumTypes[0]
 }
 
 func (x Side) Number() protoreflect.EnumNumber {
@@ -70,7 +70,7 @@ func (x Side) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Side.Descriptor instead.
 func (Side) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{0}
 }
 
 // Represents a set of time intervals that are used when querying for candle-stick data
@@ -130,11 +130,11 @@ func (x Interval) String() string {
 }
 
 func (Interval) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[1].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[1].Descriptor()
 }
 
 func (Interval) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[1]
+	return &file_zeta_zeta_proto_enumTypes[1]
 }
 
 func (x Interval) Number() protoreflect.EnumNumber {
@@ -143,7 +143,7 @@ func (x Interval) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Interval.Descriptor instead.
 func (Interval) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{1}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{1}
 }
 
 type PositionStatus int32
@@ -179,11 +179,11 @@ func (x PositionStatus) String() string {
 }
 
 func (PositionStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[2].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[2].Descriptor()
 }
 
 func (PositionStatus) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[2]
+	return &file_zeta_zeta_proto_enumTypes[2]
 }
 
 func (x PositionStatus) Number() protoreflect.EnumNumber {
@@ -192,7 +192,7 @@ func (x PositionStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PositionStatus.Descriptor instead.
 func (PositionStatus) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{2}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{2}
 }
 
 // Auction triggers indicate what condition triggered an auction (if market is in auction mode)
@@ -240,11 +240,11 @@ func (x AuctionTrigger) String() string {
 }
 
 func (AuctionTrigger) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[3].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[3].Descriptor()
 }
 
 func (AuctionTrigger) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[3]
+	return &file_zeta_zeta_proto_enumTypes[3]
 }
 
 func (x AuctionTrigger) Number() protoreflect.EnumNumber {
@@ -253,7 +253,7 @@ func (x AuctionTrigger) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AuctionTrigger.Descriptor instead.
 func (AuctionTrigger) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{3}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{3}
 }
 
 // A pegged reference defines which price point a pegged order is linked to - meaning
@@ -298,11 +298,11 @@ func (x PeggedReference) String() string {
 }
 
 func (PeggedReference) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[4].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[4].Descriptor()
 }
 
 func (PeggedReference) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[4]
+	return &file_zeta_zeta_proto_enumTypes[4]
 }
 
 func (x PeggedReference) Number() protoreflect.EnumNumber {
@@ -311,7 +311,7 @@ func (x PeggedReference) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PeggedReference.Descriptor instead.
 func (PeggedReference) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{4}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{4}
 }
 
 // OrderError codes are returned in the `[Order](#zeta.Order).reason` field - If there is an issue
@@ -531,11 +531,11 @@ func (x OrderError) String() string {
 }
 
 func (OrderError) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[5].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[5].Descriptor()
 }
 
 func (OrderError) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[5]
+	return &file_zeta_zeta_proto_enumTypes[5]
 }
 
 func (x OrderError) Number() protoreflect.EnumNumber {
@@ -544,7 +544,7 @@ func (x OrderError) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use OrderError.Descriptor instead.
 func (OrderError) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{5}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{5}
 }
 
 // The Zeta blockchain status as reported by the node the caller is connected to
@@ -588,11 +588,11 @@ func (x ChainStatus) String() string {
 }
 
 func (ChainStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[6].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[6].Descriptor()
 }
 
 func (ChainStatus) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[6]
+	return &file_zeta_zeta_proto_enumTypes[6]
 }
 
 func (x ChainStatus) Number() protoreflect.EnumNumber {
@@ -601,7 +601,7 @@ func (x ChainStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ChainStatus.Descriptor instead.
 func (ChainStatus) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{6}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{6}
 }
 
 // Various collateral/account types as used by Zeta
@@ -712,11 +712,11 @@ func (x AccountType) String() string {
 }
 
 func (AccountType) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[7].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[7].Descriptor()
 }
 
 func (AccountType) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[7]
+	return &file_zeta_zeta_proto_enumTypes[7]
 }
 
 func (x AccountType) Number() protoreflect.EnumNumber {
@@ -725,7 +725,7 @@ func (x AccountType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AccountType.Descriptor instead.
 func (AccountType) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{7}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{7}
 }
 
 // Transfers can occur between parties on Zeta, these are the types that indicate why a transfer took place
@@ -849,11 +849,11 @@ func (x TransferType) String() string {
 }
 
 func (TransferType) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[8].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[8].Descriptor()
 }
 
 func (TransferType) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[8]
+	return &file_zeta_zeta_proto_enumTypes[8]
 }
 
 func (x TransferType) Number() protoreflect.EnumNumber {
@@ -862,7 +862,7 @@ func (x TransferType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use TransferType.Descriptor instead.
 func (TransferType) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{8}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{8}
 }
 
 type DispatchMetric int32
@@ -908,11 +908,11 @@ func (x DispatchMetric) String() string {
 }
 
 func (DispatchMetric) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[9].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[9].Descriptor()
 }
 
 func (DispatchMetric) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[9]
+	return &file_zeta_zeta_proto_enumTypes[9]
 }
 
 func (x DispatchMetric) Number() protoreflect.EnumNumber {
@@ -921,7 +921,7 @@ func (x DispatchMetric) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DispatchMetric.Descriptor instead.
 func (DispatchMetric) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{9}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{9}
 }
 
 // Node status type
@@ -960,11 +960,11 @@ func (x NodeStatus) String() string {
 }
 
 func (NodeStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[10].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[10].Descriptor()
 }
 
 func (NodeStatus) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[10]
+	return &file_zeta_zeta_proto_enumTypes[10]
 }
 
 func (x NodeStatus) Number() protoreflect.EnumNumber {
@@ -973,7 +973,7 @@ func (x NodeStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NodeStatus.Descriptor instead.
 func (NodeStatus) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{10}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{10}
 }
 
 // What epoch action has occurred
@@ -1012,11 +1012,11 @@ func (x EpochAction) String() string {
 }
 
 func (EpochAction) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[11].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[11].Descriptor()
 }
 
 func (EpochAction) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[11]
+	return &file_zeta_zeta_proto_enumTypes[11]
 }
 
 func (x EpochAction) Number() protoreflect.EnumNumber {
@@ -1025,7 +1025,7 @@ func (x EpochAction) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use EpochAction.Descriptor instead.
 func (EpochAction) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{11}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{11}
 }
 
 // Validation status of the node
@@ -1068,11 +1068,11 @@ func (x ValidatorNodeStatus) String() string {
 }
 
 func (ValidatorNodeStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[12].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[12].Descriptor()
 }
 
 func (ValidatorNodeStatus) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[12]
+	return &file_zeta_zeta_proto_enumTypes[12]
 }
 
 func (x ValidatorNodeStatus) Number() protoreflect.EnumNumber {
@@ -1081,7 +1081,7 @@ func (x ValidatorNodeStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ValidatorNodeStatus.Descriptor instead.
 func (ValidatorNodeStatus) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{12}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{12}
 }
 
 // Time In Force for an order
@@ -1142,11 +1142,11 @@ func (x Order_TimeInForce) String() string {
 }
 
 func (Order_TimeInForce) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[13].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[13].Descriptor()
 }
 
 func (Order_TimeInForce) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[13]
+	return &file_zeta_zeta_proto_enumTypes[13]
 }
 
 func (x Order_TimeInForce) Number() protoreflect.EnumNumber {
@@ -1155,7 +1155,7 @@ func (x Order_TimeInForce) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Order_TimeInForce.Descriptor instead.
 func (Order_TimeInForce) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{3, 0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{3, 0}
 }
 
 // Type values for an order
@@ -1199,11 +1199,11 @@ func (x Order_Type) String() string {
 }
 
 func (Order_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[14].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[14].Descriptor()
 }
 
 func (Order_Type) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[14]
+	return &file_zeta_zeta_proto_enumTypes[14]
 }
 
 func (x Order_Type) Number() protoreflect.EnumNumber {
@@ -1212,7 +1212,7 @@ func (x Order_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Order_Type.Descriptor instead.
 func (Order_Type) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{3, 1}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{3, 1}
 }
 
 // Status values for an order
@@ -1276,11 +1276,11 @@ func (x Order_Status) String() string {
 }
 
 func (Order_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[15].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[15].Descriptor()
 }
 
 func (Order_Status) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[15]
+	return &file_zeta_zeta_proto_enumTypes[15]
 }
 
 func (x Order_Status) Number() protoreflect.EnumNumber {
@@ -1289,7 +1289,7 @@ func (x Order_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Order_Status.Descriptor instead.
 func (Order_Status) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{3, 2}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{3, 2}
 }
 
 // Type values for a trade
@@ -1335,11 +1335,11 @@ func (x Trade_Type) String() string {
 }
 
 func (Trade_Type) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[16].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[16].Descriptor()
 }
 
 func (Trade_Type) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[16]
+	return &file_zeta_zeta_proto_enumTypes[16]
 }
 
 func (x Trade_Type) Number() protoreflect.EnumNumber {
@@ -1348,7 +1348,7 @@ func (x Trade_Type) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Trade_Type.Descriptor instead.
 func (Trade_Type) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{7, 0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{7, 0}
 }
 
 // The status of the deposit
@@ -1392,11 +1392,11 @@ func (x Deposit_Status) String() string {
 }
 
 func (Deposit_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[17].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[17].Descriptor()
 }
 
 func (Deposit_Status) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[17]
+	return &file_zeta_zeta_proto_enumTypes[17]
 }
 
 func (x Deposit_Status) Number() protoreflect.EnumNumber {
@@ -1405,7 +1405,7 @@ func (x Deposit_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Deposit_Status.Descriptor instead.
 func (Deposit_Status) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{16, 0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{16, 0}
 }
 
 // The status of the withdrawal
@@ -1450,11 +1450,11 @@ func (x Withdrawal_Status) String() string {
 }
 
 func (Withdrawal_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[18].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[18].Descriptor()
 }
 
 func (Withdrawal_Status) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[18]
+	return &file_zeta_zeta_proto_enumTypes[18]
 }
 
 func (x Withdrawal_Status) Number() protoreflect.EnumNumber {
@@ -1463,7 +1463,7 @@ func (x Withdrawal_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Withdrawal_Status.Descriptor instead.
 func (Withdrawal_Status) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{17, 0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{17, 0}
 }
 
 // Status of a liquidity provision order
@@ -1521,11 +1521,11 @@ func (x LiquidityProvision_Status) String() string {
 }
 
 func (LiquidityProvision_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_zeta_vega_proto_enumTypes[19].Descriptor()
+	return file_zeta_zeta_proto_enumTypes[19].Descriptor()
 }
 
 func (LiquidityProvision_Status) Type() protoreflect.EnumType {
-	return &file_zeta_vega_proto_enumTypes[19]
+	return &file_zeta_zeta_proto_enumTypes[19]
 }
 
 func (x LiquidityProvision_Status) Number() protoreflect.EnumNumber {
@@ -1534,7 +1534,7 @@ func (x LiquidityProvision_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use LiquidityProvision_Status.Descriptor instead.
 func (LiquidityProvision_Status) EnumDescriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{38, 0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{38, 0}
 }
 
 // A party represents an entity who wishes to trade on or query a Zeta network
@@ -1550,7 +1550,7 @@ type Party struct {
 func (x *Party) Reset() {
 	*x = Party{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[0]
+		mi := &file_zeta_zeta_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1563,7 +1563,7 @@ func (x *Party) String() string {
 func (*Party) ProtoMessage() {}
 
 func (x *Party) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[0]
+	mi := &file_zeta_zeta_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1576,7 +1576,7 @@ func (x *Party) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Party.ProtoReflect.Descriptor instead.
 func (*Party) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{0}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Party) GetId() string {
@@ -1603,7 +1603,7 @@ type RiskFactor struct {
 func (x *RiskFactor) Reset() {
 	*x = RiskFactor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[1]
+		mi := &file_zeta_zeta_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1616,7 +1616,7 @@ func (x *RiskFactor) String() string {
 func (*RiskFactor) ProtoMessage() {}
 
 func (x *RiskFactor) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[1]
+	mi := &file_zeta_zeta_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1629,7 +1629,7 @@ func (x *RiskFactor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RiskFactor.ProtoReflect.Descriptor instead.
 func (*RiskFactor) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{1}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RiskFactor) GetMarket() string {
@@ -1669,7 +1669,7 @@ type PeggedOrder struct {
 func (x *PeggedOrder) Reset() {
 	*x = PeggedOrder{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[2]
+		mi := &file_zeta_zeta_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1682,7 +1682,7 @@ func (x *PeggedOrder) String() string {
 func (*PeggedOrder) ProtoMessage() {}
 
 func (x *PeggedOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[2]
+	mi := &file_zeta_zeta_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1695,7 +1695,7 @@ func (x *PeggedOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PeggedOrder.ProtoReflect.Descriptor instead.
 func (*PeggedOrder) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{2}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PeggedOrder) GetReference() PeggedReference {
@@ -1755,7 +1755,7 @@ type Order struct {
 	// - The default for this field is `ORDER_ERROR_NONE` which signifies that there were no errors
 	Reason *OrderError `protobuf:"varint,14,opt,name=reason,proto3,enum=zeta.OrderError,oneof" json:"reason,omitempty"`
 	// Timestamp for when the order was last updated, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	UpdatedAt int64 `protobuf:"varint,15,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	// The version for the order, initial value is version 1 and is incremented after each successful amend
 	Version uint64 `protobuf:"varint,16,opt,name=version,proto3" json:"version,omitempty"`
@@ -1771,7 +1771,7 @@ type Order struct {
 func (x *Order) Reset() {
 	*x = Order{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[3]
+		mi := &file_zeta_zeta_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1784,7 +1784,7 @@ func (x *Order) String() string {
 func (*Order) ProtoMessage() {}
 
 func (x *Order) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[3]
+	mi := &file_zeta_zeta_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1797,7 +1797,7 @@ func (x *Order) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Order.ProtoReflect.Descriptor instead.
 func (*Order) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{3}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Order) GetId() string {
@@ -1946,7 +1946,7 @@ type OrderCancellationConfirmation struct {
 func (x *OrderCancellationConfirmation) Reset() {
 	*x = OrderCancellationConfirmation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[4]
+		mi := &file_zeta_zeta_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1959,7 +1959,7 @@ func (x *OrderCancellationConfirmation) String() string {
 func (*OrderCancellationConfirmation) ProtoMessage() {}
 
 func (x *OrderCancellationConfirmation) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[4]
+	mi := &file_zeta_zeta_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1972,7 +1972,7 @@ func (x *OrderCancellationConfirmation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderCancellationConfirmation.ProtoReflect.Descriptor instead.
 func (*OrderCancellationConfirmation) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{4}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *OrderCancellationConfirmation) GetOrder() *Order {
@@ -1999,7 +1999,7 @@ type OrderConfirmation struct {
 func (x *OrderConfirmation) Reset() {
 	*x = OrderConfirmation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[5]
+		mi := &file_zeta_zeta_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2012,7 +2012,7 @@ func (x *OrderConfirmation) String() string {
 func (*OrderConfirmation) ProtoMessage() {}
 
 func (x *OrderConfirmation) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[5]
+	mi := &file_zeta_zeta_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2025,7 +2025,7 @@ func (x *OrderConfirmation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderConfirmation.ProtoReflect.Descriptor instead.
 func (*OrderConfirmation) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{5}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *OrderConfirmation) GetOrder() *Order {
@@ -2070,7 +2070,7 @@ type AuctionIndicativeState struct {
 func (x *AuctionIndicativeState) Reset() {
 	*x = AuctionIndicativeState{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[6]
+		mi := &file_zeta_zeta_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2083,7 +2083,7 @@ func (x *AuctionIndicativeState) String() string {
 func (*AuctionIndicativeState) ProtoMessage() {}
 
 func (x *AuctionIndicativeState) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[6]
+	mi := &file_zeta_zeta_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2096,7 +2096,7 @@ func (x *AuctionIndicativeState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuctionIndicativeState.ProtoReflect.Descriptor instead.
 func (*AuctionIndicativeState) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{6}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *AuctionIndicativeState) GetMarketId() string {
@@ -2162,7 +2162,7 @@ type Trade struct {
 	// Identifier of the order from the sell side
 	SellOrder string `protobuf:"bytes,9,opt,name=sell_order,json=sellOrder,proto3" json:"sell_order,omitempty"`
 	// Timestamp for when the trade occurred, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	Timestamp int64 `protobuf:"varint,10,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	// Type for the trade - See [`Trade.Type`](#zeta.Trade.Type)
 	Type Trade_Type `protobuf:"varint,11,opt,name=type,proto3,enum=zeta.Trade_Type" json:"type,omitempty"`
@@ -2179,7 +2179,7 @@ type Trade struct {
 func (x *Trade) Reset() {
 	*x = Trade{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[7]
+		mi := &file_zeta_zeta_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2192,7 +2192,7 @@ func (x *Trade) String() string {
 func (*Trade) ProtoMessage() {}
 
 func (x *Trade) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[7]
+	mi := &file_zeta_zeta_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2205,7 +2205,7 @@ func (x *Trade) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Trade.ProtoReflect.Descriptor instead.
 func (*Trade) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{7}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Trade) GetId() string {
@@ -2333,7 +2333,7 @@ type Fee struct {
 func (x *Fee) Reset() {
 	*x = Fee{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[8]
+		mi := &file_zeta_zeta_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2346,7 +2346,7 @@ func (x *Fee) String() string {
 func (*Fee) ProtoMessage() {}
 
 func (x *Fee) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[8]
+	mi := &file_zeta_zeta_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2359,7 +2359,7 @@ func (x *Fee) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Fee.ProtoReflect.Descriptor instead.
 func (*Fee) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{8}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *Fee) GetMakerFee() string {
@@ -2395,7 +2395,7 @@ type TradeSet struct {
 func (x *TradeSet) Reset() {
 	*x = TradeSet{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[9]
+		mi := &file_zeta_zeta_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2408,7 +2408,7 @@ func (x *TradeSet) String() string {
 func (*TradeSet) ProtoMessage() {}
 
 func (x *TradeSet) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[9]
+	mi := &file_zeta_zeta_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2421,7 +2421,7 @@ func (x *TradeSet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TradeSet.ProtoReflect.Descriptor instead.
 func (*TradeSet) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{9}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *TradeSet) GetTrades() []*Trade {
@@ -2439,7 +2439,7 @@ type Candle struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Timestamp for the point in time when the candle was initially created/opened, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	Timestamp int64 `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	// An ISO-8601 datetime with nanosecond precision for when the candle was last updated
 	Datetime string `protobuf:"bytes,2,opt,name=datetime,proto3" json:"datetime,omitempty"`
@@ -2465,7 +2465,7 @@ type Candle struct {
 func (x *Candle) Reset() {
 	*x = Candle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[10]
+		mi := &file_zeta_zeta_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2478,7 +2478,7 @@ func (x *Candle) String() string {
 func (*Candle) ProtoMessage() {}
 
 func (x *Candle) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[10]
+	mi := &file_zeta_zeta_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2491,7 +2491,7 @@ func (x *Candle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Candle.ProtoReflect.Descriptor instead.
 func (*Candle) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{10}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Candle) GetTimestamp() int64 {
@@ -2570,7 +2570,7 @@ type PriceLevel struct {
 func (x *PriceLevel) Reset() {
 	*x = PriceLevel{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[11]
+		mi := &file_zeta_zeta_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2583,7 +2583,7 @@ func (x *PriceLevel) String() string {
 func (*PriceLevel) ProtoMessage() {}
 
 func (x *PriceLevel) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[11]
+	mi := &file_zeta_zeta_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2596,7 +2596,7 @@ func (x *PriceLevel) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PriceLevel.ProtoReflect.Descriptor instead.
 func (*PriceLevel) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{11}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *PriceLevel) GetPrice() string {
@@ -2639,7 +2639,7 @@ type MarketDepth struct {
 func (x *MarketDepth) Reset() {
 	*x = MarketDepth{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[12]
+		mi := &file_zeta_zeta_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2652,7 +2652,7 @@ func (x *MarketDepth) String() string {
 func (*MarketDepth) ProtoMessage() {}
 
 func (x *MarketDepth) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[12]
+	mi := &file_zeta_zeta_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2665,7 +2665,7 @@ func (x *MarketDepth) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarketDepth.ProtoReflect.Descriptor instead.
 func (*MarketDepth) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{12}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *MarketDepth) GetMarketId() string {
@@ -2717,7 +2717,7 @@ type MarketDepthUpdate struct {
 func (x *MarketDepthUpdate) Reset() {
 	*x = MarketDepthUpdate{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[13]
+		mi := &file_zeta_zeta_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2730,7 +2730,7 @@ func (x *MarketDepthUpdate) String() string {
 func (*MarketDepthUpdate) ProtoMessage() {}
 
 func (x *MarketDepthUpdate) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[13]
+	mi := &file_zeta_zeta_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2743,7 +2743,7 @@ func (x *MarketDepthUpdate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarketDepthUpdate.ProtoReflect.Descriptor instead.
 func (*MarketDepthUpdate) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{13}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *MarketDepthUpdate) GetMarketId() string {
@@ -2815,7 +2815,7 @@ type Position struct {
 func (x *Position) Reset() {
 	*x = Position{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[14]
+		mi := &file_zeta_zeta_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2828,7 +2828,7 @@ func (x *Position) String() string {
 func (*Position) ProtoMessage() {}
 
 func (x *Position) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[14]
+	mi := &file_zeta_zeta_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2841,7 +2841,7 @@ func (x *Position) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Position.ProtoReflect.Descriptor instead.
 func (*Position) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{14}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *Position) GetMarketId() string {
@@ -2924,7 +2924,7 @@ type PositionTrade struct {
 func (x *PositionTrade) Reset() {
 	*x = PositionTrade{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[15]
+		mi := &file_zeta_zeta_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2937,7 +2937,7 @@ func (x *PositionTrade) String() string {
 func (*PositionTrade) ProtoMessage() {}
 
 func (x *PositionTrade) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[15]
+	mi := &file_zeta_zeta_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2950,7 +2950,7 @@ func (x *PositionTrade) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PositionTrade.ProtoReflect.Descriptor instead.
 func (*PositionTrade) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{15}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *PositionTrade) GetVolume() int64 {
@@ -2995,7 +2995,7 @@ type Deposit struct {
 func (x *Deposit) Reset() {
 	*x = Deposit{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[16]
+		mi := &file_zeta_zeta_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3008,7 +3008,7 @@ func (x *Deposit) String() string {
 func (*Deposit) ProtoMessage() {}
 
 func (x *Deposit) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[16]
+	mi := &file_zeta_zeta_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3021,7 +3021,7 @@ func (x *Deposit) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Deposit.ProtoReflect.Descriptor instead.
 func (*Deposit) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{16}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *Deposit) GetId() string {
@@ -3113,7 +3113,7 @@ type Withdrawal struct {
 func (x *Withdrawal) Reset() {
 	*x = Withdrawal{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[17]
+		mi := &file_zeta_zeta_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3126,7 +3126,7 @@ func (x *Withdrawal) String() string {
 func (*Withdrawal) ProtoMessage() {}
 
 func (x *Withdrawal) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[17]
+	mi := &file_zeta_zeta_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3139,7 +3139,7 @@ func (x *Withdrawal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Withdrawal.ProtoReflect.Descriptor instead.
 func (*Withdrawal) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{17}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *Withdrawal) GetId() string {
@@ -3229,7 +3229,7 @@ type WithdrawExt struct {
 func (x *WithdrawExt) Reset() {
 	*x = WithdrawExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[18]
+		mi := &file_zeta_zeta_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3242,7 +3242,7 @@ func (x *WithdrawExt) String() string {
 func (*WithdrawExt) ProtoMessage() {}
 
 func (x *WithdrawExt) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[18]
+	mi := &file_zeta_zeta_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3255,7 +3255,7 @@ func (x *WithdrawExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WithdrawExt.ProtoReflect.Descriptor instead.
 func (*WithdrawExt) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{18}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{18}
 }
 
 func (m *WithdrawExt) GetExt() isWithdrawExt_Ext {
@@ -3296,7 +3296,7 @@ type Erc20WithdrawExt struct {
 func (x *Erc20WithdrawExt) Reset() {
 	*x = Erc20WithdrawExt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[19]
+		mi := &file_zeta_zeta_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3309,7 +3309,7 @@ func (x *Erc20WithdrawExt) String() string {
 func (*Erc20WithdrawExt) ProtoMessage() {}
 
 func (x *Erc20WithdrawExt) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[19]
+	mi := &file_zeta_zeta_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3322,7 +3322,7 @@ func (x *Erc20WithdrawExt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Erc20WithdrawExt.ProtoReflect.Descriptor instead.
 func (*Erc20WithdrawExt) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{19}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *Erc20WithdrawExt) GetReceiverAddress() string {
@@ -3359,7 +3359,7 @@ type Account struct {
 func (x *Account) Reset() {
 	*x = Account{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[20]
+		mi := &file_zeta_zeta_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3372,7 +3372,7 @@ func (x *Account) String() string {
 func (*Account) ProtoMessage() {}
 
 func (x *Account) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[20]
+	mi := &file_zeta_zeta_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3385,7 +3385,7 @@ func (x *Account) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Account.ProtoReflect.Descriptor instead.
 func (*Account) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{20}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *Account) GetId() string {
@@ -3446,7 +3446,7 @@ type FinancialAmount struct {
 func (x *FinancialAmount) Reset() {
 	*x = FinancialAmount{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[21]
+		mi := &file_zeta_zeta_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3459,7 +3459,7 @@ func (x *FinancialAmount) String() string {
 func (*FinancialAmount) ProtoMessage() {}
 
 func (x *FinancialAmount) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[21]
+	mi := &file_zeta_zeta_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3472,7 +3472,7 @@ func (x *FinancialAmount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FinancialAmount.ProtoReflect.Descriptor instead.
 func (*FinancialAmount) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{21}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *FinancialAmount) GetAmount() string {
@@ -3512,7 +3512,7 @@ type Transfer struct {
 func (x *Transfer) Reset() {
 	*x = Transfer{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[22]
+		mi := &file_zeta_zeta_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3525,7 +3525,7 @@ func (x *Transfer) String() string {
 func (*Transfer) ProtoMessage() {}
 
 func (x *Transfer) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[22]
+	mi := &file_zeta_zeta_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3538,7 +3538,7 @@ func (x *Transfer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Transfer.ProtoReflect.Descriptor instead.
 func (*Transfer) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{22}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *Transfer) GetOwner() string {
@@ -3592,7 +3592,7 @@ type DispatchStrategy struct {
 func (x *DispatchStrategy) Reset() {
 	*x = DispatchStrategy{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[23]
+		mi := &file_zeta_zeta_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3605,7 +3605,7 @@ func (x *DispatchStrategy) String() string {
 func (*DispatchStrategy) ProtoMessage() {}
 
 func (x *DispatchStrategy) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[23]
+	mi := &file_zeta_zeta_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3618,7 +3618,7 @@ func (x *DispatchStrategy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DispatchStrategy.ProtoReflect.Descriptor instead.
 func (*DispatchStrategy) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{23}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *DispatchStrategy) GetAssetForMetric() string {
@@ -3667,7 +3667,7 @@ type TransferRequest struct {
 func (x *TransferRequest) Reset() {
 	*x = TransferRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[24]
+		mi := &file_zeta_zeta_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3680,7 +3680,7 @@ func (x *TransferRequest) String() string {
 func (*TransferRequest) ProtoMessage() {}
 
 func (x *TransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[24]
+	mi := &file_zeta_zeta_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3693,7 +3693,7 @@ func (x *TransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferRequest.ProtoReflect.Descriptor instead.
 func (*TransferRequest) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{24}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *TransferRequest) GetFromAccount() []*Account {
@@ -3754,7 +3754,7 @@ type AccountDetails struct {
 func (x *AccountDetails) Reset() {
 	*x = AccountDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[25]
+		mi := &file_zeta_zeta_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3767,7 +3767,7 @@ func (x *AccountDetails) String() string {
 func (*AccountDetails) ProtoMessage() {}
 
 func (x *AccountDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[25]
+	mi := &file_zeta_zeta_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3780,7 +3780,7 @@ func (x *AccountDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountDetails.ProtoReflect.Descriptor instead.
 func (*AccountDetails) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{25}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *AccountDetails) GetAssetId() string {
@@ -3837,7 +3837,7 @@ type LedgerEntry struct {
 func (x *LedgerEntry) Reset() {
 	*x = LedgerEntry{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[26]
+		mi := &file_zeta_zeta_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3850,7 +3850,7 @@ func (x *LedgerEntry) String() string {
 func (*LedgerEntry) ProtoMessage() {}
 
 func (x *LedgerEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[26]
+	mi := &file_zeta_zeta_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3863,7 +3863,7 @@ func (x *LedgerEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LedgerEntry.ProtoReflect.Descriptor instead.
 func (*LedgerEntry) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{26}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *LedgerEntry) GetFromAccount() *AccountDetails {
@@ -3931,7 +3931,7 @@ type PostTransferBalance struct {
 func (x *PostTransferBalance) Reset() {
 	*x = PostTransferBalance{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[27]
+		mi := &file_zeta_zeta_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3944,7 +3944,7 @@ func (x *PostTransferBalance) String() string {
 func (*PostTransferBalance) ProtoMessage() {}
 
 func (x *PostTransferBalance) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[27]
+	mi := &file_zeta_zeta_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3957,7 +3957,7 @@ func (x *PostTransferBalance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostTransferBalance.ProtoReflect.Descriptor instead.
 func (*PostTransferBalance) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{27}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *PostTransferBalance) GetAccount() *AccountDetails {
@@ -3986,7 +3986,7 @@ type LedgerMovement struct {
 func (x *LedgerMovement) Reset() {
 	*x = LedgerMovement{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[28]
+		mi := &file_zeta_zeta_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3999,7 +3999,7 @@ func (x *LedgerMovement) String() string {
 func (*LedgerMovement) ProtoMessage() {}
 
 func (x *LedgerMovement) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[28]
+	mi := &file_zeta_zeta_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4012,7 +4012,7 @@ func (x *LedgerMovement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LedgerMovement.ProtoReflect.Descriptor instead.
 func (*LedgerMovement) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{28}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *LedgerMovement) GetEntries() []*LedgerEntry {
@@ -4054,14 +4054,14 @@ type MarginLevels struct {
 	// Asset identifier
 	Asset string `protobuf:"bytes,7,opt,name=asset,proto3" json:"asset,omitempty"`
 	// Timestamp for the time the ledger entry was created, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	Timestamp int64 `protobuf:"varint,8,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 }
 
 func (x *MarginLevels) Reset() {
 	*x = MarginLevels{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[29]
+		mi := &file_zeta_zeta_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4074,7 +4074,7 @@ func (x *MarginLevels) String() string {
 func (*MarginLevels) ProtoMessage() {}
 
 func (x *MarginLevels) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[29]
+	mi := &file_zeta_zeta_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4087,7 +4087,7 @@ func (x *MarginLevels) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarginLevels.ProtoReflect.Descriptor instead.
 func (*MarginLevels) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{29}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *MarginLevels) GetMaintenanceMargin() string {
@@ -4236,7 +4236,7 @@ type MarketData struct {
 func (x *MarketData) Reset() {
 	*x = MarketData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[30]
+		mi := &file_zeta_zeta_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4249,7 +4249,7 @@ func (x *MarketData) String() string {
 func (*MarketData) ProtoMessage() {}
 
 func (x *MarketData) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[30]
+	mi := &file_zeta_zeta_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4262,7 +4262,7 @@ func (x *MarketData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarketData.ProtoReflect.Descriptor instead.
 func (*MarketData) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{30}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *MarketData) GetMarkPrice() string {
@@ -4487,7 +4487,7 @@ type LiquidityProviderFeeShare struct {
 func (x *LiquidityProviderFeeShare) Reset() {
 	*x = LiquidityProviderFeeShare{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[31]
+		mi := &file_zeta_zeta_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4500,7 +4500,7 @@ func (x *LiquidityProviderFeeShare) String() string {
 func (*LiquidityProviderFeeShare) ProtoMessage() {}
 
 func (x *LiquidityProviderFeeShare) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[31]
+	mi := &file_zeta_zeta_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4513,7 +4513,7 @@ func (x *LiquidityProviderFeeShare) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiquidityProviderFeeShare.ProtoReflect.Descriptor instead.
 func (*LiquidityProviderFeeShare) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{31}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *LiquidityProviderFeeShare) GetParty() string {
@@ -4566,7 +4566,7 @@ type PriceMonitoringBounds struct {
 func (x *PriceMonitoringBounds) Reset() {
 	*x = PriceMonitoringBounds{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[32]
+		mi := &file_zeta_zeta_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4579,7 +4579,7 @@ func (x *PriceMonitoringBounds) String() string {
 func (*PriceMonitoringBounds) ProtoMessage() {}
 
 func (x *PriceMonitoringBounds) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[32]
+	mi := &file_zeta_zeta_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4592,7 +4592,7 @@ func (x *PriceMonitoringBounds) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PriceMonitoringBounds.ProtoReflect.Descriptor instead.
 func (*PriceMonitoringBounds) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{32}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *PriceMonitoringBounds) GetMinValidPrice() string {
@@ -4640,7 +4640,7 @@ type ErrorDetail struct {
 func (x *ErrorDetail) Reset() {
 	*x = ErrorDetail{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[33]
+		mi := &file_zeta_zeta_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4653,7 +4653,7 @@ func (x *ErrorDetail) String() string {
 func (*ErrorDetail) ProtoMessage() {}
 
 func (x *ErrorDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[33]
+	mi := &file_zeta_zeta_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4666,7 +4666,7 @@ func (x *ErrorDetail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ErrorDetail.ProtoReflect.Descriptor instead.
 func (*ErrorDetail) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{33}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *ErrorDetail) GetCode() int32 {
@@ -4705,7 +4705,7 @@ type NetworkParameter struct {
 func (x *NetworkParameter) Reset() {
 	*x = NetworkParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[34]
+		mi := &file_zeta_zeta_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4718,7 +4718,7 @@ func (x *NetworkParameter) String() string {
 func (*NetworkParameter) ProtoMessage() {}
 
 func (x *NetworkParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[34]
+	mi := &file_zeta_zeta_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4731,7 +4731,7 @@ func (x *NetworkParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkParameter.ProtoReflect.Descriptor instead.
 func (*NetworkParameter) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{34}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *NetworkParameter) GetKey() string {
@@ -4773,7 +4773,7 @@ type NetworkLimits struct {
 func (x *NetworkLimits) Reset() {
 	*x = NetworkLimits{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[35]
+		mi := &file_zeta_zeta_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4786,7 +4786,7 @@ func (x *NetworkLimits) String() string {
 func (*NetworkLimits) ProtoMessage() {}
 
 func (x *NetworkLimits) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[35]
+	mi := &file_zeta_zeta_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4799,7 +4799,7 @@ func (x *NetworkLimits) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkLimits.ProtoReflect.Descriptor instead.
 func (*NetworkLimits) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{35}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *NetworkLimits) GetCanProposeMarket() bool {
@@ -4869,7 +4869,7 @@ type LiquidityOrder struct {
 func (x *LiquidityOrder) Reset() {
 	*x = LiquidityOrder{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[36]
+		mi := &file_zeta_zeta_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4882,7 +4882,7 @@ func (x *LiquidityOrder) String() string {
 func (*LiquidityOrder) ProtoMessage() {}
 
 func (x *LiquidityOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[36]
+	mi := &file_zeta_zeta_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4895,7 +4895,7 @@ func (x *LiquidityOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiquidityOrder.ProtoReflect.Descriptor instead.
 func (*LiquidityOrder) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{36}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *LiquidityOrder) GetReference() PeggedReference {
@@ -4934,7 +4934,7 @@ type LiquidityOrderReference struct {
 func (x *LiquidityOrderReference) Reset() {
 	*x = LiquidityOrderReference{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[37]
+		mi := &file_zeta_zeta_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4947,7 +4947,7 @@ func (x *LiquidityOrderReference) String() string {
 func (*LiquidityOrderReference) ProtoMessage() {}
 
 func (x *LiquidityOrderReference) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[37]
+	mi := &file_zeta_zeta_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4960,7 +4960,7 @@ func (x *LiquidityOrderReference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiquidityOrderReference.ProtoReflect.Descriptor instead.
 func (*LiquidityOrderReference) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{37}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *LiquidityOrderReference) GetOrderId() string {
@@ -4988,10 +4988,10 @@ type LiquidityProvision struct {
 	// Unique party identifier for the creator of the provision
 	PartyId string `protobuf:"bytes,2,opt,name=party_id,json=partyId,proto3" json:"party_id,omitempty"`
 	// Timestamp for when the order was created at, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	CreatedAt int64 `protobuf:"varint,3,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	// Timestamp for when the order was updated at, in nanoseconds since the epoch
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	UpdatedAt int64 `protobuf:"varint,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	// Market identifier for the order, required field
 	MarketId string `protobuf:"bytes,5,opt,name=market_id,json=marketId,proto3" json:"market_id,omitempty"`
@@ -5015,7 +5015,7 @@ type LiquidityProvision struct {
 func (x *LiquidityProvision) Reset() {
 	*x = LiquidityProvision{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[38]
+		mi := &file_zeta_zeta_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5028,7 +5028,7 @@ func (x *LiquidityProvision) String() string {
 func (*LiquidityProvision) ProtoMessage() {}
 
 func (x *LiquidityProvision) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[38]
+	mi := &file_zeta_zeta_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5041,7 +5041,7 @@ func (x *LiquidityProvision) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LiquidityProvision.ProtoReflect.Descriptor instead.
 func (*LiquidityProvision) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{38}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *LiquidityProvision) GetId() string {
@@ -5157,7 +5157,7 @@ type EthereumConfig struct {
 func (x *EthereumConfig) Reset() {
 	*x = EthereumConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[39]
+		mi := &file_zeta_zeta_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5170,7 +5170,7 @@ func (x *EthereumConfig) String() string {
 func (*EthereumConfig) ProtoMessage() {}
 
 func (x *EthereumConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[39]
+	mi := &file_zeta_zeta_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5183,7 +5183,7 @@ func (x *EthereumConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EthereumConfig.ProtoReflect.Descriptor instead.
 func (*EthereumConfig) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{39}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *EthereumConfig) GetNetworkId() string {
@@ -5249,7 +5249,7 @@ type EthereumContractConfig struct {
 func (x *EthereumContractConfig) Reset() {
 	*x = EthereumContractConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[40]
+		mi := &file_zeta_zeta_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5262,7 +5262,7 @@ func (x *EthereumContractConfig) String() string {
 func (*EthereumContractConfig) ProtoMessage() {}
 
 func (x *EthereumContractConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[40]
+	mi := &file_zeta_zeta_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5275,7 +5275,7 @@ func (x *EthereumContractConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EthereumContractConfig.ProtoReflect.Descriptor instead.
 func (*EthereumContractConfig) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{40}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *EthereumContractConfig) GetAddress() string {
@@ -5299,13 +5299,13 @@ type EpochTimestamps struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Timestamp of epoch start in nanoseconds
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	StartTime int64 `protobuf:"varint,1,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
 	// Timestamp of epoch expiry in nanoseconds
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	ExpiryTime int64 `protobuf:"varint,2,opt,name=expiry_time,json=expiryTime,proto3" json:"expiry_time,omitempty"`
 	// Timestamp of epoch end in nanoseconds, empty if not started
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	EndTime int64 `protobuf:"varint,3,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
 	// Height of first block in the epoch
 	FirstBlock uint64 `protobuf:"varint,4,opt,name=first_block,json=firstBlock,proto3" json:"first_block,omitempty"`
@@ -5316,7 +5316,7 @@ type EpochTimestamps struct {
 func (x *EpochTimestamps) Reset() {
 	*x = EpochTimestamps{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[41]
+		mi := &file_zeta_zeta_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5329,7 +5329,7 @@ func (x *EpochTimestamps) String() string {
 func (*EpochTimestamps) ProtoMessage() {}
 
 func (x *EpochTimestamps) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[41]
+	mi := &file_zeta_zeta_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5342,7 +5342,7 @@ func (x *EpochTimestamps) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EpochTimestamps.ProtoReflect.Descriptor instead.
 func (*EpochTimestamps) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{41}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *EpochTimestamps) GetStartTime() int64 {
@@ -5398,7 +5398,7 @@ type Epoch struct {
 func (x *Epoch) Reset() {
 	*x = Epoch{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[42]
+		mi := &file_zeta_zeta_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5411,7 +5411,7 @@ func (x *Epoch) String() string {
 func (*Epoch) ProtoMessage() {}
 
 func (x *Epoch) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[42]
+	mi := &file_zeta_zeta_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5424,7 +5424,7 @@ func (x *Epoch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Epoch.ProtoReflect.Descriptor instead.
 func (*Epoch) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{42}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *Epoch) GetSeq() uint64 {
@@ -5469,7 +5469,7 @@ type EpochParticipation struct {
 func (x *EpochParticipation) Reset() {
 	*x = EpochParticipation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[43]
+		mi := &file_zeta_zeta_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5482,7 +5482,7 @@ func (x *EpochParticipation) String() string {
 func (*EpochParticipation) ProtoMessage() {}
 
 func (x *EpochParticipation) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[43]
+	mi := &file_zeta_zeta_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5495,7 +5495,7 @@ func (x *EpochParticipation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EpochParticipation.ProtoReflect.Descriptor instead.
 func (*EpochParticipation) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{43}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *EpochParticipation) GetEpoch() *Epoch {
@@ -5542,7 +5542,7 @@ type EpochData struct {
 func (x *EpochData) Reset() {
 	*x = EpochData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[44]
+		mi := &file_zeta_zeta_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5555,7 +5555,7 @@ func (x *EpochData) String() string {
 func (*EpochData) ProtoMessage() {}
 
 func (x *EpochData) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[44]
+	mi := &file_zeta_zeta_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5568,7 +5568,7 @@ func (x *EpochData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EpochData.ProtoReflect.Descriptor instead.
 func (*EpochData) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{44}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *EpochData) GetTotal() int32 {
@@ -5614,7 +5614,7 @@ type RankingScore struct {
 func (x *RankingScore) Reset() {
 	*x = RankingScore{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[45]
+		mi := &file_zeta_zeta_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5627,7 +5627,7 @@ func (x *RankingScore) String() string {
 func (*RankingScore) ProtoMessage() {}
 
 func (x *RankingScore) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[45]
+	mi := &file_zeta_zeta_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5640,7 +5640,7 @@ func (x *RankingScore) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RankingScore.ProtoReflect.Descriptor instead.
 func (*RankingScore) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{45}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *RankingScore) GetStakeScore() string {
@@ -5707,7 +5707,7 @@ type RewardScore struct {
 func (x *RewardScore) Reset() {
 	*x = RewardScore{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[46]
+		mi := &file_zeta_zeta_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5720,7 +5720,7 @@ func (x *RewardScore) String() string {
 func (*RewardScore) ProtoMessage() {}
 
 func (x *RewardScore) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[46]
+	mi := &file_zeta_zeta_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5733,7 +5733,7 @@ func (x *RewardScore) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RewardScore.ProtoReflect.Descriptor instead.
 func (*RewardScore) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{46}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *RewardScore) GetRawValidatorScore() string {
@@ -5829,7 +5829,7 @@ type Node struct {
 func (x *Node) Reset() {
 	*x = Node{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[47]
+		mi := &file_zeta_zeta_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -5842,7 +5842,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[47]
+	mi := &file_zeta_zeta_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5855,7 +5855,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{47}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *Node) GetId() string {
@@ -6005,7 +6005,7 @@ type NodeSet struct {
 func (x *NodeSet) Reset() {
 	*x = NodeSet{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[48]
+		mi := &file_zeta_zeta_proto_msgTypes[48]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6018,7 +6018,7 @@ func (x *NodeSet) String() string {
 func (*NodeSet) ProtoMessage() {}
 
 func (x *NodeSet) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[48]
+	mi := &file_zeta_zeta_proto_msgTypes[48]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6031,7 +6031,7 @@ func (x *NodeSet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NodeSet.ProtoReflect.Descriptor instead.
 func (*NodeSet) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{48}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *NodeSet) GetTotal() uint32 {
@@ -6094,7 +6094,7 @@ type NodeData struct {
 func (x *NodeData) Reset() {
 	*x = NodeData{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[49]
+		mi := &file_zeta_zeta_proto_msgTypes[49]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6107,7 +6107,7 @@ func (x *NodeData) String() string {
 func (*NodeData) ProtoMessage() {}
 
 func (x *NodeData) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[49]
+	mi := &file_zeta_zeta_proto_msgTypes[49]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6120,7 +6120,7 @@ func (x *NodeData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NodeData.ProtoReflect.Descriptor instead.
 func (*NodeData) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{49}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *NodeData) GetStakedTotal() string {
@@ -6191,7 +6191,7 @@ type Delegation struct {
 func (x *Delegation) Reset() {
 	*x = Delegation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[50]
+		mi := &file_zeta_zeta_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6204,7 +6204,7 @@ func (x *Delegation) String() string {
 func (*Delegation) ProtoMessage() {}
 
 func (x *Delegation) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[50]
+	mi := &file_zeta_zeta_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6217,7 +6217,7 @@ func (x *Delegation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Delegation.ProtoReflect.Descriptor instead.
 func (*Delegation) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{50}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *Delegation) GetParty() string {
@@ -6269,7 +6269,7 @@ type Reward struct {
 func (x *Reward) Reset() {
 	*x = Reward{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[51]
+		mi := &file_zeta_zeta_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6282,7 +6282,7 @@ func (x *Reward) String() string {
 func (*Reward) ProtoMessage() {}
 
 func (x *Reward) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[51]
+	mi := &file_zeta_zeta_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6295,7 +6295,7 @@ func (x *Reward) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Reward.ProtoReflect.Descriptor instead.
 func (*Reward) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{51}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *Reward) GetAssetId() string {
@@ -6370,7 +6370,7 @@ type RewardSummary struct {
 func (x *RewardSummary) Reset() {
 	*x = RewardSummary{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[52]
+		mi := &file_zeta_zeta_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6383,7 +6383,7 @@ func (x *RewardSummary) String() string {
 func (*RewardSummary) ProtoMessage() {}
 
 func (x *RewardSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[52]
+	mi := &file_zeta_zeta_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6396,7 +6396,7 @@ func (x *RewardSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RewardSummary.ProtoReflect.Descriptor instead.
 func (*RewardSummary) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{52}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *RewardSummary) GetAssetId() string {
@@ -6438,7 +6438,7 @@ type EpochRewardSummary struct {
 func (x *EpochRewardSummary) Reset() {
 	*x = EpochRewardSummary{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[53]
+		mi := &file_zeta_zeta_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6451,7 +6451,7 @@ func (x *EpochRewardSummary) String() string {
 func (*EpochRewardSummary) ProtoMessage() {}
 
 func (x *EpochRewardSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[53]
+	mi := &file_zeta_zeta_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6464,7 +6464,7 @@ func (x *EpochRewardSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EpochRewardSummary.ProtoReflect.Descriptor instead.
 func (*EpochRewardSummary) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{53}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *EpochRewardSummary) GetEpoch() uint64 {
@@ -6518,7 +6518,7 @@ type StateValueProposal struct {
 func (x *StateValueProposal) Reset() {
 	*x = StateValueProposal{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[54]
+		mi := &file_zeta_zeta_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6531,7 +6531,7 @@ func (x *StateValueProposal) String() string {
 func (*StateValueProposal) ProtoMessage() {}
 
 func (x *StateValueProposal) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[54]
+	mi := &file_zeta_zeta_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6544,7 +6544,7 @@ func (x *StateValueProposal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StateValueProposal.ProtoReflect.Descriptor instead.
 func (*StateValueProposal) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{54}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *StateValueProposal) GetStateVarId() string {
@@ -6581,7 +6581,7 @@ type KeyValueBundle struct {
 func (x *KeyValueBundle) Reset() {
 	*x = KeyValueBundle{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[55]
+		mi := &file_zeta_zeta_proto_msgTypes[55]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6594,7 +6594,7 @@ func (x *KeyValueBundle) String() string {
 func (*KeyValueBundle) ProtoMessage() {}
 
 func (x *KeyValueBundle) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[55]
+	mi := &file_zeta_zeta_proto_msgTypes[55]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6607,7 +6607,7 @@ func (x *KeyValueBundle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KeyValueBundle.ProtoReflect.Descriptor instead.
 func (*KeyValueBundle) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{55}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *KeyValueBundle) GetKey() string {
@@ -6647,7 +6647,7 @@ type StateVarValue struct {
 func (x *StateVarValue) Reset() {
 	*x = StateVarValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[56]
+		mi := &file_zeta_zeta_proto_msgTypes[56]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6660,7 +6660,7 @@ func (x *StateVarValue) String() string {
 func (*StateVarValue) ProtoMessage() {}
 
 func (x *StateVarValue) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[56]
+	mi := &file_zeta_zeta_proto_msgTypes[56]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6673,7 +6673,7 @@ func (x *StateVarValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StateVarValue.ProtoReflect.Descriptor instead.
 func (*StateVarValue) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{56}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{56}
 }
 
 func (m *StateVarValue) GetValue() isStateVarValue_Value {
@@ -6737,7 +6737,7 @@ type ScalarValue struct {
 func (x *ScalarValue) Reset() {
 	*x = ScalarValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[57]
+		mi := &file_zeta_zeta_proto_msgTypes[57]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6750,7 +6750,7 @@ func (x *ScalarValue) String() string {
 func (*ScalarValue) ProtoMessage() {}
 
 func (x *ScalarValue) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[57]
+	mi := &file_zeta_zeta_proto_msgTypes[57]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6763,7 +6763,7 @@ func (x *ScalarValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScalarValue.ProtoReflect.Descriptor instead.
 func (*ScalarValue) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{57}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ScalarValue) GetValue() string {
@@ -6784,7 +6784,7 @@ type VectorValue struct {
 func (x *VectorValue) Reset() {
 	*x = VectorValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[58]
+		mi := &file_zeta_zeta_proto_msgTypes[58]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6797,7 +6797,7 @@ func (x *VectorValue) String() string {
 func (*VectorValue) ProtoMessage() {}
 
 func (x *VectorValue) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[58]
+	mi := &file_zeta_zeta_proto_msgTypes[58]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6810,7 +6810,7 @@ func (x *VectorValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VectorValue.ProtoReflect.Descriptor instead.
 func (*VectorValue) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{58}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *VectorValue) GetValue() []string {
@@ -6831,7 +6831,7 @@ type MatrixValue struct {
 func (x *MatrixValue) Reset() {
 	*x = MatrixValue{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_zeta_vega_proto_msgTypes[59]
+		mi := &file_zeta_zeta_proto_msgTypes[59]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -6844,7 +6844,7 @@ func (x *MatrixValue) String() string {
 func (*MatrixValue) ProtoMessage() {}
 
 func (x *MatrixValue) ProtoReflect() protoreflect.Message {
-	mi := &file_zeta_vega_proto_msgTypes[59]
+	mi := &file_zeta_zeta_proto_msgTypes[59]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6857,7 +6857,7 @@ func (x *MatrixValue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MatrixValue.ProtoReflect.Descriptor instead.
 func (*MatrixValue) Descriptor() ([]byte, []int) {
-	return file_zeta_vega_proto_rawDescGZIP(), []int{59}
+	return file_zeta_zeta_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *MatrixValue) GetValue() []*VectorValue {
@@ -6867,9 +6867,9 @@ func (x *MatrixValue) GetValue() []*VectorValue {
 	return nil
 }
 
-var File_zeta_vega_proto protoreflect.FileDescriptor
+var File_zeta_zeta_proto protoreflect.FileDescriptor
 
-var file_zeta_vega_proto_rawDesc = []byte{
+var file_zeta_zeta_proto_rawDesc = []byte{
 	0x0a, 0x0f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x04, 0x76, 0x65, 0x67, 0x61, 0x1a, 0x12, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x6d, 0x61,
 	0x72, 0x6b, 0x65, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x17, 0x0a, 0x05, 0x50,
@@ -8032,20 +8032,20 @@ var file_zeta_vega_proto_rawDesc = []byte{
 }
 
 var (
-	file_zeta_vega_proto_rawDescOnce sync.Once
-	file_zeta_vega_proto_rawDescData = file_vega_vega_proto_rawDesc
+	file_zeta_zeta_proto_rawDescOnce sync.Once
+	file_zeta_zeta_proto_rawDescData = file_zeta_zeta_proto_rawDesc
 )
 
-func file_zeta_vega_proto_rawDescGZIP() []byte {
-	file_zeta_vega_proto_rawDescOnce.Do(func() {
-		file_zeta_vega_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_vega_proto_rawDescData)
+func file_zeta_zeta_proto_rawDescGZIP() []byte {
+	file_zeta_zeta_proto_rawDescOnce.Do(func() {
+		file_zeta_zeta_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_zeta_proto_rawDescData)
 	})
-	return file_zeta_vega_proto_rawDescData
+	return file_zeta_zeta_proto_rawDescData
 }
 
-var file_zeta_vega_proto_enumTypes = make([]protoimpl.EnumInfo, 20)
-var file_zeta_vega_proto_msgTypes = make([]protoimpl.MessageInfo, 60)
-var file_zeta_vega_proto_goTypes = []interface{}{
+var file_zeta_zeta_proto_enumTypes = make([]protoimpl.EnumInfo, 20)
+var file_zeta_zeta_proto_msgTypes = make([]protoimpl.MessageInfo, 60)
+var file_zeta_zeta_proto_goTypes = []interface{}{
 	(Side)(0),                             // 0: zeta.Side
 	(Interval)(0),                         // 1: zeta.Interval
 	(PositionStatus)(0),                   // 2: zeta.PositionStatus
@@ -8130,84 +8130,84 @@ var file_zeta_vega_proto_goTypes = []interface{}{
 	(Market_State)(0),                     // 81: zeta.Market.State
 	(*PriceMonitoringTrigger)(nil),        // 82: zeta.PriceMonitoringTrigger
 }
-var file_zeta_vega_proto_depIdxs = []int32{
-	4,  // 0: zeta.PeggedOrder.reference:type_name -> vega.PeggedReference
-	0,  // 1: zeta.Order.side:type_name -> vega.Side
-	13, // 2: zeta.Order.time_in_force:type_name -> vega.Order.TimeInForce
-	14, // 3: zeta.Order.type:type_name -> vega.Order.Type
-	15, // 4: zeta.Order.status:type_name -> vega.Order.Status
-	5,  // 5: zeta.Order.reason:type_name -> vega.OrderError
-	22, // 6: zeta.Order.pegged_order:type_name -> vega.PeggedOrder
-	23, // 7: zeta.OrderCancellationConfirmation.order:type_name -> vega.Order
-	23, // 8: zeta.OrderConfirmation.order:type_name -> vega.Order
-	27, // 9: zeta.OrderConfirmation.trades:type_name -> vega.Trade
-	23, // 10: zeta.OrderConfirmation.passive_orders_affected:type_name -> vega.Order
-	0,  // 11: zeta.Trade.aggressor:type_name -> vega.Side
-	16, // 12: zeta.Trade.type:type_name -> vega.Trade.Type
-	28, // 13: zeta.Trade.buyer_fee:type_name -> vega.Fee
-	28, // 14: zeta.Trade.seller_fee:type_name -> vega.Fee
-	27, // 15: zeta.TradeSet.trades:type_name -> vega.Trade
-	1,  // 16: zeta.Candle.interval:type_name -> vega.Interval
-	31, // 17: zeta.MarketDepth.buy:type_name -> vega.PriceLevel
-	31, // 18: zeta.MarketDepth.sell:type_name -> vega.PriceLevel
-	31, // 19: zeta.MarketDepthUpdate.buy:type_name -> vega.PriceLevel
-	31, // 20: zeta.MarketDepthUpdate.sell:type_name -> vega.PriceLevel
-	2,  // 21: zeta.Position.position_status:type_name -> vega.PositionStatus
-	17, // 22: zeta.Deposit.status:type_name -> vega.Deposit.Status
-	18, // 23: zeta.Withdrawal.status:type_name -> vega.Withdrawal.Status
-	38, // 24: zeta.Withdrawal.ext:type_name -> vega.WithdrawExt
-	39, // 25: zeta.WithdrawExt.erc20:type_name -> vega.Erc20WithdrawExt
-	7,  // 26: zeta.Account.type:type_name -> vega.AccountType
-	41, // 27: zeta.Transfer.amount:type_name -> vega.FinancialAmount
-	8,  // 28: zeta.Transfer.type:type_name -> vega.TransferType
-	9,  // 29: zeta.DispatchStrategy.metric:type_name -> vega.DispatchMetric
-	40, // 30: zeta.TransferRequest.from_account:type_name -> vega.Account
-	40, // 31: zeta.TransferRequest.to_account:type_name -> vega.Account
-	8,  // 32: zeta.TransferRequest.type:type_name -> vega.TransferType
-	7,  // 33: zeta.AccountDetails.type:type_name -> vega.AccountType
-	45, // 34: zeta.LedgerEntry.from_account:type_name -> vega.AccountDetails
-	45, // 35: zeta.LedgerEntry.to_account:type_name -> vega.AccountDetails
-	8,  // 36: zeta.LedgerEntry.type:type_name -> vega.TransferType
-	45, // 37: zeta.PostTransferBalance.account:type_name -> vega.AccountDetails
-	46, // 38: zeta.LedgerMovement.entries:type_name -> vega.LedgerEntry
-	47, // 39: zeta.LedgerMovement.balances:type_name -> vega.PostTransferBalance
-	80, // 40: zeta.MarketData.market_trading_mode:type_name -> vega.Market.TradingMode
-	3,  // 41: zeta.MarketData.trigger:type_name -> vega.AuctionTrigger
-	3,  // 42: zeta.MarketData.extension_trigger:type_name -> vega.AuctionTrigger
-	52, // 43: zeta.MarketData.price_monitoring_bounds:type_name -> vega.PriceMonitoringBounds
-	51, // 44: zeta.MarketData.liquidity_provider_fee_share:type_name -> vega.LiquidityProviderFeeShare
-	81, // 45: zeta.MarketData.market_state:type_name -> vega.Market.State
-	82, // 46: zeta.PriceMonitoringBounds.trigger:type_name -> vega.PriceMonitoringTrigger
-	4,  // 47: zeta.LiquidityOrder.reference:type_name -> vega.PeggedReference
-	56, // 48: zeta.LiquidityOrderReference.liquidity_order:type_name -> vega.LiquidityOrder
-	57, // 49: zeta.LiquidityProvision.sells:type_name -> vega.LiquidityOrderReference
-	57, // 50: zeta.LiquidityProvision.buys:type_name -> vega.LiquidityOrderReference
-	19, // 51: zeta.LiquidityProvision.status:type_name -> vega.LiquidityProvision.Status
-	60, // 52: zeta.EthereumConfig.collateral_bridge_contract:type_name -> vega.EthereumContractConfig
-	60, // 53: zeta.EthereumConfig.staking_bridge_contract:type_name -> vega.EthereumContractConfig
-	60, // 54: zeta.EthereumConfig.token_vesting_contract:type_name -> vega.EthereumContractConfig
-	60, // 55: zeta.EthereumConfig.multisig_control_contract:type_name -> vega.EthereumContractConfig
-	61, // 56: zeta.Epoch.timestamps:type_name -> vega.EpochTimestamps
-	67, // 57: zeta.Epoch.validators:type_name -> vega.Node
-	70, // 58: zeta.Epoch.delegations:type_name -> vega.Delegation
-	62, // 59: zeta.EpochParticipation.epoch:type_name -> vega.Epoch
-	12, // 60: zeta.RankingScore.previous_status:type_name -> vega.ValidatorNodeStatus
-	12, // 61: zeta.RankingScore.status:type_name -> vega.ValidatorNodeStatus
-	12, // 62: zeta.RewardScore.validator_status:type_name -> vega.ValidatorNodeStatus
-	64, // 63: zeta.Node.epoch_data:type_name -> vega.EpochData
-	10, // 64: zeta.Node.status:type_name -> vega.NodeStatus
-	70, // 65: zeta.Node.delegations:type_name -> vega.Delegation
-	66, // 66: zeta.Node.reward_score:type_name -> vega.RewardScore
-	65, // 67: zeta.Node.ranking_score:type_name -> vega.RankingScore
-	68, // 68: zeta.NodeData.tendermint_nodes:type_name -> vega.NodeSet
-	68, // 69: zeta.NodeData.ersatz_nodes:type_name -> vega.NodeSet
-	68, // 70: zeta.NodeData.pending_nodes:type_name -> vega.NodeSet
-	75, // 71: zeta.StateValueProposal.kvb:type_name -> vega.KeyValueBundle
-	76, // 72: zeta.KeyValueBundle.value:type_name -> vega.StateVarValue
-	77, // 73: zeta.StateVarValue.scalar_val:type_name -> vega.ScalarValue
-	78, // 74: zeta.StateVarValue.vector_val:type_name -> vega.VectorValue
-	79, // 75: zeta.StateVarValue.matrix_val:type_name -> vega.MatrixValue
-	78, // 76: zeta.MatrixValue.value:type_name -> vega.VectorValue
+var file_zeta_zeta_proto_depIdxs = []int32{
+	4,  // 0: zeta.PeggedOrder.reference:type_name -> zeta.PeggedReference
+	0,  // 1: zeta.Order.side:type_name -> zeta.Side
+	13, // 2: zeta.Order.time_in_force:type_name -> zeta.Order.TimeInForce
+	14, // 3: zeta.Order.type:type_name -> zeta.Order.Type
+	15, // 4: zeta.Order.status:type_name -> zeta.Order.Status
+	5,  // 5: zeta.Order.reason:type_name -> zeta.OrderError
+	22, // 6: zeta.Order.pegged_order:type_name -> zeta.PeggedOrder
+	23, // 7: zeta.OrderCancellationConfirmation.order:type_name -> zeta.Order
+	23, // 8: zeta.OrderConfirmation.order:type_name -> zeta.Order
+	27, // 9: zeta.OrderConfirmation.trades:type_name -> zeta.Trade
+	23, // 10: zeta.OrderConfirmation.passive_orders_affected:type_name -> zeta.Order
+	0,  // 11: zeta.Trade.aggressor:type_name -> zeta.Side
+	16, // 12: zeta.Trade.type:type_name -> zeta.Trade.Type
+	28, // 13: zeta.Trade.buyer_fee:type_name -> zeta.Fee
+	28, // 14: zeta.Trade.seller_fee:type_name -> zeta.Fee
+	27, // 15: zeta.TradeSet.trades:type_name -> zeta.Trade
+	1,  // 16: zeta.Candle.interval:type_name -> zeta.Interval
+	31, // 17: zeta.MarketDepth.buy:type_name -> zeta.PriceLevel
+	31, // 18: zeta.MarketDepth.sell:type_name -> zeta.PriceLevel
+	31, // 19: zeta.MarketDepthUpdate.buy:type_name -> zeta.PriceLevel
+	31, // 20: zeta.MarketDepthUpdate.sell:type_name -> zeta.PriceLevel
+	2,  // 21: zeta.Position.position_status:type_name -> zeta.PositionStatus
+	17, // 22: zeta.Deposit.status:type_name -> zeta.Deposit.Status
+	18, // 23: zeta.Withdrawal.status:type_name -> zeta.Withdrawal.Status
+	38, // 24: zeta.Withdrawal.ext:type_name -> zeta.WithdrawExt
+	39, // 25: zeta.WithdrawExt.erc20:type_name -> zeta.Erc20WithdrawExt
+	7,  // 26: zeta.Account.type:type_name -> zeta.AccountType
+	41, // 27: zeta.Transfer.amount:type_name -> zeta.FinancialAmount
+	8,  // 28: zeta.Transfer.type:type_name -> zeta.TransferType
+	9,  // 29: zeta.DispatchStrategy.metric:type_name -> zeta.DispatchMetric
+	40, // 30: zeta.TransferRequest.from_account:type_name -> zeta.Account
+	40, // 31: zeta.TransferRequest.to_account:type_name -> zeta.Account
+	8,  // 32: zeta.TransferRequest.type:type_name -> zeta.TransferType
+	7,  // 33: zeta.AccountDetails.type:type_name -> zeta.AccountType
+	45, // 34: zeta.LedgerEntry.from_account:type_name -> zeta.AccountDetails
+	45, // 35: zeta.LedgerEntry.to_account:type_name -> zeta.AccountDetails
+	8,  // 36: zeta.LedgerEntry.type:type_name -> zeta.TransferType
+	45, // 37: zeta.PostTransferBalance.account:type_name -> zeta.AccountDetails
+	46, // 38: zeta.LedgerMovement.entries:type_name -> zeta.LedgerEntry
+	47, // 39: zeta.LedgerMovement.balances:type_name -> zeta.PostTransferBalance
+	80, // 40: zeta.MarketData.market_trading_mode:type_name -> zeta.Market.TradingMode
+	3,  // 41: zeta.MarketData.trigger:type_name -> zeta.AuctionTrigger
+	3,  // 42: zeta.MarketData.extension_trigger:type_name -> zeta.AuctionTrigger
+	52, // 43: zeta.MarketData.price_monitoring_bounds:type_name -> zeta.PriceMonitoringBounds
+	51, // 44: zeta.MarketData.liquidity_provider_fee_share:type_name -> zeta.LiquidityProviderFeeShare
+	81, // 45: zeta.MarketData.market_state:type_name -> zeta.Market.State
+	82, // 46: zeta.PriceMonitoringBounds.trigger:type_name -> zeta.PriceMonitoringTrigger
+	4,  // 47: zeta.LiquidityOrder.reference:type_name -> zeta.PeggedReference
+	56, // 48: zeta.LiquidityOrderReference.liquidity_order:type_name -> zeta.LiquidityOrder
+	57, // 49: zeta.LiquidityProvision.sells:type_name -> zeta.LiquidityOrderReference
+	57, // 50: zeta.LiquidityProvision.buys:type_name -> zeta.LiquidityOrderReference
+	19, // 51: zeta.LiquidityProvision.status:type_name -> zeta.LiquidityProvision.Status
+	60, // 52: zeta.EthereumConfig.collateral_bridge_contract:type_name -> zeta.EthereumContractConfig
+	60, // 53: zeta.EthereumConfig.staking_bridge_contract:type_name -> zeta.EthereumContractConfig
+	60, // 54: zeta.EthereumConfig.token_vesting_contract:type_name -> zeta.EthereumContractConfig
+	60, // 55: zeta.EthereumConfig.multisig_control_contract:type_name -> zeta.EthereumContractConfig
+	61, // 56: zeta.Epoch.timestamps:type_name -> zeta.EpochTimestamps
+	67, // 57: zeta.Epoch.validators:type_name -> zeta.Node
+	70, // 58: zeta.Epoch.delegations:type_name -> zeta.Delegation
+	62, // 59: zeta.EpochParticipation.epoch:type_name -> zeta.Epoch
+	12, // 60: zeta.RankingScore.previous_status:type_name -> zeta.ValidatorNodeStatus
+	12, // 61: zeta.RankingScore.status:type_name -> zeta.ValidatorNodeStatus
+	12, // 62: zeta.RewardScore.validator_status:type_name -> zeta.ValidatorNodeStatus
+	64, // 63: zeta.Node.epoch_data:type_name -> zeta.EpochData
+	10, // 64: zeta.Node.status:type_name -> zeta.NodeStatus
+	70, // 65: zeta.Node.delegations:type_name -> zeta.Delegation
+	66, // 66: zeta.Node.reward_score:type_name -> zeta.RewardScore
+	65, // 67: zeta.Node.ranking_score:type_name -> zeta.RankingScore
+	68, // 68: zeta.NodeData.tendermint_nodes:type_name -> zeta.NodeSet
+	68, // 69: zeta.NodeData.ersatz_nodes:type_name -> zeta.NodeSet
+	68, // 70: zeta.NodeData.pending_nodes:type_name -> zeta.NodeSet
+	75, // 71: zeta.StateValueProposal.kvb:type_name -> zeta.KeyValueBundle
+	76, // 72: zeta.KeyValueBundle.value:type_name -> zeta.StateVarValue
+	77, // 73: zeta.StateVarValue.scalar_val:type_name -> zeta.ScalarValue
+	78, // 74: zeta.StateVarValue.vector_val:type_name -> zeta.VectorValue
+	79, // 75: zeta.StateVarValue.matrix_val:type_name -> zeta.MatrixValue
+	78, // 76: zeta.MatrixValue.value:type_name -> zeta.VectorValue
 	77, // [77:77] is the sub-list for method output_type
 	77, // [77:77] is the sub-list for method input_type
 	77, // [77:77] is the sub-list for extension type_name
@@ -8215,14 +8215,14 @@ var file_zeta_vega_proto_depIdxs = []int32{
 	0,  // [0:77] is the sub-list for field type_name
 }
 
-func init() { file_zeta_vega_proto_init() }
-func file_zeta_vega_proto_init() {
-	if File_zeta_vega_proto != nil {
+func init() { file_zeta_zeta_proto_init() }
+func file_zeta_zeta_proto_init() {
+	if File_zeta_zeta_proto != nil {
 		return
 	}
 	file_zeta_markets_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_zeta_vega_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Party); i {
 			case 0:
 				return &v.state
@@ -8234,7 +8234,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RiskFactor); i {
 			case 0:
 				return &v.state
@@ -8246,7 +8246,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PeggedOrder); i {
 			case 0:
 				return &v.state
@@ -8258,7 +8258,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Order); i {
 			case 0:
 				return &v.state
@@ -8270,7 +8270,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OrderCancellationConfirmation); i {
 			case 0:
 				return &v.state
@@ -8282,7 +8282,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*OrderConfirmation); i {
 			case 0:
 				return &v.state
@@ -8294,7 +8294,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AuctionIndicativeState); i {
 			case 0:
 				return &v.state
@@ -8306,7 +8306,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Trade); i {
 			case 0:
 				return &v.state
@@ -8318,7 +8318,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Fee); i {
 			case 0:
 				return &v.state
@@ -8330,7 +8330,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TradeSet); i {
 			case 0:
 				return &v.state
@@ -8342,7 +8342,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Candle); i {
 			case 0:
 				return &v.state
@@ -8354,7 +8354,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PriceLevel); i {
 			case 0:
 				return &v.state
@@ -8366,7 +8366,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MarketDepth); i {
 			case 0:
 				return &v.state
@@ -8378,7 +8378,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MarketDepthUpdate); i {
 			case 0:
 				return &v.state
@@ -8390,7 +8390,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Position); i {
 			case 0:
 				return &v.state
@@ -8402,7 +8402,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PositionTrade); i {
 			case 0:
 				return &v.state
@@ -8414,7 +8414,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Deposit); i {
 			case 0:
 				return &v.state
@@ -8426,7 +8426,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Withdrawal); i {
 			case 0:
 				return &v.state
@@ -8438,7 +8438,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*WithdrawExt); i {
 			case 0:
 				return &v.state
@@ -8450,7 +8450,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Erc20WithdrawExt); i {
 			case 0:
 				return &v.state
@@ -8462,7 +8462,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Account); i {
 			case 0:
 				return &v.state
@@ -8474,7 +8474,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FinancialAmount); i {
 			case 0:
 				return &v.state
@@ -8486,7 +8486,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Transfer); i {
 			case 0:
 				return &v.state
@@ -8498,7 +8498,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DispatchStrategy); i {
 			case 0:
 				return &v.state
@@ -8510,7 +8510,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*TransferRequest); i {
 			case 0:
 				return &v.state
@@ -8522,7 +8522,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AccountDetails); i {
 			case 0:
 				return &v.state
@@ -8534,7 +8534,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LedgerEntry); i {
 			case 0:
 				return &v.state
@@ -8546,7 +8546,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PostTransferBalance); i {
 			case 0:
 				return &v.state
@@ -8558,7 +8558,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LedgerMovement); i {
 			case 0:
 				return &v.state
@@ -8570,7 +8570,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MarginLevels); i {
 			case 0:
 				return &v.state
@@ -8582,7 +8582,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MarketData); i {
 			case 0:
 				return &v.state
@@ -8594,7 +8594,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LiquidityProviderFeeShare); i {
 			case 0:
 				return &v.state
@@ -8606,7 +8606,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PriceMonitoringBounds); i {
 			case 0:
 				return &v.state
@@ -8618,7 +8618,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ErrorDetail); i {
 			case 0:
 				return &v.state
@@ -8630,7 +8630,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NetworkParameter); i {
 			case 0:
 				return &v.state
@@ -8642,7 +8642,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NetworkLimits); i {
 			case 0:
 				return &v.state
@@ -8654,7 +8654,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LiquidityOrder); i {
 			case 0:
 				return &v.state
@@ -8666,7 +8666,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LiquidityOrderReference); i {
 			case 0:
 				return &v.state
@@ -8678,7 +8678,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LiquidityProvision); i {
 			case 0:
 				return &v.state
@@ -8690,7 +8690,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EthereumConfig); i {
 			case 0:
 				return &v.state
@@ -8702,7 +8702,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EthereumContractConfig); i {
 			case 0:
 				return &v.state
@@ -8714,7 +8714,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EpochTimestamps); i {
 			case 0:
 				return &v.state
@@ -8726,7 +8726,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Epoch); i {
 			case 0:
 				return &v.state
@@ -8738,7 +8738,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EpochParticipation); i {
 			case 0:
 				return &v.state
@@ -8750,7 +8750,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EpochData); i {
 			case 0:
 				return &v.state
@@ -8762,7 +8762,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RankingScore); i {
 			case 0:
 				return &v.state
@@ -8774,7 +8774,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RewardScore); i {
 			case 0:
 				return &v.state
@@ -8786,7 +8786,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Node); i {
 			case 0:
 				return &v.state
@@ -8798,7 +8798,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NodeSet); i {
 			case 0:
 				return &v.state
@@ -8810,7 +8810,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*NodeData); i {
 			case 0:
 				return &v.state
@@ -8822,7 +8822,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Delegation); i {
 			case 0:
 				return &v.state
@@ -8834,7 +8834,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Reward); i {
 			case 0:
 				return &v.state
@@ -8846,7 +8846,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RewardSummary); i {
 			case 0:
 				return &v.state
@@ -8858,7 +8858,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*EpochRewardSummary); i {
 			case 0:
 				return &v.state
@@ -8870,7 +8870,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StateValueProposal); i {
 			case 0:
 				return &v.state
@@ -8882,7 +8882,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*KeyValueBundle); i {
 			case 0:
 				return &v.state
@@ -8894,7 +8894,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StateVarValue); i {
 			case 0:
 				return &v.state
@@ -8906,7 +8906,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ScalarValue); i {
 			case 0:
 				return &v.state
@@ -8918,7 +8918,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VectorValue); i {
 			case 0:
 				return &v.state
@@ -8930,7 +8930,7 @@ func file_zeta_vega_proto_init() {
 				return nil
 			}
 		}
-		file_zeta_vega_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+		file_zeta_zeta_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*MatrixValue); i {
 			case 0:
 				return &v.state
@@ -8943,13 +8943,13 @@ func file_zeta_vega_proto_init() {
 			}
 		}
 	}
-	file_zeta_vega_proto_msgTypes[3].OneofWrappers = []interface{}{}
-	file_zeta_vega_proto_msgTypes[18].OneofWrappers = []interface{}{
+	file_zeta_zeta_proto_msgTypes[3].OneofWrappers = []interface{}{}
+	file_zeta_zeta_proto_msgTypes[18].OneofWrappers = []interface{}{
 		(*WithdrawExt_Erc20)(nil),
 	}
-	file_zeta_vega_proto_msgTypes[25].OneofWrappers = []interface{}{}
-	file_zeta_vega_proto_msgTypes[48].OneofWrappers = []interface{}{}
-	file_zeta_vega_proto_msgTypes[56].OneofWrappers = []interface{}{
+	file_zeta_zeta_proto_msgTypes[25].OneofWrappers = []interface{}{}
+	file_zeta_zeta_proto_msgTypes[48].OneofWrappers = []interface{}{}
+	file_zeta_zeta_proto_msgTypes[56].OneofWrappers = []interface{}{
 		(*StateVarValue_ScalarVal)(nil),
 		(*StateVarValue_VectorVal)(nil),
 		(*StateVarValue_MatrixVal)(nil),
@@ -8958,19 +8958,19 @@ func file_zeta_vega_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_zeta_vega_proto_rawDesc,
+			RawDescriptor: file_zeta_zeta_proto_rawDesc,
 			NumEnums:      20,
 			NumMessages:   60,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_zeta_vega_proto_goTypes,
-		DependencyIndexes: file_zeta_vega_proto_depIdxs,
-		EnumInfos:         file_zeta_vega_proto_enumTypes,
-		MessageInfos:      file_zeta_vega_proto_msgTypes,
+		GoTypes:           file_zeta_zeta_proto_goTypes,
+		DependencyIndexes: file_zeta_zeta_proto_depIdxs,
+		EnumInfos:         file_zeta_zeta_proto_enumTypes,
+		MessageInfos:      file_zeta_zeta_proto_msgTypes,
 	}.Build()
-	File_zeta_vega_proto = out.File
-	file_zeta_vega_proto_rawDesc = nil
-	file_zeta_vega_proto_goTypes = nil
-	file_zeta_vega_proto_depIdxs = nil
+	File_zeta_zeta_proto = out.File
+	file_zeta_zeta_proto_rawDesc = nil
+	file_zeta_zeta_proto_goTypes = nil
+	file_zeta_zeta_proto_depIdxs = nil
 }

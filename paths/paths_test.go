@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/paths"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/paths"
 
 	"github.com/stretchr/testify/assert"
 )

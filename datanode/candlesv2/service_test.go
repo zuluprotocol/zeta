@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/candlesv2/mocks"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2/mocks"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 

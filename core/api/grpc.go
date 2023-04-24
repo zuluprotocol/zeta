@@ -18,38 +18,38 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/subscribers"
+	"zuluprotocol/zeta/zeta/libs/subscribers"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/stats"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/stats"
 
-	"code.zetaprotocol.io/vega/core/vegatime"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/logging"
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/zetatime"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/logging"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	tmctypes "github.com/tendermint/tendermint/rpc/core/types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks code.zetaprotocol.io/vega/core/api EventService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/api EventService
 type EventService interface {
 	ObserveEvents(ctx context.Context, retries int, eTypes []events.Type, batchSize int, filters ...subscribers.EventFilter) (<-chan []*eventspb.BusEvent, chan<- int)
 }
 
 // TimeService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks code.zetaprotocol.io/vega/core/api TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/api TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }
 
 // EvtForwarder
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/evt_forwarder_mock.go -package mocks code.zetaprotocol.io/vega/core/api  EvtForwarder
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/evt_forwarder_mock.go -package mocks zuluprotocol/zeta/zeta/core/api  EvtForwarder
 type EvtForwarder interface {
 	Forward(ctx context.Context, e *commandspb.ChainEvent, pk string) error
 }
@@ -57,7 +57,7 @@ type EvtForwarder interface {
 // Blockchain ...
 //
 //nolint:interfacebloat
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/blockchain_mock.go -package mocks code.zetaprotocol.io/vega/core/api  Blockchain
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/blockchain_mock.go -package mocks zuluprotocol/zeta/zeta/core/api  Blockchain
 type Blockchain interface {
 	SubmitTransactionSync(ctx context.Context, tx *commandspb.Transaction) (*tmctypes.ResultBroadcastTx, error)
 	SubmitTransactionAsync(ctx context.Context, tx *commandspb.Transaction) (*tmctypes.ResultBroadcastTx, error)

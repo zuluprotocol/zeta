@@ -18,7 +18,7 @@ import (
 	"strconv"
 	"strings"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 	"github.com/georgysavva/scany/dbscan"
 )
 

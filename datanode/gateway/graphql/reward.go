@@ -16,13 +16,13 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type rewardResolver ZetaResolverRoot
 
-func (r *rewardResolver) Asset(ctx context.Context, obj *zeta.Reward) (*vega.Asset, error) {
+func (r *rewardResolver) Asset(ctx context.Context, obj *zeta.Reward) (*zeta.Asset, error) {
 	asset, err := r.r.getAssetByID(ctx, obj.AssetId)
 	if err != nil {
 		return nil, err
@@ -31,15 +31,15 @@ func (r *rewardResolver) Asset(ctx context.Context, obj *zeta.Reward) (*vega.Ass
 	return asset, nil
 }
 
-func (r *rewardResolver) Party(ctx context.Context, obj *zeta.Reward) (*vega.Party, error) {
+func (r *rewardResolver) Party(ctx context.Context, obj *zeta.Reward) (*zeta.Party, error) {
 	return &zeta.Party{Id: obj.PartyId}, nil
 }
 
 func (r *rewardResolver) ReceivedAt(ctx context.Context, obj *zeta.Reward) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(obj.ReceivedAt)), nil
+	return zetatime.Format(zetatime.UnixNano(obj.ReceivedAt)), nil
 }
 
-func (r *rewardResolver) Epoch(ctx context.Context, obj *zeta.Reward) (*vega.Epoch, error) {
+func (r *rewardResolver) Epoch(ctx context.Context, obj *zeta.Reward) (*zeta.Epoch, error) {
 	epoch, err := r.r.getEpochByID(ctx, obj.Epoch)
 	if err != nil {
 		return nil, err
@@ -48,7 +48,7 @@ func (r *rewardResolver) Epoch(ctx context.Context, obj *zeta.Reward) (*vega.Epo
 	return epoch, nil
 }
 
-func (r *rewardResolver) RewardType(ctx context.Context, obj *zeta.Reward) (vega.AccountType, error) {
+func (r *rewardResolver) RewardType(ctx context.Context, obj *zeta.Reward) (zeta.AccountType, error) {
 	accountType, ok := zeta.AccountType_value[obj.RewardType]
 	if !ok {
 		return zeta.AccountType_ACCOUNT_TYPE_UNSPECIFIED, fmt.Errorf("Unknown account type %v", obj.RewardType)

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package zeta;
-option go_package = "code.zetaprotocol.io/vega/protos/vega";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta";
 
 import "zeta/markets.proto";
 
@@ -210,7 +210,7 @@ message Order {
   // - The default for this field is `ORDER_ERROR_NONE` which signifies that there were no errors
   optional OrderError reason = 14;
   // Timestamp for when the order was last updated, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 updated_at = 15;
   // The version for the order, initial value is version 1 and is incremented after each successful amend
   uint64 version = 16;
@@ -404,7 +404,7 @@ message Trade {
   // Identifier of the order from the sell side
   string sell_order = 9;
   // Timestamp for when the trade occurred, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 timestamp = 10;
   // Type for the trade - See [`Trade.Type`](#zeta.Trade.Type)
   Type type = 11;
@@ -440,7 +440,7 @@ message TradeSet {
 // referred to commonly as a candlestick or candle
 message Candle {
   // Timestamp for the point in time when the candle was initially created/opened, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 timestamp = 1;
   // An ISO-8601 datetime with nanosecond precision for when the candle was last updated
   string datetime = 2;
@@ -908,7 +908,7 @@ message MarginLevels {
   // Asset identifier
   string asset = 7;
   // Timestamp for the time the ledger entry was created, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 timestamp = 8;
 }
 
@@ -1106,10 +1106,10 @@ message LiquidityProvision {
   // Unique party identifier for the creator of the provision
   string party_id = 2;
   // Timestamp for when the order was created at, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 created_at = 3;
   // Timestamp for when the order was updated at, in nanoseconds since the epoch
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 updated_at = 4;
   // Market identifier for the order, required field
   string market_id = 5;
@@ -1171,13 +1171,13 @@ enum NodeStatus {
 // Describes in both human readable and block time when an epoch spans
 message EpochTimestamps {
   // Timestamp of epoch start in nanoseconds
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 start_time = 1;
   // Timestamp of epoch expiry in nanoseconds
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 expiry_time = 2;
   // Timestamp of epoch end in nanoseconds, empty if not started
-  // - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  // - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
   int64 end_time = 3;
   // Height of first block in the epoch
   uint64 first_block = 4;

@@ -1,7 +1,7 @@
 package commands
 
 import (
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 func CheckNodeSignature(cmd *commandspb.NodeSignature) error {

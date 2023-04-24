@@ -19,17 +19,17 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/idgeneration"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	snapshotpb "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	snapshotpb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 var initialTime = time.Date(2020, 10, 20, 1, 1, 1, 0, time.UTC)

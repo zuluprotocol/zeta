@@ -15,10 +15,10 @@ package sqlstore_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/shopspring/decimal"
@@ -30,7 +30,7 @@ func addTestBalance(t *testing.T, store *sqlstore.Balances, block entities.Block
 	t.Helper()
 	bal := entities.AccountBalance{
 		Account:  &acc,
-		ZetaTime: block.VegaTime,
+		ZetaTime: block.ZetaTime,
 		Balance:  decimal.NewFromInt(balance),
 	}
 
@@ -39,8 +39,8 @@ func addTestBalance(t *testing.T, store *sqlstore.Balances, block entities.Block
 }
 
 func aggBalLessThan(x, y entities.AggregatedBalance) bool {
-	if !x.ZetaTime.Equal(y.VegaTime) {
-		return x.ZetaTime.Before(y.VegaTime)
+	if !x.ZetaTime.Equal(y.ZetaTime) {
+		return x.ZetaTime.Before(y.ZetaTime)
 	}
 	if x.AccountID != y.AccountID {
 		return x.AccountID.String() < y.AccountID.String()
@@ -91,7 +91,7 @@ func TestBalances(t *testing.T) {
 
 	mkAggBal := func(blockI, bal int64, acc entities.Account) entities.AggregatedBalance {
 		return entities.AggregatedBalance{
-			ZetaTime: blocks[blockI].VegaTime,
+			ZetaTime: blocks[blockI].ZetaTime,
 			Balance:  decimal.NewFromInt(bal),
 			AssetID:  &acc.AssetID,
 			PartyID:  &acc.PartyID,

@@ -13,7 +13,7 @@
 package price
 
 import (
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func (e *Engine) UpdateTestFactors(down, up []num.Decimal) {

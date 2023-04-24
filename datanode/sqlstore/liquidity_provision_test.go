@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -344,11 +344,11 @@ func testLiquidityProvisionPaginationNoPagination(t *testing.T) {
 	assert.False(t, pageInfo.HasPreviousPage)
 	assert.False(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[0].VegaTime,
+		ZetaTime: testLps[0].ZetaTime,
 		ID:       testLps[0].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[9].VegaTime,
+		ZetaTime: testLps[9].ZetaTime,
 		ID:       testLps[9].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -371,11 +371,11 @@ func testLiquidityProvisionPaginationFirst(t *testing.T) {
 	assert.False(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[0].VegaTime,
+		ZetaTime: testLps[0].ZetaTime,
 		ID:       testLps[0].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[2].VegaTime,
+		ZetaTime: testLps[2].ZetaTime,
 		ID:       testLps[2].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -397,11 +397,11 @@ func testLiquidityProvisionPaginationLast(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.False(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[7].VegaTime,
+		ZetaTime: testLps[7].ZetaTime,
 		ID:       testLps[7].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[9].VegaTime,
+		ZetaTime: testLps[9].ZetaTime,
 		ID:       testLps[9].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -424,11 +424,11 @@ func testLiquidityProvisionPaginationFirstAfter(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[3].VegaTime,
+		ZetaTime: testLps[3].ZetaTime,
 		ID:       testLps[3].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[5].VegaTime,
+		ZetaTime: testLps[5].ZetaTime,
 		ID:       testLps[5].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -441,7 +441,7 @@ func testLiquidityProvisionPaginationLastBefore(t *testing.T) {
 
 	last := int32(3)
 	before := entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[7].VegaTime,
+		ZetaTime: testLps[7].ZetaTime,
 		ID:       testLps[7].ID,
 	}.String()).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, false)
@@ -454,11 +454,11 @@ func testLiquidityProvisionPaginationLastBefore(t *testing.T) {
 	assert.True(t, pageInfo.HasPreviousPage)
 	assert.True(t, pageInfo.HasNextPage)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[4].VegaTime,
+		ZetaTime: testLps[4].ZetaTime,
 		ID:       testLps[4].ID,
 	}.String()).Encode(), pageInfo.StartCursor)
 	assert.Equal(t, entities.NewCursor(entities.LiquidityProvisionCursor{
-		ZetaTime: testLps[6].VegaTime,
+		ZetaTime: testLps[6].ZetaTime,
 		ID:       testLps[6].ID,
 	}.String()).Encode(), pageInfo.EndCursor)
 }
@@ -495,7 +495,7 @@ func addLiquidityProvisions(ctx context.Context, t *testing.T, bs *sqlstore.Bloc
 		lps = append(lps, withdrawal)
 		require.NoError(t, err)
 
-		zetaTime = vegaTime.Add(time.Second)
+		zetaTime = zetaTime.Add(time.Second)
 		amount += 100
 	}
 

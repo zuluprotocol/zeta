@@ -7,9 +7,9 @@ import (
 	"io"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	"code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 // One of the possible asset sources

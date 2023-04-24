@@ -4437,7 +4437,7 @@ type ProtocolUpgradeProposalEdge {
   cursor: String!
 }
 
-"A proposal to upgrade the zeta protocol (i.e. which version of the vega software nodes will run)"
+"A proposal to upgrade the zeta protocol (i.e. which version of the zeta software nodes will run)"
 type ProtocolUpgradeProposal {
   "At which block the upgrade is proposed"
   upgradeBlockHeight: String!

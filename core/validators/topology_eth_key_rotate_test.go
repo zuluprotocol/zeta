@@ -18,9 +18,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/validators"
-	"code.zetaprotocol.io/vega/core/validators/mocks"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/zeta/core/validators/mocks"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

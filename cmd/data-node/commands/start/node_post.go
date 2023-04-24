@@ -15,7 +15,7 @@ package start
 import (
 	"strings"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/pkg/errors"
 )

@@ -17,14 +17,14 @@ import (
 	"time"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/datanode/sqlsubscribers RiskFactorStore,TransferStore,WithdrawalStore,LiquidityProvisionStore,KeyRotationStore,OracleSpecStore,DepositStore,StakeLinkingStore,MarketDataStore,PositionStore,OracleDataStore,MarginLevelsStore,NotaryStore,NodeStore,MarketsStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/datanode/sqlsubscribers RiskFactorStore,TransferStore,WithdrawalStore,LiquidityProvisionStore,KeyRotationStore,OracleSpecStore,DepositStore,StakeLinkingStore,MarketDataStore,PositionStore,OracleDataStore,MarginLevelsStore,NotaryStore,NodeStore,MarketsStore
 
 type subscriber struct {
 	zetaTime time.Time
 }
 
 func (s *subscriber) SetZetaTime(zetaTime time.Time) {
-	s.zetaTime = vegaTime
+	s.zetaTime = zetaTime
 }
 
 func (s *subscriber) Flush(ctx context.Context) error {

@@ -4,7 +4,7 @@ This folder contains examples use-cases which can be built into clients to a loc
 
 ## Nullchain
 
-This is a go-package with a high-level of abstraction that gives the ability to manipulate a Zeta node running with the `null-blockchain`. The idea is that with this package trading-scenarios can be written from a point of view that doesn't require a lot of technical knowledge of how zeta works. For example, the below will connect to vega, create 3 parties, and then move the blockchain forward:
+This is a go-package with a high-level of abstraction that gives the ability to manipulate a Zeta node running with the `null-blockchain`. The idea is that with this package trading-scenarios can be written from a point of view that doesn't require a lot of technical knowledge of how zeta works. For example, the below will connect to zeta, create 3 parties, and then move the blockchain forward:
 
 ```
 
@@ -27,36 +27,36 @@ Prerequistes:
 
 The following bash should get you some way there:
 ```
-git clone git@github.com:zetaprotocol/vega.git
+git clone git@github.com:zetaprotocol/zeta.git
 git clone git@github.com:zetaprotocol/data-node.git
 
 # cd into zeta data-node directories and run
 go install ./...
 
 # initialise zeta
-zeta init -f --home=vegahome
-zeta nodewallet generate --chain vega --home=vegahome
-zeta nodewallet generate --chain ethereum --home=vegahome
+zeta init -f --home=zetahome
+zeta nodewallet generate --chain zeta --home=zetahome
+zeta nodewallet generate --chain ethereum --home=zetahome
 
 # initialise the faucet
-zeta faucet init -f --home=/vegahome --update-in-place
+zeta faucet init -f --home=/zetahome --update-in-place
 
 # initialise TM just so we can auto-generate a genesis file to fill in
-zeta tm init --home=vegahome
-zeta genesis generate --home=vegahome
-zeta genesis update --tm-home=/tenderminthome --home=/vegahome
+zeta tm init --home=zetahome
+zeta genesis generate --home=zetahome
+zeta genesis update --tm-home=/tenderminthome --home=/zetahome
 
 # initialise the data-node
 data-node init -f --home=zetahome
 
 # initialise a zeta wallet and make some parties
-zeta wallet init -f --home=vegahome
-zeta wallet key generate --wallet=A --home=vegahome
-zeta wallet key generate --wallet=B --home=vegahome
-zeta wallet key generate --wallet=C --home=vegahome
+zeta wallet init -f --home=zetahome
+zeta wallet key generate --wallet=A --home=zetahome
+zeta wallet key generate --wallet=B --home=zetahome
+zeta wallet key generate --wallet=C --home=zetahome
 ```
 
-Next you need to fiddle with the zeta config file to switch the blockchain on by changing the `BlockChain` section in `vegahome/config/node/config.toml` to look like this:
+Next you need to fiddle with the zeta config file to switch the blockchain on by changing the `BlockChain` section in `zetahome/config/node/config.toml` to look like this:
 ```
 [Blockchain]
   Level = "Info"
@@ -117,9 +117,9 @@ Now update the genesis file in `zetahome/config/genesis.json` to include the fol
 Now spin up all the services by running the following each in their own terminal:
 
 ```
-zeta node run --home=vegahome
+zeta node run --home=zetahome
 data-node run --home=zetahome
-zeta faucet run --home=vegahome
+zeta faucet run --home=zetahome
 
 ```
 

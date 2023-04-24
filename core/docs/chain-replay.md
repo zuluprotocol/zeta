@@ -4,7 +4,7 @@ This is a guide to replay a chain using the backup of an existing chain (e.g. Te
 
 ## How it works
 
-A Tendermint Core and Zeta Core node store their configuration and data to disk by default at `$HOME/.tendermint` and `$HOME/.zeta`. When you start new instances of those nodes using a copy of these directories as their home, Tendermint re-submits (replays) historical blocks/transactions from the genesis height to Vega Core.
+A Tendermint Core and Zeta Core node store their configuration and data to disk by default at `$HOME/.tendermint` and `$HOME/.zeta`. When you start new instances of those nodes using a copy of these directories as their home, Tendermint re-submits (replays) historical blocks/transactions from the genesis height to Zeta Core.
 
 ## Prerequisites
 
@@ -30,20 +30,20 @@ $ gsutil ls gs://zeta-chaindata-n01-testnet/chain_stores
 - Overwrite Zeta node wallet with your own development [node wallet][wallet]. 
 
 ```
-$ cp -rp ~/.zeta/node_wallets_dev <path>/.vega
-$ cp ~/.zeta/nodewalletstore <path>/.vega
+$ cp -rp ~/.zeta/node_wallets_dev <path>/.zeta
+$ cp ~/.zeta/nodewalletstore <path>/.zeta
 ```
 
 - Update Zeta node configuration
 
 ```
-$ sed -i 's/\/home\/zeta/<path>' <path>/.vega/config.toml
+$ sed -i 's/\/home\/zeta/<path>' <path>/.zeta/config.toml
 ```
 
 - Start Zeta and Tendermint using backups
 
 ```
-$ zeta node --root-path=<path>/.vega --stores-enabled=false
+$ zeta node --root-path=<path>/.zeta --stores-enabled=false
 $ tendermint node --home=<path>/.tendermint
 ```
 
@@ -67,6 +67,6 @@ Instead of a backup, which effectively replays the full chain from genesis, you 
 - https://github.com/tendermint/spec/blob/master/spec/abci/README.md
 - https://docs.tendermint.com/master/spec/abci/apps.html#state-sync
 
-[wallet]: https://github.com/zetaprotocol/vega#configuration
+[wallet]: https://github.com/zetaprotocol/zeta#configuration
 [gcloud]: https://cloud.google.com/sdk/docs/install
 [tendermint]: https://github.com/tendermint/tendermint/blob/master/docs/introduction/install.md

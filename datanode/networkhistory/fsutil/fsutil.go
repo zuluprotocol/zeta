@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
 )
 
 // RemoveAllFromDirectoryIfExists used in place of os.RemoveAll when the directory should be emptied but not removed.

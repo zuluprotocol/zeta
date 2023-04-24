@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/banking"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/banking"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/cucumber/godog"
 )
 

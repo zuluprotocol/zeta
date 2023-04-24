@@ -17,13 +17,13 @@ import (
 	"strconv"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/examples/nullchain/config"
-	"code.zetaprotocol.io/vega/core/types"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	datav1 "code.zetaprotocol.io/vega/protos/vega/data/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
+	"zuluprotocol/zeta/zeta/core/examples/nullchain/config"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	datav1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
 )
 
 func MarketProposalTxn(now time.Time, oraclePubkey string) (*walletpb.SubmitTransactionRequest, string) {

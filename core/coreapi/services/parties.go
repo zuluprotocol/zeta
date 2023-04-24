@@ -16,10 +16,10 @@ import (
 	"context"
 	"sync"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/subscribers"
-	"code.zetaprotocol.io/vega/core/types"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/subscribers"
+	"zuluprotocol/zeta/zeta/core/types"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type partyE interface {

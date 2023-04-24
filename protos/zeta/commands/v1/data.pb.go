@@ -162,12 +162,12 @@ var file_zeta_commands_v1_data_proto_rawDesc = []byte{
 
 var (
 	file_zeta_commands_v1_data_proto_rawDescOnce sync.Once
-	file_zeta_commands_v1_data_proto_rawDescData = file_vega_commands_v1_data_proto_rawDesc
+	file_zeta_commands_v1_data_proto_rawDescData = file_zeta_commands_v1_data_proto_rawDesc
 )
 
 func file_zeta_commands_v1_data_proto_rawDescGZIP() []byte {
 	file_zeta_commands_v1_data_proto_rawDescOnce.Do(func() {
-		file_zeta_commands_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_commands_v1_data_proto_rawDescData)
+		file_zeta_commands_v1_data_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_commands_v1_data_proto_rawDescData)
 	})
 	return file_zeta_commands_v1_data_proto_rawDescData
 }
@@ -179,7 +179,7 @@ var file_zeta_commands_v1_data_proto_goTypes = []interface{}{
 	(*OracleDataSubmission)(nil),           // 1: zeta.commands.v1.OracleDataSubmission
 }
 var file_zeta_commands_v1_data_proto_depIdxs = []int32{
-	0, // 0: zeta.commands.v1.OracleDataSubmission.source:type_name -> vega.commands.v1.OracleDataSubmission.OracleSource
+	0, // 0: zeta.commands.v1.OracleDataSubmission.source:type_name -> zeta.commands.v1.OracleDataSubmission.OracleSource
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

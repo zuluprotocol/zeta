@@ -39,7 +39,7 @@ func List(zetaPaths Paths) *ListPathsResponse {
 		DataPaths: map[string]string{
 			"NodeDataHome":                       zetaPaths.DataPathFor(NodeDataHome),
 			"NodeWalletsDataHome":                zetaPaths.DataPathFor(NodeWalletsDataHome),
-			"ZetaNodeWalletsDataHome":            zetaPaths.DataPathFor(VegaNodeWalletsDataHome),
+			"ZetaNodeWalletsDataHome":            zetaPaths.DataPathFor(ZetaNodeWalletsDataHome),
 			"EthereumNodeWalletsDataHome":        zetaPaths.DataPathFor(EthereumNodeWalletsDataHome),
 			"FaucetDataHome":                     zetaPaths.DataPathFor(FaucetDataHome),
 			"FaucetWalletsDataHome":              zetaPaths.DataPathFor(FaucetWalletsDataHome),
@@ -88,7 +88,7 @@ func Explain(name string) (string, error) {
 		"WalletServiceNetworksConfigHome":    `This folder contains the network configuration files used by the wallet's service.`,
 		"NodeDataHome":                       `This folder contains the data managed by the node.`,
 		"NodeWalletsDataHome":                `This folder contains the data managed by the node's wallets.`,
-		"ZetaNodeWalletsDataHome":            `This folder contains the Vega wallet registered as node's wallet, used by the node to sign Vega commands.`,
+		"ZetaNodeWalletsDataHome":            `This folder contains the Zeta wallet registered as node's wallet, used by the node to sign Zeta commands.`,
 		"EthereumNodeWalletsDataHome":        `This folder contains the Ethereum wallet registered as node's wallet, used by the node to interact with the Ethereum blockchain.`,
 		"FaucetDataHome":                     `This folder contains the data used by the faucet.`,
 		"FaucetWalletsDataHome":              `This folder contains the Zeta wallet used by the faucet to sign its deposit commands.`,

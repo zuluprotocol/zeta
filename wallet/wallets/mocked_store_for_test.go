@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/wallet/wallet"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 )
 
 var errWrongPassphrase = errors.New("wrong passphrase")

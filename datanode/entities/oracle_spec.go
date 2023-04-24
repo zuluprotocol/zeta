@@ -15,15 +15,15 @@ package entities
 import (
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type OracleSpec struct {
 	ExternalDataSourceSpec *ExternalDataSourceSpec
 }
 
-func OracleSpecFromProto(spec *zetapb.OracleSpec, txHash TxHash, vegaTime time.Time) (*OracleSpec, error) {
+func OracleSpecFromProto(spec *zetapb.OracleSpec, txHash TxHash, zetaTime time.Time) (*OracleSpec, error) {
 	if spec.ExternalDataSourceSpec != nil {
 		ds, err := ExternalDataSourceSpecFromProto(spec.ExternalDataSourceSpec, txHash, zetaTime)
 		if err != nil {

@@ -17,12 +17,12 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/libs/broker"
+	"zuluprotocol/zeta/zeta/libs/broker"
 
-	"code.zetaprotocol.io/vega/core/events"
-	proto "code.zetaprotocol.io/vega/protos/vega"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type AssetParty struct {

@@ -3,7 +3,7 @@ package protos_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/protos"
+	"zuluprotocol/zeta/zeta/protos"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

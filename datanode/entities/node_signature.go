@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 )
 
 type _NodeSignature struct{}

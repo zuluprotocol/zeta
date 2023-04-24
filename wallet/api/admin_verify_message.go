@@ -6,8 +6,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/wallet/crypto"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/wallet/crypto"
 	"github.com/mitchellh/mapstructure"
 )
 

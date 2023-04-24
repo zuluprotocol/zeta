@@ -15,9 +15,9 @@ package products
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 
-	"code.zetaprotocol.io/vega/core/oracles"
+	"zuluprotocol/zeta/zeta/core/oracles"
 )
 
 func (f *Future) SetSettlementData(ctx context.Context, priceName string, settlementData *num.Numeric) {

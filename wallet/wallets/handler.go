@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/commands"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	wcommands "code.zetaprotocol.io/vega/wallet/commands"
-	wcrypto "code.zetaprotocol.io/vega/wallet/crypto"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/commands"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	wcommands "zuluprotocol/zeta/zeta/wallet/commands"
+	wcrypto "zuluprotocol/zeta/zeta/wallet/crypto"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 )
 
 var ErrWalletDoesNotExists = errors.New("wallet does not exist")

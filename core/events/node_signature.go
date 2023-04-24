@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // NodeSignature ...

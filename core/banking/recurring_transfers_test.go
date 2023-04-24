@@ -17,13 +17,13 @@ import (
 	"fmt"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/assets"
-	"code.zetaprotocol.io/vega/core/banking"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/assets"
+	"zuluprotocol/zeta/zeta/core/banking"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -302,7 +302,7 @@ func testForeverTransferCancelledNotEnoughFunds(t *testing.T) {
 				Amount:          num.NewUint(100),
 				Reference:       "someref",
 			},
-			DispatchStrategy: &zeta.DispatchStrategy{Metric: vega.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED},
+			DispatchStrategy: &zeta.DispatchStrategy{Metric: zeta.DispatchMetric_DISPATCH_METRIC_MAKER_FEES_RECEIVED},
 			StartEpoch:       10,
 			EndEpoch:         nil, // forever
 			Factor:           num.MustDecimalFromString("0.9"),

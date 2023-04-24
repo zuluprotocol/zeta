@@ -15,7 +15,7 @@ package rewards
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 // calculateRewardForProposers calculates the reward given to proposers of markets that crossed the trading threshold for the first time.

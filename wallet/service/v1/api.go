@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"code.zetaprotocol.io/vega/wallet/network"
+	"zuluprotocol/zeta/zeta/wallet/network"
 	"go.uber.org/zap"
 )
 

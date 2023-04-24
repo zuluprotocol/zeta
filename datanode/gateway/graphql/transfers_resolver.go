@@ -16,9 +16,9 @@ import (
 	"context"
 	"errors"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	"code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 var ErrUnsupportedTransferKind = errors.New("unsupported transfer kind")
@@ -30,7 +30,7 @@ func (r *transferResolver) Asset(ctx context.Context, obj *eventspb.Transfer) (*
 }
 
 func (r *transferResolver) Timestamp(ctx context.Context, obj *eventspb.Transfer) (string, error) {
-	return zetatime.Format(vegatime.UnixNano(obj.Timestamp)), nil
+	return zetatime.Format(zetatime.UnixNano(obj.Timestamp)), nil
 }
 
 func (r *transferResolver) Kind(ctx context.Context, obj *eventspb.Transfer) (TransferKind, error) {

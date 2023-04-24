@@ -25,10 +25,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 func addTestVote(t *testing.T,
@@ -47,7 +47,7 @@ func addTestVote(t *testing.T,
 		TotalGovernanceTokenBalance: decimal.NewFromInt(100),
 		TotalGovernanceTokenWeight:  decimal.NewFromFloat(0.1),
 		TotalEquityLikeShareWeight:  decimal.NewFromFloat(0.3),
-		ZetaTime:                    block.VegaTime,
+		ZetaTime:                    block.ZetaTime,
 		InitialTime:                 block.ZetaTime,
 	}
 	err := vs.Add(ctx, r)
@@ -80,8 +80,8 @@ func TestVotes(t *testing.T) {
 
 	party1 := addTestParty(t, ctx, partyStore, block1)
 	party2 := addTestParty(t, ctx, partyStore, block1)
-	prop1 := addTestProposal(t, ctx, propStore, helpers.GenerateID(), party1, helpers.GenerateID(), block1, entities.ProposalStateEnacted, entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl1.com", Description: "desc"}}, entities.ProposalTerms{ProposalTerms: &vega.ProposalTerms{Change: &vega.ProposalTerms_NewMarket{}}})
-	prop2 := addTestProposal(t, ctx, propStore, helpers.GenerateID(), party1, helpers.GenerateID(), block1, entities.ProposalStateEnacted, entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl2.com", Description: "desc"}}, entities.ProposalTerms{ProposalTerms: &vega.ProposalTerms{Change: &vega.ProposalTerms_NewMarket{}}})
+	prop1 := addTestProposal(t, ctx, propStore, helpers.GenerateID(), party1, helpers.GenerateID(), block1, entities.ProposalStateEnacted, entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl1.com", Description: "desc"}}, entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewMarket{}}})
+	prop2 := addTestProposal(t, ctx, propStore, helpers.GenerateID(), party1, helpers.GenerateID(), block1, entities.ProposalStateEnacted, entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: "myurl2.com", Description: "desc"}}, entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewMarket{}}})
 
 	party1ID := party1.ID.String()
 	prop1ID := prop1.ID.String()
@@ -170,7 +170,7 @@ func setupPaginationTestVotes(t *testing.T, ctx context.Context) (*sqlstore.Vote
 			block,
 			entities.ProposalStateEnacted,
 			entities.ProposalRationale{ProposalRationale: &zeta.ProposalRationale{Title: fmt.Sprintf("myurl%02d.com", i+1), Description: "desc"}},
-			entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &vega.ProposalTerms_NewMarket{}}},
+			entities.ProposalTerms{ProposalTerms: &zeta.ProposalTerms{Change: &zeta.ProposalTerms_NewMarket{}}},
 		)
 
 		voteValue := entities.VoteValueYes

@@ -19,15 +19,15 @@ import (
 	"sort"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	zetactx "code.vegaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	zetactx "code.zetaprotocol.io/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 )
 
@@ -62,8 +62,8 @@ func (t *Topology) serialiseNodes() []*snapshot.ValidatorState {
 			&snapshot.ValidatorState{
 				ValidatorUpdate: &eventspb.ValidatorUpdate{
 					NodeId:           node.data.ID,
-					ZetaPubKey:       node.data.VegaPubKey,
-					ZetaPubKeyIndex:  node.data.VegaPubKeyIndex,
+					ZetaPubKey:       node.data.ZetaPubKey,
+					ZetaPubKeyIndex:  node.data.ZetaPubKeyIndex,
 					EthereumAddress:  node.data.EthereumAddress,
 					TmPubKey:         node.data.TmPubKey,
 					InfoUrl:          node.data.InfoURL,
@@ -260,8 +260,8 @@ func (t *Topology) restore(ctx context.Context, topology *types.Topology, p *typ
 		vs := &valState{
 			data: ValidatorData{
 				ID:               node.ValidatorUpdate.NodeId,
-				ZetaPubKey:       node.ValidatorUpdate.VegaPubKey,
-				ZetaPubKeyIndex:  node.ValidatorUpdate.VegaPubKeyIndex,
+				ZetaPubKey:       node.ValidatorUpdate.ZetaPubKey,
+				ZetaPubKeyIndex:  node.ValidatorUpdate.ZetaPubKeyIndex,
 				EthereumAddress:  node.ValidatorUpdate.EthereumAddress,
 				TmPubKey:         node.ValidatorUpdate.TmPubKey,
 				InfoURL:          node.ValidatorUpdate.InfoUrl,

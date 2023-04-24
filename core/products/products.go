@@ -16,10 +16,10 @@ import (
 	"context"
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/oracles"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 var (
@@ -32,7 +32,7 @@ var (
 
 // OracleEngine ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/oracle_engine_mock.go -package mocks code.zetaprotocol.io/vega/core/products OracleEngine
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/oracle_engine_mock.go -package mocks zuluprotocol/zeta/zeta/core/products OracleEngine
 type OracleEngine interface {
 	ListensToSigners(oracles.OracleData) bool
 	Subscribe(context.Context, oracles.OracleSpec, oracles.OnMatchedOracleData) (oracles.SubscriptionID, oracles.Unsubscriber)

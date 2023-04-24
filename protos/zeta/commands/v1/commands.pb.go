@@ -7,7 +7,7 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -163,16 +163,16 @@ type OrderSubmission struct {
 	Size uint64 `protobuf:"varint,3,opt,name=size,proto3" json:"size,omitempty"`
 	// Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field
 	// - See `Side`
-	Side zeta.Side `protobuf:"varint,4,opt,name=side,proto3,enum=vega.Side" json:"side,omitempty"`
+	Side zeta.Side `protobuf:"varint,4,opt,name=side,proto3,enum=zeta.Side" json:"side,omitempty"`
 	// Time in force indicates how long an order will remain active before it is executed or expires, required field
 	// - See `Order.TimeInForce`
-	TimeInForce zeta.Order_TimeInForce `protobuf:"varint,5,opt,name=time_in_force,json=timeInForce,proto3,enum=vega.Order_TimeInForce" json:"time_in_force,omitempty"`
+	TimeInForce zeta.Order_TimeInForce `protobuf:"varint,5,opt,name=time_in_force,json=timeInForce,proto3,enum=zeta.Order_TimeInForce" json:"time_in_force,omitempty"`
 	// Timestamp for when the order will expire, in nanoseconds since the epoch,
 	// required field only for `Order.TimeInForce`.TIME_IN_FORCE_GTT`
 	// - See `ZetaTimeResponse`.`timestamp`
 	ExpiresAt int64 `protobuf:"varint,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	// Type for the order, required field - See `Order.Type`
-	Type zeta.Order_Type `protobuf:"varint,7,opt,name=type,proto3,enum=vega.Order_Type" json:"type,omitempty"`
+	Type zeta.Order_Type `protobuf:"varint,7,opt,name=type,proto3,enum=zeta.Order_Type" json:"type,omitempty"`
 	// Reference given for the order, this is typically used to retrieve an order submitted through consensus, currently
 	// set internally by the node to return a unique reference identifier for the order submission
 	Reference string `protobuf:"bytes,8,opt,name=reference,proto3" json:"reference,omitempty"`
@@ -354,17 +354,17 @@ type OrderAmendment struct {
 	// This field needs to be scaled using the market's position decimal places.
 	SizeDelta int64 `protobuf:"varint,4,opt,name=size_delta,json=sizeDelta,proto3" json:"size_delta,omitempty"`
 	// Amend the expiry time for the order, if the Timestamp value is set, otherwise expiry time will remain unchanged
-	// - See [`ZetaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+	// - See [`ZetaTimeResponse`](#api.ZetaTimeResponse).`timestamp`
 	ExpiresAt *int64 `protobuf:"varint,5,opt,name=expires_at,json=expiresAt,proto3,oneof" json:"expires_at,omitempty"`
 	// Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged
 	// - See [`TimeInForce`](#api.ZetaTimeResponse).`timestamp`
-	TimeInForce zeta.Order_TimeInForce `protobuf:"varint,6,opt,name=time_in_force,json=timeInForce,proto3,enum=vega.Order_TimeInForce" json:"time_in_force,omitempty"`
+	TimeInForce zeta.Order_TimeInForce `protobuf:"varint,6,opt,name=time_in_force,json=timeInForce,proto3,enum=zeta.Order_TimeInForce" json:"time_in_force,omitempty"`
 	// Amend the pegged order offset for the order
 	// This field is an unsigned integer passed as a string and needs to be scaled using the market's decimal places.
 	PeggedOffset string `protobuf:"bytes,7,opt,name=pegged_offset,json=peggedOffset,proto3" json:"pegged_offset,omitempty"`
 	// Amend the pegged order reference for the order
 	// - See [`PeggedReference`](#zeta.PeggedReference)
-	PeggedReference zeta.PeggedReference `protobuf:"varint,8,opt,name=pegged_reference,json=peggedReference,proto3,enum=vega.PeggedReference" json:"pegged_reference,omitempty"`
+	PeggedReference zeta.PeggedReference `protobuf:"varint,8,opt,name=pegged_reference,json=peggedReference,proto3,enum=zeta.PeggedReference" json:"pegged_reference,omitempty"`
 }
 
 func (x *OrderAmendment) Reset() {
@@ -833,7 +833,7 @@ type VoteSubmission struct {
 	// The ID of the proposal to vote for.
 	ProposalId string `protobuf:"bytes,1,opt,name=proposal_id,json=proposalId,proto3" json:"proposal_id,omitempty"`
 	// The actual value of the vote
-	Value zeta.Vote_Value `protobuf:"varint,2,opt,name=value,proto3,enum=vega.Vote_Value" json:"value,omitempty"`
+	Value zeta.Vote_Value `protobuf:"varint,2,opt,name=value,proto3,enum=zeta.Vote_Value" json:"value,omitempty"`
 }
 
 func (x *VoteSubmission) Reset() {
@@ -1014,11 +1014,11 @@ type Transfer struct {
 
 	// The account type from which the funds of the party
 	// should be taken
-	FromAccountType zeta.AccountType `protobuf:"varint,1,opt,name=from_account_type,json=fromAccountType,proto3,enum=vega.AccountType" json:"from_account_type,omitempty"`
+	FromAccountType zeta.AccountType `protobuf:"varint,1,opt,name=from_account_type,json=fromAccountType,proto3,enum=zeta.AccountType" json:"from_account_type,omitempty"`
 	// The public key of the destination account
 	To string `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
 	// The type of the destination account
-	ToAccountType zeta.AccountType `protobuf:"varint,3,opt,name=to_account_type,json=toAccountType,proto3,enum=vega.AccountType" json:"to_account_type,omitempty"`
+	ToAccountType zeta.AccountType `protobuf:"varint,3,opt,name=to_account_type,json=toAccountType,proto3,enum=zeta.AccountType" json:"to_account_type,omitempty"`
 	// The asset
 	Asset string `protobuf:"bytes,4,opt,name=asset,proto3" json:"asset,omitempty"`
 	// The amount to be taken from the source account
@@ -1596,12 +1596,12 @@ var file_zeta_commands_v1_commands_proto_rawDesc = []byte{
 
 var (
 	file_zeta_commands_v1_commands_proto_rawDescOnce sync.Once
-	file_zeta_commands_v1_commands_proto_rawDescData = file_vega_commands_v1_commands_proto_rawDesc
+	file_zeta_commands_v1_commands_proto_rawDescData = file_zeta_commands_v1_commands_proto_rawDesc
 )
 
 func file_zeta_commands_v1_commands_proto_rawDescGZIP() []byte {
 	file_zeta_commands_v1_commands_proto_rawDescOnce.Do(func() {
-		file_zeta_commands_v1_commands_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_commands_v1_commands_proto_rawDescData)
+		file_zeta_commands_v1_commands_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_commands_v1_commands_proto_rawDescData)
 	})
 	return file_zeta_commands_v1_commands_proto_rawDescData
 }
@@ -1627,45 +1627,45 @@ var file_zeta_commands_v1_commands_proto_goTypes = []interface{}{
 	(*RecurringTransfer)(nil),              // 15: zeta.commands.v1.RecurringTransfer
 	(*CancelTransfer)(nil),                 // 16: zeta.commands.v1.CancelTransfer
 	(*IssueSignatures)(nil),                // 17: zeta.commands.v1.IssueSignatures
-	(zeta.Side)(0),                         // 18: vega.Side
-	(zeta.Order_TimeInForce)(0),            // 19: vega.Order.TimeInForce
-	(zeta.Order_Type)(0),                   // 20: vega.Order.Type
-	(*zeta.PeggedOrder)(nil),               // 21: vega.PeggedOrder
-	(zeta.PeggedReference)(0),              // 22: vega.PeggedReference
-	(*zeta.LiquidityOrder)(nil),            // 23: vega.LiquidityOrder
-	(*zeta.WithdrawExt)(nil),               // 24: vega.WithdrawExt
-	(*zeta.ProposalTerms)(nil),             // 25: vega.ProposalTerms
-	(*zeta.ProposalRationale)(nil),         // 26: vega.ProposalRationale
-	(zeta.Vote_Value)(0),                   // 27: vega.Vote.Value
-	(zeta.AccountType)(0),                  // 28: vega.AccountType
-	(*zeta.DispatchStrategy)(nil),          // 29: vega.DispatchStrategy
+	(zeta.Side)(0),                         // 18: zeta.Side
+	(zeta.Order_TimeInForce)(0),            // 19: zeta.Order.TimeInForce
+	(zeta.Order_Type)(0),                   // 20: zeta.Order.Type
+	(*zeta.PeggedOrder)(nil),               // 21: zeta.PeggedOrder
+	(zeta.PeggedReference)(0),              // 22: zeta.PeggedReference
+	(*zeta.LiquidityOrder)(nil),            // 23: zeta.LiquidityOrder
+	(*zeta.WithdrawExt)(nil),               // 24: zeta.WithdrawExt
+	(*zeta.ProposalTerms)(nil),             // 25: zeta.ProposalTerms
+	(*zeta.ProposalRationale)(nil),         // 26: zeta.ProposalRationale
+	(zeta.Vote_Value)(0),                   // 27: zeta.Vote.Value
+	(zeta.AccountType)(0),                  // 28: zeta.AccountType
+	(*zeta.DispatchStrategy)(nil),          // 29: zeta.DispatchStrategy
 	(NodeSignatureKind)(0),                 // 30: zeta.commands.v1.NodeSignatureKind
 }
 var file_zeta_commands_v1_commands_proto_depIdxs = []int32{
-	3,  // 0: zeta.commands.v1.BatchMarketInstructions.cancellations:type_name -> vega.commands.v1.OrderCancellation
-	4,  // 1: zeta.commands.v1.BatchMarketInstructions.amendments:type_name -> vega.commands.v1.OrderAmendment
-	2,  // 2: zeta.commands.v1.BatchMarketInstructions.submissions:type_name -> vega.commands.v1.OrderSubmission
-	18, // 3: zeta.commands.v1.OrderSubmission.side:type_name -> vega.Side
-	19, // 4: zeta.commands.v1.OrderSubmission.time_in_force:type_name -> vega.Order.TimeInForce
-	20, // 5: zeta.commands.v1.OrderSubmission.type:type_name -> vega.Order.Type
-	21, // 6: zeta.commands.v1.OrderSubmission.pegged_order:type_name -> vega.PeggedOrder
-	19, // 7: zeta.commands.v1.OrderAmendment.time_in_force:type_name -> vega.Order.TimeInForce
-	22, // 8: zeta.commands.v1.OrderAmendment.pegged_reference:type_name -> vega.PeggedReference
-	23, // 9: zeta.commands.v1.LiquidityProvisionSubmission.sells:type_name -> vega.LiquidityOrder
-	23, // 10: zeta.commands.v1.LiquidityProvisionSubmission.buys:type_name -> vega.LiquidityOrder
-	23, // 11: zeta.commands.v1.LiquidityProvisionAmendment.sells:type_name -> vega.LiquidityOrder
-	23, // 12: zeta.commands.v1.LiquidityProvisionAmendment.buys:type_name -> vega.LiquidityOrder
-	24, // 13: zeta.commands.v1.WithdrawSubmission.ext:type_name -> vega.WithdrawExt
-	25, // 14: zeta.commands.v1.ProposalSubmission.terms:type_name -> vega.ProposalTerms
-	26, // 15: zeta.commands.v1.ProposalSubmission.rationale:type_name -> vega.ProposalRationale
-	27, // 16: zeta.commands.v1.VoteSubmission.value:type_name -> vega.Vote.Value
-	0,  // 17: zeta.commands.v1.UndelegateSubmission.method:type_name -> vega.commands.v1.UndelegateSubmission.Method
-	28, // 18: zeta.commands.v1.Transfer.from_account_type:type_name -> vega.AccountType
-	28, // 19: zeta.commands.v1.Transfer.to_account_type:type_name -> vega.AccountType
-	14, // 20: zeta.commands.v1.Transfer.one_off:type_name -> vega.commands.v1.OneOffTransfer
-	15, // 21: zeta.commands.v1.Transfer.recurring:type_name -> vega.commands.v1.RecurringTransfer
-	29, // 22: zeta.commands.v1.RecurringTransfer.dispatch_strategy:type_name -> vega.DispatchStrategy
-	30, // 23: zeta.commands.v1.IssueSignatures.kind:type_name -> vega.commands.v1.NodeSignatureKind
+	3,  // 0: zeta.commands.v1.BatchMarketInstructions.cancellations:type_name -> zeta.commands.v1.OrderCancellation
+	4,  // 1: zeta.commands.v1.BatchMarketInstructions.amendments:type_name -> zeta.commands.v1.OrderAmendment
+	2,  // 2: zeta.commands.v1.BatchMarketInstructions.submissions:type_name -> zeta.commands.v1.OrderSubmission
+	18, // 3: zeta.commands.v1.OrderSubmission.side:type_name -> zeta.Side
+	19, // 4: zeta.commands.v1.OrderSubmission.time_in_force:type_name -> zeta.Order.TimeInForce
+	20, // 5: zeta.commands.v1.OrderSubmission.type:type_name -> zeta.Order.Type
+	21, // 6: zeta.commands.v1.OrderSubmission.pegged_order:type_name -> zeta.PeggedOrder
+	19, // 7: zeta.commands.v1.OrderAmendment.time_in_force:type_name -> zeta.Order.TimeInForce
+	22, // 8: zeta.commands.v1.OrderAmendment.pegged_reference:type_name -> zeta.PeggedReference
+	23, // 9: zeta.commands.v1.LiquidityProvisionSubmission.sells:type_name -> zeta.LiquidityOrder
+	23, // 10: zeta.commands.v1.LiquidityProvisionSubmission.buys:type_name -> zeta.LiquidityOrder
+	23, // 11: zeta.commands.v1.LiquidityProvisionAmendment.sells:type_name -> zeta.LiquidityOrder
+	23, // 12: zeta.commands.v1.LiquidityProvisionAmendment.buys:type_name -> zeta.LiquidityOrder
+	24, // 13: zeta.commands.v1.WithdrawSubmission.ext:type_name -> zeta.WithdrawExt
+	25, // 14: zeta.commands.v1.ProposalSubmission.terms:type_name -> zeta.ProposalTerms
+	26, // 15: zeta.commands.v1.ProposalSubmission.rationale:type_name -> zeta.ProposalRationale
+	27, // 16: zeta.commands.v1.VoteSubmission.value:type_name -> zeta.Vote.Value
+	0,  // 17: zeta.commands.v1.UndelegateSubmission.method:type_name -> zeta.commands.v1.UndelegateSubmission.Method
+	28, // 18: zeta.commands.v1.Transfer.from_account_type:type_name -> zeta.AccountType
+	28, // 19: zeta.commands.v1.Transfer.to_account_type:type_name -> zeta.AccountType
+	14, // 20: zeta.commands.v1.Transfer.one_off:type_name -> zeta.commands.v1.OneOffTransfer
+	15, // 21: zeta.commands.v1.Transfer.recurring:type_name -> zeta.commands.v1.RecurringTransfer
+	29, // 22: zeta.commands.v1.RecurringTransfer.dispatch_strategy:type_name -> zeta.DispatchStrategy
+	30, // 23: zeta.commands.v1.IssueSignatures.kind:type_name -> zeta.commands.v1.NodeSignatureKind
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name

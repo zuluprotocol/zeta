@@ -17,7 +17,7 @@ import (
 	"io"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/datanode/vegatime"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
 	"github.com/99designs/gqlgen/graphql"
 )
 
@@ -28,7 +28,7 @@ func MarshalTimestamp(t int64) graphql.Marshaler {
 			io.WriteString(w, "null")
 			return
 		}
-		io.WriteString(w, strconv.Quote(zetatime.Format(vegatime.UnixNano(t))))
+		io.WriteString(w, strconv.Quote(zetatime.Format(zetatime.UnixNano(t))))
 	})
 }
 

@@ -17,8 +17,8 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"code.zetaprotocol.io/vega/core/delegation"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/delegation"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 func PartiesUndelegateTheFollowingStake(

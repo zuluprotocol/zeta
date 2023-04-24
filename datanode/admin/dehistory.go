@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
 )
 
 type NetworkHistoryService interface {

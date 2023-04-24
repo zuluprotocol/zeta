@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type CoreSnapshotData struct {
@@ -49,10 +49,10 @@ func (s *CoreSnapshotData) ToProto() *eventspb.CoreSnapshotData {
 
 func (s CoreSnapshotData) Cursor() *Cursor {
 	pc := CoreSnapshotDataCursor{
-		ZetaTime:        s.VegaTime,
+		ZetaTime:        s.ZetaTime,
 		BlockHeight:     s.BlockHeight,
 		BlockHash:       s.BlockHash,
-		ZetaCoreVersion: s.VegaCoreVersion,
+		ZetaCoreVersion: s.ZetaCoreVersion,
 	}
 	return NewCursor(pc.String())
 }

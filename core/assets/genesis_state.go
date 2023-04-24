@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	types "code.zetaprotocol.io/vega/protos/vega"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type AssetDetails struct {

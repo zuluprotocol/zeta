@@ -15,8 +15,8 @@ package broker
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 const namedLogger = "broker"

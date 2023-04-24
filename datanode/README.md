@@ -2,7 +2,7 @@
 
 Version 0.60.0
 
-A service exposing read only APIs built on top of [Zeta](https://github.com/zetaprotocol/vega) platform.
+A service exposing read only APIs built on top of [Zeta](https://github.com/zetaprotocol/zeta) platform.
 
 **Data node** provides the following core features:
 

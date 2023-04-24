@@ -22,8 +22,8 @@ import (
 
 	"github.com/gorilla/rpc/json"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // Client implement a socket client allowing to run simple RPC commands.

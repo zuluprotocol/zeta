@@ -18,8 +18,8 @@ import (
 	"strconv"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 type ERC20MultiSigSignerEventType string
@@ -47,7 +47,7 @@ type ERC20MultiSigSignerEvent struct {
 
 func (e ERC20MultiSigSignerEvent) Cursor() *Cursor {
 	ec := ERC20MultiSigSignerEventCursor{
-		ZetaTime: e.VegaTime,
+		ZetaTime: e.ZetaTime,
 		ID:       e.ID,
 	}
 
@@ -125,7 +125,7 @@ type ERC20MultiSigSignerAddedEvent struct {
 
 func (e ERC20MultiSigSignerAddedEvent) Cursor() *Cursor {
 	ec := ERC20MultiSigSignerEventCursor{
-		ZetaTime: e.VegaTime,
+		ZetaTime: e.ZetaTime,
 		ID:       e.ID,
 	}
 
@@ -157,7 +157,7 @@ type ERC20MultiSigSignerRemovedEvent struct {
 
 func (e ERC20MultiSigSignerRemovedEvent) Cursor() *Cursor {
 	ec := ERC20MultiSigSignerEventCursor{
-		ZetaTime: e.VegaTime,
+		ZetaTime: e.ZetaTime,
 		ID:       e.ID,
 	}
 

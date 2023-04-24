@@ -2,7 +2,7 @@ FROM golang:1.19.1-alpine3.16 AS builder
 RUN apk add --no-cache git
 WORKDIR /src
 ADD . .
-RUN go build -o /build/zetawallet ./cmd/vegawallet
+RUN go build -o /build/zetawallet ./cmd/zetawallet
 
 FROM alpine:3.16
 ENTRYPOINT ["zetawallet"]

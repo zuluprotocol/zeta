@@ -16,9 +16,9 @@ import (
 	"context"
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/types"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
-	snappb "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	snappb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -42,10 +42,10 @@ func (e *Engine) serialise() ([]byte, error) {
 	}
 
 	sort.SliceStable(events, func(i, j int) bool {
-		if events[i].ZetaReleaseTag == events[j].VegaReleaseTag {
+		if events[i].ZetaReleaseTag == events[j].ZetaReleaseTag {
 			return events[i].UpgradeBlockHeight < events[j].UpgradeBlockHeight
 		}
-		return events[i].ZetaReleaseTag < events[j].VegaReleaseTag
+		return events[i].ZetaReleaseTag < events[j].ZetaReleaseTag
 	})
 
 	payloadProtocolUpgradeProposals := &types.PayloadProtocolUpgradeProposals{
@@ -57,7 +57,7 @@ func (e *Engine) serialise() ([]byte, error) {
 	if e.upgradeStatus.AcceptedReleaseInfo != nil {
 		payloadProtocolUpgradeProposals.Proposals.AcceptedProposal = &snappb.AcceptedProtocolUpgradeProposal{
 			UpgradeBlockHeight: e.upgradeStatus.AcceptedReleaseInfo.UpgradeBlockHeight,
-			ZetaReleaseTag:     e.upgradeStatus.AcceptedReleaseInfo.VegaReleaseTag,
+			ZetaReleaseTag:     e.upgradeStatus.AcceptedReleaseInfo.ZetaReleaseTag,
 		}
 	}
 
@@ -105,7 +105,7 @@ func (e *Engine) LoadState(ctx context.Context, p *types.Payload) ([]types.State
 	if pl.Proposals.AcceptedProposal != nil {
 		e.upgradeStatus.AcceptedReleaseInfo = &types.ReleaseInfo{
 			UpgradeBlockHeight: pl.Proposals.AcceptedProposal.UpgradeBlockHeight,
-			ZetaReleaseTag:     pl.Proposals.AcceptedProposal.VegaReleaseTag,
+			ZetaReleaseTag:     pl.Proposals.AcceptedProposal.ZetaReleaseTag,
 		}
 	}
 

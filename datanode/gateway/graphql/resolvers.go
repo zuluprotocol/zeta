@@ -24,18 +24,18 @@ import (
 	"github.com/shopspring/decimal"
 	"google.golang.org/grpc"
 
-	"code.zetaprotocol.io/vega/datanode/gateway"
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/ptr"
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	types "code.zetaprotocol.io/vega/protos/vega"
-	zetaprotoapi "code.vegaprotocol.io/vega/protos/vega/api/v1"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	data "code.zetaprotocol.io/vega/protos/vega/data/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/datanode/gateway"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
+	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	data "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 var (
@@ -49,7 +49,7 @@ var (
 	ErrInvalidProposal = errors.New("invalid proposal")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/datanode/gateway/graphql CoreProxyServiceClient,TradingDataServiceClientV2
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/datanode/gateway/graphql CoreProxyServiceClient,TradingDataServiceClientV2
 
 // CoreProxyServiceClient ...
 type CoreProxyServiceClient interface {
@@ -398,7 +398,7 @@ func (r *coreDataSnapshotResolver) ZetaCoreVersion(ctx context.Context, obj *eve
 
 type epochRewardSummaryResolver ZetaResolverRoot
 
-func (r *epochRewardSummaryResolver) RewardType(ctx context.Context, obj *zeta.EpochRewardSummary) (vega.AccountType, error) {
+func (r *epochRewardSummaryResolver) RewardType(ctx context.Context, obj *zeta.EpochRewardSummary) (zeta.AccountType, error) {
 	accountType, ok := zeta.AccountType_value[obj.RewardType]
 	if !ok {
 		return zeta.AccountType_ACCOUNT_TYPE_UNSPECIFIED, fmt.Errorf("Unknown account type %v", obj.RewardType)
@@ -472,14 +472,14 @@ func (r *myDepositResolver) CreatedTimestamp(ctx context.Context, obj *types.Dep
 	if obj.CreatedTimestamp == 0 {
 		return "", errors.New("invalid timestamp")
 	}
-	return zetatime.Format(vegatime.UnixNano(obj.CreatedTimestamp)), nil
+	return zetatime.Format(zetatime.UnixNano(obj.CreatedTimestamp)), nil
 }
 
 func (r *myDepositResolver) CreditedTimestamp(ctx context.Context, obj *types.Deposit) (*string, error) {
 	if obj.CreditedTimestamp == 0 {
 		return nil, nil
 	}
-	t := zetatime.Format(vegatime.UnixNano(obj.CreditedTimestamp))
+	t := zetatime.Format(zetatime.UnixNano(obj.CreditedTimestamp))
 	return &t, nil
 }
 
@@ -618,7 +618,7 @@ func (r *myQueryResolver) Erc20ListAssetBundle(ctx context.Context, assetID stri
 
 	return &Erc20ListAssetBundle{
 		AssetSource: res.AssetSource,
-		ZetaAssetID: res.VegaAssetId,
+		ZetaAssetID: res.ZetaAssetId,
 		Nonce:       res.Nonce,
 		Signatures:  res.Signatures,
 	}, nil
@@ -633,7 +633,7 @@ func (r *myQueryResolver) Erc20SetAssetLimitsBundle(ctx context.Context, proposa
 
 	return &ERC20SetAssetLimitsBundle{
 		AssetSource:   res.AssetSource,
-		ZetaAssetID:   res.VegaAssetId,
+		ZetaAssetID:   res.ZetaAssetId,
 		Nonce:         res.Nonce,
 		LifetimeLimit: res.LifetimeLimit,
 		Threshold:     res.Threshold,
@@ -1576,7 +1576,7 @@ func (r *myOrderUpdateResolver) ExpiresAt(ctx context.Context, obj *types.Order)
 	if obj.ExpiresAt <= 0 {
 		return nil, nil
 	}
-	expiresAt := zetatime.Format(vegatime.UnixNano(obj.ExpiresAt))
+	expiresAt := zetatime.Format(zetatime.UnixNano(obj.ExpiresAt))
 	return &expiresAt, nil
 }
 
@@ -1629,7 +1629,7 @@ func (r *myOrderResolver) ExpiresAt(ctx context.Context, obj *types.Order) (*str
 	if obj.ExpiresAt <= 0 {
 		return nil, nil
 	}
-	expiresAt := zetatime.Format(vegatime.UnixNano(obj.ExpiresAt))
+	expiresAt := zetatime.Format(zetatime.UnixNano(obj.ExpiresAt))
 	return &expiresAt, nil
 }
 
@@ -1830,7 +1830,7 @@ func (r *positionUpdateResolver) OpenVolume(ctx context.Context, obj *types.Posi
 func (r *positionUpdateResolver) UpdatedAt(ctx context.Context, obj *types.Position) (*string, error) {
 	var updatedAt *string
 	if obj.UpdatedAt > 0 {
-		t := zetatime.Format(vegatime.UnixNano(obj.UpdatedAt))
+		t := zetatime.Format(zetatime.UnixNano(obj.UpdatedAt))
 		updatedAt = &t
 	}
 	return updatedAt, nil
@@ -1851,7 +1851,7 @@ func (r *myPositionResolver) Market(ctx context.Context, obj *types.Position) (*
 func (r *myPositionResolver) UpdatedAt(ctx context.Context, obj *types.Position) (*string, error) {
 	var updatedAt *string
 	if obj.UpdatedAt > 0 {
-		t := zetatime.Format(vegatime.UnixNano(obj.UpdatedAt))
+		t := zetatime.Format(zetatime.UnixNano(obj.UpdatedAt))
 		updatedAt = &t
 	}
 	return updatedAt, nil

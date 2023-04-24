@@ -18,17 +18,17 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/metrics"
-	"code.zetaprotocol.io/vega/core/products"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/metrics"
+	"zuluprotocol/zeta/zeta/core/products"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 // MarketPosition ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/market_position_mock.go -package mocks code.zetaprotocol.io/vega/core/settlement MarketPosition
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/market_position_mock.go -package mocks zuluprotocol/zeta/zeta/core/settlement MarketPosition
 type MarketPosition interface {
 	Party() string
 	Size() int64
@@ -42,7 +42,7 @@ type MarketPosition interface {
 
 // Product ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/settlement_product_mock.go -package mocks code.zetaprotocol.io/vega/core/settlement Product
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/settlement_product_mock.go -package mocks zuluprotocol/zeta/zeta/core/settlement Product
 type Product interface {
 	Settle(*num.Uint, uint32, num.Decimal) (*types.FinancialAmount, bool, error)
 	GetAsset() string
@@ -50,7 +50,7 @@ type Product interface {
 
 // TimeService.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks code.zetaprotocol.io/vega/core/settlement TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/settlement TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

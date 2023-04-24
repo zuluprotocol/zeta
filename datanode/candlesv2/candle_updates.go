@@ -18,8 +18,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type candleSource interface {

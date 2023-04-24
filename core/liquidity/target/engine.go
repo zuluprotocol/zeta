@@ -16,8 +16,8 @@ import (
 	"errors"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 )
 
 var (
@@ -54,7 +54,7 @@ type timestampedOI struct {
 	OI   uint64
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/open_interest_calculator_mock.go -package mocks code.zetaprotocol.io/vega/core/liquidity/target OpenInterestCalculator
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/open_interest_calculator_mock.go -package mocks zuluprotocol/zeta/zeta/core/liquidity/target OpenInterestCalculator
 type OpenInterestCalculator interface {
 	GetOpenInterestGivenTrades(trades []*types.Trade) uint64
 }

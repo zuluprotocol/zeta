@@ -3,7 +3,7 @@ package ratelimit
 import (
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/config/encoding"
+	"zuluprotocol/zeta/zeta/datanode/config/encoding"
 )
 
 type Config struct {

@@ -3,7 +3,7 @@ package v1
 import (
 	"encoding/hex"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 )
 
 func NewID(signers []*Signer, filters []*Filter) string {

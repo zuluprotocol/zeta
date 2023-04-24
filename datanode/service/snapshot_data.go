@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/entities"
 )
 
 type snapStore interface {

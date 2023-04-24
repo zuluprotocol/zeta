@@ -16,12 +16,12 @@ import (
 	"context"
 	"sort"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	events "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	events "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 )
 
 func (t *Topology) Name() types.CheckpointName {

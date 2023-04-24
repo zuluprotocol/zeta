@@ -22,9 +22,9 @@ import (
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/stretchr/testify/assert"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/datanode/service/mocks"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/datanode/service/mocks"
 )
 
 var (
@@ -32,7 +32,7 @@ var (
 	testMarket2 = entities.Market{ID: entities.MarketID("bb"), ZetaTime: time.Unix(0, 2)}
 	testMarket3 = entities.Market{ID: entities.MarketID("aa"), ZetaTime: time.Unix(0, 3)}
 	testMarket4 = entities.Market{ID: entities.MarketID("cc"), ZetaTime: time.Unix(0, 4)}
-	sortMarkets = cmpopts.SortSlices(func(a, b entities.Market) bool { return a.ZetaTime.Before(b.VegaTime) })
+	sortMarkets = cmpopts.SortSlices(func(a, b entities.Market) bool { return a.ZetaTime.Before(b.ZetaTime) })
 )
 
 func TestMarketInitialise(t *testing.T) {

@@ -8,21 +8,21 @@ Read through for a list of the major changes between versions 0.53.0 and 0.67.1,
 
 # Repository changes
 
-Along the way to the v0.67 release, most Zeta code has been made public. In addition, the code for the Vega Wallet ([previously](https://github.com/zetaprotocol/vegawallet)) and the data node ([previously](https://github.com/vegaprotocol/data-node)) have been imported in this repository, and both of the previous repositories are now unmaintained.
+Along the way to the v0.67 release, most Zeta code has been made public. In addition, the code for the Zeta Wallet ([previously](https://github.com/zetaprotocol/zetawallet)) and the data node ([previously](https://github.com/zetaprotocol/data-node)) have been imported in this repository, and both of the previous repositories are now unmaintained.
 
-The binaries are still available as standalone files in the Zeta repo and can be downloaded through the GitHub release [page](https://github.com/zetaprotocol/vega/releases). When downloading the binaries, be sure to choose the compatible software version to that of the network. However, they are also available under the vega toolchain:
+The binaries are still available as standalone files in the Zeta repo and can be downloaded through the GitHub release [page](https://github.com/zetaprotocol/zeta/releases). When downloading the binaries, be sure to choose the compatible software version to that of the network. However, they are also available under the zeta toolchain:
 ```
 zeta datanode --help
 zeta wallet --help
 ```
 
-The Zeta core node is now a built-in Tendermint application. This means that it's no longer required (and not recommended) to run Tendermint separately. Most Tendermint commands used to manage a Tendermint chain are also available under the Vega toolchain:
+The Zeta core node is now a built-in Tendermint application. This means that it's no longer required (and not recommended) to run Tendermint separately. Most Tendermint commands used to manage a Tendermint chain are also available under the Zeta toolchain:
 ```
 zeta tendermint --help
 ```
 
 ## New service
-With version 0.67, `zetavisor` was introduced to help facilitate protocol upgrades. This tool is not required to run the node but recommended in order to ease software upgrades when they're expected by the network. Read more about [Zeta Visor](https://github.com/vegaprotocol/vega/blob/develop/visor/readme.md).
+With version 0.67, `zetavisor` was introduced to help facilitate protocol upgrades. This tool is not required to run the node but recommended in order to ease software upgrades when they're expected by the network. Read more about [Zeta Visor](https://github.com/zetaprotocol/zeta/blob/develop/visor/readme.md).
 
 # Configuration changes
 
@@ -122,7 +122,7 @@ The data node configuration file can be found in `$DATANODE_HOME/config/data-nod
 
 ### Settings added in v0.67
 
-**_MaxMemoryPercent_** - A value to control the maximum amount of memory the Zeta node will use. The accepted range of values is 1-100. The default value is 33, assuming that the data node is running on the same host as the Vega core node and Postgres.
+**_MaxMemoryPercent_** - A value to control the maximum amount of memory the Zeta node will use. The accepted range of values is 1-100. The default value is 33, assuming that the data node is running on the same host as the Zeta core node and Postgres.
 
 Usage example:
 ```Toml
@@ -180,7 +180,7 @@ Usage example:
   Endpoint = "/graphql"
 ```
 
-**_Broker.UseBufferedEventSource_** - The broker is the connection between the Zeta core node and data node. This connection needs to be stable at all times to ensure the data node can reconcile all the state from the Vega events. This setting allows the data node to use a buffer when it's not able to consume events as fast as the Vega core node produces them. We recommend setting this to `true`.
+**_Broker.UseBufferedEventSource_** - The broker is the connection between the Zeta core node and data node. This connection needs to be stable at all times to ensure the data node can reconcile all the state from the Zeta events. This setting allows the data node to use a buffer when it's not able to consume events as fast as the Zeta core node produces them. We recommend setting this to `true`.
 
 Usage example:
 ```Toml
@@ -265,7 +265,7 @@ zeta --help
 
 ### Zeta Wallet
 
-The Zeta Wallet has had several commands changed. Refer to the Vega Wallet `--help` to see the latest commands and guidance on how to use them.  
+The Zeta Wallet has had several commands changed. Refer to the Zeta Wallet `--help` to see the latest commands and guidance on how to use them.  
 
 ## Data node
 
@@ -278,7 +278,7 @@ The Zeta Wallet has had several commands changed. Refer to the Vega Wallet `--he
 `init` now requires the chain-id of the current Zeta network. For example, if you were to initialise a data node for the current mainnet, you would run the following command:
 
 ```Shell
-zeta datanode init --home="$DATANODE_HOME" "vega-mainnet-0009"
+zeta datanode init --home="$DATANODE_HOME" "zeta-mainnet-0009"
 ```
 
 `network-history`, a new subcommand, provides tools to manage the network history segments saved by the data node, which are shared across the network through IPFS.

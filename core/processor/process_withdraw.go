@@ -16,8 +16,8 @@ import (
 	"context"
 	"errors"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 var ErrMissingWithdrawERC20Ext = errors.New("missing withdraw submission erc20 ext")

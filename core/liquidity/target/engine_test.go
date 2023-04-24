@@ -16,10 +16,10 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/liquidity/target"
-	"code.zetaprotocol.io/vega/core/liquidity/target/mocks"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/liquidity/target"
+	"zuluprotocol/zeta/zeta/core/liquidity/target/mocks"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/golang/mock/gomock"

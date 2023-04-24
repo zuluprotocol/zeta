@@ -1941,12 +1941,12 @@ var file_zeta_markets_proto_rawDesc = []byte{
 
 var (
 	file_zeta_markets_proto_rawDescOnce sync.Once
-	file_zeta_markets_proto_rawDescData = file_vega_markets_proto_rawDesc
+	file_zeta_markets_proto_rawDescData = file_zeta_markets_proto_rawDesc
 )
 
 func file_zeta_markets_proto_rawDescGZIP() []byte {
 	file_zeta_markets_proto_rawDescOnce.Do(func() {
-		file_zeta_markets_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_markets_proto_rawDescData)
+		file_zeta_markets_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_markets_proto_rawDescData)
 	})
 	return file_zeta_markets_proto_rawDescData
 }
@@ -1980,30 +1980,30 @@ var file_zeta_markets_proto_goTypes = []interface{}{
 	(*DataSourceSpec)(nil),                // 23: zeta.DataSourceSpec
 }
 var file_zeta_markets_proto_depIdxs = []int32{
-	23, // 0: zeta.Future.data_source_spec_for_settlement_data:type_name -> vega.DataSourceSpec
-	23, // 1: zeta.Future.data_source_spec_for_trading_termination:type_name -> vega.DataSourceSpec
-	4,  // 2: zeta.Future.data_source_spec_binding:type_name -> vega.DataSourceSpecToFutureBinding
-	5,  // 3: zeta.Instrument.metadata:type_name -> vega.InstrumentMetadata
-	3,  // 4: zeta.Instrument.future:type_name -> vega.Future
-	8,  // 5: zeta.LogNormalRiskModel.params:type_name -> vega.LogNormalModelParams
-	10, // 6: zeta.SimpleRiskModel.params:type_name -> vega.SimpleModelParams
-	11, // 7: zeta.MarginCalculator.scaling_factors:type_name -> vega.ScalingFactors
-	6,  // 8: zeta.TradableInstrument.instrument:type_name -> vega.Instrument
-	12, // 9: zeta.TradableInstrument.margin_calculator:type_name -> vega.MarginCalculator
-	7,  // 10: zeta.TradableInstrument.log_normal_risk_model:type_name -> vega.LogNormalRiskModel
-	9,  // 11: zeta.TradableInstrument.simple_risk_model:type_name -> vega.SimpleRiskModel
-	14, // 12: zeta.Fees.factors:type_name -> vega.FeeFactors
-	16, // 13: zeta.PriceMonitoringParameters.triggers:type_name -> vega.PriceMonitoringTrigger
-	17, // 14: zeta.PriceMonitoringSettings.parameters:type_name -> vega.PriceMonitoringParameters
-	20, // 15: zeta.LiquidityMonitoringParameters.target_stake_parameters:type_name -> vega.TargetStakeParameters
-	13, // 16: zeta.Market.tradable_instrument:type_name -> vega.TradableInstrument
-	15, // 17: zeta.Market.fees:type_name -> vega.Fees
-	2,  // 18: zeta.Market.opening_auction:type_name -> vega.AuctionDuration
-	18, // 19: zeta.Market.price_monitoring_settings:type_name -> vega.PriceMonitoringSettings
-	19, // 20: zeta.Market.liquidity_monitoring_parameters:type_name -> vega.LiquidityMonitoringParameters
-	1,  // 21: zeta.Market.trading_mode:type_name -> vega.Market.TradingMode
-	0,  // 22: zeta.Market.state:type_name -> vega.Market.State
-	22, // 23: zeta.Market.market_timestamps:type_name -> vega.MarketTimestamps
+	23, // 0: zeta.Future.data_source_spec_for_settlement_data:type_name -> zeta.DataSourceSpec
+	23, // 1: zeta.Future.data_source_spec_for_trading_termination:type_name -> zeta.DataSourceSpec
+	4,  // 2: zeta.Future.data_source_spec_binding:type_name -> zeta.DataSourceSpecToFutureBinding
+	5,  // 3: zeta.Instrument.metadata:type_name -> zeta.InstrumentMetadata
+	3,  // 4: zeta.Instrument.future:type_name -> zeta.Future
+	8,  // 5: zeta.LogNormalRiskModel.params:type_name -> zeta.LogNormalModelParams
+	10, // 6: zeta.SimpleRiskModel.params:type_name -> zeta.SimpleModelParams
+	11, // 7: zeta.MarginCalculator.scaling_factors:type_name -> zeta.ScalingFactors
+	6,  // 8: zeta.TradableInstrument.instrument:type_name -> zeta.Instrument
+	12, // 9: zeta.TradableInstrument.margin_calculator:type_name -> zeta.MarginCalculator
+	7,  // 10: zeta.TradableInstrument.log_normal_risk_model:type_name -> zeta.LogNormalRiskModel
+	9,  // 11: zeta.TradableInstrument.simple_risk_model:type_name -> zeta.SimpleRiskModel
+	14, // 12: zeta.Fees.factors:type_name -> zeta.FeeFactors
+	16, // 13: zeta.PriceMonitoringParameters.triggers:type_name -> zeta.PriceMonitoringTrigger
+	17, // 14: zeta.PriceMonitoringSettings.parameters:type_name -> zeta.PriceMonitoringParameters
+	20, // 15: zeta.LiquidityMonitoringParameters.target_stake_parameters:type_name -> zeta.TargetStakeParameters
+	13, // 16: zeta.Market.tradable_instrument:type_name -> zeta.TradableInstrument
+	15, // 17: zeta.Market.fees:type_name -> zeta.Fees
+	2,  // 18: zeta.Market.opening_auction:type_name -> zeta.AuctionDuration
+	18, // 19: zeta.Market.price_monitoring_settings:type_name -> zeta.PriceMonitoringSettings
+	19, // 20: zeta.Market.liquidity_monitoring_parameters:type_name -> zeta.LiquidityMonitoringParameters
+	1,  // 21: zeta.Market.trading_mode:type_name -> zeta.Market.TradingMode
+	0,  // 22: zeta.Market.state:type_name -> zeta.Market.State
+	22, // 23: zeta.Market.market_timestamps:type_name -> zeta.MarketTimestamps
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name

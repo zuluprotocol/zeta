@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 	db "github.com/tendermint/tm-db"

@@ -7,8 +7,8 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -1519,12 +1519,12 @@ var file_zeta_api_v1_corestate_proto_rawDesc = []byte{
 
 var (
 	file_zeta_api_v1_corestate_proto_rawDescOnce sync.Once
-	file_zeta_api_v1_corestate_proto_rawDescData = file_vega_api_v1_corestate_proto_rawDesc
+	file_zeta_api_v1_corestate_proto_rawDescData = file_zeta_api_v1_corestate_proto_rawDesc
 )
 
 func file_zeta_api_v1_corestate_proto_rawDescGZIP() []byte {
 	file_zeta_api_v1_corestate_proto_rawDescOnce.Do(func() {
-		file_zeta_api_v1_corestate_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_api_v1_corestate_proto_rawDescData)
+		file_zeta_api_v1_corestate_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_api_v1_corestate_proto_rawDescData)
 	})
 	return file_zeta_api_v1_corestate_proto_rawDescData
 }
@@ -1557,56 +1557,56 @@ var file_zeta_api_v1_corestate_proto_goTypes = []interface{}{
 	(*ListPartiesStakeResponse)(nil),      // 23: zeta.api.v1.ListPartiesStakeResponse
 	(*ListDelegationsRequest)(nil),        // 24: zeta.api.v1.ListDelegationsRequest
 	(*ListDelegationsResponse)(nil),       // 25: zeta.api.v1.ListDelegationsResponse
-	(*zeta.Asset)(nil),                    // 26: vega.Asset
-	(*zeta.NetworkParameter)(nil),         // 27: vega.NetworkParameter
-	(*zeta.NetworkLimits)(nil),            // 28: vega.NetworkLimits
-	(*zeta.Party)(nil),                    // 29: vega.Party
+	(*zeta.Asset)(nil),                    // 26: zeta.Asset
+	(*zeta.NetworkParameter)(nil),         // 27: zeta.NetworkParameter
+	(*zeta.NetworkLimits)(nil),            // 28: zeta.NetworkLimits
+	(*zeta.Party)(nil),                    // 29: zeta.Party
 	(*v1.ValidatorUpdate)(nil),            // 30: zeta.events.v1.ValidatorUpdate
-	(*zeta.Market)(nil),                   // 31: vega.Market
-	(*zeta.Proposal)(nil),                 // 32: vega.Proposal
-	(*zeta.MarketData)(nil),               // 33: vega.MarketData
-	(*zeta.Vote)(nil),                     // 34: vega.Vote
+	(*zeta.Market)(nil),                   // 31: zeta.Market
+	(*zeta.Proposal)(nil),                 // 32: zeta.Proposal
+	(*zeta.MarketData)(nil),               // 33: zeta.MarketData
+	(*zeta.Vote)(nil),                     // 34: zeta.Vote
 	(*v1.StakeLinking)(nil),               // 35: zeta.events.v1.StakeLinking
-	(*zeta.Delegation)(nil),               // 36: vega.Delegation
+	(*zeta.Delegation)(nil),               // 36: zeta.Delegation
 }
 var file_zeta_api_v1_corestate_proto_depIdxs = []int32{
-	0,  // 0: zeta.api.v1.ListAccountsResponse.accounts:type_name -> vega.api.v1.Account
-	26, // 1: zeta.api.v1.ListAssetsResponse.assets:type_name -> vega.Asset
-	27, // 2: zeta.api.v1.ListNetworkParametersResponse.network_parameters:type_name -> vega.NetworkParameter
-	28, // 3: zeta.api.v1.ListNetworkLimitsResponse.network_limits:type_name -> vega.NetworkLimits
-	29, // 4: zeta.api.v1.ListPartiesResponse.parties:type_name -> vega.Party
-	30, // 5: zeta.api.v1.ListValidatorsResponse.validators:type_name -> vega.events.v1.ValidatorUpdate
-	31, // 6: zeta.api.v1.ListMarketsResponse.markets:type_name -> vega.Market
-	32, // 7: zeta.api.v1.ListProposalsResponse.proposals:type_name -> vega.Proposal
-	33, // 8: zeta.api.v1.ListMarketsDataResponse.markets_data:type_name -> vega.MarketData
-	34, // 9: zeta.api.v1.ListVotesResponse.votes:type_name -> vega.Vote
-	35, // 10: zeta.api.v1.PartyStake.stake_linkings:type_name -> vega.events.v1.StakeLinking
-	21, // 11: zeta.api.v1.ListPartiesStakeResponse.parties_stake:type_name -> vega.api.v1.PartyStake
-	36, // 12: zeta.api.v1.ListDelegationsResponse.delegations:type_name -> vega.Delegation
-	1,  // 13: zeta.api.v1.CoreStateService.ListAccounts:input_type -> vega.api.v1.ListAccountsRequest
-	3,  // 14: zeta.api.v1.CoreStateService.ListAssets:input_type -> vega.api.v1.ListAssetsRequest
-	5,  // 15: zeta.api.v1.CoreStateService.ListNetworkParameters:input_type -> vega.api.v1.ListNetworkParametersRequest
-	7,  // 16: zeta.api.v1.CoreStateService.ListNetworkLimits:input_type -> vega.api.v1.ListNetworkLimitsRequest
-	9,  // 17: zeta.api.v1.CoreStateService.ListParties:input_type -> vega.api.v1.ListPartiesRequest
-	11, // 18: zeta.api.v1.CoreStateService.ListValidators:input_type -> vega.api.v1.ListValidatorsRequest
-	13, // 19: zeta.api.v1.CoreStateService.ListMarkets:input_type -> vega.api.v1.ListMarketsRequest
-	15, // 20: zeta.api.v1.CoreStateService.ListProposals:input_type -> vega.api.v1.ListProposalsRequest
-	17, // 21: zeta.api.v1.CoreStateService.ListMarketsData:input_type -> vega.api.v1.ListMarketsDataRequest
-	19, // 22: zeta.api.v1.CoreStateService.ListVotes:input_type -> vega.api.v1.ListVotesRequest
-	22, // 23: zeta.api.v1.CoreStateService.ListPartiesStake:input_type -> vega.api.v1.ListPartiesStakeRequest
-	24, // 24: zeta.api.v1.CoreStateService.ListDelegations:input_type -> vega.api.v1.ListDelegationsRequest
-	2,  // 25: zeta.api.v1.CoreStateService.ListAccounts:output_type -> vega.api.v1.ListAccountsResponse
-	4,  // 26: zeta.api.v1.CoreStateService.ListAssets:output_type -> vega.api.v1.ListAssetsResponse
-	6,  // 27: zeta.api.v1.CoreStateService.ListNetworkParameters:output_type -> vega.api.v1.ListNetworkParametersResponse
-	8,  // 28: zeta.api.v1.CoreStateService.ListNetworkLimits:output_type -> vega.api.v1.ListNetworkLimitsResponse
-	10, // 29: zeta.api.v1.CoreStateService.ListParties:output_type -> vega.api.v1.ListPartiesResponse
-	12, // 30: zeta.api.v1.CoreStateService.ListValidators:output_type -> vega.api.v1.ListValidatorsResponse
-	14, // 31: zeta.api.v1.CoreStateService.ListMarkets:output_type -> vega.api.v1.ListMarketsResponse
-	16, // 32: zeta.api.v1.CoreStateService.ListProposals:output_type -> vega.api.v1.ListProposalsResponse
-	18, // 33: zeta.api.v1.CoreStateService.ListMarketsData:output_type -> vega.api.v1.ListMarketsDataResponse
-	20, // 34: zeta.api.v1.CoreStateService.ListVotes:output_type -> vega.api.v1.ListVotesResponse
-	23, // 35: zeta.api.v1.CoreStateService.ListPartiesStake:output_type -> vega.api.v1.ListPartiesStakeResponse
-	25, // 36: zeta.api.v1.CoreStateService.ListDelegations:output_type -> vega.api.v1.ListDelegationsResponse
+	0,  // 0: zeta.api.v1.ListAccountsResponse.accounts:type_name -> zeta.api.v1.Account
+	26, // 1: zeta.api.v1.ListAssetsResponse.assets:type_name -> zeta.Asset
+	27, // 2: zeta.api.v1.ListNetworkParametersResponse.network_parameters:type_name -> zeta.NetworkParameter
+	28, // 3: zeta.api.v1.ListNetworkLimitsResponse.network_limits:type_name -> zeta.NetworkLimits
+	29, // 4: zeta.api.v1.ListPartiesResponse.parties:type_name -> zeta.Party
+	30, // 5: zeta.api.v1.ListValidatorsResponse.validators:type_name -> zeta.events.v1.ValidatorUpdate
+	31, // 6: zeta.api.v1.ListMarketsResponse.markets:type_name -> zeta.Market
+	32, // 7: zeta.api.v1.ListProposalsResponse.proposals:type_name -> zeta.Proposal
+	33, // 8: zeta.api.v1.ListMarketsDataResponse.markets_data:type_name -> zeta.MarketData
+	34, // 9: zeta.api.v1.ListVotesResponse.votes:type_name -> zeta.Vote
+	35, // 10: zeta.api.v1.PartyStake.stake_linkings:type_name -> zeta.events.v1.StakeLinking
+	21, // 11: zeta.api.v1.ListPartiesStakeResponse.parties_stake:type_name -> zeta.api.v1.PartyStake
+	36, // 12: zeta.api.v1.ListDelegationsResponse.delegations:type_name -> zeta.Delegation
+	1,  // 13: zeta.api.v1.CoreStateService.ListAccounts:input_type -> zeta.api.v1.ListAccountsRequest
+	3,  // 14: zeta.api.v1.CoreStateService.ListAssets:input_type -> zeta.api.v1.ListAssetsRequest
+	5,  // 15: zeta.api.v1.CoreStateService.ListNetworkParameters:input_type -> zeta.api.v1.ListNetworkParametersRequest
+	7,  // 16: zeta.api.v1.CoreStateService.ListNetworkLimits:input_type -> zeta.api.v1.ListNetworkLimitsRequest
+	9,  // 17: zeta.api.v1.CoreStateService.ListParties:input_type -> zeta.api.v1.ListPartiesRequest
+	11, // 18: zeta.api.v1.CoreStateService.ListValidators:input_type -> zeta.api.v1.ListValidatorsRequest
+	13, // 19: zeta.api.v1.CoreStateService.ListMarkets:input_type -> zeta.api.v1.ListMarketsRequest
+	15, // 20: zeta.api.v1.CoreStateService.ListProposals:input_type -> zeta.api.v1.ListProposalsRequest
+	17, // 21: zeta.api.v1.CoreStateService.ListMarketsData:input_type -> zeta.api.v1.ListMarketsDataRequest
+	19, // 22: zeta.api.v1.CoreStateService.ListVotes:input_type -> zeta.api.v1.ListVotesRequest
+	22, // 23: zeta.api.v1.CoreStateService.ListPartiesStake:input_type -> zeta.api.v1.ListPartiesStakeRequest
+	24, // 24: zeta.api.v1.CoreStateService.ListDelegations:input_type -> zeta.api.v1.ListDelegationsRequest
+	2,  // 25: zeta.api.v1.CoreStateService.ListAccounts:output_type -> zeta.api.v1.ListAccountsResponse
+	4,  // 26: zeta.api.v1.CoreStateService.ListAssets:output_type -> zeta.api.v1.ListAssetsResponse
+	6,  // 27: zeta.api.v1.CoreStateService.ListNetworkParameters:output_type -> zeta.api.v1.ListNetworkParametersResponse
+	8,  // 28: zeta.api.v1.CoreStateService.ListNetworkLimits:output_type -> zeta.api.v1.ListNetworkLimitsResponse
+	10, // 29: zeta.api.v1.CoreStateService.ListParties:output_type -> zeta.api.v1.ListPartiesResponse
+	12, // 30: zeta.api.v1.CoreStateService.ListValidators:output_type -> zeta.api.v1.ListValidatorsResponse
+	14, // 31: zeta.api.v1.CoreStateService.ListMarkets:output_type -> zeta.api.v1.ListMarketsResponse
+	16, // 32: zeta.api.v1.CoreStateService.ListProposals:output_type -> zeta.api.v1.ListProposalsResponse
+	18, // 33: zeta.api.v1.CoreStateService.ListMarketsData:output_type -> zeta.api.v1.ListMarketsDataResponse
+	20, // 34: zeta.api.v1.CoreStateService.ListVotes:output_type -> zeta.api.v1.ListVotesResponse
+	23, // 35: zeta.api.v1.CoreStateService.ListPartiesStake:output_type -> zeta.api.v1.ListPartiesStakeResponse
+	25, // 36: zeta.api.v1.CoreStateService.ListDelegations:output_type -> zeta.api.v1.ListDelegationsResponse
 	25, // [25:37] is the sub-list for method output_type
 	13, // [13:25] is the sub-list for method input_type
 	13, // [13:13] is the sub-list for extension type_name

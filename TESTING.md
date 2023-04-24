@@ -19,7 +19,7 @@ command, there is no need to run `go get` or `go install` to fetch or install
 The file `candles/service.go` has:
 
 ```go
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/candle_store_mock.go -package mocks code.zetaprotocol.io/vega/candles CandleStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/candle_store_mock.go -package mocks code.zetaprotocol.io/zeta/candles CandleStore
 type CandleStore interface { /* ... */ }
 ```
 

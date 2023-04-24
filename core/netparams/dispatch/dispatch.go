@@ -16,7 +16,7 @@ import (
 	"context"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type Assets interface {

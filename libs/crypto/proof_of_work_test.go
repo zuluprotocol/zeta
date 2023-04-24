@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

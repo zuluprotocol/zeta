@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"sync"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 )
 
@@ -56,7 +56,7 @@ func (as *Assets) Add(ctx context.Context, a entities.Asset) error {
             lifetime_limit = EXCLUDED.lifetime_limit,
             withdraw_threshold = EXCLUDED.withdraw_threshold,
 			tx_hash = EXCLUDED.tx_hash,
-            zeta_time = EXCLUDED.vega_time,
+            zeta_time = EXCLUDED.zeta_time,
             status = EXCLUDED.status
             ;`,
 		a.ID,

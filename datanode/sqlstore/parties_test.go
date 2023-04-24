@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	"code.zetaprotocol.io/vega/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -28,7 +28,7 @@ func addTestParty(t *testing.T, ctx context.Context, ps *sqlstore.Parties, block
 	t.Helper()
 	party := entities.Party{
 		ID:       entities.PartyID(helpers.GenerateID()),
-		ZetaTime: &block.VegaTime,
+		ZetaTime: &block.ZetaTime,
 	}
 
 	err := ps.Add(ctx, party)
@@ -117,7 +117,7 @@ func populateTestParties(ctx context.Context, t *testing.T, bs *sqlstore.Blocks,
 
 	for _, party := range parties {
 		block := addTestBlock(t, ctx, bs)
-		party.ZetaTime = &block.VegaTime
+		party.ZetaTime = &block.ZetaTime
 		blockTimes[party.ID.String()] = block.ZetaTime
 		err := ps.Add(ctx, party)
 		require.NoError(t, err)
@@ -188,12 +188,12 @@ func testPartyPaginationReturnAllParties(t *testing.T) {
 	startZetaTime := blockTimes["02a16077"]
 	startParty := entities.Party{
 		ID:       "02a16077",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["fb1528a5"]
 	endParty := entities.Party{
 		ID:       "fb1528a5",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -225,12 +225,12 @@ func testPartyPaginationReturnsFirstPage(t *testing.T) {
 	startZetaTime := blockTimes["02a16077"]
 	startParty := entities.Party{
 		ID:       "02a16077",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["65be62cd"]
 	endParty := entities.Party{
 		ID:       "65be62cd",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -262,12 +262,12 @@ func testPartyPaginationReturnsLastPage(t *testing.T) {
 	startZetaTime := blockTimes["c8744329"]
 	startParty := entities.Party{
 		ID:       "c8744329",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["fb1528a5"]
 	endParty := entities.Party{
 		ID:       "fb1528a5",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -290,7 +290,7 @@ func testPartyPaginationReturnsPageTraversingForward(t *testing.T) {
 	afterZetaTime := blockTimes["65be62cd"]
 	afterParty := entities.Party{
 		ID:       "65be62cd",
-		ZetaTime: &afterVegaTime,
+		ZetaTime: &afterZetaTime,
 	}.String()
 	after := entities.NewCursor(afterParty).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, false)
@@ -305,12 +305,12 @@ func testPartyPaginationReturnsPageTraversingForward(t *testing.T) {
 	startZetaTime := blockTimes["7a797e0e"]
 	startParty := entities.Party{
 		ID:       "7a797e0e",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["b7c84b8e"]
 	endParty := entities.Party{
 		ID:       "b7c84b8e",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -333,7 +333,7 @@ func testPartyPaginationReturnsPageTraversingBackward(t *testing.T) {
 	beforeZetaTime := blockTimes["c8744329"]
 	beforeParty := entities.Party{
 		ID:       "c8744329",
-		ZetaTime: &beforeVegaTime,
+		ZetaTime: &beforeZetaTime,
 	}.String()
 	before := entities.NewCursor(beforeParty).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, false)
@@ -348,12 +348,12 @@ func testPartyPaginationReturnsPageTraversingBackward(t *testing.T) {
 	startZetaTime := blockTimes["7bb2356e"]
 	startParty := entities.Party{
 		ID:       "7bb2356e",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["c612300d"]
 	endParty := entities.Party{
 		ID:       "c612300d",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -382,12 +382,12 @@ func testPartyPaginationReturnsTheSpecifiedPartyNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["c612300d"]
 	startParty := entities.Party{
 		ID:       "c612300d",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["c612300d"]
 	endParty := entities.Party{
 		ID:       "c612300d",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -417,12 +417,12 @@ func testPartyPaginationReturnAllPartiesNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["fb1528a5"]
 	startParty := entities.Party{
 		ID:       "fb1528a5",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["02a16077"]
 	endParty := entities.Party{
 		ID:       "02a16077",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -454,12 +454,12 @@ func testPartyPaginationReturnsFirstPageNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["fb1528a5"]
 	startParty := entities.Party{
 		ID:       "fb1528a5",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["c8744329"]
 	endParty := entities.Party{
 		ID:       "c8744329",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -491,12 +491,12 @@ func testPartyPaginationReturnsLastPageNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["65be62cd"]
 	startParty := entities.Party{
 		ID:       "65be62cd",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["02a16077"]
 	endParty := entities.Party{
 		ID:       "02a16077",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -519,7 +519,7 @@ func testPartyPaginationReturnsPageTraversingForwardNewestFirst(t *testing.T) {
 	afterZetaTime := blockTimes["c8744329"]
 	afterParty := entities.Party{
 		ID:       "c8744329",
-		ZetaTime: &afterVegaTime,
+		ZetaTime: &afterZetaTime,
 	}.String()
 	after := entities.NewCursor(afterParty).Encode()
 	pagination, err := entities.NewCursorPagination(&first, &after, nil, nil, true)
@@ -534,12 +534,12 @@ func testPartyPaginationReturnsPageTraversingForwardNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["c612300d"]
 	startParty := entities.Party{
 		ID:       "c612300d",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["7bb2356e"]
 	endParty := entities.Party{
 		ID:       "7bb2356e",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()
@@ -562,7 +562,7 @@ func testPartyPaginationReturnsPageTraversingBackwardNewestFirst(t *testing.T) {
 	beforeZetaTime := blockTimes["65be62cd"]
 	beforeParty := entities.Party{
 		ID:       "65be62cd",
-		ZetaTime: &beforeVegaTime,
+		ZetaTime: &beforeZetaTime,
 	}.String()
 	before := entities.NewCursor(beforeParty).Encode()
 	pagination, err := entities.NewCursorPagination(nil, nil, &last, &before, true)
@@ -577,12 +577,12 @@ func testPartyPaginationReturnsPageTraversingBackwardNewestFirst(t *testing.T) {
 	startZetaTime := blockTimes["b7c84b8e"]
 	startParty := entities.Party{
 		ID:       "b7c84b8e",
-		ZetaTime: &startVegaTime,
+		ZetaTime: &startZetaTime,
 	}.String()
 	endZetaTime := blockTimes["7a797e0e"]
 	endParty := entities.Party{
 		ID:       "7a797e0e",
-		ZetaTime: &endVegaTime,
+		ZetaTime: &endZetaTime,
 	}.String()
 	wantStartCursor := entities.NewCursor(startParty).Encode()
 	wantEndCursor := entities.NewCursor(endParty).Encode()

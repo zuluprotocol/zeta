@@ -17,7 +17,7 @@ import (
 
 	"github.com/golang/protobuf/jsonpb"
 
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type Unmarshaler struct {

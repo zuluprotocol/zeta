@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"code.zetaprotocol.io/vega/cmd/vegawallet/commands/printer"
-	"code.zetaprotocol.io/vega/wallet/wallet"
+	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
 	"github.com/spf13/cobra"
 )
 

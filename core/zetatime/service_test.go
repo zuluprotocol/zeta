@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/broker/mocks"
+	"zuluprotocol/zeta/zeta/core/broker/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

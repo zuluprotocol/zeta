@@ -16,7 +16,7 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 var (

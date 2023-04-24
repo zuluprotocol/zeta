@@ -18,11 +18,11 @@ import (
 	"sync"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"
@@ -43,7 +43,7 @@ var (
 
 // ValidatorTopology...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/validator_topology_mock.go -package mocks code.zetaprotocol.io/vega/core/notary ValidatorTopology
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/validator_topology_mock.go -package mocks zuluprotocol/zeta/zeta/core/notary ValidatorTopology
 type ValidatorTopology interface {
 	IsValidator() bool
 	IsValidatorZetaPubKey(string) bool
@@ -58,7 +58,7 @@ type Broker interface {
 	SendBatch(events []events.Event)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks code.zetaprotocol.io/vega/core/notary Commander
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks zuluprotocol/zeta/zeta/core/notary Commander
 type Commander interface {
 	Command(ctx context.Context, cmd txn.Command, payload proto.Message, f func(string, error), bo *backoff.ExponentialBackOff)
 	CommandSync(ctx context.Context, cmd txn.Command, payload proto.Message, f func(string, error), bo *backoff.ExponentialBackOff)

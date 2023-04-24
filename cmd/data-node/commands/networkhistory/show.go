@@ -6,19 +6,19 @@ import (
 	"os"
 	"sort"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
-	coreConfig "code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	vgjson "code.zetaprotocol.io/vega/libs/json"
-	"code.zetaprotocol.io/vega/paths"
+	coreConfig "zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	"zuluprotocol/zeta/zeta/paths"
 
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/datanode/config"
+	"zuluprotocol/zeta/zeta/datanode/config"
 )
 
 type showCmd struct {

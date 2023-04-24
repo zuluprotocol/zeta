@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"os"
 
-	"code.zetaprotocol.io/vega/paths"
+	"zuluprotocol/zeta/zeta/paths"
 )
 
 func EnsureNodeConfig(zetaPaths paths.Paths) (*Loader, *Config, error) {

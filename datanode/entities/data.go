@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
-	datapb "code.zetaprotocol.io/vega/protos/vega/data/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
+	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
 )
 
 type Property struct {
@@ -136,7 +136,7 @@ func (od ExternalData) ToOracleProto() *zetapb.OracleData {
 
 func (od ExternalData) Cursor() *Cursor {
 	return NewCursor(OracleDataCursor{
-		ZetaTime: od.Data.VegaTime,
+		ZetaTime: od.Data.ZetaTime,
 		Signers:  od.Data.Signers,
 	}.String())
 }

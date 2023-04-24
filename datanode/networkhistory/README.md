@@ -6,7 +6,7 @@
 
 ## Why we have it
 
-Gigabytes of event data per day are produced by the Zeta core and stored in the data node.  It is not feasible for a new data node joining the network to replay all blocks from the first block in order to recreate the history and get itself into a state to be able to consume new blocks - such as ensuring it has all parties and markets - it would take far too long. Network History allows the data node to reach out to peer nodes to fetch the most recent history,  as well as older history if desired, such that it can quickly get itself up to the latest block height of the network and start to consume events for the latest block from the Vega core. As decentralisation is at the heart of the Vega protocol, this mechanism to store and retrieve network history must itself be decentralised.
+Gigabytes of event data per day are produced by the Zeta core and stored in the data node.  It is not feasible for a new data node joining the network to replay all blocks from the first block in order to recreate the history and get itself into a state to be able to consume new blocks - such as ensuring it has all parties and markets - it would take far too long. Network History allows the data node to reach out to peer nodes to fetch the most recent history,  as well as older history if desired, such that it can quickly get itself up to the latest block height of the network and start to consume events for the latest block from the Zeta core. As decentralisation is at the heart of the Zeta protocol, this mechanism to store and retrieve network history must itself be decentralised.
 
 ## How to use it
 

@@ -18,11 +18,11 @@ import (
 	"sort"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	checkpoint "code.zetaprotocol.io/vega/protos/vega/checkpoint/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/core/types"
+	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
-	"code.zetaprotocol.io/vega/libs/proto"
+	"zuluprotocol/zeta/zeta/libs/proto"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 )
 
@@ -52,8 +52,8 @@ func (t *Topology) Load(ctx context.Context, data []byte) error {
 		t.validators[node.ValidatorUpdate.NodeId] = &valState{
 			data: ValidatorData{
 				ID:              node.ValidatorUpdate.NodeId,
-				ZetaPubKey:      node.ValidatorUpdate.VegaPubKey,
-				ZetaPubKeyIndex: node.ValidatorUpdate.VegaPubKeyIndex,
+				ZetaPubKey:      node.ValidatorUpdate.ZetaPubKey,
+				ZetaPubKeyIndex: node.ValidatorUpdate.ZetaPubKeyIndex,
 				EthereumAddress: node.ValidatorUpdate.EthereumAddress,
 				TmPubKey:        node.ValidatorUpdate.TmPubKey,
 				InfoURL:         node.ValidatorUpdate.InfoUrl,
@@ -225,8 +225,8 @@ func (t *Topology) getValidatorStateCheckpoint() []*checkpoint.ValidatorState {
 		vsSlice = append(vsSlice, &checkpoint.ValidatorState{
 			ValidatorUpdate: &eventspb.ValidatorUpdate{
 				NodeId:          node.data.ID,
-				ZetaPubKey:      node.data.VegaPubKey,
-				ZetaPubKeyIndex: node.data.VegaPubKeyIndex,
+				ZetaPubKey:      node.data.ZetaPubKey,
+				ZetaPubKeyIndex: node.data.ZetaPubKeyIndex,
 				EthereumAddress: node.data.EthereumAddress,
 				TmPubKey:        node.data.TmPubKey,
 				InfoUrl:         node.data.InfoURL,

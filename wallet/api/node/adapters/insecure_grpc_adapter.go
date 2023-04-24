@@ -4,8 +4,8 @@ import (
 	"context"
 	"sort"
 
-	apipb "code.zetaprotocol.io/vega/protos/vega/api/v1"
-	nodetypes "code.zetaprotocol.io/vega/wallet/api/node/types"
+	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
 	"google.golang.org/grpc/credentials/insecure"
 
 	"google.golang.org/grpc"
@@ -104,7 +104,7 @@ func (c *InsecureGRPCAdapter) Statistics(ctx context.Context) (nodetypes.Statist
 		BlockHeight: statistics.Statistics.BlockHeight,
 		BlockHash:   statistics.Statistics.BlockHash,
 		ChainID:     statistics.Statistics.ChainId,
-		ZetaTime:    statistics.Statistics.VegaTime,
+		ZetaTime:    statistics.Statistics.ZetaTime,
 	}, nil
 }
 

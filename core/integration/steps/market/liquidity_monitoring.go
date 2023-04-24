@@ -16,9 +16,9 @@ import (
 	"embed"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/integration/steps/market/defaults"
-	"code.zetaprotocol.io/vega/core/types"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/integration/steps/market/defaults"
+	"zuluprotocol/zeta/zeta/core/types"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 	"github.com/jinzhu/copier"
 )
 

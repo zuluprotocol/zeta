@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
 	"github.com/stretchr/testify/require"
 )
 

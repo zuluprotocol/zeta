@@ -17,11 +17,11 @@ import (
 	"path"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/core/blockchain/nullchain"
-	"code.zetaprotocol.io/vega/core/blockchain/nullchain/mocks"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/core/blockchain/nullchain"
+	"zuluprotocol/zeta/zeta/core/blockchain/nullchain/mocks"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

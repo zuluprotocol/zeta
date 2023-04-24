@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 package zeta;
-option go_package = "code.zetaprotocol.io/vega/protos/vega";
+option go_package = "zuluprotocol/zeta/zeta/protos/zeta";
 
 import "zeta/markets.proto";
-import "zeta/vega.proto";
+import "zeta/zeta.proto";
 import "zeta/assets.proto";
 import "zeta/data_source.proto";
 

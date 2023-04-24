@@ -16,8 +16,8 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/execution"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/execution"
+	"zuluprotocol/zeta/zeta/libs/num"
 
 	"github.com/stretchr/testify/require"
 )

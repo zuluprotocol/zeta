@@ -3,8 +3,8 @@ package abci
 import (
 	"fmt"
 
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/logging"
 
 	"github.com/spf13/viper"
 	"github.com/tendermint/tendermint/abci/types"

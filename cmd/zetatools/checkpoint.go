@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"code.zetaprotocol.io/vega/core/config"
-	"code.zetaprotocol.io/vega/vegatools/checkpoint"
+	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/zeta/zetatools/checkpoint"
 )
 
 type checkpointCmd struct {

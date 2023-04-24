@@ -17,10 +17,10 @@ import (
 	"fmt"
 	"strings"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
 	"github.com/georgysavva/scany/pgxscan"
 )
 

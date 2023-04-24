@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/proto"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 // ErrMultipleSameKeyNamesInFilterList is returned when filters with same key names exists inside a single list.

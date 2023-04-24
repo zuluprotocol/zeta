@@ -15,12 +15,12 @@ package matching_test
 import (
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 )
 
-// reproducing bug from https://github.com/zetaprotocol/vega/issues/2180
+// reproducing bug from https://github.com/zetaprotocol/zeta/issues/2180
 
 func TestNetworkOrder_ValidAveragedPrice(t *testing.T) {
 	market := "testMarket"

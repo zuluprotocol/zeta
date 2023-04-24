@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/libs/num"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	types "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/libs/num"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -88,7 +88,7 @@ type MarketData struct {
 	SyntheticTime time.Time
 	// Transaction which caused this update
 	TxHash TxHash
-	// Zeta Block time at which the data was received from Vega Node
+	// Zeta Block time at which the data was received from Zeta Node
 	ZetaTime time.Time
 	// SeqNum is the order in which the market data was received in the block
 	SeqNum uint64

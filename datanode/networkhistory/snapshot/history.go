@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/libs/fs"
+	"zuluprotocol/zeta/zeta/libs/fs"
 )
 
 type History struct {

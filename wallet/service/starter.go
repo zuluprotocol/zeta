@@ -9,24 +9,24 @@ import (
 	"sync/atomic"
 	"time"
 
-	vgclose "code.zetaprotocol.io/vega/libs/close"
-	vgjob "code.zetaprotocol.io/vega/libs/job"
-	vgzap "code.zetaprotocol.io/vega/libs/zap"
-	coreversion "code.zetaprotocol.io/vega/version"
-	"code.zetaprotocol.io/vega/wallet/api"
-	nodeapi "code.zetaprotocol.io/vega/wallet/api/node"
-	"code.zetaprotocol.io/vega/wallet/api/spam"
-	"code.zetaprotocol.io/vega/wallet/network"
-	"code.zetaprotocol.io/vega/wallet/node"
-	servicev1 "code.zetaprotocol.io/vega/wallet/service/v1"
-	servicev2 "code.zetaprotocol.io/vega/wallet/service/v2"
-	"code.zetaprotocol.io/vega/wallet/service/v2/connections"
-	walletversion "code.zetaprotocol.io/vega/wallet/version"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	vgclose "zuluprotocol/zeta/zeta/libs/close"
+	vgjob "zuluprotocol/zeta/zeta/libs/job"
+	vgzap "zuluprotocol/zeta/zeta/libs/zap"
+	coreversion "zuluprotocol/zeta/zeta/version"
+	"zuluprotocol/zeta/zeta/wallet/api"
+	nodeapi "zuluprotocol/zeta/zeta/wallet/api/node"
+	"zuluprotocol/zeta/zeta/wallet/api/spam"
+	"zuluprotocol/zeta/zeta/wallet/network"
+	"zuluprotocol/zeta/zeta/wallet/node"
+	servicev1 "zuluprotocol/zeta/zeta/wallet/service/v1"
+	servicev2 "zuluprotocol/zeta/zeta/wallet/service/v2"
+	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
+	walletversion "zuluprotocol/zeta/zeta/wallet/version"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 	"go.uber.org/zap"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks code.zetaprotocol.io/vega/wallet/service NetworkStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/service NetworkStore
 
 const serviceStoppingTimeout = 3 * time.Minute
 

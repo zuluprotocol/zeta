@@ -17,17 +17,17 @@ import (
 	"sort"
 	"strconv"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/risk"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	"code.zetaprotocol.io/vega/logging"
-	typespb "code.zetaprotocol.io/vega/protos/vega"
-	snapshotpb "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/risk"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/zeta/logging"
+	typespb "zuluprotocol/zeta/zeta/protos/zeta"
+	snapshotpb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/orderbook_mock.go -package mocks code.zetaprotocol.io/vega/core/liquidity OrderBook
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/orderbook_mock.go -package mocks zuluprotocol/zeta/zeta/core/liquidity OrderBook
 type OrderBook interface {
 	GetOrderByID(orderID string) (*types.Order, error)
 	GetOrdersPerParty(party string) []*types.Order

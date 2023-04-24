@@ -16,7 +16,7 @@ import (
 	"context"
 	"time"
 
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 )
 
 // Time event indicating a change in block time (ie time update).

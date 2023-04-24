@@ -9,11 +9,11 @@ import (
 	"sort"
 	"strings"
 
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/paths"
-	"code.zetaprotocol.io/vega/wallet/api"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/zeta/wallet/api"
 
-	"code.zetaprotocol.io/vega/wallet/network"
+	"zuluprotocol/zeta/zeta/wallet/network"
 )
 
 const fileExt = ".toml"

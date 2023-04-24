@@ -17,8 +17,8 @@ import (
 
 	"github.com/georgysavva/scany/pgxscan"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
 )
 
 type Epochs struct {

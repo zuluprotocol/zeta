@@ -15,7 +15,7 @@ package execution
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/core/types"
+	"zuluprotocol/zeta/zeta/core/types"
 )
 
 const (

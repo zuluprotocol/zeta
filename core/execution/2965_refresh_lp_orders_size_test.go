@@ -17,13 +17,13 @@ import (
 	"testing"
 	"time"
 
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

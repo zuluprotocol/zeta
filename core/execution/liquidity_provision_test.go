@@ -19,16 +19,16 @@ import (
 	"testing"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/execution"
-	"code.zetaprotocol.io/vega/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/execution"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
 
-	zetacontext "code.vegaprotocol.io/vega/libs/context"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	zetacontext "code.zetaprotocol.io/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/libs/num"
-	proto "code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/libs/num"
+	proto "zuluprotocol/zeta/zeta/protos/zeta"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

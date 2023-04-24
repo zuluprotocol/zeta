@@ -17,12 +17,12 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/core/matching"
-	"code.zetaprotocol.io/vega/core/types"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/proto"
-	snapshot "code.zetaprotocol.io/vega/protos/vega/snapshot/v1"
+	"zuluprotocol/zeta/zeta/core/matching"
+	"zuluprotocol/zeta/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/proto"
+	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

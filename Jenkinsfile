@@ -6,7 +6,7 @@
     - GIT_COMMIT:05a1c6fbe7d1ff87cfc40a011a63db574edad7e6
     - GIT_PREVIOUS_COMMIT:5d02b46fdb653f789e799ff6ad304baccc32cbf9
     - GIT_PREVIOUS_SUCCESSFUL_COMMIT:5d02b46fdb653f789e799ff6ad304baccc32cbf9
-    - GIT_URL:https://github.com/zetaprotocol/vega.git
+    - GIT_URL:https://github.com/zetaprotocol/zeta.git
 */
 def scmVars = null
 def version = 'UNKNOWN'
@@ -25,15 +25,15 @@ pipeline {
         string( name: 'SYSTEM_TESTS_BRANCH', defaultValue: 'develop',
                 description: 'Git branch, tag or hash of the zetaprotocol/system-tests repository')
         string( name: 'ZETACAPSULE_BRANCH', defaultValue: '',
-                description: 'Git branch, tag or hash of the zetaprotocol/vegacapsule repository')
+                description: 'Git branch, tag or hash of the zetaprotocol/zetacapsule repository')
         string( name: 'ZETATOOLS_BRANCH', defaultValue: 'develop',
-                description: 'Git branch, tag or hash of the zetaprotocol/vegatools repository')
+                description: 'Git branch, tag or hash of the zetaprotocol/zetatools repository')
         string( name: 'DEVOPS_INFRA_BRANCH', defaultValue: 'master',
                 description: 'Git branch, tag or hash of the zetaprotocol/devops-infra repository')
         string( name: 'DEVOPSSCRIPTS_BRANCH', defaultValue: 'main',
                 description: 'Git branch, tag or hash of the zetaprotocol/devopsscripts repository')
         string( name: 'ZETA_MARKET_SIM_BRANCH', defaultValue: '',
-                description: 'Git branch, tag or hash of the zetaprotocol/vega-market-sim repository')
+                description: 'Git branch, tag or hash of the zetaprotocol/zeta-market-sim repository')
         string( name: 'JENKINS_SHARED_LIB_BRANCH', defaultValue: 'main',
                 description: 'Git branch, tag or hash of the zetaprotocol/jenkins-shared-library repository')
     }
@@ -69,7 +69,7 @@ pipeline {
                 echo "isPRBuild=${isPRBuild()}"
                 script {
                     params = pr.injectPRParams()
-                    originRepo = pr.getOriginRepo('zetaprotocol/vega')
+                    originRepo = pr.getOriginRepo('zetaprotocol/zeta')
                 }
                 echo "params (after injection)=${params}"
             }
@@ -269,7 +269,7 @@ pipeline {
                             options { retry(3) }
                             steps {
                                 sh label: 'copy zeta repo', script: '''#!/bin/bash -e
-                                        cp -r ./zeta ./vega-proto-check
+                                        cp -r ./zeta ./zeta-proto-check
                                     '''
                                 dir('zeta-proto-check') {
                                     sh '''#!/bin/bash -e
@@ -398,7 +398,7 @@ pipeline {
                 stage('mocks check') {
                     steps {
                         sh label: 'copy zeta repo', script: '''#!/bin/bash -e
-                                cp -r ./zeta ./vega-mocks-check
+                                cp -r ./zeta ./zeta-mocks-check
                             '''
                         dir('zeta-mocks-check') {
                             sh '''#!/bin/bash -e
@@ -435,8 +435,8 @@ pipeline {
                                     --builder ${DOCKER_ZETA_BUILDER_NAME} \
                                     --platform=${DOCKER_BUILD_ARCH} \
                                     -f docker/zeta.dockerfile \
-                                    -t ghcr.io/zetaprotocol/vega/vega:${DOCKER_IMAGE_TAG} \
-                                    -t ghcr.io/zetaprotocol/vega/vega:${DOCKER_IMAGE_TAG_VERSION} \
+                                    -t ghcr.io/zetaprotocol/zeta/zeta:${DOCKER_IMAGE_TAG} \
+                                    -t ghcr.io/zetaprotocol/zeta/zeta:${DOCKER_IMAGE_TAG_VERSION} \
                                     ${env.BRANCH_NAME == 'develop' ? '--push' : ''} .
                             """
                         }
@@ -461,8 +461,8 @@ pipeline {
                                     --builder ${DOCKER_DATANODE_BUILDER_NAME} \
                                     --platform=${DOCKER_BUILD_ARCH} \
                                     -f docker/data-node.dockerfile \
-                                    -t ghcr.io/zetaprotocol/vega/data-node:${DOCKER_IMAGE_TAG} \
-                                    -t ghcr.io/zetaprotocol/vega/data-node:${DOCKER_IMAGE_TAG_VERSION} \
+                                    -t ghcr.io/zetaprotocol/zeta/data-node:${DOCKER_IMAGE_TAG} \
+                                    -t ghcr.io/zetaprotocol/zeta/data-node:${DOCKER_IMAGE_TAG_VERSION} \
                                     ${env.BRANCH_NAME == 'develop' ? '--push' : ''} .
                             """
                         }
@@ -487,8 +487,8 @@ pipeline {
                                     --builder ${DOCKER_ZETAWALLET_BUILDER_NAME} \
                                     --platform=${DOCKER_BUILD_ARCH} \
                                     -f docker/zetawallet.dockerfile \
-                                    -t ghcr.io/zetaprotocol/vega/vegawallet:${DOCKER_IMAGE_TAG} \
-                                    -t ghcr.io/zetaprotocol/vega/vegawallet:${DOCKER_IMAGE_TAG_VERSION} \
+                                    -t ghcr.io/zetaprotocol/zeta/zetawallet:${DOCKER_IMAGE_TAG} \
+                                    -t ghcr.io/zetaprotocol/zeta/zetawallet:${DOCKER_IMAGE_TAG_VERSION} \
                                     ${env.BRANCH_NAME == 'develop' ? '--push' : ''} .
                             """
                         }

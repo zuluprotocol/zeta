@@ -16,13 +16,13 @@ import (
 	"context"
 	"fmt"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type rewardSummaryResolver ZetaResolverRoot
 
-func (r *rewardSummaryResolver) Asset(ctx context.Context, obj *zeta.RewardSummary) (*vega.Asset, error) {
+func (r *rewardSummaryResolver) Asset(ctx context.Context, obj *zeta.RewardSummary) (*zeta.Asset, error) {
 	return r.r.getAssetByID(ctx, obj.AssetId)
 }
 

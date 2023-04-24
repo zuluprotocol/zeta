@@ -15,7 +15,7 @@ package entities
 import (
 	"fmt"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 )
 
 // AccountField is an enumeration of the properties of an account

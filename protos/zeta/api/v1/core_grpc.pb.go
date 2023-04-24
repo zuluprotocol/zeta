@@ -41,7 +41,7 @@ type CoreServiceClient interface {
 	// Zeta time
 	//
 	// Get current Zeta time
-	GetZetaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error)
+	GetZetaTime(ctx context.Context, in *GetZetaTimeRequest, opts ...grpc.CallOption) (*GetZetaTimeResponse, error)
 	// Events subscription
 	//
 	// Subscribe to a stream of events from the core
@@ -108,7 +108,7 @@ func (c *coreServiceClient) LastBlockHeight(ctx context.Context, in *LastBlockHe
 	return out, nil
 }
 
-func (c *coreServiceClient) GetZetaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error) {
+func (c *coreServiceClient) GetZetaTime(ctx context.Context, in *GetZetaTimeRequest, opts ...grpc.CallOption) (*GetZetaTimeResponse, error) {
 	out := new(GetZetaTimeResponse)
 	err := c.cc.Invoke(ctx, "/zeta.api.v1.CoreService/GetZetaTime", in, out, opts...)
 	if err != nil {
@@ -207,7 +207,7 @@ type CoreServiceServer interface {
 	// Zeta time
 	//
 	// Get current Zeta time
-	GetZetaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error)
+	GetZetaTime(context.Context, *GetZetaTimeRequest) (*GetZetaTimeResponse, error)
 	// Events subscription
 	//
 	// Subscribe to a stream of events from the core
@@ -247,7 +247,7 @@ func (UnimplementedCoreServiceServer) Statistics(context.Context, *StatisticsReq
 func (UnimplementedCoreServiceServer) LastBlockHeight(context.Context, *LastBlockHeightRequest) (*LastBlockHeightResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LastBlockHeight not implemented")
 }
-func (UnimplementedCoreServiceServer) GetZetaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error) {
+func (UnimplementedCoreServiceServer) GetZetaTime(context.Context, *GetZetaTimeRequest) (*GetZetaTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetZetaTime not implemented")
 }
 func (UnimplementedCoreServiceServer) ObserveEventBus(CoreService_ObserveEventBusServer) error {
@@ -363,7 +363,7 @@ func _CoreService_GetZetaTime_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/zeta.api.v1.CoreService/GetZetaTime",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CoreServiceServer).GetZetaTime(ctx, req.(*GetVegaTimeRequest))
+		return srv.(CoreServiceServer).GetZetaTime(ctx, req.(*GetZetaTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

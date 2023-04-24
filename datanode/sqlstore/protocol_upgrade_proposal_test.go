@@ -16,9 +16,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -38,7 +38,7 @@ func addTestPUP(t *testing.T,
 		ZetaReleaseTag:     tag,
 		Approvers:          approvers,
 		Status:             status,
-		ZetaTime:           block.VegaTime,
+		ZetaTime:           block.ZetaTime,
 	}
 	err := store.Add(ctx, pup)
 	require.NoError(t, err)

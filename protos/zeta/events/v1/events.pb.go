@@ -7,8 +7,8 @@
 package v1
 
 import (
-	zeta "code.vegaprotocol.io/vega/protos/vega"
-	v1 "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	zeta "code.zetaprotocol.io/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -844,9 +844,9 @@ type Transfer struct {
 
 	Id              string           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	From            string           `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
-	FromAccountType zeta.AccountType `protobuf:"varint,3,opt,name=from_account_type,json=fromAccountType,proto3,enum=vega.AccountType" json:"from_account_type,omitempty"`
+	FromAccountType zeta.AccountType `protobuf:"varint,3,opt,name=from_account_type,json=fromAccountType,proto3,enum=zeta.AccountType" json:"from_account_type,omitempty"`
 	To              string           `protobuf:"bytes,4,opt,name=to,proto3" json:"to,omitempty"`
-	ToAccountType   zeta.AccountType `protobuf:"varint,5,opt,name=to_account_type,json=toAccountType,proto3,enum=vega.AccountType" json:"to_account_type,omitempty"`
+	ToAccountType   zeta.AccountType `protobuf:"varint,5,opt,name=to_account_type,json=toAccountType,proto3,enum=zeta.AccountType" json:"to_account_type,omitempty"`
 	Asset           string           `protobuf:"bytes,6,opt,name=asset,proto3" json:"asset,omitempty"`
 	Amount          string           `protobuf:"bytes,7,opt,name=amount,proto3" json:"amount,omitempty"`
 	Reference       string           `protobuf:"bytes,8,opt,name=reference,proto3" json:"reference,omitempty"`
@@ -2654,7 +2654,7 @@ type TimeUpdate struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Timestamp containing latest update from Zeta blockchain aka Vega-time
+	// Timestamp containing latest update from Zeta blockchain aka Zeta-time
 	Timestamp int64 `protobuf:"varint,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 }
 
@@ -2706,7 +2706,7 @@ type EpochEvent struct {
 	// Sequence number that increases by one each epoch
 	Seq uint64 `protobuf:"varint,1,opt,name=seq,proto3" json:"seq,omitempty"`
 	// Action tells us what action is taking place
-	Action zeta.EpochAction `protobuf:"varint,2,opt,name=action,proto3,enum=vega.EpochAction" json:"action,omitempty"`
+	Action zeta.EpochAction `protobuf:"varint,2,opt,name=action,proto3,enum=zeta.EpochAction" json:"action,omitempty"`
 	// What time did this epoch start
 	StartTime int64 `protobuf:"varint,3,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
 	// What time should this epoch end
@@ -3440,7 +3440,7 @@ type MarketTick struct {
 
 	// Market identifier for the event
 	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Timestamp containing latest update from Zeta blockchain aka Vega-time
+	// Timestamp containing latest update from Zeta blockchain aka Zeta-time
 	Time int64 `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`
 }
 
@@ -3507,10 +3507,10 @@ type AuctionEvent struct {
 	// Timestamp containing the end time for an auction
 	End int64 `protobuf:"varint,5,opt,name=end,proto3" json:"end,omitempty"`
 	// the reason this market is/was in auction
-	Trigger zeta.AuctionTrigger `protobuf:"varint,6,opt,name=trigger,proto3,enum=vega.AuctionTrigger" json:"trigger,omitempty"`
+	Trigger zeta.AuctionTrigger `protobuf:"varint,6,opt,name=trigger,proto3,enum=zeta.AuctionTrigger" json:"trigger,omitempty"`
 	// If an auction was ongoing, but was extended for whatever reason, this field will
 	// be set to the trigger type indicating which component extended the auction
-	ExtensionTrigger zeta.AuctionTrigger `protobuf:"varint,7,opt,name=extension_trigger,json=extensionTrigger,proto3,enum=vega.AuctionTrigger" json:"extension_trigger,omitempty"`
+	ExtensionTrigger zeta.AuctionTrigger `protobuf:"varint,7,opt,name=extension_trigger,json=extensionTrigger,proto3,enum=zeta.AuctionTrigger" json:"extension_trigger,omitempty"`
 }
 
 func (x *AuctionEvent) Reset() {
@@ -3603,7 +3603,7 @@ type ValidatorUpdate struct {
 	// Node id of the node
 	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 	// Zeta public key of validator node
-	ZetaPubKey string `protobuf:"bytes,2,opt,name=zeta_pub_key,json=vegaPubKey,proto3" json:"vega_pub_key,omitempty"`
+	ZetaPubKey string `protobuf:"bytes,2,opt,name=zeta_pub_key,json=zetaPubKey,proto3" json:"zeta_pub_key,omitempty"`
 	// Ethereum public key of validator node
 	EthereumAddress string `protobuf:"bytes,3,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
 	// Public key of Tendermint
@@ -3617,7 +3617,7 @@ type ValidatorUpdate struct {
 	// AvatarURL of the validator
 	AvatarUrl string `protobuf:"bytes,8,opt,name=avatar_url,json=avatarUrl,proto3" json:"avatar_url,omitempty"`
 	// Zeta public key derivation index
-	ZetaPubKeyIndex uint32 `protobuf:"varint,9,opt,name=zeta_pub_key_index,json=vegaPubKeyIndex,proto3" json:"vega_pub_key_index,omitempty"`
+	ZetaPubKeyIndex uint32 `protobuf:"varint,9,opt,name=zeta_pub_key_index,json=zetaPubKeyIndex,proto3" json:"zeta_pub_key_index,omitempty"`
 	// Flag indicating if the validator has been added to or removed from zeta
 	Added bool `protobuf:"varint,10,opt,name=added,proto3" json:"added,omitempty"`
 	// The epoch in which the announced pending node will start participating in the network
@@ -4022,7 +4022,7 @@ type ProtocolUpgradeEvent struct {
 	// The block height at which to perform the upgrade
 	UpgradeBlockHeight uint64 `protobuf:"varint,1,opt,name=upgrade_block_height,json=upgradeBlockHeight,proto3" json:"upgrade_block_height,omitempty"`
 	// the release tag for the zeta binary
-	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=vegaReleaseTag,proto3" json:"vega_release_tag,omitempty"`
+	ZetaReleaseTag string `protobuf:"bytes,2,opt,name=zeta_release_tag,json=zetaReleaseTag,proto3" json:"zeta_release_tag,omitempty"`
 	// tendermint validators that have agreed to the upgrade
 	Approvers []string `protobuf:"bytes,3,rep,name=approvers,proto3" json:"approvers,omitempty"`
 	// the status of the proposal
@@ -6667,12 +6667,12 @@ var file_zeta_events_v1_events_proto_rawDesc = []byte{
 
 var (
 	file_zeta_events_v1_events_proto_rawDescOnce sync.Once
-	file_zeta_events_v1_events_proto_rawDescData = file_vega_events_v1_events_proto_rawDesc
+	file_zeta_events_v1_events_proto_rawDescData = file_zeta_events_v1_events_proto_rawDesc
 )
 
 func file_zeta_events_v1_events_proto_rawDescGZIP() []byte {
 	file_zeta_events_v1_events_proto_rawDescOnce.Do(func() {
-		file_zeta_events_v1_events_proto_rawDescData = protoimpl.X.CompressGZIP(file_vega_events_v1_events_proto_rawDescData)
+		file_zeta_events_v1_events_proto_rawDescData = protoimpl.X.CompressGZIP(file_zeta_events_v1_events_proto_rawDescData)
 	})
 	return file_zeta_events_v1_events_proto_rawDescData
 }
@@ -6731,8 +6731,8 @@ var file_zeta_events_v1_events_proto_goTypes = []interface{}{
 	(*ExpiredOrders)(nil),                       // 48: zeta.events.v1.ExpiredOrders
 	(*TransactionResult_SuccessDetails)(nil),    // 49: zeta.events.v1.TransactionResult.SuccessDetails
 	(*TransactionResult_FailureDetails)(nil),    // 50: zeta.events.v1.TransactionResult.FailureDetails
-	(zeta.AccountType)(0),                       // 51: vega.AccountType
-	(*zeta.DispatchStrategy)(nil),               // 52: vega.DispatchStrategy
+	(zeta.AccountType)(0),                       // 51: zeta.AccountType
+	(*zeta.DispatchStrategy)(nil),               // 52: zeta.DispatchStrategy
 	(*v1.OrderSubmission)(nil),                  // 53: zeta.commands.v1.OrderSubmission
 	(*v1.OrderAmendment)(nil),                   // 54: zeta.commands.v1.OrderAmendment
 	(*v1.OrderCancellation)(nil),                // 55: zeta.commands.v1.OrderCancellation
@@ -6753,144 +6753,144 @@ var file_zeta_events_v1_events_proto_goTypes = []interface{}{
 	(*v1.BatchMarketInstructions)(nil),          // 70: zeta.commands.v1.BatchMarketInstructions
 	(*v1.KeyRotateSubmission)(nil),              // 71: zeta.commands.v1.KeyRotateSubmission
 	(*v1.EthereumKeyRotateSubmission)(nil),      // 72: zeta.commands.v1.EthereumKeyRotateSubmission
-	(zeta.EpochAction)(0),                       // 73: vega.EpochAction
-	(*zeta.LedgerMovement)(nil),                 // 74: vega.LedgerMovement
-	(zeta.AuctionTrigger)(0),                    // 75: vega.AuctionTrigger
-	(*zeta.Order)(nil),                          // 76: vega.Order
-	(*zeta.Account)(nil),                        // 77: vega.Account
-	(*zeta.Party)(nil),                          // 78: vega.Party
-	(*zeta.Trade)(nil),                          // 79: vega.Trade
-	(*zeta.MarginLevels)(nil),                   // 80: vega.MarginLevels
-	(*zeta.Proposal)(nil),                       // 81: vega.Proposal
-	(*zeta.Vote)(nil),                           // 82: vega.Vote
-	(*zeta.MarketData)(nil),                     // 83: vega.MarketData
+	(zeta.EpochAction)(0),                       // 73: zeta.EpochAction
+	(*zeta.LedgerMovement)(nil),                 // 74: zeta.LedgerMovement
+	(zeta.AuctionTrigger)(0),                    // 75: zeta.AuctionTrigger
+	(*zeta.Order)(nil),                          // 76: zeta.Order
+	(*zeta.Account)(nil),                        // 77: zeta.Account
+	(*zeta.Party)(nil),                          // 78: zeta.Party
+	(*zeta.Trade)(nil),                          // 79: zeta.Trade
+	(*zeta.MarginLevels)(nil),                   // 80: zeta.MarginLevels
+	(*zeta.Proposal)(nil),                       // 81: zeta.Proposal
+	(*zeta.Vote)(nil),                           // 82: zeta.Vote
+	(*zeta.MarketData)(nil),                     // 83: zeta.MarketData
 	(*v1.NodeSignature)(nil),                    // 84: zeta.commands.v1.NodeSignature
-	(*zeta.Market)(nil),                         // 85: vega.Market
-	(*zeta.Asset)(nil),                          // 86: vega.Asset
-	(*zeta.Withdrawal)(nil),                     // 87: vega.Withdrawal
-	(*zeta.Deposit)(nil),                        // 88: vega.Deposit
-	(*zeta.RiskFactor)(nil),                     // 89: vega.RiskFactor
-	(*zeta.NetworkParameter)(nil),               // 90: vega.NetworkParameter
-	(*zeta.LiquidityProvision)(nil),             // 91: vega.LiquidityProvision
-	(*zeta.OracleSpec)(nil),                     // 92: vega.OracleSpec
-	(*zeta.OracleData)(nil),                     // 93: vega.OracleData
-	(*zeta.NetworkLimits)(nil),                  // 94: vega.NetworkLimits
+	(*zeta.Market)(nil),                         // 85: zeta.Market
+	(*zeta.Asset)(nil),                          // 86: zeta.Asset
+	(*zeta.Withdrawal)(nil),                     // 87: zeta.Withdrawal
+	(*zeta.Deposit)(nil),                        // 88: zeta.Deposit
+	(*zeta.RiskFactor)(nil),                     // 89: zeta.RiskFactor
+	(*zeta.NetworkParameter)(nil),               // 90: zeta.NetworkParameter
+	(*zeta.LiquidityProvision)(nil),             // 91: zeta.LiquidityProvision
+	(*zeta.OracleSpec)(nil),                     // 92: zeta.OracleSpec
+	(*zeta.OracleData)(nil),                     // 93: zeta.OracleData
+	(*zeta.NetworkLimits)(nil),                  // 94: zeta.NetworkLimits
 }
 var file_zeta_events_v1_events_proto_depIdxs = []int32{
-	7,   // 0: zeta.events.v1.ERC20MultiSigSignerRemoved.signature_submitters:type_name -> vega.events.v1.ERC20MultiSigSignerRemovedSubmitter
-	51,  // 1: zeta.events.v1.Transfer.from_account_type:type_name -> vega.AccountType
-	51,  // 2: zeta.events.v1.Transfer.to_account_type:type_name -> vega.AccountType
-	2,   // 3: zeta.events.v1.Transfer.status:type_name -> vega.events.v1.Transfer.Status
-	10,  // 4: zeta.events.v1.Transfer.one_off:type_name -> vega.events.v1.OneOffTransfer
-	11,  // 5: zeta.events.v1.Transfer.recurring:type_name -> vega.events.v1.RecurringTransfer
-	52,  // 6: zeta.events.v1.RecurringTransfer.dispatch_strategy:type_name -> vega.DispatchStrategy
-	3,   // 7: zeta.events.v1.StakeLinking.type:type_name -> vega.events.v1.StakeLinking.Type
-	4,   // 8: zeta.events.v1.StakeLinking.status:type_name -> vega.events.v1.StakeLinking.Status
-	5,   // 9: zeta.events.v1.ERC20MultiSigSignerEvent.type:type_name -> vega.events.v1.ERC20MultiSigSignerEvent.Type
-	53,  // 10: zeta.events.v1.TransactionResult.order_submission:type_name -> vega.commands.v1.OrderSubmission
-	54,  // 11: zeta.events.v1.TransactionResult.order_amendment:type_name -> vega.commands.v1.OrderAmendment
-	55,  // 12: zeta.events.v1.TransactionResult.order_cancellation:type_name -> vega.commands.v1.OrderCancellation
-	56,  // 13: zeta.events.v1.TransactionResult.proposal:type_name -> vega.commands.v1.ProposalSubmission
-	57,  // 14: zeta.events.v1.TransactionResult.vote_submission:type_name -> vega.commands.v1.VoteSubmission
-	58,  // 15: zeta.events.v1.TransactionResult.liquidity_provision_submission:type_name -> vega.commands.v1.LiquidityProvisionSubmission
-	59,  // 16: zeta.events.v1.TransactionResult.withdraw_submission:type_name -> vega.commands.v1.WithdrawSubmission
-	60,  // 17: zeta.events.v1.TransactionResult.delegate_submission:type_name -> vega.commands.v1.DelegateSubmission
-	61,  // 18: zeta.events.v1.TransactionResult.undelegate_submission:type_name -> vega.commands.v1.UndelegateSubmission
-	62,  // 19: zeta.events.v1.TransactionResult.liquidity_provision_cancellation:type_name -> vega.commands.v1.LiquidityProvisionCancellation
-	63,  // 20: zeta.events.v1.TransactionResult.liquidity_provision_amendment:type_name -> vega.commands.v1.LiquidityProvisionAmendment
-	64,  // 21: zeta.events.v1.TransactionResult.transfer:type_name -> vega.commands.v1.Transfer
-	65,  // 22: zeta.events.v1.TransactionResult.cancel_transfer:type_name -> vega.commands.v1.CancelTransfer
-	66,  // 23: zeta.events.v1.TransactionResult.announce_node:type_name -> vega.commands.v1.AnnounceNode
-	67,  // 24: zeta.events.v1.TransactionResult.oracle_data_submission:type_name -> vega.commands.v1.OracleDataSubmission
-	68,  // 25: zeta.events.v1.TransactionResult.protocol_upgrade_proposal:type_name -> vega.commands.v1.ProtocolUpgradeProposal
-	69,  // 26: zeta.events.v1.TransactionResult.issue_signatures:type_name -> vega.commands.v1.IssueSignatures
-	70,  // 27: zeta.events.v1.TransactionResult.batch_market_instructions:type_name -> vega.commands.v1.BatchMarketInstructions
-	71,  // 28: zeta.events.v1.TransactionResult.key_rotate_submission:type_name -> vega.commands.v1.KeyRotateSubmission
-	72,  // 29: zeta.events.v1.TransactionResult.ethereum_key_rotate_submission:type_name -> vega.commands.v1.EthereumKeyRotateSubmission
-	49,  // 30: zeta.events.v1.TransactionResult.success:type_name -> vega.events.v1.TransactionResult.SuccessDetails
-	50,  // 31: zeta.events.v1.TransactionResult.failure:type_name -> vega.events.v1.TransactionResult.FailureDetails
-	53,  // 32: zeta.events.v1.TxErrorEvent.order_submission:type_name -> vega.commands.v1.OrderSubmission
-	54,  // 33: zeta.events.v1.TxErrorEvent.order_amendment:type_name -> vega.commands.v1.OrderAmendment
-	55,  // 34: zeta.events.v1.TxErrorEvent.order_cancellation:type_name -> vega.commands.v1.OrderCancellation
-	56,  // 35: zeta.events.v1.TxErrorEvent.proposal:type_name -> vega.commands.v1.ProposalSubmission
-	57,  // 36: zeta.events.v1.TxErrorEvent.vote_submission:type_name -> vega.commands.v1.VoteSubmission
-	58,  // 37: zeta.events.v1.TxErrorEvent.liquidity_provision_submission:type_name -> vega.commands.v1.LiquidityProvisionSubmission
-	59,  // 38: zeta.events.v1.TxErrorEvent.withdraw_submission:type_name -> vega.commands.v1.WithdrawSubmission
-	60,  // 39: zeta.events.v1.TxErrorEvent.delegate_submission:type_name -> vega.commands.v1.DelegateSubmission
-	61,  // 40: zeta.events.v1.TxErrorEvent.undelegate_submission:type_name -> vega.commands.v1.UndelegateSubmission
-	62,  // 41: zeta.events.v1.TxErrorEvent.liquidity_provision_cancellation:type_name -> vega.commands.v1.LiquidityProvisionCancellation
-	63,  // 42: zeta.events.v1.TxErrorEvent.liquidity_provision_amendment:type_name -> vega.commands.v1.LiquidityProvisionAmendment
-	64,  // 43: zeta.events.v1.TxErrorEvent.transfer:type_name -> vega.commands.v1.Transfer
-	65,  // 44: zeta.events.v1.TxErrorEvent.cancel_transfer:type_name -> vega.commands.v1.CancelTransfer
-	66,  // 45: zeta.events.v1.TxErrorEvent.announce_node:type_name -> vega.commands.v1.AnnounceNode
-	67,  // 46: zeta.events.v1.TxErrorEvent.oracle_data_submission:type_name -> vega.commands.v1.OracleDataSubmission
-	68,  // 47: zeta.events.v1.TxErrorEvent.protocol_upgrade_proposal:type_name -> vega.commands.v1.ProtocolUpgradeProposal
-	69,  // 48: zeta.events.v1.TxErrorEvent.issue_signatures:type_name -> vega.commands.v1.IssueSignatures
-	70,  // 49: zeta.events.v1.TxErrorEvent.batch_market_instructions:type_name -> vega.commands.v1.BatchMarketInstructions
-	73,  // 50: zeta.events.v1.EpochEvent.action:type_name -> vega.EpochAction
-	74,  // 51: zeta.events.v1.LedgerMovements.ledger_movements:type_name -> vega.LedgerMovement
-	28,  // 52: zeta.events.v1.SettlePosition.trade_settlements:type_name -> vega.events.v1.TradeSettlement
-	75,  // 53: zeta.events.v1.AuctionEvent.trigger:type_name -> vega.AuctionTrigger
-	75,  // 54: zeta.events.v1.AuctionEvent.extension_trigger:type_name -> vega.AuctionTrigger
-	0,   // 55: zeta.events.v1.ProtocolUpgradeEvent.status:type_name -> vega.events.v1.ProtocolUpgradeProposalStatus
-	1,   // 56: zeta.events.v1.BusEvent.type:type_name -> vega.events.v1.BusEventType
-	23,  // 57: zeta.events.v1.BusEvent.time_update:type_name -> vega.events.v1.TimeUpdate
-	25,  // 58: zeta.events.v1.BusEvent.ledger_movements:type_name -> vega.events.v1.LedgerMovements
-	26,  // 59: zeta.events.v1.BusEvent.position_resolution:type_name -> vega.events.v1.PositionResolution
-	76,  // 60: zeta.events.v1.BusEvent.order:type_name -> vega.Order
-	77,  // 61: zeta.events.v1.BusEvent.account:type_name -> vega.Account
-	78,  // 62: zeta.events.v1.BusEvent.party:type_name -> vega.Party
-	79,  // 63: zeta.events.v1.BusEvent.trade:type_name -> vega.Trade
-	80,  // 64: zeta.events.v1.BusEvent.margin_levels:type_name -> vega.MarginLevels
-	81,  // 65: zeta.events.v1.BusEvent.proposal:type_name -> vega.Proposal
-	82,  // 66: zeta.events.v1.BusEvent.vote:type_name -> vega.Vote
-	83,  // 67: zeta.events.v1.BusEvent.market_data:type_name -> vega.MarketData
-	84,  // 68: zeta.events.v1.BusEvent.node_signature:type_name -> vega.commands.v1.NodeSignature
-	27,  // 69: zeta.events.v1.BusEvent.loss_socialization:type_name -> vega.events.v1.LossSocialization
-	29,  // 70: zeta.events.v1.BusEvent.settle_position:type_name -> vega.events.v1.SettlePosition
-	32,  // 71: zeta.events.v1.BusEvent.settle_distressed:type_name -> vega.events.v1.SettleDistressed
-	85,  // 72: zeta.events.v1.BusEvent.market_created:type_name -> vega.Market
-	86,  // 73: zeta.events.v1.BusEvent.asset:type_name -> vega.Asset
-	34,  // 74: zeta.events.v1.BusEvent.market_tick:type_name -> vega.events.v1.MarketTick
-	87,  // 75: zeta.events.v1.BusEvent.withdrawal:type_name -> vega.Withdrawal
-	88,  // 76: zeta.events.v1.BusEvent.deposit:type_name -> vega.Deposit
-	35,  // 77: zeta.events.v1.BusEvent.auction:type_name -> vega.events.v1.AuctionEvent
-	89,  // 78: zeta.events.v1.BusEvent.risk_factor:type_name -> vega.RiskFactor
-	90,  // 79: zeta.events.v1.BusEvent.network_parameter:type_name -> vega.NetworkParameter
-	91,  // 80: zeta.events.v1.BusEvent.liquidity_provision:type_name -> vega.LiquidityProvision
-	85,  // 81: zeta.events.v1.BusEvent.market_updated:type_name -> vega.Market
-	92,  // 82: zeta.events.v1.BusEvent.oracle_spec:type_name -> vega.OracleSpec
-	93,  // 83: zeta.events.v1.BusEvent.oracle_data:type_name -> vega.OracleData
-	19,  // 84: zeta.events.v1.BusEvent.delegation_balance:type_name -> vega.events.v1.DelegationBalanceEvent
-	18,  // 85: zeta.events.v1.BusEvent.validator_score:type_name -> vega.events.v1.ValidatorScoreEvent
-	24,  // 86: zeta.events.v1.BusEvent.epoch_event:type_name -> vega.events.v1.EpochEvent
-	36,  // 87: zeta.events.v1.BusEvent.validator_update:type_name -> vega.events.v1.ValidatorUpdate
-	12,  // 88: zeta.events.v1.BusEvent.stake_linking:type_name -> vega.events.v1.StakeLinking
-	17,  // 89: zeta.events.v1.BusEvent.reward_payout:type_name -> vega.events.v1.RewardPayoutEvent
-	15,  // 90: zeta.events.v1.BusEvent.checkpoint:type_name -> vega.events.v1.CheckpointEvent
-	38,  // 91: zeta.events.v1.BusEvent.key_rotation:type_name -> vega.events.v1.KeyRotation
-	41,  // 92: zeta.events.v1.BusEvent.state_var:type_name -> vega.events.v1.StateVar
-	94,  // 93: zeta.events.v1.BusEvent.network_limits:type_name -> vega.NetworkLimits
-	9,   // 94: zeta.events.v1.BusEvent.transfer:type_name -> vega.events.v1.Transfer
-	37,  // 95: zeta.events.v1.BusEvent.ranking_event:type_name -> vega.events.v1.ValidatorRankingEvent
-	13,  // 96: zeta.events.v1.BusEvent.erc20_multisig_signer_event:type_name -> vega.events.v1.ERC20MultiSigSignerEvent
-	14,  // 97: zeta.events.v1.BusEvent.erc20_multisig_set_threshold_event:type_name -> vega.events.v1.ERC20MultiSigThresholdSetEvent
-	6,   // 98: zeta.events.v1.BusEvent.erc20_multisig_signer_added:type_name -> vega.events.v1.ERC20MultiSigSignerAdded
-	8,   // 99: zeta.events.v1.BusEvent.erc20_multisig_signer_removed:type_name -> vega.events.v1.ERC20MultiSigSignerRemoved
-	31,  // 100: zeta.events.v1.BusEvent.position_state_event:type_name -> vega.events.v1.PositionStateEvent
-	39,  // 101: zeta.events.v1.BusEvent.ethereum_key_rotation:type_name -> vega.events.v1.EthereumKeyRotation
-	40,  // 102: zeta.events.v1.BusEvent.protocol_upgrade_event:type_name -> vega.events.v1.ProtocolUpgradeEvent
-	42,  // 103: zeta.events.v1.BusEvent.begin_block:type_name -> vega.events.v1.BeginBlock
-	43,  // 104: zeta.events.v1.BusEvent.end_block:type_name -> vega.events.v1.EndBlock
-	44,  // 105: zeta.events.v1.BusEvent.protocol_upgrade_started:type_name -> vega.events.v1.ProtocolUpgradeStarted
-	30,  // 106: zeta.events.v1.BusEvent.settle_market:type_name -> vega.events.v1.SettleMarket
-	21,  // 107: zeta.events.v1.BusEvent.transaction_result:type_name -> vega.events.v1.TransactionResult
-	46,  // 108: zeta.events.v1.BusEvent.core_snapshot_event:type_name -> vega.events.v1.CoreSnapshotData
-	45,  // 109: zeta.events.v1.BusEvent.protocol_upgrade_data_node_ready:type_name -> vega.events.v1.ProtocolUpgradeDataNodeReady
-	33,  // 110: zeta.events.v1.BusEvent.distressed_orders:type_name -> vega.events.v1.DistressedOrders
-	48,  // 111: zeta.events.v1.BusEvent.expired_orders:type_name -> vega.events.v1.ExpiredOrders
-	20,  // 112: zeta.events.v1.BusEvent.market:type_name -> vega.events.v1.MarketEvent
-	22,  // 113: zeta.events.v1.BusEvent.tx_err_event:type_name -> vega.events.v1.TxErrorEvent
+	7,   // 0: zeta.events.v1.ERC20MultiSigSignerRemoved.signature_submitters:type_name -> zeta.events.v1.ERC20MultiSigSignerRemovedSubmitter
+	51,  // 1: zeta.events.v1.Transfer.from_account_type:type_name -> zeta.AccountType
+	51,  // 2: zeta.events.v1.Transfer.to_account_type:type_name -> zeta.AccountType
+	2,   // 3: zeta.events.v1.Transfer.status:type_name -> zeta.events.v1.Transfer.Status
+	10,  // 4: zeta.events.v1.Transfer.one_off:type_name -> zeta.events.v1.OneOffTransfer
+	11,  // 5: zeta.events.v1.Transfer.recurring:type_name -> zeta.events.v1.RecurringTransfer
+	52,  // 6: zeta.events.v1.RecurringTransfer.dispatch_strategy:type_name -> zeta.DispatchStrategy
+	3,   // 7: zeta.events.v1.StakeLinking.type:type_name -> zeta.events.v1.StakeLinking.Type
+	4,   // 8: zeta.events.v1.StakeLinking.status:type_name -> zeta.events.v1.StakeLinking.Status
+	5,   // 9: zeta.events.v1.ERC20MultiSigSignerEvent.type:type_name -> zeta.events.v1.ERC20MultiSigSignerEvent.Type
+	53,  // 10: zeta.events.v1.TransactionResult.order_submission:type_name -> zeta.commands.v1.OrderSubmission
+	54,  // 11: zeta.events.v1.TransactionResult.order_amendment:type_name -> zeta.commands.v1.OrderAmendment
+	55,  // 12: zeta.events.v1.TransactionResult.order_cancellation:type_name -> zeta.commands.v1.OrderCancellation
+	56,  // 13: zeta.events.v1.TransactionResult.proposal:type_name -> zeta.commands.v1.ProposalSubmission
+	57,  // 14: zeta.events.v1.TransactionResult.vote_submission:type_name -> zeta.commands.v1.VoteSubmission
+	58,  // 15: zeta.events.v1.TransactionResult.liquidity_provision_submission:type_name -> zeta.commands.v1.LiquidityProvisionSubmission
+	59,  // 16: zeta.events.v1.TransactionResult.withdraw_submission:type_name -> zeta.commands.v1.WithdrawSubmission
+	60,  // 17: zeta.events.v1.TransactionResult.delegate_submission:type_name -> zeta.commands.v1.DelegateSubmission
+	61,  // 18: zeta.events.v1.TransactionResult.undelegate_submission:type_name -> zeta.commands.v1.UndelegateSubmission
+	62,  // 19: zeta.events.v1.TransactionResult.liquidity_provision_cancellation:type_name -> zeta.commands.v1.LiquidityProvisionCancellation
+	63,  // 20: zeta.events.v1.TransactionResult.liquidity_provision_amendment:type_name -> zeta.commands.v1.LiquidityProvisionAmendment
+	64,  // 21: zeta.events.v1.TransactionResult.transfer:type_name -> zeta.commands.v1.Transfer
+	65,  // 22: zeta.events.v1.TransactionResult.cancel_transfer:type_name -> zeta.commands.v1.CancelTransfer
+	66,  // 23: zeta.events.v1.TransactionResult.announce_node:type_name -> zeta.commands.v1.AnnounceNode
+	67,  // 24: zeta.events.v1.TransactionResult.oracle_data_submission:type_name -> zeta.commands.v1.OracleDataSubmission
+	68,  // 25: zeta.events.v1.TransactionResult.protocol_upgrade_proposal:type_name -> zeta.commands.v1.ProtocolUpgradeProposal
+	69,  // 26: zeta.events.v1.TransactionResult.issue_signatures:type_name -> zeta.commands.v1.IssueSignatures
+	70,  // 27: zeta.events.v1.TransactionResult.batch_market_instructions:type_name -> zeta.commands.v1.BatchMarketInstructions
+	71,  // 28: zeta.events.v1.TransactionResult.key_rotate_submission:type_name -> zeta.commands.v1.KeyRotateSubmission
+	72,  // 29: zeta.events.v1.TransactionResult.ethereum_key_rotate_submission:type_name -> zeta.commands.v1.EthereumKeyRotateSubmission
+	49,  // 30: zeta.events.v1.TransactionResult.success:type_name -> zeta.events.v1.TransactionResult.SuccessDetails
+	50,  // 31: zeta.events.v1.TransactionResult.failure:type_name -> zeta.events.v1.TransactionResult.FailureDetails
+	53,  // 32: zeta.events.v1.TxErrorEvent.order_submission:type_name -> zeta.commands.v1.OrderSubmission
+	54,  // 33: zeta.events.v1.TxErrorEvent.order_amendment:type_name -> zeta.commands.v1.OrderAmendment
+	55,  // 34: zeta.events.v1.TxErrorEvent.order_cancellation:type_name -> zeta.commands.v1.OrderCancellation
+	56,  // 35: zeta.events.v1.TxErrorEvent.proposal:type_name -> zeta.commands.v1.ProposalSubmission
+	57,  // 36: zeta.events.v1.TxErrorEvent.vote_submission:type_name -> zeta.commands.v1.VoteSubmission
+	58,  // 37: zeta.events.v1.TxErrorEvent.liquidity_provision_submission:type_name -> zeta.commands.v1.LiquidityProvisionSubmission
+	59,  // 38: zeta.events.v1.TxErrorEvent.withdraw_submission:type_name -> zeta.commands.v1.WithdrawSubmission
+	60,  // 39: zeta.events.v1.TxErrorEvent.delegate_submission:type_name -> zeta.commands.v1.DelegateSubmission
+	61,  // 40: zeta.events.v1.TxErrorEvent.undelegate_submission:type_name -> zeta.commands.v1.UndelegateSubmission
+	62,  // 41: zeta.events.v1.TxErrorEvent.liquidity_provision_cancellation:type_name -> zeta.commands.v1.LiquidityProvisionCancellation
+	63,  // 42: zeta.events.v1.TxErrorEvent.liquidity_provision_amendment:type_name -> zeta.commands.v1.LiquidityProvisionAmendment
+	64,  // 43: zeta.events.v1.TxErrorEvent.transfer:type_name -> zeta.commands.v1.Transfer
+	65,  // 44: zeta.events.v1.TxErrorEvent.cancel_transfer:type_name -> zeta.commands.v1.CancelTransfer
+	66,  // 45: zeta.events.v1.TxErrorEvent.announce_node:type_name -> zeta.commands.v1.AnnounceNode
+	67,  // 46: zeta.events.v1.TxErrorEvent.oracle_data_submission:type_name -> zeta.commands.v1.OracleDataSubmission
+	68,  // 47: zeta.events.v1.TxErrorEvent.protocol_upgrade_proposal:type_name -> zeta.commands.v1.ProtocolUpgradeProposal
+	69,  // 48: zeta.events.v1.TxErrorEvent.issue_signatures:type_name -> zeta.commands.v1.IssueSignatures
+	70,  // 49: zeta.events.v1.TxErrorEvent.batch_market_instructions:type_name -> zeta.commands.v1.BatchMarketInstructions
+	73,  // 50: zeta.events.v1.EpochEvent.action:type_name -> zeta.EpochAction
+	74,  // 51: zeta.events.v1.LedgerMovements.ledger_movements:type_name -> zeta.LedgerMovement
+	28,  // 52: zeta.events.v1.SettlePosition.trade_settlements:type_name -> zeta.events.v1.TradeSettlement
+	75,  // 53: zeta.events.v1.AuctionEvent.trigger:type_name -> zeta.AuctionTrigger
+	75,  // 54: zeta.events.v1.AuctionEvent.extension_trigger:type_name -> zeta.AuctionTrigger
+	0,   // 55: zeta.events.v1.ProtocolUpgradeEvent.status:type_name -> zeta.events.v1.ProtocolUpgradeProposalStatus
+	1,   // 56: zeta.events.v1.BusEvent.type:type_name -> zeta.events.v1.BusEventType
+	23,  // 57: zeta.events.v1.BusEvent.time_update:type_name -> zeta.events.v1.TimeUpdate
+	25,  // 58: zeta.events.v1.BusEvent.ledger_movements:type_name -> zeta.events.v1.LedgerMovements
+	26,  // 59: zeta.events.v1.BusEvent.position_resolution:type_name -> zeta.events.v1.PositionResolution
+	76,  // 60: zeta.events.v1.BusEvent.order:type_name -> zeta.Order
+	77,  // 61: zeta.events.v1.BusEvent.account:type_name -> zeta.Account
+	78,  // 62: zeta.events.v1.BusEvent.party:type_name -> zeta.Party
+	79,  // 63: zeta.events.v1.BusEvent.trade:type_name -> zeta.Trade
+	80,  // 64: zeta.events.v1.BusEvent.margin_levels:type_name -> zeta.MarginLevels
+	81,  // 65: zeta.events.v1.BusEvent.proposal:type_name -> zeta.Proposal
+	82,  // 66: zeta.events.v1.BusEvent.vote:type_name -> zeta.Vote
+	83,  // 67: zeta.events.v1.BusEvent.market_data:type_name -> zeta.MarketData
+	84,  // 68: zeta.events.v1.BusEvent.node_signature:type_name -> zeta.commands.v1.NodeSignature
+	27,  // 69: zeta.events.v1.BusEvent.loss_socialization:type_name -> zeta.events.v1.LossSocialization
+	29,  // 70: zeta.events.v1.BusEvent.settle_position:type_name -> zeta.events.v1.SettlePosition
+	32,  // 71: zeta.events.v1.BusEvent.settle_distressed:type_name -> zeta.events.v1.SettleDistressed
+	85,  // 72: zeta.events.v1.BusEvent.market_created:type_name -> zeta.Market
+	86,  // 73: zeta.events.v1.BusEvent.asset:type_name -> zeta.Asset
+	34,  // 74: zeta.events.v1.BusEvent.market_tick:type_name -> zeta.events.v1.MarketTick
+	87,  // 75: zeta.events.v1.BusEvent.withdrawal:type_name -> zeta.Withdrawal
+	88,  // 76: zeta.events.v1.BusEvent.deposit:type_name -> zeta.Deposit
+	35,  // 77: zeta.events.v1.BusEvent.auction:type_name -> zeta.events.v1.AuctionEvent
+	89,  // 78: zeta.events.v1.BusEvent.risk_factor:type_name -> zeta.RiskFactor
+	90,  // 79: zeta.events.v1.BusEvent.network_parameter:type_name -> zeta.NetworkParameter
+	91,  // 80: zeta.events.v1.BusEvent.liquidity_provision:type_name -> zeta.LiquidityProvision
+	85,  // 81: zeta.events.v1.BusEvent.market_updated:type_name -> zeta.Market
+	92,  // 82: zeta.events.v1.BusEvent.oracle_spec:type_name -> zeta.OracleSpec
+	93,  // 83: zeta.events.v1.BusEvent.oracle_data:type_name -> zeta.OracleData
+	19,  // 84: zeta.events.v1.BusEvent.delegation_balance:type_name -> zeta.events.v1.DelegationBalanceEvent
+	18,  // 85: zeta.events.v1.BusEvent.validator_score:type_name -> zeta.events.v1.ValidatorScoreEvent
+	24,  // 86: zeta.events.v1.BusEvent.epoch_event:type_name -> zeta.events.v1.EpochEvent
+	36,  // 87: zeta.events.v1.BusEvent.validator_update:type_name -> zeta.events.v1.ValidatorUpdate
+	12,  // 88: zeta.events.v1.BusEvent.stake_linking:type_name -> zeta.events.v1.StakeLinking
+	17,  // 89: zeta.events.v1.BusEvent.reward_payout:type_name -> zeta.events.v1.RewardPayoutEvent
+	15,  // 90: zeta.events.v1.BusEvent.checkpoint:type_name -> zeta.events.v1.CheckpointEvent
+	38,  // 91: zeta.events.v1.BusEvent.key_rotation:type_name -> zeta.events.v1.KeyRotation
+	41,  // 92: zeta.events.v1.BusEvent.state_var:type_name -> zeta.events.v1.StateVar
+	94,  // 93: zeta.events.v1.BusEvent.network_limits:type_name -> zeta.NetworkLimits
+	9,   // 94: zeta.events.v1.BusEvent.transfer:type_name -> zeta.events.v1.Transfer
+	37,  // 95: zeta.events.v1.BusEvent.ranking_event:type_name -> zeta.events.v1.ValidatorRankingEvent
+	13,  // 96: zeta.events.v1.BusEvent.erc20_multisig_signer_event:type_name -> zeta.events.v1.ERC20MultiSigSignerEvent
+	14,  // 97: zeta.events.v1.BusEvent.erc20_multisig_set_threshold_event:type_name -> zeta.events.v1.ERC20MultiSigThresholdSetEvent
+	6,   // 98: zeta.events.v1.BusEvent.erc20_multisig_signer_added:type_name -> zeta.events.v1.ERC20MultiSigSignerAdded
+	8,   // 99: zeta.events.v1.BusEvent.erc20_multisig_signer_removed:type_name -> zeta.events.v1.ERC20MultiSigSignerRemoved
+	31,  // 100: zeta.events.v1.BusEvent.position_state_event:type_name -> zeta.events.v1.PositionStateEvent
+	39,  // 101: zeta.events.v1.BusEvent.ethereum_key_rotation:type_name -> zeta.events.v1.EthereumKeyRotation
+	40,  // 102: zeta.events.v1.BusEvent.protocol_upgrade_event:type_name -> zeta.events.v1.ProtocolUpgradeEvent
+	42,  // 103: zeta.events.v1.BusEvent.begin_block:type_name -> zeta.events.v1.BeginBlock
+	43,  // 104: zeta.events.v1.BusEvent.end_block:type_name -> zeta.events.v1.EndBlock
+	44,  // 105: zeta.events.v1.BusEvent.protocol_upgrade_started:type_name -> zeta.events.v1.ProtocolUpgradeStarted
+	30,  // 106: zeta.events.v1.BusEvent.settle_market:type_name -> zeta.events.v1.SettleMarket
+	21,  // 107: zeta.events.v1.BusEvent.transaction_result:type_name -> zeta.events.v1.TransactionResult
+	46,  // 108: zeta.events.v1.BusEvent.core_snapshot_event:type_name -> zeta.events.v1.CoreSnapshotData
+	45,  // 109: zeta.events.v1.BusEvent.protocol_upgrade_data_node_ready:type_name -> zeta.events.v1.ProtocolUpgradeDataNodeReady
+	33,  // 110: zeta.events.v1.BusEvent.distressed_orders:type_name -> zeta.events.v1.DistressedOrders
+	48,  // 111: zeta.events.v1.BusEvent.expired_orders:type_name -> zeta.events.v1.ExpiredOrders
+	20,  // 112: zeta.events.v1.BusEvent.market:type_name -> zeta.events.v1.MarketEvent
+	22,  // 113: zeta.events.v1.BusEvent.tx_err_event:type_name -> zeta.events.v1.TxErrorEvent
 	114, // [114:114] is the sub-list for method output_type
 	114, // [114:114] is the sub-list for method input_type
 	114, // [114:114] is the sub-list for extension type_name

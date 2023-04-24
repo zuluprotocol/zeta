@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"code.zetaprotocol.io/vega/datanode/config"
-	"code.zetaprotocol.io/vega/logging"
+	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/zeta/logging"
 )
 
 type copyCmd struct {

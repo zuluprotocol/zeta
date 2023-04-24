@@ -15,7 +15,7 @@ package gql
 import (
 	"context"
 
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 )
 
 type updateFutureProductResolver ZetaResolverRoot

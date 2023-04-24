@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	walletpb "code.zetaprotocol.io/vega/protos/vega/wallet/v1"
-	"code.zetaprotocol.io/vega/wallet/wallet"
-	"code.zetaprotocol.io/vega/wallet/wallets"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/zeta/wallet/wallets"
 	"github.com/stretchr/testify/require"
 
 	"github.com/golang/mock/gomock"

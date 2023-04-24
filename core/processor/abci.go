@@ -24,30 +24,30 @@ import (
 	"sync/atomic"
 	"time"
 
-	protoapi "code.zetaprotocol.io/vega/protos/vega/api/v1"
+	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
 
-	"code.zetaprotocol.io/vega/commands"
-	"code.zetaprotocol.io/vega/core/api"
-	"code.zetaprotocol.io/vega/core/blockchain"
-	"code.zetaprotocol.io/vega/core/blockchain/abci"
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/core/genesis"
-	"code.zetaprotocol.io/vega/core/idgeneration"
-	"code.zetaprotocol.io/vega/core/processor/ratelimit"
-	"code.zetaprotocol.io/vega/core/txn"
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/core/types/statevar"
-	"code.zetaprotocol.io/vega/core/vegatime"
-	vgcontext "code.zetaprotocol.io/vega/libs/context"
-	"code.zetaprotocol.io/vega/libs/crypto"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
-	signatures "code.zetaprotocol.io/vega/libs/crypto/signature"
-	vgfs "code.zetaprotocol.io/vega/libs/fs"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/logging"
-	"code.zetaprotocol.io/vega/paths"
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
+	"zuluprotocol/zeta/zeta/commands"
+	"zuluprotocol/zeta/zeta/core/api"
+	"zuluprotocol/zeta/zeta/core/blockchain"
+	"zuluprotocol/zeta/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/core/genesis"
+	"zuluprotocol/zeta/zeta/core/idgeneration"
+	"zuluprotocol/zeta/zeta/core/processor/ratelimit"
+	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/zeta/core/zetatime"
+	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/zeta/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	signatures "zuluprotocol/zeta/zeta/libs/crypto/signature"
+	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/zeta/paths"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
 
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 	tmtypes1 "github.com/tendermint/tendermint/proto/tendermint/types"
@@ -229,7 +229,7 @@ func NewApp(
 		abci: abci.New(codec),
 
 		log:            log,
-		zetaPaths:      vegaPaths,
+		zetaPaths:      zetaPaths,
 		cfg:            config,
 		cancelFn:       cancelFn,
 		stopBlockchain: stopBlockchain,

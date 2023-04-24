@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	commandspb "code.zetaprotocol.io/vega/protos/vega/commands/v1"
+	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/require"
 )
 

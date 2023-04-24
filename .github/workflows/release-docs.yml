@@ -55,11 +55,11 @@ jobs:
           cp "zeta/wallet/api/openrpc.json" "documentation/specs/${ref}/wallet/api/openrpc.json"
           cp "zeta/wallet/service/openapi.json" "documentation/specs/${ref}/wallet/api/wallet.openapi.json"
           cd documentation
-          git config --global user.email "zeta-ci-bot@vega.xyz"
+          git config --global user.email "zeta-ci-bot@zeta.xyz"
           git config --global user.name "zeta-ci-bot"
           branch_name="spec-update-${ref}"
           git checkout -b "$branch_name"
-          commit_msg="Automated specs update from zetaprotocol/vega#${short_sha}"
+          commit_msg="Automated specs update from zetaprotocol/zeta#${short_sha}"
           git add specs
           git commit -m "$commit_msg"  || exit 0
           git push -u origin "$branch_name"

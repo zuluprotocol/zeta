@@ -6,9 +6,9 @@ import (
 	"sort"
 	"testing"
 
-	"code.zetaprotocol.io/vega/libs/jsonrpc"
-	"code.zetaprotocol.io/vega/libs/jsonrpc/mocks"
-	vgrand "code.zetaprotocol.io/vega/libs/rand"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/zeta/libs/jsonrpc/mocks"
+	vgrand "zuluprotocol/zeta/zeta/libs/rand"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

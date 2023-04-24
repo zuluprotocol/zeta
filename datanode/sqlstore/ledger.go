@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"time"
 
-	"code.zetaprotocol.io/vega/core/types"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/shopspring/decimal"
 )
@@ -231,7 +231,7 @@ func parseScanned(scanned []ledgerEntriesScanned) []entities.AggregatedLedgerEnt
 	if len(scanned) > 0 {
 		for i := range scanned {
 			ledgerEntries = append(ledgerEntries, entities.AggregatedLedgerEntry{
-				ZetaTime:            scanned[i].VegaTime,
+				ZetaTime:            scanned[i].ZetaTime,
 				Quantity:            scanned[i].Quantity,
 				AssetID:             &scanned[i].AssetID,
 				FromAccountPartyID:  &scanned[i].AccountFromPartyID,
@@ -265,7 +265,7 @@ func createDynamicQuery(filterQueries [3]string, closeOnAccountFilters entities.
 	query := `
 		%s AS (
 			SELECT
-				ledger.zeta_time AS vega_time, ledger.quantity, ledger.type AS transfer_type,
+				ledger.zeta_time AS zeta_time, ledger.quantity, ledger.type AS transfer_type,
 				ledger.account_from_id, ledger.account_to_id,
 				ledger.account_from_balance, ledger.account_to_balance,
 				account_from.asset_id AS asset_id,

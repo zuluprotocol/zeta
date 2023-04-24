@@ -16,9 +16,9 @@ import (
 	"context"
 	"testing"
 
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/sqlstore"
-	vgcrypto "code.zetaprotocol.io/vega/libs/crypto"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -40,7 +40,7 @@ func addTestEthereumKeyRotation(t *testing.T,
 		NodeID:      entities.NodeID("beef"),
 		OldAddress:  randomEthAddress(),
 		NewAddress:  randomEthAddress(),
-		ZetaTime:    block.VegaTime,
+		ZetaTime:    block.ZetaTime,
 		BlockHeight: 42,
 		SeqNum:      seqNum,
 	}

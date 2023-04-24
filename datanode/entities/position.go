@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
 
-	"code.zetaprotocol.io/vega/core/events"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/protos/vega"
+	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 
@@ -282,7 +282,7 @@ func (p Position) Cursor() *Cursor {
 	pc := PositionCursor{
 		MarketID: p.MarketID,
 		PartyID:  p.PartyID,
-		ZetaTime: p.VegaTime,
+		ZetaTime: p.ZetaTime,
 	}
 
 	return NewCursor(pc.String())
@@ -319,7 +319,7 @@ func (p Position) Equal(q Position) bool {
 		p.Loss.Equal(q.Loss) &&
 		p.Adjustment.Equal(q.Adjustment) &&
 		p.TxHash == q.TxHash &&
-		p.ZetaTime.Equal(q.VegaTime) &&
+		p.ZetaTime.Equal(q.ZetaTime) &&
 		p.PendingOpenVolume == q.PendingOpenVolume &&
 		p.PendingAverageEntryPrice.Equal(q.PendingAverageEntryPrice) &&
 		p.PendingAverageEntryMarketPrice.Equal(q.PendingAverageEntryMarketPrice) &&

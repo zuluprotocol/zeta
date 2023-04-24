@@ -15,15 +15,15 @@ package entities
 import (
 	"time"
 
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	zetapb "code.vegaprotocol.io/vega/protos/vega"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 
 type OracleData struct {
 	ExternalData *ExternalData
 }
 
-func OracleDataFromProto(data *zetapb.OracleData, txHash TxHash, vegaTime time.Time, seqNum uint64) (*OracleData, error) {
+func OracleDataFromProto(data *zetapb.OracleData, txHash TxHash, zetaTime time.Time, seqNum uint64) (*OracleData, error) {
 	extData, err := ExternalDataFromProto(data.ExternalData, txHash, zetaTime, seqNum)
 	if err != nil {
 		return nil, err

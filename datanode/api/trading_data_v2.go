@@ -22,22 +22,22 @@ import (
 	"strings"
 	"time"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory"
 
-	"code.zetaprotocol.io/vega/datanode/networkhistory/store"
+	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
 
-	"code.zetaprotocol.io/vega/datanode/candlesv2"
-	"code.zetaprotocol.io/vega/datanode/entities"
-	"code.zetaprotocol.io/vega/datanode/metrics"
-	"code.zetaprotocol.io/vega/datanode/service"
-	"code.zetaprotocol.io/vega/datanode/vegatime"
-	"code.zetaprotocol.io/vega/libs/num"
-	"code.zetaprotocol.io/vega/libs/ptr"
-	"code.zetaprotocol.io/vega/logging"
-	v2 "code.zetaprotocol.io/vega/protos/data-node/api/v2"
-	"code.zetaprotocol.io/vega/protos/vega"
-	eventspb "code.zetaprotocol.io/vega/protos/vega/events/v1"
-	"code.zetaprotocol.io/vega/version"
+	"zuluprotocol/zeta/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/zeta/datanode/service"
+	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/zeta/libs/ptr"
+	"zuluprotocol/zeta/zeta/logging"
+	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/zeta/version"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
@@ -3125,7 +3125,7 @@ func (t *tradingDataServiceV2) ListEthereumKeyRotations(ctx context.Context, req
 }
 
 // Get Time.
-func (t *tradingDataServiceV2) GetZetaTime(ctx context.Context, req *v2.GetVegaTimeRequest) (*v2.GetVegaTimeResponse, error) {
+func (t *tradingDataServiceV2) GetZetaTime(ctx context.Context, req *v2.GetZetaTimeRequest) (*v2.GetZetaTimeResponse, error) {
 	defer metrics.StartAPIRequestAndTimeGRPC("GetZetaTimeV2")()
 	b, err := t.blockService.GetLastBlock(ctx)
 	if err != nil {
