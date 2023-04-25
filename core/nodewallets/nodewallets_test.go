@@ -15,9 +15,9 @@ package nodewallets_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	ethnw "zuluprotocol/zeta/zeta/core/nodewallets/eth"
-	vgnw "zuluprotocol/zeta/zeta/core/nodewallets/zeta"
+	"zuluprotocol/zeta/core/nodewallets"
+	ethnw "zuluprotocol/zeta/core/nodewallets/eth"
+	vgnw "zuluprotocol/zeta/core/nodewallets/zeta"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

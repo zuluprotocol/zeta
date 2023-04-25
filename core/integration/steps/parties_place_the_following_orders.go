@@ -20,10 +20,10 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/helpers"
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/integration/helpers"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func PartiesPlaceTheFollowingOrdersWithTicks(exec Execution, time *stubs.TimeStub, epochService EpochService, table *godog.Table) error {

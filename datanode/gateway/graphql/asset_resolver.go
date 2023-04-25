@@ -15,8 +15,8 @@ package gql
 import (
 	"context"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type myAssetResolver ZetaResolverRoot

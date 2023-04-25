@@ -13,7 +13,7 @@
 package entities
 
 import (
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 

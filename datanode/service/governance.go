@@ -15,9 +15,9 @@ package service
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/utils"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/utils"
+	"zuluprotocol/zeta/logging"
 )
 
 type ProposalStore interface {

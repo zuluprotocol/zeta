@@ -21,11 +21,11 @@ import (
 	tmTypes "github.com/tendermint/tendermint/abci/types"
 	"google.golang.org/protobuf/proto"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/libs/ptr"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
-	pb "zuluprotocol/zeta/zeta/protos/blockexplorer"
+	pb "zuluprotocol/zeta/protos/blockexplorer"
 )
 
 type TxResultRow struct {

@@ -16,8 +16,8 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type rewardResolver ZetaResolverRoot

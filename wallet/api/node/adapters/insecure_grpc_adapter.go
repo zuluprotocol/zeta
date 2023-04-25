@@ -4,8 +4,8 @@ import (
 	"context"
 	"sort"
 
-	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
+	apipb "zuluprotocol/zeta/protos/zeta/api/v1"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
 	"google.golang.org/grpc/credentials/insecure"
 
 	"google.golang.org/grpc"

@@ -9,14 +9,14 @@ import (
 	"strconv"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	vgzap "zuluprotocol/zeta/zeta/libs/zap"
-	"zuluprotocol/zeta/zeta/wallet/api"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
-	"zuluprotocol/zeta/zeta/wallet/wallets"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/printer"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	vgzap "zuluprotocol/zeta/libs/zap"
+	"zuluprotocol/zeta/wallet/api"
+	"zuluprotocol/zeta/wallet/wallet"
+	"zuluprotocol/zeta/wallet/wallets"
 	"github.com/spf13/cobra"
 )
 

@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
+	"zuluprotocol/zeta/wallet/service/v2/connections"
 )
 
 var ErrSavingTokenIsDisabled = errors.New("saving tokens is disabled")

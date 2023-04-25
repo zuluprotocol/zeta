@@ -5,9 +5,9 @@ import (
 	"sort"
 	"strings"
 
-	vgversion "zuluprotocol/zeta/zeta/libs/version"
-	coreversion "zuluprotocol/zeta/zeta/version"
-	"zuluprotocol/zeta/zeta/wallet/network"
+	vgversion "zuluprotocol/zeta/libs/version"
+	coreversion "zuluprotocol/zeta/version"
+	"zuluprotocol/zeta/wallet/network"
 )
 
 var ErrCouldNotListNetworks = errors.New("couldn't list the networks")
@@ -16,7 +16,7 @@ var ErrCouldNotListNetworks = errors.New("couldn't list the networks")
 // ran by the host lists.
 type RequestVersionFn func(hosts []string) (string, error)
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks zuluprotocol/zeta/zeta/wallet/version NetworkStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks zuluprotocol/zeta/wallet/version NetworkStore
 type NetworkStore interface {
 	ListNetworks() ([]string, error)
 	GetNetwork(string) (*network.Network, error)

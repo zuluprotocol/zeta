@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/zetatools/stream"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/zetatools/stream"
 )
 
 type streamCmd struct {

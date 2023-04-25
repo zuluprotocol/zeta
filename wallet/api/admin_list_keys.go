@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/mitchellh/mapstructure"
 )
 

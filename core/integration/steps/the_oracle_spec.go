@@ -19,11 +19,11 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/steps/market"
-	"zuluprotocol/zeta/zeta/core/types"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
-	datav1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/integration/steps/market"
+	"zuluprotocol/zeta/core/types"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	protoTypes "zuluprotocol/zeta/protos/zeta"
+	datav1 "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 func TheOracleSpec(config *market.Config, name string, specType string, rawPubKeys string, table *godog.Table) error {

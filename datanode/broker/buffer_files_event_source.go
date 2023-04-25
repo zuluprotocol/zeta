@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type bufferFileEventSource struct {

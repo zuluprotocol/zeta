@@ -16,8 +16,8 @@ import (
 	"context"
 	"strconv"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type epochResolver ZetaResolverRoot

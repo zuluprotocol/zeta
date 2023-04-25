@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
-	"zuluprotocol/zeta/zeta/wallet/api/node"
-	wcommands "zuluprotocol/zeta/zeta/wallet/commands"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/wallet/api/node"
+	wcommands "zuluprotocol/zeta/wallet/commands"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/mitchellh/mapstructure"
 )

@@ -3,8 +3,8 @@ package cli
 import (
 	"strings"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/wallet/wallet"
 )
 
 func ParseMetadata(rawMetadata []string) ([]wallet.Metadata, error) {

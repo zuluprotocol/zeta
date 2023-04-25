@@ -15,7 +15,7 @@ package execution_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/execution"
+	"zuluprotocol/zeta/core/execution"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

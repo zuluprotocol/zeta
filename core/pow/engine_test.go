@@ -20,11 +20,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/core/delegation/mocks"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/delegation/mocks"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

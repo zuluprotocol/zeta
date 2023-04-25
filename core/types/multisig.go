@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/libs/crypto"
+	vgproto "zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type SignerEventKind = eventspb.ERC20MultiSigSignerEvent_Type

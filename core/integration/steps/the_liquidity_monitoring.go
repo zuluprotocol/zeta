@@ -13,8 +13,8 @@
 package steps
 
 import (
-	"zuluprotocol/zeta/zeta/core/integration/steps/market"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/steps/market"
+	types "zuluprotocol/zeta/protos/zeta"
 	"github.com/cucumber/godog"
 )
 

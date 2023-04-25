@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/require"
 )
 

@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/core/oracles"
+	"zuluprotocol/zeta/core/oracles"
 )
 
 func CheckForInternalOracle(data map[string]string) error {

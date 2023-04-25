@@ -13,7 +13,7 @@
 package stubs
 
 import (
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 type BridgeViewStub struct{}

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"sync/atomic"
 
-	"zuluprotocol/zeta/zeta/datanode/contextutil"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/contextutil"
+	"zuluprotocol/zeta/logging"
 	"github.com/didip/tollbooth/v7"
 	"github.com/didip/tollbooth/v7/libstring"
 	"github.com/didip/tollbooth/v7/limiter"

@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/blockexplorer/entities"
-	pb "zuluprotocol/zeta/zeta/protos/blockexplorer"
+	"zuluprotocol/zeta/blockexplorer/entities"
+	pb "zuluprotocol/zeta/protos/blockexplorer"
 	"github.com/georgysavva/scany/pgxscan"
 )
 

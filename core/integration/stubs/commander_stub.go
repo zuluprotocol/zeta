@@ -15,7 +15,7 @@ package stubs
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/core/txn"
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"
 )

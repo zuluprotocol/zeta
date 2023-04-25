@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/core/types"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 type Property struct {

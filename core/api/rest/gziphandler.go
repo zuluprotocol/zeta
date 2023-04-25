@@ -18,7 +18,7 @@ import (
 	"strings"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 type gzipResponseWriter struct {

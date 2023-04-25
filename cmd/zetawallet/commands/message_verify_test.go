@@ -4,10 +4,10 @@ import (
 	"encoding/base64"
 	"testing"
 
-	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/wallet/api"
+	cmd "zuluprotocol/zeta/cmd/zetawallet/commands"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/wallet/api"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

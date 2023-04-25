@@ -16,11 +16,11 @@ import (
 	"bytes"
 	"encoding/json"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/netparams"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 // These types are copies of the ones in the engines that read the genesis file appstate

@@ -14,12 +14,12 @@ import (
 
 	"github.com/georgysavva/scany/pgxscan"
 
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/fsutil"
+	"zuluprotocol/zeta/datanode/networkhistory/fsutil"
 
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/metrics"
+	"zuluprotocol/zeta/logging"
 	"github.com/jackc/pgx/v4"
 )
 

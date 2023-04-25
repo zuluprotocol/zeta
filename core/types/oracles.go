@@ -14,7 +14,7 @@ package types
 
 import (
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 type OracleSpecConfiguration struct {

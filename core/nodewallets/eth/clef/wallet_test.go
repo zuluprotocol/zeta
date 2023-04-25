@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef/mocks"
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/core/nodewallets/eth/clef/mocks"
+	"zuluprotocol/zeta/core/nodewallets/registry"
 	ethCommon "github.com/ethereum/go-ethereum/common"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

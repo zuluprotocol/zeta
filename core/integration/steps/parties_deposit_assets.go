@@ -18,11 +18,11 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/collateral"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/collateral"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func PartiesDepositTheFollowingAssets(

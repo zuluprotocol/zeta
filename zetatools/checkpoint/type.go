@@ -10,10 +10,10 @@ import (
 
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
-	events "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/protos/zeta"
+	checkpoint "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
+	events "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"

@@ -18,9 +18,9 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/sqlsubscribers/mocks"
 )
 
 func Test_MarketData_Push(t *testing.T) {

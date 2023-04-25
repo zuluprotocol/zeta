@@ -19,9 +19,9 @@ import (
 
 	"github.com/georgysavva/scany/pgxscan"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type Rewards struct {

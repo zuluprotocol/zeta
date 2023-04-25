@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/core/oracles"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/oracles"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 	"github.com/pkg/errors"
 )
 

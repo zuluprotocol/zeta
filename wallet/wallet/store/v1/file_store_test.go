@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	vgtest "zuluprotocol/zeta/zeta/libs/test"
-	"zuluprotocol/zeta/zeta/wallet/api"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
-	storev1 "zuluprotocol/zeta/zeta/wallet/wallet/store/v1"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	vgtest "zuluprotocol/zeta/libs/test"
+	"zuluprotocol/zeta/wallet/api"
+	"zuluprotocol/zeta/wallet/wallet"
+	storev1 "zuluprotocol/zeta/wallet/wallet/store/v1"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

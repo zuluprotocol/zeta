@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/candlesv2"
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"

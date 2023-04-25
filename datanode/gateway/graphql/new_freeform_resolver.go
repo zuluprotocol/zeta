@@ -15,7 +15,7 @@ package gql
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type newFreeformResolver ZetaResolverRoot

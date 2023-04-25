@@ -24,18 +24,18 @@ import (
 	"github.com/shopspring/decimal"
 	"google.golang.org/grpc"
 
-	"zuluprotocol/zeta/zeta/datanode/gateway"
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	"zuluprotocol/zeta/zeta/logging"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/datanode/gateway"
+	"zuluprotocol/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/ptr"
+	"zuluprotocol/zeta/logging"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	data "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	data "zuluprotocol/zeta/protos/zeta/data/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 var (
@@ -49,7 +49,7 @@ var (
 	ErrInvalidProposal = errors.New("invalid proposal")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/datanode/gateway/graphql CoreProxyServiceClient,TradingDataServiceClientV2
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/datanode/gateway/graphql CoreProxyServiceClient,TradingDataServiceClientV2
 
 // CoreProxyServiceClient ...
 type CoreProxyServiceClient interface {

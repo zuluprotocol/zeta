@@ -15,8 +15,8 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"google.golang.org/grpc"
 
-	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	api "zuluprotocol/zeta/protos/zeta/api/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 func connect(ctx context.Context,

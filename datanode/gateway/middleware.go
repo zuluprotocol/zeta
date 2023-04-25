@@ -22,11 +22,11 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/contextutil"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	vfmt "zuluprotocol/zeta/zeta/libs/fmt"
-	vhttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/contextutil"
+	"zuluprotocol/zeta/datanode/metrics"
+	vfmt "zuluprotocol/zeta/libs/fmt"
+	vhttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
 )
 
 var ErrMaxSubscriptionReached = func(ip string, max uint32) error {

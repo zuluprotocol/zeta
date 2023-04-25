@@ -15,8 +15,8 @@ package matching
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 
 	"github.com/stretchr/testify/assert"
 )

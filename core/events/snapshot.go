@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
-	"zuluprotocol/zeta/zeta/version"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/version"
 )
 
 type SnapshotTakenEvent struct {

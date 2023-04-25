@@ -18,10 +18,10 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/crypto"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 	"github.com/cosmos/iavl"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 )
@@ -29,7 +29,7 @@ import (
 // StateProvider - not a huge fan of this interface being here, but it ensures that the state providers
 // don't have to import the snapshot package
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_provider_mock.go -package mocks zuluprotocol/zeta/zeta/core/types StateProvider
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_provider_mock.go -package mocks zuluprotocol/zeta/core/types StateProvider
 type StateProvider interface {
 	Namespace() SnapshotNamespace
 	Keys() []string
@@ -43,7 +43,7 @@ type StateProvider interface {
 // Note that the order in which the calls to this OnStateLoaded functions are called is not pre-defined. As such, this method should only be used
 // for engine internals (upkeep, essentially)
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/restore_state_provider_mock.go -package mocks zuluprotocol/zeta/zeta/core/types PostRestore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/restore_state_provider_mock.go -package mocks zuluprotocol/zeta/core/types PostRestore
 type PostRestore interface {
 	StateProvider
 	OnStateLoaded(ctx context.Context) error

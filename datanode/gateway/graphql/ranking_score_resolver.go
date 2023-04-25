@@ -16,7 +16,7 @@ import (
 	"context"
 	"strconv"
 
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type (

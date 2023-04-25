@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"math"
 
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 )

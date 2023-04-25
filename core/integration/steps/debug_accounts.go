@@ -15,8 +15,8 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/logging"
 )
 
 func DebugAccounts(broker *stubs.BrokerStub, log *logging.Logger) {

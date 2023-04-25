@@ -18,12 +18,12 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/collateral"
-	"zuluprotocol/zeta/zeta/core/integration/steps/market"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/collateral"
+	"zuluprotocol/zeta/core/integration/steps/market"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 func TheMarketsUpdated(

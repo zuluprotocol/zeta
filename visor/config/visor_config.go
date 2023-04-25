@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 	"github.com/fsnotify/fsnotify"
 	"golang.org/x/sync/errgroup"
 )

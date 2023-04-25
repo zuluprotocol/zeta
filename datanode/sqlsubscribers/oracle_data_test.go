@@ -18,11 +18,11 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/datanode/sqlsubscribers/mocks"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 func TestOracleData_Push(t *testing.T) {

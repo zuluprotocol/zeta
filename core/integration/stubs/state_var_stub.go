@@ -19,7 +19,7 @@ import (
 	"strconv"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types/statevar"
+	"zuluprotocol/zeta/core/types/statevar"
 )
 
 var chars = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")

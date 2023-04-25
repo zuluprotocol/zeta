@@ -17,10 +17,10 @@ import (
 	"context"
 	"testing"
 
-	gtypes "zuluprotocol/zeta/zeta/core/types"
-	types "zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	snapshotpb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	gtypes "zuluprotocol/zeta/core/types"
+	types "zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/proto"
+	snapshotpb "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/stretchr/testify/require"
 )
 

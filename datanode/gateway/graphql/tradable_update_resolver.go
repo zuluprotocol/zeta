@@ -4,7 +4,7 @@ import (
 	"context"
 	"strconv"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type tradeUpdateResolver ZetaResolverRoot

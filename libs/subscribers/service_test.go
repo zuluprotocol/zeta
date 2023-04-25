@@ -4,12 +4,12 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers/mocks"
+	"zuluprotocol/zeta/libs/subscribers/mocks"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	dtypes "zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	dtypes "zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

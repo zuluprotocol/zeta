@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	proto "zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type NetworkParameter struct {

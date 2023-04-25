@@ -17,8 +17,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

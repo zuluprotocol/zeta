@@ -16,13 +16,13 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 type Broker interface {

@@ -25,15 +25,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/metrics"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/metrics"
+	"zuluprotocol/zeta/core/types"
 	zetactx "code.zetaprotocol.io/zeta/libs/context"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
-	snappb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/crypto"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
+	snappb "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/cosmos/iavl"
 	"github.com/syndtr/goleveldb/leveldb/filter"
@@ -72,13 +72,13 @@ type StateProviderT interface {
 	LoadState(ctx context.Context, pl *types.Payload) ([]types.StateProvider, error)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_mock.go -package mocks zuluprotocol/zeta/zeta/core/snapshot TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_mock.go -package mocks zuluprotocol/zeta/core/snapshot TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 	SetTimeNow(context.Context, time.Time)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/stats_mock.go -package mocks zuluprotocol/zeta/zeta/core/snapshot StatsService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/stats_mock.go -package mocks zuluprotocol/zeta/core/snapshot StatsService
 type StatsService interface {
 	SetHeight(uint64)
 }

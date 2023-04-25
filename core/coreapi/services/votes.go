@@ -17,8 +17,8 @@ import (
 	"errors"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/subscribers"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/subscribers"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

@@ -17,10 +17,10 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
-	storev1 "zuluprotocol/zeta/zeta/wallet/wallet/store/v1"
-	"zuluprotocol/zeta/zeta/wallet/wallets"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/wallet/wallet"
+	storev1 "zuluprotocol/zeta/wallet/wallet/store/v1"
+	"zuluprotocol/zeta/wallet/wallets"
 )
 
 // ErrFaucetHasNoKeyInItsWallet is returned when trying to get the wallet

@@ -19,12 +19,12 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 
 	"github.com/pkg/errors"
 )
@@ -76,7 +76,7 @@ type Broker interface {
 
 // TimeService provide the time of the zeta node.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/collateral TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/collateral TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

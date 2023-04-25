@@ -3,7 +3,7 @@ package entities
 import (
 	"time"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type DateRange struct {

@@ -15,12 +15,12 @@ package nodewallet
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	vgfmt "zuluprotocol/zeta/zeta/libs/fmt"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/core/nodewallets"
+	vgfmt "zuluprotocol/zeta/libs/fmt"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 )

@@ -15,7 +15,7 @@ package validation_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/oracles/validation"
+	"zuluprotocol/zeta/core/oracles/validation"
 	"github.com/stretchr/testify/require"
 )
 

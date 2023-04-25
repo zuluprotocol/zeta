@@ -15,11 +15,11 @@ package staking
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 var (

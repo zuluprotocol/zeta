@@ -15,7 +15,7 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 func TheTargetStakeShouldBeForMarket(engine Execution, marketID string, wantTargetStake string) error {

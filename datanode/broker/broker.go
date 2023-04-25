@@ -18,12 +18,12 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/broker"
+	"zuluprotocol/zeta/libs/broker"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 // TestInterface interface (horribly named) is declared here to provide a drop-in replacement for broker mocks used throughout

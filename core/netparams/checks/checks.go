@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type Collateral interface {

@@ -17,8 +17,8 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/steps/market"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/steps/market"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 func ThePriceMonitoring(config *market.Config, name string, table *godog.Table) error {

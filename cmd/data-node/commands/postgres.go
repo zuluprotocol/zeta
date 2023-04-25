@@ -22,9 +22,9 @@ import (
 
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	embeddedpostgres "github.com/fergusstrange/embedded-postgres"
 	"github.com/jessevdk/go-flags"

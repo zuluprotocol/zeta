@@ -1,6 +1,6 @@
 package zeta
 
-import datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+import datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 
 // Add any additional types related Internal Data sources specifications here.
 

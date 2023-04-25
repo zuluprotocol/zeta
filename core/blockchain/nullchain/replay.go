@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/logging"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/proto/tendermint/types"
 )

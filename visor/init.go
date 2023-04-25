@@ -17,9 +17,9 @@ import (
 	"os"
 	"path"
 
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/visor/config"
-	"zuluprotocol/zeta/zeta/visor/utils"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/visor/config"
+	"zuluprotocol/zeta/visor/utils"
 )
 
 func Init(log *logging.Logger, homeFolder string, withDataNode bool) error {

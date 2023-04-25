@@ -17,12 +17,12 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/utils"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/utils"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type OrderStore interface {

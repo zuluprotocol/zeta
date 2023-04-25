@@ -3,7 +3,7 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/integration/stubs"
 )
 
 func ExpectingEventsOverStep(broker *stubs.BrokerStub, eventsBeforeStep, expected int) error {

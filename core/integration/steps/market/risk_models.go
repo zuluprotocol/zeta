@@ -18,7 +18,7 @@ import (
 
 	"github.com/jinzhu/copier"
 
-	"zuluprotocol/zeta/zeta/core/integration/steps/market/defaults"
+	"zuluprotocol/zeta/core/integration/steps/market/defaults"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

@@ -19,10 +19,10 @@ import (
 	"fmt"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/crypto"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/cucumber/godog"
 )
 

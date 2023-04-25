@@ -4,8 +4,8 @@ import (
 	"context"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/datanode/zetatime"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 // LiquidityProvision resolver

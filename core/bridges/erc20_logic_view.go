@@ -11,12 +11,12 @@ import (
 	"strings"
 	"time"
 
-	erc20contract "zuluprotocol/zeta/zeta/core/contracts/erc20"
-	bridgecontract "zuluprotocol/zeta/zeta/core/contracts/erc20_bridge_logic_restricted"
-	"zuluprotocol/zeta/zeta/core/metrics"
-	"zuluprotocol/zeta/zeta/core/types"
-	vgerrors "zuluprotocol/zeta/zeta/libs/errors"
-	"zuluprotocol/zeta/zeta/libs/num"
+	erc20contract "zuluprotocol/zeta/core/contracts/erc20"
+	bridgecontract "zuluprotocol/zeta/core/contracts/erc20_bridge_logic_restricted"
+	"zuluprotocol/zeta/core/metrics"
+	"zuluprotocol/zeta/core/types"
+	vgerrors "zuluprotocol/zeta/libs/errors"
+	"zuluprotocol/zeta/libs/num"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcommon "github.com/ethereum/go-ethereum/common"
@@ -33,7 +33,7 @@ var (
 	ErrUnableToFindERC20AssetLimitsUpdated = errors.New("unable to find erc20 asset limits update event")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/zeta/core/bridges ETHClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/core/bridges ETHClient
 type ETHClient interface {
 	bind.ContractBackend
 	HeaderByNumber(context.Context, *big.Int) (*ethtypes.Header, error)
@@ -42,7 +42,7 @@ type ETHClient interface {
 	ConfirmationsRequired() uint64
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_confirmations_mock.go -package mocks zuluprotocol/zeta/zeta/core/bridges EthConfirmations
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_confirmations_mock.go -package mocks zuluprotocol/zeta/core/bridges EthConfirmations
 type EthConfirmations interface {
 	Check(uint64) error
 }

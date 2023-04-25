@@ -435,8 +435,8 @@ pipeline {
                                     --builder ${DOCKER_ZETA_BUILDER_NAME} \
                                     --platform=${DOCKER_BUILD_ARCH} \
                                     -f docker/zeta.dockerfile \
-                                    -t ghcr.io/zetaprotocol/zeta/zeta:${DOCKER_IMAGE_TAG} \
-                                    -t ghcr.io/zetaprotocol/zeta/zeta:${DOCKER_IMAGE_TAG_VERSION} \
+                                    -t ghcr.io/zetaprotocol/zeta:${DOCKER_IMAGE_TAG} \
+                                    -t ghcr.io/zetaprotocol/zeta:${DOCKER_IMAGE_TAG_VERSION} \
                                     ${env.BRANCH_NAME == 'develop' ? '--push' : ''} .
                             """
                         }
@@ -487,8 +487,8 @@ pipeline {
                                     --builder ${DOCKER_ZETAWALLET_BUILDER_NAME} \
                                     --platform=${DOCKER_BUILD_ARCH} \
                                     -f docker/zetawallet.dockerfile \
-                                    -t ghcr.io/zetaprotocol/zeta/zetawallet:${DOCKER_IMAGE_TAG} \
-                                    -t ghcr.io/zetaprotocol/zeta/zetawallet:${DOCKER_IMAGE_TAG_VERSION} \
+                                    -t ghcr.io/zetaprotocol/zetawallet:${DOCKER_IMAGE_TAG} \
+                                    -t ghcr.io/zetaprotocol/zetawallet:${DOCKER_IMAGE_TAG_VERSION} \
                                     ${env.BRANCH_NAME == 'develop' ? '--push' : ''} .
                             """
                         }

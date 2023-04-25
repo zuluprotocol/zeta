@@ -15,9 +15,9 @@ package builtin
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/assets/common"
-	"zuluprotocol/zeta/zeta/core/types"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/assets/common"
+	"zuluprotocol/zeta/core/types"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type Builtin struct {

@@ -20,8 +20,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 )
 
 func addTestEpoch(t *testing.T, ctx context.Context, es *sqlstore.Epochs,

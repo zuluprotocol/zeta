@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	typespb "zuluprotocol/zeta/zeta/protos/zeta"
+	typespb "zuluprotocol/zeta/protos/zeta"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

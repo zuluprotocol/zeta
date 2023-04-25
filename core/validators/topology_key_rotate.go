@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 var (

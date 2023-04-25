@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 // Duration is a wrapper over an actual duration so we can represent

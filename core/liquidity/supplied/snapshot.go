@@ -13,8 +13,8 @@
 package supplied
 
 import (
-	"zuluprotocol/zeta/zeta/libs/num"
-	snapshotpb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/num"
+	snapshotpb "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 func (e *Engine) Payload() *snapshotpb.Payload {

@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/checkpoint"
-	"zuluprotocol/zeta/zeta/core/checkpoint/mocks"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/checkpoint"
+	"zuluprotocol/zeta/core/checkpoint/mocks"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"

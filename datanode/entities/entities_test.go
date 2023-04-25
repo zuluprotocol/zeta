@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/datanode/entities"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/core/types"
-	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/core/types"
+	protoTypes "zuluprotocol/zeta/protos/zeta"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 	"github.com/stretchr/testify/assert"
 )
 

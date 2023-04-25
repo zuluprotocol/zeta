@@ -16,13 +16,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/keystore"
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/core/nodewallets/eth/keystore"
+	"zuluprotocol/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 type wallet interface {

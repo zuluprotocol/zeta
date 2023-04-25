@@ -8,13 +8,13 @@ import (
 	"strconv"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	protoTypes "zuluprotocol/zeta/protos/zeta"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 	"github.com/ethereum/go-ethereum/common"
 )
 

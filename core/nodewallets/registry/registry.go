@@ -17,8 +17,8 @@ import (
 	"errors"
 	"fmt"
 
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/paths"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/paths"
 )
 
 var (

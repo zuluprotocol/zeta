@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/core/events"
+	vgcontext "zuluprotocol/zeta/libs/context"
 
 	"github.com/stretchr/testify/assert"
 )

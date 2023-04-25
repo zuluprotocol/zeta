@@ -1,7 +1,7 @@
 package commands
 
 import (
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 func CheckChainEvent(cmd *commandspb.ChainEvent) error {

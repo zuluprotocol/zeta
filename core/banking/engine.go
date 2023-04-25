@@ -22,21 +22,21 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/validators"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	vgproto "zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/validators"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	vgproto "zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
+	proto "zuluprotocol/zeta/protos/zeta"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/emirpasic/gods/sets/treeset"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/banking Assets,Notary,Collateral,Witness,TimeService,EpochService,Topology,MarketActivityTracker,ERC20BridgeView
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/banking Assets,Notary,Collateral,Witness,TimeService,EpochService,Topology,MarketActivityTracker,ERC20BridgeView
 
 var (
 	ErrWrongAssetTypeUsedInBuiltinAssetChainEvent = errors.New("non builtin asset used for builtin asset chain event")

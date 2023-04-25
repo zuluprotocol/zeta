@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"io"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
-	"zuluprotocol/zeta/zeta/paths"
-	netv1 "zuluprotocol/zeta/zeta/wallet/network/store/v1"
-	wversion "zuluprotocol/zeta/zeta/wallet/version"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/paths"
+	netv1 "zuluprotocol/zeta/wallet/network/store/v1"
+	wversion "zuluprotocol/zeta/wallet/version"
 	"github.com/spf13/cobra"
 )
 

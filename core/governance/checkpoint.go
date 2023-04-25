@@ -15,15 +15,15 @@ package governance
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/execution"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	checkpointpb "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/execution"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
+	checkpointpb "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 type enactmentTime struct {

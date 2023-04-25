@@ -19,8 +19,8 @@ import (
 	"zuluprotocol/zeta/quant/interfaces"
 	pd "zuluprotocol/zeta/quant/pricedistribution"
 	"zuluprotocol/zeta/quant/riskmodelbs"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 var ErrMissingLogNormalParameter = errors.New("missing log normal parameters")

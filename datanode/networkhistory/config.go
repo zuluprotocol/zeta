@@ -3,10 +3,10 @@ package networkhistory
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/logging"
 )
 
 type Config struct {

@@ -16,9 +16,9 @@ import (
 	"fmt"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/wallet/wallet"
 )
 
 type loader interface {

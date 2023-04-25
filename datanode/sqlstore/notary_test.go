@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	v1 "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

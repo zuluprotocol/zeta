@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 // DataSourceSpecConfiguration is used only by Oracles without a type wrapper at the moment.

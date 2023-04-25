@@ -15,9 +15,9 @@ package abci
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/core/types"
 
 	lru "github.com/hashicorp/golang-lru"
 	abci "github.com/tendermint/tendermint/abci/types"

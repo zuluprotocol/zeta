@@ -19,7 +19,7 @@ import (
 	"os"
 	"strings"
 
-	vgos "zuluprotocol/zeta/zeta/libs/os"
+	vgos "zuluprotocol/zeta/libs/os"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

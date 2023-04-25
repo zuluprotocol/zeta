@@ -17,7 +17,7 @@ import (
 	"math"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/datanode/zetatime"
 )
 
 func safeStringUint64(input string) (uint64, error) {

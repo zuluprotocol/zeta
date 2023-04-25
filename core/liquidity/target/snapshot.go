@@ -16,10 +16,10 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/proto"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 func newTimestampedOISnapshotFromProto(s *snapshot.TimestampedOpenInterest) timestampedOI {

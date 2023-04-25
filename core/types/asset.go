@@ -16,9 +16,9 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 var (

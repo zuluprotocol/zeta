@@ -15,8 +15,8 @@ package assets
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 var (

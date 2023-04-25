@@ -13,12 +13,12 @@
 package genesis
 
 import (
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	"zuluprotocol/zeta/zeta/core/checkpoint"
-	"zuluprotocol/zeta/zeta/core/limits"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/checkpoint"
+	"zuluprotocol/zeta/core/limits"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/validators"
 )
 
 type State struct {

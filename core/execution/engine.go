@@ -18,20 +18,20 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/metrics"
-	"zuluprotocol/zeta/zeta/core/monitor"
-	"zuluprotocol/zeta/zeta/core/oracles"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/metrics"
+	"zuluprotocol/zeta/core/monitor"
+	"zuluprotocol/zeta/core/oracles"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/execution TimeService,Assets,StateVarEngine,Collateral,OracleEngine,EpochEngine
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/execution TimeService,Assets,StateVarEngine,Collateral,OracleEngine,EpochEngine
 
 var (
 	// ErrMarketDoesNotExist is returned when the market does not exist.

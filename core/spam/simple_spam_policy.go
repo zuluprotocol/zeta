@@ -19,13 +19,13 @@ import (
 	"sync"
 	"time"
 
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
 )
 
 // Simple spam policy supports encforcing of max allowed commands and min required tokens + banning of parties when their reject rate in the block

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"math/big"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 var (

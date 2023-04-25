@@ -18,11 +18,11 @@ import (
 	"time"
 
 	zetacontext "code.zetaprotocol.io/zeta/libs/context"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
 
-	"zuluprotocol/zeta/zeta/core/execution"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/execution"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

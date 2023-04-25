@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"net"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 	"github.com/soheilhy/cmux"
 )
 

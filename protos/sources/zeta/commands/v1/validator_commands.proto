@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 package zeta.commands.v1;
-option go_package = "zuluprotocol/zeta/zeta/protos/zeta/commands/v1";
+option go_package = "zuluprotocol/zeta/protos/zeta/commands/v1";
 
-import "zeta/zeta.proto";
+import "zeta.proto";
 import "zeta/chain_events.proto";
 import "zeta/commands/v1/signature.proto";
 

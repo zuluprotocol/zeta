@@ -16,10 +16,10 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 func NewERC20MultisigTopology(

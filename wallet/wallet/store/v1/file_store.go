@@ -12,11 +12,11 @@ import (
 	"strings"
 	"sync"
 
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	vgjob "zuluprotocol/zeta/zeta/libs/job"
-	"zuluprotocol/zeta/zeta/wallet/api"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	vgjob "zuluprotocol/zeta/libs/job"
+	"zuluprotocol/zeta/wallet/api"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/fsnotify/fsnotify"
 )
 

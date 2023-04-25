@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"os"
 
-	"zuluprotocol/zeta/zeta/cmd/data-node/commands/networkhistory"
-	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/cmd/data-node/commands/networkhistory"
+	"zuluprotocol/zeta/datanode/config"
 
 	"github.com/jessevdk/go-flags"
 )

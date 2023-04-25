@@ -13,8 +13,8 @@
 package grpc
 
 import (
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 var namedLogger = "api.grpc"

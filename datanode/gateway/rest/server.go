@@ -19,11 +19,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/datanode/gateway"
-	libhttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
-	protoapiv2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/datanode/gateway"
+	libhttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
+	protoapiv2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"

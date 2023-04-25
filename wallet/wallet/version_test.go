@@ -3,7 +3,7 @@ package wallet_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/stretchr/testify/assert"
 )
 

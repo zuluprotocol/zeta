@@ -19,9 +19,9 @@ import (
 	"sync"
 	"time"
 
-	multisig "zuluprotocol/zeta/zeta/core/contracts/multisig_control"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	multisig "zuluprotocol/zeta/core/contracts/multisig_control"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcmn "github.com/ethereum/go-ethereum/common"

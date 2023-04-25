@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	vgrand "zuluprotocol/zeta/libs/rand"
 	"github.com/dgrijalva/jwt-go/v4"
 	"go.uber.org/zap"
 )

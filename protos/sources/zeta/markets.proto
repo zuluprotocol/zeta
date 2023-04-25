@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package zeta;
-option go_package = "zuluprotocol/zeta/zeta/protos/zeta";
+option go_package = "zuluprotocol/zeta/protos/zeta";
 
 import "zeta/data_source.proto";
 

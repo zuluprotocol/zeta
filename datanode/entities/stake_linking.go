@@ -18,8 +18,8 @@ import (
 	"math"
 	"time"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 	"github.com/shopspring/decimal"
 )
 

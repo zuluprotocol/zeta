@@ -16,11 +16,11 @@ import (
 	"context"
 	"runtime/debug"
 
-	"zuluprotocol/zeta/zeta/cmd/data-node/commands/start"
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/version"
+	"zuluprotocol/zeta/cmd/data-node/commands/start"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/version"
 
 	"github.com/jessevdk/go-flags"
 	"github.com/pbnjay/memory"

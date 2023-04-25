@@ -5,11 +5,11 @@ package zeta.api.v1;
 import "zeta/assets.proto";
 import "zeta/governance.proto";
 import "zeta/markets.proto";
-import "zeta/zeta.proto";
+import "zeta.proto";
 import "zeta/events/v1/events.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "zuluprotocol/zeta/zeta/protos/zeta/api/v1";
+option go_package = "zuluprotocol/zeta/protos/zeta/api/v1";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {

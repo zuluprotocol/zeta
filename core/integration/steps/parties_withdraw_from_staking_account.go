@@ -15,7 +15,7 @@ package steps
 import (
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/integration/stubs"
 )
 
 func PartiesWithdrawFromStakingAccount(

@@ -17,7 +17,7 @@ import (
 	"errors"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type updateMarketConfigurationResolver ZetaResolverRoot

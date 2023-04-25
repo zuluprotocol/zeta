@@ -16,7 +16,7 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 type Handler struct {

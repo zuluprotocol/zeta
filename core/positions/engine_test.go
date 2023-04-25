@@ -18,13 +18,13 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/libs/num"
 
-	"zuluprotocol/zeta/zeta/core/positions"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/positions"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

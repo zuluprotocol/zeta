@@ -15,10 +15,10 @@ package types
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/ptr"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/ptr"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 type GovernanceData = zetapb.GovernanceData

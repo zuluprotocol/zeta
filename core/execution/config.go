@@ -13,14 +13,14 @@
 package execution
 
 import (
-	"zuluprotocol/zeta/zeta/core/fee"
-	"zuluprotocol/zeta/zeta/core/liquidity"
-	"zuluprotocol/zeta/zeta/core/matching"
-	"zuluprotocol/zeta/zeta/core/positions"
-	"zuluprotocol/zeta/zeta/core/risk"
-	"zuluprotocol/zeta/zeta/core/settlement"
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/fee"
+	"zuluprotocol/zeta/core/liquidity"
+	"zuluprotocol/zeta/core/matching"
+	"zuluprotocol/zeta/core/positions"
+	"zuluprotocol/zeta/core/risk"
+	"zuluprotocol/zeta/core/settlement"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

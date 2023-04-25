@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	vgrand "zuluprotocol/zeta/libs/rand"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

@@ -19,8 +19,8 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/stubs"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 func TheLiquidityProvisionsShouldHaveTheFollowingStates(broker *stubs.BrokerStub, table *godog.Table) error {

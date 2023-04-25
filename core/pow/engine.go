@@ -20,14 +20,14 @@ import (
 	"sync"
 	"time"
 
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/ptr"
+	"zuluprotocol/zeta/logging"
 )
 
 const (
@@ -70,7 +70,7 @@ type state struct {
 	blockToPartyState map[uint64]map[string]*partyStateForBlock
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/pow TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/pow TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

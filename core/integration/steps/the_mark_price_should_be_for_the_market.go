@@ -15,8 +15,8 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func TheMarkPriceForTheMarketIs(

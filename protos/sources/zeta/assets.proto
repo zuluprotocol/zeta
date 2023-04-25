@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package zeta;
-option go_package = "zuluprotocol/zeta/zeta/protos/zeta";
+option go_package = "zuluprotocol/zeta/protos/zeta";
 
 // The Zeta representation of an external asset
 message Asset {

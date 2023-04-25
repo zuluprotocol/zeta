@@ -6,8 +6,8 @@ import (
 	"math/big"
 	"strconv"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	types "zuluprotocol/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 var (

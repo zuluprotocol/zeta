@@ -18,11 +18,11 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/types"
+	checkpoint "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 )
 

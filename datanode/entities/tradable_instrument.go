@@ -13,8 +13,8 @@
 package entities
 
 import (
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/protos/zeta"
+	v1 "zuluprotocol/zeta/protos/zeta/data/v1"
 	"google.golang.org/protobuf/encoding/protojson"
 )
 

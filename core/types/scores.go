@@ -12,7 +12,7 @@
 
 package types
 
-import "zuluprotocol/zeta/zeta/libs/num"
+import "zuluprotocol/zeta/libs/num"
 
 type ScoreData struct {
 	RawValScores      map[string]num.Decimal

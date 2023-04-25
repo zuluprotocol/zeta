@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 var ErrInvalidRequest = errors.New("invalid request")

@@ -18,9 +18,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"zuluprotocol/zeta/zeta/core/oracles"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/oracles"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func TestOracleData(t *testing.T) {

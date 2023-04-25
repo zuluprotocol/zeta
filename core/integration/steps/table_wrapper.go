@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	datav1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	proto "zuluprotocol/zeta/protos/zeta"
+	datav1 "zuluprotocol/zeta/protos/zeta/data/v1"
 
 	"github.com/cucumber/godog"
 	"github.com/cucumber/messages-go/v16"

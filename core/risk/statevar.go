@@ -15,11 +15,11 @@ package risk
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 type FactorConverter struct{}

@@ -19,14 +19,14 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/liquidity/supplied"
-	"zuluprotocol/zeta/zeta/core/risk"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/liquidity/supplied"
+	"zuluprotocol/zeta/core/risk"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 var (
@@ -36,7 +36,7 @@ var (
 	ErrEmptyShape                      = errors.New("liquidity provision contains an empty shape")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/liquidity RiskModel,PriceMonitor,IDGen
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/liquidity RiskModel,PriceMonitor,IDGen
 
 // Broker - event bus (no mocks needed).
 type Broker interface {
@@ -46,7 +46,7 @@ type Broker interface {
 
 // TimeService provide the time of the zeta node using the tm time.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/liquidity TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/liquidity TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

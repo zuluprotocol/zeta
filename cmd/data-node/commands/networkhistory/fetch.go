@@ -8,14 +8,14 @@ import (
 
 	"google.golang.org/grpc/status"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory"
 
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/datanode/sqlstore"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 type fetchCmd struct {

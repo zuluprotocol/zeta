@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/stretchr/testify/assert"
 )

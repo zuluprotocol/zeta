@@ -15,8 +15,8 @@ package metrics
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 // Config represents the configuration of the metric package.

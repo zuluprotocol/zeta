@@ -15,10 +15,10 @@ package gql
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	v1 "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 type oracleSpecResolver ZetaResolverRoot

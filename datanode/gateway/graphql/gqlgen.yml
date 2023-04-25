@@ -16,173 +16,173 @@ models:
       - github.com/99designs/gqlgen/graphql.Int
       - github.com/99designs/gqlgen/graphql.Int64
       - github.com/99designs/gqlgen/graphql.Int32
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.Uint32
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.Uint32
   ValidatorStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ValidatorStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ValidatorStatus
   LiquidityProvisionStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.LiquidityProvisionStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.LiquidityProvisionStatus
   ProposalType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ProposalType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ProposalType
   Interval:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.Interval
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.Interval
   Side:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.Side
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.Side
   TradeType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.TradeType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.TradeType
   OrderType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.OrderType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.OrderType
   MarketState:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.MarketState
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.MarketState
   MarketTradingMode:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.MarketTradingMode
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.MarketTradingMode
   ProposalRejectionReason:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ProposalRejectionReason
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ProposalRejectionReason
   OrderRejectionReason:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.OrderRejectionReason
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.OrderRejectionReason
   PeggedReference:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.PeggedReference
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.PeggedReference
   OrderTimeInForce:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.OrderTimeInForce
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.OrderTimeInForce
   OrderStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.OrderStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.OrderStatus
   DepositStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.DepositStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.DepositStatus
   WithdrawalStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.WithdrawalStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.WithdrawalStatus
   StakeLinkingType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.StakeLinkingType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.StakeLinkingType
   StakeLinkingStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.StakeLinkingStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.StakeLinkingStatus
   TransferStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.TransferStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.TransferStatus
   TransferType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.TransferType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.TransferType
   DispatchMetric:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.DispatchMetric
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.DispatchMetric
   NodeStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.NodeStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.NodeStatus
   AssetStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.AssetStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.AssetStatus
   NodeSignatureKind:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.NodeSignatureKind
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.NodeSignatureKind
   OracleSpecStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.OracleSpecStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.OracleSpecStatus
   PropertyKeyType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.PropertyKeyType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.PropertyKeyType
   ConditionOperator:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ConditionOperator
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ConditionOperator
   ProposalState:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ProposalState
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ProposalState
   VoteValue:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.VoteValue
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.VoteValue
   AuctionTrigger:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.AuctionTrigger
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.AuctionTrigger
   Order:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Order
+    model: zuluprotocol/zeta/protos/zeta.Order
   OrderUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Order
+    model: zuluprotocol/zeta/protos/zeta.Order
   PaginatedOrder:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Order
+    model: zuluprotocol/zeta/protos/zeta.Order
   TradeUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Trade
+    model: zuluprotocol/zeta/protos/zeta.Trade
   Trade:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Trade
+    model: zuluprotocol/zeta/protos/zeta.Trade
   PriceLevel:
-    model: zuluprotocol/zeta/zeta/protos/zeta.PriceLevel
+    model: zuluprotocol/zeta/protos/zeta.PriceLevel
   MarketDepth:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketDepth
+    model: zuluprotocol/zeta/protos/zeta.MarketDepth
   ObservableMarketDepth:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketDepth
+    model: zuluprotocol/zeta/protos/zeta.MarketDepth
   MarketDepthUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketDepthUpdate
+    model: zuluprotocol/zeta/protos/zeta.MarketDepthUpdate
   ObservableMarketDepthUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketDepthUpdate
+    model: zuluprotocol/zeta/protos/zeta.MarketDepthUpdate
   Candle:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.Candle
+    model: zuluprotocol/zeta/protos/data-node/api/v2.Candle
   Position:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Position
+    model: zuluprotocol/zeta/protos/zeta.Position
   PositionUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Position
+    model: zuluprotocol/zeta/protos/zeta.Position
   AccountEvent:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Account
+    model: zuluprotocol/zeta/protos/zeta.Account
   AccountBalance:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AccountBalance
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AccountBalance
   AccountDetails:
-    model: zuluprotocol/zeta/zeta/protos/zeta.AccountDetails
+    model: zuluprotocol/zeta/protos/zeta.AccountDetails
   AccountUpdate:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AccountBalance
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AccountBalance
   MarketData:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketData
+    model: zuluprotocol/zeta/protos/zeta.MarketData
   ObservableMarketData:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketData
+    model: zuluprotocol/zeta/protos/zeta.MarketData
   MarginLevels:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarginLevels
+    model: zuluprotocol/zeta/protos/zeta.MarginLevels
   MarginLevelsUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarginLevels
+    model: zuluprotocol/zeta/protos/zeta.MarginLevels
   NodeSignature:
-    model: zuluprotocol/zeta/zeta/protos/zeta/commands/v1.NodeSignature
+    model: zuluprotocol/zeta/protos/zeta/commands/v1.NodeSignature
   ProposalEvent:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Proposal
+    model: zuluprotocol/zeta/protos/zeta.Proposal
   RiskFactor:
-    model: zuluprotocol/zeta/zeta/protos/zeta.RiskFactor
+    model: zuluprotocol/zeta/protos/zeta.RiskFactor
   NetworkParameter:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NetworkParameter
+    model: zuluprotocol/zeta/protos/zeta.NetworkParameter
   LiquidityOrder:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LiquidityOrder
+    model: zuluprotocol/zeta/protos/zeta.LiquidityOrder
   LiquidityProvision:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LiquidityProvision
+    model: zuluprotocol/zeta/protos/zeta.LiquidityProvision
   LiquidityProvisionUpdate:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LiquidityProvision
+    model: zuluprotocol/zeta/protos/zeta.LiquidityProvision
   LiquidityOrderReference:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LiquidityOrderReference
+    model: zuluprotocol/zeta/protos/zeta.LiquidityOrderReference
   Future:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Future
+    model: zuluprotocol/zeta/protos/zeta.Future
   TradableInstrument:
-    model: zuluprotocol/zeta/zeta/protos/zeta.TradableInstrument
+    model: zuluprotocol/zeta/protos/zeta.TradableInstrument
   SimpleRiskModel:
-    model: zuluprotocol/zeta/zeta/protos/zeta.SimpleRiskModel
+    model: zuluprotocol/zeta/protos/zeta.SimpleRiskModel
   SimpleRiskModelParams:
-    model: zuluprotocol/zeta/zeta/protos/zeta.SimpleModelParams
+    model: zuluprotocol/zeta/protos/zeta.SimpleModelParams
   LogNormalRiskModel:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LogNormalRiskModel
+    model: zuluprotocol/zeta/protos/zeta.LogNormalRiskModel
   LogNormalModelParams:
-    model: zuluprotocol/zeta/zeta/protos/zeta.LogNormalModelParams
+    model: zuluprotocol/zeta/protos/zeta.LogNormalModelParams
   Instrument:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Instrument
+    model: zuluprotocol/zeta/protos/zeta.Instrument
   InstrumentMetadata:
-    model: zuluprotocol/zeta/zeta/protos/zeta.InstrumentMetadata
+    model: zuluprotocol/zeta/protos/zeta.InstrumentMetadata
   Market:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Market
+    model: zuluprotocol/zeta/protos/zeta.Market
     fields:
       orders:
         resolver: true
@@ -203,7 +203,7 @@ models:
       liquidityProvisions:
         resolver: true
   Party:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Party
+    model: zuluprotocol/zeta/protos/zeta.Party
     fields:
       orders:
         resolver: true
@@ -222,287 +222,287 @@ models:
       delegations:
         resolver: true
   Proposal:
-    model: zuluprotocol/zeta/zeta/protos/zeta.GovernanceData
+    model: zuluprotocol/zeta/protos/zeta.GovernanceData
     fields:
       votes:
         resolver: true
   ProposalRationale:
-    model: zuluprotocol/zeta/zeta/protos/zeta.ProposalRationale
+    model: zuluprotocol/zeta/protos/zeta.ProposalRationale
   ProposalTerms:
-    model: zuluprotocol/zeta/zeta/protos/zeta.ProposalTerms
+    model: zuluprotocol/zeta/protos/zeta.ProposalTerms
   NewMarket:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NewMarket
+    model: zuluprotocol/zeta/protos/zeta.NewMarket
   NewAsset:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NewAsset
+    model: zuluprotocol/zeta/protos/zeta.NewAsset
   UpdateAsset:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateAsset
+    model: zuluprotocol/zeta/protos/zeta.UpdateAsset
   NewFreeform:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NewFreeform
+    model: zuluprotocol/zeta/protos/zeta.NewFreeform
   UpdateMarket:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateMarket
+    model: zuluprotocol/zeta/protos/zeta.UpdateMarket
   UpdateNetworkParameter:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateNetworkParameter
+    model: zuluprotocol/zeta/protos/zeta.UpdateNetworkParameter
   InstrumentConfiguration:
-    model: zuluprotocol/zeta/zeta/protos/zeta.InstrumentConfiguration
+    model: zuluprotocol/zeta/protos/zeta.InstrumentConfiguration
   FutureProduct:
-    model: zuluprotocol/zeta/zeta/protos/zeta.FutureProduct
+    model: zuluprotocol/zeta/protos/zeta.FutureProduct
   Asset:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Asset
+    model: zuluprotocol/zeta/protos/zeta.Asset
     fields:
       infrastructureFeeAccount:
         resolver: true
   Deposit:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Deposit
+    model: zuluprotocol/zeta/protos/zeta.Deposit
   Withdrawal:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Withdrawal
+    model: zuluprotocol/zeta/protos/zeta.Withdrawal
     fields:
       txHash:
         resolver: true
   PeggedOrder:
-    model: zuluprotocol/zeta/zeta/protos/zeta.PeggedOrder
+    model: zuluprotocol/zeta/protos/zeta.PeggedOrder
   DataSourceSpecToFutureBinding:
-    model: zuluprotocol/zeta/zeta/protos/zeta.DataSourceSpecToFutureBinding
+    model: zuluprotocol/zeta/protos/zeta.DataSourceSpecToFutureBinding
   DataSourceSpecConfiguration:
-    model: zuluprotocol/zeta/zeta/protos/zeta.DataSourceSpecConfiguration
+    model: zuluprotocol/zeta/protos/zeta.DataSourceSpecConfiguration
   OracleSpec:
-    model: zuluprotocol/zeta/zeta/protos/zeta.OracleSpec
+    model: zuluprotocol/zeta/protos/zeta.OracleSpec
   Filter:
-    model: zuluprotocol/zeta/zeta/protos/zeta/data/v1.Filter
+    model: zuluprotocol/zeta/protos/zeta/data/v1.Filter
   PropertyKey:
-    model: zuluprotocol/zeta/zeta/protos/zeta/data/v1.PropertyKey
+    model: zuluprotocol/zeta/protos/zeta/data/v1.PropertyKey
   Condition:
-    model: zuluprotocol/zeta/zeta/protos/zeta/data/v1.Condition
+    model: zuluprotocol/zeta/protos/zeta/data/v1.Condition
   OracleData:
-    model: zuluprotocol/zeta/zeta/protos/zeta.OracleData
+    model: zuluprotocol/zeta/protos/zeta.OracleData
     fields:
       broadcastAt:
         resolver: true
   Property:
-    model: zuluprotocol/zeta/zeta/protos/zeta/data/v1.Property
+    model: zuluprotocol/zeta/protos/zeta/data/v1.Property
   AuctionEvent:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.AuctionEvent
+    model: zuluprotocol/zeta/protos/zeta/events/v1.AuctionEvent
   FeeFactors:
-    model: zuluprotocol/zeta/zeta/protos/zeta.FeeFactors
+    model: zuluprotocol/zeta/protos/zeta.FeeFactors
   Fees:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Fees
+    model: zuluprotocol/zeta/protos/zeta.Fees
   ScalingFactors:
-    model: zuluprotocol/zeta/zeta/protos/zeta.ScalingFactors
+    model: zuluprotocol/zeta/protos/zeta.ScalingFactors
   MarginCalculator:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarginCalculator
+    model: zuluprotocol/zeta/protos/zeta.MarginCalculator
   Vote:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Vote
+    model: zuluprotocol/zeta/protos/zeta.Vote
   VoteConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.VoteConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.VoteConnection
   VoteEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.VoteEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.VoteEdge
   MarketTimestamps:
-    model: zuluprotocol/zeta/zeta/protos/zeta.MarketTimestamps
+    model: zuluprotocol/zeta/protos/zeta.MarketTimestamps
   NodeData:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NodeData
+    model: zuluprotocol/zeta/protos/zeta.NodeData
   EpochData:
-    model: zuluprotocol/zeta/zeta/protos/zeta.EpochData
+    model: zuluprotocol/zeta/protos/zeta.EpochData
   Delegation:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Delegation
+    model: zuluprotocol/zeta/protos/zeta.Delegation
   Node:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Node
+    model: zuluprotocol/zeta/protos/zeta.Node
   Epoch:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Epoch
+    model: zuluprotocol/zeta/protos/zeta.Epoch
   EpochTimestamps:
-    model: zuluprotocol/zeta/zeta/protos/zeta.EpochTimestamps
+    model: zuluprotocol/zeta/protos/zeta.EpochTimestamps
   Reward:
-    model: zuluprotocol/zeta/zeta/protos/zeta.Reward
+    model: zuluprotocol/zeta/protos/zeta.Reward
   RewardSummary:
-    model: zuluprotocol/zeta/zeta/protos/zeta.RewardSummary
+    model: zuluprotocol/zeta/protos/zeta.RewardSummary
   StakeLinking:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.StakeLinking
+    model: zuluprotocol/zeta/protos/zeta/events/v1.StakeLinking
   PartyStake:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.GetStakeResponse
+    model: zuluprotocol/zeta/protos/data-node/api/v2.GetStakeResponse
   KeyRotation:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.KeyRotation
+    model: zuluprotocol/zeta/protos/zeta/events/v1.KeyRotation
   EthereumKeyRotationsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.EthereumKeyRotationsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.EthereumKeyRotationsConnection
   EthereumKeyRotationEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.EthereumKeyRotationEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.EthereumKeyRotationEdge
   EthereumKeyRotation:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.EthereumKeyRotation
+    model: zuluprotocol/zeta/protos/zeta/events/v1.EthereumKeyRotation
   Transfer:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.Transfer
+    model: zuluprotocol/zeta/protos/zeta/events/v1.Transfer
   OneOffTransfer:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.OneOffTransfer
+    model: zuluprotocol/zeta/protos/zeta/events/v1.OneOffTransfer
   RecurringTransfer:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.RecurringTransfer
+    model: zuluprotocol/zeta/protos/zeta/events/v1.RecurringTransfer
   Statistics:
-    model: zuluprotocol/zeta/zeta/protos/zeta/api/v1.Statistics
+    model: zuluprotocol/zeta/protos/zeta/api/v1.Statistics
   AccountType:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.AccountType
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.AccountType
   AccountFilter:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AccountFilter
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AccountFilter
   AggregatedBalance:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedBalance
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedBalance
   LedgerEntryField:
-    model: zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.LedgerEntryField
+    model: zuluprotocol/zeta/datanode/gateway/graphql/marshallers.LedgerEntryField
   LedgerEntryFilter:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.LedgerEntryFilter
+    model: zuluprotocol/zeta/protos/data-node/api/v2.LedgerEntryFilter
   AggregatedLedgerEntry:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedLedgerEntry
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedLedgerEntry
   AggregatedLedgerEntriesEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedLedgerEntriesEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedLedgerEntriesEdge
   AggregatedLedgerEntriesConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedLedgerEntriesConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedLedgerEntriesConnection
   Timestamp:
-    model: zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.Timestamp
+    model: zuluprotocol/zeta/datanode/gateway/graphql/marshallers.Timestamp
   NetworkLimits:
-    model: zuluprotocol/zeta/zeta/protos/zeta.NetworkLimits
+    model: zuluprotocol/zeta/protos/zeta.NetworkLimits
   RankingScore:
-    model: zuluprotocol/zeta/zeta/protos/zeta.RankingScore
+    model: zuluprotocol/zeta/protos/zeta.RankingScore
   RewardScore:
-    model: zuluprotocol/zeta/zeta/protos/zeta.RewardScore
+    model: zuluprotocol/zeta/protos/zeta.RewardScore
   UpdateMarketConfiguration:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateMarketConfiguration
+    model: zuluprotocol/zeta/protos/zeta.UpdateMarketConfiguration
   UpdateMarketSimpleRiskModel:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateMarketConfiguration_Simple
+    model: zuluprotocol/zeta/protos/zeta.UpdateMarketConfiguration_Simple
   UpdateMarketLogNormalRiskModel:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateMarketConfiguration_LogNormal
+    model: zuluprotocol/zeta/protos/zeta.UpdateMarketConfiguration_LogNormal
   UpdateFutureProduct:
-    model: zuluprotocol/zeta/zeta/protos/zeta.UpdateFutureProduct
+    model: zuluprotocol/zeta/protos/zeta.UpdateFutureProduct
   TradeConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.TradeConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.TradeConnection
   TradeEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.TradeEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.TradeEdge
   PageInfo:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PageInfo
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PageInfo
   MarketConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarketConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarketConnection
   MarketEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarketEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarketEdge
   PositionConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PositionConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PositionConnection
   PositionEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PositionEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PositionEdge
   PartyConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PartyConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PartyConnection
   PartyEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PartyEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PartyEdge
   Pagination:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.Pagination
+    model: zuluprotocol/zeta/protos/data-node/api/v2.Pagination
   OrderEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OrderEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OrderEdge
   OrderConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OrderConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OrderConnection
   MarginEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarginEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarginEdge
   MarginConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarginConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarginConnection
   MarketDataEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarketDataEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarketDataEdge
   MarketDataConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.MarketDataConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.MarketDataConnection
   RewardEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.RewardEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.RewardEdge
   RewardsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.RewardsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.RewardsConnection
   CandleEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.CandleEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.CandleEdge
   CandleDataConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.CandleDataConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.CandleDataConnection
   DepositEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.DepositEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.DepositEdge
   DepositsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.DepositsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.DepositsConnection
   WithdrawalEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.WithdrawalEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.WithdrawalEdge
   WithdrawalsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.WithdrawalsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.WithdrawalsConnection
   AssetEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AssetEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AssetEdge
   AssetsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AssetsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AssetsConnection
   OracleSpecEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OracleSpecEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OracleSpecEdge
   OracleSpecsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OracleSpecsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OracleSpecsConnection
   OracleDataEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OracleDataEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OracleDataEdge
   OracleDataConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OracleDataConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OracleDataConnection
   LiquidityProvisionsEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.LiquidityProvisionsEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.LiquidityProvisionsEdge
   LiquidityProvisionsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.LiquidityProvisionsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.LiquidityProvisionsConnection
   TransferEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.TransferEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.TransferEdge
   TransferConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.TransferConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.TransferConnection
   ProposalEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.GovernanceDataEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.GovernanceDataEdge
   ProposalsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.GovernanceDataConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.GovernanceDataConnection
   DelegationEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.DelegationEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.DelegationEdge
   DelegationsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.DelegationsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.DelegationsConnection
   NodeEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NodeEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NodeEdge
   NodesConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NodesConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NodesConnection
   NetworkParameterEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NetworkParameterEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NetworkParameterEdge
   NetworkParametersConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NetworkParameterConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NetworkParameterConnection
   NodeSignatureEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NodeSignatureEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NodeSignatureEdge
   NodeSignaturesConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.NodeSignaturesConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.NodeSignaturesConnection
   KeyRotationEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.KeyRotationEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.KeyRotationEdge
   KeyRotationConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.KeyRotationConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.KeyRotationConnection
   StakeLinkingEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.StakeLinkingEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.StakeLinkingEdge
   StakesConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.StakesConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.StakesConnection
   AccountEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AccountEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AccountEdge
   AccountsConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AccountsConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AccountsConnection
   DateRange:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.DateRange
+    model: zuluprotocol/zeta/protos/data-node/api/v2.DateRange
   AggregatedBalanceEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedBalanceEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedBalanceEdge
   AggregatedBalanceConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.AggregatedBalanceConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.AggregatedBalanceConnection
   TransactionResult:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.TransactionResult
+    model: zuluprotocol/zeta/protos/zeta/events/v1.TransactionResult
   HistorySegment:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.HistorySegment
+    model: zuluprotocol/zeta/protos/data-node/api/v2.HistorySegment
   ProtocolUpgradeProposalConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.ProtocolUpgradeProposalConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.ProtocolUpgradeProposalConnection
   ProtocolUpgradeProposalEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.ProtocolUpgradeProposalEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.ProtocolUpgradeProposalEdge
   ProtocolUpgradeProposal:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.ProtocolUpgradeEvent
+    model: zuluprotocol/zeta/protos/zeta/events/v1.ProtocolUpgradeEvent
   ProtocolUpgradeProposalStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.ProtocolUpgradeProposalStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.ProtocolUpgradeProposalStatus
   OrderFilter:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.OrderFilter
+    model: zuluprotocol/zeta/protos/data-node/api/v2.OrderFilter
   CoreSnapshotConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.CoreSnapshotConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.CoreSnapshotConnection
   CoreSnapshotEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.CoreSnapshotEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.CoreSnapshotEdge
   CoreSnapshotData:
-    model: zuluprotocol/zeta/zeta/protos/zeta/events/v1.CoreSnapshotData
+    model: zuluprotocol/zeta/protos/zeta/events/v1.CoreSnapshotData
   RewardSummaryFilter:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.RewardSummaryFilter
+    model: zuluprotocol/zeta/protos/data-node/api/v2.RewardSummaryFilter
   EpochRewardSummaryConnection:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.EpochRewardSummaryConnection
+    model: zuluprotocol/zeta/protos/data-node/api/v2.EpochRewardSummaryConnection
   EpochRewardSummaryEdge:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.EpochRewardSummaryEdge
+    model: zuluprotocol/zeta/protos/data-node/api/v2.EpochRewardSummaryEdge
   EpochRewardSummary:
-    model: zuluprotocol/zeta/zeta/protos/zeta.EpochRewardSummary
+    model: zuluprotocol/zeta/protos/zeta.EpochRewardSummary
   PositionsFilter:
-    model: zuluprotocol/zeta/zeta/protos/data-node/api/v2.PositionsFilter
+    model: zuluprotocol/zeta/protos/data-node/api/v2.PositionsFilter
   PositionStatus:
     model:
-      - zuluprotocol/zeta/zeta/datanode/gateway/graphql/marshallers.PositionStatus
+      - zuluprotocol/zeta/datanode/gateway/graphql/marshallers.PositionStatus

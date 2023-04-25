@@ -22,11 +22,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"

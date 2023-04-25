@@ -15,7 +15,7 @@ package entities
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type NetworkLimits struct {

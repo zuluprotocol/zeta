@@ -16,9 +16,9 @@ import (
 	"context"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
-	snappb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
+	snappb "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/golang/protobuf/proto"
 )
 

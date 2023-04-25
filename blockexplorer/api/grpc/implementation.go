@@ -16,12 +16,12 @@ import (
 	"context"
 	"errors"
 
-	"zuluprotocol/zeta/zeta/blockexplorer/entities"
-	"zuluprotocol/zeta/zeta/blockexplorer/store"
-	"zuluprotocol/zeta/zeta/logging"
-	pb "zuluprotocol/zeta/zeta/protos/blockexplorer"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
-	"zuluprotocol/zeta/zeta/version"
+	"zuluprotocol/zeta/blockexplorer/entities"
+	"zuluprotocol/zeta/blockexplorer/store"
+	"zuluprotocol/zeta/logging"
+	pb "zuluprotocol/zeta/protos/blockexplorer"
+	types "zuluprotocol/zeta/protos/zeta"
+	"zuluprotocol/zeta/version"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

@@ -67,7 +67,7 @@ func GetNetwork(store Store, name string) (*Network, error) {
 	return n, nil
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks zuluprotocol/zeta/zeta/wallet/network Store
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/store_mock.go -package mocks zuluprotocol/zeta/wallet/network Store
 type Store interface {
 	NetworkExists(string) (bool, error)
 	GetNetwork(string) (*Network, error)

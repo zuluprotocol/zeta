@@ -18,9 +18,9 @@ import (
 	"errors"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/txn"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/abci/types"
 )

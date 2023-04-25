@@ -15,7 +15,7 @@ package execution
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 const (

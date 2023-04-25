@@ -3,15 +3,15 @@ package v1
 import (
 	"context"
 
-	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	api "zuluprotocol/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
+	"zuluprotocol/zeta/wallet/wallet"
 )
 
 // Generates mocks
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/service/v1 WalletHandler,Auth,NodeForward,RSAStore,SpamHandler
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/wallet/service/v1 WalletHandler,Auth,NodeForward,RSAStore,SpamHandler
 
 //nolint:interfacebloat
 type WalletHandler interface {

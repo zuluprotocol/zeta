@@ -22,8 +22,8 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcommon "github.com/ethereum/go-ethereum/common"
@@ -45,7 +45,7 @@ var ContractHashes = map[string]string{
 
 // ETHClient ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/zeta/core/client/eth ETHClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/core/client/eth ETHClient
 type ETHClient interface { //revive:disable:exported
 	bind.ContractBackend
 	ChainID(context.Context) (*big.Int, error)

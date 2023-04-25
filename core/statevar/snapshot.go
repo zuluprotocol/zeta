@@ -18,12 +18,12 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/logging"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/logging"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 var (

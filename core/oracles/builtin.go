@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

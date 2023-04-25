@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        (unknown)
-// source: zeta/zeta.proto
+// source: zeta.proto
 
 package zeta
 

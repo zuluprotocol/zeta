@@ -15,9 +15,9 @@ package nullchain
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 type Collateral interface {

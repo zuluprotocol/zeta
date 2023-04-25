@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 type DataSourceSpecConditions []*DataSourceSpecCondition

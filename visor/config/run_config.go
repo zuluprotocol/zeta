@@ -15,7 +15,7 @@ package config
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/paths"
 )
 
 /*

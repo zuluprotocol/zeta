@@ -17,10 +17,10 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/core/events"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/zetatime TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/zetatime TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 	NotifyOnTick(...func(context.Context, time.Time))

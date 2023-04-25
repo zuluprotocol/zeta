@@ -19,10 +19,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func TestSubscriberSequenceNumber(t *testing.T) {

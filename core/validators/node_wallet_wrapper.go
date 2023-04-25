@@ -13,7 +13,7 @@
 package validators
 
 import (
-	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/nodewallets"
 )
 
 type NodeWallets interface {

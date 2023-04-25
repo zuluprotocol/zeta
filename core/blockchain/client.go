@@ -18,9 +18,9 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/libs/proto"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/tendermint/tendermint/libs/bytes"
 	tmctypes "github.com/tendermint/tendermint/rpc/core/types"

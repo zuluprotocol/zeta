@@ -17,12 +17,12 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	vgtm "zuluprotocol/zeta/zeta/core/tendermint"
-	"zuluprotocol/zeta/zeta/core/validators"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/nodewallets"
+	vgtm "zuluprotocol/zeta/core/tendermint"
+	"zuluprotocol/zeta/core/validators"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	tmjson "github.com/tendermint/tendermint/libs/json"

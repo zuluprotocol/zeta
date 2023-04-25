@@ -17,11 +17,11 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

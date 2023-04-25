@@ -16,8 +16,8 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
 )
 
 func MarketOpeningAuctionPeriodEnds(execEngine Execution, timeStub *stubs.TimeStub, markets []types.Market, marketID string) error {

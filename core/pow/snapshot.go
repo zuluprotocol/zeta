@@ -17,8 +17,8 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/golang/protobuf/proto"
 )
 

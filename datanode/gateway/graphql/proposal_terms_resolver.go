@@ -17,8 +17,8 @@ import (
 	"errors"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/ptr"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 var ErrUnsupportedProposalTermsChanges = errors.New("unsupported proposal terms changes")

@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/core/broker/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

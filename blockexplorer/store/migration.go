@@ -16,7 +16,7 @@ import (
 	"embed"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 	"github.com/jackc/pgx/v4/stdlib"
 	"github.com/pkg/errors"
 	"github.com/pressly/goose/v3"

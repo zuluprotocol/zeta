@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/zetatime"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 func handleCandleConnectionRequest(ctx context.Context, client TradingDataServiceClientV2, market *zeta.Market, sinceRaw string, toRaw *string,

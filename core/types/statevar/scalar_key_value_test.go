@@ -15,9 +15,9 @@ package statevar_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 	"github.com/stretchr/testify/require"
 )
 

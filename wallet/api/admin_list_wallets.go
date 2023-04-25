@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/libs/jsonrpc"
 )
 
 type AdminListWalletsResult struct {

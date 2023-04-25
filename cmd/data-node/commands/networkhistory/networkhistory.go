@@ -4,19 +4,19 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/datanode/admin"
+	"zuluprotocol/zeta/datanode/admin"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	"google.golang.org/grpc"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/datanode/config"
 )
 
 type Cmd struct {

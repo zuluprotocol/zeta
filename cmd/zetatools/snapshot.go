@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/zetatools/snapshotdb"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/zetatools/snapshotdb"
 )
 
 type snapshotCmd struct {

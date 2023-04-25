@@ -15,13 +15,13 @@ package core_test
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/execution"
-	"zuluprotocol/zeta/zeta/core/idgeneration"
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/execution"
+	"zuluprotocol/zeta/core/idgeneration"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
 )
 
 // embeds the execution engine. Just forwards the calls and creates the TxErr events

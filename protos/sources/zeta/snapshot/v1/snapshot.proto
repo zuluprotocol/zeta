@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 package zeta.snapshot.v1;
-option go_package = "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1";
+option go_package = "zuluprotocol/zeta/protos/zeta/snapshot/v1";
 
-import "zeta/zeta.proto";
+import "zeta.proto";
 import "zeta/markets.proto";
 import "zeta/assets.proto";
 import "zeta/chain_events.proto";

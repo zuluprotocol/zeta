@@ -13,9 +13,9 @@
 package steps
 
 import (
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/libs/num"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/libs/num"
+	proto "zuluprotocol/zeta/protos/zeta"
 
 	"github.com/cucumber/godog"
 )

@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	vghttp "zuluprotocol/zeta/zeta/libs/http"
+	"zuluprotocol/zeta/libs/config/encoding"
+	vghttp "zuluprotocol/zeta/libs/http"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/wallet/crypto"
+	"zuluprotocol/zeta/wallet/crypto"
 )
 
 type HDKeyPair struct {

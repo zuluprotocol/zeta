@@ -12,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/broker"
+	"zuluprotocol/zeta/core/broker"
 
-	"zuluprotocol/zeta/zeta/datanode/utils"
+	"zuluprotocol/zeta/datanode/utils"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	"zuluprotocol/zeta/zeta/logging"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/metrics"
+	"zuluprotocol/zeta/logging"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/golang/protobuf/proto"
 )

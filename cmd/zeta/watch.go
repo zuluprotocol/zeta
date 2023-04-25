@@ -18,7 +18,7 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/blockchain/abci"
 	"github.com/jessevdk/go-flags"
 	tmctypes "github.com/tendermint/tendermint/rpc/core/types"
 )

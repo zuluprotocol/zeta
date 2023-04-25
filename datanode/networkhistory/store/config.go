@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/base64"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/ipfs/kubo/config"
 	"github.com/libp2p/go-libp2p-core/crypto"

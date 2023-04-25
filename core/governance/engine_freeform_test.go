@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/governance"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	"zuluprotocol/zeta/core/governance"
+	vgrand "zuluprotocol/zeta/libs/rand"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

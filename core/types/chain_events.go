@@ -18,10 +18,10 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 type WithdrawExt struct {

@@ -16,7 +16,7 @@ import (
 	"context"
 	"errors"
 
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type myTradableInstrumentResolver ZetaResolverRoot

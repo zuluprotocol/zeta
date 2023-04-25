@@ -15,10 +15,10 @@ package matching_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 )
 

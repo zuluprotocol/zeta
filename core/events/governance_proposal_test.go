@@ -16,9 +16,9 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	proto "zuluprotocol/zeta/protos/zeta"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -17,11 +17,11 @@ import (
 	"path"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/core/blockchain/nullchain"
-	"zuluprotocol/zeta/zeta/core/blockchain/nullchain/mocks"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/core/blockchain/nullchain"
+	"zuluprotocol/zeta/core/blockchain/nullchain/mocks"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 )

@@ -18,12 +18,12 @@ import (
 	"context"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/liquidity"
-	"zuluprotocol/zeta/zeta/core/metrics"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/liquidity"
+	"zuluprotocol/zeta/core/metrics"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 func (m *Market) repricePeggedOrders(

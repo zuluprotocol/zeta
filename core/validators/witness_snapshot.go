@@ -18,10 +18,10 @@ import (
 	"sort"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 var (

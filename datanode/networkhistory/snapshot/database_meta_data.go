@@ -9,7 +9,7 @@ import (
 	"github.com/jackc/pgx/v4"
 	"github.com/pressly/goose/v3"
 
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgx/v4/pgxpool"
 )

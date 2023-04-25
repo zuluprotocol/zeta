@@ -18,7 +18,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/core/events"
 )
 
 type TimeUpdateEvent interface {

@@ -15,8 +15,8 @@ package steps
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
 
 	"github.com/cucumber/godog"
 )

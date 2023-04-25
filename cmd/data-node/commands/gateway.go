@@ -20,11 +20,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/datanode/gateway"
-	"zuluprotocol/zeta/zeta/datanode/gateway/server"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/datanode/gateway"
+	"zuluprotocol/zeta/datanode/gateway/server"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 	"golang.org/x/sync/errgroup"
 
 	"github.com/jessevdk/go-flags"

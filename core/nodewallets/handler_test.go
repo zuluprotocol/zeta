@@ -18,10 +18,10 @@ package nodewallets_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	vgtesting "zuluprotocol/zeta/zeta/libs/testing"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/nodewallets"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	vgtesting "zuluprotocol/zeta/libs/testing"
+	"zuluprotocol/zeta/paths"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -16,9 +16,9 @@ import (
 	"context"
 	"encoding/hex"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/types"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type Checkpoint struct {

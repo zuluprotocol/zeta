@@ -17,11 +17,11 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/protos/zeta"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 func (s *Store) Name() types.CheckpointName {

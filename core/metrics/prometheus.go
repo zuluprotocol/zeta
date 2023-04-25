@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/protos"
+	"zuluprotocol/zeta/protos"
 
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"

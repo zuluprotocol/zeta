@@ -16,12 +16,12 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/genesis"
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	vgtm "zuluprotocol/zeta/zeta/core/tendermint"
-	"zuluprotocol/zeta/zeta/core/validators"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/genesis"
+	"zuluprotocol/zeta/core/nodewallets"
+	vgtm "zuluprotocol/zeta/core/tendermint"
+	"zuluprotocol/zeta/core/validators"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 )

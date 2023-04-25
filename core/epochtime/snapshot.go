@@ -15,10 +15,10 @@ package epochtime
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/protos/zeta"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 func (s *Svc) serialise() error {

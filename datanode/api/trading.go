@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	"zuluprotocol/zeta/datanode/metrics"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 
 	"github.com/pkg/errors"
 )
@@ -26,7 +26,7 @@ const defaultRequestTimeout = time.Second * 5
 
 // CoreServiceClient ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/core_service_client_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api CoreServiceClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/core_service_client_mock.go -package mocks zuluprotocol/zeta/datanode/api CoreServiceClient
 type CoreServiceClient interface {
 	protoapi.CoreServiceClient
 }

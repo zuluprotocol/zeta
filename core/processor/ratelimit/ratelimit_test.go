@@ -18,7 +18,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"zuluprotocol/zeta/zeta/core/processor/ratelimit"
+	"zuluprotocol/zeta/core/processor/ratelimit"
 )
 
 // runN executes the given `fn` func, `n` times.

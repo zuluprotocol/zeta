@@ -19,15 +19,15 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
 	zetactx "code.zetaprotocol.io/zeta/libs/context"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 )
 

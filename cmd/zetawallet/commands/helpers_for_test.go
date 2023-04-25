@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	vgrand "zuluprotocol/zeta/libs/rand"
 	"github.com/stretchr/testify/assert"
 )
 

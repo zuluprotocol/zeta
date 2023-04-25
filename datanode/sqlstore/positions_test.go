@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/shopspring/decimal"

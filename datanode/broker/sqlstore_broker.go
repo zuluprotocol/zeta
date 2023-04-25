@@ -20,10 +20,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/metrics"
+	"zuluprotocol/zeta/logging"
 )
 
 type SQLBrokerSubscriber interface {

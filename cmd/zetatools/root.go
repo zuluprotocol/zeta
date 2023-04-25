@@ -3,7 +3,7 @@ package tools
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/core/config"
 
 	"github.com/jessevdk/go-flags"
 )

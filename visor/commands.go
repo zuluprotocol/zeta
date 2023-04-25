@@ -3,7 +3,7 @@ package visor
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/visor/utils"
+	"zuluprotocol/zeta/visor/utils"
 )
 
 const (

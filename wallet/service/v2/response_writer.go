@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/libs/jsonrpc"
 )
 
 // responseWriter is a wrapper used to easily track response information written

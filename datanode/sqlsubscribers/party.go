@@ -17,9 +17,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
 )
 
 type PartyEvent interface {

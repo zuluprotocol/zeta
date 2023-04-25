@@ -17,9 +17,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type TransferEvent interface {

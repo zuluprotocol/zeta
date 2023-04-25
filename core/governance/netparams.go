@@ -15,8 +15,8 @@ package governance
 import (
 	"errors"
 
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
 )
 
 var (

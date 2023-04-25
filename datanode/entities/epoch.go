@@ -15,8 +15,8 @@ package entities
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type Epoch struct {

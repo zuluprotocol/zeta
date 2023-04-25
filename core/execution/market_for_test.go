@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 // UpdateRiskFactorsForTest is a hack for setting the risk factors for tests directly rather than through the consensus engine.

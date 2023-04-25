@@ -15,7 +15,7 @@ package execution
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 )
 
 // lp holds LiquidityProvider stake and avg values.

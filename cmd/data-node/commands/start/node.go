@@ -21,24 +21,24 @@ import (
 	"os/signal"
 	"syscall"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers"
+	"zuluprotocol/zeta/libs/subscribers"
 
-	"zuluprotocol/zeta/zeta/datanode/admin"
+	"zuluprotocol/zeta/datanode/admin"
 
 	embeddedpostgres "github.com/fergusstrange/embedded-postgres"
 	"golang.org/x/sync/errgroup"
 
-	"zuluprotocol/zeta/zeta/datanode/api"
-	"zuluprotocol/zeta/zeta/datanode/broker"
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/datanode/gateway/server"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/libs/pprof"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/api"
+	"zuluprotocol/zeta/datanode/broker"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/datanode/gateway/server"
+	"zuluprotocol/zeta/datanode/metrics"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/libs/pprof"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 // NodeCommand use to implement 'node' command.

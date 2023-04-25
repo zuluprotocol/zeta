@@ -17,11 +17,11 @@ import (
 	"errors"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/liquidity/supplied"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/liquidity/supplied"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 var ErrPartyHaveNoLiquidityProvision = errors.New("party have no liquidity provision")

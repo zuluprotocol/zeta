@@ -19,17 +19,17 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/candlesv2"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/datanode/sqlstore/helpers"
 	"github.com/stretchr/testify/require"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 )
 
 const (

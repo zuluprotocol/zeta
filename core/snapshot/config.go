@@ -16,10 +16,10 @@ import (
 	"errors"
 	"os"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 const (

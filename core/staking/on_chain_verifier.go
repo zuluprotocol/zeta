@@ -19,8 +19,8 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcmn "github.com/ethereum/go-ethereum/common"

@@ -23,7 +23,7 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 )
 
 type baseValue struct{}

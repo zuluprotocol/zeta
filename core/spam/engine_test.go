@@ -19,14 +19,14 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/spam"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/spam"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/stretchr/testify/require"
 )
 

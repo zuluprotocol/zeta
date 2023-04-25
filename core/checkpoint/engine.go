@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 	zetactx "code.zetaprotocol.io/zeta/libs/context"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 var (
@@ -54,7 +54,7 @@ var (
 // Hash returns, obviously, the state hash
 // @TODO adding func to get the actual data
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_mock.go -package mocks zuluprotocol/zeta/zeta/core/checkpoint State
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_mock.go -package mocks zuluprotocol/zeta/core/checkpoint State
 type State interface {
 	Name() types.CheckpointName
 	Checkpoint() ([]byte, error)
@@ -63,7 +63,7 @@ type State interface {
 
 // AssetsState is a bit of a hacky way to get the assets that were enabled when checkpoint was reloaded, so we can enable them in the collateral engine
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_state_mock.go -package mocks zuluprotocol/zeta/zeta/core/checkpoint AssetsState
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_state_mock.go -package mocks zuluprotocol/zeta/core/checkpoint AssetsState
 type AssetsState interface {
 	State
 	GetEnabledAssets() []*types.Asset
@@ -71,7 +71,7 @@ type AssetsState interface {
 
 // CollateralState is part 2 of the hacky way to enable the assets required to load the collateral state
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/collateral_state_mock.go -package mocks zuluprotocol/zeta/zeta/core/checkpoint CollateralState
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/collateral_state_mock.go -package mocks zuluprotocol/zeta/core/checkpoint CollateralState
 type CollateralState interface {
 	State
 	EnableAsset(ctx context.Context, asset types.Asset) error

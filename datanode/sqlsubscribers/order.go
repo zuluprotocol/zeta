@@ -16,10 +16,10 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/protos/zeta"
 
 	"github.com/pkg/errors"
 )

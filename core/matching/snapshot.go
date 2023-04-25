@@ -16,10 +16,10 @@ import (
 	"context"
 	"log"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
 )
 
 func (b *OrderBook) StopSnapshots() {

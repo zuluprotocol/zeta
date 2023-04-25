@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sync"
 
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
 )
 
 var (

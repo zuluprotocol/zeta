@@ -16,12 +16,12 @@ import (
 	"context"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
-	snapshotpb "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
+	snapshotpb "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 var (

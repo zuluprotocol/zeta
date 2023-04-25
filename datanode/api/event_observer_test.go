@@ -10,8 +10,8 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 func Test_recvEventRequest(t *testing.T) {

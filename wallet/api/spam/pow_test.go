@@ -3,10 +3,10 @@ package spam_test
 import (
 	"testing"
 
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	walletapi "zuluprotocol/zeta/zeta/wallet/api"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
-	"zuluprotocol/zeta/zeta/wallet/api/spam"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	walletapi "zuluprotocol/zeta/wallet/api"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
+	"zuluprotocol/zeta/wallet/api/spam"
 	"github.com/stretchr/testify/require"
 )
 

@@ -15,9 +15,9 @@ package events
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	ptypes "zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/types"
+	ptypes "zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type Trade struct {

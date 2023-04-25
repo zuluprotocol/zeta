@@ -3,8 +3,8 @@ package api
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	walletnode "zuluprotocol/zeta/zeta/wallet/api/node"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	walletnode "zuluprotocol/zeta/wallet/api/node"
 )
 
 type ClientGetChainIDResult struct {

@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/logging"
 )
 
 type eventSender interface {

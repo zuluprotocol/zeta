@@ -18,7 +18,7 @@ import (
 	"strconv"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/entities"
 	"github.com/georgysavva/scany/dbscan"
 )
 

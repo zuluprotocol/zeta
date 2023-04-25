@@ -15,7 +15,7 @@ package idgeneration
 import (
 	"encoding/hex"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/crypto"
 )
 
 // IDGenerator no mutex required, markets work deterministically, and sequentially.

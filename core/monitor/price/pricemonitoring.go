@@ -20,11 +20,11 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/risk"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/risk"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 var (
@@ -44,7 +44,7 @@ var (
 	tolerance, _   = num.DecimalFromString("1e-6")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/auction_state_mock.go -package mocks zuluprotocol/zeta/zeta/core/monitor/price AuctionState
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/auction_state_mock.go -package mocks zuluprotocol/zeta/core/monitor/price AuctionState
 //nolint:interfacebloat
 type AuctionState interface {
 	// What is the current trading mode of the market, is it in auction
@@ -106,12 +106,12 @@ type currentPrice struct {
 
 // RangeProvider provides the minimum and maximum future price corresponding to the current price level, horizon expressed as year fraction (e.g. 0.5 for 6 months) and probability level (e.g. 0.95 for 95%).
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/price_range_provider_mock.go -package mocks zuluprotocol/zeta/zeta/core/monitor/price RangeProvider
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/price_range_provider_mock.go -package mocks zuluprotocol/zeta/core/monitor/price RangeProvider
 type RangeProvider interface {
 	PriceRange(price, yearFraction, probability num.Decimal) (num.Decimal, num.Decimal)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_var_mock.go -package mocks zuluprotocol/zeta/zeta/core/monitor/price StateVarEngine
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/state_var_mock.go -package mocks zuluprotocol/zeta/core/monitor/price StateVarEngine
 type StateVarEngine interface {
 	RegisterStateVariable(asset, market, name string, converter statevar.Converter, startCalculation func(string, statevar.FinaliseCalculation), trigger []statevar.EventType, result func(context.Context, statevar.StateVariableResult) error) error
 }

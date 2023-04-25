@@ -17,10 +17,10 @@ import (
 	"errors"
 	"runtime/debug"
 
-	"zuluprotocol/zeta/zeta/cmd/zeta/node"
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/cmd/zeta/node"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/jessevdk/go-flags"
 	"github.com/pbnjay/memory"

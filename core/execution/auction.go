@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 func (m *Market) checkAuction(ctx context.Context, now time.Time) {

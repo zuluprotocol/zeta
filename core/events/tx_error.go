@@ -16,8 +16,8 @@ import (
 	"context"
 	"fmt"
 
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type TxErr struct {

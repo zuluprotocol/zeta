@@ -1,7 +1,7 @@
 package zeta
 
 import (
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 func (o *DataSourceSpecConfiguration) ToOracleSpec(d *DataSourceSpec) *OracleSpec {

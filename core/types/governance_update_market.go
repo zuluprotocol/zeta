@@ -15,7 +15,7 @@ package types
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

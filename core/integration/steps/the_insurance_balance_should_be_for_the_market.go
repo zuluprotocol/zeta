@@ -15,8 +15,8 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/stubs"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 func TheInsurancePoolBalanceShouldBeForTheMarket(

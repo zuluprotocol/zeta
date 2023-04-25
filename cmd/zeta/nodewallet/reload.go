@@ -17,12 +17,12 @@ import (
 	"fmt"
 	"time"
 
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/paths"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/paths"
 
-	"zuluprotocol/zeta/zeta/core/admin"
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/admin"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/jessevdk/go-flags"
 )

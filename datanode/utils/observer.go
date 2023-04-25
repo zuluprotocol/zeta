@@ -19,8 +19,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/contextutil"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/contextutil"
+	"zuluprotocol/zeta/logging"
 )
 
 type subscriber[T any] struct {

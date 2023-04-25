@@ -16,9 +16,9 @@ import (
 	"errors"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

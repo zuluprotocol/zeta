@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/ptr"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type Order struct {

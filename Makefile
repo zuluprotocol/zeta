@@ -80,7 +80,7 @@ spellcheck: ## Run markdown spellcheck container
 .PHONY: clean
 clean: SHELL:=/bin/bash
 clean: ## Remove previous build
-	rm cmd/zeta/zeta
+	rm cmd/zeta
 	rm -rf ./**/*-re
 
 .PHONY: proto

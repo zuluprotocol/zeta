@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"time"
 
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgfs "zuluprotocol/zeta/libs/fs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

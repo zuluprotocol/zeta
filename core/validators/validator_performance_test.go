@@ -17,9 +17,9 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/validators"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/validators"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 	"github.com/stretchr/testify/require"
 )
 

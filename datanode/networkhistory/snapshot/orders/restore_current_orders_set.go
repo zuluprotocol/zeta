@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore"
 )
 
 // RestoreCurrentOrdersSet updates the current order set. As order history is loaded from history segments, after order

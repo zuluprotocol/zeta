@@ -16,8 +16,8 @@ import (
 	"os"
 	"path/filepath"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/paths"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/paths"
 )
 
 func NewZetaPaths() (paths.Paths, func()) {

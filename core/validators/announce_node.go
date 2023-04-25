@@ -18,10 +18,10 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	signatures "zuluprotocol/zeta/zeta/libs/crypto/signature"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/nodewallets/eth/clef"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	signatures "zuluprotocol/zeta/libs/crypto/signature"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/ethereum/go-ethereum/crypto"
 )

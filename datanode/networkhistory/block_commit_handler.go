@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 	"github.com/cenkalti/backoff"
 )
 

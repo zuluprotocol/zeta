@@ -19,11 +19,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
-	storev1 "zuluprotocol/zeta/zeta/wallet/wallet/store/v1"
-	"zuluprotocol/zeta/zeta/wallet/wallets"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/wallet/wallet"
+	storev1 "zuluprotocol/zeta/wallet/wallet/store/v1"
+	"zuluprotocol/zeta/wallet/wallets"
 )
 
 type WalletLoader struct {

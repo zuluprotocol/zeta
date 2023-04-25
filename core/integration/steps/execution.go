@@ -15,7 +15,7 @@ package steps
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 // the interface for execution engine. The execution engine itself will be wrapped

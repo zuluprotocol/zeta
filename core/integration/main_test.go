@@ -19,10 +19,10 @@ import (
 	"regexp"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/integration/helpers"
-	"zuluprotocol/zeta/zeta/core/integration/steps"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/helpers"
+	"zuluprotocol/zeta/core/integration/steps"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 
 	"github.com/cucumber/godog"
 	"github.com/cucumber/godog/colors"

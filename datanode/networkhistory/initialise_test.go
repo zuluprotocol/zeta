@@ -5,14 +5,14 @@ import (
 	"errors"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/mocks"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory/mocks"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	"github.com/stretchr/testify/assert"
 )
 

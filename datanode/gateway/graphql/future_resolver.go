@@ -15,7 +15,7 @@ package gql
 import (
 	"context"
 
-	protoTypes "zuluprotocol/zeta/zeta/protos/zeta"
+	protoTypes "zuluprotocol/zeta/protos/zeta"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

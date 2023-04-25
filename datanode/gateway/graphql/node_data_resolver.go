@@ -15,8 +15,8 @@ package gql
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/ptr"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type nodeDataResolver ZetaResolverRoot

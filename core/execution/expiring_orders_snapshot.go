@@ -13,7 +13,7 @@
 package execution
 
 import (
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 
 	"github.com/google/btree"
 )

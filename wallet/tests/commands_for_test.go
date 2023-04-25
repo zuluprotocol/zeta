@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
+	cmd "zuluprotocol/zeta/cmd/zetawallet/commands"
 	"github.com/stretchr/testify/assert"
 )
 

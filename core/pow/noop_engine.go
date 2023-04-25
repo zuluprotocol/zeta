@@ -13,8 +13,8 @@
 package pow
 
 import (
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 )
 
 type NoopEngine struct {

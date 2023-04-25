@@ -15,10 +15,10 @@ package steps
 import (
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/delegation"
+	"zuluprotocol/zeta/core/delegation"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/libs/num"
 )
 
 func TheValidators(

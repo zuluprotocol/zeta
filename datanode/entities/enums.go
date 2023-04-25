@@ -15,10 +15,10 @@ package entities
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 	"github.com/jackc/pgtype"
 )
 

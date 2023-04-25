@@ -16,14 +16,14 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/broker"
+	"zuluprotocol/zeta/libs/broker"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/logging"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/logging"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/broker_mocks.go -package mocks zuluprotocol/zeta/zeta/libs/subscribers Broker
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/broker_mocks.go -package mocks zuluprotocol/zeta/libs/subscribers Broker
 type Broker interface {
 	Subscribe(s broker.Subscriber) int
 	Unsubscribe(id int)

@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"time"
 
-	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	"zuluprotocol/zeta/zeta/wallet/api/node/adapters"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
+	apipb "zuluprotocol/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/wallet/api/node/adapters"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
 	"github.com/cenkalti/backoff/v4"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/node_mock.go -package mocks zuluprotocol/zeta/zeta/wallet/api/node GRPCAdapter
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/node_mock.go -package mocks zuluprotocol/zeta/wallet/api/node GRPCAdapter
 
 type GRPCAdapter interface {
 	Host() string

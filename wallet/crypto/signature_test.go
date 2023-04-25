@@ -4,7 +4,7 @@ import (
 	"crypto"
 	"testing"
 
-	wcrypto "zuluprotocol/zeta/zeta/wallet/crypto"
+	wcrypto "zuluprotocol/zeta/wallet/crypto"
 	"github.com/oasisprotocol/curve25519-voi/primitives/ed25519"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

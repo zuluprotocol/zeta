@@ -15,8 +15,8 @@ import (
 	db "github.com/tendermint/tm-db"
 	"google.golang.org/protobuf/proto"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 // Data is a representation of the information we scrape from the avl tree.

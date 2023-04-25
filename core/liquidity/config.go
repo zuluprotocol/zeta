@@ -13,8 +13,8 @@
 package liquidity
 
 import (
-	cfgencoding "zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	cfgencoding "zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 // namedLogger is the identifier for package and should ideally match the package name

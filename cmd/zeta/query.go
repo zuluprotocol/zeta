@@ -15,7 +15,7 @@ package main
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/cmd/zeta/query"
+	"zuluprotocol/zeta/cmd/zeta/query"
 	"github.com/jessevdk/go-flags"
 )
 

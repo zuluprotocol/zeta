@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/types"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 )
 

@@ -18,9 +18,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type MarketDataEvent interface {

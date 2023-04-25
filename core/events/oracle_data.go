@@ -16,8 +16,8 @@ import (
 	"context"
 
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type OracleData struct {

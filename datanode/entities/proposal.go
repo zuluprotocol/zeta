@@ -19,10 +19,10 @@ import (
 
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/ptr"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type ProposalType v2.ListGovernanceDataRequest_Type

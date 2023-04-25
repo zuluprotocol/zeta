@@ -5,12 +5,12 @@ import (
 	"encoding/json"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/wallet/api"
-	"zuluprotocol/zeta/zeta/wallet/api/node"
-	"zuluprotocol/zeta/zeta/wallet/network"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/wallet/api"
+	"zuluprotocol/zeta/wallet/api/node"
+	"zuluprotocol/zeta/wallet/network"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

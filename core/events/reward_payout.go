@@ -15,10 +15,10 @@ package events
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type RewardPayout struct {

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type EpochRewardSummary struct {

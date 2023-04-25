@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
-	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/libs/crypto"
 	"github.com/ethereum/go-ethereum/accounts"
 	ethcommon "github.com/ethereum/go-ethereum/common"
 
@@ -32,7 +32,7 @@ const (
 	ClefAlgoType            = "clef"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/rpc_client_mock.go -package mocks zuluprotocol/zeta/zeta/core/nodewallets/eth/clef Client
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/rpc_client_mock.go -package mocks zuluprotocol/zeta/core/nodewallets/eth/clef Client
 type Client interface {
 	CallContext(ctx context.Context, result interface{}, method string, args ...interface{}) error
 	Close()

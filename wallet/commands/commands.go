@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/commands"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/commands"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
 )
 
 func CheckSubmitTransactionRequest(req *walletpb.SubmitTransactionRequest) commands.Errors {

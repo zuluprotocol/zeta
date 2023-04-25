@@ -15,8 +15,8 @@ package grpc
 import (
 	"net"
 
-	"zuluprotocol/zeta/zeta/logging"
-	pb "zuluprotocol/zeta/zeta/protos/blockexplorer"
+	"zuluprotocol/zeta/logging"
+	pb "zuluprotocol/zeta/protos/blockexplorer"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

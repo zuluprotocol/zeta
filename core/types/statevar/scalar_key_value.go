@@ -13,8 +13,8 @@
 package statevar
 
 import (
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 // DecimalScalar is a scalar floating point value.

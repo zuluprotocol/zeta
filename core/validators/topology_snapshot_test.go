@@ -17,18 +17,18 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/validators"
+	"zuluprotocol/zeta/core/validators"
 
 	"github.com/golang/mock/gomock"
 	abcitypes "github.com/tendermint/tendermint/abci/types"
 	types1 "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 	zetactx "code.zetaprotocol.io/zeta/libs/context"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

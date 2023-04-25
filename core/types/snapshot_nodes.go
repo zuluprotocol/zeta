@@ -18,12 +18,12 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	checkpointpb "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
+	checkpointpb "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 type Snapshot struct {

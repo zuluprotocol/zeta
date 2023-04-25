@@ -16,7 +16,7 @@ import (
 	"context"
 	"time"
 
-	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	api "zuluprotocol/zeta/protos/zeta/api/v1"
 
 	"google.golang.org/grpc"
 )

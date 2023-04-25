@@ -6,10 +6,10 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/golang/protobuf/proto"
 	"github.com/mitchellh/mapstructure"
 )

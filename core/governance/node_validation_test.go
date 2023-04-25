@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/governance"
-	"zuluprotocol/zeta/zeta/core/governance/mocks"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/governance"
+	"zuluprotocol/zeta/core/governance/mocks"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

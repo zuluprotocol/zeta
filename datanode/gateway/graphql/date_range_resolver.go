@@ -3,7 +3,7 @@ package gql
 import (
 	"context"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type dateRangeResolver ZetaResolverRoot

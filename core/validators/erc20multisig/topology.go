@@ -19,14 +19,14 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/validators"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/validators"
+	"zuluprotocol/zeta/logging"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/validators/erc20multisig Witness,MultiSigOnChainVerifier,EthConfirmations,EthereumEventSource
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/validators/erc20multisig Witness,MultiSigOnChainVerifier,EthConfirmations,EthereumEventSource
 
 const (
 	// 3 weeks, duration of the whole network at first?

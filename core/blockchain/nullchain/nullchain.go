@@ -23,11 +23,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/logging"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/p2p"
@@ -45,7 +45,7 @@ var (
 	ErrGenesisFileRequired = errors.New("--blockchain.nullchain.genesis-file is required")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/blockchain/nullchain TimeService,ApplicationService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/blockchain/nullchain TimeService,ApplicationService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

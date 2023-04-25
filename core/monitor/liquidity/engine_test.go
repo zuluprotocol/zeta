@@ -16,10 +16,10 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/monitor/liquidity"
-	"zuluprotocol/zeta/zeta/core/monitor/liquidity/mocks"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/monitor/liquidity"
+	"zuluprotocol/zeta/core/monitor/liquidity/mocks"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/golang/mock/gomock"
 )
 

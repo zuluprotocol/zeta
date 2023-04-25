@@ -16,8 +16,8 @@ import (
 	"context"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/ptr"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type epochTimestampsResolver ZetaResolverRoot

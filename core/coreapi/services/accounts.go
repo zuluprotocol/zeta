@@ -16,10 +16,10 @@ import (
 	"context"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/subscribers"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/subscribers"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	coreapipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	coreapipb "zuluprotocol/zeta/protos/zeta/api/v1"
 )
 
 type accountE interface {

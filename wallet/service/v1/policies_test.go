@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
-	"zuluprotocol/zeta/zeta/wallet/service/v1"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/wallet/service/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -20,11 +20,11 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth/clef"
-	"zuluprotocol/zeta/zeta/core/txn"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/nodewallets/eth/clef"
+	"zuluprotocol/zeta/core/txn"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"

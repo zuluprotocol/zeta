@@ -16,7 +16,7 @@ import (
 	"context"
 	"errors"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 var ErrUnsupportedProduct = errors.New("unsupported product")

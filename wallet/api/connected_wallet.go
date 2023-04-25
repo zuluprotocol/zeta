@@ -3,7 +3,7 @@ package api
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/wallet/wallet"
 )
 
 // ConnectedWallet is the projection of the wallet through the permissions

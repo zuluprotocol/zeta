@@ -17,12 +17,12 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/core/nodewallets/zeta"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/logging"
-	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/core/nodewallets/zeta"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/logging"
+	api "zuluprotocol/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"
@@ -33,14 +33,14 @@ const (
 	commanderNamedLogger = "commander"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/chain_mock.go -package mocks zuluprotocol/zeta/zeta/core/nodewallets Chain
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/chain_mock.go -package mocks zuluprotocol/zeta/core/nodewallets Chain
 type Chain interface {
 	SubmitTransactionSync(ctx context.Context, tx *commandspb.Transaction) (*tmctypes.ResultBroadcastTx, error)
 	SubmitTransactionAsync(ctx context.Context, tx *commandspb.Transaction) (*tmctypes.ResultBroadcastTx, error)
 	GetChainID(ctx context.Context) (string, error)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/blockchain_stats_mock.go -package mocks zuluprotocol/zeta/zeta/core/nodewallets BlockchainStats
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/blockchain_stats_mock.go -package mocks zuluprotocol/zeta/core/nodewallets BlockchainStats
 type BlockchainStats interface {
 	Height() uint64
 }

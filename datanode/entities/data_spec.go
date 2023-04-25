@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/types"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )

@@ -17,11 +17,11 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"zuluprotocol/zeta/zeta/datanode/gateway"
-	gql "zuluprotocol/zeta/zeta/datanode/gateway/graphql"
-	"zuluprotocol/zeta/zeta/datanode/gateway/rest"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/gateway"
+	gql "zuluprotocol/zeta/datanode/gateway/graphql"
+	"zuluprotocol/zeta/datanode/gateway/rest"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 type Server struct {

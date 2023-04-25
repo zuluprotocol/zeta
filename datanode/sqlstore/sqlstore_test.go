@@ -26,10 +26,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore/helpers"
-	"zuluprotocol/zeta/zeta/datanode/utils/databasetest"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore/helpers"
+	"zuluprotocol/zeta/datanode/utils/databasetest"
 )
 
 var (

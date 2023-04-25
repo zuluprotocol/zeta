@@ -3,7 +3,7 @@ package v1
 import (
 	"errors"
 
-	"zuluprotocol/zeta/zeta/commands"
+	"zuluprotocol/zeta/commands"
 )
 
 var (

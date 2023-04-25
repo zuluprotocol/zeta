@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 
 	"github.com/cosmos/iavl"
 	"github.com/syndtr/goleveldb/leveldb/opt"

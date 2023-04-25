@@ -3,7 +3,7 @@ package test
 import (
 	"path/filepath"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgrand "zuluprotocol/zeta/libs/rand"
 )
 
 func RandomPath() string {

@@ -16,8 +16,8 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/events"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/stretchr/testify/assert"
 )

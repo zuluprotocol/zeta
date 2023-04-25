@@ -15,11 +15,11 @@ package config
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/blockexplorer/api"
-	"zuluprotocol/zeta/zeta/blockexplorer/store"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/blockexplorer/api"
+	"zuluprotocol/zeta/blockexplorer/store"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 type ZetaHomeFlag struct {

@@ -3,7 +3,7 @@ package network_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/wallet/network"
+	"zuluprotocol/zeta/wallet/network"
 	"github.com/stretchr/testify/require"
 )
 

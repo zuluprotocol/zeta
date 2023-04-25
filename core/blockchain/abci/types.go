@@ -15,7 +15,7 @@ package abci
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/txn"
+	"zuluprotocol/zeta/core/txn"
 	"github.com/tendermint/tendermint/abci/types"
 )
 

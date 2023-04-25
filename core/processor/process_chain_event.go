@@ -17,10 +17,10 @@ import (
 	"errors"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	vgproto "zuluprotocol/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 var (

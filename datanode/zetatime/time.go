@@ -15,7 +15,7 @@ package zetatime
 import (
 	"time"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 var now func() time.Time

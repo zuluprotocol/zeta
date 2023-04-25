@@ -15,26 +15,26 @@ package protocol
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers"
+	"zuluprotocol/zeta/libs/subscribers"
 
-	"zuluprotocol/zeta/zeta/core/spam"
+	"zuluprotocol/zeta/core/spam"
 
 	"github.com/blang/semver"
 
-	"zuluprotocol/zeta/zeta/core/api"
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/core/broker"
-	ethclient "zuluprotocol/zeta/zeta/core/client/eth"
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/core/evtforward"
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	"zuluprotocol/zeta/zeta/core/processor"
-	"zuluprotocol/zeta/zeta/core/protocolupgrade"
-	"zuluprotocol/zeta/zeta/core/stats"
-	"zuluprotocol/zeta/zeta/core/zetatime"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/api"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/core/broker"
+	ethclient "zuluprotocol/zeta/core/client/eth"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/core/evtforward"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/processor"
+	"zuluprotocol/zeta/core/protocolupgrade"
+	"zuluprotocol/zeta/core/stats"
+	"zuluprotocol/zeta/core/zetatime"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 var Version = semver.MustParse("0.1.0")

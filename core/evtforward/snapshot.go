@@ -15,10 +15,10 @@ package evtforward
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 	"github.com/emirpasic/gods/sets/treeset"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 var (

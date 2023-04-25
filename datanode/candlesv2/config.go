@@ -15,8 +15,8 @@ package candlesv2
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 // namedLogger is the identifier for package and should ideally match the package name

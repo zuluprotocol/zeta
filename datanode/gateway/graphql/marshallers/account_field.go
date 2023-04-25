@@ -15,7 +15,7 @@ package marshallers
 import (
 	"fmt"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	"github.com/99designs/gqlgen/graphql"
 )
 

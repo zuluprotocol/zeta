@@ -18,8 +18,8 @@ import (
 
 	"github.com/rs/cors"
 
-	libhttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
+	libhttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
 )
 
 type Gateway struct {

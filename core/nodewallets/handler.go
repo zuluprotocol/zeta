@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
-	"zuluprotocol/zeta/zeta/core/nodewallets/zeta"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/core/nodewallets/zeta"
+	"zuluprotocol/zeta/paths"
 )
 
 var (

@@ -15,7 +15,7 @@ package api
 import (
 	"github.com/pkg/errors"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

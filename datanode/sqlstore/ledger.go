@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/metrics"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/shopspring/decimal"
 )

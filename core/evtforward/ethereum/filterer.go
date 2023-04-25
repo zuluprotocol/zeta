@@ -20,13 +20,13 @@ import (
 	"strings"
 	"time"
 
-	bridge "zuluprotocol/zeta/zeta/core/contracts/erc20_bridge_logic_restricted"
-	multisig "zuluprotocol/zeta/zeta/core/contracts/multisig_control"
-	"zuluprotocol/zeta/zeta/core/staking"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	vgproto "zuluprotocol/zeta/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	bridge "zuluprotocol/zeta/core/contracts/erc20_bridge_logic_restricted"
+	multisig "zuluprotocol/zeta/core/contracts/multisig_control"
+	"zuluprotocol/zeta/core/staking"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	vgproto "zuluprotocol/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/cenkalti/backoff"
 	eth "github.com/ethereum/go-ethereum"
@@ -55,7 +55,7 @@ const (
 
 // Assets ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward/ethereum Assets
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/assets_mock.go -package mocks zuluprotocol/zeta/core/evtforward/ethereum Assets
 type Assets interface {
 	GetZetaIDFromEthereumAddress(string) string
 }

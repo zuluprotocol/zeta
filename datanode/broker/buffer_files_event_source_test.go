@@ -6,14 +6,14 @@ import (
 	"path/filepath"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/events"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	eventsv1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/events"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	eventsv1 "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 func TestReceiveEvents(t *testing.T) {

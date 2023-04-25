@@ -19,11 +19,11 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/datanode/sqlsubscribers/mocks"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v1 "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 func TestNotary_Push(t *testing.T) {

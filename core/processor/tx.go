@@ -17,10 +17,10 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/commands"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/commands"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/libs/proto"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/tendermint/tendermint/crypto/tmhash"
 )
 

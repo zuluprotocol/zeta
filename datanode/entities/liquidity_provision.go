@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/protos/zeta"
 	"github.com/jackc/pgtype"
 	"github.com/shopspring/decimal"
 	"google.golang.org/protobuf/encoding/protojson"

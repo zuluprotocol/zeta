@@ -15,8 +15,8 @@ package nodewallets
 import (
 	"errors"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets/eth"
-	"zuluprotocol/zeta/zeta/core/nodewallets/zeta"
+	"zuluprotocol/zeta/core/nodewallets/eth"
+	"zuluprotocol/zeta/core/nodewallets/zeta"
 )
 
 var (

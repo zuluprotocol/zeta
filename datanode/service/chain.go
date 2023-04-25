@@ -17,7 +17,7 @@ import (
 	"errors"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/entities"
 )
 
 type ChainStore interface {

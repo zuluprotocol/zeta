@@ -16,7 +16,7 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/core/events"
 )
 
 type Base struct {

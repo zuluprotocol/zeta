@@ -15,8 +15,8 @@ package gql
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/datanode/zetatime"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type myWithdrawalResolver ZetaResolverRoot

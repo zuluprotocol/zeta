@@ -17,12 +17,12 @@ import (
 	"sort"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/subscribers"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	coreapipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/subscribers"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	coreapipb "zuluprotocol/zeta/protos/zeta/api/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type StakeLinkingEvent interface {

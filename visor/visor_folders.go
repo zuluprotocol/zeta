@@ -18,10 +18,10 @@ import (
 	"os"
 	"path"
 
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/visor/config"
-	"zuluprotocol/zeta/zeta/visor/github"
-	"zuluprotocol/zeta/zeta/visor/utils"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/visor/config"
+	"zuluprotocol/zeta/visor/github"
+	"zuluprotocol/zeta/visor/utils"
 )
 
 var zetaDataNodeStartCmdArgs = []string{"datanode", "start"}

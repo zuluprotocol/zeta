@@ -16,9 +16,9 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

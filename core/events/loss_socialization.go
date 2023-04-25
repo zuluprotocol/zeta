@@ -15,8 +15,8 @@ package events
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/libs/num"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type LossSoc struct {

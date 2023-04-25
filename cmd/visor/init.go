@@ -13,8 +13,8 @@
 package main
 
 import (
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/visor"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/visor"
 	"github.com/spf13/cobra"
 )
 

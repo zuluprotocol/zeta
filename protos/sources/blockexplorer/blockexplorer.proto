@@ -6,7 +6,7 @@ import "zeta/commands/v1/transaction.proto";
 import "zeta/commands/v1/signature.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "zuluprotocol/zeta/zeta/protos/blockexplorer/api/v1";
+option go_package = "zuluprotocol/zeta/protos/blockexplorer/api/v1";
 
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
   info: {

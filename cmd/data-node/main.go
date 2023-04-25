@@ -16,7 +16,7 @@ import (
 	"context"
 	"os"
 
-	"zuluprotocol/zeta/zeta/cmd/data-node/commands"
+	"zuluprotocol/zeta/cmd/data-node/commands"
 )
 
 func main() {

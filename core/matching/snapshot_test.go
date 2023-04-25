@@ -17,12 +17,12 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/matching"
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/matching"
+	"zuluprotocol/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/libs/proto"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -20,12 +20,12 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/assets/common"
-	"zuluprotocol/zeta/zeta/core/bridges"
-	ethnw "zuluprotocol/zeta/zeta/core/nodewallets/eth"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	typespb "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/assets/common"
+	"zuluprotocol/zeta/core/bridges"
+	ethnw "zuluprotocol/zeta/core/nodewallets/eth"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	typespb "zuluprotocol/zeta/protos/zeta"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	ethcommon "github.com/ethereum/go-ethereum/common"
@@ -42,7 +42,7 @@ var (
 	ErrNotAnErc20Asset                     = errors.New("not an erc20 asset")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/zeta/core/assets/erc20 ETHClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/eth_client_mock.go -package mocks zuluprotocol/zeta/core/assets/erc20 ETHClient
 type ETHClient interface {
 	bind.ContractBackend
 	HeaderByNumber(context.Context, *big.Int) (*ethtypes.Header, error)

@@ -15,10 +15,10 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/integration/stubs"
 )
 
 func PartiesShouldReceiveTheFollowingReward(

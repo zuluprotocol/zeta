@@ -19,11 +19,11 @@ import (
 	"math/rand"
 	"sort"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	proto "zuluprotocol/zeta/protos/zeta"
 	tmtypes "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/encoding"
 )

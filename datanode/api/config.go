@@ -15,9 +15,9 @@ package api
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/datanode/ratelimit"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/datanode/ratelimit"
+	"zuluprotocol/zeta/logging"
 )
 
 // namedLogger is the identifier for package and should ideally match the package name

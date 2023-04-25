@@ -3,10 +3,10 @@ package v1
 import (
 	"fmt"
 
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/wallet/service"
-	"zuluprotocol/zeta/zeta/wallet/service/v1"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/wallet/service"
+	"zuluprotocol/zeta/wallet/service/v1"
 )
 
 type Store struct {

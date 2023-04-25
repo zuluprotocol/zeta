@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/broker"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/broker"
+	"zuluprotocol/zeta/datanode/service"
+	vgcontext "zuluprotocol/zeta/libs/context"
 
 	"github.com/stretchr/testify/assert"
 )

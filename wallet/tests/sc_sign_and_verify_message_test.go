@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"testing"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgrand "zuluprotocol/zeta/libs/rand"
 	"github.com/stretchr/testify/require"
 )
 

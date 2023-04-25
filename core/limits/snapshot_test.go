@@ -17,8 +17,8 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/limits"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/limits"
+	"zuluprotocol/zeta/core/types"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

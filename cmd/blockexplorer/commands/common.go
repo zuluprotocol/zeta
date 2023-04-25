@@ -15,9 +15,9 @@ package commands
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/blockexplorer/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/blockexplorer/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 	"github.com/jessevdk/go-flags"
 )
 

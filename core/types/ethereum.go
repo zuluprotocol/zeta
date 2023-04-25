@@ -16,9 +16,9 @@ import (
 	"errors"
 	"fmt"
 
-	vgreflect "zuluprotocol/zeta/zeta/libs/reflect"
+	vgreflect "zuluprotocol/zeta/libs/reflect"
 
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	proto "zuluprotocol/zeta/protos/zeta"
 	ethcmn "github.com/ethereum/go-ethereum/common"
 )
 

@@ -15,11 +15,11 @@ package faucet
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/core/faucet"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/core/faucet"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 type faucetInit struct {

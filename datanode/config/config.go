@@ -19,22 +19,22 @@ import (
 	"fmt"
 	"os"
 
-	"zuluprotocol/zeta/zeta/datanode/admin"
+	"zuluprotocol/zeta/datanode/admin"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory"
 
-	"zuluprotocol/zeta/zeta/datanode/api"
-	"zuluprotocol/zeta/zeta/datanode/broker"
-	"zuluprotocol/zeta/zeta/datanode/candlesv2"
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/datanode/gateway"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/libs/pprof"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/api"
+	"zuluprotocol/zeta/datanode/broker"
+	"zuluprotocol/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/datanode/gateway"
+	"zuluprotocol/zeta/datanode/metrics"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/libs/pprof"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 // Config ties together all other application configuration types.

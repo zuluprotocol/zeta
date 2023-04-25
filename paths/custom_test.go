@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	vgtest "zuluprotocol/zeta/zeta/libs/test"
-	"zuluprotocol/zeta/zeta/paths"
+	vgtest "zuluprotocol/zeta/libs/test"
+	"zuluprotocol/zeta/paths"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

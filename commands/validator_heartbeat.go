@@ -3,7 +3,7 @@ package commands
 import (
 	"encoding/hex"
 
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 func CheckValidatorHeartbeat(cmd *commandspb.ValidatorHeartbeat) error {

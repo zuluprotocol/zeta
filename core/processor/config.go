@@ -13,9 +13,9 @@
 package processor
 
 import (
-	"zuluprotocol/zeta/zeta/core/processor/ratelimit"
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/processor/ratelimit"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

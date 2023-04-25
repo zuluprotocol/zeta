@@ -15,7 +15,7 @@ package gql
 import (
 	"context"
 
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 type voteResolver ZetaResolverRoot

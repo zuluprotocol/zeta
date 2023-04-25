@@ -16,8 +16,8 @@ import (
 	"context"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	types "zuluprotocol/zeta/protos/zeta"
 	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

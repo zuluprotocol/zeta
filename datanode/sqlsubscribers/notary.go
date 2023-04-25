@@ -15,9 +15,9 @@ package sqlsubscribers
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 	"github.com/pkg/errors"
 )

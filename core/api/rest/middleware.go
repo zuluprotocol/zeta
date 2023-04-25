@@ -16,11 +16,11 @@ import (
 	"net/http"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/metrics"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	vfmt "zuluprotocol/zeta/zeta/libs/fmt"
-	vghttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/metrics"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	vfmt "zuluprotocol/zeta/libs/fmt"
+	vghttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
 )
 
 // RemoteAddrMiddleware is a middleware adding to the current request context the

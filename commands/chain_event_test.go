@@ -3,9 +3,9 @@ package commands_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/commands"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/commands"
+	proto "zuluprotocol/zeta/protos/zeta"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/stretchr/testify/assert"
 )
 

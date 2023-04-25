@@ -3,7 +3,7 @@ package crypto
 import (
 	"crypto"
 
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
 
 	"github.com/oasisprotocol/curve25519-voi/primitives/ed25519"
 )

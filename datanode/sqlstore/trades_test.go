@@ -17,12 +17,12 @@ import (
 	"testing"
 	"time"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/require"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/assert"
 )
 

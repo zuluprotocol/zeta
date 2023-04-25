@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgtype"

@@ -11,10 +11,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/datanode/utils/databasetest"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/utils/databasetest"
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/require"

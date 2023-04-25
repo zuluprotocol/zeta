@@ -16,12 +16,12 @@ import (
 	"bytes"
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/logging"
-	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	"zuluprotocol/zeta/core/types"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/logging"
+	checkpoint "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 )
 
 func (*Service) Name() types.CheckpointName {

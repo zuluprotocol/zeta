@@ -15,9 +15,9 @@ package validators
 import (
 	"sort"
 
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 func (s *ERC20Signatures) SerialisePendingSignatures() *snapshot.ToplogySignatures {

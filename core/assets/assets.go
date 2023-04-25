@@ -20,13 +20,13 @@ import (
 	"strings"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/assets/builtin"
-	"zuluprotocol/zeta/zeta/core/assets/erc20"
-	"zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/assets/builtin"
+	"zuluprotocol/zeta/core/assets/erc20"
+	"zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 var (
@@ -35,7 +35,7 @@ var (
 	ErrUnknownAssetSource = errors.New("unknown asset source")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/assets ERC20BridgeView,Notary
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/assets ERC20BridgeView,Notary
 type ERC20BridgeView interface {
 	FindAsset(asset *types.AssetDetails) error
 }

@@ -20,8 +20,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 )
 
 func addTestBlock(t *testing.T, ctx context.Context, bs *sqlstore.Blocks) entities.Block {

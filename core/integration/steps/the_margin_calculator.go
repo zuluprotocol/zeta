@@ -15,8 +15,8 @@ package steps
 import (
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/steps/market"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/steps/market"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 func TheMarginCalculator(config *market.Config, name string, table *godog.Table) error {

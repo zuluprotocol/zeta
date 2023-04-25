@@ -13,7 +13,7 @@
 package execution_test
 
 import (
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 	"github.com/imdario/mergo"
 )
 

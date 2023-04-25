@@ -15,8 +15,8 @@ package rewards
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 // calculateRewardsByContribution calculates the reward based on the fee contribution (whether paid or received) of the parties in the asset.

@@ -17,7 +17,7 @@ import (
 	"time"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/datanode/sqlsubscribers RiskFactorStore,TransferStore,WithdrawalStore,LiquidityProvisionStore,KeyRotationStore,OracleSpecStore,DepositStore,StakeLinkingStore,MarketDataStore,PositionStore,OracleDataStore,MarginLevelsStore,NotaryStore,NodeStore,MarketsStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/datanode/sqlsubscribers RiskFactorStore,TransferStore,WithdrawalStore,LiquidityProvisionStore,KeyRotationStore,OracleSpecStore,DepositStore,StakeLinkingStore,MarketDataStore,PositionStore,OracleDataStore,MarginLevelsStore,NotaryStore,NodeStore,MarketsStore
 
 type subscriber struct {
 	zetaTime time.Time

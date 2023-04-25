@@ -8,9 +8,9 @@ import (
 
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/proto"
 
-	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	checkpoint "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
 )
 
 var (

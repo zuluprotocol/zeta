@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
-	"zuluprotocol/zeta/zeta/wallet/wallets"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/wallet/wallet"
+	"zuluprotocol/zeta/wallet/wallets"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/libs/proto"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/libs/proto"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

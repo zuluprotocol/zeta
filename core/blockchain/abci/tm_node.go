@@ -3,8 +3,8 @@ package abci
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/spf13/viper"
 	"github.com/tendermint/tendermint/abci/types"

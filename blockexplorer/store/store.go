@@ -16,7 +16,7 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 

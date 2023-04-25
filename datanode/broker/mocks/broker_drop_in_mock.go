@@ -3,7 +3,7 @@ package mocks
 import (
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/core/events"
 	"github.com/golang/mock/gomock"
 )
 

@@ -16,8 +16,8 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
 )
 
 type AuctionState struct {

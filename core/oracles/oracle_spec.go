@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	datapb "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	datapb "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 var (

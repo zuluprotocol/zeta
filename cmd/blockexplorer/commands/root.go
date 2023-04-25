@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"os"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
+	"zuluprotocol/zeta/datanode/config"
 
 	"github.com/jessevdk/go-flags"
 )

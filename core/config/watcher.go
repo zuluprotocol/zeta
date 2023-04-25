@@ -20,8 +20,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 	"github.com/fsnotify/fsnotify"
 )
 

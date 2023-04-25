@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/libs/fs"
+	"zuluprotocol/zeta/libs/fs"
 )
 
 type CurrentState struct {

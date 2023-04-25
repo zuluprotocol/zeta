@@ -19,7 +19,7 @@ import (
 	"net/http"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/genesis"
+	"zuluprotocol/zeta/core/genesis"
 	tmtypes "github.com/tendermint/tendermint/types"
 )
 

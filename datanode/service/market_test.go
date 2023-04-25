@@ -22,9 +22,9 @@ import (
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/datanode/service/mocks"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/datanode/service/mocks"
 )
 
 var (

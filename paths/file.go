@@ -8,8 +8,8 @@ import (
 	"io"
 	"net/http"
 
-	vgcrypto "zuluprotocol/zeta/zeta/libs/crypto"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgcrypto "zuluprotocol/zeta/libs/crypto"
+	vgfs "zuluprotocol/zeta/libs/fs"
 
 	"github.com/BurntSushi/toml"
 )

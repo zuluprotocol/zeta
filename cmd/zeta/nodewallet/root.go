@@ -15,9 +15,9 @@ package nodewallet
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/admin"
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/admin"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/core/nodewallets"
 
 	"github.com/fatih/color"
 	"github.com/jessevdk/go-flags"

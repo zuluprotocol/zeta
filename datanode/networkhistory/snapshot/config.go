@@ -3,7 +3,7 @@ package snapshot
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/datanode/config/encoding"
 )
 
 type Config struct {

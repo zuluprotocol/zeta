@@ -3,9 +3,9 @@ package tests_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/wallet/api"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/wallet/api"
 	"github.com/stretchr/testify/require"
 )
 

@@ -17,7 +17,7 @@ import (
 	"strconv"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/zetatime"
+	"zuluprotocol/zeta/core/zetatime"
 	zeta "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 )
 

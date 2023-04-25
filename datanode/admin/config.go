@@ -4,8 +4,8 @@ import (
 	"os"
 	"path"
 
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 const namedLogger = "admin.server"

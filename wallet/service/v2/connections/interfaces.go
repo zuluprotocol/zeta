@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/wallet/wallet"
 )
 
 // Generates mocks
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/service/v2/connections WalletStore,TimeService,TokenStore
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/wallet/service/v2/connections WalletStore,TimeService,TokenStore
 
 type TimeService interface {
 	Now() time.Time

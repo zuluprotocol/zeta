@@ -8,7 +8,7 @@ package v1
 
 import (
 	zeta "code.zetaprotocol.io/zeta/protos/zeta"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	v1 "zuluprotocol/zeta/protos/zeta/events/v1"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

@@ -23,7 +23,7 @@ import (
 	"path"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/faucet"
+	"zuluprotocol/zeta/core/faucet"
 )
 
 const (

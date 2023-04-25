@@ -17,12 +17,12 @@ import (
 	"sort"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	proto "zuluprotocol/zeta/protos/zeta"
 )
 
 var (
@@ -36,7 +36,7 @@ type Broker interface {
 	SendBatch(events []events.Event)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/market_tracker_mock.go -package mocks zuluprotocol/zeta/zeta/core/rewards MarketActivityTracker
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/market_tracker_mock.go -package mocks zuluprotocol/zeta/core/rewards MarketActivityTracker
 type MarketActivityTracker interface {
 	GetAllMarketIDs() []string
 	GetProposer(market string) string
@@ -50,7 +50,7 @@ type EpochEngine interface {
 
 // Delegation engine for getting validation data
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/delegation_engine_mock.go -package mocks zuluprotocol/zeta/zeta/core/rewards Delegation
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/delegation_engine_mock.go -package mocks zuluprotocol/zeta/core/rewards Delegation
 type Delegation interface {
 	ProcessEpochDelegations(ctx context.Context, epoch types.Epoch) []*types.ValidatorData
 	GetValidatorData() []*types.ValidatorData
@@ -65,12 +65,12 @@ type Collateral interface {
 
 // TimeService notifies the reward engine on time updates
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/rewards TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/rewards TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/topology_mock.go -package mocks zuluprotocol/zeta/zeta/core/rewards Topology
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/topology_mock.go -package mocks zuluprotocol/zeta/core/rewards Topology
 type Topology interface {
 	GetRewardsScores(ctx context.Context, epochSeq string, delegationState []*types.ValidatorData, stakeScoreParams types.StakeScoreParams) (*types.ScoreData, *types.ScoreData)
 	RecalcValidatorSet(ctx context.Context, epochSeq string, delegationState []*types.ValidatorData, stakeScoreParams types.StakeScoreParams)

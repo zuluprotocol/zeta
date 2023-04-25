@@ -15,7 +15,7 @@ package events
 import (
 	"context"
 
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 // KeyRotation ...

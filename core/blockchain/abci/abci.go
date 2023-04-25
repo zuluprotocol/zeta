@@ -16,8 +16,8 @@ import (
 	"encoding/hex"
 	"errors"
 
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
+	"zuluprotocol/zeta/core/blockchain"
+	vgcontext "zuluprotocol/zeta/libs/context"
 
 	"github.com/tendermint/tendermint/abci/types"
 )

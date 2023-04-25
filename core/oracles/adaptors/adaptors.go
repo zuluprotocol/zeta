@@ -15,10 +15,10 @@ package adaptors
 import (
 	"errors"
 
-	"zuluprotocol/zeta/zeta/core/oracles"
-	"zuluprotocol/zeta/zeta/core/oracles/validation"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/oracles"
+	"zuluprotocol/zeta/core/oracles/validation"
+	"zuluprotocol/zeta/libs/crypto"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 // ErrUnknownOracleSource is used when the input data is originated from an

@@ -17,9 +17,9 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type Engine struct {
@@ -48,7 +48,7 @@ type Broker interface {
 
 // TimeService provide the time of the zeta node using the tm time.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/limits TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/limits TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }

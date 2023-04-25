@@ -12,7 +12,7 @@
 
 package types
 
-import proto "zuluprotocol/zeta/zeta/protos/zeta"
+import proto "zuluprotocol/zeta/protos/zeta"
 
 type (
 	Candle   = proto.Candle

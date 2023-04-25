@@ -15,7 +15,7 @@
 package types
 
 import (
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 type NodeSignature = commandspb.NodeSignature

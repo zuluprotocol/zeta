@@ -18,8 +18,8 @@ import (
 
 	"github.com/cucumber/godog"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 func TheFollowingTradesShouldBeExecuted(

@@ -5,11 +5,11 @@ import (
 	"io"
 	"os"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
-	"zuluprotocol/zeta/zeta/paths"
-	tokenStoreV1 "zuluprotocol/zeta/zeta/wallet/service/v2/connections/store/v1"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/printer"
+	"zuluprotocol/zeta/paths"
+	tokenStoreV1 "zuluprotocol/zeta/wallet/service/v2/connections/store/v1"
 	"github.com/spf13/cobra"
 )
 

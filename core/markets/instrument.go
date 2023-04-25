@@ -16,10 +16,10 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/products"
-	"zuluprotocol/zeta/zeta/core/risk"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/products"
+	"zuluprotocol/zeta/core/risk"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 // TradableInstrument represent an instrument to be trade in a market.

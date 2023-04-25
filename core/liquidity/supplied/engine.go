@@ -16,11 +16,11 @@ import (
 	"context"
 	"errors"
 
-	"zuluprotocol/zeta/zeta/core/risk"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/core/types/statevar"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/risk"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/core/types/statevar"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 // ErrNoValidOrders informs that there weren't any valid orders to cover the liquidity obligation with.
@@ -42,7 +42,7 @@ type LiquidityOrder struct {
 
 // RiskModel allows calculation of min/max price range and a probability of trading.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/risk_model_mock.go -package mocks zuluprotocol/zeta/zeta/core/liquidity/supplied RiskModel
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/risk_model_mock.go -package mocks zuluprotocol/zeta/core/liquidity/supplied RiskModel
 type RiskModel interface {
 	ProbabilityOfTrading(currentPrice, orderPrice, minPrice, maxPrice num.Decimal, yearFraction num.Decimal, isBid, applyMinMax bool) num.Decimal
 	GetProjectionHorizon() num.Decimal
@@ -50,7 +50,7 @@ type RiskModel interface {
 
 // PriceMonitor provides the range of valid prices, that is prices that wouldn't trade the current trading mode
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/price_monitor_mock.go -package mocks zuluprotocol/zeta/zeta/core/liquidity/supplied PriceMonitor
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/price_monitor_mock.go -package mocks zuluprotocol/zeta/core/liquidity/supplied PriceMonitor
 type PriceMonitor interface {
 	GetValidPriceRange() (num.WrappedDecimal, num.WrappedDecimal)
 }

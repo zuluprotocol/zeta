@@ -12,7 +12,7 @@
 
 package steps
 
-import "zuluprotocol/zeta/zeta/core/integration/stubs"
+import "zuluprotocol/zeta/core/integration/stubs"
 
 func ClearAllEvents(broker *stubs.BrokerStub) {
 	broker.ClearAllEvents()

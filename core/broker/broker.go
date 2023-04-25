@@ -18,10 +18,10 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/broker"
+	"zuluprotocol/zeta/libs/broker"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/logging"
 )
 
 type Stats interface {
@@ -32,7 +32,7 @@ type Stats interface {
 // in addition to providing the classical mockgen functionality, this mock can be used to check the actual events that will be generated
 // so we don't have to rely on test-only helper functions
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/broker_mock.go -package mocks zuluprotocol/zeta/zeta/core/broker Interface
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/broker_mock.go -package mocks zuluprotocol/zeta/core/broker Interface
 type Interface interface {
 	Send(event events.Event)
 	SendBatch(events []events.Event)
@@ -44,7 +44,7 @@ type Interface interface {
 
 // SocketClient is an interface to send serialized events over a socket.
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/socket_client_mock.go -package mocks zuluprotocol/zeta/zeta/core/broker SocketClient
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/socket_client_mock.go -package mocks zuluprotocol/zeta/core/broker SocketClient
 type SocketClient interface {
 	SendBatch(events []events.Event) error
 	Receive(ctx context.Context) (<-chan events.Event, <-chan error)

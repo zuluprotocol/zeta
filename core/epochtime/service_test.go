@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	mbroker "zuluprotocol/zeta/zeta/core/broker/mocks"
-	"zuluprotocol/zeta/zeta/core/epochtime"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	mbroker "zuluprotocol/zeta/core/broker/mocks"
+	"zuluprotocol/zeta/core/epochtime"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"

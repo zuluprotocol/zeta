@@ -15,8 +15,8 @@ import (
 	"github.com/cenkalti/backoff/v4"
 	"github.com/jackc/pgx/v4"
 
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/logging"
 )
 
 var (

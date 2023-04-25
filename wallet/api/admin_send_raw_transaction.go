@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/libs/proto"
+	apipb "zuluprotocol/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/mitchellh/mapstructure"
 )
 

@@ -16,9 +16,9 @@ import (
 	"context"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/subscribers"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/subscribers"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type validatorUpdateE interface {

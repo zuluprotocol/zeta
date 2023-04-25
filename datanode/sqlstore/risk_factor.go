@@ -16,8 +16,8 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/metrics"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/metrics"
 	"github.com/georgysavva/scany/pgxscan"
 )
 

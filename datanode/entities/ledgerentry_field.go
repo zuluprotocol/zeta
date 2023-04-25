@@ -3,7 +3,7 @@ package entities
 import (
 	"fmt"
 
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 // LedgerEntryField is an enumeration of the properties of a ledger entry

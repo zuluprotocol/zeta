@@ -15,7 +15,7 @@ package types
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -15,9 +15,9 @@ package matching_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/matching"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/matching"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 	"github.com/stretchr/testify/assert"
 )
 

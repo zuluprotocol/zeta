@@ -6,10 +6,10 @@ import (
 	"io"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	"zuluprotocol/zeta/zeta/logging"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/logging"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/protos/zeta"
 	zeta "code.zetaprotocol.io/zeta/protos/zeta"
 	"google.golang.org/grpc"
 )

@@ -24,7 +24,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/entities"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
@@ -35,8 +35,8 @@ import (
 	"github.com/pressly/goose/v3"
 	"github.com/shopspring/decimal"
 
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 var ErrBadID = errors.New("bad id (must be hex string)")

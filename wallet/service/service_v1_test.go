@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	api "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	"zuluprotocol/zeta/zeta/wallet/crypto"
-	v1 "zuluprotocol/zeta/zeta/wallet/service/v1"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	api "zuluprotocol/zeta/protos/zeta/api/v1"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/wallet/crypto"
+	v1 "zuluprotocol/zeta/wallet/service/v1"
+	"zuluprotocol/zeta/wallet/wallet"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

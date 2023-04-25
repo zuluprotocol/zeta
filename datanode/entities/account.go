@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 type (

@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/entities"
 )
 
 type (

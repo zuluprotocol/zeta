@@ -4,7 +4,7 @@ import (
 	"crypto/ed25519"
 	"encoding/hex"
 
-	"zuluprotocol/zeta/zeta/wallet/crypto"
+	"zuluprotocol/zeta/wallet/crypto"
 )
 
 type HDMasterKeyPair struct {

@@ -1,8 +1,8 @@
 package broker
 
-import "zuluprotocol/zeta/zeta/core/events"
+import "zuluprotocol/zeta/core/events"
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/libs/broker Subscriber
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/libs/broker Subscriber
 
 // Subscriber interface allows pushing values to subscribers, can be set to
 // a Skip state (temporarily not receiving any events), or closed. Otherwise events are pushed.

@@ -17,11 +17,11 @@ import (
 	"fmt"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/visor/client"
-	"zuluprotocol/zeta/zeta/visor/config"
-	"zuluprotocol/zeta/zeta/visor/utils"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/visor/client"
+	"zuluprotocol/zeta/visor/config"
+	"zuluprotocol/zeta/visor/utils"
 )
 
 const (

@@ -3,7 +3,7 @@ package node_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/wallet/api/node"
+	"zuluprotocol/zeta/wallet/api/node"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zaptest"
 )

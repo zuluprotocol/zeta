@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"os"
 
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/paths"
 )
 
 func EnsureNodeConfig(zetaPaths paths.Paths) (*Loader, *Config, error) {

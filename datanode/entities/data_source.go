@@ -3,8 +3,8 @@ package entities
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/data/v1"
+	"zuluprotocol/zeta/core/types"
+	v1 "zuluprotocol/zeta/protos/zeta/data/v1"
 )
 
 type DataSourceDefinitionExternal struct {

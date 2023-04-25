@@ -4,18 +4,18 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	walletpb "zuluprotocol/zeta/zeta/protos/zeta/wallet/v1"
-	"zuluprotocol/zeta/zeta/wallet/api/node"
-	nodetypes "zuluprotocol/zeta/zeta/wallet/api/node/types"
-	"zuluprotocol/zeta/zeta/wallet/network"
-	"zuluprotocol/zeta/zeta/wallet/wallet"
+	"zuluprotocol/zeta/libs/jsonrpc"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	walletpb "zuluprotocol/zeta/protos/zeta/wallet/v1"
+	"zuluprotocol/zeta/wallet/api/node"
+	nodetypes "zuluprotocol/zeta/wallet/api/node/types"
+	"zuluprotocol/zeta/wallet/network"
+	"zuluprotocol/zeta/wallet/wallet"
 	"go.uber.org/zap"
 )
 
 // Generates mocks
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/wallet/api WalletStore,NetworkStore,Interactor,ConnectionsManager,SpamHandler
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/wallet/api WalletStore,NetworkStore,Interactor,ConnectionsManager,SpamHandler
 
 type NodeSelectorBuilder func(hosts []string, retries uint64) (node.Selector, error)
 

@@ -13,8 +13,8 @@
 package models
 
 import (
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
 )
 
 // Simple represents a dummy risk model with fixed risk params.

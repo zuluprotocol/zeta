@@ -18,9 +18,9 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/paths"
 
-	"zuluprotocol/zeta/zeta/core/config"
+	"zuluprotocol/zeta/core/config"
 )
 
 type ListCmd struct {

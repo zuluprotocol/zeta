@@ -17,14 +17,14 @@ import (
 	"fmt"
 	"math/big"
 
-	"zuluprotocol/zeta/zeta/core/netparams"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/netparams"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/zeta/core/staking EvtForwarder,EthereumClientConfirmations,EthereumEventSource,TimeService,EthConfirmations,EthOnChainVerifier,Witness
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/mocks.go -package mocks zuluprotocol/zeta/core/staking EvtForwarder,EthereumClientConfirmations,EthereumEventSource,TimeService,EthConfirmations,EthOnChainVerifier,Witness
 
 type AllEthereumClient interface {
 	EthereumClient

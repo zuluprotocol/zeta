@@ -22,11 +22,11 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/libs/num"
 )
 
 type expect struct {

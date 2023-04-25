@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/ptr"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/wallet/service/v2/connections"
-	v1 "zuluprotocol/zeta/zeta/wallet/service/v2/connections/store/v1"
+	"zuluprotocol/zeta/libs/ptr"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/wallet/service/v2/connections"
+	v1 "zuluprotocol/zeta/wallet/service/v2/connections/store/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
+	vgfs "zuluprotocol/zeta/libs/fs"
 )
 
 // When opting for a custom Zeta home, the all files are located under the

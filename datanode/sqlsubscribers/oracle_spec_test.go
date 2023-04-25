@@ -18,9 +18,9 @@ import (
 
 	"github.com/golang/mock/gomock"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers"
-	"zuluprotocol/zeta/zeta/datanode/sqlsubscribers/mocks"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/sqlsubscribers"
+	"zuluprotocol/zeta/datanode/sqlsubscribers/mocks"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

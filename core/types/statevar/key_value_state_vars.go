@@ -13,8 +13,8 @@
 package statevar
 
 import (
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/protos/zeta"
 )
 
 // value is an interface for representing differnet types of floating point scalars vectors and matrices.

@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	v1 "zuluprotocol/zeta/protos/zeta/commands/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

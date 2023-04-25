@@ -16,21 +16,21 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 )
 
 const (
 	engineLogger = "engine"
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/forwarder_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward/ethereum Forwarder
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/forwarder_mock.go -package mocks zuluprotocol/zeta/core/evtforward/ethereum Forwarder
 type Forwarder interface {
 	ForwardFromSelf(*commandspb.ChainEvent)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/filterer_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward/ethereum Filterer
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/filterer_mock.go -package mocks zuluprotocol/zeta/core/evtforward/ethereum Filterer
 type Filterer interface {
 	FilterCollateralEvents(ctx context.Context, startAt, stopAt uint64, cb OnEventFound)
 	FilterStakingEvents(ctx context.Context, startAt, stopAt uint64, cb OnEventFound)

@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/logging"
 
 	"github.com/gorilla/rpc/json"
 )

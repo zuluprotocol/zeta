@@ -16,8 +16,8 @@ import (
 	"embed"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/steps/market/defaults"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/steps/market/defaults"
+	types "zuluprotocol/zeta/protos/zeta"
 
 	"github.com/jinzhu/copier"
 )

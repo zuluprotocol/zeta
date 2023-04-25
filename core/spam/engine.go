@@ -19,15 +19,15 @@ import (
 	"sync"
 	"time"
 
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 
-	"zuluprotocol/zeta/zeta/core/netparams"
+	"zuluprotocol/zeta/core/netparams"
 
-	"zuluprotocol/zeta/zeta/core/blockchain/abci"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/num"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/blockchain/abci"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/num"
+	"zuluprotocol/zeta/logging"
 )
 
 var (

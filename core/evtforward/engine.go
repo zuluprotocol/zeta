@@ -15,9 +15,9 @@ package evtforward
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/evtforward/ethereum"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/evtforward/ethereum"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

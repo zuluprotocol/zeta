@@ -13,8 +13,8 @@
 package entities
 
 import (
-	"zuluprotocol/zeta/zeta/core/types"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/core/types"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type AccountFilter struct {

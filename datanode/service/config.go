@@ -13,8 +13,8 @@
 package service
 
 import (
-	"zuluprotocol/zeta/zeta/datanode/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 // Config represent the configuration of the candle package.

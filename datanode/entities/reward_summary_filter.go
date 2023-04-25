@@ -1,6 +1,6 @@
 package entities
 
-import v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+import v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 
 // RewardSummaryFilter is the filter for the reward summary.
 type RewardSummaryFilter struct {

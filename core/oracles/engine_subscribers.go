@@ -18,7 +18,7 @@ import (
 	"sync"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/types"
 )
 
 // OnMatchedOracleData describes the callback function used when an oracle data matches the spec.

@@ -16,9 +16,9 @@ import (
 	"context"
 	"errors"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
-	"zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 var ErrUnsupportedTransferKind = errors.New("unsupported transfer kind")

@@ -18,10 +18,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/core/api"
-	libhttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
-	protoapi "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	"zuluprotocol/zeta/core/api"
+	libhttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
+	protoapi "zuluprotocol/zeta/protos/zeta/api/v1"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/rs/cors"

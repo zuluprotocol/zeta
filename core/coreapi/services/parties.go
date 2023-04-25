@@ -16,9 +16,9 @@ import (
 	"context"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/core/subscribers"
-	"zuluprotocol/zeta/zeta/core/types"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/core/subscribers"
+	"zuluprotocol/zeta/core/types"
 	zetapb "code.zetaprotocol.io/zeta/protos/zeta"
 )
 

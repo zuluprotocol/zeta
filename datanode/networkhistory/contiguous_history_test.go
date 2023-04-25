@@ -3,9 +3,9 @@ package networkhistory_test
 import (
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/store"
+	"zuluprotocol/zeta/datanode/networkhistory/store"
 
 	"github.com/stretchr/testify/assert"
 )

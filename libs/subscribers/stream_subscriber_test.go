@@ -20,12 +20,12 @@ import (
 	"sync"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers"
+	"zuluprotocol/zeta/libs/subscribers"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	dtypes "zuluprotocol/zeta/zeta/core/types"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	dtypes "zuluprotocol/zeta/core/types"
+	types "zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/stretchr/testify/assert"
 )

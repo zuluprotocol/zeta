@@ -10,19 +10,19 @@ import (
 	"strings"
 	"time"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/logging"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/logging"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 
 	"google.golang.org/grpc"
 )
 
 var ErrChainNotFound = errors.New("no chain found")
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/networkhistory NetworkHistory
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks zuluprotocol/zeta/datanode/networkhistory NetworkHistory
 type NetworkHistory interface {
 	FetchHistorySegment(ctx context.Context, historySegmentID string) (Segment, error)
 	LoadNetworkHistoryIntoDatanode(ctx context.Context, contiguousHistory ContiguousHistory, cfg sqlstore.ConnectionConfig, withIndexesAndOrderTriggers, verbose bool) (snapshot.LoadResult, error)

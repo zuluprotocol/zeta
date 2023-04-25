@@ -8,11 +8,11 @@ import (
 	"os"
 	"os/signal"
 
-	broker2 "zuluprotocol/zeta/zeta/core/broker"
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/broker"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/logging"
+	broker2 "zuluprotocol/zeta/core/broker"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/broker"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

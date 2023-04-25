@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"zuluprotocol/zeta/zeta/wallet/network"
+	"zuluprotocol/zeta/wallet/network"
 	"go.uber.org/zap"
 )
 

@@ -13,7 +13,7 @@
 package store
 
 import (
-	"zuluprotocol/zeta/zeta/libs/config"
+	"zuluprotocol/zeta/libs/config"
 )
 
 var namedLogger = "postgres.store"

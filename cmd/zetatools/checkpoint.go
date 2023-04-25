@@ -1,8 +1,8 @@
 package tools
 
 import (
-	"zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/zetatools/checkpoint"
+	"zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/zetatools/checkpoint"
 )
 
 type checkpointCmd struct {

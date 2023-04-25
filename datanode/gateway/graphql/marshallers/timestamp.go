@@ -17,7 +17,7 @@ import (
 	"io"
 	"strconv"
 
-	"zuluprotocol/zeta/zeta/datanode/zetatime"
+	"zuluprotocol/zeta/datanode/zetatime"
 	"github.com/99designs/gqlgen/graphql"
 )
 

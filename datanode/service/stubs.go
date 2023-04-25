@@ -13,7 +13,7 @@
 package service
 
 import (
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/sqlstore"
 )
 
 type (

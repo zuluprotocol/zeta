@@ -13,8 +13,8 @@
 package eth
 
 import (
-	"zuluprotocol/zeta/zeta/core/nodewallets/registry"
-	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/core/nodewallets/registry"
+	"zuluprotocol/zeta/libs/crypto"
 )
 
 type wallet interface {

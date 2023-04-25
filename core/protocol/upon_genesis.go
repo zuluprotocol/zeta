@@ -17,11 +17,11 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/blockchain"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/blockchain"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	proto "zuluprotocol/zeta/protos/zeta"
 	"github.com/cenkalti/backoff"
 )
 

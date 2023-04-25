@@ -15,8 +15,8 @@ package broker
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/events"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 func toEvent(ctx context.Context, be *eventspb.BusEvent) events.Event {

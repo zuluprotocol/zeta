@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/proto"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

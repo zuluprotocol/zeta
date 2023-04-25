@@ -16,10 +16,10 @@ import (
 	"errors"
 	"sync/atomic"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/assets/common"
-	"zuluprotocol/zeta/zeta/core/types"
-	snapshot "zuluprotocol/zeta/zeta/protos/zeta/snapshot/v1"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/assets/common"
+	"zuluprotocol/zeta/core/types"
+	snapshot "zuluprotocol/zeta/protos/zeta/snapshot/v1"
 )
 
 var ErrUnknownAssetAction = errors.New("unknown asset action")

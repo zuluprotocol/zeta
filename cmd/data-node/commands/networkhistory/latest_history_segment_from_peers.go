@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"os"
 
-	coreConfig "zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
+	coreConfig "zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	vgjson "zuluprotocol/zeta/libs/json"
 
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type latestHistorySegmentFromPeers struct {

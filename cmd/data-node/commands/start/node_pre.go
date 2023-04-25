@@ -18,20 +18,20 @@ import (
 	"path/filepath"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers"
+	"zuluprotocol/zeta/libs/subscribers"
 
 	"github.com/cenkalti/backoff"
 	"google.golang.org/grpc"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"zuluprotocol/zeta/zeta/datanode/broker"
-	"zuluprotocol/zeta/zeta/datanode/config"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	"zuluprotocol/zeta/zeta/datanode/networkhistory/snapshot"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
-	"zuluprotocol/zeta/zeta/libs/pprof"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/datanode/broker"
+	"zuluprotocol/zeta/datanode/config"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/networkhistory/snapshot"
+	"zuluprotocol/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/libs/pprof"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
 )
 

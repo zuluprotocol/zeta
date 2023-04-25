@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/nodewallets"
-	"zuluprotocol/zeta/zeta/core/validators"
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
-	vgtesting "zuluprotocol/zeta/zeta/libs/testing"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/nodewallets"
+	"zuluprotocol/zeta/core/validators"
+	vgrand "zuluprotocol/zeta/libs/rand"
+	vgtesting "zuluprotocol/zeta/libs/testing"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/require"
 )

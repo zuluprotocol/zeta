@@ -15,8 +15,8 @@ package steps
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/libs/num"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/libs/num"
 
 	"github.com/cucumber/godog"
 )

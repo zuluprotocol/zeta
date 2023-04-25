@@ -18,8 +18,8 @@ import (
 	"strconv"
 	"strings"
 
-	vgcontext "zuluprotocol/zeta/zeta/libs/context"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	vgcontext "zuluprotocol/zeta/libs/context"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/pkg/errors"
 )

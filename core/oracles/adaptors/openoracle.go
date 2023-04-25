@@ -15,10 +15,10 @@ package adaptors
 import (
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/openoracle"
-	"zuluprotocol/zeta/zeta/core/oracles"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/crypto"
+	"zuluprotocol/zeta/core/openoracle"
+	"zuluprotocol/zeta/core/oracles"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/crypto"
 )
 
 // OpenOracleAdaptor is a specific oracle Adaptor for Open Oracle / Open Price Feed

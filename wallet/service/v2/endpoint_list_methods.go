@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"sort"
 
-	vfmt "zuluprotocol/zeta/zeta/libs/fmt"
-	"zuluprotocol/zeta/zeta/logging"
+	vfmt "zuluprotocol/zeta/libs/fmt"
+	"zuluprotocol/zeta/logging"
 	"github.com/julienschmidt/httprouter"
 )
 

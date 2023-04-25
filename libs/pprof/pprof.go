@@ -26,9 +26,9 @@ import (
 	"runtime"
 	"runtime/pprof"
 
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/libs/config/encoding"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	"zuluprotocol/zeta/logging"
 	"github.com/felixge/fgprof"
 )
 

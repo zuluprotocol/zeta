@@ -16,7 +16,7 @@ import (
 	"errors"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/paths"
 )
 
 var ErrFaucetConfigAlreadyExists = errors.New("faucet configuration already exists")

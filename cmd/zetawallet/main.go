@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	cmd "zuluprotocol/zeta/zeta/cmd/zetawallet/commands"
+	cmd "zuluprotocol/zeta/cmd/zetawallet/commands"
 )
 
 func main() {

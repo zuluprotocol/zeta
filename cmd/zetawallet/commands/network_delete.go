@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"io"
 
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/cli"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/flags"
-	"zuluprotocol/zeta/zeta/cmd/zetawallet/commands/printer"
-	vgterm "zuluprotocol/zeta/zeta/libs/term"
-	"zuluprotocol/zeta/zeta/paths"
-	"zuluprotocol/zeta/zeta/wallet/api"
-	networkStore "zuluprotocol/zeta/zeta/wallet/network/store/v1"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/cli"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/flags"
+	"zuluprotocol/zeta/cmd/zetawallet/commands/printer"
+	vgterm "zuluprotocol/zeta/libs/term"
+	"zuluprotocol/zeta/paths"
+	"zuluprotocol/zeta/wallet/api"
+	networkStore "zuluprotocol/zeta/wallet/network/store/v1"
 
 	"github.com/spf13/cobra"
 )

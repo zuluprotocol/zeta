@@ -1,6 +1,6 @@
 package commands
 
-import commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+import commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 
 func CheckOracleDataSubmission(cmd *commandspb.OracleDataSubmission) error {
 	return checkOracleDataSubmission(cmd).ErrorOrNil()

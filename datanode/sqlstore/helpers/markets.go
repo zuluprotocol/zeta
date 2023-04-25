@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/sqlstore"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/sqlstore"
 	"github.com/stretchr/testify/require"
 )
 

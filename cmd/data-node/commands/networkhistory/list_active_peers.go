@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	coreConfig "zuluprotocol/zeta/zeta/core/config"
-	"zuluprotocol/zeta/zeta/datanode/config"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	coreConfig "zuluprotocol/zeta/core/config"
+	"zuluprotocol/zeta/datanode/config"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
 )
 
 type listActivePeers struct {

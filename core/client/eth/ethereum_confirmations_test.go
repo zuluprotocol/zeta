@@ -17,9 +17,9 @@ import (
 	"testing"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/client/eth"
-	localMocks "zuluprotocol/zeta/zeta/core/client/eth/mocks"
-	"zuluprotocol/zeta/zeta/core/staking/mocks"
+	"zuluprotocol/zeta/core/client/eth"
+	localMocks "zuluprotocol/zeta/core/client/eth/mocks"
+	"zuluprotocol/zeta/core/staking/mocks"
 
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/golang/mock/gomock"

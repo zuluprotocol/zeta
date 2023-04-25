@@ -16,9 +16,9 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/config"
-	vgjson "zuluprotocol/zeta/zeta/libs/json"
-	"zuluprotocol/zeta/zeta/version"
+	"zuluprotocol/zeta/core/config"
+	vgjson "zuluprotocol/zeta/libs/json"
+	"zuluprotocol/zeta/version"
 
 	"github.com/jessevdk/go-flags"
 )

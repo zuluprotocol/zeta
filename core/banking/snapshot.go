@@ -18,11 +18,11 @@ import (
 	"sort"
 	"sync/atomic"
 
-	"zuluprotocol/zeta/zeta/core/assets"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/libs/proto"
-	"zuluprotocol/zeta/zeta/logging"
-	checkpoint "zuluprotocol/zeta/zeta/protos/zeta/checkpoint/v1"
+	"zuluprotocol/zeta/core/assets"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/libs/proto"
+	"zuluprotocol/zeta/logging"
+	checkpoint "zuluprotocol/zeta/protos/zeta/checkpoint/v1"
 	"github.com/emirpasic/gods/sets/treeset"
 )
 

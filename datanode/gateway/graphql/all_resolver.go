@@ -15,9 +15,9 @@ package gql
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/logging"
-	v2 "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/logging"
+	v2 "zuluprotocol/zeta/protos/data-node/api/v2"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 type allResolver struct {

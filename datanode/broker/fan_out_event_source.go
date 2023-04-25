@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"sync"
 
-	"zuluprotocol/zeta/zeta/core/events"
+	"zuluprotocol/zeta/core/events"
 )
 
 // fanOutEventSource: an event source to fan out an event stream, it is told in advance the number of subscribers to

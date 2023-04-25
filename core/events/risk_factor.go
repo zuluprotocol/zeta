@@ -15,9 +15,9 @@ package events
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	"zuluprotocol/zeta/core/types"
+	proto "zuluprotocol/zeta/protos/zeta"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 )
 
 type RiskFactor struct {

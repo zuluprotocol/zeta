@@ -15,7 +15,7 @@ package steps
 import (
 	"fmt"
 
-	types "zuluprotocol/zeta/zeta/protos/zeta"
+	types "zuluprotocol/zeta/protos/zeta"
 )
 
 func TheTradingModeShouldBeForMarket(

@@ -3,7 +3,7 @@ package rand_test
 import (
 	"testing"
 
-	vgrand "zuluprotocol/zeta/zeta/libs/rand"
+	vgrand "zuluprotocol/zeta/libs/rand"
 
 	"github.com/stretchr/testify/assert"
 )

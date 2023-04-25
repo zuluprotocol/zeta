@@ -20,7 +20,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	config "zuluprotocol/zeta/zeta/core/examples/nullchain/config"
+	config "zuluprotocol/zeta/core/examples/nullchain/config"
 )
 
 var ErrFaucet = errors.New("faucet failed")

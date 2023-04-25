@@ -20,20 +20,20 @@ import (
 	"strconv"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/subscribers"
+	"zuluprotocol/zeta/libs/subscribers"
 
-	"zuluprotocol/zeta/zeta/datanode/networkhistory"
-	"zuluprotocol/zeta/zeta/datanode/ratelimit"
+	"zuluprotocol/zeta/datanode/networkhistory"
+	"zuluprotocol/zeta/datanode/ratelimit"
 
-	"zuluprotocol/zeta/zeta/core/events"
-	"zuluprotocol/zeta/zeta/datanode/candlesv2"
-	"zuluprotocol/zeta/zeta/datanode/contextutil"
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/logging"
-	protoapi "zuluprotocol/zeta/zeta/protos/data-node/api/v2"
+	"zuluprotocol/zeta/core/events"
+	"zuluprotocol/zeta/datanode/candlesv2"
+	"zuluprotocol/zeta/datanode/contextutil"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/logging"
+	protoapi "zuluprotocol/zeta/protos/data-node/api/v2"
 	zetaprotoapi "code.zetaprotocol.io/zeta/protos/zeta/api/v1"
-	eventspb "zuluprotocol/zeta/zeta/protos/zeta/events/v1"
+	eventspb "zuluprotocol/zeta/protos/zeta/events/v1"
 
 	"github.com/fullstorydev/grpcui/standalone"
 	"golang.org/x/sync/errgroup"
@@ -45,21 +45,21 @@ import (
 
 // EventService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api EventService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/event_service_mock.go -package mocks zuluprotocol/zeta/datanode/api EventService
 type EventService interface {
 	ObserveEvents(ctx context.Context, retries int, eTypes []events.Type, batchSize int, filters ...subscribers.EventFilter) (<-chan []*eventspb.BusEvent, chan<- int)
 }
 
 // BlockService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/block_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api BlockService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/block_service_mock.go -package mocks zuluprotocol/zeta/datanode/api BlockService
 type BlockService interface {
 	GetLastBlock(ctx context.Context) (entities.Block, error)
 }
 
 // NetworkHistoryService ...
 //
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks zuluprotocol/zeta/zeta/datanode/api NetworkHistoryService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/networkhistory_service_mock.go -package mocks zuluprotocol/zeta/datanode/api NetworkHistoryService
 type NetworkHistoryService interface {
 	GetHighestBlockHeightHistorySegment() (networkhistory.Segment, error)
 	ListAllHistorySegments() ([]networkhistory.Segment, error)

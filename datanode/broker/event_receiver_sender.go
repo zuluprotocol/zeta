@@ -16,7 +16,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/logging"
 )
 
 func NewEventReceiverSender(config Config, log *logging.Logger, chainID string) (eventReceiverSender, error) {

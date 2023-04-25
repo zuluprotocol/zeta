@@ -15,9 +15,9 @@ package evtforward
 import (
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/evtforward/ethereum"
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/core/evtforward/ethereum"
+	"zuluprotocol/zeta/libs/config/encoding"
+	"zuluprotocol/zeta/logging"
 )
 
 const (

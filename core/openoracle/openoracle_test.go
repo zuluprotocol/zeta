@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/core/openoracle"
+	"zuluprotocol/zeta/core/openoracle"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

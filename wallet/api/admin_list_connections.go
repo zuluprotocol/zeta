@@ -3,7 +3,7 @@ package api
 import (
 	"context"
 
-	"zuluprotocol/zeta/zeta/libs/jsonrpc"
+	"zuluprotocol/zeta/libs/jsonrpc"
 )
 
 type AdminListConnectionsResult struct {

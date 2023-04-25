@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	apipb "zuluprotocol/zeta/zeta/protos/zeta/api/v1"
+	apipb "zuluprotocol/zeta/protos/zeta/api/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

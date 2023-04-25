@@ -17,10 +17,10 @@ import (
 	"fmt"
 	"testing"
 
-	"zuluprotocol/zeta/zeta/datanode/entities"
-	"zuluprotocol/zeta/zeta/datanode/service"
-	"zuluprotocol/zeta/zeta/datanode/service/mocks"
-	"zuluprotocol/zeta/zeta/logging"
+	"zuluprotocol/zeta/datanode/entities"
+	"zuluprotocol/zeta/datanode/service"
+	"zuluprotocol/zeta/datanode/service/mocks"
+	"zuluprotocol/zeta/logging"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

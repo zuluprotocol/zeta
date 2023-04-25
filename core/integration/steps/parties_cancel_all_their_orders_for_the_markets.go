@@ -16,9 +16,9 @@ import (
 	"context"
 	"fmt"
 
-	"zuluprotocol/zeta/zeta/core/integration/stubs"
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/protos/zeta"
+	"zuluprotocol/zeta/core/integration/stubs"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/protos/zeta"
 
 	"github.com/cucumber/godog"
 )

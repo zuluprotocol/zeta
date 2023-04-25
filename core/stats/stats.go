@@ -16,10 +16,10 @@ import (
 	"context"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/types"
-	"zuluprotocol/zeta/zeta/logging"
-	proto "zuluprotocol/zeta/zeta/protos/zeta"
-	"zuluprotocol/zeta/zeta/version"
+	"zuluprotocol/zeta/core/types"
+	"zuluprotocol/zeta/logging"
+	proto "zuluprotocol/zeta/protos/zeta"
+	"zuluprotocol/zeta/version"
 	tmversion "github.com/tendermint/tendermint/version"
 )
 

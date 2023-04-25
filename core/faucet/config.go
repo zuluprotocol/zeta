@@ -17,11 +17,11 @@ import (
 	"os"
 	"time"
 
-	"zuluprotocol/zeta/zeta/libs/config/encoding"
-	vgfs "zuluprotocol/zeta/zeta/libs/fs"
-	vghttp "zuluprotocol/zeta/zeta/libs/http"
-	"zuluprotocol/zeta/zeta/logging"
-	"zuluprotocol/zeta/zeta/paths"
+	"zuluprotocol/zeta/libs/config/encoding"
+	vgfs "zuluprotocol/zeta/libs/fs"
+	vghttp "zuluprotocol/zeta/libs/http"
+	"zuluprotocol/zeta/logging"
+	"zuluprotocol/zeta/paths"
 )
 
 const (

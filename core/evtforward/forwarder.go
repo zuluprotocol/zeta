@@ -23,14 +23,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"zuluprotocol/zeta/zeta/core/metrics"
-	"zuluprotocol/zeta/zeta/core/txn"
-	"zuluprotocol/zeta/zeta/libs/crypto"
-	"zuluprotocol/zeta/zeta/logging"
-	commandspb "zuluprotocol/zeta/zeta/protos/zeta/commands/v1"
+	"zuluprotocol/zeta/core/metrics"
+	"zuluprotocol/zeta/core/txn"
+	"zuluprotocol/zeta/libs/crypto"
+	"zuluprotocol/zeta/logging"
+	commandspb "zuluprotocol/zeta/protos/zeta/commands/v1"
 	"github.com/emirpasic/gods/sets/treeset"
 
-	vgproto "zuluprotocol/zeta/zeta/libs/proto"
+	vgproto "zuluprotocol/zeta/libs/proto"
 	"github.com/cenkalti/backoff"
 	"github.com/golang/protobuf/proto"
 )
@@ -42,18 +42,18 @@ var (
 	ErrPubKeyNotAllowlisted = errors.New("pubkey not allowlisted")
 )
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward TimeService
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/time_service_mock.go -package mocks zuluprotocol/zeta/core/evtforward TimeService
 type TimeService interface {
 	GetTimeNow() time.Time
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward Commander
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/commander_mock.go -package mocks zuluprotocol/zeta/core/evtforward Commander
 type Commander interface {
 	Command(ctx context.Context, cmd txn.Command, payload proto.Message, f func(string, error), bo *backoff.ExponentialBackOff)
 	CommandSync(ctx context.Context, cmd txn.Command, payload proto.Message, f func(string, error), bo *backoff.ExponentialBackOff)
 }
 
-//go:generate go run github.com/golang/mock/mockgen -destination mocks/validator_topology_mock.go -package mocks zuluprotocol/zeta/zeta/core/evtforward ValidatorTopology
+//go:generate go run github.com/golang/mock/mockgen -destination mocks/validator_topology_mock.go -package mocks zuluprotocol/zeta/core/evtforward ValidatorTopology
 type ValidatorTopology interface {
 	SelfNodeID() string
 	AllNodeIDs() []string
