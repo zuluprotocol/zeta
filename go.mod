@@ -392,7 +392,7 @@ require (
 )
 
 replace (
-	github.com/fergusstrange/embedded-postgres => github.com/zetaprotocol/embedded-postgres v1.13.1-0.20221123183204-2e7a2feee5bb
+	github.com/fergusstrange/embedded-postgres => github.com/vegaprotocol/embedded-postgres v1.13.1-0.20221123183204-2e7a2feee5bb
 	github.com/shopspring/decimal => github.com/zetaprotocol/decimal v1.3.1-uint256
 )
 
